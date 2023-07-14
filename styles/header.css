@@ -1,0 +1,43 @@
+ul li img {
+  width: 130px;
+  height: auto;
+}
+
+header > ul {
+  display: flex;
+  background-color: rgb(7 7 7);
+  align-items: center;
+}
+#navigation-ref {
+  display: flex;
+  gap: 2em;
+}
+
+#navigation-ref > li > a {
+  color: white;
+}
+#navigation-ref > li {
+  border: 1px solid rgb(7 7 7);
+  border-radius: 3px;
+  padding: 1em 2em;
+}
+#navigation-ref > li:hover {
+  border: 1px solid rgb(7 7 7);
+  border-radius: 30px;
+  cursor: pointer;
+  background-color: rgb(227 202 88);
+}
+
+header > ul > li:nth-child(1) {
+  margin-left: 5em;
+  flex-basis: 50%;
+}
+.header-navigation-li-svg > a > svg {
+  margin-left: 10em;
+  padding: 0.3em;
+  border: 1px solid black;
+  border-radius: 20em;
+  width: 30px;
+  height: auto;
+  background-color: white;
+}
