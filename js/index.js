@@ -20,8 +20,15 @@ links.forEach((li) => {
     childrenA[0].click();
   });
 });
+const quantityButtonsAndInput = {
+  minus: document.querySelector(".quantity-box>.minus"),
+  plus: document.querySelector(".quantity-box>.plus"),
+  quantity: document.querySelector(".quantity-box>.quantity"),
+};
+minus.addEventListener("click", decreaseQuan);
+plus.addEventListener("click", increaseQuan);
 
-const filterButtons = Array.from(
-  document.querySelectorAll("#filter > li > button")
-);
-filterButtons.forEach();
+function decreaseQuan() {
+  console.log(quantityButtonsAndInput.quantity.value);
+  quantityButtonsAndInput.quantity.value = -1;
+}
