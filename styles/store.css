@@ -3,10 +3,12 @@ body {
 }
 .store-section {
   display: flex;
+  gap: 3em;
 }
 
 #filter {
   margin-left: 2em;
+  margin-right: 2em;
   border: 1px solid rgb(227 202 88);
   padding: 2em;
   display: flex;

@@ -31,16 +31,41 @@
   text-align: center;
 }
 
-.all-products .view-here {
-  color: rgb(227 202 88);
-  padding: 1em 2em;
-  text-decoration: none;
-  font-size: 20px;
-  filter: blur(1px);
-}
 .all-products .view-here:hover {
   background-color: white;
   color: black;
   border-radius: 20px;
   filter: blur(0px);
+}
+.all-products .product-card:hover {
+  background-color: rgba(246, 246, 115, 0.488);
+}
+.product-card .price {
+  margin-top: 0.5em;
+  font-size: 20px;
+  text-align: center;
+  display: inline;
+  flex-basis: 80%;
+}
+.row {
+  margin-top: 0.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.product-card .buy {
+  padding: 0.2em 0.4em;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  transition: 0.5s;
+  background-color: rgb(227 202 88);
+}
+.product-card .buy:hover {
+  background-color: white;
+  color: black;
+  filter: blur(0px);
+  letter-spacing: 0.25em;
+  margin-left: -0.6em;
 }
