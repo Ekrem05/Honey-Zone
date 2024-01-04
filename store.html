@@ -35,40 +35,17 @@
             <li>
               <a href="#" class="">Галерия</a>
             </li>
-            <li>
-              <button
-              class="btn"
-              type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasWithBothOptions"
-              aria-controls="offcanvasWithBothOptions"
-              style="color: white"
-            >
-              Профил
-            </button>
-            <div
-              class="offcanvas offcanvas-end"
-              data-bs-scroll="true"
-              tabindex="-1"
-              id="offcanvasWithBothOptions"
-              aria-labelledby="offcanvasWithBothOptionsLabel"
-            >
-              <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
-                  Профил
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="offcanvas"
-                  aria-label="Close"
-                ></button>
+              <button class="btn btn-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Профил</button>
+
+              <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Профил</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <button class="btn btn-outline-warning"> Моите поръчки</button>
+                </div>
               </div>
-              <div class="offcanvas-body">
-                <button type="button" class="btn btn-outline-warning">
-                  Моите порчки
-                </button>
-            </li>
             
               </div>
             </div>

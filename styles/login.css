@@ -1,0 +1,26 @@
+body {
+  height: 1000px;
+  justify-content: center;
+}
+.container {
+  background-color: black;
+  color: white;
+  padding: 9em;
+  display: flex;
+  justify-content: center;
+}
+@keyframes blink {
+  0% {
+    border-color: red;
+  }
+  50% {
+    border-color: green;
+  }
+  100% {
+    border-color: red;
+  }
+}
+.container {
+  border: 2px solid;
+  animation: blink 5s infinite;
+}
