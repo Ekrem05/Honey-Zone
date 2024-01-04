@@ -1,8 +1,16 @@
 .main-view {
   display: flex;
   justify-content: center;
-  margin: 4em 22em;
   gap: 3em;
+  padding: 5em 13em;
+  background-color: black;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 8em 12em;
+  border: none;
 }
 .more-pics > img {
   width: 50px;
@@ -61,4 +69,8 @@
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   margin-left: 4em;
   transition: transform 1000ms;
+}
+.scrollspy .row {
+  display: flex;
+  align-items: center;
 }

@@ -1,44 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600&family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 .picture-quote {
-  background-image: url(honey.jpg);
-  background-position: center;
-  background-size: cover;
-
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 600px;
+  margin: 10em 0em 11em 0em;
+  font-family: Montserrat;
 }
-
-.opening-card {
-  padding: 2em;
-  background-color: rgba(0, 0, 0, 0.4);
-  text-align: center;
+#carouselExampleCaptions {
+  width: 1000px;
   display: flex;
-  flex-direction: column;
-  gap: 3em;
+  justify-content: center;
+  justify-items: center;
 }
-.opening-card > * {
-  color: white;
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.752);
 }
-.opening-card > h1 {
-  font-size: 56px;
-  font-weight: 800;
+.carousel-caption p {
+  text-transform: capitalize;
 }
-.opening-button {
-  background-color: rgb(227 202 88);
-  text-transform: uppercase;
-  font-size: 15px;
-  font-weight: bold;
-  border-color: rgb(227 202 88);
+.carousel-item > img {
+  aspect-ratio: 16/9;
+  width: 1000px;
+  height: 562.5px;
 }
-.opening-button a {
-  color: black;
-  display: block;
-  width: 580px;
-  height: 100%;
-  padding: 1em;
+.carousel-control-prev {
+  background-color: rgba(0, 0, 0, 0.355);
 }
-.opening-button a:hover {
-  background-color: black;
-  color: rgb(227 202 88);
+.carousel-control-next {
+  background-color: rgba(0, 0, 0, 0.355);
+}
+.carousel-control-prev:hover {
+  background-color: rgba(255, 238, 0, 0.648);
+}
+.carousel-control-next:hover {
+  background-color: rgba(255, 238, 0, 0.648);
 }

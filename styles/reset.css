@@ -10,5 +10,10 @@ a {
   text-decoration: none;
 }
 body {
-  background-color: black;
+  background-color: white;
+  background-image: url("back.png");
+  background-repeat: repeat;
+  background-size: 1000px;
+  display: flex;
+  flex-direction: column;
 }

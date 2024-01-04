@@ -3,12 +3,10 @@
   text-align: center;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: black;
   gap: 2em;
 }
 .featured > h1 {
   flex-basis: 100%;
-  margin-top: 20em;
   color: white;
 }
 .featured .top3-products {
