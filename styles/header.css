@@ -37,7 +37,7 @@ header > ul {
 #navigation-ref > li:hover {
   box-shadow: 0 0 30px #ffc107;
   background-color: #ffc107;
-}
+} 
 
 header > ul > li:nth-child(1) {
   margin-left: 5em;
