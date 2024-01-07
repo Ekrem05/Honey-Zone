@@ -9,3 +9,15 @@
   padding: 0.2em 0.4em;
   border-radius: 30em;
 }
+.modal-dialog {
+  margin-top: 10em;
+}
+.rounded {
+  width: 20px;
+}
+#liveToast {
+  padding: 0em;
+}
+.toast-body {
+  margin: 0em;
+}
