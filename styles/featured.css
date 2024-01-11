@@ -44,6 +44,7 @@
   text-decoration: none;
   font-size: 20px;
   filter: blur(1px);
+  transition: 0.5s;
 }
 .featured .view-here:hover {
   background-color: white;

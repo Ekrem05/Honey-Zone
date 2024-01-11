@@ -12,44 +12,64 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/reset.css" />
-    <link rel="stylesheet" href="styles/header.css" />
-    <link rel="stylesheet" href="styles/picture-quote.css" />
     <link rel="stylesheet" href="styles/featured.css" />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/picture-quote.css" />
+    
     <link rel="stylesheet" href="styles/animations.css" />
     <link rel="stylesheet" href="styles/about-footer.css" />
+    <link rel="stylesheet" href="styles/header.css" />
 
     <title>Honey Zone</title>
   </head>
   <body>
     <header>
-      <ul type="none" class="header-navigation">
-        <li class="header-navigation-li">
+      <nav class="navbar navbar-expand-lg ">
+        <ul type="none" class="header-navigation "> 
+          <li class="header-navigation-li logo">
           <img src="images/logo.png" alt="" />
         </li>
-        <li class="header-navigation-li options">
-          <ul type="none" id="navigation-ref">
-            <li>
-              <a href="index.html" class="">Начало</a>
-            </li>
-            <li>
-              <a href="store.html" class="">Магазин</a>
-            </li>
-            <li>
-              <a href="#" class="">Галерия</a>
-            </li>
-            <li>
-              <a href="login.html" class="">Вход</a>
-            </li>
-            
-              </div>
-            </div>
-          </ul>
-        </li>
-        <li class="header-navigation-li-svg">
-          <a href=""><img src="images/icons8-cart-24.png" alt="" /> </a>
-        </li>
-      </ul>
+          <button
+          class="navbar-toggler bg-warning"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+         
+          
+          <li class="header-navigation-li options">
+            <ul type="none" id="navigation-ref">
+              <li>
+                <a href="index.html" class="">Начало</a>
+              </li>
+              <li>
+                <a href="store.html" class="">Магазин</a>
+              </li>
+              <li>
+                <a href="#" class="">Галерия</a>
+              </li>
+              <li>
+                <a href="login.html" class="">Вход</a>
+              </li>
+              <li class="header-navigation-li-svg">
+                <a href=""><img src="images/icons8-cart-24.png" alt="" /> </a>
+              </li>
+          </div>
+              
+        
+          
+        </ul>
+          
+         
+       
+      </nav>
+      
     </header>
     <section class="picture-quote">
       <div class="opening-card">

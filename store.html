@@ -20,21 +20,36 @@
   </head>
   <body>
     <header>
-      <ul type="none" class="header-navigation">
-        <li class="header-navigation-li">
+      <nav class="navbar navbar-expand-lg ">
+        <ul type="none" class="header-navigation "> 
+          <li class="header-navigation-li logo">
           <img src="images/logo.png" alt="" />
         </li>
-        <li class="header-navigation-li options">
-          <ul type="none" id="navigation-ref">
-            <li>
-              <a href="index.html" class="">Начало</a>
-            </li>
-            <li>
-              <a href="store.html" class="">Магазин</a>
-            </li>
-            <li>
-              <a href="#" class="">Галерия</a>
-            </li>
+          <button
+          class="navbar-toggler bg-warning"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+         
+          
+          <li class="header-navigation-li options">
+            <ul type="none" id="navigation-ref">
+              <li>
+                <a href="index.html" class="">Начало</a>
+              </li>
+              <li>
+                <a href="store.html" class="">Магазин</a>
+              </li>
+              <li>
+                <a href="#" class="">Галерия</a>
+              </li>
               <button class="btn btn-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Профил</button>
 
               <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
@@ -47,15 +62,21 @@
                 </div>
               </div>
             
-              </div>
-            </div>
-          </ul>
-        </li>
-        <li class="header-navigation-li-svg">
-          <a href=""><img src="images/icons8-cart-24.png" alt="" /> </a>
-        </li>
-      </ul>
+              <li class="header-navigation-li-svg">
+                <a href=""><img src="images/icons8-cart-24.png" alt="" /> </a>
+              </li>
+          </div>
+              
+        
+          
+        </ul>
+          
+         
+       
+      </nav>
+      
     </header>
+   
     <section class="store-section">
       <section class="filter">
         <ul type="none" id="filter">

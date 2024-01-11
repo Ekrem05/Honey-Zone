@@ -9,10 +9,13 @@ header {
   top: 0;
   z-index: 9999;
 }
-header > ul {
+header > .navbar {
   display: flex;
   background-color: rgb(7 7 7);
   align-items: center;
+}
+.logo {
+  flex-basis: 55%;
 }
 .options {
   display: flex;
@@ -37,12 +40,104 @@ header > ul {
 #navigation-ref > li:hover {
   box-shadow: 0 0 30px #ffc107;
   background-color: #ffc107;
-} 
+}
 
 header > ul > li:nth-child(1) {
   margin-left: 5em;
   flex-basis: 55%;
 }
+.header-navigation {
+  display: flex;
+  width: 100%;
+}
 .header-navigation-li-svg > a > img {
   width: 30px;
+}
+@media (max-width: 991px) {
+  .logo {
+    order: 2;
+  }
+  header {
+    width: 991px;
+  }
+  .logo img {
+    width: 140px;
+  }
+  .featured .top3-products {
+    justify-content: center;
+    background-color: black;
+    padding: 0px 5px;
+    justify-content: space-around;
+    width: 425px;
+  }
+  .featured .product-card {
+    padding: 3px;
+    gap: 7px;
+  }
+  .featured .product-card > img {
+    width: 200px;
+  }
+  .featured .product-card .view-here {
+    font-size: 22px;
+  }
+  .opening-card,
+  #carouselExampleCaptions {
+    width: 768px;
+  }
+  .header-navigation {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar-toggler {
+    order: 1;
+  }
+  #navigation-ref {
+    flex-direction: column;
+  }
+}
+@media (max-width: 425px) {
+  .logo img {
+    width: 200px;
+  }
+  header {
+    width: 425px;
+  }
+  .picture-quote {
+    display: none;
+  }
+  .featured {
+    margin-top: 400px;
+  }
+  .featured .top3-products {
+    justify-content: center;
+    background-color: black;
+    padding: 0px 5px;
+    justify-content: space-around;
+    width: 425px;
+  }
+  .featured .product-card {
+    padding: 3px;
+    gap: 7px;
+  }
+  .featured .product-card .name {
+    display: none;
+  }
+  .featured .product-card > img {
+    width: 100px;
+  }
+  .featured .product-card .view-here {
+    font-size: 12px;
+  }
+  .about p {
+    width: 350px;
+  }
+  footer {
+    gap: 0em;
+    justify-content: center;
+  }
+  footer ul {
+    margin: 1em 1em;
+  }
 }

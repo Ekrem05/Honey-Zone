@@ -17,43 +17,34 @@
     <title>Document</title>
   </head>
   <body>
-    <button type="button" class="btn btn-primary" id="liveToastBtn">
-      Show live toast
-    </button>
-
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-      <div
-        id="liveToast"
-        class="toast"
-        role="alert"
-        aria-live="assertive"
-        aria-atomic="true"
-        data-bs-autohide="true"
-      >
-        <div class="toast-header">
-          <img src="..." class="rounded me-2" alt="..." />
-          <strong class="me-auto">Bootstrap</strong>
-          <small>11 mins ago</small>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="toast"
-            aria-label="Close"
-          ></button>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="#">Hidden brand</a>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
         </div>
-        <div class="toast-body">Hello, world! This is a toast message.</div>
       </div>
-    </div>
-
-    <script>
-      // JavaScript to show the toast on button click
-      document
-        .getElementById("liveToastBtn")
-        .addEventListener("click", function () {
-          var toastEl = document.getElementById("liveToast");
-          var toast = new bootstrap.Toast(toastEl);
-          toast.show();
-        });
-    </script>
+    </nav>
   </body>
 </html>
