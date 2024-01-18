@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoneyZoneMvc", "HoneyZoneMvc\HoneyZoneMvc.csproj", "{30B2110C-C7E3-4B4A-AD03-AA7652499142}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoneyZoneMvc", "HoneyZoneMvc\HoneyZoneMvc.csproj", "{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{30B2110C-C7E3-4B4A-AD03-AA7652499142}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{30B2110C-C7E3-4B4A-AD03-AA7652499142}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{30B2110C-C7E3-4B4A-AD03-AA7652499142}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{30B2110C-C7E3-4B4A-AD03-AA7652499142}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E75E85E3-F16D-40E8-9C73-E21993F1E6AA}
+		SolutionGuid = {2DFA6080-CE71-46C6-8BD9-26BD50A8F649}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600&family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.picture-quote {
+  display: flex;
+  justify-content: center;
+  margin: 10em 0em 11em 0em;
+  font-family: Montserrat;
+}
+#carouselExampleCaptions {
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.752);
+}
+.carousel-caption p {
+  text-transform: capitalize;
+}
+.carousel-item > img {
+  aspect-ratio: 16/9;
+  width: 1000px;
+  height: 562.5px;
+}
+.carousel-control-prev {
+  background-color: rgba(0, 0, 0, 0.355);
+}
+.carousel-control-next {
+  background-color: rgba(0, 0, 0, 0.355);
+}
+.carousel-control-prev:hover {
+  background-color: rgba(255, 238, 0, 0.648);
+}
+.carousel-control-next:hover {
+  background-color: rgba(255, 238, 0, 0.648);
+}
