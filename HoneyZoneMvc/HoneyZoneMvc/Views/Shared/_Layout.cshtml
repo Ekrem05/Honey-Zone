@@ -3,73 +3,50 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["HoneyZone"] - HoneyZoneMvc</title>
-
+    <title>@ViewData["Title"] - HoneyZoneMvc</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/HoneyZoneMvc.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/header.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/admin-products.css" asp-append-version="true" />
 
-    <link rel="stylesheet" href="~/css/featured.css" />
-    <link rel="stylesheet" href="~/css/reset.css" />
-    <link rel="stylesheet" href="~/css/picture-quote.css" />
-
-    <link rel="stylesheet" href="~/css/animations.css" />
-    <link rel="stylesheet" href="~/css/footer.css" />
-    <link rel="stylesheet" href="~/css/header.css" />
 
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg ">
-            <ul type="none" class="header-navigation ">
-                <li class="header-navigation-li logo">
-                    <img src="~/images/logo.png" alt="" />
-                </li>
-                <button class="navbar-toggler bg-warning"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarTogglerDemo01"
-                        aria-controls="navbarTogglerDemo01"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm  border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <div class="container ">
+                    <a href="@Url.Action("Index", "Home")">
+                        <img src="@Url.Content("~/Images/logo.png")" alt="Your Image" class="img-fluid logo" />
+                    </a>
+                </div>
+                <button class="navbar-toggler btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-
-
-                <li class="header-navigation-li options">
-                    <ul type="none" id="navigation-ref">
-                        <li>
-                            <a asp-controller="AdminData" asp-action="Index" class="">Admin(Временно тук)</a>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link  text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li>
-                            <a asp-controller="Home" asp-action="Index" class="">Начало</a>
+                        <li class="nav-item">
+                            <a class="nav-link  text-light" asp-area="" asp-controller="AdminData" asp-action="Index">Admin(Временно)</a>
                         </li>
-                        <li>
-                            <a  class="">Магазин</a>
+                        <li class="nav-item">
+                            <a class="nav-link  text-light" asp-area="" asp-controller="AdminData" asp-action="Index">Магазин</a>
                         </li>
-                        <li>
-                            <a  class="">Галерия</a>
+                        <li class="nav-item">
+                            <a class="nav-link  text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li>
-                            <a  class="">Вход</a>
-                        </li>
-                        <li class="header-navigation-li-svg">
-                            <a ><img src="images/icons8-cart-24.png" alt="" /> </a>
-                        </li>
-                        </div>
-
-
-
                     </ul>
-
-
-
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
         </nav>
-
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class=".container-xxl w-100">
+        <main role="main" class="pb-3 d-flex flex-column align-items-center">
             @RenderBody()
         </main>
     </div>

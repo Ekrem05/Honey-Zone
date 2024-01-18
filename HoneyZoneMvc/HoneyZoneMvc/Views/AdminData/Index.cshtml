@@ -1,0 +1,215 @@
+﻿@using HoneyZoneMvc.Models.ViewModels
+@model ProductDto
+
+@Html.Partial("AddProductPartialView") 
+<section class="search-bar">
+    <input type="text" class="bar" placeholder="Въведи име на продукт" />
+</section>
+<table class="table mb-10 mt-3 table-striped table-light table-bordered border-warning table-hover table-sm datatable">
+    <thead>
+        <tr class="text-center">
+            <th scope="col">Id</th>
+            <th scope="col">Снимка</th>
+            <th scope="col">Име</th>
+            <th scope="col">Цена</th>
+            <th scope="col">Количесво</th>
+            <th scope="col">Дозировка</th>
+            <th scope="col">Описание</th>
+            <th scope="col">Операции</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        @foreach (var product in Model.Products)
+        {
+            <tr>
+                <th scope="row" class="align-middle">@product.Id</th>
+                <td class="col-md-1">
+                    <img src="images/attachment_86137655.jpg"
+                    class="img-fluid"
+                    alt="Все още няма снимки" />
+                </td>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.QuantityInStock</td>
+                <td>@product.ProductQuantity</td>
+                <td class="col-md-5">
+                @product.Description
+                </td>
+                <td>
+                    <button class="btn btn-outline-success"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                 Промоция
+                </button>
+                <button class="btn btn-outline-primary">Добави снимка</button>
+                <button class="btn btn-outline-secondary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#editModal">
+                Редактирай
+                </button>
+                <button class="btn btn-outline-danger">Изтрий</button>
+
+                    <div class="modal fade"
+                         id="exampleModal"
+                         tabindex="-1"
+                         aria-labelledby="exampleModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                                        Приложи промоция
+                                    </h1>
+                                    <button type="button"
+                                            class="btn-close"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label class="form-label mt-5 ">Промоция:</label>
+                                            <input type="number"
+                                                   class="form-control"
+                                                   id="percentageSale"
+                                                   aria-describedby="emailHelp" />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Дата от:</label>
+                                            <input type="date" class="form-control" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Дата до:</label>
+                                            <input type="date" class="form-control" />
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                            class="btn btn-secondary"
+                                            data-bs-dismiss="modal">
+                                        Отказ
+                                    </button>
+                                    <button type="button" class="btn btn-success" id="liveToastBtn">
+                                        Запази промени
+                                    </button>
+                                    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                                        <div id="liveToast"
+                                             class="toast alert alert-warning"
+                                             role="alert"
+                                             aria-live="assertive"
+                                             aria-atomic="true"
+                                             data-bs-autohide="true">
+                                            <div class="toast-header bg-warning">
+                                                <img src="images/logo.png" class="rounded me-2" alt="..." />
+                                                <strong class="me-auto">Система</strong>
+                                                <small>Време...</small>
+                                                <button type="button"
+                                                        class="btn-close"
+                                                        data-bs-dismiss="toast"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="toast-body alert alert-success">Успешно редактиране</div>
+                                        </div>
+                                    </div>
+
+                                    <script>
+
+                                        document
+                                            .getElementById("liveToastBtn")
+                                            .addEventListener("click", function () {
+                                                var toastEl = document.getElementById("liveToast");
+                                                var toast = new bootstrap.Toast(toastEl);
+                                                toast.show();
+                                            });
+                                    </script>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal fade"
+                         id="editModal"
+                         tabindex="-1"
+                         aria-labelledby="exampleModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                                        Редактирай
+                                    </h1>
+                                    <button type="button"
+                                            class="btn-close"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <label class="form-label mt-5">Снимка</label>
+                                        <div class="input-group mb-3">
+                                            <input type="file"
+                                                   class="form-control"
+                                                   id="inputGroupFile02" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Име</label>
+                                            <input type="text"
+                                                   class="form-control"
+                                                   id="NameEdit"
+                                                   aria-describedby="Name" />
+                                            <div id="currentName" class="form-text">
+                                                Сегашно име: Родопски дар
+                                            </div>
+                                        </div>
+                                        <label class="form-label">Цена</label>
+                                        <div class="input-group">
+                                            <input type="text"
+                                                   class="form-control"
+                                                   aria-label="Leva amount (with dot and two decimal places)" />
+                                            <span class="input-group-text">лв</span>
+                                            <span class="input-group-text">0.00</span>
+                                        </div>
+                                        <div id="currentPrice" class="form-text">
+                                            Сегашна цена: 14.99лв
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Количесво</label>
+                                            <input type="text"
+                                                   class="form-control"
+                                                   id="NameEdit"
+                                                   aria-describedby="Name" />
+                                            <div id="currentName" class="form-text">
+                                                Сегашно количество: 23
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Описание</label>
+                                            <textarea class="form-control" rows="4" cols="50">
+                                </textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"
+                                            class="btn btn-secondary"
+                                            data-bs-dismiss="modal">
+                                        Отказ
+                                    </button>
+                                    <button type="button" class="btn btn-success">
+                                        Запази промени
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

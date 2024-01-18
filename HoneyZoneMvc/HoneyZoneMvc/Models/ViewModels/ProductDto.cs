@@ -1,21 +1,23 @@
-﻿using HoneyZoneMvc.Models.Entities.Enums;
-using System.ComponentModel;
+﻿using HoneyZoneMvc.Models.Entities;
+using HoneyZoneMvc.Models.Entities.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace HoneyZoneMvc.Models.Entities
+namespace HoneyZoneMvc.Models.ViewModels
 {
-    public class Product
+    public class ProductDto
     {
-        [Key]
         public int Id { get; set; }
+
         [Required]
         [MaxLength(50)]
+        [MinLength(3)]
         public string Name { get; set; }
 
         [Required]
-        public Category Category {  get; set; }
+        public string Category { get; set; }
 
         [Required]
+        [Range(1.00,10000)]
         public double Price { get; set; }
 
         [Required]
@@ -23,9 +25,13 @@ namespace HoneyZoneMvc.Models.Entities
         public string Description { get; set; }
 
         [Required]
+        [Range(0, 10000)]
         public int QuantityInStock { get; set; }
 
         [Required]
+        [RegularExpression("^\\d+\\s?(ml|l|g|mg|kg)$", ErrorMessage = "Has to start with a number and end with (ml;l;g;mg;kg)")]
         public string ProductQuantity { get; set; }
+
+        public List<Product> Products { get; set; }
     }
 }

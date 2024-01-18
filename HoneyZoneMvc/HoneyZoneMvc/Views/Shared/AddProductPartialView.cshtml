@@ -1,0 +1,115 @@
+﻿@using HoneyZoneMvc.Models.Entities.Enums
+@using HoneyZoneMvc.Models.ViewModels
+@model ProductDto
+@{
+}
+<div class="actions bg-warning p-2 d-flex d-flex justify-content-around w-50">
+    <button class="btn btn-outline-success btn-lg" data-bs-toggle="modal"
+            data-bs-target="#addProductModal">
+        Създай продукт
+    </button>
+    <button class="btn btn-outline-success btn-lg" data-bs-toggle="modal"
+            data-bs-target="#addProductModal">
+        Задай промоция
+    </button>
+    <button class="btn btn-outline-success btn-lg" data-bs-toggle="modal"
+            data-bs-target="#addProductModal">
+        Създай продукт
+    </button>
+    <button class="btn btn-outline-success btn-lg" data-bs-toggle="modal"
+            data-bs-target="#addProductModal">
+        Създай продукт
+    </button>
+    <div class="modal fade sm"
+         id="addProductModal"
+         tabindex="-1"
+         aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Добави продукт
+                    </h1>
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form asp-action="Add" method="post">
+                        <div class="mb-3">
+                            <input asp-for="Id" type="hidden">
+                            <label class="form-label mt-2 " asp-for="Name">Име</label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Category" class="control-label">Category</label>
+                            <select asp-for="Category" asp-items="Html.GetEnumSelectList<Category>()" class="form-control"></select>
+                            <span asp-validation-for="Category" class="text-danger"></span>
+                        </div>
+                        <script>
+                            // Custom validation for Enum selection
+                            $.validator.addMethod("enumValidation", function (value, element, params) {
+                                return value !== "0"; // Change "0" to the default value of your Enum
+                            }, "Please select an option");
+
+                            // Hook up the custom validation to the Enum dropdown
+                            $.validator.unobtrusive.adapters.addBool("enumvalidation");
+
+                            // Trigger validation when the page loads
+                            $(document).ready(function () {
+                                $("form").validate();
+                            });
+                        </script>
+                            <div class="input-group mb-2">
+                            <label class="form-label mt-2 w-100" asp-for="Price">Price</label>
+                            <input asp-for="Price" class="form-control w-20 h-10" />
+                            <span asp-validation-for="Price"></span>
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">.лв</span>
+                                    <span class="input-group-text">0.00</span>
+                                </div>
+                                
+                            </div>
+                           
+                       
+                        <div class="mb-3">
+
+                            <label class="form-label mt-2 " asp-for="Description">Description</label>
+                            <input type="text" asp-for="Description" class="form-control" />
+                            <span asp-validation-for="Description"></span>
+                        </div>
+                        <div class="mb-3">
+
+                            <label class="form-label mt-2 " asp-for="QuantityInStock">QuantityInStock</label>
+                            <input asp-for="QuantityInStock" class="form-control" />
+                            <span asp-validation-for="QuantityInStock"></span>
+                        </div>
+                        <div class="mb-3">
+
+                            <label class="form-label mt-2 " asp-for="ProductQuantity">ProductQuantity</label>
+                            <input asp-for="ProductQuantity" class="form-control" />
+                            <span asp-validation-for="ProductQuantity"></span>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button"
+                                    class="btn btn-secondary"
+                                    data-bs-dismiss="modal">
+                                Отказ
+                            </button>
+                            <button type="submit" class="btn btn-success" id="liveToastBtn">
+                                Добави продукт
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
