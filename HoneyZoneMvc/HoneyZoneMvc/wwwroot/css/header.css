@@ -1,10 +1,24 @@
 .logo {
-  width: 130px;
+  width: 100px;
   height: auto;
   border-radius:3px;
 }
-.navbar{
-    background-color:black;
+@keyframes blink {
+    0% {
+        border-color: #ffc107;
+    }
+
+    50% {
+        border-color: black;
+    }
+
+    100% {
+        border-color: #ffc107;
+    }
+}
+.navbar {
+    border-bottom: 1px solid pink;
+    animation:blink 7s infinite;
 }
 header > .navbar {
   display: flex;
@@ -18,10 +32,13 @@ header > .navbar {
   display: flex;
   margin-right: 1em;
 }
-.navbar-nav,navbar-collapse {
-  display: flex;
-  gap: 1.5em;
-  align-self: center;
+.navbar-nav, navbar-collapse {
+    display: flex;
+    gap: 1.5em;
+    align-self: center;
+    font-family: Lato;
+    font-weight:200;
+    letter-spacing:2px;
 }
 
 .nav-item {
@@ -48,3 +65,12 @@ header > ul > li:nth-child(1) {
   width: 30px;
 }
 
+.navbar-toggler {
+    background-color: white;
+    width:40px;
+    height:30px;
+}
+.navbar-toggler svg {
+        display: block;
+        width: 100%;
+}

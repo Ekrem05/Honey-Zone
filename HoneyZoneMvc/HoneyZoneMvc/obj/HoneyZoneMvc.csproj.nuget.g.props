@@ -20,5 +20,6 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\ekrem\.nuget\packages\microsoft.entityframeworkcore.tools\6.0.24</PkgMicrosoft_EntityFrameworkCore_Tools>
+    <PkgFontAwesome Condition=" '$(PkgFontAwesome)' == '' ">C:\Users\ekrem\.nuget\packages\fontawesome\4.7.0</PkgFontAwesome>
   </PropertyGroup>
 </Project>

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ngyHNns+UcuG4C1LpagM+B9cj/VowGn+1sm5dqF/3m0DkTaB4+mTszO1OyYKSWikg6GLkRl6g85M6S3RZzVZYg==",
+  "dgSpecHash": "r5ELnqvwr/qPAwmHQCpDH/KEB527O8nHxtmm8gIGAxmzP/GFseiS5Uj+/K1i2OJQDoS7nvT7+SZHU1BM/dHymg==",
   "success": true,
   "projectFilePath": "C:\\Users\\ekrem\\Documents\\GitHub\\School\\Projects\\Honey-Zone\\HoneyZoneMvc\\HoneyZoneMvc\\HoneyZoneMvc.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ekrem\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
     "C:\\Users\\ekrem\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.24\\microsoft.aspnetcore.cryptography.internal.6.0.24.nupkg.sha512",
     "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.24\\microsoft.aspnetcore.cryptography.keyderivation.6.0.24.nupkg.sha512",
