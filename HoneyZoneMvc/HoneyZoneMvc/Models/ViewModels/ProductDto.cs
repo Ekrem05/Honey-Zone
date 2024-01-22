@@ -32,6 +32,5 @@ namespace HoneyZoneMvc.Models.ViewModels
         [RegularExpression("^\\d+\\s?(ml|l|g|mg|kg)$", ErrorMessage = "Has to start with a number and end with (ml;l;g;mg;kg)")]
         public string ProductQuantity { get; set; }
 
-        public List<Product> Products { get; set; }
     }
 }

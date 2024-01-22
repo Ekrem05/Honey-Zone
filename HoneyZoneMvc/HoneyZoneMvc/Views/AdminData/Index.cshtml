@@ -1,7 +1,8 @@
-﻿@using HoneyZoneMvc.Models.ViewModels
-@model ProductDto
+﻿@using HoneyZoneMvc.Models.Entities
+@using HoneyZoneMvc.Models.ViewModels
+@model ICollection<ProductDto>
 
-@Html.Partial("AddProductPartialView") 
+@Html.Partial("AddProductPartialView", new ProductDto())
 <section class="search-bar">
     <input type="text" class="bar" placeholder="Въведи име на продукт" />
 </section>
@@ -19,7 +20,7 @@
         </tr>
     </thead>
     <tbody class="table-group-divider">
-        @foreach (var product in Model.Products)
+        @foreach (var product in Model)
         {
             <tr>
                 <th scope="row" class="align-middle">@product.Id</th>
@@ -42,15 +43,20 @@
                  Промоция
                 </button>
                 <button class="btn btn-outline-primary">Добави снимка</button>
+                   
+
                 <button class="btn btn-outline-secondary"
                     data-bs-toggle="modal"
-                    data-bs-target="#editModal">
+                            data-bs-target="#Edit-@product.Id"
+                            data-url="@Url.Action($"Edit/{product.Id}")">
                 Редактирай
                 </button>
+                    
                 <button class="btn btn-outline-danger">Изтрий</button>
+                    @await Html.PartialAsync("EditProductPartialView", product)
 
-                    <div class="modal fade"
-                         id="exampleModal"
+              @*       <div class="modal fade"
+                         id="Edit"
                          tabindex="-1"
                          aria-labelledby="exampleModalLabel"
                          aria-hidden="true">
@@ -66,22 +72,78 @@
                                             aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form>
-                                        <div class="mb-3">
-                                            <label class="form-label mt-5 ">Промоция:</label>
-                                            <input type="number"
+                                    <form asp-action="SubmitChanges" method="post">
+                                        <input hidden asp-for="@product.Id" />
+                                        <label class="form-label mt-5">Снимка</label>
+                                        <div class="input-group mb-3">
+                                            <input type="file"
                                                    class="form-control"
-                                                   id="percentageSale"
-                                                   aria-describedby="emailHelp" />
+                                                   id="inputGroupFile02" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" asp-for="@product.Name">Име:</label>
+                                            <input type="text"
+                                                   class="form-control"
+                                                   id="NameEdit"
+                                                   asp-for="@product.Name" />
+                                            <div id="currentName" class="form-text">
+                                                Текущо име:@product.Name
+                                            </div>
+                                            <span asp-validation-for="@product.Name"></span>
                                         </div>
 
-                                        <div class="mb-3">
-                                            <label class="form-label">Дата от:</label>
-                                            <input type="date" class="form-control" />
+                                        <div class="input-group">
+                                            <label class="form-label" asp-for="@product.Price">Цена:</label>
+                                            <input type="number"
+                                                   class="form-control"
+                                                   id="PriceEdit"
+                                                   asp-for="@product.Price" />
+                                            <span class="input-group-text">лв</span>
+                                            <span class="input-group-text">0.00</span>
+                                            <span asp-validation-for="@product.Price"></span>
+                                        </div>
+                                        <div id="currentPrice" class="form-text">
+                                            Текуща цена:@product.Price
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label">Дата до:</label>
-                                            <input type="date" class="form-control" />
+                                            <label class="form-label" asp-for="@product.QuantityInStock">Количество в склад:</label>
+                                            <input type="number"
+                                                   class="form-control"
+                                                   id="QuantityInStockEdit"
+                                                   asp-for="@product.QuantityInStock" />
+                                            <span asp-validation-for="@product.QuantityInStock"></span>
+                                            <div id="currentName" class="form-text">
+                                                Текущo количесво в склад:@product.QuantityInStock
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" asp-for="@product.ProductQuantity">Дозировка:</label>
+                                            <input type="number"
+                                                   class="form-control"
+                                                   id="ProductQuantityEdit"
+                                                   asp-for="@product.ProductQuantity" />
+                                            <span asp-validation-for="@product.ProductQuantity"></span>
+                                            <div id="currentName" class="form-text">
+                                                Текуща дозировка:@product.ProductQuantity
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" asp-for="@product.Description">Описание:</label>
+                                            <input rows="4" cols="50" type="text"
+                                                   class="form-control"
+                                                   id="DescriptionEdit"
+                                                   asp-for="@product.Description" />
+                                            <span asp-validation-for="@product.Description"></span>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button"
+                                                    class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">
+                                                Отказ
+                                            </button>
+                                            <button type="submit" class="btn btn-success">
+                                                Запази промени
+                                            </button>
                                         </div>
                                     </form>
                                 </div>
@@ -128,82 +190,7 @@
                             </div>
 
                         </div>
-                    </div>
-                    <div class="modal fade"
-                         id="editModal"
-                         tabindex="-1"
-                         aria-labelledby="exampleModalLabel"
-                         aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">
-                                        Редактирай
-                                    </h1>
-                                    <button type="button"
-                                            class="btn-close"
-                                            data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form>
-                                        <label class="form-label mt-5">Снимка</label>
-                                        <div class="input-group mb-3">
-                                            <input type="file"
-                                                   class="form-control"
-                                                   id="inputGroupFile02" />
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label">Име</label>
-                                            <input type="text"
-                                                   class="form-control"
-                                                   id="NameEdit"
-                                                   aria-describedby="Name" />
-                                            <div id="currentName" class="form-text">
-                                                Сегашно име: Родопски дар
-                                            </div>
-                                        </div>
-                                        <label class="form-label">Цена</label>
-                                        <div class="input-group">
-                                            <input type="text"
-                                                   class="form-control"
-                                                   aria-label="Leva amount (with dot and two decimal places)" />
-                                            <span class="input-group-text">лв</span>
-                                            <span class="input-group-text">0.00</span>
-                                        </div>
-                                        <div id="currentPrice" class="form-text">
-                                            Сегашна цена: 14.99лв
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label">Количесво</label>
-                                            <input type="text"
-                                                   class="form-control"
-                                                   id="NameEdit"
-                                                   aria-describedby="Name" />
-                                            <div id="currentName" class="form-text">
-                                                Сегашно количество: 23
-                                            </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label">Описание</label>
-                                            <textarea class="form-control" rows="4" cols="50">
-                                </textarea>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button"
-                                            class="btn btn-secondary"
-                                            data-bs-dismiss="modal">
-                                        Отказ
-                                    </button>
-                                    <button type="button" class="btn btn-success">
-                                        Запази промени
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div>  *@
                 </td>
             </tr>
         }

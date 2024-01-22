@@ -16,7 +16,6 @@ namespace HoneyZoneMvc.Controllers
         {
             var products = productService.GetAllProducts();
             ProductDto productsDto = new ProductDto();
-            productsDto.Products = products.ToList();
             return View(productsDto);
         }
     }

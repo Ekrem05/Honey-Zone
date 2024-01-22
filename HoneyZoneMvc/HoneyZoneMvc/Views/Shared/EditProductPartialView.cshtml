@@ -1,0 +1,106 @@
+﻿@using HoneyZoneMvc.Models.Entities.Enums
+@using HoneyZoneMvc.Models.ViewModels
+@model ProductDto
+
+<div class="modal fade"
+     id="Edit-@Model.Id"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Приложи промоция
+                </h1>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="SubmitChanges" method="post">
+                    <input hidden asp-for="Id" />
+                    <label class="form-label mt-1">Снимка</label>
+                    <div class="input-group mb-3">
+                        <input type="file"
+                               class="form-control"
+                               id="inputGroupFile02" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Name">Име:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="NameEdit"
+                               asp-for="Name" />
+                        <div id="currentName" class="form-text">
+                            Текущо име:@Model.Name
+                        </div>
+                        <span asp-validation-for="Name"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="form-label m-1" asp-for="Price">Цена:</label>
+                        <input type="number"
+                               class="form-control"
+                               id="PriceEdit"
+                               asp-for="Price" />
+                        <span class="input-group-text">лв</span>
+                        <span class="input-group-text">0.00</span>
+                        <span asp-validation-for="Price"></span>
+                    </div>
+                    <div id="currentPrice" class="form-text">
+                        Текуща цена:@Model.Price
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Category" class="control-label">Category</label>
+                        <select asp-for="Category" asp-items="Html.GetEnumSelectList<Category>()" class="form-control"></select>
+                        <span asp-validation-for="Category" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="QuantityInStock">Количество в склад:</label>
+                        <input type="number"
+                               class="form-control"
+                               id="QuantityInStockEdit"
+                               asp-for="QuantityInStock" />
+                        <span asp-validation-for="QuantityInStock"></span>
+                        <div id="currentName" class="form-text">
+                            Текущo количесво в склад:@Model.QuantityInStock
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="ProductQuantity">Дозировка:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="ProductQuantityEdit"
+                               asp-for="ProductQuantity" />
+                        <span asp-validation-for="ProductQuantity"></span>
+                        <div id="currentName" class="form-text">
+                            Текуща дозировка:@Model.ProductQuantity
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Description">Описание:</label>
+                        <input rows="4" cols="50" type="text"
+                               class="form-control"
+                               id="DescriptionEdit"
+                               asp-for="Description" />
+                        <span asp-validation-for="Description"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal">
+                            Отказ
+                        </button>
+                        <button type="submit" class="btn btn-success">
+                            Запази промени
+                        </button>
+                    </div>
+                </form>
+            </div>
+        
+        </div>
+
+    </div>
+</div>

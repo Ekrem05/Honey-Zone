@@ -1,6 +1,9 @@
 ﻿using HoneyZoneMvc.Contracts;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Models.Entities;
+using HoneyZoneMvc.Models.Entities.Enums;
+using HoneyZoneMvc.Models.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace HoneyZoneMvc.Services
 {
@@ -39,12 +42,27 @@ namespace HoneyZoneMvc.Services
 
         public Product GetProductById(int id)
         {
-            throw new NotImplementedException();
+            return dbContext.Products.FirstOrDefault(p => p.Id == id);
         }
 
-        public bool UpdateProduct()
+        public bool UpdateProduct(Product product)
         {
-            throw new NotImplementedException();
+            var productToEdit = dbContext.Products.FirstOrDefault(p => p.Id == product.Id);
+            if (productToEdit != null)
+            {
+                productToEdit.Name = product.Name;
+                productToEdit.Price = product.Price;
+                productToEdit.Description = product.Description;
+                productToEdit.ProductQuantity = product.ProductQuantity;
+                productToEdit.Category = product.Category;
+                productToEdit.QuantityInStock = product.QuantityInStock;
+            }
+            if (dbContext.SaveChanges()>0)
+            {
+                return true;
+            }
+            return false;
+            
         }
     }
 }

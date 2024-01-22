@@ -2,16 +2,23 @@
 .picture-quote {
     display: flex;
     justify-content: center;
-    margin: 5em 0em 3em 0em;
     font-family: Montserrat;
-    background-color: #000000a1;
-    padding: 2em 6em 12em;
+    background-color: rgba(0, 0, 0, 0.63);
+    margin: 0em 0em 3em;
+    padding: 0em 6em 12em;
+    width:100%;
 }
+.opening-card {
+    width: 100%;
+    display:flex;
+    justify-content:center;
+}
+ 
 #carouselExampleCaptions {
-  width: 1000px;
-  display: flex;
-  justify-content: center;
-  justify-items: center;
+    width: 1400px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
 }
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.752);
@@ -19,20 +26,32 @@
 .carousel-caption p {
   text-transform: capitalize;
 }
+.carousel-item-next, .carousel-item-prev, .carousel-item.active {
+    display: flex;
+    justify-content: center;
+}
 .carousel-item > img {
-  aspect-ratio: 16/9;
-  width: 1000px;
-  height: 562.5px;
+    aspect-ratio: 16/9;
+    max-width: 100%;
+    max-height: 800.5px;
 }
 .carousel-control-prev {
-  background-color: rgba(0, 0, 0, 0.355);
+    background-color: rgba(0, 0, 0, 0.355);
+    max-width: 50px;
+    transition: 0.5s;
 }
 .carousel-control-next {
-  background-color: rgba(0, 0, 0, 0.355);
+    background-color: rgba(0, 0, 0, 0.355);
+    max-width: 50px;
+    transition:0.5s;
 }
 .carousel-control-prev:hover {
-  background-color: rgba(255, 238, 0, 0.648);
+    background-color: #ffc107
 }
 .carousel-control-next:hover {
-  background-color: rgba(255, 238, 0, 0.648);
+    background-color: #ffc107
+}
+.carousel-caption{
+    left:0%;
+    width:100%;
 }

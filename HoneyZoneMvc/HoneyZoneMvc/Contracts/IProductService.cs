@@ -6,7 +6,7 @@ namespace HoneyZoneMvc.Contracts
     {
         public bool AddProduct(Product product);
         public IEnumerable<Product> GetAllProducts();
-        public bool UpdateProduct();
+        public bool UpdateProduct(Product product);
         public bool DeleteProduct();
         public Product GetProductById(int id);
     }
