@@ -27,5 +27,11 @@ namespace HoneyZoneMvc.Models.Entities
 
         [Required]
         public string ProductQuantity { get; set; }
+
+        [Required]
+        public string MainImageName { get; set; }
+
+        [Required]
+        public ICollection<ImageName> ImageNames { get; set; }
     }
 }

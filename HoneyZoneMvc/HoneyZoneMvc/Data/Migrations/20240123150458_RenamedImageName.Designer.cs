@@ -4,6 +4,7 @@ using HoneyZoneMvc.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HoneyZoneMvc.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240123150458_RenamedImageName")]
+    partial class RenamedImageName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,7 +24,7 @@ namespace HoneyZoneMvc.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.ImageName", b =>
+            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.ImageUrl", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -30,7 +32,7 @@ namespace HoneyZoneMvc.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Name")
+                    b.Property<string>("ImageName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -41,7 +43,7 @@ namespace HoneyZoneMvc.Data.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ImageNames");
+                    b.ToTable("ImageUrls");
                 });
 
             modelBuilder.Entity("HoneyZoneMvc.Models.Entities.Product", b =>
@@ -60,7 +62,7 @@ namespace HoneyZoneMvc.Data.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<string>("MainImageName")
+                    b.Property<string>("MainImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -286,10 +288,10 @@ namespace HoneyZoneMvc.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.ImageName", b =>
+            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.ImageUrl", b =>
                 {
                     b.HasOne("HoneyZoneMvc.Models.Entities.Product", null)
-                        .WithMany("ImageNames")
+                        .WithMany("ImageUrls")
                         .HasForeignKey("ProductId");
                 });
 
@@ -346,7 +348,7 @@ namespace HoneyZoneMvc.Data.Migrations
 
             modelBuilder.Entity("HoneyZoneMvc.Models.Entities.Product", b =>
                 {
-                    b.Navigation("ImageNames");
+                    b.Navigation("ImageUrls");
                 });
 #pragma warning restore 612, 618
         }

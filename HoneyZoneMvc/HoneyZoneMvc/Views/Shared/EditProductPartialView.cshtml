@@ -3,7 +3,7 @@
 @model ProductDto
 
 <div class="modal fade"
-     id="Edit-@Model.Id"
+     id="AddImage-@Model.Id"
      tabindex="-1"
      aria-labelledby="exampleModalLabel"
      aria-hidden="true">
@@ -19,14 +19,15 @@
                         aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form asp-action="SubmitChanges" method="post">
+                <form asp-action="SubmitChanges" method="post" enctype="multipart/form-data">
                     <input hidden asp-for="Id" />
-                    <label class="form-label mt-1">Снимка</label>
+                    <label class="form-label mt-1" asp-for="MainImageFile">Основна снимка <span class="bg-warning">(Ако не се посочи снимка ще остане същата)</span> </label>
                     <div class="input-group mb-3">
-                        <input type="file"
-                               class="form-control"
-                               id="inputGroupFile02" />
+                        <input type="file" asp-for="MainImageFile" class="form-control"
+                               accept="image/jpg,image/png,image/jpeg" />
+                        <span asp-validation-for="MainImageFile"></span>
                     </div>
+                    
                     <div class="mb-3">
                         <label class="form-label" asp-for="Name">Име:</label>
                         <input type="text"

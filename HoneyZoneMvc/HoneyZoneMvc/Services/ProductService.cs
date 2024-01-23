@@ -56,6 +56,8 @@ namespace HoneyZoneMvc.Services
                 productToEdit.ProductQuantity = product.ProductQuantity;
                 productToEdit.Category = product.Category;
                 productToEdit.QuantityInStock = product.QuantityInStock;
+                productToEdit.MainImageName = product.MainImageName;
+                productToEdit.ImageNames= product.ImageNames;
             }
             if (dbContext.SaveChanges()>0)
             {

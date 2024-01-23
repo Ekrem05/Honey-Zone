@@ -11,5 +11,8 @@ namespace HoneyZoneMvc.Data
         {
         }
         public DbSet<Product>Products { get; set; }
+        public DbSet<ImageName> ImageNames { get; set; }
+
     }
 }
+

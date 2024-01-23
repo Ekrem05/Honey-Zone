@@ -5,8 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 using HoneyZoneMvc.Models.Entities.Enums;
 using Microsoft.EntityFrameworkCore;
 
-namespace HoneyZoneMvc.Controllers
-{
     public class AdminDataController : Controller
     {
         private readonly IProductService productService;
@@ -30,8 +28,8 @@ namespace HoneyZoneMvc.Controllers
                     Description = product.Description,
                     QuantityInStock = product.QuantityInStock,
                     ProductQuantity = product.ProductQuantity,
-                    Category = product.Category.ToString()
-
+                    Category = product.Category.ToString(),
+                    MainImageName= product.MainImageName
                 });
             }
             return View(productsDto);
@@ -40,7 +38,8 @@ namespace HoneyZoneMvc.Controllers
         [HttpPost]
         public IActionResult Add(ProductDto product)
         {
-            if (productService.AddProduct(new Product()
+
+        if (productService.AddProduct(new Product()
             {
                 Name = product.Name,
                 Category = Enum.Parse<Category>(product.Category),
@@ -48,6 +47,7 @@ namespace HoneyZoneMvc.Controllers
                 Description = product.Description,
                 QuantityInStock = product.QuantityInStock,
                 ProductQuantity = product.ProductQuantity,
+                MainImageName=product.MainImageFile.FileName
             }))
             {
                 return RedirectToAction("index");
@@ -66,7 +66,8 @@ namespace HoneyZoneMvc.Controllers
                 Description = product.Description,
                 QuantityInStock = product.QuantityInStock,
                 ProductQuantity = product.ProductQuantity,
-                Category = product.Category.ToString()
+                Category = product.Category.ToString(),
+                MainImageName = product.MainImageName
             };
             return PartialView("EditProductPartialView", ProductDto);
         }
@@ -75,7 +76,10 @@ namespace HoneyZoneMvc.Controllers
             bool result = false;
             if (ModelState.IsValid)
             {
-               result=productService.UpdateProduct(new Product()
+                if (productDto.MainImageFile == null)
+            {
+                string productCurrentImageName = productService.GetProductById(productDto.Id).MainImageName;
+                result = productService.UpdateProduct(new Product()
                 {
                     Id = productDto.Id,
                     Name = productDto.Name,
@@ -84,7 +88,25 @@ namespace HoneyZoneMvc.Controllers
                     ProductQuantity = productDto.ProductQuantity,
                     Category = Enum.Parse<Category>(productDto.Category),
                     QuantityInStock = productDto.QuantityInStock,
+                    MainImageName= productCurrentImageName
+
                 });
+            }
+            else
+            {
+                result = productService.UpdateProduct(new Product()
+                {
+                    Id = productDto.Id,
+                    Name = productDto.Name,
+                    Price = productDto.Price,
+                    Description = productDto.Description,
+                    ProductQuantity = productDto.ProductQuantity,
+                    Category = Enum.Parse<Category>(productDto.Category),
+                    QuantityInStock = productDto.QuantityInStock,
+                    MainImageName = productDto.MainImageFile.FileName
+                });
+            }
+               
             }
             if (result)
             {
@@ -93,5 +115,11 @@ namespace HoneyZoneMvc.Controllers
             return Content("Unexpected Error");
         
         }
+
+        [HttpPost]
+        public IActionResult AddImageToModel(ProductDto productDto)
+        {
+        var product = productService.GetProductById(productDto.Id);
+        }
     }
-}
+

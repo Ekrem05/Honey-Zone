@@ -37,7 +37,7 @@
                             aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form asp-action="Add" method="post">
+                    <form asp-action="Add" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                             <input asp-for="Id" type="hidden">
                             <label class="form-label mt-2 " asp-for="Name">Име</label>
@@ -94,7 +94,12 @@
                             <input asp-for="ProductQuantity" class="form-control" />
                             <span asp-validation-for="ProductQuantity"></span>
                         </div>
-
+                        <label class="form-label mt-1" asp-for="MainImageFile">Основна снимка</label>
+                        <div class="input-group mb-3">
+                            <input type="file" asp-for="MainImageFile"
+                                   accept="image/jpg,image/png,image/jpeg" />
+                            <span asp-validation-for="MainImageFile"></span>
+                        </div>
                         <div class="modal-footer">
                             <button type="button"
                                     class="btn btn-secondary"

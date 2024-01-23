@@ -15,6 +15,7 @@
             <th scope="col">Цена</th>
             <th scope="col">Количесво</th>
             <th scope="col">Дозировка</th>
+            <th scope="col">Категория</th>
             <th scope="col">Описание</th>
             <th scope="col">Операции</th>
         </tr>
@@ -25,24 +26,29 @@
             <tr>
                 <th scope="row" class="align-middle">@product.Id</th>
                 <td class="col-md-1">
-                    <img src="images/attachment_86137655.jpg"
+                    <img src="productImages/@product.MainImageName"
                     class="img-fluid"
                     alt="Все още няма снимки" />
                 </td>
-                <td>@product.Name</td>
+                <td class="col-md-1">@product.Name</td>
                 <td>@product.Price</td>
                 <td>@product.QuantityInStock</td>
                 <td>@product.ProductQuantity</td>
-                <td class="col-md-5">
+                <td>@product.Category</td>
+                <td class="col-md-4">
                 @product.Description
                 </td>
-                <td>
+                <td class="col-md-4">
                     <button class="btn btn-outline-success"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal">
                  Промоция
                 </button>
-                <button class="btn btn-outline-primary">Добави снимка</button>
+                    <button class="btn btn-outline-primary" data-bs-toggle="modal"
+                            data-bs-target="#Edit-@product.Id"
+                            data-url="@Url.Action($"Edit/{product.Id}")">
+                        Добави снимка
+                    </button>
                    
 
                 <button class="btn btn-outline-secondary"
