@@ -2,14 +2,13 @@ body {
   background-color: black;
 }
 .store-section {
-  display: flex;
-  gap: 3em;
-  margin-top: 10em;
+    display: flex;
+    gap: 10em;
+    margin-top: 3em;
+    width: 100%
 }
 
 #filter {
-  margin-left: 2em;
-  margin-right: 2em;
   border: 1px solid rgb(227 202 88);
   padding: 2em;
   display: flex;
@@ -21,7 +20,7 @@ body {
   align-content: flex-start;
   background-color: black;
 }
-#filter > li > button {
+#filter > li > a {
   background-color: black;
   color: white;
   padding: 1em 2em;

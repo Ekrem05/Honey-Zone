@@ -16,23 +16,32 @@
   width: 50px;
   height: auto;
 }
-
-.price {
+.description > h1 {
+    letter-spacing:3px;
+    font-family: Lato 700;
+    
+}
+.description>.price {
   padding-bottom: 0.8em;
+  font-size:20pt;
+  font-family:Lato;
   border-bottom: 1px solid rgb(227 202 88);
 }
 .description {
   display: flex;
   flex-direction: column;
   gap: 1.2em;
+
 }
 .description * {
   color: white;
 }
 .more-description {
-  display: flex;
-  flex-direction: column;
-  gap: 3em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    font-family: Roboto;
+    letter-spacing:1px;
 }
 
 .quantity-box {

@@ -1,3 +1,45 @@
-﻿
+﻿@using HoneyZoneMvc.Models.ViewModels
+@model IEnumerable<ProductDto>
 @{
 }
+<section class="store-section">
+    <section class="filter">
+        <ul type="none" id="filter">
+            <h1 class="ul-header">ФИЛТРИ</h1>
+            <li>
+                <a class="btn btn-outline-warning" asp-action="Index" asp-route-category="Pollen">Всички</a>
+
+            </li>
+            <li>
+                <a class="btn btn-outline-warning" asp-action="Index" asp-route-category="Pollen">Пчелен прашец</a>
+            </li>
+            <li>
+                <a>Гръцки</a>
+            </li>
+            <li>
+                <a>Най-продавани</a>
+            </li>
+        </ul>
+    </section>
+    <section products>
+
+        <ul type="none" class="all-products">
+            @foreach (ProductDto productDto in Model)
+            {
+                <li class="product-card">
+                    <img src="~/productImages/@productDto.MainImageName" alt="" />
+                    <p class="name">@productDto.Name</p>
+                    <div class="row">
+                        @{
+                            double number = productDto.Price;
+                            string formattedNumber = number.ToString("F2");
+                        }
+                        <p class="price ">@(formattedNumber)лв.</p>
+                        <a class="buy btn" asp-action="ViewProduct" asp-route-id="@productDto.Id">КУПИ</a>
+                    </div>
+                </li>
+            }
+        </ul>
+    </section>
+</section>
+<script src="~/js/index.js"></script>

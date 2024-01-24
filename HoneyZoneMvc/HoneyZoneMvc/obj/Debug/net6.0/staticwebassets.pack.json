@@ -89,6 +89,18 @@
       "PackagePath": "staticwebassets\\images\\logo.png"
     },
     {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\School\\Projects\\Honey-Zone\\HoneyZoneMvc\\HoneyZoneMvc\\wwwroot\\js\\index.js",
+      "PackagePath": "staticwebassets\\js\\index.js"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\School\\Projects\\Honey-Zone\\HoneyZoneMvc\\HoneyZoneMvc\\wwwroot\\js\\quantity.js",
+      "PackagePath": "staticwebassets\\js\\quantity.js"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\School\\Projects\\Honey-Zone\\HoneyZoneMvc\\HoneyZoneMvc\\wwwroot\\js\\showImage.js",
+      "PackagePath": "staticwebassets\\js\\showImage.js"
+    },
+    {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\School\\Projects\\Honey-Zone\\HoneyZoneMvc\\HoneyZoneMvc\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

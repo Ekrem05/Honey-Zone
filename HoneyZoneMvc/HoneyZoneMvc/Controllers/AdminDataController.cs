@@ -116,10 +116,11 @@ using Microsoft.EntityFrameworkCore;
         
         }
 
-        [HttpPost]
-        public IActionResult AddImageToModel(ProductDto productDto)
-        {
-        var product = productService.GetProductById(productDto.Id);
-        }
+        //[HttpPost]
+        //public IActionResult AddImageToModel(ProductDto productDto)
+        //{
+        //    var product = productService.GetProductById(productDto.Id);
+        //    product.
+        //}
     }
 

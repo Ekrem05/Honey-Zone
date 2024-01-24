@@ -40,9 +40,20 @@ namespace HoneyZoneMvc.Services
             return dbContext.Products.ToList();
         }
 
+        public IEnumerable<Product> GetProductsByCategory(string category)
+        {
+            if (category.ToUpper()=="ALL")
+            {
+                return GetAllProducts();
+
+            }
+            return dbContext.Products.Where(p=>p.Category== Enum.Parse<Category>(category)).ToList();
+        }
+
         public Product GetProductById(int id)
         {
             return dbContext.Products.FirstOrDefault(p => p.Id == id);
+
         }
 
         public bool UpdateProduct(Product product)

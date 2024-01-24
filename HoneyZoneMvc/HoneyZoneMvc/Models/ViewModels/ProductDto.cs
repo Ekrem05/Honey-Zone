@@ -6,6 +6,7 @@ namespace HoneyZoneMvc.Models.ViewModels
 {
     public class ProductDto
     {
+
         public int Id { get; set; }
 
         [Required]
@@ -37,6 +38,8 @@ namespace HoneyZoneMvc.Models.ViewModels
         public IFormFile MainImageFile{ get; set; }
 
         public ICollection<string> ImagesNames { get; set; }
+
+        public string CategoryFilter { get; set; }
 
     }
 }

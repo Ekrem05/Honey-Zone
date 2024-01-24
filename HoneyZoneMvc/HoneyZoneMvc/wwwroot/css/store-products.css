@@ -25,12 +25,12 @@
   width: 300px;
   height: auto;
 }
-.all-products .product-card > .name {
-  border-bottom: 1px solid rgb(227 202 88);
-  padding-bottom: 1em;
-  font-size: 18px;
-  text-align: center;
-}
+    .all-products .product-card > .name {
+        border-bottom: 1px solid #ffc107;
+        padding-bottom: 1em;
+        font-size: 18px;
+        text-align: center;
+    }
 
 .all-products .view-here:hover {
   background-color: white;
@@ -56,12 +56,12 @@
   gap: 1em;
 }
 .product-card .buy {
-  padding: 0.2em 0.4em;
-  color: white;
-  font-size: 20px;
-  letter-spacing: 0.1em;
-  transition: 0.5s;
-  background-color: rgb(227 202 88);
+    padding: 0.2em 0.4em;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    transition: 0.5s;
+    background-color: #ffc107;
 }
 .product-card .buy:hover {
   background-color: white;

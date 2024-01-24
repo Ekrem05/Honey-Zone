@@ -1,0 +1,59 @@
+﻿@using HoneyZoneMvc.Models.ViewModels
+@model ProductDto
+<div class="card">
+    <section class="main-view">
+        <div class="product-picture">
+            <div class="image-container">
+                <img src="~/productImages/@Model.MainImageName" alt="" />
+            </div>
+
+            <div class="slider-wrapper"></div>
+            <div class="more-pics">
+                <img src="images/bg honey2.png" alt="" />
+
+                <img src="images/black bg honey.png" alt="" />
+
+                <img src="images/bg honey2.png" alt="" />
+            </div>
+        </div>
+        <div class="description">
+            <h1>@Model.Name</h1>
+            <div class="stars">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="price">@Model.Price лв.</div>
+            <div class="more-description">
+                @if (Model.QuantityInStock > 0)
+                {
+                    <div class="available">Наличност: Наличен </div>
+                }
+                else
+                {
+                    <div class="available ">Наличност: <span class="bg-danger">Не е наличен</span>  </div>
+
+                }
+
+                <p class="text">
+                    @Model.Description
+                </p>
+                <p >
+                    Количество: @Model.ProductQuantity
+                </p>
+                <div class="quantity-box">
+                    <button class="minus">-</button>
+                    <p class="quantity">1</p>
+                    <button class="plus">+</button>
+                    <a class="add-to-cart btn" >ADD TO CART</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="scrollspy">
+    </div>
+</div>
+<script src="~/js/quantity.js"></script>
+<script src="~/js/showImage.js"></script>
