@@ -1,9 +1,12 @@
-﻿using HoneyZoneMvc.Contracts;
+﻿
+using HoneyZoneMvc.Contracts;
 using HoneyZoneMvc.Data;
+using HoneyZoneMvc.Messages;
 using HoneyZoneMvc.Models.Entities;
 using HoneyZoneMvc.Models.Entities.Enums;
 using HoneyZoneMvc.Models.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel;
 
 namespace HoneyZoneMvc.Services
 {
@@ -14,14 +17,23 @@ namespace HoneyZoneMvc.Services
         {
                 dbContext = _dbContext;
         }
-        public bool AddProduct(Product product)
+        public async Task<bool> AddProductAsync(ProductDto product)
         {
             if (product == null)
             {
-                return false;
+                throw new ArgumentNullException(string.Format(ExceptionMessages.ArgumentNull, nameof(ProductDto)));
             }
-            dbContext.Products.Add(product);
-            if (dbContext.SaveChanges() > 0)
+            Product productToAdd=new Product() {
+                Name = product.Name,
+                Category = Enum.Parse<Category>(product.Category),
+                Price = product.Price,
+                Description = product.Description,
+                QuantityInStock = product.QuantityInStock,
+                ProductQuantity = product.ProductQuantity,
+                MainImageName = product.MainImageFile.FileName
+            };
+            await dbContext.Products.AddAsync(productToAdd);
+            if (await dbContext.SaveChangesAsync() > 0)
             {
                 return true;
             }
@@ -29,53 +41,117 @@ namespace HoneyZoneMvc.Services
            
         }
 
-
-        public bool DeleteProduct()
+        public async Task<bool> DeleteProductAsync(int Id)
         {
-            throw new NotImplementedException();
+            var product=await dbContext.Products.FirstOrDefaultAsync(x => x.Id == Id);
+            if (product == null)
+            {
+                throw new ArgumentNullException(string.Format(ExceptionMessages.NoProductsWithGivenId, Id));
+
+            }
+            dbContext.Remove(product);
+            if (await dbContext.SaveChangesAsync() > 0)
+            {
+                return true;
+            }
+            return false;
+
         }
 
-        public IEnumerable<Product> GetAllProducts()
+        public async Task<IEnumerable<ProductDto>> GetAllProductsAsync()
         {
-            return dbContext.Products.ToList();
+            var models=await dbContext.Products.ToListAsync();
+            List<ProductDto> productsDto = new List<ProductDto>();
+            foreach (var product in models)
+            {
+                productsDto.Add(new ProductDto()
+                {
+                    Id = product.Id,
+                    Name = product.Name,
+                    Price = product.Price,
+                    Description = product.Description,
+                    QuantityInStock = product.QuantityInStock,
+                    ProductQuantity = product.ProductQuantity,
+                    Category = product.Category.ToString(),
+                    MainImageName = product.MainImageName
+                });
+            }
+            return productsDto;
         }
 
-        public IEnumerable<Product> GetProductsByCategory(string category)
+        public async Task<IEnumerable<ProductDto>> GetProductsByCategoryAsync(string category)
         {
             if (category.ToUpper()=="ALL")
             {
-                return GetAllProducts();
+                return await GetAllProductsAsync();
 
             }
-            return dbContext.Products.Where(p=>p.Category== Enum.Parse<Category>(category)).ToList();
+            var models = await dbContext.Products.Where(p => p.Category == Enum.Parse<Category>(category)).ToListAsync();
+            if (models!=null)
+            {
+                List<ProductDto> productsDto = new List<ProductDto>();
+                foreach (var product in models)
+                {
+                    productsDto.Add(new ProductDto()
+                    {
+                        Id = product.Id,
+                        Name = product.Name,
+                        Price = product.Price,
+                        Description = product.Description,
+                        QuantityInStock = product.QuantityInStock,
+                        ProductQuantity = product.ProductQuantity,
+                        Category = product.Category.ToString(),
+                        MainImageName = product.MainImageName
+                    });
+                }
+                return productsDto;
+            }
+            throw new ArgumentNullException(string.Format(ExceptionMessages.NoProductsWithGivenCategory,category));
+           
         }
 
-        public Product GetProductById(int id)
+        public async Task<ProductDto> GetProductByIdAsync(int Id)
         {
-            return dbContext.Products.FirstOrDefault(p => p.Id == id);
+            var model=await dbContext.Products.FirstOrDefaultAsync(p => p.Id == Id);
+            if (model != null)
+            {
+                ProductDto productdto = new ProductDto()
+                {
+                    Name = model.Name,
+                    Category = model.Category.ToString(),
+                    Price = model.Price,
+                    Description = model.Description,
+                    QuantityInStock = model.QuantityInStock,
+                    ProductQuantity = model.ProductQuantity,
+                    MainImageName = model.MainImageName
+                };
+                return productdto;
+            }
 
+
+            throw new ArgumentNullException(string.Format(ExceptionMessages.NoProductsWithGivenId, Id));
         }
 
-        public bool UpdateProduct(Product product)
+        public async Task<bool> UpdateProductAsync(ProductDto product)
         {
-            var productToEdit = dbContext.Products.FirstOrDefault(p => p.Id == product.Id);
+            var productToEdit = await dbContext.Products.FirstOrDefaultAsync(p => p.Id == product.Id);
             if (productToEdit != null)
             {
                 productToEdit.Name = product.Name;
                 productToEdit.Price = product.Price;
                 productToEdit.Description = product.Description;
                 productToEdit.ProductQuantity = product.ProductQuantity;
-                productToEdit.Category = product.Category;
+                productToEdit.Category = Enum.Parse<Category>(product.Category);
                 productToEdit.QuantityInStock = product.QuantityInStock;
                 productToEdit.MainImageName = product.MainImageName;
-                productToEdit.ImageNames= product.ImageNames;
+                productToEdit.ImageNames= product.ImagesNames;
             }
             if (dbContext.SaveChanges()>0)
             {
                 return true;
             }
-            return false;
-            
+            throw new ArgumentNullException(string.Format(ExceptionMessages.NoProductsWithGivenId, product.Id));
+
         }
     }
 }

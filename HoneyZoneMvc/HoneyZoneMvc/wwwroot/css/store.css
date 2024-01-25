@@ -7,7 +7,36 @@ body {
     margin-top: 3em;
     width: 100%
 }
+@keyframes s {
+    0% {
+        margin-bottom:300px;
+    }
 
+    50% {
+        margin-bottom: 800px;
+    }
+
+    100% {
+        margin-bottom: 300px;
+    }
+}
+#filter-action {
+    border-radius: 3px;
+    padding: 0.3em 0.5em;
+    transition: 0.5s;
+    align-self: center;
+    background-color: rgb(10 0 69);
+    width: 20vh;
+    font-family: "Roboto Mono";
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: white;
+   
+}
+    #filter-action:hover {
+        box-shadow: 0 0 30px #ffc107;
+        background-color: #ffc107;
+    }
 #filter {
   border: 1px solid rgb(227 202 88);
   padding: 2em;
@@ -21,9 +50,8 @@ body {
   background-color: black;
 }
     #filter > li  {
-        background-color: black;
         color: white;
-        padding: 1em 2em;
+        padding: 1em 1em;
         border: 1px solid black;
         border-radius: 30px;
         font-size: 20px;

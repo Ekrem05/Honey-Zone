@@ -14,41 +14,15 @@ using Microsoft.EntityFrameworkCore;
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var products=productService.GetAllProducts();
-            List<ProductDto> productsDto = new List<ProductDto>();
-            foreach (var product in products)
-            {
-                productsDto.Add(new ProductDto()
-                {
-                    Id = product.Id,
-                    Name = product.Name,
-                    Price = product.Price,
-                    Description = product.Description,
-                    QuantityInStock = product.QuantityInStock,
-                    ProductQuantity = product.ProductQuantity,
-                    Category = product.Category.ToString(),
-                    MainImageName= product.MainImageName
-                });
-            }
-            return View(productsDto);
+            return View(await productService.GetAllProductsAsync());
         }
 
         [HttpPost]
-        public IActionResult Add(ProductDto product)
+        public async Task<IActionResult> AddAsync(ProductDto product)
         {
-
-        if (productService.AddProduct(new Product()
-            {
-                Name = product.Name,
-                Category = Enum.Parse<Category>(product.Category),
-                Price = product.Price,
-                Description = product.Description,
-                QuantityInStock = product.QuantityInStock,
-                ProductQuantity = product.ProductQuantity,
-                MainImageName=product.MainImageFile.FileName
-            }))
+            if (await productService.AddProductAsync(product))
             {
                 return RedirectToAction("index");
             }
@@ -56,62 +30,28 @@ using Microsoft.EntityFrameworkCore;
 
         }
         [HttpGet]
-        public IActionResult Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
-            var product=productService.GetProductById(id);
-            var ProductDto = new ProductDto()
-            {
-                Name = product.Name,
-                Price = product.Price,
-                Description = product.Description,
-                QuantityInStock = product.QuantityInStock,
-                ProductQuantity = product.ProductQuantity,
-                Category = product.Category.ToString(),
-                MainImageName = product.MainImageName
-            };
-            return PartialView("EditProductPartialView", ProductDto);
+            var product=await productService.GetProductByIdAsync(id);
+            return PartialView("EditProductPartialView", product);
         }
         [HttpPost]
-        public IActionResult SubmitChanges(ProductDto productDto) {
-            bool result = false;
+        public async Task<IActionResult> SubmitChanges(ProductDto productDto) {
             if (ModelState.IsValid)
             {
                 if (productDto.MainImageFile == null)
-            {
-                string productCurrentImageName = productService.GetProductById(productDto.Id).MainImageName;
-                result = productService.UpdateProduct(new Product()
                 {
-                    Id = productDto.Id,
-                    Name = productDto.Name,
-                    Price = productDto.Price,
-                    Description = productDto.Description,
-                    ProductQuantity = productDto.ProductQuantity,
-                    Category = Enum.Parse<Category>(productDto.Category),
-                    QuantityInStock = productDto.QuantityInStock,
-                    MainImageName= productCurrentImageName
+                    ProductDto productBeforeUpdate = await productService.GetProductByIdAsync(productDto.Id);
+                    productDto.MainImageName= productBeforeUpdate.MainImageName;
 
-                });
-            }
-            else
-            {
-                result = productService.UpdateProduct(new Product()
+                }
+
+                if(await productService.UpdateProductAsync(productDto)) 
                 {
-                    Id = productDto.Id,
-                    Name = productDto.Name,
-                    Price = productDto.Price,
-                    Description = productDto.Description,
-                    ProductQuantity = productDto.ProductQuantity,
-                    Category = Enum.Parse<Category>(productDto.Category),
-                    QuantityInStock = productDto.QuantityInStock,
-                    MainImageName = productDto.MainImageFile.FileName
-                });
+                    return RedirectToAction("Index");
+                }
             }
-               
-            }
-            if (result)
-            {
-                return RedirectToAction("Index");
-            }
+           
             return Content("Unexpected Error");
         
         }

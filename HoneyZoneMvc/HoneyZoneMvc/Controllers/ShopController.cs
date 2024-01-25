@@ -12,63 +12,23 @@ namespace HoneyZoneMvc.Controllers
             productService = _productService;
         }
         [HttpGet]
-        public IActionResult Index(string? category)
+        public async Task<IActionResult> Index(string? category)
         {
             if (category != null)
             {
-                var productsCategorized = productService.GetProductsByCategory(category);
-                List<ProductDto> productsCategorizedDto = new List<ProductDto>();
-                foreach (var product in productsCategorized)
-                {
-                    productsCategorizedDto.Add(new ProductDto()
-                    {
-                        Id = product.Id,
-                        Name = product.Name,
-                        Price = product.Price,
-                        Description = product.Description,
-                        QuantityInStock = product.QuantityInStock,
-                        ProductQuantity = product.ProductQuantity,
-                        Category = product.Category.ToString(),
-                        MainImageName = product.MainImageName
-                    });
-                }
-                return View(productsCategorizedDto);
+                var productsCategorized = await productService.GetProductsByCategoryAsync(category);
+                return View(productsCategorized);
             }
-            var products = productService.GetAllProducts();
-            List<ProductDto> productsDto = new List<ProductDto>();
-            foreach (var product in products)
-            {
-                productsDto.Add(new ProductDto()
-                {
-                    Id = product.Id,
-                    Name = product.Name,
-                    Price = product.Price,
-                    Description = product.Description,
-                    QuantityInStock = product.QuantityInStock,
-                    ProductQuantity = product.ProductQuantity,
-                    Category = product.Category.ToString(),
-                    MainImageName = product.MainImageName
-                });
-            }
+            var productsDto = await productService.GetAllProductsAsync();
             return View(productsDto);
         }
 
         [HttpGet]
-        public IActionResult ViewProduct(int Id)
+        public async Task<IActionResult> ViewProduct(int Id)
         {
-            var product = productService.GetProductById(Id);
-            var ProductDto = new ProductDto()
-            {
-                Name = product.Name,
-                Price = product.Price,
-                Description = product.Description,
-                QuantityInStock = product.QuantityInStock,
-                ProductQuantity = product.ProductQuantity,
-                Category = product.Category.ToString(),
-                MainImageName = product.MainImageName
-            };
+            var productDto = await productService.GetProductByIdAsync(Id);
 
-            return View(ProductDto);
+            return View(productDto);
         }
 
     }

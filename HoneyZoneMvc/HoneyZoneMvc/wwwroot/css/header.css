@@ -36,9 +36,9 @@ header > .navbar {
     display: flex;
     gap: 1.5em;
     align-self: center;
-    font-family: Lato;
-    font-weight:200;
-    letter-spacing:2px;
+    font-family: "Roboto Mono";
+    font-weight: 300;
+    letter-spacing: 2px;
 }
 
 .nav-item {

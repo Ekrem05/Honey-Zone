@@ -27,3 +27,8 @@
 div.actions {
     border-radius: 3em;
 }
+#PriceValidation {
+    display: block;
+    order: 4;
+    flex-basis: 100%;
+}

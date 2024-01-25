@@ -1,6 +1,9 @@
-﻿using HoneyZoneMvc.Models.Entities;
+﻿using HoneyZoneMvc.Constraints;
+using HoneyZoneMvc.Models.Entities;
 using HoneyZoneMvc.Models.Entities.Enums;
 using System.ComponentModel.DataAnnotations;
+using static HoneyZoneMvc.Constraints.ValidationValues;
+using static HoneyZoneMvc.Messages.ExceptionMessages;
 
 namespace HoneyZoneMvc.Models.ViewModels
 {
@@ -9,35 +12,34 @@ namespace HoneyZoneMvc.Models.ViewModels
 
         public int Id { get; set; }
 
-        [Required]
-        [MaxLength(50)]
-        [MinLength(3)]
+        [Required(ErrorMessage = RequiredField)]
+        [StringLength(ProductNameMaxValue,MinimumLength = ProductNameMinValue,ErrorMessage = ProductNameValueValidation)]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = RequiredField)]
         public string Category { get; set; }
 
-        [Required]
-        [Range(1.00,10000)]
+        [Required(ErrorMessage = RequiredField)]
+        [Range(ProductPriceMinValue, ProductPriceMaxValue,ErrorMessage = ProductPriceValueValidation)]
         public double Price { get; set; }
 
-        [Required]
-        [MaxLength(500)]
+        [Required(ErrorMessage = RequiredField)]
+        [StringLength(ProductDescriptionMaxValue, MinimumLength = ProductDescriptionMinValue, ErrorMessage = ProductDescriptionValueValidation)]
         public string Description { get; set; }
 
         [Required]
-        [Range(0, 10000)]
+        [Range(ProductInStockMinValue, ProductInStockMaxValue, ErrorMessage = ProductInStockValueValidation)]
         public int QuantityInStock { get; set; }
 
         [Required]
-        [RegularExpression("^\\d+\\s?(ml|l|g|mg|kg)$", ErrorMessage = "Has to start with a number and end with (ml;l;g;mg;kg)")]
+        [RegularExpression("^\\d+\\s?(ml|l|g|mg|kg)$", ErrorMessage = ProductQuantityValueValidation)]
         public string ProductQuantity { get; set; }
 
         public string MainImageName { get; set; }
 
         public IFormFile MainImageFile{ get; set; }
 
-        public ICollection<string> ImagesNames { get; set; }
+        public ICollection<ImageName> ImagesNames { get; set; }
 
         public string CategoryFilter { get; set; }
 

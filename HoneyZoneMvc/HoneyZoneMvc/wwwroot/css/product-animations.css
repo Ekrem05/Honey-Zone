@@ -1,9 +1,9 @@
 .minus:hover,
 .plus:hover,
 .add-to-cart:hover {
-  background-color: rgb(227 202 88);
-  color: white;
-  border-color: white;
+    background-color: #f7c733;
+    color: white;
+    border-color: white;
 }
 
 .add-to-cart:hover,

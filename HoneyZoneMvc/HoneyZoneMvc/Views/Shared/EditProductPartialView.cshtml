@@ -11,7 +11,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">
-                    Приложи промоция
+                    Редактирай
                 </h1>
                 <button type="button"
                         class="btn-close"
@@ -25,7 +25,7 @@
                     <div class="input-group mb-3">
                         <input type="file" asp-for="MainImageFile" class="form-control"
                                accept="image/jpg,image/png,image/jpeg" />
-                        <span asp-validation-for="MainImageFile"></span>
+                        <span asp-validation-for="MainImageFile" class="bg-danger"></span>
                     </div>
                     
                     <div class="mb-3">
@@ -37,7 +37,7 @@
                         <div id="currentName" class="form-text">
                             Текущо име:@Model.Name
                         </div>
-                        <span asp-validation-for="Name"></span>
+                        <span asp-validation-for="Name" class="bg-danger"></span>
                     </div>
 
                     <div class="input-group">
@@ -48,7 +48,7 @@
                                asp-for="Price" />
                         <span class="input-group-text">лв</span>
                         <span class="input-group-text">0.00</span>
-                        <span asp-validation-for="Price"></span>
+                        <span asp-validation-for="Price" id="PriceValidation" class="bg-danger"></span>
                     </div>
                     <div id="currentPrice" class="form-text">
                         Текуща цена:@Model.Price
@@ -56,7 +56,7 @@
                     <div class="mb-3">
                         <label asp-for="Category" class="control-label">Category</label>
                         <select asp-for="Category" asp-items="Html.GetEnumSelectList<Category>()" class="form-control"></select>
-                        <span asp-validation-for="Category" class="text-danger"></span>
+                        <span asp-validation-for="Category" class="bg-danger"></span>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" asp-for="QuantityInStock">Количество в склад:</label>
@@ -64,7 +64,7 @@
                                class="form-control"
                                id="QuantityInStockEdit"
                                asp-for="QuantityInStock" />
-                        <span asp-validation-for="QuantityInStock"></span>
+                        <span asp-validation-for="QuantityInStock" class="bg-danger"></span>
                         <div id="currentName" class="form-text">
                             Текущo количесво в склад:@Model.QuantityInStock
                         </div>
@@ -75,7 +75,7 @@
                                class="form-control"
                                id="ProductQuantityEdit"
                                asp-for="ProductQuantity" />
-                        <span asp-validation-for="ProductQuantity"></span>
+                        <span asp-validation-for="ProductQuantity" class="bg-danger"></span>
                         <div id="currentName" class="form-text">
                             Текуща дозировка:@Model.ProductQuantity
                         </div>
@@ -86,7 +86,7 @@
                                class="form-control"
                                id="DescriptionEdit"
                                asp-for="Description" />
-                        <span asp-validation-for="Description"></span>
+                        <span asp-validation-for="Description" class="bg-danger"></span>
                     </div>
                     <div class="modal-footer">
                         <button type="button"

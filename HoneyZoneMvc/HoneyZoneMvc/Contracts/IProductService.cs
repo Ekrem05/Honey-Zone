@@ -1,16 +1,16 @@
-﻿using HoneyZoneMvc.Models.Entities;
+﻿using HoneyZoneMvc.Models.ViewModels;
 
 namespace HoneyZoneMvc.Contracts
 {
     public interface IProductService
     {
 
-        public bool AddProduct(Product product);
-        public IEnumerable<Product> GetAllProducts();
-        public bool UpdateProduct(Product product);
-        public bool DeleteProduct();
-        public Product GetProductById(int id);
-        public IEnumerable<Product> GetProductsByCategory(string category);
+         Task<bool> AddProductAsync(ProductDto product);
+         Task<IEnumerable<ProductDto>> GetAllProductsAsync();
+         Task<bool> UpdateProductAsync(ProductDto product);
+         Task<bool> DeleteProductAsync(int Id);
+         Task<ProductDto> GetProductByIdAsync(int Id);
+         Task<IEnumerable<ProductDto>> GetProductsByCategoryAsync(string category);
 
     }
 }
