@@ -1,5 +1,6 @@
-﻿@using HoneyZoneMvc.Models.ViewModels
-@model IEnumerable<ProductDto>
+﻿@using HoneyZoneMvc.Infrastructure.Data.Models
+@using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
+@model ProductViewModel
 @{
 }
 <section class="store-section">
@@ -7,15 +8,17 @@
         <ul type="none" id="filter">
             <h1 class="ul-header">ФИЛТРИ</h1>
             <li>
-                <a class="btn" id="filter-action" asp-action="Index" asp-route-category="Pollen">Всички</a>
+                <a class="btn" id="filter-action" asp-action="Index" asp-route-category="All">Всички</a>
 
             </li>
+            @foreach (var category in Model.ProductDtos.Select(x => x.Category).Distinct())
+            {
+                <li>
+                    <a class="btn" id="filter-action" asp-action="Index" asp-route-category="@category">@category</a>
+
+                </li>
+            }
             <li>
-                <a class="btn" id="filter-action" asp-action="Index" asp-route-category="Pollen">Пчелен прашец</a>
-            </li>
-            <li>
-                <a class ="btn" id="filter-action">Гръцки</a>
-            </li>
             <li>
                 <a class ="btn" id="filter-action">Най-продавани</a>
             </li>
@@ -24,7 +27,7 @@
     <section products>
 
         <ul type="none" class="all-products">
-            @foreach (ProductDto productDto in Model)
+            @foreach (ProductDto productDto in Model.ProductDtos)
             {
                 <li class="product-card">
                     <img src="~/productImages/@productDto.MainImageName" alt="" />

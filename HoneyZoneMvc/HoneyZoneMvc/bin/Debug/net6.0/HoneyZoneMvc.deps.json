@@ -9,6 +9,7 @@
       "HoneyZoneMvc/1.0.0": {
         "dependencies": {
           "FontAwesome": "4.7.0",
+          "HoneyZoneMvc.BusinessLogic": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.24",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.24",
           "Microsoft.AspNetCore.Identity.UI": "6.0.24",
@@ -56,6 +57,12 @@
             "assemblyVersion": "6.0.24.0",
             "fileVersion": "6.0.2423.51812"
           }
+        }
+      },
+      "Microsoft.AspNetCore.Http.Features/5.0.17": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "6.0.0",
+          "System.IO.Pipelines": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore/6.0.24": {
@@ -465,6 +472,7 @@
           }
         }
       },
+      "System.IO.Pipelines/5.0.2": {},
       "System.Runtime.Caching/4.7.0": {
         "dependencies": {
           "System.Configuration.ConfigurationManager": "4.7.0"
@@ -544,6 +552,24 @@
             "fileVersion": "4.700.19.56404"
           }
         }
+      },
+      "HoneyZoneMvc.BusinessLogic/1.0.0": {
+        "dependencies": {
+          "HoneyZoneMvc.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "HoneyZoneMvc.BusinessLogic.dll": {}
+        }
+      },
+      "HoneyZoneMvc.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "5.0.17",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.24",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.24"
+        },
+        "runtime": {
+          "HoneyZoneMvc.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -587,6 +613,13 @@
       "sha512": "sha512-C4efEcFNNU7hDjABUbvQb9nf+XmlqkvxejSs0wC+PtNH4FRHskEgLrwDJLGUeT1euZuTxwvtC7Jg5PE+w5HnWA==",
       "path": "microsoft.aspnetcore.diagnostics.entityframeworkcore/6.0.24",
       "hashPath": "microsoft.aspnetcore.diagnostics.entityframeworkcore.6.0.24.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Http.Features/5.0.17": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3jG2xS+dx8DDCGV/F+STdPTg89lX3ao3dF/VEPvJaz3wzBIjuadipTtYNEXDIVuOPZwb6jdmhrX9jkzOIBm5cw==",
+      "path": "microsoft.aspnetcore.http.features/5.0.17",
+      "hashPath": "microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Identity.EntityFrameworkCore/6.0.24": {
       "type": "package",
@@ -861,6 +894,13 @@
       "path": "system.identitymodel.tokens.jwt/6.8.0",
       "hashPath": "system.identitymodel.tokens.jwt.6.8.0.nupkg.sha512"
     },
+    "System.IO.Pipelines/5.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Iew+dfa6FFiyvWBdRmXApixRY1db+beyutpIck4SOSe0NLM8FD/7AD54MscqVLhvfSMLHO7KadjTRT7fqxOGTA==",
+      "path": "system.io.pipelines/5.0.2",
+      "hashPath": "system.io.pipelines.5.0.2.nupkg.sha512"
+    },
     "System.Runtime.Caching/4.7.0": {
       "type": "package",
       "serviceable": true,
@@ -923,6 +963,16 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "HoneyZoneMvc.BusinessLogic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HoneyZoneMvc.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

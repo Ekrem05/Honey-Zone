@@ -1,52 +1,62 @@
 ﻿using HoneyZoneMvc.Contracts;
-using HoneyZoneMvc.Models.ViewModels;
 using HoneyZoneMvc.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
-using HoneyZoneMvc.Models.Entities.Enums;
 using Microsoft.EntityFrameworkCore;
+using HoneyZoneMvc.Infrastructure.Data.Models;
+using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
 
-    public class AdminDataController : Controller
+public class AdminDataController : Controller
     {
         private readonly IProductService productService;
-        public AdminDataController(IProductService _productService)
+        private readonly ICategoryService categoryService;
+
+        public AdminDataController(IProductService _productService,ICategoryService _categoryService)
         {
                 productService = _productService;
+                categoryService = _categoryService;
         }
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            return View(await productService.GetAllProductsAsync());
+            ProductViewModel vm= new ProductViewModel();
+            vm.ProductDtos = await productService.GetAllProductsAsync();
+            vm.CategoryDtos = await categoryService.GetAllCategoriesAsync();
+            vm.ProductDtoPattern = new ProductDto();
+            return View(vm);
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddAsync(ProductDto product)
+        [ActionName("Add")]
+        public async Task<IActionResult> AddAsync(ProductViewModel productvm)
         {
-            if (await productService.AddProductAsync(product))
+            if (await productService.AddProductAsync(productvm.ProductDtoPattern))
             {
                 return RedirectToAction("index");
             }
            return RedirectToAction("index");
 
         }
-        [HttpGet]
-        public async Task<IActionResult> Edit(int id)
-        {
-            var product=await productService.GetProductByIdAsync(id);
-            return PartialView("EditProductPartialView", product);
-        }
+        //[HttpGet]
+        //public async Task<IActionResult> Edit(int id)
+        //{
+        //    var product=await productService.GetProductByIdAsync(id);
+        //    ProductViewModel productvm=new ProductViewModel();
+        //    productvm.ProductDtoPattern = product;
+        //    return PartialView("EditProductPartialView", productvm);
+        //}
         [HttpPost]
-        public async Task<IActionResult> SubmitChanges(ProductDto productDto) {
+        public async Task<IActionResult> SubmitChanges(ProductViewModel productvm) {
             if (ModelState.IsValid)
             {
-                if (productDto.MainImageFile == null)
+                if (productvm.ProductDtoPattern.MainImageFile == null)
                 {
-                    ProductDto productBeforeUpdate = await productService.GetProductByIdAsync(productDto.Id);
-                    productDto.MainImageName= productBeforeUpdate.MainImageName;
+                    ProductDto productBeforeUpdate = await productService.GetProductByIdAsync(productvm.ProductDtoPattern.Id);
+                    productvm.ProductDtoPattern.MainImageName= productBeforeUpdate.MainImageName;
 
                 }
 
-                if(await productService.UpdateProductAsync(productDto)) 
+                if(await productService.UpdateProductAsync(productvm.ProductDtoPattern)) 
                 {
                     return RedirectToAction("Index");
                 }

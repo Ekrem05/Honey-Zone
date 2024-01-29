@@ -1,5 +1,7 @@
-﻿using HoneyZoneMvc.Contracts;
-using HoneyZoneMvc.Models.ViewModels;
+﻿using HoneyZoneMvc.BusinessLogic.Services;
+using HoneyZoneMvc.Contracts;
+using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
+using HoneyZoneMvc.Infrastructure.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HoneyZoneMvc.Controllers
@@ -7,20 +9,26 @@ namespace HoneyZoneMvc.Controllers
     public class ShopController : Controller
     {
         private readonly IProductService productService;
-        public ShopController(IProductService _productService)
+        private readonly ICategoryService categoryService;
+
+        public ShopController(IProductService _productService, ICategoryService _categoryService)
         {
             productService = _productService;
+            categoryService = _categoryService;
         }
         [HttpGet]
         public async Task<IActionResult> Index(string? category)
         {
+            ProductViewModel vm = new ProductViewModel();
+            vm.ProductDtos = await productService.GetAllProductsAsync();
+            vm.CategoryDtos = await categoryService.GetAllCategoriesAsync();
             if (category != null)
             {
                 var productsCategorized = await productService.GetProductsByCategoryAsync(category);
-                return View(productsCategorized);
+                vm.ProductDtos = productsCategorized;
             }
-            var productsDto = await productService.GetAllProductsAsync();
-            return View(productsDto);
+           
+            return View(vm);
         }
 
         [HttpGet]

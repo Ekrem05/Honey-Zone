@@ -1,6 +1,5 @@
-﻿@using HoneyZoneMvc.Models.Entities.Enums
-@using HoneyZoneMvc.Models.ViewModels
-@model ProductDto
+﻿@using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
+@model ProductViewModel
 @{
 }
 <div class="actions bg-warning p-2 d-flex d-flex justify-content-around w-50">
@@ -39,16 +38,16 @@
                 <div class="modal-body">
                     <form asp-action="Add" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
-                            <input asp-for="Id" type="hidden">
-                            <label class="form-label mt-2 " asp-for="Name">Име</label>
-                            <input asp-for="Name" class="form-control" />
-                            <span asp-validation-for="Name" class="bg-danger"></span>
+                            <input asp-for="ProductDtoPattern.Id" type="hidden">
+                            <label class="form-label mt-2 " asp-for="ProductDtoPattern.Name">Име</label>
+                            <input asp-for="ProductDtoPattern.Name" class="form-control" />
+                            <span asp-validation-for="ProductDtoPattern.Name" class="bg-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label asp-for="Category" class="control-label">Категория</label>
-                            <select asp-for="Category" asp-items="Html.GetEnumSelectList<Category>()" class="form-control"></select>
-                            <span asp-validation-for="Category" class="bg-danger"></span>
+                            <label asp-for="ProductDtoPattern.Category" class="control-label">Категория</label>
+                            <select asp-for="ProductDtoPattern.Category" asp-items="new SelectList(@Model.CategoryDtos.Select(c=>c.Name))" class="form-control"></select>
+                            <span asp-validation-for="ProductDtoPattern.Category" class="bg-danger"></span>
                         </div>
                         <script>
                             
@@ -65,9 +64,9 @@
                             });
                         </script>
                             <div class="input-group mb-2">
-                            <label class="form-label mt-2 w-100" asp-for="Price">Цена</label>
-                            <input asp-for="Price" class="form-control w-20 h-10" />
-                            <span id="PriceValidation" asp-validation-for="Price" class="bg-danger"></span>
+                            <label class="form-label mt-2 w-100" asp-for="ProductDtoPattern.Price">Цена</label>
+                            <input asp-for="ProductDtoPattern.Price" class="form-control w-20 h-10" />
+                            <span id="PriceValidation" asp-validation-for="ProductDtoPattern.Price" class="bg-danger"></span>
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">.лв</span>
                                     <span class="input-group-text">0.00</span>
@@ -78,34 +77,34 @@
                        
                         <div class="mb-3">
 
-                            <label class="form-label mt-2 " asp-for="Description">Описание</label>
-                            <input type="text" asp-for="Description" class="form-control" />
-                            <span asp-validation-for="Description" class="bg-danger"></span>
+                            <label class="form-label mt-2 " asp-for="ProductDtoPattern.Description">Описание</label>
+                            <input type="text" asp-for="ProductDtoPattern.Description" class="form-control" />
+                            <span asp-validation-for="ProductDtoPattern.Description" class="bg-danger"></span>
                         </div>
                         <div class="mb-3">
 
-                            <label class="form-label mt-2 " asp-for="QuantityInStock">Наличност в склад</label>
-                            <input asp-for="QuantityInStock" class="form-control" />
-                            <span asp-validation-for="QuantityInStock" class="bg-danger"></span>
+                            <label class="form-label mt-2 " asp-for="ProductDtoPattern.QuantityInStock">Наличност в склад</label>
+                            <input asp-for="ProductDtoPattern.QuantityInStock" class="form-control" />
+                            <span asp-validation-for="ProductDtoPattern.QuantityInStock" class="bg-danger"></span>
                         </div>
                         <div class="mb-3">
 
-                            <label class="form-label mt-2 " asp-for="ProductQuantity">Количество на продукта</label>
-                            <input asp-for="ProductQuantity" class="form-control" />
-                            <span asp-validation-for="ProductQuantity" class="bg-danger"></span>
+                            <label class="form-label mt-2 " asp-for="ProductDtoPattern.ProductQuantity">Количество на продукта</label>
+                            <input asp-for="ProductDtoPattern.ProductQuantity" class="form-control" />
+                            <span asp-validation-for="ProductDtoPattern.ProductQuantity" class="bg-danger"></span>
                         </div>
-                        <label class="form-label mt-1" asp-for="MainImageFile">Основна снимка</label>
+                        <label class="form-label mt-1" asp-for="ProductDtoPattern.MainImageFile">Основна снимка</label>
                         <div class="input-group mb-3">
-                            <input type="file" asp-for="MainImageFile"
+                            <input type="file" asp-for="ProductDtoPattern.MainImageFile"
                                    accept="image/jpg,image/png,image/jpeg" />
-                            <span asp-validation-for="MainImageFile" class="bg-danger"></span>
+                            <span asp-validation-for="ProductDtoPattern.MainImageFile" class="bg-danger"></span>
                         </div>
                         <div class="modal-footer">
                             <button type="button"
                                     class="btn btn-secondary"
                                     data-bs-dismiss="modal">
                                 Отказ
-                            </button>
+                            </button> 
                             <button type="submit" class="btn btn-success" id="liveToastBtn">
                                 Добави продукт
                             </button>

@@ -1,8 +1,7 @@
-﻿@using HoneyZoneMvc.Models.Entities
-@using HoneyZoneMvc.Models.ViewModels
-@model ICollection<ProductDto>
+﻿@using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
+@model ProductViewModel
 
-@Html.Partial("AddProductPartialView", new ProductDto())
+@Html.Partial("AddProductPartialView", Model)
 <section class="search-bar">
     <input type="text" class="bar" placeholder="Въведи име на продукт" />
 </section>
@@ -21,7 +20,7 @@
         </tr>
     </thead>
     <tbody class="table-group-divider">
-        @foreach (var product in Model)
+        @foreach (var product in Model.ProductDtos)
         {
             <tr>
                 <th scope="row" class="align-middle">@product.Id</th>
@@ -57,9 +56,21 @@
                             data-url="@Url.Action($"Edit/{product.Id}")">
                 Редактирай
                 </button>
-                    
-                <button class="btn btn-outline-danger">Изтрий</button>
-                    @await Html.PartialAsync("EditProductPartialView", product)
+                    @{
+                        Model.ProductDtoPattern.Id = product.Id;
+                        Model.ProductDtoPattern.Name = product.Name;
+                        Model.ProductDtoPattern.QuantityInStock = product.QuantityInStock;
+                        Model.ProductDtoPattern.ProductQuantity = product.ProductQuantity;
+                        Model.ProductDtoPattern.Price = product.Price;
+                        Model.ProductDtoPattern.Description = product.Description;
+                        Model.ProductDtoPattern.Category = product.Category;
+                        Model.ProductDtoPattern.MainImageName = product.MainImageName;
+
+
+
+                    }
+                    <button class="btn btn-outline-danger">Изтрий</button>
+                    @await Html.PartialAsync("EditProductPartialView", Model)
 
               @*       <div class="modal fade"
                          id="Edit"

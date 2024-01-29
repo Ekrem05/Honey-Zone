@@ -15,4 +15,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.24" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HoneyZoneMvc.BusinessLogic\HoneyZoneMvc.BusinessLogic.csproj" />
+  </ItemGroup>
+
 </Project>

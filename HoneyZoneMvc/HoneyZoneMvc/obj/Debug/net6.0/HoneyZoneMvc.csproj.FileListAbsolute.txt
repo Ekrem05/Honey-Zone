@@ -55,7 +55,6 @@ C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZon
 C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZoneMvc\obj\Debug\net6.0\HoneyZoneMvc.AssemblyInfoInputs.cache
 C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZoneMvc\obj\Debug\net6.0\HoneyZoneMvc.AssemblyInfo.cs
 C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZoneMvc\obj\Debug\net6.0\HoneyZoneMvc.csproj.CoreCompileInputs.cache
-C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZoneMvc\obj\Debug\net6.0\HoneyZoneMvc.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZoneMvc\obj\Debug\net6.0\HoneyZoneMvc.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZoneMvc\obj\Debug\net6.0\HoneyZoneMvc.RazorAssemblyInfo.cache
 C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZoneMvc\obj\Debug\net6.0\HoneyZoneMvc.RazorAssemblyInfo.cs
@@ -76,3 +75,7 @@ C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZon
 C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZoneMvc\obj\Debug\net6.0\HoneyZoneMvc.pdb
 C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZoneMvc\obj\Debug\net6.0\HoneyZoneMvc.genruntimeconfig.cache
 C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZoneMvc\obj\Debug\net6.0\ref\HoneyZoneMvc.dll
+C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZoneMvc\bin\Debug\net6.0\HoneyZoneMvc.BusinessLogic.dll
+C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZoneMvc\bin\Debug\net6.0\HoneyZoneMvc.Infrastructure.dll
+C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZoneMvc\bin\Debug\net6.0\HoneyZoneMvc.BusinessLogic.pdb
+C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZoneMvc\bin\Debug\net6.0\HoneyZoneMvc.Infrastructure.pdb
