@@ -79,3 +79,4 @@ C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZon
 C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZoneMvc\bin\Debug\net6.0\HoneyZoneMvc.Infrastructure.dll
 C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZoneMvc\bin\Debug\net6.0\HoneyZoneMvc.BusinessLogic.pdb
 C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZoneMvc\bin\Debug\net6.0\HoneyZoneMvc.Infrastructure.pdb
+C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZoneMvc\obj\Debug\net6.0\HoneyZoneMvc.MvcApplicationPartsAssemblyInfo.cs

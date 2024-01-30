@@ -2,7 +2,7 @@
 @model ProductViewModel
 
 <div class="modal fade"
-     id="Edit-@Model.ProductDtoPattern.Id"
+     id="Edit-@Model.ProductView.Id"
      tabindex="-1"
      aria-labelledby="exampleModalLabel"
      aria-hidden="true">
@@ -19,73 +19,73 @@
             </div>
             <div class="modal-body">
                 <form asp-action="SubmitChanges" method="post" enctype="multipart/form-data">
-                    <input hidden asp-for="ProductDtoPattern.Id" />
-                    <label class="form-label mt-1" asp-for="ProductDtoPattern.MainImageFile">Основна снимка <span class="bg-warning">(Ако не се посочи снимка ще остане същата)</span> </label>
+                    <input hidden asp-for="ProductView.Id" />
+                    <label class="form-label mt-1" asp-for="ProductView.MainImageFile">Основна снимка <span class="bg-warning">(Ако не се посочи снимка ще остане същата)</span> </label>
                     <div class="input-group mb-3">
-                        <input type="file" asp-for="ProductDtoPattern.MainImageFile" class="form-control"
+                        <input type="file" asp-for="ProductView.MainImageFile" class="form-control"
                                accept="image/jpg,image/png,image/jpeg" />
-                        <span asp-validation-for="ProductDtoPattern.MainImageFile" class="bg-danger"></span>
+                        <span asp-validation-for="ProductView.MainImageFile" class="bg-danger"></span>
                     </div>
                     
                     <div class="mb-3">
-                        <label class="form-label" asp-for="ProductDtoPattern.Name">Име:</label>
+                        <label class="form-label" asp-for="ProductView.Name">Име:</label>
                         <input type="text"
                                class="form-control"
                                id="NameEdit"
-                               asp-for="ProductDtoPattern.Name" />
+                               asp-for="ProductView.Name" />
                         <div id="currentName" class="form-text">
-                            Текущо име:@Model.ProductDtoPattern.Name
+                            Текущо име:@Model.ProductView.Name
                         </div>
-                        <span asp-validation-for="ProductDtoPattern.Name" class="bg-danger"></span>
+                        <span asp-validation-for="ProductView.Name" class="bg-danger"></span>
                     </div>
 
                     <div class="input-group">
-                        <label class="form-label m-1" asp-for="ProductDtoPattern.Price">Цена:</label>
+                        <label class="form-label m-1" asp-for="ProductView.Price">Цена:</label>
                         <input type="number"
                                class="form-control"
                                id="PriceEdit"
-                               asp-for="ProductDtoPattern.Price" />
+                               asp-for="ProductView.Price" />
                         <span class="input-group-text">лв</span>
                         <span class="input-group-text">0.00</span>
-                        <span asp-validation-for="ProductDtoPattern.Price" id="PriceValidation" class="bg-danger"></span>
+                        <span asp-validation-for="ProductView.Price" id="PriceValidation" class="bg-danger"></span>
                     </div>
                     <div id="currentPrice" class="form-text">
-                        Текуща цена:@Model.ProductDtoPattern.Price
+                        Текуща цена:@Model.ProductView.Price
                     </div>
                     <div class="mb-3">
-                        <label asp-for="ProductDtoPattern.Category" class="control-label">Категория</label>
-                        <select asp-for="ProductDtoPattern.Category" asp-items="new SelectList(@Model.CategoryDtos.Select(c=>c.Name))" class="form-control"></select>
-                        <span asp-validation-for="ProductDtoPattern.Category" class="bg-danger"></span>
+                        <label asp-for="ProductView.Category" class="control-label">Категория</label>
+                        <select asp-for="ProductView.Category" asp-items="new SelectList(@Model.CategoryDtos.Select(c=>c.Name))" class="form-control"></select>
+                        <span asp-validation-for="ProductView.Category" class="bg-danger"></span>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" asp-for="ProductDtoPattern.QuantityInStock">Количество в склад:</label>
+                        <label class="form-label" asp-for="ProductView.QuantityInStock">Количество в склад:</label>
                         <input type="number"
                                class="form-control"
                                id="QuantityInStockEdit"
-                               asp-for="ProductDtoPattern.QuantityInStock" />
-                        <span asp-validation-for="ProductDtoPattern.QuantityInStock" class="bg-danger"></span>
+                               asp-for="ProductView.QuantityInStock" />
+                        <span asp-validation-for="ProductView.QuantityInStock" class="bg-danger"></span>
                         <div id="currentName" class="form-text">
-                            Текущo количесво в склад:@Model.ProductDtoPattern.QuantityInStock
+                            Текущo количесво в склад:@Model.ProductView.QuantityInStock
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" asp-for="ProductDtoPattern.ProductQuantity">Дозировка:</label>
+                        <label class="form-label" asp-for="ProductView.ProductQuantity">Дозировка:</label>
                         <input type="text"
                                class="form-control"
                                id="ProductQuantityEdit"
-                               asp-for="ProductDtoPattern.ProductQuantity" />
-                        <span asp-validation-for="ProductDtoPattern.ProductQuantity" class="bg-danger"></span>
+                               asp-for="ProductView.ProductQuantity" />
+                        <span asp-validation-for="ProductView.ProductQuantity" class="bg-danger"></span>
                         <div id="currentName" class="form-text">
-                            Текуща дозировка:@Model.ProductDtoPattern.ProductQuantity
+                            Текуща дозировка:@Model.ProductView.ProductQuantity
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" asp-for="ProductDtoPattern.Description">Описание:</label>
+                        <label class="form-label" asp-for="ProductView.Description">Описание:</label>
                         <input rows="4" cols="50" type="text"
                                class="form-control"
                                id="DescriptionEdit"
-                               asp-for="ProductDtoPattern.Description" />
-                        <span asp-validation-for="ProductDtoPattern.Description" class="bg-danger"></span>
+                               asp-for="ProductView.Description" />
+                        <span asp-validation-for="ProductView.Description" class="bg-danger"></span>
                     </div>
                     <div class="modal-footer">
                         <button type="button"

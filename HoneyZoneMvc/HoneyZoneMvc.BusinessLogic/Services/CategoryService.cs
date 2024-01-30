@@ -1,6 +1,7 @@
 ﻿using HoneyZoneMvc.Contracts;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models;
+using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,18 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             dbContext = _dbContext;
         }
-        public Task<bool> AddCategoryAsync(CategoryDto product)
+        public async Task<bool> AddCategoryAsync(CategoryDto category)
         {
-            throw new NotImplementedException();
+            if (category == null)
+            {
+                throw new ArgumentNullException();
+            }
+            dbContext.Categories.Add(new Category() { Name = category.Name});
+            if (await dbContext.SaveChangesAsync()>0)
+            {
+                return true;
+            }
+            return false;
         }
 
         public Task<bool> DeleteCategoryAsync(int Id)
@@ -51,7 +61,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return dto;
         }
 
-        public Task<bool> UpdateCategoryAsync(CategoryDto product)
+        public Task<bool> UpdateCategoryAsync(CategoryDto category)
         {
             throw new NotImplementedException();
         }

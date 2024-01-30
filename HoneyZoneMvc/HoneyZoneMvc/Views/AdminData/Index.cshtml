@@ -1,7 +1,7 @@
 ﻿@using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
 @model ProductViewModel
 
-@Html.Partial("AddProductPartialView", Model)
+@Html.Partial("_ActionsPartialView", Model)
 <section class="search-bar">
     <input type="text" class="bar" placeholder="Въведи име на продукт" />
 </section>
@@ -57,14 +57,14 @@
                 Редактирай
                 </button>
                     @{
-                        Model.ProductDtoPattern.Id = product.Id;
-                        Model.ProductDtoPattern.Name = product.Name;
-                        Model.ProductDtoPattern.QuantityInStock = product.QuantityInStock;
-                        Model.ProductDtoPattern.ProductQuantity = product.ProductQuantity;
-                        Model.ProductDtoPattern.Price = product.Price;
-                        Model.ProductDtoPattern.Description = product.Description;
-                        Model.ProductDtoPattern.Category = product.Category;
-                        Model.ProductDtoPattern.MainImageName = product.MainImageName;
+                        Model.ProductView.Id = product.Id;
+                        Model.ProductView.Name = product.Name;
+                        Model.ProductView.QuantityInStock = product.QuantityInStock;
+                        Model.ProductView.ProductQuantity = product.ProductQuantity;
+                        Model.ProductView.Price = product.Price;
+                        Model.ProductView.Description = product.Description;
+                        Model.ProductView.Category = product.Category;
+                        Model.ProductView.MainImageName = product.MainImageName;
 
 
 

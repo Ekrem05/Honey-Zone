@@ -22,41 +22,45 @@ public class AdminDataController : Controller
             ProductViewModel vm= new ProductViewModel();
             vm.ProductDtos = await productService.GetAllProductsAsync();
             vm.CategoryDtos = await categoryService.GetAllCategoriesAsync();
-            vm.ProductDtoPattern = new ProductDto();
+            vm.ProductView = new ProductDto();
             return View(vm);
         }
 
         [HttpPost]
-        [ActionName("Add")]
-        public async Task<IActionResult> AddAsync(ProductViewModel productvm)
+        [ActionName("AddProduct")]
+        public async Task<IActionResult> AddProductAsync(ProductViewModel productvm)
         {
-            if (await productService.AddProductAsync(productvm.ProductDtoPattern))
+            if (await productService.AddProductAsync(productvm.ProductView))
             {
                 return RedirectToAction("index");
             }
            return RedirectToAction("index");
 
         }
-        //[HttpGet]
-        //public async Task<IActionResult> Edit(int id)
-        //{
-        //    var product=await productService.GetProductByIdAsync(id);
-        //    ProductViewModel productvm=new ProductViewModel();
-        //    productvm.ProductDtoPattern = product;
-        //    return PartialView("EditProductPartialView", productvm);
-        //}
+        [HttpPost]
+        [ActionName("AddProductCategory")]
+        public async Task<IActionResult> AddProductCategoryAsync(ProductViewModel productvm)
+        {
+                if (await categoryService.AddCategoryAsync(productvm.CategoryView))
+                {
+                    return RedirectToAction("index");
+                }
+            return RedirectToAction("index");
+
+        }
+    
         [HttpPost]
         public async Task<IActionResult> SubmitChanges(ProductViewModel productvm) {
             if (ModelState.IsValid)
             {
-                if (productvm.ProductDtoPattern.MainImageFile == null)
+                if (productvm.ProductView.MainImageFile == null)
                 {
-                    ProductDto productBeforeUpdate = await productService.GetProductByIdAsync(productvm.ProductDtoPattern.Id);
-                    productvm.ProductDtoPattern.MainImageName= productBeforeUpdate.MainImageName;
+                    ProductDto productBeforeUpdate = await productService.GetProductByIdAsync(productvm.ProductView.Id);
+                    productvm.ProductView.MainImageName= productBeforeUpdate.MainImageName;
 
                 }
 
-                if(await productService.UpdateProductAsync(productvm.ProductDtoPattern)) 
+                if(await productService.UpdateProductAsync(productvm.ProductView)) 
                 {
                     return RedirectToAction("Index");
                 }

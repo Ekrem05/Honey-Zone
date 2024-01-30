@@ -11,7 +11,7 @@
                 <a class="btn" id="filter-action" asp-action="Index" asp-route-category="All">Всички</a>
 
             </li>
-            @foreach (var category in Model.ProductDtos.Select(x => x.Category).Distinct())
+            @foreach (var category in Model.CategoryDtos.Select(c=>c.Name))
             {
                 <li>
                     <a class="btn" id="filter-action" asp-action="Index" asp-route-category="@category">@category</a>
