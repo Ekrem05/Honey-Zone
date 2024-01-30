@@ -1,5 +1,4 @@
 .search-bar {
-  margin-top: 5em;
   text-align: center;
 }
 .bar {
@@ -12,8 +11,9 @@
 .modal-dialog {
   margin-top: 10em;
 }
+
 .rounded {
-  width: 20px;
+    width: 20px;
 }
 #liveToast {
   padding: 0em;
@@ -22,9 +22,10 @@
   margin: 0em;
 }
 .datatable{
-    width:95%;
+    width:100%;
 }
 div.actions {
+    margin-top:2em;
     border-radius: 3em;
 }
 #PriceValidation {
@@ -32,3 +33,16 @@ div.actions {
     order: 4;
     flex-basis: 100%;
 }
+#navbar-example2 {
+    margin-top: 3em;
+    max-width: 700px;
+    background-color: #ffffff70;
+    border-radius: 3em;
+    flex-basis:100%;
+   
+}
+  
+    .nav-pills {
+        justify-content: space-around;
+        flex-basis: 100%;
+    }

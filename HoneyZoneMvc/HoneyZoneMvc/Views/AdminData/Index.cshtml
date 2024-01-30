@@ -2,10 +2,178 @@
 @model ProductViewModel
 
 @Html.Partial("_ActionsPartialView", Model)
-<section class="search-bar">
-    <input type="text" class="bar" placeholder="Въведи име на продукт" />
-</section>
-<table class="table mb-10 mt-3 table-striped table-light table-bordered border-warning table-hover table-sm datatable">
+
+<nav id="navbar-example2" class="container-fluid navbar bg-body-tertiary px-3 mb-3 mt-5">
+  
+    <ul class="nav nav-pills">
+      
+        <li class="nav-item">
+            <a class="scroll-link btn btn-primary" href="#products">Продукти</a>
+        </li>
+        <li class="nav-item">
+            <a class="scroll-link btn btn-success" href="#orders">Поръчки</a>
+        </li>
+        <li class="nav-item">
+            <a class="scroll-link btn btn-warning href="#categories">Категории</a>
+        </li>
+    </ul>
+</nav>
+<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+    <section class="search-bar">
+        <input type="text" class="bar" placeholder="Въведи име на продукт" />
+    </section>
+    <table class="table mb-10 mt-3 table-striped table-light table-bordered border-warning table-hover table-sm datatable" id="products">
+        <thead>
+            <tr class="text-center">
+                <th scope="col">Id</th>
+                <th scope="col">Снимка</th>
+                <th scope="col">Име</th>
+                <th scope="col">Цена</th>
+                <th scope="col">Количесво</th>
+                <th scope="col">Дозировка</th>
+                <th scope="col">Категория</th>
+                <th scope="col">Описание</th>
+                <th scope="col">Операции</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            @foreach (var product in Model.ProductDtos)
+            {
+                <tr>
+                    <th scope="row" class="align-middle">@product.Id</th>
+                    <td class="col-md-1">
+                        <img src="productImages/@product.MainImageName"
+                             class="img-fluid"
+                             alt="Все още няма снимки" />
+                    </td>
+                    <td class="col-md-1">@product.Name</td>
+                    <td>@product.Price</td>
+                    <td>@product.QuantityInStock</td>
+                    <td>@product.ProductQuantity</td>
+                    <td>@product.Category</td>
+                    <td class="col-md-4">
+                        @product.Description
+                    </td>
+                    <td class="col-md-4">
+                        <button class="btn btn-outline-success"
+                                data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                            Промоция
+                        </button>
+                        <button class="btn btn-outline-primary" data-bs-toggle="modal"
+                                data-bs-target="#Edit-@product.Id"
+                                data-url="@Url.Action($"Edit/{product.Id}")">
+                            Добави снимка
+                        </button>
+
+
+                        <button class="btn btn-outline-secondary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#Edit-@product.Id"
+                                data-url="@Url.Action($"Edit/{product.Id}")">
+                            Редактирай
+                        </button>
+                        @{
+                            Model.ProductView.Id = product.Id;
+                            Model.ProductView.Name = product.Name;
+                            Model.ProductView.QuantityInStock = product.QuantityInStock;
+                            Model.ProductView.ProductQuantity = product.ProductQuantity;
+                            Model.ProductView.Price = product.Price;
+                            Model.ProductView.Description = product.Description;
+                            Model.ProductView.Category = product.Category;
+                            Model.ProductView.MainImageName = product.MainImageName;
+
+
+
+                        }
+                        <button class="btn btn-outline-danger">Изтрий</button>
+                        @await Html.PartialAsync("EditProductPartialView", Model)
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <h4 id="scrollspyHeading2">Second heading</h4>
+    <p>...</p>
+    <table class="table mb-10 mt-3 table-striped table-light table-bordered border-warning table-hover table-sm datatable" id="orders">
+        <thead>
+            <tr class="text-center">
+                <th scope="col">Id</th>
+                <th scope="col">Снимка</th>
+                <th scope="col">Име</th>
+                <th scope="col">Цена</th>
+                <th scope="col">Количесво</th>
+                <th scope="col">Дозировка</th>
+                <th scope="col">Категория</th>
+                <th scope="col">Описание</th>
+                <th scope="col">Операции</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            @foreach (var product in Model.ProductDtos)
+            {
+                <tr>
+                    <th scope="row" class="align-middle">@product.Id</th>
+                    <td class="col-md-1">
+                        <img src="productImages/@product.MainImageName"
+                             class="img-fluid"
+                             alt="Все още няма снимки" />
+                    </td>
+                    <td class="col-md-1">@product.Name</td>
+                    <td>@product.Price</td>
+                    <td>@product.QuantityInStock</td>
+                    <td>@product.ProductQuantity</td>
+                    <td>@product.Category</td>
+                    <td class="col-md-4">
+                        @product.Description
+                    </td>
+                    <td class="col-md-4">
+                        <button class="btn btn-outline-success"
+                                data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                            Промоция
+                        </button>
+                        <button class="btn btn-outline-primary" data-bs-toggle="modal"
+                                data-bs-target="#Edit-@product.Id"
+                                data-url="@Url.Action($"Edit/{product.Id}")">
+                            Добави снимка
+                        </button>
+
+
+                        <button class="btn btn-outline-secondary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#Edit-@product.Id"
+                                data-url="@Url.Action($"Edit/{product.Id}")">
+                            Редактирай
+                        </button>
+                        @{
+                            Model.ProductView.Id = product.Id;
+                            Model.ProductView.Name = product.Name;
+                            Model.ProductView.QuantityInStock = product.QuantityInStock;
+                            Model.ProductView.ProductQuantity = product.ProductQuantity;
+                            Model.ProductView.Price = product.Price;
+                            Model.ProductView.Description = product.Description;
+                            Model.ProductView.Category = product.Category;
+                            Model.ProductView.MainImageName = product.MainImageName;
+
+
+
+                        }
+                        <button class="btn btn-outline-danger">Изтрий</button>
+                        @await Html.PartialAsync("EditProductPartialView", Model)
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <h4 id="scrollspyHeading4">Fourth heading</h4>
+    <p>...</p>
+    <h4 id="scrollspyHeading5">Fifth heading</h4>
+    <p>...</p>
+</div>
+<table class="table mb-10 mt-3 table-striped table-light table-bordered border-warning table-hover table-sm datatable" id="products">
     <thead>
         <tr class="text-center">
             <th scope="col">Id</th>
@@ -213,7 +381,78 @@
         }
     </tbody>
 </table>
+<table class="table mb-10 mt-3 table-striped table-light table-bordered border-warning table-hover table-sm datatable" id="orders">
+    <thead>
+        <tr class="text-center">
+            <th scope="col">Id</th>
+            <th scope="col">Снимка</th>
+            <th scope="col">Име</th>
+            <th scope="col">Цена</th>
+            <th scope="col">Количесво</th>
+            <th scope="col">Дозировка</th>
+            <th scope="col">Категория</th>
+            <th scope="col">Описание</th>
+            <th scope="col">Операции</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        @foreach (var product in Model.ProductDtos)
+        {
+            <tr>
+                <th scope="row" class="align-middle">@product.Id</th>
+                <td class="col-md-1">
+                    <img src="productImages/@product.MainImageName"
+                         class="img-fluid"
+                         alt="Все още няма снимки" />
+                </td>
+                <td class="col-md-1">@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.QuantityInStock</td>
+                <td>@product.ProductQuantity</td>
+                <td>@product.Category</td>
+                <td class="col-md-4">
+                    @product.Description
+                </td>
+                <td class="col-md-4">
+                    <button class="btn btn-outline-success"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                        Промоция
+                    </button>
+                    <button class="btn btn-outline-primary" data-bs-toggle="modal"
+                            data-bs-target="#Edit-@product.Id"
+                            data-url="@Url.Action($"Edit/{product.Id}")">
+                        Добави снимка
+                    </button>
 
+
+                    <button class="btn btn-outline-secondary"
+                            data-bs-toggle="modal"
+                            data-bs-target="#Edit-@product.Id"
+                            data-url="@Url.Action($"Edit/{product.Id}")">
+                        Редактирай
+                    </button>
+                    @{
+                        Model.ProductView.Id = product.Id;
+                        Model.ProductView.Name = product.Name;
+                        Model.ProductView.QuantityInStock = product.QuantityInStock;
+                        Model.ProductView.ProductQuantity = product.ProductQuantity;
+                        Model.ProductView.Price = product.Price;
+                        Model.ProductView.Description = product.Description;
+                        Model.ProductView.Category = product.Category;
+                        Model.ProductView.MainImageName = product.MainImageName;
+
+
+
+                    }
+                    <button class="btn btn-outline-danger">Изтрий</button>
+                    @await Html.PartialAsync("EditProductPartialView", Model)
+      
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 @section Scripts{
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

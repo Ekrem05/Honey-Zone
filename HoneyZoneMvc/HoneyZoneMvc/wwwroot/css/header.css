@@ -25,30 +25,47 @@ header > .navbar {
   background-color: rgb(7 7 7);
   align-items: center;
 }
-    header > .navbar > .container-fluid>.container {
-        flex-basis: 55%;
+#myNav{
+    justify-content:space-around;
+}
+    #myNav > .myImageContainer {
+        flex-grow: 0;
+        width: fit-content;
     }
 .options {
-  display: flex;
-  margin-right: 1em;
+    display: flex;
+    margin-right: 1em;
 }
 .navbar-nav, navbar-collapse {
     display: flex;
     gap: 1.5em;
     align-self: center;
     font-family: "Roboto Mono";
-    font-weight: 300;
+    font-weight: 300 !important;
     letter-spacing: 2px;
+    max-width: fit-content;
+    height: 90px;
+    align-items: center;
 }
+#mainActions {
+    width: fit-content;
+    max-width: 600px;
+    justify-content:center;
+    flex-grow: 1;
+    height: 90px;
+}
+    #mainActions > ul {
+        width: 100%;
+    }
 
-.nav-item {
+.nav-link {
     display: flex;
     border-radius: 3px;
-    padding: 0.1em 1.5em;
+    padding: 0.1em 2.5em;
     transition: 0.5s;
     align-self: center;
 }
-    .nav-item:hover {
+    .nav-link:hover {
         box-shadow: 0 0 30px #ffc107;
         background-color: #ffc107;
     }
