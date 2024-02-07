@@ -7,7 +7,7 @@ body {
 .login-form-container {
     background-color: black;
     color: white;
-    padding: 5em 3em;
+    padding: 2em 3em;
     display: flex;
     justify-content: center;
 }
@@ -53,11 +53,13 @@ body {
         gap:1em;
         max-width: 30em;
     }
-
-        .login-form-container > form > .form-floating span {
-            display: block;
-            max-width: 20vh;
+        .login-form-container > form> .form-floating{
+            width:40vh;
         }
+            .login-form-container > form > .form-floating span {
+                display: block;
+                max-width: 40vh;
+            }
 .login-form-container > form > .actions {
     display: flex;
     width: 100%;

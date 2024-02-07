@@ -22,11 +22,17 @@ footer {
   justify-content: space-evenly;
   gap: 2em;
 }
+#myFooter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
 footer > ul {
-  margin: 4em;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
+    margin: 4em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
 footer > ul > li > a > svg {
   font-size: 40px;
