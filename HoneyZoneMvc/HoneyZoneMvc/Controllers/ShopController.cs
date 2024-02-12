@@ -1,7 +1,5 @@
-﻿using HoneyZoneMvc.BusinessLogic.Services;
-using HoneyZoneMvc.Contracts;
+﻿using HoneyZoneMvc.Contracts;
 using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
-using HoneyZoneMvc.Infrastructure.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HoneyZoneMvc.Controllers
@@ -27,7 +25,7 @@ namespace HoneyZoneMvc.Controllers
                 var productsCategorized = await productService.GetProductsByCategoryAsync(category);
                 vm.ProductDtos = productsCategorized;
             }
-           
+
             return View(vm);
         }
 

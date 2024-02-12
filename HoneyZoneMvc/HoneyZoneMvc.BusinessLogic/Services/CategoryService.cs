@@ -3,11 +3,6 @@ using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
 {
@@ -24,8 +19,8 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             {
                 throw new ArgumentNullException();
             }
-            dbContext.Categories.Add(new Category() { Name = category.Name});
-            if (await dbContext.SaveChangesAsync()>0)
+            dbContext.Categories.Add(new Category() { Name = category.Name });
+            if (await dbContext.SaveChangesAsync() > 0)
             {
                 return true;
             }
@@ -46,7 +41,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 categoryDto.Add(new CategoryDto()
                 {
                     Id = category.Id,
-                   Name= category.Name
+                    Name = category.Name
                 });
             }
             return categoryDto;
@@ -54,10 +49,10 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<CategoryDto> GetCategoryByName(string name)
         {
-            CategoryDto dto=new CategoryDto();
-            var model= await dbContext.Categories.FirstOrDefaultAsync(c => c.Name == name);
-            dto.Id= model.Id;
-            dto.Name= model.Name;
+            CategoryDto dto = new CategoryDto();
+            var model = await dbContext.Categories.FirstOrDefaultAsync(c => c.Name == name);
+            dto.Id = model.Id;
+            dto.Name = model.Name;
             return dto;
         }
 

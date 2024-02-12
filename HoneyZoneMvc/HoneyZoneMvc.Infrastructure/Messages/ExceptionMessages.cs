@@ -21,7 +21,7 @@
         public const string ProductDescriptionValueValidation = "Описанието трябва да е от {2} до {1} символа!";
         public const string ProductPriceValueValidation = "Цената трябва да е от {1} до {2} лв!";
         public const string ProductInStockValueValidation = "Бройката в склад трябва да е от {1} до {2} броя!";
-        public const string ProductQuantityValueValidation = "Количеството трябва да започва с число и да завърши с (ml;l;g;mg;kg) Пример: 100g";
+        public const string ProductAmountValueValidation = "Количеството трябва да започва с число и да завърши с (ml;l;g;mg;kg) Пример: 100g";
         public const string RequiredField = "Това поле е задължително!";
 
 

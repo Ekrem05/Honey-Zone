@@ -2,7 +2,6 @@
 using HoneyZoneMvc.Models.Entities;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
-using static HoneyZoneMvc.Constraints.ValidationValues;
 using static HoneyZoneMvc.Messages.ExceptionMessages;
 
 namespace HoneyZoneMvc.Infrastructure.Data.Models
@@ -13,27 +12,27 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = RequiredField)]
-        [StringLength(ProductNameMaxValue, MinimumLength = ProductNameMinValue, ErrorMessage = ProductNameValueValidation)]
+        [StringLength(DataConstants.Product.NameMaxValue, MinimumLength = DataConstants.Product.NameMinValue, ErrorMessage = ProductNameValueValidation)]
         public string Name { get; set; }
 
         [Required(ErrorMessage = RequiredField)]
         public string Category { get; set; }
 
         [Required(ErrorMessage = RequiredField)]
-        [Range(ProductPriceMinValue, ProductPriceMaxValue, ErrorMessage = ProductPriceValueValidation)]
+        [Range(DataConstants.Product.PriceMinValue, DataConstants.Product.PriceMaxValue, ErrorMessage = ProductPriceValueValidation)]
         public double Price { get; set; }
 
         [Required(ErrorMessage = RequiredField)]
-        [StringLength(ProductDescriptionMaxValue, MinimumLength = ProductDescriptionMinValue, ErrorMessage = ProductDescriptionValueValidation)]
+        [StringLength(DataConstants.Category.NameMaxValue, MinimumLength = DataConstants.Category.NameMinValue, ErrorMessage = ProductDescriptionValueValidation)]
         public string Description { get; set; }
 
         [Required]
-        [Range(ProductInStockMinValue, ProductInStockMaxValue, ErrorMessage = ProductInStockValueValidation)]
+        [Range( DataConstants.Product.InStockMinValue, DataConstants.Product.InStockMaxValue, ErrorMessage = ProductInStockValueValidation)]
         public int QuantityInStock { get; set; }
 
         [Required]
-        [RegularExpression("^\\d+\\s?(ml|l|g|mg|kg)$", ErrorMessage = ProductQuantityValueValidation)]
-        public string ProductQuantity { get; set; }
+        [RegularExpression("^\\d+\\s?(ml|l|g|mg|kg)$", ErrorMessage = ProductAmountValueValidation)]
+        public string ProductAmount { get; set; }
 
         public string MainImageName { get; set; }
 

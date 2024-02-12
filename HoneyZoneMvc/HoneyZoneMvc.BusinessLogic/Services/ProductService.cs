@@ -2,12 +2,9 @@
 using HoneyZoneMvc.Contracts;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
 using HoneyZoneMvc.Messages;
 using HoneyZoneMvc.Models.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 
 namespace HoneyZoneMvc.Services
 {
@@ -16,10 +13,10 @@ namespace HoneyZoneMvc.Services
         private ApplicationDbContext dbContext;
         private ICategoryService categoryService;
 
-        public ProductService(ApplicationDbContext _dbContext,ICategoryService _categoryService)
+        public ProductService(ApplicationDbContext _dbContext, ICategoryService _categoryService)
         {
-                dbContext = _dbContext;
-                categoryService = _categoryService;
+            dbContext = _dbContext;
+            categoryService = _categoryService;
         }
         public async Task<bool> AddProductAsync(ProductDto product)
         {
@@ -33,19 +30,19 @@ namespace HoneyZoneMvc.Services
             {
                 return true;
             }
-            
+
             return false;
-           
+
         }
 
         public async Task<IEnumerable<ProductDto>> GetAllProductsAsync()
         {
-            var models=await dbContext.Products
-                .Include(p=>p.Category)
+            var models = await dbContext.Products
+                .Include(p => p.Category)
                 .ToListAsync();
 
             List<ProductDto> productsDto = new List<ProductDto>();
-           
+
             foreach (var product in models)
             {
                 productsDto.Add(TransformProduct(product));
@@ -55,7 +52,7 @@ namespace HoneyZoneMvc.Services
 
         public async Task<IEnumerable<ProductDto>> GetProductsByCategoryAsync(string category)
         {
-            if (category.ToUpper()=="ALL")
+            if (category.ToUpper() == "ALL")
             {
                 return await GetAllProductsAsync();
 
@@ -75,8 +72,8 @@ namespace HoneyZoneMvc.Services
                 }
                 return productsDto;
             }
-            throw new ArgumentNullException(string.Format(ExceptionMessages.NoProductsWithGivenCategory,category));
-           
+            throw new ArgumentNullException(string.Format(ExceptionMessages.NoProductsWithGivenCategory, category));
+
         }
 
         public async Task<ProductDto> GetProductByIdAsync(int Id)
@@ -97,7 +94,7 @@ namespace HoneyZoneMvc.Services
         public async Task<bool> UpdateProductAsync(ProductDto product)
         {
             var productToEdit = await dbContext.Products
-                .Include(p=>p.Category)
+                .Include(p => p.Category)
                 .FirstOrDefaultAsync(p => p.Id == product.Id);
 
             if (productToEdit != null)
@@ -105,13 +102,13 @@ namespace HoneyZoneMvc.Services
                 productToEdit.Name = product.Name;
                 productToEdit.Price = product.Price;
                 productToEdit.Description = product.Description;
-                productToEdit.ProductQuantity = product.ProductQuantity;
+                productToEdit.ProductAmount = product.ProductAmount;
                 productToEdit.Category = dbContext.Categories.FirstOrDefault(c => c.Name == product.Category);
                 productToEdit.QuantityInStock = product.QuantityInStock;
                 productToEdit.MainImageName = product.MainImageName;
-                productToEdit.ImageNames= product.ImagesNames;
+                productToEdit.ImageNames = product.ImagesNames;
             }
-            if (dbContext.SaveChanges()>0)
+            if (dbContext.SaveChanges() > 0)
             {
                 return true;
             }
@@ -146,7 +143,7 @@ namespace HoneyZoneMvc.Services
                 Price = productDto.Price,
                 Description = productDto.Description,
                 QuantityInStock = productDto.QuantityInStock,
-                ProductQuantity = productDto.ProductQuantity,
+                ProductAmount = productDto.ProductAmount,
                 MainImageName = productDto.MainImageFile.FileName
             };
         }
@@ -159,7 +156,7 @@ namespace HoneyZoneMvc.Services
                 Price = product.Price,
                 Description = product.Description,
                 QuantityInStock = product.QuantityInStock,
-                ProductQuantity = product.ProductQuantity,
+                ProductAmount = product.ProductAmount,
                 Category = product.Category.Name,
                 MainImageName = product.MainImageName
             };

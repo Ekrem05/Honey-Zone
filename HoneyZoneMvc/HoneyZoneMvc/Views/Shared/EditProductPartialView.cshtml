@@ -69,14 +69,14 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" asp-for="ProductView.ProductQuantity">Дозировка:</label>
+                        <label class="form-label" asp-for="ProductView.ProductAmount">Дозировка:</label>
                         <input type="text"
                                class="form-control"
                                id="ProductQuantityEdit"
-                               asp-for="ProductView.ProductQuantity" />
-                        <span asp-validation-for="ProductView.ProductQuantity" class="bg-danger"></span>
+                               asp-for="ProductView.ProductAmount" />
+                        <span asp-validation-for="ProductView.ProductAmount" class="bg-danger"></span>
                         <div id="currentName" class="form-text">
-                            Текуща дозировка:@Model.ProductView.ProductQuantity
+                            Текуща дозировка:@Model.ProductView.ProductAmount
                         </div>
                     </div>
                     <div class="mb-3">
