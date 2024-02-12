@@ -26,7 +26,7 @@ body {
 .login-form-container {
     border: 2px solid;
     animation: login 20s infinite;
-    width: 30%;
+    width: 40%;
     gap: 4em;
     flex-direction: column;
     margin-top: 4em;
@@ -53,12 +53,12 @@ body {
         gap:1em;
         max-width: 30em;
     }
-        .login-form-container > form> .form-floating{
-            width:40vh;
+        .login-form-container > form > .form-floating {
+            max-width: 300px;
         }
             .login-form-container > form > .form-floating span {
                 display: block;
-                max-width: 40vh;
+                max-width: 200px;
             }
 .login-form-container > form > .actions {
     display: flex;

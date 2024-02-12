@@ -1,8 +1,10 @@
 ﻿using HoneyZoneMvc.Contracts;
 using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
+[Authorize]
 public class AdminDataController : Controller
 {
     private readonly IProductService productService;
