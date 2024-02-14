@@ -9,7 +9,7 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models
     public class ProductDto
     {
 
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required(ErrorMessage = RequiredField)]
         [StringLength(DataConstants.Product.NameMaxValue, MinimumLength = DataConstants.Product.NameMinValue, ErrorMessage = ProductNameValueValidation)]
@@ -23,7 +23,7 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models
         public double Price { get; set; }
 
         [Required(ErrorMessage = RequiredField)]
-        [StringLength(DataConstants.Category.NameMaxValue, MinimumLength = DataConstants.Category.NameMinValue, ErrorMessage = ProductDescriptionValueValidation)]
+        [StringLength(DataConstants.Product.DescriptionMaxValue, MinimumLength = DataConstants.Product.DescriptionMinValue, ErrorMessage = ProductDescriptionValueValidation)]
         public string Description { get; set; }
 
         [Required]

@@ -30,7 +30,7 @@ namespace HoneyZoneMvc.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> ViewProduct(int Id)
+        public async Task<IActionResult> ViewProduct(string Id)
         {
             var productDto = await productService.GetProductByIdAsync(Id);
 

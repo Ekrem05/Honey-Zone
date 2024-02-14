@@ -76,11 +76,11 @@ namespace HoneyZoneMvc.Services
 
         }
 
-        public async Task<ProductDto> GetProductByIdAsync(int Id)
+        public async Task<ProductDto> GetProductByIdAsync(string Id)
         {
             var model = await dbContext.Products
                 .Include(p => p.Category)
-                .FirstOrDefaultAsync(p => p.Id == Id);
+                .FirstOrDefaultAsync(p => p.Id.ToString()==Id);
 
             if (model != null)
             {
@@ -116,9 +116,9 @@ namespace HoneyZoneMvc.Services
 
         }
 
-        public async Task<bool> DeleteProductAsync(int Id)
+        public async Task<bool> DeleteProductAsync(string Id)
         {
-            var product = await dbContext.Products.FirstOrDefaultAsync(x => x.Id == Id);
+            var product = await dbContext.Products.FirstOrDefaultAsync(x => x.Id.ToString() == Id);
             if (product == null)
             {
                 throw new ArgumentNullException(string.Format(ExceptionMessages.NoProductsWithGivenId, Id));

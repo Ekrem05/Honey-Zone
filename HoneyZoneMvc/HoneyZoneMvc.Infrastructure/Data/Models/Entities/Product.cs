@@ -12,7 +12,7 @@ namespace HoneyZoneMvc.Models.Entities
     public class Product
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         [Required]
         [MaxLength(DataConstants.Product.NameMaxValue)]
         [Comment("Product Name")]
@@ -46,6 +46,12 @@ namespace HoneyZoneMvc.Models.Entities
         public string MainImageName { get; set; }
 
         [Required]
-        public ICollection<ImageName> ImageNames { get; set; }
+        public ICollection<ImageName> ImageNames = new List<ImageName>();
+
+        [Required]
+        public ICollection<OrderDetails> OrderDetails = new HashSet<OrderDetails>();
+
+        [Required]
+        public ICollection<CartProduct> CartProducts = new HashSet<CartProduct>();
     }
 }

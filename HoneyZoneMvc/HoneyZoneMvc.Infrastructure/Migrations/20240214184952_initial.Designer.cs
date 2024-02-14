@@ -9,44 +9,148 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace HoneyZoneMvc.Data.Migrations
+namespace HoneyZoneMvc.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240123140221_UrlsAdded")]
-    partial class UrlsAdded
+    [Migration("20240214184952_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.24")
+                .HasAnnotation("ProductVersion", "6.0.26")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.ImageUrl", b =>
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Category", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
-                    b.Property<int?>("ProductId")
-                        .HasColumnType("int");
+                    b.HasKey("Id");
 
-                    b.Property<string>("Url")
+                    b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("b792153a-4dc0-4a23-b6ea-c567917689f0"),
+                            Name = "Мед"
+                        },
+                        new
+                        {
+                            Id = new Guid("bb711621-62a0-4f21-93a5-9c36e9b9d0eb"),
+                            Name = "Прашец"
+                        },
+                        new
+                        {
+                            Id = new Guid("75d3394c-f23a-4565-a97b-f381272fd10c"),
+                            Name = "Сувенири"
+                        });
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.DeliveryMethod", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("ImageUrls");
+                    b.ToTable("DeliverMethods");
                 });
 
-            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.Product", b =>
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Order", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ClientId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("DeliveryMethodId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("DeliveryMethodId1")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("TotalSum")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClientId");
+
+                    b.HasIndex("DeliveryMethodId1");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.OrderDetails", b =>
+                {
+                    b.Property<string>("ProducId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("OrderId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid?>("OrderId1")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("ProducId", "OrderId");
+
+                    b.HasIndex("OrderId1");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderDetails");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.CartProduct", b =>
+                {
+                    b.Property<string>("ClientId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProductId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid?>("ProductId1")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("ClientId", "ProductId");
+
+                    b.HasIndex("ProductId1");
+
+                    b.ToTable("CartProducts");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.ImageName", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -54,34 +158,66 @@ namespace HoneyZoneMvc.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("Category")
-                        .HasColumnType("int");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(60)
+                        .HasColumnType("nvarchar(60)");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ImageNames");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.Product", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int")
+                        .HasComment("Category Identifier");
+
+                    b.Property<Guid>("CategoryId1")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("nvarchar(500)")
+                        .HasComment("Product Description");
 
-                    b.Property<string>("MainImageUrl")
+                    b.Property<string>("MainImageName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(50)")
+                        .HasComment("Product Name");
 
                     b.Property<double>("Price")
-                        .HasColumnType("float");
+                        .HasColumnType("float")
+                        .HasComment("Product Price");
 
-                    b.Property<string>("ProductQuantity")
+                    b.Property<string>("ProductAmount")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasComment("Product Amount");
 
                     b.Property<int>("QuantityInStock")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasComment("Quantity Of The Product Available In Stock");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CategoryId1");
 
                     b.ToTable("Products");
                 });
@@ -288,11 +424,77 @@ namespace HoneyZoneMvc.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.ImageUrl", b =>
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Order", b =>
                 {
-                    b.HasOne("HoneyZoneMvc.Models.Entities.Product", null)
-                        .WithMany("ImageUrls")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Client")
+                        .WithMany()
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Entities.DeliveryMethod", "DeliveryMethod")
+                        .WithMany()
+                        .HasForeignKey("DeliveryMethodId1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Client");
+
+                    b.Navigation("DeliveryMethod");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.OrderDetails", b =>
+                {
+                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Order", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderId1");
+
+                    b.HasOne("HoneyZoneMvc.Models.Entities.Product", "Product")
+                        .WithMany()
                         .HasForeignKey("ProductId");
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.CartProduct", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Client")
+                        .WithMany()
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HoneyZoneMvc.Models.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId1");
+
+                    b.Navigation("Client");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.ImageName", b =>
+                {
+                    b.HasOne("HoneyZoneMvc.Models.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.Product", b =>
+                {
+                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -346,9 +548,9 @@ namespace HoneyZoneMvc.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.Product", b =>
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Category", b =>
                 {
-                    b.Navigation("ImageUrls");
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

@@ -12,7 +12,7 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models.Entities
     public class Category
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required]
         [MaxLength(DataConstants.Category.NameMaxValue)]

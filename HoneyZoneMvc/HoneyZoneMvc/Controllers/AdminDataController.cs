@@ -56,7 +56,7 @@ public class AdminDataController : Controller
         {
             if (productvm.ProductView.MainImageFile == null)
             {
-                ProductDto productBeforeUpdate = await productService.GetProductByIdAsync(productvm.ProductView.Id);
+                ProductDto productBeforeUpdate = await productService.GetProductByIdAsync(productvm.ProductView.Id.ToString());
                 productvm.ProductView.MainImageName = productBeforeUpdate.MainImageName;
 
             }

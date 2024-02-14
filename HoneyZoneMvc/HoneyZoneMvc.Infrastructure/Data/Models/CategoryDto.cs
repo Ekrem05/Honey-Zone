@@ -8,7 +8,7 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models
 {
     public class CategoryDto
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required]
         [StringLength(DataConstants.Category.NameMaxValue, MinimumLength = DataConstants.Category.NameMinValue, ErrorMessage = CategoryValidation)]
