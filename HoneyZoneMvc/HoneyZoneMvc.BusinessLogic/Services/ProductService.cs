@@ -95,7 +95,7 @@ namespace HoneyZoneMvc.Services
         {
             var productToEdit = await dbContext.Products
                 .Include(p => p.Category)
-                .FirstOrDefaultAsync(p => p.Id == product.Id);
+                .FirstOrDefaultAsync(p => p.Id.ToString() == product.Id.ToString());
 
             if (productToEdit != null)
             {
@@ -132,7 +132,46 @@ namespace HoneyZoneMvc.Services
             return false;
 
         }
+        public async Task<bool> AddCartProductAsync(CartProductDto cartProduct)
+        {
+            if (!dbContext.CartProducts.Any(cp=>cp.ProductId.ToString() == cartProduct.ProductId.ToString() && cp.ClientId.ToString() == cartProduct.BuyerId.ToString()))
+            {
+                await dbContext.CartProducts.AddAsync(new CartProduct()
+                {
+                    ProductId = cartProduct.ProductId,
+                    ClientId = cartProduct.BuyerId,
+                    Quantity = 1
 
+                });
+                return await dbContext.SaveChangesAsync() > 0;
+            }
+            return false;
+           
+        }
+
+        public async Task<IEnumerable<ProductCartViewModel>> GetUserCartAsync(string Id)
+        {
+            var carProducts = await dbContext.CartProducts
+                .Include(cp => cp.Product)
+                .AsNoTracking()
+                .Where(cp => cp.ClientId.ToString() == Id)
+                .Select(cp=>new ProductCartViewModel()
+                {
+                    Id=cp.Product.Id,
+                    Name=cp.Product.Name,
+                    MainImageName=cp.Product.MainImageName,
+                    Price=cp.Product.Price,
+                    ProductAmount=cp.Product.ProductAmount,
+                    Quantity=1
+                })
+                .ToListAsync();
+
+            if (carProducts != null)
+            {
+                return carProducts;
+            }
+            else { throw new Exception(); }///HERE!!
+        }
         //Private methods
         private async Task<Product> TransformProduct(ProductDto productDto)
         {
@@ -161,5 +200,7 @@ namespace HoneyZoneMvc.Services
                 MainImageName = product.MainImageName
             };
         }
+
+        
     }
 }

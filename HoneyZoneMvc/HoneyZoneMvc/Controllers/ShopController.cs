@@ -1,6 +1,8 @@
 ﻿using HoneyZoneMvc.Contracts;
+using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace HoneyZoneMvc.Controllers
 {
@@ -36,6 +38,31 @@ namespace HoneyZoneMvc.Controllers
 
             return View(productDto);
         }
-
+        [HttpGet]
+        public async Task<IActionResult> Cart(string Id)
+        {
+            bool successfull = await productService.AddCartProductAsync(new CartProductDto()
+            {
+                BuyerId = GetUserId(),
+                ProductId = Guid.Parse(Id)
+            });
+            
+            var productsInCart = await productService.GetUserCartAsync(GetUserId().ToString());
+            CartViewModel viewModel = new CartViewModel()
+            {
+                ClientId = GetUserId().ToString(),
+                Products = productsInCart.ToList()
+            };
+            return View(viewModel);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Order(List<PostProductCart> products)
+        {
+            return View();
+        }
+        private Guid GetUserId()
+        {
+           return Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+        }
     }
 }

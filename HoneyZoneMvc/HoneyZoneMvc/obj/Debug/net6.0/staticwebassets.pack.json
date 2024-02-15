@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\css\\back.png"
     },
     {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\School\\Projects\\Honey-Zone\\HoneyZoneMvc\\HoneyZoneMvc\\wwwroot\\css\\cart.css",
+      "PackagePath": "staticwebassets\\css\\cart.css"
+    },
+    {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\School\\Projects\\Honey-Zone\\HoneyZoneMvc\\HoneyZoneMvc\\wwwroot\\css\\description.css",
       "PackagePath": "staticwebassets\\css\\description.css"
     },

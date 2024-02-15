@@ -16,8 +16,6 @@ namespace HoneyZoneMvc.Data
         public DbSet<ImageName> ImageNames { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<CartProduct> CartProducts { get; set; }
-        public DbSet<OrderDetails> OrderDetails { get; set; }
-        public DbSet<Order> Orders { get; set; }
         public DbSet<DeliveryMethod> DeliverMethods{ get; set; }
 
 
@@ -25,8 +23,7 @@ namespace HoneyZoneMvc.Data
         {
             builder.Entity<CartProduct>()
                  .HasKey(cp => new { cp.ClientId, cp.ProductId });
-            builder.Entity<OrderDetails>()
-                 .HasKey(cp => new { cp.ProducId, cp.OrderId});
+           
 
             builder
                 .Entity<Category>()

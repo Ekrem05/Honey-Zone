@@ -40,17 +40,17 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b792153a-4dc0-4a23-b6ea-c567917689f0"),
+                            Id = new Guid("0031ecbf-3edf-4a2a-b429-390c4d116901"),
                             Name = "Мед"
                         },
                         new
                         {
-                            Id = new Guid("bb711621-62a0-4f21-93a5-9c36e9b9d0eb"),
+                            Id = new Guid("f29e685e-f218-4fce-8a8c-c76c35aad886"),
                             Name = "Прашец"
                         },
                         new
                         {
-                            Id = new Guid("75d3394c-f23a-4565-a97b-f381272fd10c"),
+                            Id = new Guid("5b07369e-0d0b-4e20-b730-5a4ce024f973"),
                             Name = "Сувенири"
                         });
                 });
@@ -70,80 +70,25 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.ToTable("DeliverMethods");
                 });
 
-            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Order", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("ClientId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("DeliveryMethodId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("DeliveryMethodId1")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("OrderDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("TotalSum")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClientId");
-
-                    b.HasIndex("DeliveryMethodId1");
-
-                    b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.OrderDetails", b =>
-                {
-                    b.Property<string>("ProducId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("OrderId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<Guid?>("OrderId1")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("ProducId", "OrderId");
-
-                    b.HasIndex("OrderId1");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("OrderDetails");
-                });
-
             modelBuilder.Entity("HoneyZoneMvc.Models.Entities.CartProduct", b =>
                 {
-                    b.Property<string>("ClientId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ProductId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<Guid?>("ProductId1")
+                    b.Property<Guid>("ClientId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ClientId1")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.HasKey("ClientId", "ProductId");
 
-                    b.HasIndex("ProductId1");
+                    b.HasIndex("ClientId1");
+
+                    b.HasIndex("ProductId");
 
                     b.ToTable("CartProducts");
                 });
@@ -422,51 +367,17 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Order", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Client")
-                        .WithMany()
-                        .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Entities.DeliveryMethod", "DeliveryMethod")
-                        .WithMany()
-                        .HasForeignKey("DeliveryMethodId1")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Client");
-
-                    b.Navigation("DeliveryMethod");
-                });
-
-            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.OrderDetails", b =>
-                {
-                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Order", "Order")
-                        .WithMany()
-                        .HasForeignKey("OrderId1");
-
-                    b.HasOne("HoneyZoneMvc.Models.Entities.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId");
-
-                    b.Navigation("Order");
-
-                    b.Navigation("Product");
-                });
-
             modelBuilder.Entity("HoneyZoneMvc.Models.Entities.CartProduct", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Client")
                         .WithMany()
-                        .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ClientId1");
 
                     b.HasOne("HoneyZoneMvc.Models.Entities.Product", "Product")
                         .WithMany()
-                        .HasForeignKey("ProductId1");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Client");
 

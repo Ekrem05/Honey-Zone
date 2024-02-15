@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace HoneyZoneMvc.Infrastructure.Migrations
 {
-    public partial class initial : Migration
+    public partial class orderss : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -204,56 +204,28 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Orders",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    TotalSum = table.Column<int>(type: "int", nullable: false),
-                    DeliveryMethodId = table.Column<int>(type: "int", nullable: false),
-                    DeliveryMethodId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ClientId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Orders", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Orders_AspNetUsers_ClientId",
-                        column: x => x.ClientId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Orders_DeliverMethods_DeliveryMethodId1",
-                        column: x => x.DeliveryMethodId1,
-                        principalTable: "DeliverMethods",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "CartProducts",
                 columns: table => new
                 {
-                    ProductId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    ClientId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    ProductId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ClientId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ClientId1 = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     Quantity = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CartProducts", x => new { x.ClientId, x.ProductId });
                     table.ForeignKey(
-                        name: "FK_CartProducts_AspNetUsers_ClientId",
-                        column: x => x.ClientId,
+                        name: "FK_CartProducts_AspNetUsers_ClientId1",
+                        column: x => x.ClientId1,
                         principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_CartProducts_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CartProducts_Products_ProductId1",
-                        column: x => x.ProductId1,
-                        principalTable: "Products",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -276,45 +248,20 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "OrderDetails",
-                columns: table => new
-                {
-                    ProducId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    OrderId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    OrderId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    Quantity = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_OrderDetails", x => new { x.ProducId, x.OrderId });
-                    table.ForeignKey(
-                        name: "FK_OrderDetails_Orders_OrderId1",
-                        column: x => x.OrderId1,
-                        principalTable: "Orders",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_OrderDetails_Products_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Products",
-                        principalColumn: "Id");
-                });
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { new Guid("0031ecbf-3edf-4a2a-b429-390c4d116901"), "Мед" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "Name" },
-                values: new object[] { new Guid("75d3394c-f23a-4565-a97b-f381272fd10c"), "Сувенири" });
+                values: new object[] { new Guid("5b07369e-0d0b-4e20-b730-5a4ce024f973"), "Сувенири" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "Name" },
-                values: new object[] { new Guid("b792153a-4dc0-4a23-b6ea-c567917689f0"), "Мед" });
-
-            migrationBuilder.InsertData(
-                table: "Categories",
-                columns: new[] { "Id", "Name" },
-                values: new object[] { new Guid("bb711621-62a0-4f21-93a5-9c36e9b9d0eb"), "Прашец" });
+                values: new object[] { new Guid("f29e685e-f218-4fce-8a8c-c76c35aad886"), "Прашец" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -356,34 +303,19 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CartProducts_ProductId1",
+                name: "IX_CartProducts_ClientId1",
                 table: "CartProducts",
-                column: "ProductId1");
+                column: "ClientId1");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CartProducts_ProductId",
+                table: "CartProducts",
+                column: "ProductId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ImageNames_ProductId",
                 table: "ImageNames",
                 column: "ProductId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_OrderDetails_OrderId1",
-                table: "OrderDetails",
-                column: "OrderId1");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_OrderDetails_ProductId",
-                table: "OrderDetails",
-                column: "ProductId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Orders_ClientId",
-                table: "Orders",
-                column: "ClientId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Orders_DeliveryMethodId1",
-                table: "Orders",
-                column: "DeliveryMethodId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_CategoryId1",
@@ -412,25 +344,19 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 name: "CartProducts");
 
             migrationBuilder.DropTable(
-                name: "ImageNames");
+                name: "DeliverMethods");
 
             migrationBuilder.DropTable(
-                name: "OrderDetails");
+                name: "ImageNames");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Orders");
-
-            migrationBuilder.DropTable(
-                name: "Products");
-
-            migrationBuilder.DropTable(
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "DeliverMethods");
+                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "Categories");

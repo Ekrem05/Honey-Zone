@@ -1,0 +1,34 @@
+﻿@using HoneyZoneMvc.Infrastructure.Data.Models
+@model CartViewModel
+
+
+    <div class="cart-container">
+        <form asp-action="Order" method="post">
+
+        <section class="products-cart">
+            @{
+                foreach (var item in Model.Products)
+                {
+                    <div class="product-container">
+                        <img src="~/productImages/@item.MainImageName" alt="" />
+                        <input class="product-name" type="hidden" name="products[@item.Id].Id" value="@item.Id" />
+                        <input type="text" name="products[@item.Id].Name" value="@item.Name" />
+                        <input type="number" name="products[@item.Id].Price" value="@item.Price" />
+                        <input class="quantity" type="number" name="products[@item.Id].Quantity" value="@item.Quantity" />
+
+                           
+                    </div>
+                }
+            }
+        </section>
+        <section class="aside-checkout">
+            <h2>
+                Обща сметка <span @Model.Products.Select(p=>p.Price).Sum()</span>
+            </h2>
+            <button type="submit" class="btn btn-success">Поръчай!</button>
+        </section>
+
+        </form>
+        
+
+    </div>

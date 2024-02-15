@@ -1,0 +1,17 @@
+.cart-container{
+    width:95%;
+}
+.product-container img{
+    width:90px;
+}
+.product-container{
+    display:flex;
+    justify-content:space-around;
+    background-color:antiquewhite;
+    padding:0.3em;
+}
+.products-cart {
+    display: flex;
+    gap:1em;
+    flex-direction: column;
+}

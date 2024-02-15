@@ -8,11 +8,11 @@ namespace HoneyZoneMvc.Models.Entities
     public class CartProduct
     {
         [ForeignKey(nameof(ProductId))]
-        public string ProductId { get; set; }
+        public Guid ProductId { get; set; }
         public Product Product { get; set; }
 
         [Required]
-        public string ClientId { get; set; }
+        public Guid ClientId { get; set; }
         public IdentityUser Client { get; set; }
 
         [Required]

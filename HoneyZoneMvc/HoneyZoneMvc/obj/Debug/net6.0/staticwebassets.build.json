@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "q6qQesnOu6O4oI4MkIzuAOmh8ZCF4wtEHe+2SyzwTzE=",
+  "Hash": "0wVKLRZXFGG4SBPHSjUgazzN2u1czEPFMptzjH2jBj0=",
   "Source": "HoneyZoneMvc",
   "BasePath": "_content/HoneyZoneMvc",
   "Mode": "Default",
@@ -1269,6 +1269,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\back.png"
+    },
+    {
+      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\School\\Projects\\Honey-Zone\\HoneyZoneMvc\\HoneyZoneMvc\\wwwroot\\css\\cart.css",
+      "SourceId": "HoneyZoneMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\School\\Projects\\Honey-Zone\\HoneyZoneMvc\\HoneyZoneMvc\\wwwroot\\",
+      "BasePath": "_content/HoneyZoneMvc",
+      "RelativePath": "css/cart.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\cart.css"
     },
     {
       "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\School\\Projects\\Honey-Zone\\HoneyZoneMvc\\HoneyZoneMvc\\wwwroot\\css\\description.css",
