@@ -16,7 +16,7 @@ namespace HoneyZoneMvc.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<CartProduct> CartProducts { get; set; }
         public DbSet<DeliveryMethod> DeliverMethods { get; set; }
-        public DbSet<Order> Order { get; set; }
+        public DbSet<Order> Orders { get; set; }
         public DbSet<State> States { get; set; }
 
 
@@ -43,6 +43,23 @@ namespace HoneyZoneMvc.Data
                     Id = Guid.NewGuid(),
                     Name = "Сувенири"
                 });
+            builder
+               .Entity<DeliveryMethod>()
+               .HasData(new DeliveryMethod()
+               {
+                   Id = Guid.NewGuid(),
+                   Name = "Спиди"
+               },
+               new DeliveryMethod()
+               {
+                   Id = Guid.NewGuid(),
+                   Name = "Eконт"
+               },
+               new DeliveryMethod()
+               {
+                   Id = Guid.NewGuid(),
+                   Name = "Сувенири"
+               });
             builder
                .Entity<State>()
                .HasData(new State()

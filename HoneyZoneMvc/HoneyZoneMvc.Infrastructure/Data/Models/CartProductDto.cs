@@ -2,7 +2,8 @@
 {
     public class CartProductDto
     {
-        public Guid ProductId { get; set; }
-        public Guid BuyerId { get; set; }
+        public string ProductId { get; set; }
+        public string BuyerId { get; set; }
+        public int Quantity { get; set; }
     }
 }

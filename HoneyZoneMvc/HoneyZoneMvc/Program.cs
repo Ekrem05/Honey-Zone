@@ -1,6 +1,5 @@
-using HoneyZoneMvc.BusinessLogic.Contracts;
+using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.BusinessLogic.Services;
-using HoneyZoneMvc.Contracts;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Services;
 using Microsoft.AspNetCore.Identity;
@@ -30,6 +29,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICartProductService, CartProductService>();
+builder.Services.AddScoped<IDeliveryService, DeliveryService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IStateService, StateService>();
 
 
 var app = builder.Build();

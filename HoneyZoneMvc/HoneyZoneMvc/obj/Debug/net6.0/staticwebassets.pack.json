@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\School\\Projects\\Honey-Zone\\HoneyZoneMvc\\HoneyZoneMvc\\wwwroot\\css\\orderForm.css",
+      "PackagePath": "staticwebassets\\css\\orderForm.css"
+    },
+    {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\School\\Projects\\Honey-Zone\\HoneyZoneMvc\\HoneyZoneMvc\\wwwroot\\css\\picture-quote.css",
       "PackagePath": "staticwebassets\\css\\picture-quote.css"
     },

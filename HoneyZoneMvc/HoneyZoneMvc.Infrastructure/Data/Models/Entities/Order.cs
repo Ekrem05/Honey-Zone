@@ -11,7 +11,7 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models.Entities
         public Guid Id { get; set; }
 
         [Required]
-        public int TotalSum { get; set; }
+        public double TotalSum { get; set; }
 
         [ForeignKey(nameof(DeliveryMethodId))]
         public Guid DeliveryMethodId { get; set; }
@@ -35,5 +35,6 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models.Entities
         public Guid OrderDetailId { get; set; }
         public OrderDetail OrderDetail { get; set; }
 
+        public ICollection<OrderProduct> OrderProducts { get; set; }=new HashSet<OrderProduct>();
     }
 }

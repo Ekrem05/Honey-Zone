@@ -1,5 +1,5 @@
 ﻿
-using HoneyZoneMvc.Contracts;
+using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Messages;
@@ -139,7 +139,7 @@ namespace HoneyZoneMvc.Services
             var carProducts = await dbContext.CartProducts
                 .Include(cp => cp.Product)
                 .AsNoTracking()
-                .Where(cp => cp.ClientId.ToString() == Id)
+                .Where(cp => cp.ClientId == Id)
                 .Select(cp => new ProductCartViewModel()
                 {
                     Id = cp.Product.Id,

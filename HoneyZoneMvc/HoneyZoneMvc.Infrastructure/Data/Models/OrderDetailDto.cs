@@ -1,11 +1,5 @@
-﻿using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HoneyZoneMvc.Infrastructure.Data.Models
 {
@@ -31,6 +25,9 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models
 
         [Required]
         public string Address { get; set; }
+
+        [Required]
+        public string DeliveryMethodId{ get; set; }
 
         public ICollection<DeliveryMethodDto> DeliveryMethods { get; set; }
     }

@@ -1,6 +1,6 @@
 ﻿using HoneyZoneMvc.Infrastructure.Data.Models;
 
-namespace HoneyZoneMvc.Contracts
+namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {
     public interface ICategoryService
     {

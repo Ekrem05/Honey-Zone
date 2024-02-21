@@ -40,17 +40,17 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4e3b473f-d0b5-435a-9ae7-37a48d7d25a8"),
+                            Id = new Guid("eb2aecdd-7815-49aa-973b-ee3173760fc5"),
                             Name = "Мед"
                         },
                         new
                         {
-                            Id = new Guid("c6fbb2c4-92ac-484c-a05a-7a434b4082a1"),
+                            Id = new Guid("c7d08da8-a5af-4596-8ad2-d0f99091297f"),
                             Name = "Прашец"
                         },
                         new
                         {
-                            Id = new Guid("162fdd66-1ad2-436c-8b22-82ff109eeb8b"),
+                            Id = new Guid("78355d47-6040-4676-9972-ac8be4f19882"),
                             Name = "Сувенири"
                         });
                 });
@@ -68,6 +68,23 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("DeliverMethods");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("bb16f6ae-90ce-464b-9d03-495e2fdee0b6"),
+                            Name = "Спиди"
+                        },
+                        new
+                        {
+                            Id = new Guid("d0edf55a-b9ce-4847-a04f-e084e1948f7a"),
+                            Name = "Eконт"
+                        },
+                        new
+                        {
+                            Id = new Guid("94e4b658-7955-48bb-a851-03ecb97163fd"),
+                            Name = "Сувенири"
+                        });
                 });
 
             modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Order", b =>
@@ -89,11 +106,14 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid>("OrderDetailId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid>("StateId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("TotalSum")
-                        .HasColumnType("int");
+                    b.Property<double>("TotalSum")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
@@ -101,9 +121,73 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
 
                     b.HasIndex("DeliveryMethodId");
 
+                    b.HasIndex("OrderDetailId");
+
                     b.HasIndex("StateId");
 
-                    b.ToTable("Order");
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.OrderDetail", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SecondName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ZipCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("OrderDetail");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.OrderProduct", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("OrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderProduct");
                 });
 
             modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.State", b =>
@@ -123,27 +207,27 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("d41a757f-bccc-424a-b32c-3f62ea829285"),
+                            Id = new Guid("6db2d05f-6b20-4d14-8d38-53058a5ad1af"),
                             Name = "Получена"
                         },
                         new
                         {
-                            Id = new Guid("a5160ae9-5a51-44d6-abeb-d4e3bc5263bd"),
+                            Id = new Guid("f9eb7f5e-5125-4542-9a60-544a52a3d157"),
                             Name = "В обработка"
                         },
                         new
                         {
-                            Id = new Guid("b49a3c36-04d8-4ca2-8981-8f63aee843c8"),
+                            Id = new Guid("5d0ac772-6050-4564-93f3-f355d5cc57e4"),
                             Name = "Изпратена"
                         },
                         new
                         {
-                            Id = new Guid("1ea5dcbc-ca92-4275-b1f6-8090be75721a"),
+                            Id = new Guid("d43d8b64-7474-4765-9e61-3776147dbc32"),
                             Name = "Доставена"
                         },
                         new
                         {
-                            Id = new Guid("96988d66-70c2-40fe-89aa-cacc2b4a89bd"),
+                            Id = new Guid("684c9b34-9646-4053-b871-651f59065da8"),
                             Name = "Отменена"
                         });
                 });
@@ -451,6 +535,12 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Entities.OrderDetail", "OrderDetail")
+                        .WithMany()
+                        .HasForeignKey("OrderDetailId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Entities.State", "State")
                         .WithMany()
                         .HasForeignKey("StateId")
@@ -461,7 +551,24 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
 
                     b.Navigation("DeliveryMethod");
 
+                    b.Navigation("OrderDetail");
+
                     b.Navigation("State");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.OrderProduct", b =>
+                {
+                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Order", null)
+                        .WithMany("OrderProducts")
+                        .HasForeignKey("OrderId");
+
+                    b.HasOne("HoneyZoneMvc.Models.Entities.Product", "Product")
+                        .WithMany("OrderProducts")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("HoneyZoneMvc.Models.Entities.CartProduct", b =>
@@ -473,7 +580,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         .IsRequired();
 
                     b.HasOne("HoneyZoneMvc.Models.Entities.Product", "Product")
-                        .WithMany()
+                        .WithMany("CartProducts")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -564,6 +671,18 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
             modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.DeliveryMethod", b =>
                 {
                     b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Order", b =>
+                {
+                    b.Navigation("OrderProducts");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.Product", b =>
+                {
+                    b.Navigation("CartProducts");
+
+                    b.Navigation("OrderProducts");
                 });
 #pragma warning restore 612, 618
         }
