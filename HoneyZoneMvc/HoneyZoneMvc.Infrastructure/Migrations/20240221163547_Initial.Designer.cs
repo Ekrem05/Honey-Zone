@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HoneyZoneMvc.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240220160546_initial")]
-    partial class initial
+    [Migration("20240221163547_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -42,17 +42,17 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4e3b473f-d0b5-435a-9ae7-37a48d7d25a8"),
+                            Id = new Guid("78355d47-6040-4676-9972-ac8be4f19882"),
                             Name = "Мед"
                         },
                         new
                         {
-                            Id = new Guid("c6fbb2c4-92ac-484c-a05a-7a434b4082a1"),
+                            Id = new Guid("c7d08da8-a5af-4596-8ad2-d0f99091297f"),
                             Name = "Прашец"
                         },
                         new
                         {
-                            Id = new Guid("162fdd66-1ad2-436c-8b22-82ff109eeb8b"),
+                            Id = new Guid("eb2aecdd-7815-49aa-973b-ee3173760fc5"),
                             Name = "Сувенири"
                         });
                 });
@@ -70,6 +70,18 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("DeliverMethods");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("2e964223-1ffd-4944-9b6f-c991971ddeb9"),
+                            Name = "Спиди"
+                        },
+                        new
+                        {
+                            Id = new Guid("5229b29d-b3b8-4567-a4c8-16ec1d65e23f"),
+                            Name = "Eконт"
+                        });
                 });
 
             modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Order", b =>
@@ -91,11 +103,14 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid>("OrderDetailId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid>("StateId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("TotalSum")
-                        .HasColumnType("int");
+                    b.Property<double>("TotalSum")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
@@ -103,9 +118,73 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
 
                     b.HasIndex("DeliveryMethodId");
 
+                    b.HasIndex("OrderDetailId");
+
                     b.HasIndex("StateId");
 
-                    b.ToTable("Order");
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.OrderDetail", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SecondName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ZipCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("OrderDetail");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.OrderProduct", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("OrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderProduct");
                 });
 
             modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.State", b =>
@@ -125,27 +204,27 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("d41a757f-bccc-424a-b32c-3f62ea829285"),
+                            Id = new Guid("9eda2912-7d4e-4654-aa34-060ec8764c33"),
                             Name = "Получена"
                         },
                         new
                         {
-                            Id = new Guid("a5160ae9-5a51-44d6-abeb-d4e3bc5263bd"),
+                            Id = new Guid("c133f62f-6ba4-4ea2-9f77-8e2be222a94c"),
                             Name = "В обработка"
                         },
                         new
                         {
-                            Id = new Guid("b49a3c36-04d8-4ca2-8981-8f63aee843c8"),
+                            Id = new Guid("8e2b2253-4f64-4284-9a7a-3160966a2393"),
                             Name = "Изпратена"
                         },
                         new
                         {
-                            Id = new Guid("1ea5dcbc-ca92-4275-b1f6-8090be75721a"),
+                            Id = new Guid("b2fb9eaf-8742-4c75-922f-bd12cf6e9d8d"),
                             Name = "Доставена"
                         },
                         new
                         {
-                            Id = new Guid("96988d66-70c2-40fe-89aa-cacc2b4a89bd"),
+                            Id = new Guid("cee0d4ae-17f2-4c72-ab25-07b63ba42a2f"),
                             Name = "Отменена"
                         });
                 });
@@ -235,6 +314,41 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("eba860d5-7637-432a-8f3d-977462e7ec28"),
+                            CategoryId = new Guid("78355d47-6040-4676-9972-ac8be4f19882"),
+                            Description = "Слънчогледовият мед е уникален продукт, получен от нектара на цветовете на слънчогледа. Този вид мед се отличава с лек, сладък вкус и ярко златист цвят. Ароматът му е нежен и приятен, с леки оттенъци на цветя. Слънчогледовият мед често се характеризира със средна до по-плътна консистенция и може да кристализира с времето, образувайки фини кристали. Този процес не влияе на качествата на меда и може бързо да се възстанови до течно състояние с леко загряване.",
+                            MainImageName = "bg honey2.png",
+                            Name = "Слънчогледов мед",
+                            Price = 19.989999999999998,
+                            ProductAmount = "800г",
+                            QuantityInStock = 82
+                        },
+                        new
+                        {
+                            Id = new Guid("3e40578b-9e10-41a8-9c85-7f819aa7372e"),
+                            CategoryId = new Guid("78355d47-6040-4676-9972-ac8be4f19882"),
+                            Description = "Акациевият мед е светъл и благороден, със свеж и деликатен вкус. Произведен от цветята на акацията, този мед е изключително чист и прозрачен. Сладък аромат и лека консистенция правят акациевия мед предпочитан избор. Също така се цени за потенциалните му благоприятни върху здравето свойства, като антибактериални и противовъзпалителни ефекти. Възможно е да бъде употребяван самостоятелно или като добавка към различни ястия и напитки.",
+                            MainImageName = "attachment_86137655.jpg",
+                            Name = "Акациев мед",
+                            Price = 25.989999999999998,
+                            ProductAmount = "1кг",
+                            QuantityInStock = 27
+                        },
+                        new
+                        {
+                            Id = new Guid("a72d7161-1793-4476-8746-ff61bcd85c0e"),
+                            CategoryId = new Guid("c7d08da8-a5af-4596-8ad2-d0f99091297f"),
+                            Description = "Горският прашец е пчелен продукт, събран от пчели в горите от различни дървесни видове. Той е плътен и карамелен по цвят, с интензивен аромат и сладък вкус. Горският прашец е известен със своите богати хранителни и лечебни свойства, като се счита за естествен източник на витамини, минерали и антиоксиданти. Често се използва като добавка към храна или напитки за подобряване на имунната система и засилване на енергията.",
+                            MainImageName = "bee-pollen-2549125_1280.jpg",
+                            Name = "Горски прашец",
+                            Price = 55.990000000000002,
+                            ProductAmount = "2кг",
+                            QuantityInStock = 102
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -453,6 +567,12 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Entities.OrderDetail", "OrderDetail")
+                        .WithMany()
+                        .HasForeignKey("OrderDetailId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Entities.State", "State")
                         .WithMany()
                         .HasForeignKey("StateId")
@@ -463,7 +583,24 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
 
                     b.Navigation("DeliveryMethod");
 
+                    b.Navigation("OrderDetail");
+
                     b.Navigation("State");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.OrderProduct", b =>
+                {
+                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Order", null)
+                        .WithMany("OrderProducts")
+                        .HasForeignKey("OrderId");
+
+                    b.HasOne("HoneyZoneMvc.Models.Entities.Product", "Product")
+                        .WithMany("OrderProducts")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("HoneyZoneMvc.Models.Entities.CartProduct", b =>
@@ -475,7 +612,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         .IsRequired();
 
                     b.HasOne("HoneyZoneMvc.Models.Entities.Product", "Product")
-                        .WithMany()
+                        .WithMany("CartProducts")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -566,6 +703,18 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
             modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.DeliveryMethod", b =>
                 {
                     b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Order", b =>
+                {
+                    b.Navigation("OrderProducts");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.Product", b =>
+                {
+                    b.Navigation("CartProducts");
+
+                    b.Navigation("OrderProducts");
                 });
 #pragma warning restore 612, 618
         }

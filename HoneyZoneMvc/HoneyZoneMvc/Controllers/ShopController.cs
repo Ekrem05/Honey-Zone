@@ -3,6 +3,7 @@ using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
 using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
 using HoneyZoneMvc.Models.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -60,6 +61,7 @@ namespace HoneyZoneMvc.Controllers
             var productsInCart = await productService.GetUserCartAsync(GetUserId().ToString());
             return View(productsInCart);
         }
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> AddToCart(string Id)
         {

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace HoneyZoneMvc.Infrastructure.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -70,6 +70,24 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DeliverMethods", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "OrderDetail",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SecondName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ZipCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OrderDetail", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -215,34 +233,41 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Order",
+                name: "Orders",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    TotalSum = table.Column<int>(type: "int", nullable: false),
+                    TotalSum = table.Column<double>(type: "float", nullable: false),
                     DeliveryMethodId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ClientId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ExpectedDelivery = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    StateId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    StateId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    OrderDetailId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Order", x => x.Id);
+                    table.PrimaryKey("PK_Orders", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Order_AspNetUsers_ClientId",
+                        name: "FK_Orders_AspNetUsers_ClientId",
                         column: x => x.ClientId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Order_DeliverMethods_DeliveryMethodId",
+                        name: "FK_Orders_DeliverMethods_DeliveryMethodId",
                         column: x => x.DeliveryMethodId,
                         principalTable: "DeliverMethods",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Order_States_StateId",
+                        name: "FK_Orders_OrderDetail_OrderDetailId",
+                        column: x => x.OrderDetailId,
+                        principalTable: "OrderDetail",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Orders_States_StateId",
                         column: x => x.StateId,
                         principalTable: "States",
                         principalColumn: "Id",
@@ -294,14 +319,48 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "OrderProduct",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    OrderId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OrderProduct", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_OrderProduct_Orders_OrderId",
+                        column: x => x.OrderId,
+                        principalTable: "Orders",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_OrderProduct_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("162fdd66-1ad2-436c-8b22-82ff109eeb8b"), "Сувенири" },
-                    { new Guid("4e3b473f-d0b5-435a-9ae7-37a48d7d25a8"), "Мед" },
-                    { new Guid("c6fbb2c4-92ac-484c-a05a-7a434b4082a1"), "Прашец" }
+                    { new Guid("78355d47-6040-4676-9972-ac8be4f19882"), "Мед" },
+                    { new Guid("c7d08da8-a5af-4596-8ad2-d0f99091297f"), "Прашец" },
+                    { new Guid("eb2aecdd-7815-49aa-973b-ee3173760fc5"), "Сувенири" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "DeliverMethods",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { new Guid("2e964223-1ffd-4944-9b6f-c991971ddeb9"), "Спиди" },
+                    { new Guid("5229b29d-b3b8-4567-a4c8-16ec1d65e23f"), "Eконт" }
                 });
 
             migrationBuilder.InsertData(
@@ -309,12 +368,27 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("1ea5dcbc-ca92-4275-b1f6-8090be75721a"), "Доставена" },
-                    { new Guid("96988d66-70c2-40fe-89aa-cacc2b4a89bd"), "Отменена" },
-                    { new Guid("a5160ae9-5a51-44d6-abeb-d4e3bc5263bd"), "В обработка" },
-                    { new Guid("b49a3c36-04d8-4ca2-8981-8f63aee843c8"), "Изпратена" },
-                    { new Guid("d41a757f-bccc-424a-b32c-3f62ea829285"), "Получена" }
+                    { new Guid("8e2b2253-4f64-4284-9a7a-3160966a2393"), "Изпратена" },
+                    { new Guid("9eda2912-7d4e-4654-aa34-060ec8764c33"), "Получена" },
+                    { new Guid("b2fb9eaf-8742-4c75-922f-bd12cf6e9d8d"), "Доставена" },
+                    { new Guid("c133f62f-6ba4-4ea2-9f77-8e2be222a94c"), "В обработка" },
+                    { new Guid("cee0d4ae-17f2-4c72-ab25-07b63ba42a2f"), "Отменена" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "Description", "MainImageName", "Name", "Price", "ProductAmount", "QuantityInStock" },
+                values: new object[] { new Guid("3e40578b-9e10-41a8-9c85-7f819aa7372e"), new Guid("78355d47-6040-4676-9972-ac8be4f19882"), "Акациевият мед е светъл и благороден, със свеж и деликатен вкус. Произведен от цветята на акацията, този мед е изключително чист и прозрачен. Сладък аромат и лека консистенция правят акациевия мед предпочитан избор. Също така се цени за потенциалните му благоприятни върху здравето свойства, като антибактериални и противовъзпалителни ефекти. Възможно е да бъде употребяван самостоятелно или като добавка към различни ястия и напитки.", "attachment_86137655.jpg", "Акациев мед", 25.989999999999998, "1кг", 27 });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "Description", "MainImageName", "Name", "Price", "ProductAmount", "QuantityInStock" },
+                values: new object[] { new Guid("a72d7161-1793-4476-8746-ff61bcd85c0e"), new Guid("c7d08da8-a5af-4596-8ad2-d0f99091297f"), "Горският прашец е пчелен продукт, събран от пчели в горите от различни дървесни видове. Той е плътен и карамелен по цвят, с интензивен аромат и сладък вкус. Горският прашец е известен със своите богати хранителни и лечебни свойства, като се счита за естествен източник на витамини, минерали и антиоксиданти. Често се използва като добавка към храна или напитки за подобряване на имунната система и засилване на енергията.", "bee-pollen-2549125_1280.jpg", "Горски прашец", 55.990000000000002, "2кг", 102 });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "Description", "MainImageName", "Name", "Price", "ProductAmount", "QuantityInStock" },
+                values: new object[] { new Guid("eba860d5-7637-432a-8f3d-977462e7ec28"), new Guid("78355d47-6040-4676-9972-ac8be4f19882"), "Слънчогледовият мед е уникален продукт, получен от нектара на цветовете на слънчогледа. Този вид мед се отличава с лек, сладък вкус и ярко златист цвят. Ароматът му е нежен и приятен, с леки оттенъци на цветя. Слънчогледовият мед често се характеризира със средна до по-плътна консистенция и може да кристализира с времето, образувайки фини кристали. Този процес не влияе на качествата на меда и може бързо да се възстанови до течно състояние с леко загряване.", "bg honey2.png", "Слънчогледов мед", 19.989999999999998, "800г", 82 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -366,18 +440,33 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Order_ClientId",
-                table: "Order",
+                name: "IX_OrderProduct_OrderId",
+                table: "OrderProduct",
+                column: "OrderId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderProduct_ProductId",
+                table: "OrderProduct",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_ClientId",
+                table: "Orders",
                 column: "ClientId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Order_DeliveryMethodId",
-                table: "Order",
+                name: "IX_Orders_DeliveryMethodId",
+                table: "Orders",
                 column: "DeliveryMethodId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Order_StateId",
-                table: "Order",
+                name: "IX_Orders_OrderDetailId",
+                table: "Orders",
+                column: "OrderDetailId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_StateId",
+                table: "Orders",
                 column: "StateId");
 
             migrationBuilder.CreateIndex(
@@ -410,10 +499,13 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 name: "ImageNames");
 
             migrationBuilder.DropTable(
-                name: "Order");
+                name: "OrderProduct");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "Orders");
 
             migrationBuilder.DropTable(
                 name: "Products");
@@ -423,6 +515,9 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "DeliverMethods");
+
+            migrationBuilder.DropTable(
+                name: "OrderDetail");
 
             migrationBuilder.DropTable(
                 name: "States");
