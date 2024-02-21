@@ -11,7 +11,6 @@ namespace HoneyZoneMvc.Contracts
         Task<bool> DeleteProductAsync(string Id);
         Task<ProductDto> GetProductByIdAsync(string Id);
         Task<IEnumerable<ProductDto>> GetProductsByCategoryAsync(string category);
-        Task<bool> AddCartProductAsync(CartProductDto cartProduct);
         Task<IEnumerable<ProductCartViewModel>> GetUserCartAsync(string id);
 
     }

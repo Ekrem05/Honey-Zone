@@ -1,10 +1,9 @@
 ﻿
+using HoneyZoneMvc.Constraints;
 using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using HoneyZoneMvc.Constraints;
 
 
 namespace HoneyZoneMvc.Models.Entities
@@ -18,12 +17,14 @@ namespace HoneyZoneMvc.Models.Entities
         [Comment("Product Name")]
         public string Name { get; set; }
 
+
         [Required]
         [ForeignKey(nameof(CategoryId))]
         [Comment("Category Identifier")]
-        public int CategoryId { get; set; }
+        public Guid CategoryId { get; set; }
+
         [Required]
-        public Category Category {  get; set; }
+        public Category Category { get; set; }
 
         [Required]
         [Comment("Product Price")]
@@ -47,9 +48,6 @@ namespace HoneyZoneMvc.Models.Entities
 
         [Required]
         public ICollection<ImageName> ImageNames = new List<ImageName>();
-
-        [Required]
-        public ICollection<OrderDetails> OrderDetails = new HashSet<OrderDetails>();
 
         [Required]
         public ICollection<CartProduct> CartProducts = new HashSet<CartProduct>();

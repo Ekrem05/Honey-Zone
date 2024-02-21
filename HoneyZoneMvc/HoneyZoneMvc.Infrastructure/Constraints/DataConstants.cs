@@ -22,7 +22,7 @@
             public const int NameMinValue = 3;
         }
 
-      
+
 
     }
 }

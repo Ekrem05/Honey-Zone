@@ -1,0 +1,48 @@
+﻿
+@using HoneyZoneMvc.Infrastructure.Data.Models
+@model OrderDetailDto
+<div>
+    <form asp-action="OrderConfirmed" method="post">
+
+        <div class="form-group order-names">
+            <input asp-for="FirstName" class="form-control" />
+            <label asp-for="FirstName" class="form-label">Име</label>
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+            <input asp-for="SecondName" class="form-control" />
+            <label asp-for="SecondName" class="form-label">Фамилия</label>
+            <span asp-validation-for="SecondName" class="text-danger"></span>
+        </div>
+        <div class="form-group other">
+            <input asp-for="PhoneNumber" class="form-control" />
+            <label asp-for="PhoneNumber" class="form-label">Телефонен номер</label>
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            <input asp-for="Email" class="form-control" />
+            <label asp-for="Email" class="form-label">Е-поща</label>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group address">
+            <input asp-for="Country" class="form-control" />
+            <label asp-for="Country" class="form-label">Град</label>
+            <span asp-validation-for="Country" class="text-danger"></span>
+            <input asp-for="Address" class="form-control" />
+            <label asp-for="Address" class="form-label">Адрес</label>
+            <span asp-validation-for="Address" class="text-danger"></span>
+            <input asp-for="ZipCode" class="form-control" />
+            <label asp-for="ZipCode" class="form-label">ZipCode</label>
+            <span asp-validation-for="ZipCode" class="text-danger"></span>
+        </div>
+        <div class="form-group deliveryMethods">
+            <label asp-for="DeliveryMethods" class="form-label">Доставчик</label>
+            <select asp-for="@Model.DeliveryMethods" class="form-control" aria-required="true">
+                <option disabled selected value="">Избери доставчик</option>
+                @foreach (var deliveryMethod in Model.DeliveryMethods)
+                {
+                    <option value="@deliveryMethod.Id">@deliveryMethod.Name</option>
+                }
+            </select>
+        </div>
+        <div>
+            <button type="submit" class="w-100 btn btn-lg btn-warning">Завърши поръчка</button>
+        </div>
+    </form>
+</div>

@@ -1,11 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics.CodeAnalysis;
 
 namespace HoneyZoneMvc.Infrastructure.Data.Models.Entities
 {
@@ -15,11 +11,10 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models.Entities
         public Guid Id { get; set; }
 
         [Required]
-        public int TotalSum{ get; set; }
+        public int TotalSum { get; set; }
 
         [ForeignKey(nameof(DeliveryMethodId))]
-        public int DeliveryMethodId { get; set; }
-        [Required]
+        public Guid DeliveryMethodId { get; set; }
         public DeliveryMethod DeliveryMethod { get; set; }
 
         [Required]
@@ -29,7 +24,16 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models.Entities
         [Required]
         public DateTime OrderDate { get; set; }
 
-        [Required]
-        public ICollection<OrderDetails> OrderDetails = new HashSet<OrderDetails>();
+        [AllowNull]
+        public DateTime ExpectedDelivery { get; set; }
+
+        [ForeignKey(nameof(StateId))]
+        public Guid StateId { get; set; }
+        public State State { get; set; }
+
+        [ForeignKey(nameof(OrderDetailId))]
+        public Guid OrderDetailId { get; set; }
+        public OrderDetail OrderDetail { get; set; }
+
     }
 }

@@ -1,3 +1,4 @@
+using HoneyZoneMvc.BusinessLogic.Contracts;
 using HoneyZoneMvc.BusinessLogic.Services;
 using HoneyZoneMvc.Contracts;
 using HoneyZoneMvc.Data;
@@ -28,6 +29,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ICartProductService, CartProductService>();
+
 
 var app = builder.Build();
 

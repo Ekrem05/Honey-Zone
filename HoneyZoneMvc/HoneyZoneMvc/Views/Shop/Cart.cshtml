@@ -1,29 +1,36 @@
 ﻿@using HoneyZoneMvc.Infrastructure.Data.Models
-@model CartViewModel
+@model IEnumerable<ProductCartViewModel>
 
 
     <div class="cart-container">
-        <form asp-action="Order" method="post">
+        <form asp-action="CartConfirmed" method="post">
 
         <section class="products-cart">
-            @{
-                foreach (var item in Model.Products)
+            
+                @for (var i = 0; i < Model.Count(); i++)
                 {
-                    <div class="product-container">
-                        <img src="~/productImages/@item.MainImageName" alt="" />
-                        <input class="product-name" type="hidden" name="products[@item.Id].Id" value="@item.Id" />
-                        <input type="text" name="products[@item.Id].Name" value="@item.Name" />
-                        <input type="number" name="products[@item.Id].Price" value="@item.Price" />
-                        <input class="quantity" type="number" name="products[@item.Id].Quantity" value="@item.Quantity" />
-
-                           
-                    </div>
+                    <section class="product-container">
+                        <input type="text" name="[@i].Id" value="@Model.ElementAt(i).Id" hidden />
+                        
+                            <label>@Model.ElementAt(i).Name</label>
+                       
+                        
+                            <img src="~/productImages/@Model.ElementAt(i).MainImageName" />
+                        
+                        
+                            <label>@Model.ElementAt(i).Price</label>
+                       
+                       
+                            <input type="number" name="[@i].Quantity" value="@Model.ElementAt(i).Quantity" />
+                       
+                    </section>
                 }
+          
             }
         </section>
-        <section class="aside-checkout">
+        <section class="aside-checkout bg-light">
             <h2>
-                Обща сметка <span @Model.Products.Select(p=>p.Price).Sum()</span>
+                Обща сметка <span @Model.Select(p=>p.Price).Sum()</span>
             </h2>
             <button type="submit" class="btn btn-success">Поръчай!</button>
         </section>

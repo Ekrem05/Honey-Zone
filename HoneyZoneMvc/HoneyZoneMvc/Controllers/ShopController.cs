@@ -1,4 +1,5 @@
-﻿using HoneyZoneMvc.Contracts;
+﻿using HoneyZoneMvc.BusinessLogic.Contracts;
+using HoneyZoneMvc.Contracts;
 using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -10,11 +11,14 @@ namespace HoneyZoneMvc.Controllers
     {
         private readonly IProductService productService;
         private readonly ICategoryService categoryService;
+        private readonly ICartProductService cartProductService;
 
-        public ShopController(IProductService _productService, ICategoryService _categoryService)
+
+        public ShopController(IProductService _productService, ICategoryService _categoryService,ICartProductService _cartProductService)
         {
             productService = _productService;
             categoryService = _categoryService;
+            cartProductService = _cartProductService;
         }
         [HttpGet]
         public async Task<IActionResult> Index(string? category)
@@ -41,28 +45,42 @@ namespace HoneyZoneMvc.Controllers
         [HttpGet]
         public async Task<IActionResult> Cart(string Id)
         {
-            bool successfull = await productService.AddCartProductAsync(new CartProductDto()
+            bool successfull = await cartProductService.AddCartProductAsync(new CartProductDto()
             {
                 BuyerId = GetUserId(),
                 ProductId = Guid.Parse(Id)
             });
-            
+
             var productsInCart = await productService.GetUserCartAsync(GetUserId().ToString());
-            CartViewModel viewModel = new CartViewModel()
-            {
-                ClientId = GetUserId().ToString(),
-                Products = productsInCart.ToList()
-            };
-            return View(viewModel);
+           
+            return View(productsInCart);
         }
         [HttpPost]
-        public async Task<IActionResult> Order(List<PostProductCart> products)
+        public async Task<IActionResult> CartConfirmed(List<PostProductCart> cartProducts)
         {
+            foreach (var cartProduct in cartProducts)
+            {
+                await cartProductService.UpdateQuantityAsync(cartProduct.Id, cartProduct.Quantity, GetUserId().ToString());
+            }
+
+            return RedirectToAction("Order");
+        }
+        [HttpGet]
+        public async Task<IActionResult> Order()
+        {
+            var orderDto = new OrderDetailDto();
+            orderDto.DeliveryMethods = GetDeliveryMethods();
             return View();
         }
+
+        private ICollection<DeliveryMethodDto> GetDeliveryMethods()
+        {
+            throw new NotImplementedException();
+        }
+
         private Guid GetUserId()
         {
-           return Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            return Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
         }
     }
 }

@@ -40,17 +40,17 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("0031ecbf-3edf-4a2a-b429-390c4d116901"),
+                            Id = new Guid("4e3b473f-d0b5-435a-9ae7-37a48d7d25a8"),
                             Name = "Мед"
                         },
                         new
                         {
-                            Id = new Guid("f29e685e-f218-4fce-8a8c-c76c35aad886"),
+                            Id = new Guid("c6fbb2c4-92ac-484c-a05a-7a434b4082a1"),
                             Name = "Прашец"
                         },
                         new
                         {
-                            Id = new Guid("5b07369e-0d0b-4e20-b730-5a4ce024f973"),
+                            Id = new Guid("162fdd66-1ad2-436c-8b22-82ff109eeb8b"),
                             Name = "Сувенири"
                         });
                 });
@@ -70,23 +70,96 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.ToTable("DeliverMethods");
                 });
 
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Order", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ClientId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("DeliveryMethodId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("ExpectedDelivery")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("StateId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("TotalSum")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClientId");
+
+                    b.HasIndex("DeliveryMethodId");
+
+                    b.HasIndex("StateId");
+
+                    b.ToTable("Order");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.State", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("States");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("d41a757f-bccc-424a-b32c-3f62ea829285"),
+                            Name = "Получена"
+                        },
+                        new
+                        {
+                            Id = new Guid("a5160ae9-5a51-44d6-abeb-d4e3bc5263bd"),
+                            Name = "В обработка"
+                        },
+                        new
+                        {
+                            Id = new Guid("b49a3c36-04d8-4ca2-8981-8f63aee843c8"),
+                            Name = "Изпратена"
+                        },
+                        new
+                        {
+                            Id = new Guid("1ea5dcbc-ca92-4275-b1f6-8090be75721a"),
+                            Name = "Доставена"
+                        },
+                        new
+                        {
+                            Id = new Guid("96988d66-70c2-40fe-89aa-cacc2b4a89bd"),
+                            Name = "Отменена"
+                        });
+                });
+
             modelBuilder.Entity("HoneyZoneMvc.Models.Entities.CartProduct", b =>
                 {
-                    b.Property<Guid>("ClientId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("ClientId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("ClientId1")
-                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.HasKey("ClientId", "ProductId");
-
-                    b.HasIndex("ClientId1");
 
                     b.HasIndex("ProductId");
 
@@ -122,12 +195,9 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int")
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("uniqueidentifier")
                         .HasComment("Category Identifier");
-
-                    b.Property<Guid>("CategoryId1")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -160,7 +230,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId1");
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
                 });
@@ -367,11 +437,40 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Order", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Client")
+                        .WithMany()
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Entities.DeliveryMethod", "DeliveryMethod")
+                        .WithMany("Orders")
+                        .HasForeignKey("DeliveryMethodId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Entities.State", "State")
+                        .WithMany()
+                        .HasForeignKey("StateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Client");
+
+                    b.Navigation("DeliveryMethod");
+
+                    b.Navigation("State");
+                });
+
             modelBuilder.Entity("HoneyZoneMvc.Models.Entities.CartProduct", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Client")
                         .WithMany()
-                        .HasForeignKey("ClientId1");
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("HoneyZoneMvc.Models.Entities.Product", "Product")
                         .WithMany()
@@ -399,7 +498,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 {
                     b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Category", "Category")
                         .WithMany("Products")
-                        .HasForeignKey("CategoryId1")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -460,6 +559,11 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
             modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Category", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.DeliveryMethod", b =>
+                {
+                    b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618
         }

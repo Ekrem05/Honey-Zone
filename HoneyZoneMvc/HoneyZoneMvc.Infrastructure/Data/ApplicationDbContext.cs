@@ -2,7 +2,6 @@
 using HoneyZoneMvc.Models.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
 namespace HoneyZoneMvc.Data
 {
     public class ApplicationDbContext : IdentityDbContext
@@ -12,18 +11,20 @@ namespace HoneyZoneMvc.Data
         {
         }
 
-        public DbSet<Product>Products { get; set; }
+        public DbSet<Product> Products { get; set; }
         public DbSet<ImageName> ImageNames { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<CartProduct> CartProducts { get; set; }
-        public DbSet<DeliveryMethod> DeliverMethods{ get; set; }
+        public DbSet<DeliveryMethod> DeliverMethods { get; set; }
+        public DbSet<Order> Order { get; set; }
+        public DbSet<State> States { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<CartProduct>()
                  .HasKey(cp => new { cp.ClientId, cp.ProductId });
-           
+
 
             builder
                 .Entity<Category>()
@@ -42,7 +43,34 @@ namespace HoneyZoneMvc.Data
                     Id = Guid.NewGuid(),
                     Name = "Сувенири"
                 });
-
+            builder
+               .Entity<State>()
+               .HasData(new State()
+               {
+                   Id = Guid.NewGuid(),
+                   Name = "Получена"
+               },
+               new State()
+               {
+                   Id = Guid.NewGuid(),
+                   Name = "В обработка"
+               },
+               new State()
+               {
+                   Id = Guid.NewGuid(),
+                   Name = "Изпратена"
+               },
+               new State()
+               {
+                   Id = Guid.NewGuid(),
+                   Name = "Доставена"
+               },
+               new State()
+               {
+                   Id = Guid.NewGuid(),
+                   Name = "Отменена"
+               });
+            
             base.OnModelCreating(builder);
         }
     }

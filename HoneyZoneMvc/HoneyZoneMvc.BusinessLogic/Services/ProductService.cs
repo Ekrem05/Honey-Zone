@@ -80,7 +80,7 @@ namespace HoneyZoneMvc.Services
         {
             var model = await dbContext.Products
                 .Include(p => p.Category)
-                .FirstOrDefaultAsync(p => p.Id.ToString()==Id);
+                .FirstOrDefaultAsync(p => p.Id.ToString() == Id);
 
             if (model != null)
             {
@@ -132,22 +132,7 @@ namespace HoneyZoneMvc.Services
             return false;
 
         }
-        public async Task<bool> AddCartProductAsync(CartProductDto cartProduct)
-        {
-            if (!dbContext.CartProducts.Any(cp=>cp.ProductId.ToString() == cartProduct.ProductId.ToString() && cp.ClientId.ToString() == cartProduct.BuyerId.ToString()))
-            {
-                await dbContext.CartProducts.AddAsync(new CartProduct()
-                {
-                    ProductId = cartProduct.ProductId,
-                    ClientId = cartProduct.BuyerId,
-                    Quantity = 1
-
-                });
-                return await dbContext.SaveChangesAsync() > 0;
-            }
-            return false;
-           
-        }
+       
 
         public async Task<IEnumerable<ProductCartViewModel>> GetUserCartAsync(string Id)
         {
@@ -155,14 +140,14 @@ namespace HoneyZoneMvc.Services
                 .Include(cp => cp.Product)
                 .AsNoTracking()
                 .Where(cp => cp.ClientId.ToString() == Id)
-                .Select(cp=>new ProductCartViewModel()
+                .Select(cp => new ProductCartViewModel()
                 {
-                    Id=cp.Product.Id,
-                    Name=cp.Product.Name,
-                    MainImageName=cp.Product.MainImageName,
-                    Price=cp.Product.Price,
-                    ProductAmount=cp.Product.ProductAmount,
-                    Quantity=1
+                    Id = cp.Product.Id,
+                    Name = cp.Product.Name,
+                    MainImageName = cp.Product.MainImageName,
+                    Price = cp.Product.Price,
+                    ProductAmount = cp.Product.ProductAmount,
+                    Quantity = 1
                 })
                 .ToListAsync();
 
@@ -201,6 +186,6 @@ namespace HoneyZoneMvc.Services
             };
         }
 
-        
+
     }
 }

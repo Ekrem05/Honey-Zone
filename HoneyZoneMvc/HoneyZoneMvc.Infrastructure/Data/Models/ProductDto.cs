@@ -27,7 +27,7 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models
         public string Description { get; set; }
 
         [Required]
-        [Range( DataConstants.Product.InStockMinValue, DataConstants.Product.InStockMaxValue, ErrorMessage = ProductInStockValueValidation)]
+        [Range(DataConstants.Product.InStockMinValue, DataConstants.Product.InStockMaxValue, ErrorMessage = ProductInStockValueValidation)]
         public int QuantityInStock { get; set; }
 
         [Required]
