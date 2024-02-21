@@ -19,16 +19,19 @@ public class AdminDataController : Controller
     [HttpGet]
     public async Task<IActionResult> Index()
     {
-        ProductViewModel vm = new ProductViewModel();
+        AdminViewModel vm = new AdminViewModel();
         vm.ProductDtos = await productService.GetAllProductsAsync();
         vm.CategoryDtos = await categoryService.GetAllCategoriesAsync();
+        vm.CategoryDtos = await categoryService.GetAllCategoriesAsync();
+        //GET ORDERS AND THEN DISPLAY THEM!
+        //ADD DOWNLOADING FUNCTIONALLITY DOWNLOAD Business stats profit etc.
         vm.ProductView = new ProductDto();
         return View(vm);
     }
 
     [HttpPost]
     [ActionName("AddProduct")]
-    public async Task<IActionResult> AddProductAsync(ProductViewModel productvm)
+    public async Task<IActionResult> AddProductAsync(AdminViewModel productvm)
     {
         if (await productService.AddProductAsync(productvm.ProductView))
         {
@@ -39,7 +42,7 @@ public class AdminDataController : Controller
     }
     [HttpPost]
     [ActionName("AddProductCategory")]
-    public async Task<IActionResult> AddProductCategoryAsync(ProductViewModel productvm)
+    public async Task<IActionResult> AddProductCategoryAsync(AdminViewModel productvm)
     {
         if (await categoryService.AddCategoryAsync(productvm.CategoryView))
         {
@@ -50,7 +53,7 @@ public class AdminDataController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> SubmitChanges(ProductViewModel productvm)
+    public async Task<IActionResult> SubmitChanges(AdminViewModel productvm)
     {
         if (ModelState.IsValid)
         {
