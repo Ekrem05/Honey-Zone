@@ -1,0 +1,34 @@
+﻿@using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
+@model IEnumerable<OrdersFromUserViewModel>
+
+<section class="products-cart">
+    <table class="table mb-10 mt-3 table-striped table-warning table-bordered border-warning table-hover table-md datatable mb-5" >
+        <thead>
+            <tr class="text-center">
+                <th scope="col">Поръчана на</th>
+                <th scope="col">Очаквана доставка на</th>
+                <th scope="col">Сума</th>
+                <th scope="col">Доставка чрез</th>
+                <th scope="col">Адрес</th>
+                <th scope="col">Статус на доставката</th>
+
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            @foreach (var order in Model)
+            {
+                <tr>
+                    <th scope="row" class="align-middle">@order.OrderDate</th>
+                    <td class="col-md-1">@order.ExpectedDelivery</td>
+                    <td class="col-md-1">@(order.TotalSum)лв.</td>
+                    <td>@order.DeliveryMethod</td>
+                    <td>@order.Address</td>
+                    <td>@order.State</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+  
+   
+    
+</section>

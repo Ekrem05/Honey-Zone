@@ -8,5 +8,7 @@ namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
     {
         Task<bool> AddAsync(string userId, double totalSum, string deliveryMethodId, OrderDetailDto orderDetailDto, List<OrderProduct> orderProducts);
         Task<IEnumerable<OrderBasicsViewModel>> GetAllOrdersAsync();
+        Task<IEnumerable<OrdersFromUserViewModel>> GetOrdersByUserIdAsync(string userId);
+
     }
 }

@@ -1,6 +1,7 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
+using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -34,11 +35,10 @@ namespace HoneyZoneMvc.Controllers
             return View(orderDto);
         }
         [HttpGet]
-        public async Task<IActionResult> GetOrders()
+        public async Task<IActionResult> MyOrders()
         {
-            var orderDto = new OrderDetailDto();
-            orderDto.DeliveryMethods = await GetDeliveryMethods();
-            return View(orderDto);
+            var orders = await orderService.GetOrdersByUserIdAsync(GetUserId().ToString());
+            return View(orders);
         }
         [HttpPost]
         public async Task<IActionResult> OrderConfirmed(OrderDetailDto dto)

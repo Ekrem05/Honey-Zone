@@ -77,5 +77,24 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 }).ToListAsync();
             return orders;
         }
+        public async Task<IEnumerable<OrdersFromUserViewModel>> GetOrdersByUserIdAsync(string userId)
+        {
+            return await dbContext.Orders
+                .Include(x => x.OrderDetail)
+                .Include(x => x.DeliveryMethod)
+                .Include(x => x.OrderProducts)
+                .Include(x => x.State)
+                .Where(x => x.ClientId == userId)
+                .Select(x => new OrdersFromUserViewModel()
+                {
+                   
+                    TotalSum = x.TotalSum.ToString(),
+                    DeliveryMethod = x.DeliveryMethod.Name,
+                    OrderDate = x.OrderDate.ToString(DataConstants.DateFormat),
+                    State = x.State.Name,
+                    Address = x.OrderDetail.Address,
+                    ExpectedDelivery = x.ExpectedDelivery.ToString(DataConstants.DateFormat),
+                }).ToListAsync();
+        }
     }
 }
