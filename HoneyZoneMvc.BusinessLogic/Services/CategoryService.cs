@@ -1,7 +1,7 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Data;
-using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
+using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
@@ -13,7 +13,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             dbContext = _dbContext;
         }
-        public async Task<bool> AddCategoryAsync(CategoryDto category)
+        public async Task<bool> AddCategoryAsync(CategoryAddViewModel category)
         {
             if (category == null)
             {
@@ -32,13 +32,13 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<CategoryDto>> GetAllCategoriesAsync()
+        public async Task<IEnumerable<CategoryAddViewModel>> GetAllCategoriesAsync()
         {
             var models = await dbContext.Categories.ToListAsync();
-            List<CategoryDto> categoryDto = new List<CategoryDto>();
+            List<CategoryAddViewModel> categoryDto = new List<CategoryAddViewModel>();
             foreach (var category in models)
             {
-                categoryDto.Add(new CategoryDto()
+                categoryDto.Add(new CategoryAddViewModel()
                 {
                     Id = category.Id,
                     Name = category.Name
@@ -46,17 +46,17 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             }
             return categoryDto;
         }
-
-        public async Task<CategoryDto> GetCategoryByName(string name)
+        public async Task<CategoryAddViewModel> GetCategoryById(string id)
         {
-            CategoryDto dto = new CategoryDto();
-            var model = await dbContext.Categories.FirstOrDefaultAsync(c => c.Name == name);
+            CategoryAddViewModel dto = new CategoryAddViewModel();
+            var model = await dbContext.Categories.FirstOrDefaultAsync(c => c.Id.ToString() == id);
             dto.Id = model.Id;
             dto.Name = model.Name;
             return dto;
         }
+       
 
-        public Task<bool> UpdateCategoryAsync(CategoryDto category)
+        public Task<bool> UpdateCategoryAsync(CategoryAddViewModel category)
         {
             throw new NotImplementedException();
         }

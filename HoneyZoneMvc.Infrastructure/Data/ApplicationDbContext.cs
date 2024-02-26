@@ -2,6 +2,7 @@
 using HoneyZoneMvc.Models.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
 namespace HoneyZoneMvc.Data
 {
     public class ApplicationDbContext : IdentityDbContext
@@ -12,11 +13,12 @@ namespace HoneyZoneMvc.Data
         }
 
         public DbSet<Product> Products { get; set; }
-        public DbSet<ImageName> ImageNames { get; set; }
+        public DbSet<ImageUrl> ImageUrls { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<CartProduct> CartProducts { get; set; }
         public DbSet<DeliveryMethod> DeliverMethods { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderProduct> OrderProducts { get; set; }
         public DbSet<State> States { get; set; }
 
 
@@ -25,6 +27,10 @@ namespace HoneyZoneMvc.Data
             builder.Entity<CartProduct>()
                  .HasKey(cp => new { cp.ClientId, cp.ProductId });
 
+            builder.Entity<Product>()
+           .HasMany(p => p.Images)
+           .WithOne(i => i.Product)
+           .HasForeignKey(i => i.ProductId);
 
             builder
                 .Entity<Category>()
@@ -94,7 +100,7 @@ namespace HoneyZoneMvc.Data
                   Description= "Слънчогледовият мед е уникален продукт, получен от нектара на цветовете на слънчогледа. Този вид мед се отличава с лек, сладък вкус и ярко златист цвят. Ароматът му е нежен и приятен, с леки оттенъци на цветя. Слънчогледовият мед често се характеризира със средна до по-плътна консистенция и може да кристализира с времето, образувайки фини кристали. Този процес не влияе на качествата на меда и може бързо да се възстанови до течно състояние с леко загряване.",
                   QuantityInStock=82,
                   ProductAmount="800г",
-                  MainImageName= "bg honey2.png"
+                  MainImageUrl= "bg honey2.png"
 
               },
               new Product()
@@ -106,7 +112,7 @@ namespace HoneyZoneMvc.Data
                   Description = "Акациевият мед е светъл и благороден, със свеж и деликатен вкус. Произведен от цветята на акацията, този мед е изключително чист и прозрачен. Сладък аромат и лека консистенция правят акациевия мед предпочитан избор. Също така се цени за потенциалните му благоприятни върху здравето свойства, като антибактериални и противовъзпалителни ефекти. Възможно е да бъде употребяван самостоятелно или като добавка към различни ястия и напитки.",
                   QuantityInStock = 27,
                   ProductAmount = "1кг",
-                  MainImageName = "attachment_86137655.jpg"
+                  MainImageUrl = "attachment_86137655.jpg"
               },
               new Product()
               {
@@ -117,7 +123,7 @@ namespace HoneyZoneMvc.Data
                   Description = "Горският прашец е пчелен продукт, събран от пчели в горите от различни дървесни видове. Той е плътен и карамелен по цвят, с интензивен аромат и сладък вкус. Горският прашец е известен със своите богати хранителни и лечебни свойства, като се счита за естествен източник на витамини, минерали и антиоксиданти. Често се използва като добавка към храна или напитки за подобряване на имунната система и засилване на енергията.",
                   QuantityInStock = 102,
                   ProductAmount = "2кг",
-                  MainImageName = "bee-pollen-2549125_1280.jpg"
+                  MainImageUrl = "bee-pollen-2549125_1280.jpg"
               });
             base.OnModelCreating(builder);
         }

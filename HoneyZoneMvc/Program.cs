@@ -32,6 +32,7 @@ builder.Services.AddScoped<ICartProductService, CartProductService>();
 builder.Services.AddScoped<IDeliveryService, DeliveryService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IStateService, StateService>();
+builder.Services.AddScoped<IImageService, ImageService>();
 
 
 var app = builder.Build();

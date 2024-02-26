@@ -44,15 +44,14 @@ namespace HoneyZoneMvc.Models.Entities
         public string ProductAmount { get; set; }
 
         [Required]
-        public string MainImageName { get; set; }
+        public string MainImageUrl { get; set; }
 
 
-        public ICollection<ImageName> ImageNames = new List<ImageName>();
+        public ICollection<ImageUrl> Images= new List<ImageUrl>();
 
 
         public ICollection<CartProduct> CartProducts { get; set; } = new HashSet<CartProduct>();
 
-        public ICollection<OrderProduct> OrderProducts { get; set; } = new HashSet<OrderProduct>();
 
     }
 }

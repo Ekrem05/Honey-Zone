@@ -1,4 +1,5 @@
 ﻿using HoneyZoneMvc.Constraints;
+using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
 using HoneyZoneMvc.Models.Entities;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
@@ -38,9 +39,9 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models
 
         public IFormFile MainImageFile { get; set; }
 
-        public ICollection<ImageName> ImagesNames { get; set; }
+        public ICollection<ImageUrl> ImagesNames { get; set; }
 
-        public ICollection<CategoryDto> Categories { get; set; }
+        public ICollection<CategoryAddViewModel> Categories { get; set; }
 
 
         public string CategoryFilter { get; set; }

@@ -2,9 +2,9 @@
 using System.ComponentModel.DataAnnotations;
 using static HoneyZoneMvc.Messages.ExceptionMessages;
 
-namespace HoneyZoneMvc.Infrastructure.Data.Models
+namespace HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
 {
-    public class CategoryDto
+    public class CategoryAddViewModel
     {
         public Guid Id { get; set; }
 

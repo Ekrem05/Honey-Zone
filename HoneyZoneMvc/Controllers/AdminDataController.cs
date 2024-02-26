@@ -9,11 +9,12 @@ public class AdminDataController : Controller
 {
     private readonly IProductService productService;
     private readonly ICategoryService categoryService;
-
-    public AdminDataController(IProductService _productService, ICategoryService _categoryService)
+    private readonly IOrderService orderService;
+    public AdminDataController(IProductService _productService, ICategoryService _categoryService, IOrderService orderService)
     {
         productService = _productService;
         categoryService = _categoryService;
+        this.orderService = orderService;
     }
 
     [HttpGet]
@@ -22,18 +23,26 @@ public class AdminDataController : Controller
         AdminViewModel vm = new AdminViewModel();
         vm.ProductDtos = await productService.GetAllProductsAsync();
         vm.CategoryDtos = await categoryService.GetAllCategoriesAsync();
-        vm.CategoryDtos = await categoryService.GetAllCategoriesAsync();
-        //GET ORDERS AND THEN DISPLAY THEM!
+        vm.OrderDtos = await orderService.GetAllOrdersAsync();
         //ADD DOWNLOADING FUNCTIONALLITY DOWNLOAD Business stats profit etc.
         vm.ProductView = new ProductDto();
         return View(vm);
     }
+    [HttpGet]
+    [ActionName("AddProduct")]
+    public async Task<IActionResult> AddProductAsync()
+    {
+        
+        ProductAddViewModel productAddViewModel = new ProductAddViewModel();
+        productAddViewModel.Categories = await categoryService.GetAllCategoriesAsync();
+        return View(productAddViewModel);
 
+    }
     [HttpPost]
     [ActionName("AddProduct")]
-    public async Task<IActionResult> AddProductAsync(AdminViewModel productvm)
+    public async Task<IActionResult> AddProductAsync(ProductAddViewModel productvm)
     {
-        if (await productService.AddProductAsync(productvm.ProductView))
+        if (await productService.AddProductAsync(productvm))
         {
             return RedirectToAction("index");
         }
@@ -51,20 +60,22 @@ public class AdminDataController : Controller
         return RedirectToAction("index");
 
     }
+    [HttpGet]
+    [ActionName("Edit")]
+    public async Task<IActionResult> Edit(string Id)
+    {
+        ProductEditViewModel item = await productService.GetProductEditByIdAsync(Id.ToString());
+        item.Categories = await categoryService.GetAllCategoriesAsync();
 
+        return View("EditProduct", item);
+
+    }
     [HttpPost]
-    public async Task<IActionResult> SubmitChanges(AdminViewModel productvm)
+    public async Task<IActionResult> SubmitChanges(ProductEditViewModel vm)
     {
         if (ModelState.IsValid)
         {
-            if (productvm.ProductView.MainImageFile == null)
-            {
-                ProductDto productBeforeUpdate = await productService.GetProductByIdAsync(productvm.ProductView.Id.ToString());
-                productvm.ProductView.MainImageName = productBeforeUpdate.MainImageName;
-
-            }
-
-            if (await productService.UpdateProductAsync(productvm.ProductView))
+            if (await productService.UpdateProductAsync(vm))
             {
                 return RedirectToAction("Index");
             }

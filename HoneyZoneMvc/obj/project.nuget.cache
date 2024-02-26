@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DhfLjteeijF5L7PC/TT8tUBUf/SCamIac3iucW1a1jZWYF7fI8ONPfxDbs9la8brpMHAjUxFs0Xt+EZSx+bqrQ==",
+  "dgSpecHash": "QqFC9Iu/Hia95JPDT/qCBymXr8a35WUqYfqeJj4w/U4J1pH8M+GX472lnPSv2UabEfCKFLuFkftzuVQDtkLi3Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ekrem\\Documents\\GitHub\\School\\Projects\\Honey-Zone\\HoneyZoneMvc\\HoneyZoneMvc\\HoneyZoneMvc.csproj",
+  "projectFilePath": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\HoneyZoneMvc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ekrem\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
     "C:\\Users\\ekrem\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

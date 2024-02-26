@@ -46,3 +46,8 @@ div.actions {
         justify-content: space-around;
         flex-basis: 100%;
     }
+#admin-operation-card{
+    background-color:white;
+    margin:2em;
+    padding:2em;
+}

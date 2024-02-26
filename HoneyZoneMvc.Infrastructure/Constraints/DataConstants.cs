@@ -14,7 +14,7 @@
             public const int InStockMaxValue = 10000;
             public const string AmountRegx = "^\\d+\\s?(ml|l|g|mg|kg)$";
         }
-
+        public const string DateFormat = "dd/MM/yyyy";
 
         public static class Category
         {

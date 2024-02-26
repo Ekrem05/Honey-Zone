@@ -1,0 +1,82 @@
+﻿@using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
+@model ProductAddViewModel
+@{
+}
+<section id="admin-operation-card">
+    <form asp-action="AddProduct" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <input asp-for="Id" type="hidden">
+            <label class="form-label mt-2 " asp-for="Name">Име</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="bg-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="CategoryId" class="control-label">Категория</label>
+            <select asp-for="@Model.CategoryId" class="form-control" aria-required="true">
+                <option disabled selected value="">Select Category...</option>
+                @foreach (var category in Model.Categories)
+                {
+                    <option value="@category.Id">@category.Name</option>
+                }
+            </select>
+            <span asp-validation-for="CategoryId" class="bg-danger"></span>
+        </div>
+        <div class="input-group mb-2">
+            <label class="form-label mt-2 w-100" asp-for="Price">Цена</label>
+            <input asp-for="Price" class="form-control w-20 h-10" />
+            <span id="PriceValidation" asp-validation-for="Price" class="bg-danger"></span>
+            <div class="input-group-prepend">
+                <span class="input-group-text">.лв</span>
+                <span class="input-group-text">0.00</span>
+            </div>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label mt-2 " asp-for="Description">Описание</label>
+            <input type="text" asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="bg-danger"></span>
+        </div>
+        <div class="mb-3">
+
+            <label class="form-label mt-2 " asp-for="QuantityInStock">Наличност в склад</label>
+            <input asp-for="QuantityInStock" class="form-control" />
+            <span asp-validation-for="QuantityInStock" class="bg-danger"></span>
+        </div>
+        <div class="mb-3">
+
+            <label class="form-label mt-2 " asp-for="ProductAmount">Количество на продукта</label>
+            <input asp-for="ProductAmount" class="form-control" />
+            <span asp-validation-for="ProductAmount" class="bg-danger"></span>
+        </div>
+        <div class="input-group mb-3">
+            <label class="form-label mt-1" asp-for="MainImage">Основна снимка</label>
+            <input type="file" asp-for="MainImage"
+                   accept="image/jpg,image/png,image/jpeg" />
+            <span asp-validation-for="MainImage" class="bg-danger"></span>
+        </div>
+        <div class="input-group mb-3">
+            <label class="form-label mt-1" asp-for="Images">Други снимки</label>
+            <input type="file" asp-for="Images"
+                   accept="image/jpg,image/png,image/jpeg" multiple/>
+            <span asp-validation-for="Images" class="bg-danger"></span>
+        </div>
+        <div class="modal-footer">
+            <a type="button"
+                    class="btn btn-secondary"
+                    asp-action="Index">
+                Отказ
+            </a>
+            <button type="submit" class="btn btn-success" id="liveToastBtn">
+                Добави продукт
+            </button>
+        </div>
+    </form>
+</section>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -219,7 +219,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false, comment: "Product Description"),
                     QuantityInStock = table.Column<int>(type: "int", nullable: false, comment: "Quantity Of The Product Available In Stock"),
                     ProductAmount = table.Column<string>(type: "nvarchar(max)", nullable: false, comment: "Product Amount"),
-                    MainImageName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    MainImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -320,7 +320,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "OrderProduct",
+                name: "OrderProducts",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -330,14 +330,14 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OrderProduct", x => x.Id);
+                    table.PrimaryKey("PK_OrderProducts", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_OrderProduct_Orders_OrderId",
+                        name: "FK_OrderProducts_Orders_OrderId",
                         column: x => x.OrderId,
                         principalTable: "Orders",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_OrderProduct_Products_ProductId",
+                        name: "FK_OrderProducts_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
@@ -359,8 +359,8 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("2e964223-1ffd-4944-9b6f-c991971ddeb9"), "Спиди" },
-                    { new Guid("5229b29d-b3b8-4567-a4c8-16ec1d65e23f"), "Eконт" }
+                    { new Guid("7f58427a-0997-4d74-83dc-bbbd2568d7c0"), "Спиди" },
+                    { new Guid("fc734711-2a78-4628-99b7-8809f2b94d26"), "Eконт" }
                 });
 
             migrationBuilder.InsertData(
@@ -368,27 +368,27 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("8e2b2253-4f64-4284-9a7a-3160966a2393"), "Изпратена" },
-                    { new Guid("9eda2912-7d4e-4654-aa34-060ec8764c33"), "Получена" },
-                    { new Guid("b2fb9eaf-8742-4c75-922f-bd12cf6e9d8d"), "Доставена" },
-                    { new Guid("c133f62f-6ba4-4ea2-9f77-8e2be222a94c"), "В обработка" },
-                    { new Guid("cee0d4ae-17f2-4c72-ab25-07b63ba42a2f"), "Отменена" }
+                    { new Guid("44006623-fd87-4000-88e8-3beadc082178"), "В обработка" },
+                    { new Guid("a8d5ffd7-20de-49f2-801c-178224585b07"), "Получена" },
+                    { new Guid("b8f5d2cf-56c8-490d-ba95-01839679ee21"), "Доставена" },
+                    { new Guid("e312c824-f87d-4ec5-961b-898ab289bbb4"), "Отменена" },
+                    { new Guid("f4299868-4e9c-4027-a612-045d0e94af2f"), "Изпратена" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "CategoryId", "Description", "MainImageName", "Name", "Price", "ProductAmount", "QuantityInStock" },
-                values: new object[] { new Guid("3e40578b-9e10-41a8-9c85-7f819aa7372e"), new Guid("78355d47-6040-4676-9972-ac8be4f19882"), "Акациевият мед е светъл и благороден, със свеж и деликатен вкус. Произведен от цветята на акацията, този мед е изключително чист и прозрачен. Сладък аромат и лека консистенция правят акациевия мед предпочитан избор. Също така се цени за потенциалните му благоприятни върху здравето свойства, като антибактериални и противовъзпалителни ефекти. Възможно е да бъде употребяван самостоятелно или като добавка към различни ястия и напитки.", "attachment_86137655.jpg", "Акациев мед", 25.989999999999998, "1кг", 27 });
+                columns: new[] { "Id", "CategoryId", "Description", "MainImageUrl", "Name", "Price", "ProductAmount", "QuantityInStock" },
+                values: new object[] { new Guid("3b8db6e8-28a9-44d1-8a3b-cb0658849bd1"), new Guid("78355d47-6040-4676-9972-ac8be4f19882"), "Акациевият мед е светъл и благороден, със свеж и деликатен вкус. Произведен от цветята на акацията, този мед е изключително чист и прозрачен. Сладък аромат и лека консистенция правят акациевия мед предпочитан избор. Също така се цени за потенциалните му благоприятни върху здравето свойства, като антибактериални и противовъзпалителни ефекти. Възможно е да бъде употребяван самостоятелно или като добавка към различни ястия и напитки.", "attachment_86137655.jpg", "Акациев мед", 25.989999999999998, "1кг", 27 });
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "CategoryId", "Description", "MainImageName", "Name", "Price", "ProductAmount", "QuantityInStock" },
-                values: new object[] { new Guid("a72d7161-1793-4476-8746-ff61bcd85c0e"), new Guid("c7d08da8-a5af-4596-8ad2-d0f99091297f"), "Горският прашец е пчелен продукт, събран от пчели в горите от различни дървесни видове. Той е плътен и карамелен по цвят, с интензивен аромат и сладък вкус. Горският прашец е известен със своите богати хранителни и лечебни свойства, като се счита за естествен източник на витамини, минерали и антиоксиданти. Често се използва като добавка към храна или напитки за подобряване на имунната система и засилване на енергията.", "bee-pollen-2549125_1280.jpg", "Горски прашец", 55.990000000000002, "2кг", 102 });
+                columns: new[] { "Id", "CategoryId", "Description", "MainImageUrl", "Name", "Price", "ProductAmount", "QuantityInStock" },
+                values: new object[] { new Guid("4b61cb88-99f2-4d22-a624-00e72e2db7c1"), new Guid("78355d47-6040-4676-9972-ac8be4f19882"), "Слънчогледовият мед е уникален продукт, получен от нектара на цветовете на слънчогледа. Този вид мед се отличава с лек, сладък вкус и ярко златист цвят. Ароматът му е нежен и приятен, с леки оттенъци на цветя. Слънчогледовият мед често се характеризира със средна до по-плътна консистенция и може да кристализира с времето, образувайки фини кристали. Този процес не влияе на качествата на меда и може бързо да се възстанови до течно състояние с леко загряване.", "bg honey2.png", "Слънчогледов мед", 19.989999999999998, "800г", 82 });
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "CategoryId", "Description", "MainImageName", "Name", "Price", "ProductAmount", "QuantityInStock" },
-                values: new object[] { new Guid("eba860d5-7637-432a-8f3d-977462e7ec28"), new Guid("78355d47-6040-4676-9972-ac8be4f19882"), "Слънчогледовият мед е уникален продукт, получен от нектара на цветовете на слънчогледа. Този вид мед се отличава с лек, сладък вкус и ярко златист цвят. Ароматът му е нежен и приятен, с леки оттенъци на цветя. Слънчогледовият мед често се характеризира със средна до по-плътна консистенция и може да кристализира с времето, образувайки фини кристали. Този процес не влияе на качествата на меда и може бързо да се възстанови до течно състояние с леко загряване.", "bg honey2.png", "Слънчогледов мед", 19.989999999999998, "800г", 82 });
+                columns: new[] { "Id", "CategoryId", "Description", "MainImageUrl", "Name", "Price", "ProductAmount", "QuantityInStock" },
+                values: new object[] { new Guid("91c8981a-e8ff-417c-b90c-f212a242016a"), new Guid("c7d08da8-a5af-4596-8ad2-d0f99091297f"), "Горският прашец е пчелен продукт, събран от пчели в горите от различни дървесни видове. Той е плътен и карамелен по цвят, с интензивен аромат и сладък вкус. Горският прашец е известен със своите богати хранителни и лечебни свойства, като се счита за естествен източник на витамини, минерали и антиоксиданти. Често се използва като добавка към храна или напитки за подобряване на имунната система и засилване на енергията.", "bee-pollen-2549125_1280.jpg", "Горски прашец", 55.990000000000002, "2кг", 102 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -440,13 +440,13 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderProduct_OrderId",
-                table: "OrderProduct",
+                name: "IX_OrderProducts_OrderId",
+                table: "OrderProducts",
                 column: "OrderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderProduct_ProductId",
-                table: "OrderProduct",
+                name: "IX_OrderProducts_ProductId",
+                table: "OrderProducts",
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
@@ -499,7 +499,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 name: "ImageNames");
 
             migrationBuilder.DropTable(
-                name: "OrderProduct");
+                name: "OrderProducts");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

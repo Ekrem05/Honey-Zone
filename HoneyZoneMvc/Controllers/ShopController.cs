@@ -36,7 +36,7 @@ namespace HoneyZoneMvc.Controllers
         [HttpGet]
         public async Task<IActionResult> Index(string? category)
         {
-            ProductViewModel vm = new ProductViewModel();
+            AdminViewModel vm = new AdminViewModel();
             vm.ProductDtos = await productService.GetAllProductsAsync();
             vm.CategoryDtos = await categoryService.GetAllCategoriesAsync();
             if (category != null)
@@ -83,43 +83,11 @@ namespace HoneyZoneMvc.Controllers
                 await cartProductService.UpdateQuantityAsync(cartProduct.Id, cartProduct.Quantity, GetUserId().ToString());
             }
 
-            return RedirectToAction("Order");
+            return RedirectToAction("Order","Order");
         }
-        [HttpGet]
-        public async Task<IActionResult> Order()
-        {
-            var orderDto = new OrderDetailDto();
-            orderDto.DeliveryMethods = await GetDeliveryMethods();
-            return View(orderDto);
-        }
+       
 
-        [HttpPost]
-        public async Task<IActionResult> OrderConfirmed(OrderDetailDto dto)
-        {
-            var cart = await cartProductService.GetCartByUserIdAsync(GetUserId().ToString());
-            List<OrderProduct> orderProducts = new List<OrderProduct>();
-            double totalSum = 0;
-            foreach (var productItem in cart)
-            {
-                var product = await productService.GetProductByIdAsync(productItem.ProductId);
-
-                orderProducts.Add(new OrderProduct()
-                {
-                    ProductId = Guid.Parse(productItem.ProductId),
-                    Quantity = productItem.Quantity,
-                });
-                totalSum += product.Price;
-            }
-            await orderService.AddAsync(GetUserId().ToString(), totalSum, dto.DeliveryMethodId, dto, orderProducts);
-            await cartProductService.DeleteCartProductAsync(GetUserId().ToString());
-            return RedirectToAction(nameof(Index));
-        }
-
-        private async Task<ICollection<DeliveryMethodDto>> GetDeliveryMethods()
-        {
-            return await deliveryService.GetAllAsync();
-        }
-
+       
         private Guid GetUserId()
         {
             return Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));

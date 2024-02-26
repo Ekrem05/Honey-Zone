@@ -1,0 +1,94 @@
+﻿
+@using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
+
+@model ProductEditViewModel
+
+<section Id="admin-operation-card">
+    <form asp-action="SubmitChanges" method="post" enctype="multipart/form-data">
+        <input hidden asp-for="Id" />
+        <div class="input-group mb-3">
+            <label class="form-label mt-1" asp-for="MainImage">Основна снимка (Ако не се посочи снимка ще останат същите)</label>
+            <input type="file" asp-for="MainImage"
+                   accept="image/jpg,image/png,image/jpeg" />
+            <span asp-validation-for="MainImage" class="bg-danger"></span>
+        </div>
+        <div class="input-group mb-3">
+            <label class="form-label mt-1" asp-for="Images">Други снимки <span class="bg-warning">(Ако не се посочи снимка ще останат същите)</span></label>
+            <input type="file" asp-for="Images"
+                   accept="image/jpg,image/png,image/jpeg" multiple />
+            <span asp-validation-for="Images" class="bg-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="Name">Име:</label>
+            <input type="text"
+                   class="form-control"
+                   id="NameEdit"
+                   asp-for="Name" />
+            <div id="currentName" class="form-text">
+                Текущо име:@Model.Name
+            </div>
+            <span asp-validation-for="Name" class="bg-danger"></span>
+        </div>
+
+        <div class="input-group">
+            <label class="form-label m-1" asp-for="Price">Цена:</label>
+            <input type="number"
+                   class="form-control"
+                   id="PriceEdit"
+                   asp-for="Price" />
+            <span class="input-group-text">лв</span>
+            <span class="input-group-text">0.00</span>
+            <span asp-validation-for="Price" id="PriceValidation" class="bg-danger"></span>
+        </div>
+        <div id="currentPrice" class="form-text">
+            Текуща цена:@Model.Price
+        </div>
+        <div class="mb-3">
+            <label asp-for="Category" class="control-label">Категория</label>
+            <select asp-for="Category" asp-items="new SelectList(@Model.Categories.Select(c=>c.Name))" class="form-control"></select>
+            <span asp-validation-for="Category" class="bg-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="QuantityInStock">Количество в склад:</label>
+            <input type="number"
+                   class="form-control"
+                   id="QuantityInStockEdit"
+                   asp-for="QuantityInStock" />
+            <span asp-validation-for="QuantityInStock" class="bg-danger"></span>
+            <div id="currentName" class="form-text">
+                Текущo количесво в склад:@Model.QuantityInStock
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="ProductAmount">Дозировка:</label>
+            <input type="text"
+                   class="form-control"
+                   id="ProductQuantityEdit"
+                   asp-for="ProductAmount" />
+            <span asp-validation-for="ProductAmount" class="bg-danger"></span>
+            <div id="currentName" class="form-text">
+                Текуща дозировка:@Model.ProductAmount
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="Description">Описание:</label>
+            <input rows="4" cols="50" type="text"
+                   class="form-control"
+                   id="DescriptionEdit"
+                   asp-for="Description" />
+            <span asp-validation-for="Description" class="bg-danger"></span>
+        </div>
+        <div class="modal-footer">
+            <button type="button"
+                    class="btn btn-secondary"
+                    asp-action="Index">
+                Отказ
+            </button>
+            <button type="submit" class="btn btn-success">
+                Запази промени
+            </button>
+        </div>
+    </form>
+</section>
+               
+            

@@ -1,15 +1,15 @@
-﻿using HoneyZoneMvc.Infrastructure.Data.Models;
+﻿using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {
     public interface ICategoryService
     {
 
-        Task<bool> AddCategoryAsync(CategoryDto category);
-        Task<IEnumerable<CategoryDto>> GetAllCategoriesAsync();
-        Task<bool> UpdateCategoryAsync(CategoryDto category);
+        Task<bool> AddCategoryAsync(CategoryAddViewModel category);
+        Task<IEnumerable<CategoryAddViewModel>> GetAllCategoriesAsync();
+        Task<bool> UpdateCategoryAsync(CategoryAddViewModel category);
         Task<bool> DeleteCategoryAsync(int Id);
-        Task<CategoryDto> GetCategoryByName(string name);
+        Task<CategoryAddViewModel> GetCategoryById(string name);
 
     }
 }

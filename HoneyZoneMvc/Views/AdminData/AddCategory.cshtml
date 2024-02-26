@@ -1,0 +1,23 @@
+﻿@using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
+@model CategoryAddViewModel
+@{
+}
+
+<form asp-action="AddProductCategory" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <input asp-for="Id" type="hidden">
+        <label class="form-label mt-2 " asp-for="Name">Име на категория</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="bg-danger"></span>
+    </div>
+    <div class="modal-footer">
+        <a type="button"
+                class="btn btn-secondary"
+           asp-action="Index">
+            Отказ
+        </a>
+        <button type="submit" class="btn btn-success" id="liveToastBtn">
+            Добави категория
+        </button>
+    </div>
+</form>

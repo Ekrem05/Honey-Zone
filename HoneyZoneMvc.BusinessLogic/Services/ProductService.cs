@@ -1,10 +1,12 @@
-﻿
-using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
+﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models;
+using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
 using HoneyZoneMvc.Messages;
 using HoneyZoneMvc.Models.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace HoneyZoneMvc.Services
 {
@@ -12,19 +14,36 @@ namespace HoneyZoneMvc.Services
     {
         private ApplicationDbContext dbContext;
         private ICategoryService categoryService;
-
-        public ProductService(ApplicationDbContext _dbContext, ICategoryService _categoryService)
+        private IImageService imageService;
+        public ProductService(ApplicationDbContext _dbContext, ICategoryService _categoryService,IImageService _imageService)
         {
             dbContext = _dbContext;
             categoryService = _categoryService;
+            imageService = _imageService;
         }
-        public async Task<bool> AddProductAsync(ProductDto product)
+        public async Task<bool> AddProductAsync(ProductAddViewModel product)
         {
             if (product == null)
             {
                 throw new ArgumentNullException(string.Format(ExceptionMessages.ArgumentNull, nameof(ProductDto)));
             }
             Product productToAdd = await TransformProduct(product);
+            productToAdd.MainImageUrl = await GetUrl(product.MainImage);
+
+            var imagesInDb = imageService.GetImages();
+            foreach (var image in product.Images)
+            {
+                if (!imagesInDb.Any(i=>i.Name==image.FileName))
+                {
+                    productToAdd.Images.Add(new ImageUrl() { Name = product.MainImage.FileName });
+                    var imagePath= await GetUrl(product.Images);
+                }
+                else
+                {
+                    productToAdd.Images.Add(await imageService.GetImageByNameAsync(image.FileName));
+
+                }
+            }
             await dbContext.Products.AddAsync(productToAdd);
             if (await dbContext.SaveChangesAsync() > 0)
             {
@@ -91,7 +110,23 @@ namespace HoneyZoneMvc.Services
             throw new ArgumentNullException(string.Format(ExceptionMessages.NoProductsWithGivenId, Id));
         }
 
-        public async Task<bool> UpdateProductAsync(ProductDto product)
+        public async Task<ProductEditViewModel> GetProductEditByIdAsync(string Id)
+        {
+            var model = await dbContext.Products
+                .Include(p => p.Category)
+                .FirstOrDefaultAsync(p => p.Id.ToString() == Id);
+
+            if (model != null)
+            {
+                return GetProductEditViewModel(model);
+            }
+
+
+            throw new ArgumentNullException(string.Format(ExceptionMessages.NoProductsWithGivenId, Id));
+        }
+
+
+        public async Task<bool> UpdateProductAsync(ProductEditViewModel product)
         {
             var productToEdit = await dbContext.Products
                 .Include(p => p.Category)
@@ -105,8 +140,28 @@ namespace HoneyZoneMvc.Services
                 productToEdit.ProductAmount = product.ProductAmount;
                 productToEdit.Category = dbContext.Categories.FirstOrDefault(c => c.Name == product.Category);
                 productToEdit.QuantityInStock = product.QuantityInStock;
-                productToEdit.MainImageName = product.MainImageName;
-                productToEdit.ImageNames = product.ImagesNames;
+                if (product.MainImage!=null)
+                {
+                    productToEdit.MainImageUrl = await GetUrl(product.MainImage);
+
+                }
+                if (product.Images != null)
+                {
+                    foreach (var image in product.Images)
+                    {
+                        if (!productToEdit.Images.Any(e=>e.Name==image.FileName))
+                        {
+                            if (imageService.GetImages().Any(img => img.Name==image.FileName))
+                            {
+                                var imagePath = await GetUrl(image);
+                                productToEdit.Images.Add(new ImageUrl() { Name = image.FileName });
+                            }
+                            productToEdit.Images.Add(await imageService.GetImageByNameAsync(image.FileName));
+                        }
+                       
+                    }
+                     
+                }
             }
             if (dbContext.SaveChanges() > 0)
             {
@@ -144,7 +199,7 @@ namespace HoneyZoneMvc.Services
                 {
                     Id = cp.Product.Id,
                     Name = cp.Product.Name,
-                    MainImageName = cp.Product.MainImageName,
+                    MainImageName = cp.Product.MainImageUrl,
                     Price = cp.Product.Price,
                     ProductAmount = cp.Product.ProductAmount,
                     Quantity = 1
@@ -168,7 +223,7 @@ namespace HoneyZoneMvc.Services
                 Description = productDto.Description,
                 QuantityInStock = productDto.QuantityInStock,
                 ProductAmount = productDto.ProductAmount,
-                MainImageName = productDto.MainImageFile.FileName
+                MainImageUrl = productDto.MainImageFile.FileName
             };
         }
         private ProductDto TransformProduct(Product product)
@@ -182,10 +237,67 @@ namespace HoneyZoneMvc.Services
                 QuantityInStock = product.QuantityInStock,
                 ProductAmount = product.ProductAmount,
                 Category = product.Category.Name,
-                MainImageName = product.MainImageName
+                MainImageName = product.MainImageUrl
+            };
+        }
+        private async Task<Product> TransformProduct(ProductAddViewModel product)
+        {
+            return new Product()
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Price = product.Price,
+                Description = product.Description,
+                QuantityInStock = product.QuantityInStock,
+                ProductAmount = product.ProductAmount,
+                CategoryId = Guid.Parse(product.CategoryId),
             };
         }
 
+        private ProductEditViewModel GetProductEditViewModel(Product product)
+        {
+            return new ProductEditViewModel()
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Price = product.Price,
+                Description = product.Description,
+                QuantityInStock = product.QuantityInStock,
+                ProductAmount = product.ProductAmount,
+                Category = product.Category.Name
+            };
+        }
 
+        private async Task<string> GetUrl(IFormFile mainImage)
+        {
+            string url = Path.Combine(Environment.CurrentDirectory, "wwwroot", "productImages");
+
+            string filePath = Path.Combine(url, mainImage.FileName);
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                await mainImage.CopyToAsync(fileStream);
+            }
+            return mainImage.FileName;
+        }
+        private async Task<List<ImageUrl>> GetUrl(ICollection<IFormFile> images)
+        {
+            var imageEntities = imageService.GetImages();
+            List<ImageUrl> imageUrls = new List<ImageUrl>();
+            string url = Path.Combine(Environment.CurrentDirectory, "wwwroot", "productImages");
+
+
+            foreach (var image in images.Where(i=>imageEntities.Any(entity=>entity.Name==i.FileName)))
+            {
+                string filePath = Path.Combine(url, image.FileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await image.CopyToAsync(fileStream);
+                }
+                imageUrls.Add(new ImageUrl() { Name = image.FileName });
+            }
+
+            return imageUrls;
+        }
+      
     }
 }

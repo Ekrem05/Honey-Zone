@@ -10,6 +10,7 @@
         "dependencies": {
           "FontAwesome": "4.7.0",
           "HoneyZoneMvc.BusinessLogic": "1.0.0",
+          "HoneyZoneMvc.Infrastructure": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.24",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.26",
           "Microsoft.AspNetCore.Identity.UI": "6.0.26",

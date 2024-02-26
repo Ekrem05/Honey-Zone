@@ -1,0 +1,52 @@
+﻿@using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
+@model IEnumerable<OrderBasicsViewModel>
+@{
+}
+<table class="table mb-10 mt-3 table-striped table-light table-bordered border-warning table-hover table-sm datatable" id="orders">
+    <thead>
+        <tr class="text-center">
+            <th scope="col">Id</th>
+            <th scope="col">Сума</th>
+            <th scope="col">Доставка</th>
+            <th scope="col">Име на клиент</th>
+            <th scope="col">Адрес</th>
+            <th scope="col">Телефон</th>
+            <th scope="col">Поръчана на</th>
+            <th scope="col">Очаквана дата за пристигане</th>
+            <th scope="col">Статус</th>
+            <th scope="col">Операции</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        @foreach (var order in Model)
+        {
+            <tr>
+                <th scope="row" class="align-middle">@order.Id</th>
+                <td class="col-md-1">@order.TotalSum</td>
+                <td>@order.DeliveryMethod</td>
+                <td>@order.ClientName</td>
+                <td>@order.Address</td>
+                <td>@order.PhoneNumber</td>
+                <td> @order.OrderDate</td>
+                <td> @order.ExpectedDelivery </td>
+                <td> @order.State </td>
+
+                <td class="col-md-4">
+                    <a class="btn btn-outline-success" asp-controller="Order"
+                       asp-action="ChangeStatus" asp-route-Id="@order.Id">
+                        Промени статус
+                    </a>
+
+                    <a class="btn btn-outline-primary">
+                        Промени очаквана дата
+                    </a>
+                    <a class="btn btn-outline-secondary" asp-controller="Order" asp-action="Delete" asp-route-Id="@order.Id">
+                        Изтрий
+                    </a>
+                    <button class="btn btn-outline-danger">Изтрий</button>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

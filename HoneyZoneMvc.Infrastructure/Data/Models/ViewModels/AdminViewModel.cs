@@ -3,11 +3,11 @@
     public class AdminViewModel
     {
         public IEnumerable<ProductDto> ProductDtos { get; set; }
-        public IEnumerable<CategoryDto> CategoryDtos { get; set; }
-        public IEnumerable<OrderViewDto> OrderDtos { get; set; }
+        public IEnumerable<CategoryAddViewModel> CategoryDtos { get; set; }
+        public IEnumerable<OrderBasicsViewModel> OrderDtos { get; set; }
 
         public ProductDto ProductView { get; set; }
-        public CategoryDto CategoryView { get; set; }
+        public CategoryAddViewModel CategoryView { get; set; }
 
     }
 }

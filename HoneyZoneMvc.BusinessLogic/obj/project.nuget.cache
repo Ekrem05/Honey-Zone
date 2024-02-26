@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tV8kqpCCnJQBWq4shJl0jQdoCuw54Q2C4bCC7PDnhqogwRu11D6mRoviu5cKgnOimpEk5eboZ6pfGOeqFEQ49Q==",
+  "dgSpecHash": "alwpk9zldBVzR/7vowiP8I/LZnJCV5FPeMIzNMmS+Mhxrh5UquZDV9PHZTaV03uFfiPJqZkd9lRz8IF93Ov71g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ekrem\\Documents\\GitHub\\School\\Projects\\Honey-Zone\\HoneyZoneMvc\\HoneyZoneMvc.BusinessLogic\\HoneyZoneMvc.BusinessLogic.csproj",
+  "projectFilePath": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.BusinessLogic\\HoneyZoneMvc.BusinessLogic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.24\\microsoft.aspnetcore.cryptography.internal.6.0.24.nupkg.sha512",
     "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.24\\microsoft.aspnetcore.cryptography.keyderivation.6.0.24.nupkg.sha512",

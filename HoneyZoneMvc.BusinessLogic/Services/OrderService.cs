@@ -1,7 +1,9 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
+using HoneyZoneMvc.Constraints;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
+using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
 using HoneyZoneMvc.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -34,6 +36,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 DeliveryMethodId =Guid.Parse(deliveryMethodId),
                 OrderDate = DateTime.Now,
                 State = await stateService.GetInitialOrderState(),
+                ExpectedDelivery= DateTime.Now.AddDays(4),
                 OrderDetail = new OrderDetail()
                 {
                     FirstName = orderDetailDto.FirstName,
@@ -59,5 +62,26 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return await dbContext.Orders.ToListAsync();
         }
 
+        public async Task<IEnumerable<OrderBasicsViewModel>> GetAllOrdersAsync()
+        {
+            var orders = await dbContext.Orders
+                .Include(x => x.OrderDetail)
+                .Include(x => x.DeliveryMethod)
+                .Include(x => x.OrderProducts)
+                .Include(x => x.State)
+                .Select(x=> new OrderBasicsViewModel()
+                {
+                    Id = x.Id.ToString(),
+                    TotalSum = x.TotalSum.ToString(),
+                    DeliveryMethod = x.DeliveryMethod.Name,
+                    OrderDate = x.OrderDate.ToString(DataConstants.DateFormat),
+                    State = x.State.Name,
+                    Address= x.OrderDetail.Address,
+                    PhoneNumber = x.OrderDetail.PhoneNumber,
+                    ClientName = x.OrderDetail.FirstName + " " + x.OrderDetail.SecondName,
+                    ExpectedDelivery = x.ExpectedDelivery.ToString(DataConstants.DateFormat),
+                }).ToListAsync(); 
+            return orders;
+        }
     }
 }

@@ -1,0 +1,56 @@
+﻿@using HoneyZoneMvc.Infrastructure.Data.Models
+@model IEnumerable<ProductDto>
+@{
+   
+}
+<table class="table mb-10 mt-3 table-striped table-light table-bordered border-warning table-hover table-sm datatable" id="products">
+    <thead>
+        <tr class="text-center">
+            <th scope="col">Id</th>
+            <th scope="col">Снимка</th>
+            <th scope="col">Име</th>
+            <th scope="col">Цена</th>
+            <th scope="col">Количесво</th>
+            <th scope="col">Дозировка</th>
+            <th scope="col">Категория</th>
+            <th scope="col">Описание</th>
+            <th scope="col">Операции</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        @foreach (var product in Model)
+        {
+            <tr>
+                <th scope="row" class="align-middle">@product.Id</th>
+                <td class="col-md-1">
+                    <img src="productImages/@product.MainImageName"
+                         class="img-fluid"
+                         alt="Все още няма снимки" />
+                </td>
+                <td class="col-md-1">@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.QuantityInStock</td>
+                <td>@product.ProductAmount</td>
+                <td>@product.Category</td>
+                <td class="col-md-4">
+                    @product.Description
+                </td>
+                <td class="col-md-4">
+                    <a class="btn btn-outline-success"
+                       asp-action="Edit" asp-route-Id="@product.Id">
+                        Промоция
+                    </a>
+
+                    <a class="btn btn-outline-primary">
+                        Добави снимка
+                    </a>
+                    <a class="btn btn-outline-secondary" asp-action="Edit" asp-route-Id="@product.Id">
+                        Редактирай
+                    </a>
+                    <button class="btn btn-outline-danger">Изтрий</button>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
