@@ -1,0 +1,48 @@
+.search-bar {
+  text-align: center;
+}
+.bar {
+  font-size: 20px;
+  width: 300px;
+  background-color: rgb(227 202 88);
+  padding: 0.2em 0.4em;
+  border-radius: 30em;
+}
+.modal-dialog {
+  margin-top: 10em;
+}
+
+.rounded {
+    width: 20px;
+}
+#liveToast {
+  padding: 0em;
+}
+.toast-body {
+  margin: 0em;
+}
+.datatable{
+    width:100%;
+}
+div.actions {
+    margin-top:2em;
+    border-radius: 3em;
+}
+#PriceValidation {
+    display: block;
+    order: 4;
+    flex-basis: 100%;
+}
+#navbar-example2 {
+    margin-top: 3em;
+    max-width: 700px;
+    background-color: #ffffff70;
+    border-radius: 3em;
+    flex-basis:100%;
+   
+}
+  
+    .nav-pills {
+        justify-content: space-around;
+        flex-basis: 100%;
+    }

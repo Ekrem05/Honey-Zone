@@ -1,0 +1,107 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = HoneyZoneMvc
+build_property.RootNamespace = HoneyZoneMvc
+build_property.ProjectDir = C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZoneMvc\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\ekrem\Documents\GitHub\School\Projects\Honey-Zone\HoneyZoneMvc\HoneyZoneMvc
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Areas/Identity/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Views/AdminData/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXRhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Views/Shared/AddImagePartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFkZEltYWdlUGFydGlhbFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Views/Shared/EditProductPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVkaXRQcm9kdWN0UGFydGlhbFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Views/Shared/_ActionsPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BY3Rpb25zUGFydGlhbFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Views/Shop/Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxDYXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Views/Shop/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Views/Shop/Order.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxPcmRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Views/Shop/ViewProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxWaWV3UHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/School/Projects/Honey-Zone/HoneyZoneMvc/HoneyZoneMvc/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-xoavt3yu4i

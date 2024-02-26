@@ -1,0 +1,48 @@
+﻿@using HoneyZoneMvc.Infrastructure.Data.Models
+@using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
+@model ProductViewModel
+@{
+}
+<section class="store-section">
+    <section class="filter">
+        <ul type="none" id="filter">
+            <h1 class="ul-header">ФИЛТРИ</h1>
+            <li>
+                <a class="btn" id="filter-action" asp-action="Index" asp-route-category="All">Всички</a>
+
+            </li>
+            @foreach (var category in Model.CategoryDtos.Select(c=>c.Name))
+            {
+                <li>
+                    <a class="btn" id="filter-action" asp-action="Index" asp-route-category="@category">@category</a>
+
+                </li>
+            }
+            <li>
+            <li>
+                <a class ="btn" id="filter-action">Най-продавани</a>
+            </li>
+        </ul>
+    </section>
+    <section products>
+
+        <ul type="none" class="all-products">
+            @foreach (ProductDto productDto in Model.ProductDtos)
+            {
+                <li class="product-card">
+                    <img src="~/productImages/@productDto.MainImageName" alt="" />
+                    <p class="name">@productDto.Name</p>
+                    <div class="row">
+                        @{
+                            double number = productDto.Price;
+                            string formattedNumber = number.ToString("F2");
+                        }
+                        <p class="price ">@(formattedNumber)лв.</p>
+                        <a class="buy btn" asp-action="ViewProduct" asp-route-id="@productDto.Id">КУПИ</a>
+                    </div>
+                </li>
+            }
+        </ul>
+    </section>
+</section>
+<script src="~/js/index.js"></script>
