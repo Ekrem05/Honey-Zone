@@ -47,7 +47,7 @@ namespace HoneyZoneMvc.Models.Entities
         public string MainImageUrl { get; set; }
 
 
-        public ICollection<ImageUrl> Images= new List<ImageUrl>();
+        public ICollection<ImageUrl> Images = new List<ImageUrl>();
 
 
         public ICollection<CartProduct> CartProducts { get; set; } = new HashSet<CartProduct>();

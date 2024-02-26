@@ -1,12 +1,6 @@
 ﻿using HoneyZoneMvc.Constraints;
-using HoneyZoneMvc.Models.Entities;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static HoneyZoneMvc.Messages.ExceptionMessages;
 namespace HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
 {

@@ -35,6 +35,6 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models.Entities
         public Guid OrderDetailId { get; set; }
         public OrderDetail OrderDetail { get; set; }
 
-        public ICollection<OrderProduct> OrderProducts { get; set; }=new HashSet<OrderProduct>();
+        public ICollection<OrderProduct> OrderProducts { get; set; } = new HashSet<OrderProduct>();
     }
 }

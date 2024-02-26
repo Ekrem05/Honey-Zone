@@ -1,5 +1,4 @@
-﻿using HoneyZoneMvc.BusinessLogic.Contracts.SubContracts;
-using HoneyZoneMvc.Infrastructure.Data.Models;
+﻿using HoneyZoneMvc.Infrastructure.Data.Models;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {

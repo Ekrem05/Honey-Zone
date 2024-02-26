@@ -15,6 +15,6 @@ namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
         Task<IEnumerable<ProductCartViewModel>> GetUserCartAsync(string id);
         Task<ProductEditViewModel> GetProductEditByIdAsync(string Id);
 
-        
+
     }
 }

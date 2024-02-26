@@ -10,6 +10,6 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models.Entities
         [Required]
         public string Name { get; set; }
 
-        public ICollection<Order> Orders { get; set; } =new List<Order>();
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }

@@ -1,0 +1,30 @@
+﻿@using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
+@model IEnumerable<CategoryViewModel>
+@{
+}
+<table class="table mb-10 mt-3 table-striped table-light table-bordered border-warning table-hover table-sm datatable" id="categories">
+    <thead>
+        <tr class="text-center">
+            <th scope="col">Id</th>
+            <th scope="col">Име</th>
+            <th scope="col">Операции</th>
+
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        @foreach (var category in Model)
+        {
+            <tr>
+                <th scope="row" class="align-middle">@category.Id</th>
+                <td class="col-md-1">@category.Name</td>
+
+                <td class="">
+                    <a class="btn btn-outline-secondary" asp-controller="Order" asp-action="DeleteCategory" asp-route-Id="@category.Id">
+                        Изтрий
+                    </a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

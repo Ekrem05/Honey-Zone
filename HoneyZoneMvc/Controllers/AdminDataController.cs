@@ -10,20 +10,25 @@ public class AdminDataController : Controller
     private readonly IProductService productService;
     private readonly ICategoryService categoryService;
     private readonly IOrderService orderService;
-    public AdminDataController(IProductService _productService, ICategoryService _categoryService, IOrderService orderService)
+    //private readonly IUserService userService;
+    public AdminDataController(IProductService _productService, ICategoryService _categoryService, IOrderService _orderService/*, IUserService _userService*/)
     {
         productService = _productService;
         categoryService = _categoryService;
-        this.orderService = orderService;
+        orderService = _orderService;
+        //userService = _userService;
     }
 
     [HttpGet]
     public async Task<IActionResult> Index()
     {
         AdminViewModel vm = new AdminViewModel();
-        vm.ProductDtos = await productService.GetAllProductsAsync();
+        vm.Products = await productService.GetAllProductsAsync();
         vm.CategoryDtos = await categoryService.GetAllCategoriesAsync();
-        vm.OrderDtos = await orderService.GetAllOrdersAsync();
+        vm.Orders = await orderService.GetAllOrdersAsync();
+        vm.Categories = (await categoryService.GetAllCategoriesAsync()).Select(c=>new CategoryViewModel() { Name=c.Name, Id=c.Id.ToString()});
+        vm.Users=new List<UserViewModel>();
+        //vm.Users= (await userService.GetAllUsersAsync()); 
         //ADD DOWNLOADING FUNCTIONALLITY DOWNLOAD Business stats profit etc.
         vm.ProductView = new ProductDto();
         return View(vm);
@@ -32,7 +37,7 @@ public class AdminDataController : Controller
     [ActionName("AddProduct")]
     public async Task<IActionResult> AddProductAsync()
     {
-        
+
         ProductAddViewModel productAddViewModel = new ProductAddViewModel();
         productAddViewModel.Categories = await categoryService.GetAllCategoriesAsync();
         return View(productAddViewModel);

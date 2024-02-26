@@ -1,8 +1,6 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
 using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
-using HoneyZoneMvc.Models.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -19,9 +17,9 @@ namespace HoneyZoneMvc.Controllers
         private readonly IStateService stateService;
 
 
-        public ShopController(IProductService _productService, 
+        public ShopController(IProductService _productService,
             ICategoryService _categoryService,
-            ICartProductService _cartProductService, 
+            ICartProductService _cartProductService,
             IDeliveryService _deliveryService,
             IOrderService _orderService,
             IStateService _stateService)
@@ -37,12 +35,12 @@ namespace HoneyZoneMvc.Controllers
         public async Task<IActionResult> Index(string? category)
         {
             AdminViewModel vm = new AdminViewModel();
-            vm.ProductDtos = await productService.GetAllProductsAsync();
+            vm.Products = await productService.GetAllProductsAsync();
             vm.CategoryDtos = await categoryService.GetAllCategoriesAsync();
             if (category != null)
             {
                 var productsCategorized = await productService.GetProductsByCategoryAsync(category);
-                vm.ProductDtos = productsCategorized;
+                vm.Products = productsCategorized;
             }
 
             return View(vm);
@@ -72,8 +70,8 @@ namespace HoneyZoneMvc.Controllers
             });
 
             var productsInCart = await productService.GetUserCartAsync(GetUserId().ToString());
-           
-            return RedirectToAction("Cart",productsInCart);
+
+            return RedirectToAction("Cart", productsInCart);
         }
         [HttpPost]
         public async Task<IActionResult> CartConfirmed(List<PostProductCart> cartProducts)
@@ -83,11 +81,11 @@ namespace HoneyZoneMvc.Controllers
                 await cartProductService.UpdateQuantityAsync(cartProduct.Id, cartProduct.Quantity, GetUserId().ToString());
             }
 
-            return RedirectToAction("Order","Order");
+            return RedirectToAction("OrderDetails", "Order");
         }
-       
 
-       
+
+
         private Guid GetUserId()
         {
             return Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));

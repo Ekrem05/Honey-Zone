@@ -16,23 +16,31 @@
         <li class="nav-item">
             <a class="scroll-link btn btn-warning href="#categories">Категории</a>
         </li>
+        <li class="nav-item">
+            <a class="scroll-link btn btn-warning href="#users">Потребители</a>
+        </li>
     </ul>
 </nav>
 <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
     <section class="search-bar">
         <input type="text" class="bar" placeholder="Въведи име на продукт" />
     </section>
-    <h4 id="orders" class="admin-table-heading bg-light">Продукти</h4>
-    @await Html.PartialAsync("_ProductsPartialView", Model.ProductDtos)
+    <h4 id="products" class="admin-table-heading bg-light">Продукти</h4>
+    @await Html.PartialAsync("_ProductsPartialView", Model.Products)
     <h4 id="scrollspyHeading2">Second heading</h4>
     <p>...</p>
   
     <h4  class="admin-table-heading bg-light">Поръчки</h4>
     
-    @await Html.PartialAsync("_OrdersPartialView", Model.OrderDtos)
+    @await Html.PartialAsync("_OrdersPartialView", Model.Orders)
   
-    <h4 id="scrollspyHeading5">Fifth heading</h4>
-    <p>...</p>
+    <h4 class="admin-table-heading bg-light">Категории</h4>
+
+    @await Html.PartialAsync("_CategoriesPartialView", Model.Categories)
+
+    <h4 class="admin-table-heading bg-light">Потребители</h4>
+
+    @await Html.PartialAsync("_UsersPartialView", Model.Users)
 </div>
 
 @section Scripts{

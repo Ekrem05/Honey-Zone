@@ -27,7 +27,7 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models
         public string Address { get; set; }
 
         [Required]
-        public string DeliveryMethodId{ get; set; }
+        public string DeliveryMethodId { get; set; }
 
         public ICollection<DeliveryMethodDto> DeliveryMethods { get; set; }
     }

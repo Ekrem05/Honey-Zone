@@ -1,11 +1,9 @@
-﻿using HoneyZoneMvc.BusinessLogic.Services;
-using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
+﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.Services;
-using Microsoft.AspNetCore.Mvc;
-using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
-using System.Security.Claims;
+using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace HoneyZoneMvc.Controllers
 {
@@ -29,7 +27,7 @@ namespace HoneyZoneMvc.Controllers
 
         }
         [HttpGet]
-        public async Task<IActionResult> Order()
+        public async Task<IActionResult> OrderDetails()
         {
             var orderDto = new OrderDetailDto();
             orderDto.DeliveryMethods = await GetDeliveryMethods();
@@ -61,8 +59,9 @@ namespace HoneyZoneMvc.Controllers
             }
             await orderService.AddAsync(GetUserId().ToString(), totalSum, dto.DeliveryMethodId, dto, orderProducts);
             await cartProductService.DeleteCartProductAsync(GetUserId().ToString());
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Shop");
         }
+
         private async Task<ICollection<DeliveryMethodDto>> GetDeliveryMethods()
         {
             return await deliveryService.GetAllAsync();

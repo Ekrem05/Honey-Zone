@@ -1,0 +1,38 @@
+﻿@using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
+@model IEnumerable<UserViewModel>
+@{
+}
+<table class="table mb-10 mt-3 table-striped table-light table-bordered border-warning table-hover table-sm datatable" id="users">
+    <thead>
+        <tr class="text-center">
+            <th scope="col">Id</th>
+            <th scope="col">Потребителско Име</th>
+            <th scope="col">Е-Поща</th>
+            <th scope="col">Телефон</th>
+            <th scope="col">Роля</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        @foreach (var user in Model)
+        {
+            <tr>
+                <th scope="row" class="align-middle">@user.Id</th>
+                <td class="col-md-1">@user.UserName</td>
+                <td>@user.Email</td>
+                <td>@user.PhoneNumber</td>
+                <td>@user.Role</td>
+                <td class="col-md-4">
+                    <a class="btn btn-outline-success" asp-controller="Admin"
+                       asp-action="ChangeRole" asp-route-Id="@user.Id">
+                        Промени Роля
+                    </a>
+                    <a class="btn btn-outline-secondary" asp-controller="Admin" asp-action="Delete" asp-route-Id="@user.Id">
+                        Изтрий
+                    </a>
+                    <button class="btn btn-outline-danger">Изтрий</button>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -4,13 +4,7 @@ using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
 using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
-using HoneyZoneMvc.Models.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
 {
@@ -20,11 +14,11 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         private readonly IStateService stateService;
         private ApplicationDbContext dbContext;
 
-        public OrderService(ApplicationDbContext _dbContext, IProductService _productService,IStateService _serviceState)
+        public OrderService(ApplicationDbContext _dbContext, IProductService _productService, IStateService _serviceState)
         {
             dbContext = _dbContext;
-            productService= _productService;
-            stateService= _serviceState;
+            productService = _productService;
+            stateService = _serviceState;
         }
 
         public async Task<bool> AddAsync(string userId, double totalSum, string deliveryMethodId, OrderDetailDto orderDetailDto, List<OrderProduct> orderProducts)
@@ -33,10 +27,10 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             {
                 ClientId = userId,
                 TotalSum = totalSum,
-                DeliveryMethodId =Guid.Parse(deliveryMethodId),
+                DeliveryMethodId = Guid.Parse(deliveryMethodId),
                 OrderDate = DateTime.Now,
                 State = await stateService.GetInitialOrderState(),
-                ExpectedDelivery= DateTime.Now.AddDays(4),
+                ExpectedDelivery = DateTime.Now.AddDays(4),
                 OrderDetail = new OrderDetail()
                 {
                     FirstName = orderDetailDto.FirstName,
@@ -50,7 +44,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 OrderProducts = orderProducts
 
             });
-            return await dbContext.SaveChangesAsync()>0;
+            return await dbContext.SaveChangesAsync() > 0;
         }
         public Task<bool> DeleteAsync(int id)
         {
@@ -69,18 +63,18 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 .Include(x => x.DeliveryMethod)
                 .Include(x => x.OrderProducts)
                 .Include(x => x.State)
-                .Select(x=> new OrderBasicsViewModel()
+                .Select(x => new OrderBasicsViewModel()
                 {
                     Id = x.Id.ToString(),
                     TotalSum = x.TotalSum.ToString(),
                     DeliveryMethod = x.DeliveryMethod.Name,
                     OrderDate = x.OrderDate.ToString(DataConstants.DateFormat),
                     State = x.State.Name,
-                    Address= x.OrderDetail.Address,
+                    Address = x.OrderDetail.Address,
                     PhoneNumber = x.OrderDetail.PhoneNumber,
                     ClientName = x.OrderDetail.FirstName + " " + x.OrderDetail.SecondName,
                     ExpectedDelivery = x.ExpectedDelivery.ToString(DataConstants.DateFormat),
-                }).ToListAsync(); 
+                }).ToListAsync();
             return orders;
         }
     }

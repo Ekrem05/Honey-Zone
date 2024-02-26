@@ -54,7 +54,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             dto.Name = model.Name;
             return dto;
         }
-       
+
 
         public Task<bool> UpdateCategoryAsync(CategoryAddViewModel category)
         {

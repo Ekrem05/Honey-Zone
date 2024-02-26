@@ -6,16 +6,15 @@ using HoneyZoneMvc.Messages;
 using HoneyZoneMvc.Models.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace HoneyZoneMvc.Services
+namespace HoneyZoneMvc.BusinessLogic.Services
 {
     public class ProductService : IProductService
     {
         private ApplicationDbContext dbContext;
         private ICategoryService categoryService;
         private IImageService imageService;
-        public ProductService(ApplicationDbContext _dbContext, ICategoryService _categoryService,IImageService _imageService)
+        public ProductService(ApplicationDbContext _dbContext, ICategoryService _categoryService, IImageService _imageService)
         {
             dbContext = _dbContext;
             categoryService = _categoryService;
@@ -33,10 +32,10 @@ namespace HoneyZoneMvc.Services
             var imagesInDb = imageService.GetImages();
             foreach (var image in product.Images)
             {
-                if (!imagesInDb.Any(i=>i.Name==image.FileName))
+                if (!imagesInDb.Any(i => i.Name == image.FileName))
                 {
                     productToAdd.Images.Add(new ImageUrl() { Name = product.MainImage.FileName });
-                    var imagePath= await GetUrl(product.Images);
+                    var imagePath = await GetUrl(product.Images);
                 }
                 else
                 {
@@ -140,7 +139,7 @@ namespace HoneyZoneMvc.Services
                 productToEdit.ProductAmount = product.ProductAmount;
                 productToEdit.Category = dbContext.Categories.FirstOrDefault(c => c.Name == product.Category);
                 productToEdit.QuantityInStock = product.QuantityInStock;
-                if (product.MainImage!=null)
+                if (product.MainImage != null)
                 {
                     productToEdit.MainImageUrl = await GetUrl(product.MainImage);
 
@@ -149,18 +148,18 @@ namespace HoneyZoneMvc.Services
                 {
                     foreach (var image in product.Images)
                     {
-                        if (!productToEdit.Images.Any(e=>e.Name==image.FileName))
+                        if (!productToEdit.Images.Any(e => e.Name == image.FileName))
                         {
-                            if (imageService.GetImages().Any(img => img.Name==image.FileName))
+                            if (imageService.GetImages().Any(img => img.Name == image.FileName))
                             {
                                 var imagePath = await GetUrl(image);
                                 productToEdit.Images.Add(new ImageUrl() { Name = image.FileName });
                             }
                             productToEdit.Images.Add(await imageService.GetImageByNameAsync(image.FileName));
                         }
-                       
+
                     }
-                     
+
                 }
             }
             if (dbContext.SaveChanges() > 0)
@@ -187,7 +186,7 @@ namespace HoneyZoneMvc.Services
             return false;
 
         }
-       
+
 
         public async Task<IEnumerable<ProductCartViewModel>> GetUserCartAsync(string Id)
         {
@@ -286,7 +285,7 @@ namespace HoneyZoneMvc.Services
             string url = Path.Combine(Environment.CurrentDirectory, "wwwroot", "productImages");
 
 
-            foreach (var image in images.Where(i=>imageEntities.Any(entity=>entity.Name==i.FileName)))
+            foreach (var image in images.Where(i => imageEntities.Any(entity => entity.Name == i.FileName)))
             {
                 string filePath = Path.Combine(url, image.FileName);
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
@@ -298,6 +297,6 @@ namespace HoneyZoneMvc.Services
 
             return imageUrls;
         }
-      
+
     }
 }
