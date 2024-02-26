@@ -39,7 +39,7 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models
 
         public IFormFile MainImageFile { get; set; }
 
-        public ICollection<ImageUrl> ImagesNames { get; set; }
+        public ICollection<ImageUrl> Images { get; set; }
 
         public ICollection<CategoryAddViewModel> Categories { get; set; }
 

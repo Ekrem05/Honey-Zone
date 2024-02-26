@@ -50,8 +50,18 @@ namespace HoneyZoneMvc.Controllers
         public async Task<IActionResult> ViewProduct(string Id)
         {
             var productDto = await productService.GetProductByIdAsync(Id);
+            var vm= new ProductShopDetailsViewModel()
+            {
+                Id = productDto.Id,
+                Name = productDto.Name,
+                Price = productDto.Price,
+                Description = productDto.Description,
+                QuantityInStock = productDto.QuantityInStock,
+                MainImageName = productDto.MainImageName,
+                ImagesNames = productDto.Images.Select(x => x.Name).ToList()
+            };
 
-            return View(productDto);
+            return View(vm);
         }
         [HttpGet]
         public async Task<IActionResult> Cart()

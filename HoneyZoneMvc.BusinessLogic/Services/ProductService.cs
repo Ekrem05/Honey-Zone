@@ -148,16 +148,9 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 {
                     foreach (var image in product.Images)
                     {
-                        if (!productToEdit.Images.Any(e => e.Name == image.FileName))
-                        {
-                            if (imageService.GetImages().Any(img => img.Name == image.FileName))
-                            {
-                                var imagePath = await GetUrl(image);
-                                productToEdit.Images.Add(new ImageUrl() { Name = image.FileName });
-                            }
-                            productToEdit.Images.Add(await imageService.GetImageByNameAsync(image.FileName));
-                        }
-
+                     var imagePath = await GetUrl(image);
+                      productToEdit.Images.Add(new ImageUrl() { Name = image.FileName,ProductId=product.Id });
+                         
                     }
 
                 }
@@ -222,7 +215,8 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 Description = productDto.Description,
                 QuantityInStock = productDto.QuantityInStock,
                 ProductAmount = productDto.ProductAmount,
-                MainImageUrl = productDto.MainImageFile.FileName
+                MainImageUrl = productDto.MainImageFile.FileName,
+                Images=imageService.GetImages().Where(i=>i.ProductId==productDto.Id).ToList()
             };
         }
         private ProductDto TransformProduct(Product product)
@@ -236,7 +230,8 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 QuantityInStock = product.QuantityInStock,
                 ProductAmount = product.ProductAmount,
                 Category = product.Category.Name,
-                MainImageName = product.MainImageUrl
+                MainImageName = product.MainImageUrl,
+                Images = imageService.GetImages().Where(i => i.ProductId == product.Id).ToList()
             };
         }
         private async Task<Product> TransformProduct(ProductAddViewModel product)

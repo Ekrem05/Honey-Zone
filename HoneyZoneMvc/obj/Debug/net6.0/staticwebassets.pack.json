@@ -341,12 +341,20 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\417413014_323156160698046_3124812268213225694_n.jpg",
+      "PackagePath": "staticwebassets\\productImages\\417413014_323156160698046_3124812268213225694_n.jpg"
+    },
+    {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\417442820_10159954320628785_9074303620615910138_n.jpg",
       "PackagePath": "staticwebassets\\productImages\\417442820_10159954320628785_9074303620615910138_n.jpg"
     },
     {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\424611185_770121641808960_4685740710360165011_n.jpg",
       "PackagePath": "staticwebassets\\productImages\\424611185_770121641808960_4685740710360165011_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\427989749_1807262889719462_8959949575883266596_n.jpg",
+      "PackagePath": "staticwebassets\\productImages\\427989749_1807262889719462_8959949575883266596_n.jpg"
     },
     {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\attachment_86137655.jpg",
@@ -357,12 +365,24 @@
       "PackagePath": "staticwebassets\\productImages\\bee-pollen-2549125_1280.jpg"
     },
     {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\bees-5764964.jpg",
+      "PackagePath": "staticwebassets\\productImages\\bees-5764964.jpg"
+    },
+    {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\bg honey2.png",
       "PackagePath": "staticwebassets\\productImages\\bg honey2.png"
     },
     {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\black bg honey.png",
       "PackagePath": "staticwebassets\\productImages\\black bg honey.png"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\honey-5043708_1280.jpg",
+      "PackagePath": "staticwebassets\\productImages\\honey-5043708_1280.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\vecteezy_a-futuristic-car-design-racer-car-desktop-ai-generated_22460208.jpg",
+      "PackagePath": "staticwebassets\\productImages\\vecteezy_a-futuristic-car-design-racer-car-desktop-ai-generated_22460208.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.HoneyZoneMvc.Microsoft.AspNetCore.StaticWebAssets.props",

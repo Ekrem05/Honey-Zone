@@ -1,5 +1,5 @@
-﻿@using HoneyZoneMvc.Infrastructure.Data.Models
-@model ProductDto
+﻿@using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
+@model ProductShopDetailsViewModel
 <div class="card">
     <section class="main-view">
         <div class="product-picture">
@@ -11,7 +11,8 @@
             <div class="more-pics">
                 @foreach (var item in Model.ImagesNames)
                 {
-                    
+                    <img src="~/productImages/@item" alt="" />
+
                 }
             </div>
         </div>
