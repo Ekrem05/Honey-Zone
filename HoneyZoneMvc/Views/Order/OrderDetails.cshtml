@@ -6,6 +6,9 @@
     <header class="order-heading">
         <h1>Детайли на поръчката</h1>
     </header>
+    <section id="totalPrice">
+        <h3>Обща смета: <span>@(Model.TotalSum)лв.</span></h3>
+    </section>
     <form asp-action="OrderConfirmed"method="post" class="order-form">
       
         <div class="form-group order-names">
@@ -28,7 +31,7 @@
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
         <div class="form-group address">
-           
+          
             <label asp-for="Country" class="form-label">Град</label>
             <input asp-for="Country" class="form-control" />
             <span asp-validation-for="Country" class="text-danger"></span>
@@ -53,7 +56,11 @@
 
            
         </div>
+        
         <div class="submit-button">
+            <a class="w-100 btn btn-lg btn-outline-secondary" asp-action="Cart" asp-controller="Shop">
+                Отказ
+            </a>
             <button type="submit" class="w-100 btn btn-lg btn-warning">Завърши поръчка</button>
         </div>
     </form>

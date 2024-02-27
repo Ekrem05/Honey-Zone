@@ -30,5 +30,6 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models
         public string DeliveryMethodId { get; set; }
 
         public ICollection<DeliveryMethodDto> DeliveryMethods { get; set; }
+        public double TotalSum { get; set; }
     }
 }

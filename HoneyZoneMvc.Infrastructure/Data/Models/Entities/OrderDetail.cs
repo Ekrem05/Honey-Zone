@@ -29,6 +29,5 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models.Entities
         [Required]
         public string Address { get; set; }
 
-
     }
 }

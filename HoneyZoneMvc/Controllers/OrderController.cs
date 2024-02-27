@@ -31,6 +31,8 @@ namespace HoneyZoneMvc.Controllers
         public async Task<IActionResult> OrderDetails()
         {
             var orderDto = new OrderDetailDto();
+            var cart=await cartProductService.GetCartByUserIdAsync(GetUserId().ToString());
+            orderDto.TotalSum = await cartProductService.GetCartSumAsync(GetUserId().ToString());
             orderDto.DeliveryMethods = await GetDeliveryMethods();
             return View(orderDto);
         }
@@ -45,7 +47,7 @@ namespace HoneyZoneMvc.Controllers
         {
             var cart = await cartProductService.GetCartByUserIdAsync(GetUserId().ToString());
             List<OrderProduct> orderProducts = new List<OrderProduct>();
-            double totalSum = 0;
+            
             foreach (var productItem in cart)
             {
                 var product = await productService.GetProductByIdAsync(productItem.ProductId);
@@ -55,9 +57,9 @@ namespace HoneyZoneMvc.Controllers
                     ProductId = Guid.Parse(productItem.ProductId),
                     Quantity = productItem.Quantity,
                 });
-                totalSum += product.Price*productItem.Quantity;
+              
             }
-            await orderService.AddAsync(GetUserId().ToString(), totalSum, dto.DeliveryMethodId, dto, orderProducts);
+            await orderService.AddAsync(GetUserId().ToString(), dto.TotalSum, dto.DeliveryMethodId, dto, orderProducts);
             await cartProductService.DeleteCartProductAsync(GetUserId().ToString());
             return RedirectToAction("Index", "Shop");
         }

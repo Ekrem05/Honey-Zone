@@ -162,7 +162,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         }
         public async Task DeleteOrder(string Id)
         {
-            dbContext.OrderProducts.Remove(dbContext.OrderProducts.FirstOrDefault(x => x.OrderId.ToString() == Id));
+            dbContext.OrderProducts.RemoveRange(dbContext.OrderProducts.Where(x => x.OrderId.ToString() == Id));
             dbContext.Orders.Remove(dbContext.Orders.FirstOrDefault(x => x.Id.ToString() == Id));
             await dbContext.SaveChangesAsync();
         }

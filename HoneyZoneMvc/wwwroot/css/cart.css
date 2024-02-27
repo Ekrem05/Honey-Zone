@@ -5,8 +5,14 @@
 }
 .cart-information{
     display:flex;
+    flex-direction:column;
+    align-items:center;
     align-content:center;
     justify-content:space-around;
+}
+.cart-information button{
+    width:10em;
+    margin-bottom:2em;
 }
 .product-container img {
     width: 90px;
@@ -27,10 +33,11 @@
 }
 .products-cart {
     display: flex;
-    gap:1em;
+    gap: 1em;
     flex-direction: column;
-    padding:2em;
-    flex-basis:50%;
+    padding: 2em;
+    width: 100em;
+    align-items: center
 }
 .aside-checkout {
     padding: 3em;

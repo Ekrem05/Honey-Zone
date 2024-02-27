@@ -73,5 +73,13 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return await dbContext.SaveChangesAsync() > 0;
 
         }
+        public async Task<double> GetCartSumAsync(string userId)
+        {
+            return await dbContext.CartProducts
+                .Where(cp => cp.ClientId == userId)
+                .Select(cp => cp.Product.Price * cp.Quantity)
+                .SumAsync();
+        }
+        
     }
 }

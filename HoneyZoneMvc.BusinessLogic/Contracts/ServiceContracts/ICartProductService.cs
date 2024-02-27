@@ -9,6 +9,6 @@ namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
         Task<bool> UpdateQuantityAsync(string productId, int quantity, string userId);
         Task<IEnumerable<CartProductDto>> GetCartByUserIdAsync(string userId);
         Task<bool> DeleteCartProductAsync(string userId);
-
+        Task<double> GetCartSumAsync(string userId);
     }
 }

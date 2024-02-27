@@ -361,6 +361,14 @@
       "PackagePath": "staticwebassets\\productImages\\ASP.NET Fundamentals - January 2024 - Certificate.jpeg"
     },
     {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\JAREESH-PREMIUM-100.png",
+      "PackagePath": "staticwebassets\\productImages\\JAREESH-PREMIUM-100.png"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\Shawarma-1_16dc440eab1_medium.jpg",
+      "PackagePath": "staticwebassets\\productImages\\Shawarma-1_16dc440eab1_medium.jpg"
+    },
+    {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\attachment_86137655.jpg",
       "PackagePath": "staticwebassets\\productImages\\attachment_86137655.jpg"
     },
@@ -399,6 +407,10 @@
     {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\vecteezy_a-futuristic-car-design-racer-car-desktop-ai-generated_22460208.jpg",
       "PackagePath": "staticwebassets\\productImages\\vecteezy_a-futuristic-car-design-racer-car-desktop-ai-generated_22460208.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\why_do_athletes_take_ice_baths_2000x.jpg",
+      "PackagePath": "staticwebassets\\productImages\\why_do_athletes_take_ice_baths_2000x.jpg"
     },
     {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\wp2895935-bmw-e39-hd-wallpaper.jpg",
