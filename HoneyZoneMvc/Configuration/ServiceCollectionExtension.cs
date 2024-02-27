@@ -11,8 +11,6 @@ namespace Microsoft.Extensions.DependencyInjection
     {
         public static IServiceCollection ConfigureApplication(this IServiceCollection services,IConfiguration config)
         {
-           
-           
             services=AddContext(services,config);
             services=AddIdentityWithRoles(services);
             services = AddServices(services);

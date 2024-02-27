@@ -27,15 +27,16 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 throw new ArgumentNullException(string.Format(ExceptionMessages.ArgumentNull, nameof(ProductDto)));
             }
             Product productToAdd = await TransformProduct(product);
-            productToAdd.MainImageUrl = await GetUrl(product.MainImage);
-
+            productToAdd.MainImageUrl = await SaveLocally(product.MainImage);
+            productToAdd.Images.Add(new ImageUrl() { Name = productToAdd.MainImageUrl });
             var imagesInDb = imageService.GetImages();
             foreach (var image in product.Images)
             {
+                
                 if (!imagesInDb.Any(i => i.Name == image.FileName))
                 {
-                    productToAdd.Images.Add(new ImageUrl() { Name = product.MainImage.FileName });
-                    var imagePath = await GetUrl(product.Images);
+                    var imagePath = await SaveLocally(image);
+                    productToAdd.Images.Add(new ImageUrl() { Name = imagePath });
                 }
                 else
                 {
@@ -141,14 +142,14 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 productToEdit.QuantityInStock = product.QuantityInStock;
                 if (product.MainImage != null)
                 {
-                    productToEdit.MainImageUrl = await GetUrl(product.MainImage);
+                    productToEdit.MainImageUrl = await SaveLocally(product.MainImage);
 
                 }
                 if (product.Images != null)
                 {
                     foreach (var image in product.Images)
                     {
-                     var imagePath = await GetUrl(image);
+                     var imagePath = await SaveLocally(image);
                       productToEdit.Images.Add(new ImageUrl() { Name = image.FileName,ProductId=product.Id });
                          
                     }
@@ -269,7 +270,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             };
         }
 
-        private async Task<string> GetUrl(IFormFile mainImage)
+        private async Task<string> SaveLocally(IFormFile mainImage)
         {
             string url = Path.Combine(Environment.CurrentDirectory, "wwwroot", "productImages");
 
@@ -280,25 +281,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             }
             return mainImage.FileName;
         }
-        private async Task<List<ImageUrl>> GetUrl(ICollection<IFormFile> images)
-        {
-            var imageEntities = imageService.GetImages();
-            List<ImageUrl> imageUrls = new List<ImageUrl>();
-            string url = Path.Combine(Environment.CurrentDirectory, "wwwroot", "productImages");
-
-
-            foreach (var image in images.Where(i => imageEntities.Any(entity => entity.Name == i.FileName)))
-            {
-                string filePath = Path.Combine(url, image.FileName);
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
-                {
-                    await image.CopyToAsync(fileStream);
-                }
-                imageUrls.Add(new ImageUrl() { Name = image.FileName });
-            }
-
-            return imageUrls;
-        }
+      
 
     }
 }
