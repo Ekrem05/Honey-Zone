@@ -57,12 +57,12 @@ div.actions {
     text-align:center;
 }
 .admin-table-heading {
-    font-size:1.2em;
-    font-weight:bold;
-    background-color: #96ff00f7;
-    padding:0.2em;
-    margin:0.2em;
-    width:40em;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #ffce3c;
+    padding: 0.2em;
+    margin: 0.2em;
+    width: 40em;
 }
 #table-data{
     width:100%;
@@ -87,3 +87,30 @@ justify-content:center;
 align-items:center;
     text-align:center;
 }
+.products-header {
+    text-align: center;
+    background-color: black;
+    border-color:yellow;
+    color:white;
+}
+.my-orders {
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: yellow;
+    padding: 0.2em;
+    margin: 0.2em;
+    width: 40em;
+}
+    .my-orders > ul {
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around;
+        gap: 1em;
+    }
+    .my-orders > ul>li{
+        
+    }
+        .my-orders > ul > li > span {
+            border-top: 1px solid black;
+            display: block;
+        }

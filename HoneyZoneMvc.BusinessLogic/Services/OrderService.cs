@@ -79,25 +79,40 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return orders;
         }
 
-        public async Task<IEnumerable<OrdersFromUserViewModel>> GetOrdersByUserIdAsync(string userId)
-        {
-            return await dbContext.Orders
-               .Include(x => x.OrderDetail)
-               .Include(x => x.DeliveryMethod)
-               .Include(x => x.OrderProducts)
-               .Include(x => x.State)
-               .Where(x => x.ClientId == userId)
-               .Select(x => new OrdersFromUserViewModel()
-               {
-
-                   TotalSum = x.TotalSum.ToString(),
-                   DeliveryMethod = x.DeliveryMethod.Name,
-                   OrderDate = x.OrderDate.ToString(DataConstants.DateFormat),
-                   State = x.State.Name,
-                   Address = x.OrderDetail.Address,
-                   ExpectedDelivery = x.ExpectedDelivery.ToString(DataConstants.DateFormat),
-               }).ToListAsync();
-
+        public async Task<IEnumerable<OrdersFromUserViewModel>> GetUserOrdersIdAsync(string userId)
+        {   
+            List<OrdersFromUserViewModel>result=new List<OrdersFromUserViewModel>();
+            var orders = await dbContext.Orders
+                .Include(Id => Id.OrderDetail)
+                .Include(Id => Id.DeliveryMethod)
+                .Include(Id => Id.OrderProducts)
+                .Include(Id => Id.State)
+                .Where(o => o.ClientId == userId).ToListAsync();
+            if (orders==null)
+            {
+                throw new Exception();
+            }
+            foreach (var order in orders)
+            {
+                var orderProducts = dbContext.OrderProducts.Where(x => x.OrderId.ToString() == order.Id.ToString()).Include(x => x.Product).ToList();
+                result.Add(new OrdersFromUserViewModel()
+                {
+                    TotalSum = order.TotalSum.ToString(),
+                    DeliveryMethod = order.DeliveryMethod.Name,
+                    OrderDate = order.OrderDate.ToString(DataConstants.DateFormat),
+                    ExpectedDelivery = order.ExpectedDelivery.ToString(DataConstants.DateFormat),
+                    State = order.State.Name,
+                    Address = order.OrderDetail.Address,
+                    Products = orderProducts.Select(op => new ProductsOrderedUserViewModel()
+                    {
+                        Name = op.Product.Name,
+                        Price = op.Product.Price.ToString(),
+                        Quantity = op.Quantity.ToString(),
+                        ProductAmount=op.Product.ProductAmount
+                    }).ToList()
+                });
+            }
+            return result;
         }
 
         public async Task<ChangeOrderStatusViewModel> GetOrderByIdAsync(string Id)
@@ -113,9 +128,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             };
 
             vm.Statuses= await stateService.GetAllAsync();
-            return vm;
-                
-               
+            return vm;    
         }
         public async Task<OrderInfoViewModel> GetOrderDetailsAsync(string Id)
         {
@@ -137,7 +150,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 PhoneNumber = order.OrderDetail.PhoneNumber,
                 ClientName = order.OrderDetail.FirstName + " " + order.OrderDetail.SecondName,
                 ExpectedDelivery = order.ExpectedDelivery.ToString(DataConstants.DateFormat),
-                Products = orderProducts.Select(op => new ProductOrdered()
+                Products = orderProducts.Select(op => new ProductOrderedAdminViewModel()
                 {
                     Id = op.Product.Id.ToString(),
                     Name = op.Product.Name,

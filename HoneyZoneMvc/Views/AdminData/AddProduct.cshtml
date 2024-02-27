@@ -43,7 +43,7 @@
         <div class="mb-3">
 
             <label class="form-label mt-2 " asp-for="QuantityInStock">Наличност в склад</label>
-            <input asp-for="QuantityInStock" class="form-control" />
+            <input asp-for="QuantityInStock" class="form-control" min="0" />
             <span asp-validation-for="QuantityInStock" class="bg-danger"></span>
         </div>
         <div class="mb-3">

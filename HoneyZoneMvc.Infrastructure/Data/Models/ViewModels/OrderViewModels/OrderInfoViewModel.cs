@@ -20,6 +20,6 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.OrderViewModels
 
         public string State { get; set; }
 
-        public List<ProductOrdered> Products { get; set; } = new List<ProductOrdered>();
+        public List<ProductOrderedAdminViewModel> Products { get; set; } = new List<ProductOrderedAdminViewModel>();
     }
 }

@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.ProductViewModels
 {
-    public class ProductOrdered
+    public class ProductsOrderedUserViewModel
     {
-        public string Id { get; set; }
         public string Name { get; set; }
         public string Price { get; set; }
         public string Quantity { get; set; }
-        public string ProductAmount { get; set; }   
-
+        public string ProductAmount { get; set; }
     }
 }

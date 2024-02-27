@@ -37,7 +37,7 @@ namespace HoneyZoneMvc.Controllers
         [HttpGet]
         public async Task<IActionResult> MyOrders()
         {
-            var orders = await orderService.GetOrdersByUserIdAsync(GetUserId().ToString());
+            var orders = await orderService.GetUserOrdersIdAsync(GetUserId().ToString());
             return View(orders);
         }
         [HttpPost]

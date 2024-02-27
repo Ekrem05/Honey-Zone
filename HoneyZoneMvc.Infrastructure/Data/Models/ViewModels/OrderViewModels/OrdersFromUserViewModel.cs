@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.ProductViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +15,6 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.OrderViewModels
         public string ExpectedDelivery { get; set; }
         public string State { get; set; }
         public string Address { get; set; }
+        public List<ProductsOrderedUserViewModel> Products { get; set; } = new List<ProductsOrderedUserViewModel>();
     }
 }

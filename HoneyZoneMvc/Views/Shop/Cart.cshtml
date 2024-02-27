@@ -24,17 +24,9 @@
           
             }
         </section>
-        <section class="aside-checkout">
-            <h2>
-                @Model.Sum(p => p.Price)лв <span @Model.Select(p => p.Price).Sum()</span>
-            </h2>
-            <ul type="none">
-                <li class="product-total-price">Цена на продуктите: <span>@Model.Sum(p=>p.Price)лв</span></li>
-                <li class="disscount">Намаление: <span>-@Model.Sum(p => p.Price*0.2)лв.</span></li>
-                <li class="total-sum">Обща сума с ДДС: <span>399лв.</span></li>
-            </ul>
+       
             <button type="submit" class="btn btn-success">Поръчай!</button>
-        </section>
+        
 
         </form>
         

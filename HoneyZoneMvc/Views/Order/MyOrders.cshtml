@@ -3,32 +3,48 @@
 @model IEnumerable<OrdersFromUserViewModel>
 
 <section class="products-cart">
-    <table class="table mb-10 mt-3 table-striped table-warning table-bordered border-warning table-hover table-md datatable mb-5" >
-        <thead>
-            <tr class="text-center">
-                <th scope="col">Поръчана на</th>
-                <th scope="col">Очаквана доставка на</th>
-                <th scope="col">Сума</th>
-                <th scope="col">Доставка чрез</th>
-                <th scope="col">Адрес</th>
-                <th scope="col">Статус на доставката</th>
-
-            </tr>
-        </thead>
-        <tbody class="table-group-divider">
+ 
             @foreach (var order in Model)
             {
-                <tr>
-                    <th scope="row" class="align-middle">@order.OrderDate</th>
-                    <td class="col-md-1">@order.ExpectedDelivery</td>
-                    <td class="col-md-1">@(order.TotalSum)лв.</td>
-                    <td>@order.DeliveryMethod</td>
-                    <td>@order.Address</td>
-                    <td>@order.State</td>
-                </tr>
+                 <div>
+                        <button class="btn my-orders" data-bs-toggle="collapse" data-bs-target="#order-products-@(order.GetHashCode())" aria-expanded="false" aria-controls="collapseExample">
+                            <ul type="none">
+                                <li>Обща сума <span>@(order.TotalSum)лв.</span></li>
+                    <li>Поръчана на  <span>@order.OrderDate</span></li>
+                    <li>Адрес  <span>@order.Address</span></li>
+                    <li>Статус на поръчка  <span>@order.State</span></li>
+                            </ul>
+                        </button>
+                        <div class="collapse" id="order-products-@(order.GetHashCode())">
+                            <div class=".my-card-body">
+                                    <h3 class="products-header">Продукти</h3>
+                                    <table class="table table-striped-colums table-dark  table-bordered border-warning table-hover table-md">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th scope="col">Име</th>
+                                                <th scope="col">Количество</th>
+                                                <th scope="col">Цена</th>
+                                                <th scope="col">Разфасовка</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody class="">
+                            @foreach (var product in order.Products)
+                                            {
+                                                <tr>
+                                                    <td>@product.Name</td>
+                                                    <td>@product.Quantity</td>
+                                                    <td>@(product.Price)лв.</td>
+                                                    <td>@(product.ProductAmount)</td>
+
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                            </div>
+                        </div>
+                    </div>
             }
-        </tbody>
-    </table>
   
    
     
