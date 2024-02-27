@@ -1,5 +1,6 @@
-﻿@using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
-@model IEnumerable<OrderBasicsViewModel>
+﻿@using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
+@using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.OrderViewModels
+@model IEnumerable<OrderInfoViewModel>
 @{
 }
 <table class="table mb-10 mt-3 table-striped table-light table-bordered border-warning table-hover table-sm datatable" id="orders">
@@ -32,18 +33,19 @@
                 <td> @order.State </td>
 
                 <td class="col-md-4">
-                    <a class="btn btn-outline-success" asp-controller="Order"
+                    <a class="btn btn-outline-success"
                        asp-action="ChangeStatus" asp-route-Id="@order.Id">
                         Промени статус
                     </a>
-
+                    <a class="btn btn-outline-danger" asp-action="OrderInformation" asp-route-Id="@order.Id">
+                        Информация
+                    </a>
                     <a class="btn btn-outline-primary">
                         Промени очаквана дата
                     </a>
-                    <a class="btn btn-outline-secondary" asp-controller="Order" asp-action="Delete" asp-route-Id="@order.Id">
+                    <a class="btn btn-outline-danger" asp-action="DeleteOrder" asp-route-Id="@order.Id">
                         Изтрий
                     </a>
-                    <button class="btn btn-outline-danger">Изтрий</button>
 
                 </td>
             </tr>

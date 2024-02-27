@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
+namespace HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.ProductViewModels
 {
     public class ProductShopDetailsViewModel
     {

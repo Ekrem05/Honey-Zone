@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DkeIum9VuDviJu80nIdX5BjH9zh1kt0dYvI032Jb5Y4=",
+  "Hash": "+Z3lZhIcMUd0Gz5Rg0G86eka6BmG8+EekVCSPBcYgzU=",
   "Source": "HoneyZoneMvc",
   "BasePath": "_content/HoneyZoneMvc",
   "Mode": "Default",
@@ -2886,6 +2886,25 @@
       "OriginalItemSpec": "wwwroot\\productImages\\attachment_86137655.jpg"
     },
     {
+      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\bc481c91046dde7b4ad46c0c873fd95a.jpeg",
+      "SourceId": "HoneyZoneMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "BasePath": "_content/HoneyZoneMvc",
+      "RelativePath": "productImages/bc481c91046dde7b4ad46c0c873fd95a.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\productImages\\bc481c91046dde7b4ad46c0c873fd95a.jpeg"
+    },
+    {
       "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\bee-pollen-2549125_1280.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
@@ -2979,6 +2998,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\productImages\\honey-5043708_1280.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\honey-823614_1280.jpg",
+      "SourceId": "HoneyZoneMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "BasePath": "_content/HoneyZoneMvc",
+      "RelativePath": "productImages/honey-823614_1280.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\productImages\\honey-823614_1280.jpg"
     },
     {
       "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\vecteezy_a-futuristic-car-design-racer-car-desktop-ai-generated_22460208.jpg",

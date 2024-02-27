@@ -50,12 +50,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXRhXEFkZFByb2R1Y3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ekrem/Documents/GitHub/HoneyZoneMvc/Honey-Zone/HoneyZoneMvc/Views/AdminData/ChangeStatus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXRhXENoYW5nZVN0YXR1cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ekrem/Documents/GitHub/HoneyZoneMvc/Honey-Zone/HoneyZoneMvc/Views/AdminData/EditProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXRhXEVkaXRQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ekrem/Documents/GitHub/HoneyZoneMvc/Honey-Zone/HoneyZoneMvc/Views/AdminData/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXRhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ekrem/Documents/GitHub/HoneyZoneMvc/Honey-Zone/HoneyZoneMvc/Views/AdminData/OrderInformation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EYXRhXE9yZGVySW5mb3JtYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ekrem/Documents/GitHub/HoneyZoneMvc/Honey-Zone/HoneyZoneMvc/Views/Home/Index.cshtml]

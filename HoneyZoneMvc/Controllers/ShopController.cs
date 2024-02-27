@@ -1,6 +1,7 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
+using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.ProductViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -12,24 +13,15 @@ namespace HoneyZoneMvc.Controllers
         private readonly IProductService productService;
         private readonly ICategoryService categoryService;
         private readonly ICartProductService cartProductService;
-        private readonly IDeliveryService deliveryService;
-        private readonly IOrderService orderService;
-        private readonly IStateService stateService;
 
 
         public ShopController(IProductService _productService,
             ICategoryService _categoryService,
-            ICartProductService _cartProductService,
-            IDeliveryService _deliveryService,
-            IOrderService _orderService,
-            IStateService _stateService)
+            ICartProductService _cartProductService)
         {
             productService = _productService;
             categoryService = _categoryService;
             cartProductService = _cartProductService;
-            deliveryService = _deliveryService;
-            orderService = _orderService;
-            stateService = _stateService;
         }
         [HttpGet]
         public async Task<IActionResult> Index(string? category)

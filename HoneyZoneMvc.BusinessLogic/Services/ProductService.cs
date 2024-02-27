@@ -1,7 +1,7 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
+using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.ProductViewModels;
 using HoneyZoneMvc.Messages;
 using HoneyZoneMvc.Models.Entities;
 using Microsoft.AspNetCore.Http;
@@ -171,6 +171,13 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 throw new ArgumentNullException(string.Format(ExceptionMessages.NoProductsWithGivenId, Id));
 
             }
+            var orders = dbContext.Orders.Where(o => o.OrderProducts.Any(op => op.ProductId == product.Id));
+            if (orders!=null)
+            {
+                return false;
+            }
+            dbContext.ImageUrls.RemoveRange(dbContext.ImageUrls.Where(i => i.ProductId == product.Id));
+            dbContext.OrderProducts.RemoveRange(dbContext.OrderProducts.Where(op => op.ProductId == product.Id));
             dbContext.Remove(product);
             if (await dbContext.SaveChangesAsync() > 0)
             {

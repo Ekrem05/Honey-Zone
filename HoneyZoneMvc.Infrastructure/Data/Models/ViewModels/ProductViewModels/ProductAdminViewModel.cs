@@ -1,4 +1,4 @@
-﻿namespace HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
+﻿namespace HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.ProductViewModels
 {
     public class ProductAdminViewModel
     {

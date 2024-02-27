@@ -15,5 +15,9 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models.Entities
 
         [Required]
         public int Quantity { get; set; }
+
+        [ForeignKey(nameof(OrderId))]
+        public Guid OrderId { get; set; }
+        public Order Order { get; set; }
     }
 }

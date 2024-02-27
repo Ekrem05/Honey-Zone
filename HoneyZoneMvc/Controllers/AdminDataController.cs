@@ -1,6 +1,8 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
+using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.OrderViewModels;
+using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.ProductViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -88,6 +90,40 @@ public class AdminDataController : Controller
 
         return Content("Unexpected Error");
 
+    }
+    [HttpGet]
+    [ActionName("OrderInformation")]
+    public async Task<IActionResult> OrderInformation(string Id)
+    {
+        var orderInfo= await orderService.GetOrderDetailsAsync(Id);
+        return View(orderInfo); 
+    }
+    [HttpGet]
+    [ActionName("ChangeStatus")]
+    public async Task<IActionResult> ChangeStatus(string Id)
+    {
+        var order=await orderService.GetOrderByIdAsync(Id);
+        return View(order);
+    }
+    [HttpPost]
+    [ActionName("ChangeStatus")]
+    public async Task<IActionResult> ChangeStatus(ChangeOrderStatusViewModel vm)
+    {
+        await orderService.ChangeStatusAsync(vm);
+        return RedirectToAction("Index");
+    }
+
+    [HttpGet]
+    [ActionName("DeleteOrder")]
+    public async Task<IActionResult> DeleteOrder(string Id)
+    {
+        var order = await orderService.GetOrderByIdAsync(Id);
+        if (Id!=null&&order!=null)
+        {
+            await orderService.DeleteOrder(Id);
+            return RedirectToAction("Index");
+        }
+        return BadRequest();
     }
 
     //[HttpPost]

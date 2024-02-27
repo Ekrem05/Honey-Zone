@@ -55,7 +55,7 @@ namespace HoneyZoneMvc.Controllers
                     ProductId = Guid.Parse(productItem.ProductId),
                     Quantity = productItem.Quantity,
                 });
-                totalSum += product.Price;
+                totalSum += product.Price*productItem.Quantity;
             }
             await orderService.AddAsync(GetUserId().ToString(), totalSum, dto.DeliveryMethodId, dto, orderProducts);
             await cartProductService.DeleteCartProductAsync(GetUserId().ToString());

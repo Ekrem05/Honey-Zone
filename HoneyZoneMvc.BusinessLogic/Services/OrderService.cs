@@ -3,7 +3,8 @@ using HoneyZoneMvc.Constraints;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
-using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
+using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.OrderViewModels;
+using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.ProductViewModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
@@ -11,10 +12,10 @@ namespace HoneyZoneMvc.BusinessLogic.Services
     public class OrderService : IOrderService
     {
         private readonly IProductService productService;
-        private readonly IStateService stateService;
+        private readonly IStatusService stateService;
         private ApplicationDbContext dbContext;
 
-        public OrderService(ApplicationDbContext _dbContext, IProductService _productService, IStateService _serviceState)
+        public OrderService(ApplicationDbContext _dbContext, IProductService _productService, IStatusService _serviceState)
         {
             dbContext = _dbContext;
             productService = _productService;
@@ -29,7 +30,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 TotalSum = totalSum,
                 DeliveryMethodId = Guid.Parse(deliveryMethodId),
                 OrderDate = DateTime.Now,
-                State = await stateService.GetInitialOrderState(),
+                State = await stateService.GetInitialOrderStatus(),
                 ExpectedDelivery = DateTime.Now.AddDays(4),
                 OrderDetail = new OrderDetail()
                 {
@@ -56,14 +57,14 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return await dbContext.Orders.ToListAsync();
         }
 
-        public async Task<IEnumerable<OrderBasicsViewModel>> GetAllOrdersAsync()
+        public async Task<IEnumerable<OrderInfoViewModel>> GetAllOrdersAsync()
         {
             var orders = await dbContext.Orders
                 .Include(x => x.OrderDetail)
                 .Include(x => x.DeliveryMethod)
                 .Include(x => x.OrderProducts)
                 .Include(x => x.State)
-                .Select(x => new OrderBasicsViewModel()
+                .Select(x => new OrderInfoViewModel()
                 {
                     Id = x.Id.ToString(),
                     TotalSum = x.TotalSum.ToString(),
@@ -77,24 +78,86 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 }).ToListAsync();
             return orders;
         }
+
         public async Task<IEnumerable<OrdersFromUserViewModel>> GetOrdersByUserIdAsync(string userId)
         {
             return await dbContext.Orders
-                .Include(x => x.OrderDetail)
-                .Include(x => x.DeliveryMethod)
-                .Include(x => x.OrderProducts)
+               .Include(x => x.OrderDetail)
+               .Include(x => x.DeliveryMethod)
+               .Include(x => x.OrderProducts)
+               .Include(x => x.State)
+               .Where(x => x.ClientId == userId)
+               .Select(x => new OrdersFromUserViewModel()
+               {
+
+                   TotalSum = x.TotalSum.ToString(),
+                   DeliveryMethod = x.DeliveryMethod.Name,
+                   OrderDate = x.OrderDate.ToString(DataConstants.DateFormat),
+                   State = x.State.Name,
+                   Address = x.OrderDetail.Address,
+                   ExpectedDelivery = x.ExpectedDelivery.ToString(DataConstants.DateFormat),
+               }).ToListAsync();
+
+        }
+
+        public async Task<ChangeOrderStatusViewModel> GetOrderByIdAsync(string Id)
+        {
+            var order = await dbContext.Orders
                 .Include(x => x.State)
-                .Where(x => x.ClientId == userId)
-                .Select(x => new OrdersFromUserViewModel()
+                 .FirstOrDefaultAsync(x => x.Id.ToString() == Id);
+
+            ChangeOrderStatusViewModel vm = new ChangeOrderStatusViewModel()
+            {
+                Id = order.Id.ToString(),
+                CurrentStatus = order.State.Name,
+            };
+
+            vm.Statuses= await stateService.GetAllAsync();
+            return vm;
+                
+               
+        }
+        public async Task<OrderInfoViewModel> GetOrderDetailsAsync(string Id)
+        {
+            var order = await dbContext.Orders
+                .Include(Id => Id.OrderDetail)
+                .Include(Id => Id.DeliveryMethod)
+                .Include(Id => Id.OrderProducts)
+                .Include(Id => Id.State)
+                .FirstOrDefaultAsync(o=>o.Id.ToString()==Id);
+            var orderProducts=dbContext.OrderProducts.Where(x => x.OrderId.ToString() == Id).Include(x => x.Product).ToList();
+            var result= new OrderInfoViewModel()
+            {
+                Id = order.Id.ToString(),
+                TotalSum = order.TotalSum.ToString(),
+                DeliveryMethod = order.DeliveryMethod.Name,
+                OrderDate = order.OrderDate.ToString(DataConstants.DateFormat),
+                State = order.State.Name,
+                Address = order.OrderDetail.Address,
+                PhoneNumber = order.OrderDetail.PhoneNumber,
+                ClientName = order.OrderDetail.FirstName + " " + order.OrderDetail.SecondName,
+                ExpectedDelivery = order.ExpectedDelivery.ToString(DataConstants.DateFormat),
+                Products = orderProducts.Select(op => new ProductOrdered()
                 {
-                   
-                    TotalSum = x.TotalSum.ToString(),
-                    DeliveryMethod = x.DeliveryMethod.Name,
-                    OrderDate = x.OrderDate.ToString(DataConstants.DateFormat),
-                    State = x.State.Name,
-                    Address = x.OrderDetail.Address,
-                    ExpectedDelivery = x.ExpectedDelivery.ToString(DataConstants.DateFormat),
-                }).ToListAsync();
+                    Id = op.Product.Id.ToString(),
+                    Name = op.Product.Name,
+                    Price = op.Product.Price.ToString(),
+                    Quantity = op.Quantity.ToString()
+                }).ToList()
+            };
+            return result;
+        }
+        public async Task DeleteOrder(string Id)
+        {
+            dbContext.OrderProducts.Remove(dbContext.OrderProducts.FirstOrDefault(x => x.OrderId.ToString() == Id));
+            dbContext.Orders.Remove(dbContext.Orders.FirstOrDefault(x => x.Id.ToString() == Id));
+            await dbContext.SaveChangesAsync();
+        }
+
+        public async Task ChangeStatusAsync(ChangeOrderStatusViewModel vm)
+        {
+            dbContext.Orders.FirstOrDefault(x => x.Id.ToString() == vm.Id).StateId = Guid.Parse(vm.StatusId);
+             await dbContext.SaveChangesAsync();
         }
     }
 }

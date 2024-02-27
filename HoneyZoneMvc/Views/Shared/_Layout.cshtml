@@ -86,7 +86,7 @@
             @RenderBody()
         </main>
     </div>
-    @if (!Context.Request.Path.StartsWithSegments("/Identity/Account"))
+    @if (!Context.Request.Path.StartsWithSegments("/Identity/Account") && !Context.Request.Path.ToString().Contains("/AdminData") && !Context.Request.Path.StartsWithSegments("/Order/MyOrders"))
     {
         <footer class="border-top footer text-muted" id="myFooter">
             <div class="container">
