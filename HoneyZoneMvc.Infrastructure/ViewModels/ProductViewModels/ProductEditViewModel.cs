@@ -1,10 +1,11 @@
 ﻿using HoneyZoneMvc.Constraints;
+using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 using static HoneyZoneMvc.Messages.ExceptionMessages;
-namespace HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.ProductViewModels
+namespace HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels
 {
-    public class ProductAddViewModel
+    public class ProductEditViewModel
     {
         public Guid Id { get; set; }
 
@@ -13,7 +14,7 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.ProductViewModels
         public string Name { get; set; }
 
         [Required(ErrorMessage = RequiredField)]
-        public string CategoryId { get; set; }
+        public string Category { get; set; }
 
         [Required(ErrorMessage = RequiredField)]
         [Range(DataConstants.Product.PriceMinValue, DataConstants.Product.PriceMaxValue, ErrorMessage = ProductPriceValueValidation)]
@@ -36,7 +37,6 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.ProductViewModels
         public ICollection<IFormFile> Images { get; set; }
 
         public IEnumerable<CategoryAddViewModel> Categories { get; set; }
-
 
     }
 }

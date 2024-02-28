@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
-namespace HoneyZoneMvc.Infrastructure.Data.Models
+namespace HoneyZoneMvc.Infrastructure.ViewModels.DTOs
 {
     public class OrderDetailDto
     {

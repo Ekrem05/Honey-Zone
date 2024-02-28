@@ -1,7 +1,9 @@
 ﻿using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
-using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.OrderViewModels;
+using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
+using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
+using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
 
-namespace HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
+namespace HoneyZoneMvc.Infrastructure.ViewModels
 {
     public class AdminViewModel
     {

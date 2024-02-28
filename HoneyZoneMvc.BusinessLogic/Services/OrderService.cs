@@ -1,10 +1,10 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Constraints;
 using HoneyZoneMvc.Data;
-using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
-using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.OrderViewModels;
-using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.ProductViewModels;
+using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
+using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
+using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace HoneyZoneMvc.BusinessLogic.Services

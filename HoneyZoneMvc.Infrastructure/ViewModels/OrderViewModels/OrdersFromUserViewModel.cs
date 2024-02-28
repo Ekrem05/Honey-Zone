@@ -1,11 +1,11 @@
-﻿using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.ProductViewModels;
+﻿using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.OrderViewModels
+namespace HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels
 {
     public class OrdersFromUserViewModel
     {

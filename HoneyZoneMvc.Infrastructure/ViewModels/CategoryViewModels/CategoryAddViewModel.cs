@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using static HoneyZoneMvc.Messages.ExceptionMessages;
 
-namespace HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
+namespace HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels
 {
     public class CategoryAddViewModel
     {

@@ -1,4 +1,4 @@
-﻿namespace HoneyZoneMvc.Infrastructure.Data.Models.ViewModels
+﻿namespace HoneyZoneMvc.Infrastructure.ViewModels
 {
     public class UserViewModel
     {

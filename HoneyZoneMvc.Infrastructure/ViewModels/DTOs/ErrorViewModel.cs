@@ -1,4 +1,4 @@
-namespace HoneyZoneMvc.Models
+namespace HoneyZoneMvc.Infrastructure.ViewModels.DTOs
 {
     public class ErrorViewModel
     {

@@ -1,8 +1,10 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
-using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.OrderViewModels;
-using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.ProductViewModels;
+using HoneyZoneMvc.Infrastructure.ViewModels;
+using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
+using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
+using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
+using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -126,11 +128,5 @@ public class AdminDataController : Controller
         return BadRequest();
     }
 
-    //[HttpPost]
-    //public IActionResult AddImageToModel(ProductDto productDto)
-    //{
-    //    var product = productService.GetProductById(productDto.Id);
-    //    product.
-    //}
 }
 

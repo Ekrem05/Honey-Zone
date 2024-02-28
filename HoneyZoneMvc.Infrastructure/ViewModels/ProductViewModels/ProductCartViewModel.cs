@@ -1,4 +1,4 @@
-﻿namespace HoneyZoneMvc.Infrastructure.Data.Models
+﻿namespace HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels
 {
     public class ProductCartViewModel
     {

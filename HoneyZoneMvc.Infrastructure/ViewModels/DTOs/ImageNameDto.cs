@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 
-namespace HoneyZoneMvc.Infrastructure.Data.Models
+namespace HoneyZoneMvc.Infrastructure.ViewModels.DTOs
 {
     public class ImageNameDto
     {

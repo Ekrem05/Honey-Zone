@@ -1,6 +1,6 @@
-﻿using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.ProductViewModels;
+﻿using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
 
-namespace HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.OrderViewModels
+namespace HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels
 {
     public class OrderInfoViewModel
     {

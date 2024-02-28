@@ -1,4 +1,4 @@
-﻿namespace HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.OrderViewModels
+﻿namespace HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels
 {
     public class OrderBasicsViewModel
     {

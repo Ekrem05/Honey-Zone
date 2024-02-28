@@ -1,5 +1,5 @@
-﻿using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
+﻿using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
+using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {

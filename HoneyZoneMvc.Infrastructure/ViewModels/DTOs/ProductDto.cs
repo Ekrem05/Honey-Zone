@@ -1,11 +1,11 @@
 ﻿using HoneyZoneMvc.Constraints;
-using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels;
+using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
 using HoneyZoneMvc.Models.Entities;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 using static HoneyZoneMvc.Messages.ExceptionMessages;
 
-namespace HoneyZoneMvc.Infrastructure.Data.Models
+namespace HoneyZoneMvc.Infrastructure.ViewModels.DTOs
 {
     public class ProductDto
     {

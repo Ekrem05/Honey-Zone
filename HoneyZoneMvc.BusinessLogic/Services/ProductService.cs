@@ -1,7 +1,7 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Data;
-using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.Infrastructure.Data.Models.ViewModels.ProductViewModels;
+using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
+using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
 using HoneyZoneMvc.Messages;
 using HoneyZoneMvc.Models.Entities;
 using Microsoft.AspNetCore.Http;
