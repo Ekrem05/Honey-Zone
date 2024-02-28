@@ -11,7 +11,7 @@ namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
         Task<IEnumerable<OrdersFromUserViewModel>> GetUserOrdersIdAsync(string userId);
         Task<ChangeOrderStatusViewModel> GetOrderByIdAsync(string Id);
         Task ChangeStatusAsync(ChangeOrderStatusViewModel vm);
-        Task DeleteOrder(string id);
+        Task<bool> DeleteOrderAsync(string Id);
         Task<OrderInfoViewModel> GetOrderDetailsAsync(string Id);
 
     }

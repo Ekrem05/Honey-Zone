@@ -47,9 +47,11 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             });
             return await dbContext.SaveChangesAsync() > 0;
         }
-        public Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteOrderAsync(string Id)
         {
-            throw new NotImplementedException();
+            dbContext.OrderProducts.RemoveRange(dbContext.OrderProducts.Where(x => x.OrderId.ToString() == Id));
+            dbContext.Orders.Remove(dbContext.Orders.FirstOrDefault(x => x.Id.ToString() == Id));
+            return await dbContext.SaveChangesAsync()>0;
         }
 
         public async Task<ICollection<Order>> GetAllAsync()
@@ -160,12 +162,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             };
             return result;
         }
-        public async Task DeleteOrder(string Id)
-        {
-            dbContext.OrderProducts.RemoveRange(dbContext.OrderProducts.Where(x => x.OrderId.ToString() == Id));
-            dbContext.Orders.Remove(dbContext.Orders.FirstOrDefault(x => x.Id.ToString() == Id));
-            await dbContext.SaveChangesAsync();
-        }
+ 
 
         public async Task ChangeStatusAsync(ChangeOrderStatusViewModel vm)
         {

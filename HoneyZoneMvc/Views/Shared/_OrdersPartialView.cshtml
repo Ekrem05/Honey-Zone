@@ -42,9 +42,29 @@
                     <a class="btn btn-outline-primary">
                         Промени очаквана дата
                     </a>
-                    <a class="btn btn-outline-danger" asp-action="DeleteOrder" asp-route-Id="@order.Id">
+                    <button type="button" class="btn btn-outline-danger d-inline-block" data-bs-toggle="modal" data-bs-target="#deleteOrder-@order.GetHashCode()">
                         Изтрий
-                    </a>
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteOrder-@order.GetHashCode()" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <strong>Предупреждение! </strong> Поръчката ще бъде изтрита. Сигурни ли сте?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
+                                    <form asp-action="DeleteOrder" method="post" class="d-inline-block">
+                                        <input type="hidden" value="@order.Id" name="Id" />
+                                        <button type="submit" class="btn btn-outline-danger">
+                                            Изтрий
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </td>
             </tr>

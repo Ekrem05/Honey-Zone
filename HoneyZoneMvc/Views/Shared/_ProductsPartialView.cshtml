@@ -36,6 +36,7 @@
                     @product.Description
                 </td>
                 <td class="col-md-4">
+                   
                     <a class="btn btn-outline-success"
                        asp-action="Edit" asp-route-Id="@product.Id">
                         Промоция
@@ -47,8 +48,30 @@
                     <a class="btn btn-outline-secondary" asp-action="Edit" asp-route-Id="@product.Id">
                         Редактирай
                     </a>
-                    <button class="btn btn-outline-danger">Изтрий</button>
+                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteProduct-@product.GetHashCode()">
+                         Изтрий
+                     </button>
 
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteProduct-@product.GetHashCode()" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <strong>Важно! </strong>За да бъде изтрит продуктът, трябва да не се съдържа в някоя поръчка (освен ако поръчката не е завършена) 
+                                   <strong>Предупреждение! </strong> Продуктът ще бъде изтрит. Сигурни ли сте?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
+                                    <form asp-action="DeleteProduct" method="post" class="d-inline-block">
+                                        <input type="hidden" value="@product.Id" name="Id" />
+                                        <button type="submit" class="btn btn-outline-danger">
+                                            Изтрий
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </td>
             </tr>
         }

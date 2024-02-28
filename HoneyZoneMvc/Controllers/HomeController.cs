@@ -1,4 +1,5 @@
-﻿using HoneyZoneMvc.Models;
+﻿using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
+using HoneyZoneMvc.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

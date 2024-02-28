@@ -27,9 +27,21 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return false;
         }
 
-        public Task<bool> DeleteCategoryAsync(int Id)
+        public async Task<bool> DeleteCategoryAsync(string Id)
         {
-            throw new NotImplementedException();
+           bool result= await dbContext.Products.AnyAsync(p => p.CategoryId.ToString() == Id);
+            if (result)
+            {
+                return false;
+            }
+            var category = await dbContext.Categories.FirstOrDefaultAsync(c => c.Id.ToString() == Id);
+            dbContext.Categories.Remove(category);
+            if (await dbContext.SaveChangesAsync() > 0)
+            {
+                return true;
+            }
+            return false;
+           
         }
 
         public async Task<IEnumerable<CategoryAddViewModel>> GetAllCategoriesAsync()

@@ -19,9 +19,31 @@
                 <td class="col-md-1">@category.Name</td>
 
                 <td class="">
-                    <a class="btn btn-outline-secondary" asp-controller="Order" asp-action="DeleteCategory" asp-route-Id="@category.Id">
+                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteCategory-@category.GetHashCode()">
                         Изтрий
-                    </a>
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteCategory-@category.GetHashCode()" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <strong>Важно! </strong>За да бъде изтрита категорията, трябва да няма продукти от нея
+                                    <br />
+                                    <strong>Предупреждение! </strong> Категорията ще бъде изтрита, Сигурни ли сте?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
+                                    <form asp-action="DeleteCategory" method="post" class="d-inline-block">
+                                        <input type="hidden" value="@category.Id" name="Id" />
+                                        <button type="submit" class="btn btn-outline-danger">
+                                            Изтрий
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </td>
             </tr>

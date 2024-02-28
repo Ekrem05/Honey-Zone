@@ -125,7 +125,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             throw new ArgumentNullException(string.Format(ExceptionMessages.NoProductsWithGivenId, Id));
         }
 
-
         public async Task<bool> UpdateProductAsync(ProductEditViewModel product)
         {
             var productToEdit = await dbContext.Products
@@ -172,13 +171,16 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 throw new ArgumentNullException(string.Format(ExceptionMessages.NoProductsWithGivenId, Id));
 
             }
-            var orders = dbContext.Orders.Where(o => o.OrderProducts.Any(op => op.ProductId == product.Id));
-            if (orders!=null)
+            var orders = await dbContext.Orders
+                .Where(o=>o.State.Name
+                !="Завършена")
+                .Where(o => o.OrderProducts.Any(op => op.ProductId == product.Id)).ToListAsync();
+            if (orders.Count()>0)
             {
                 return false;
             }
             dbContext.ImageUrls.RemoveRange(dbContext.ImageUrls.Where(i => i.ProductId == product.Id));
-            dbContext.OrderProducts.RemoveRange(dbContext.OrderProducts.Where(op => op.ProductId == product.Id));
+            dbContext.CartProducts.RemoveRange(dbContext.CartProducts.Where(cp => cp.ProductId == product.Id));
             dbContext.Remove(product);
             if (await dbContext.SaveChangesAsync() > 0)
             {

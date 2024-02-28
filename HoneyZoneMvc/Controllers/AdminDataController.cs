@@ -24,7 +24,7 @@ public class AdminDataController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(string ErrorMessage)
     {
         AdminViewModel vm = new AdminViewModel();
         vm.Products = await productService.GetAllProductsAsync();
@@ -32,6 +32,7 @@ public class AdminDataController : Controller
         vm.Orders = await orderService.GetAllOrdersAsync();
         vm.Categories = (await categoryService.GetAllCategoriesAsync()).Select(c=>new CategoryViewModel() { Name=c.Name, Id=c.Id.ToString()});
         vm.Users=new List<UserViewModel>();
+        vm.ErrorMessage= ErrorMessage;
         //vm.Users= (await userService.GetAllUsersAsync()); 
         //ADD DOWNLOADING FUNCTIONALLITY DOWNLOAD Business stats profit etc.
         vm.ProductView = new ProductDto();
@@ -58,11 +59,17 @@ public class AdminDataController : Controller
         return RedirectToAction("index");
 
     }
+    [HttpGet]
+    [ActionName("AddProductCategory")]
+    public async Task<IActionResult> AddProductCategoryAsync()
+    {
+        return View("AddCategory");
+    }
     [HttpPost]
     [ActionName("AddProductCategory")]
-    public async Task<IActionResult> AddProductCategoryAsync(AdminViewModel productvm)
+    public async Task<IActionResult> AddProductCategoryAsync(CategoryAddViewModel productvm)
     {
-        if (await categoryService.AddCategoryAsync(productvm.CategoryView))
+        if (await categoryService.AddCategoryAsync(productvm))
         {
             return RedirectToAction("index");
         }
@@ -115,18 +122,41 @@ public class AdminDataController : Controller
         return RedirectToAction("Index");
     }
 
-    [HttpGet]
+    [HttpPost]
     [ActionName("DeleteOrder")]
     public async Task<IActionResult> DeleteOrder(string Id)
     {
         var order = await orderService.GetOrderByIdAsync(Id);
         if (Id!=null&&order!=null)
         {
-            await orderService.DeleteOrder(Id);
+            await orderService.DeleteOrderAsync(Id);
             return RedirectToAction("Index");
         }
         return BadRequest();
     }
+    [HttpPost]
+    [ActionName("DeleteCategory")]
+    public async Task<IActionResult> DeleteCategory(string Id)
+    {
+        if (await categoryService.DeleteCategoryAsync(Id))
+        {
+            return RedirectToAction(nameof(Index));
+        }
+        return RedirectToAction(nameof(Index), new { ErrorMessage = "Все още има продукти с тази категория!" });
+
+    }
+    [HttpPost]
+    [ActionName("DeleteProduct")]
+    public async Task<IActionResult> DeleteProduct(string Id)
+    {
+        if (await productService.DeleteProductAsync(Id))
+        {
+            return  RedirectToAction(nameof(Index));
+        }
+        return RedirectToAction(nameof(Index), new { ErrorMessage = "Продуктът все още се използва в поръчка!" });
+    }
+
+
 
 }
 

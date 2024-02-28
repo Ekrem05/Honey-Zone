@@ -16,5 +16,7 @@ namespace HoneyZoneMvc.Infrastructure.ViewModels
         public ProductDto ProductView { get; set; }
         public CategoryAddViewModel CategoryView { get; set; }
 
+        public string ErrorMessage { get; set; }
+
     }
 }
