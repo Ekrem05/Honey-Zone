@@ -30,6 +30,13 @@ namespace HoneyZoneMvc.Models.Entities
         [Comment("Product Price")]
         public double Price { get; set; }
 
+        [Comment("Has Discount Or Not")]
+        public bool IsDiscounted { get; set; }
+
+        [Required]
+        [Comment("Product Discounted")]
+        public double Discount { get; set; }
+
         [Required]
         [MaxLength(DataConstants.Product.DescriptionMaxValue)]
         [Comment("Product Description")]

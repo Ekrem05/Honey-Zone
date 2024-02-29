@@ -149,6 +149,7 @@ public class AdminDataController : Controller
     [ActionName("DeleteProduct")]
     public async Task<IActionResult> DeleteProduct(string Id)
     {
+        
         if (await productService.DeleteProductAsync(Id))
         {
             return  RedirectToAction(nameof(Index));
