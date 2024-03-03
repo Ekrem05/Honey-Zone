@@ -1,4 +1,4 @@
-﻿@model ProductDto
+﻿@model ImageViewModel
 <div class="modal fade"
      id="AddImage-@Model.Id"
      tabindex="-1"
@@ -18,11 +18,11 @@
             <div class="modal-body">
                 <form asp-action="AddImageToModel" method="post" enctype="multipart/form-data">
                     <input hidden asp-for="Id" />
-                    <label class="form-label mt-1" asp-for="MainImageFile">Основна снимка <span class="bg-warning">(Ако не се посочи снимка ще остане същата)</span> </label>
+                    <label class="form-label mt-1" asp-for="Name">Основна снимка <span class="bg-warning">(Ако не се посочи снимка ще остане същата)</span> </label>
                     <div class="input-group mb-3">
-                        <input type="file" asp-for="MainImageFile" class="form-control"
+                        <input type="file" asp-for="Name" class="form-control"
                                accept="image/jpg,image/png,image/jpeg" />
-                        <span asp-validation-for="MainImageFile"></span>
+                        <span asp-validation-for="Name"></span>
                     </div>
                     <div class="modal-footer">
                         <button type="button"

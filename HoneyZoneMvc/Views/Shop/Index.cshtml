@@ -1,4 +1,4 @@
-﻿@model AdminViewModel
+﻿@model ShopViewModel
 @{
 }
 <section class="store-section">
@@ -9,7 +9,7 @@
                 <a class="btn" id="filter-action" asp-action="Index" asp-route-category="All">Всички</a>
 
             </li>
-            @foreach (var category in Model.CategoryDtos.Select(c=>c.Name))
+            @foreach (var category in Model.Categories.Select(c=>c.Name))
             {
                 <li>
                     <a class="btn" id="filter-action" asp-action="Index" asp-route-category="@category">@category</a>
@@ -25,7 +25,7 @@
     <section products>
 
         <ul type="none" class="all-products">
-            @foreach (ProductDto productDto in Model.Products)
+            @foreach (var productDto in Model.Products)
             {
                 <li class="product-card">
                     <img src="~/productImages/@productDto.MainImageName" alt="" />
