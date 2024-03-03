@@ -26,8 +26,8 @@ namespace HoneyZoneMvc.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
 
-            builder.ApplyConfiguration(new ProductConfiguration());
             builder.ApplyConfiguration(new CategoryConfiguration());
+            builder.ApplyConfiguration(new ProductConfiguration());
             builder.ApplyConfiguration(new StateConfiguration());
             builder.ApplyConfiguration(new DeliveryMethodConfiguration());
             builder.ApplyConfiguration(new CartProductConfiguration());            

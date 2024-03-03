@@ -17,7 +17,6 @@ namespace HoneyZoneMvc.Models.Entities
         [Comment("Product Name")]
         public string Name { get; set; }
 
-
         [Required]
         [ForeignKey(nameof(CategoryId))]
         [Comment("Category Identifier")]
