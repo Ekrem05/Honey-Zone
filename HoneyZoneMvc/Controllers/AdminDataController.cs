@@ -1,8 +1,6 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
-using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.ViewModels;
 using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
-using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
 using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
 using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -35,7 +33,6 @@ public class AdminDataController : Controller
         vm.ErrorMessage= ErrorMessage;
         //vm.Users= (await userService.GetAllUsersAsync()); 
         //ADD DOWNLOADING FUNCTIONALLITY DOWNLOAD Business stats profit etc.
-        vm.ProductView = new ProductDto();
         return View(vm);
     }
     [HttpGet]
