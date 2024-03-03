@@ -24,7 +24,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             if (product == null)
             {
-                throw new ArgumentNullException(string.Format(ExceptionMessages.ArgumentNull, nameof(ProductDto)));
+                throw new ArgumentNullException(string.Format(ExceptionMessages.ArgumentNull, nameof(ProductAddViewModel)));
             }
             Product productToAdd = await TransformProduct(product);
             productToAdd.MainImageUrl = await SaveLocally(product.MainImage);
@@ -54,13 +54,13 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         }
 
-        public async Task<IEnumerable<ProductDto>> GetAllProductsAsync()
+        public async Task<IEnumerable<ProductAdminViewModel>> GetAllProductsAsync()
         {
             var models = await dbContext.Products
                 .Include(p => p.Category)
                 .ToListAsync();
 
-            List<ProductDto> productsDto = new List<ProductDto>();
+            List<ProductAdminViewModel> productsDto = new List<ProductAdminViewModel>();
 
             foreach (var product in models)
             {
@@ -69,7 +69,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return productsDto;
         }
 
-        public async Task<IEnumerable<ProductDto>> GetProductsByCategoryAsync(string category)
+        public async Task<IEnumerable<ProductAdminViewModel>> GetProductsByCategoryAsync(string category)
         {
             if (category.ToUpper() == "ALL")
             {
@@ -84,7 +84,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
             if (models != null)
             {
-                List<ProductDto> productsDto = new List<ProductDto>();
+                List<ProductAdminViewModel> productsDto = new List<ProductAdminViewModel>();
                 foreach (var product in models)
                 {
                     productsDto.Add(TransformProduct(product));
@@ -95,7 +95,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         }
 
-        public async Task<ProductDto> GetProductByIdAsync(string Id)
+        public async Task<ProductAdminViewModel> GetProductByIdAsync(string Id)
         {
             var model = await dbContext.Products
                 .Include(p => p.Category)
@@ -215,23 +215,10 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             else { throw new Exception(); }///HERE!!
         }
         //Private methods
-        private async Task<Product> TransformProduct(ProductDto productDto)
+      
+        private ProductAdminViewModel TransformProduct(Product product)
         {
-            return new Product()
-            {
-                Name = productDto.Name,
-                Category = await dbContext.Categories.FirstOrDefaultAsync(c => c.Name == productDto.Category),
-                Price = productDto.Price,
-                Description = productDto.Description,
-                QuantityInStock = productDto.QuantityInStock,
-                ProductAmount = productDto.ProductAmount,
-                MainImageUrl = productDto.MainImageFile.FileName,
-                Images=imageService.GetImages().Where(i=>i.ProductId==productDto.Id).ToList()
-            };
-        }
-        private ProductDto TransformProduct(Product product)
-        {
-            return new ProductDto()
+            return new ProductAdminViewModel()
             {
                 Id = product.Id,
                 Name = product.Name,
@@ -241,7 +228,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 ProductAmount = product.ProductAmount,
                 Category = product.Category.Name,
                 MainImageName = product.MainImageUrl,
-                Images = imageService.GetImages().Where(i => i.ProductId == product.Id).ToList()
+                Images = imageService.GetImages().Select(x=>x.Name).ToArray()
             };
         }
         private async Task<Product> TransformProduct(ProductAddViewModel product)

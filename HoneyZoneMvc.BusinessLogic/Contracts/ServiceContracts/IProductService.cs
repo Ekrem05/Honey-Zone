@@ -7,11 +7,11 @@ namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
     {
 
         Task<bool> AddProductAsync(ProductAddViewModel product);
-        Task<IEnumerable<ProductDto>> GetAllProductsAsync();
+        Task<IEnumerable<ProductAdminViewModel>> GetAllProductsAsync();
         Task<bool> UpdateProductAsync(ProductEditViewModel product);
         Task<bool> DeleteProductAsync(string Id);
-        Task<ProductDto> GetProductByIdAsync(string Id);
-        Task<IEnumerable<ProductDto>> GetProductsByCategoryAsync(string category);
+        Task<ProductAdminViewModel> GetProductByIdAsync(string Id);
+        Task<IEnumerable<ProductAdminViewModel>> GetProductsByCategoryAsync(string category);
         Task<IEnumerable<ProductCartViewModel>> GetUserCartAsync(string id);
         Task<ProductEditViewModel> GetProductEditByIdAsync(string Id);
 
