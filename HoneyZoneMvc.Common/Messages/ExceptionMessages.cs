@@ -22,7 +22,9 @@
         public const string ProductPriceValueValidation = "Цената трябва да е от {1} до {2} лв!";
         public const string ProductInStockValueValidation = "Бройката в склад трябва да е от {1} до {2} броя!";
         public const string ProductAmountValueValidation = "Количеството трябва да започва с число и да завърши с (ml;l;g;mg;kg) Пример: 100g";
+        public const string ProductDiscountValueValidation = "Отстъпката трябва да е от {1} до {2} процента!";
         public const string RequiredField = "Това поле е задължително!";
+
 
 
 
