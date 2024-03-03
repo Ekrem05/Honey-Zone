@@ -1,7 +1,9 @@
 ﻿using HoneyZoneMvc.Constraints;
 using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using static HoneyZoneMvc.Messages.ExceptionMessages;
 namespace HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels
 {
@@ -19,6 +21,13 @@ namespace HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels
         [Required(ErrorMessage = RequiredField)]
         [Range(DataConstants.Product.PriceMinValue, DataConstants.Product.PriceMaxValue, ErrorMessage = ProductPriceValueValidation)]
         public double Price { get; set; }
+
+        [Required(ErrorMessage = RequiredField)]
+        public bool IsDiscounted { get; set; }
+
+        [AllowNull]
+        [Range(DataConstants.Product.DiscountMinValue, DataConstants.Product.DiscountMaxValue, ErrorMessage = ProductDiscountValueValidation)]
+        public double Discount { get; set; }
 
         [Required(ErrorMessage = RequiredField)]
         [StringLength(DataConstants.Product.DescriptionMaxValue, MinimumLength = DataConstants.Product.DescriptionMinValue, ErrorMessage = ProductDescriptionValueValidation)]

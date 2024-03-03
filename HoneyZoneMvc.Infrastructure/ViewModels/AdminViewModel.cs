@@ -2,20 +2,17 @@
 using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
 using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
 using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
+using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
 
 namespace HoneyZoneMvc.Infrastructure.ViewModels
 {
     public class AdminViewModel
     {
-        public IEnumerable<ProductDto> Products { get; set; }
+        public IEnumerable<ProductAdminViewModel> Products { get; set; }
         public IEnumerable<CategoryAddViewModel> CategoryDtos { get; set; }
         public IEnumerable<OrderInfoViewModel> Orders { get; set; }
         public IEnumerable<CategoryViewModel> Categories { get; set; }
         public IEnumerable<UserViewModel> Users { get; set; }
-
-        public ProductDto ProductView { get; set; }
-        public CategoryAddViewModel CategoryView { get; set; }
-
         public string ErrorMessage { get; set; }
 
     }
