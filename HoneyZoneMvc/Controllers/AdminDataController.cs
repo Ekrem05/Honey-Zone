@@ -35,7 +35,6 @@ public class AdminDataController : Controller
         vm.ErrorMessage= ErrorMessage;
         //vm.Users= (await userService.GetAllUsersAsync()); 
         //ADD DOWNLOADING FUNCTIONALLITY DOWNLOAD Business stats profit etc.
-        vm.ProductView = new ProductDto();
         return View(vm);
     }
     [HttpGet]

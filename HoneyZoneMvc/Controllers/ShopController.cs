@@ -1,5 +1,6 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Infrastructure.ViewModels;
+using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
 using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
 using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -26,13 +27,31 @@ namespace HoneyZoneMvc.Controllers
         [HttpGet]
         public async Task<IActionResult> Index(string? category)
         {
-            AdminViewModel vm = new AdminViewModel();
-            vm.Products = await productService.GetAllProductsAsync();
-            vm.CategoryDtos = await categoryService.GetAllCategoriesAsync();
+            ShopViewModel vm = new ShopViewModel();
+            var products = await productService.GetAllProductsAsync();
+            vm.Products = products.Select(p => new ProductShopCardViewModel()
+            {
+                Id = p.Id.ToString(),
+                Name = p.Name,
+                Price = p.Price,
+                MainImageName = p.MainImageName
+            }).ToList();
+            var categories = await categoryService.GetAllCategoriesAsync();
+            vm.Categories = categories.Select(c => new CategoryViewModel()
+            {
+                Id = c.Id.ToString(),
+                Name = c.Name
+            }).ToList();
             if (category != null)
             {
                 var productsCategorized = await productService.GetProductsByCategoryAsync(category);
-                vm.Products = productsCategorized;
+               vm.Products = productsCategorized.Select(p => new ProductShopCardViewModel()
+               {
+                    Id = p.Id.ToString(),
+                    Name = p.Name,
+                    Price = p.Price,
+                    MainImageName = p.MainImageName
+                }).ToList();
             }
 
             return View(vm);
@@ -50,7 +69,7 @@ namespace HoneyZoneMvc.Controllers
                 Description = productDto.Description,
                 QuantityInStock = productDto.QuantityInStock,
                 MainImageName = productDto.MainImageName,
-                ImagesNames = productDto.Images.Select(x => x.Name).ToList()
+                ImagesNames = productDto.Images.ToList()
             };
 
             return View(vm);
