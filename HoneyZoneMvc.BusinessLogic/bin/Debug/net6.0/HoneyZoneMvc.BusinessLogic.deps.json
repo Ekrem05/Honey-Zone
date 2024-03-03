@@ -511,8 +511,14 @@
           }
         }
       },
+      "HoneyZoneMvc.Common/1.0.0": {
+        "runtime": {
+          "HoneyZoneMvc.Common.dll": {}
+        }
+      },
       "HoneyZoneMvc.Infrastructure/1.0.0": {
         "dependencies": {
+          "HoneyZoneMvc.Common": "1.0.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.24",
           "Microsoft.AspNetCore.Identity.UI": "6.0.27",
@@ -879,6 +885,11 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "HoneyZoneMvc.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "HoneyZoneMvc.Infrastructure/1.0.0": {
       "type": "project",

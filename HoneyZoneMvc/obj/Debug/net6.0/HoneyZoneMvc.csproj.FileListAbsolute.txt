@@ -579,3 +579,5 @@ C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\obj\Debug\n
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\obj\Debug\net6.0\HoneyZoneMvc.csproj.CopyComplete
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\obj\Debug\net6.0\HoneyZoneMvc.genruntimeconfig.cache
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\obj\Debug\net6.0\ref\HoneyZoneMvc.dll
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\bin\Debug\net6.0\HoneyZoneMvc.Common.dll
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\bin\Debug\net6.0\HoneyZoneMvc.Common.pdb

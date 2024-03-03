@@ -24,3 +24,6 @@ C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastruct
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\obj\Debug\net6.0\refint\HoneyZoneMvc.Infrastructure.dll
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\obj\Debug\net6.0\HoneyZoneMvc.Infrastructure.pdb
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\obj\Debug\net6.0\ref\HoneyZoneMvc.Infrastructure.dll
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\bin\Debug\net6.0\HoneyZoneMvc.Common.dll
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\bin\Debug\net6.0\HoneyZoneMvc.Common.pdb
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\obj\Debug\net6.0\HoneyZoneMvc.Infrastructure.csproj.CopyComplete

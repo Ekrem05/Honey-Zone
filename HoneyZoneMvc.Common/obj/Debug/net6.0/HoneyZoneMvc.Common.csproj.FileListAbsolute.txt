@@ -1,0 +1,12 @@
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Common\bin\Debug\net6.0\HoneyZoneMvc.Common.deps.json
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Common\bin\Debug\net6.0\HoneyZoneMvc.Common.dll
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Common\bin\Debug\net6.0\HoneyZoneMvc.Common.pdb
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Common\obj\Debug\net6.0\HoneyZoneMvc.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Common\obj\Debug\net6.0\HoneyZoneMvc.Common.AssemblyInfoInputs.cache
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Common\obj\Debug\net6.0\HoneyZoneMvc.Common.AssemblyInfo.cs
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Common\obj\Debug\net6.0\HoneyZoneMvc.Common.csproj.CoreCompileInputs.cache
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Common\obj\Debug\net6.0\HoneyZoneMvc.Common.sourcelink.json
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Common\obj\Debug\net6.0\HoneyZoneMvc.Common.dll
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Common\obj\Debug\net6.0\refint\HoneyZoneMvc.Common.dll
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Common\obj\Debug\net6.0\HoneyZoneMvc.Common.pdb
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Common\obj\Debug\net6.0\ref\HoneyZoneMvc.Common.dll

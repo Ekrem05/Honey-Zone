@@ -4131,10 +4131,21 @@
           "bin/placeholder/HoneyZoneMvc.BusinessLogic.dll": {}
         }
       },
+      "HoneyZoneMvc.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/HoneyZoneMvc.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HoneyZoneMvc.Common.dll": {}
+        }
+      },
       "HoneyZoneMvc.Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "HoneyZoneMvc.Common": "1.0.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.24",
           "Microsoft.AspNetCore.Identity.UI": "6.0.27",
@@ -11576,6 +11587,11 @@
       "type": "project",
       "path": "../HoneyZoneMvc.BusinessLogic/HoneyZoneMvc.BusinessLogic.csproj",
       "msbuildProject": "../HoneyZoneMvc.BusinessLogic/HoneyZoneMvc.BusinessLogic.csproj"
+    },
+    "HoneyZoneMvc.Common/1.0.0": {
+      "type": "project",
+      "path": "../HoneyZoneMvc.Common/HoneyZoneMvc.Common.csproj",
+      "msbuildProject": "../HoneyZoneMvc.Common/HoneyZoneMvc.Common.csproj"
     },
     "HoneyZoneMvc.Infrastructure/1.0.0": {
       "type": "project",

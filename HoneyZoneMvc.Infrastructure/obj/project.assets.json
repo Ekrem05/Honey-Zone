@@ -917,6 +917,16 @@
             "rid": "win"
           }
         }
+      },
+      "HoneyZoneMvc.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/HoneyZoneMvc.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HoneyZoneMvc.Common.dll": {}
+        }
       }
     }
   },
@@ -2382,10 +2392,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "HoneyZoneMvc.Common/1.0.0": {
+      "type": "project",
+      "path": "../HoneyZoneMvc.Common/HoneyZoneMvc.Common.csproj",
+      "msbuildProject": "../HoneyZoneMvc.Common/HoneyZoneMvc.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "HoneyZoneMvc.Common >= 1.0.0",
       "Microsoft.AspNetCore.Http.Features >= 5.0.17",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.24",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.27",
@@ -2423,7 +2439,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Common\\HoneyZoneMvc.Common.csproj": {
+              "projectPath": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Common\\HoneyZoneMvc.Common.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
