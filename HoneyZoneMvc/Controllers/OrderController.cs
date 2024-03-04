@@ -36,12 +36,14 @@ namespace HoneyZoneMvc.Controllers
             ordervm.DeliveryMethods = await GetDeliveryMethods();
             return View(ordervm);
         }
+
         [HttpGet]
         public async Task<IActionResult> MyOrders()
         {
             var orders = await orderService.GetUserOrdersIdAsync(GetUserId().ToString());
             return View(orders);
         }
+
         [HttpPost]
         public async Task<IActionResult> OrderConfirmed(OrderDetailViewModel dto)
         {
@@ -64,6 +66,41 @@ namespace HoneyZoneMvc.Controllers
             await orderService.AddAsync(GetUserId().ToString(), totalSum, dto.DeliveryMethodId, dto, orderProducts);
             await cartProductService.DeleteCartProductAsync(GetUserId().ToString());
             return RedirectToAction("Index", "Shop");
+        }
+
+        [HttpGet]
+        [ActionName("OrderInformation")]
+        public async Task<IActionResult> OrderInformation(string Id)
+        {
+            var orderInfo = await orderService.GetOrderDetailsAsync(Id);
+            return View(orderInfo);
+        }
+        [HttpGet]
+        [ActionName("ChangeStatus")]
+        public async Task<IActionResult> ChangeStatus(string Id)
+        {
+            var order = await orderService.GetOrderByIdAsync(Id);
+            return View(order);
+        }
+        [HttpPost]
+        [ActionName("ChangeStatus")]
+        public async Task<IActionResult> ChangeStatus(ChangeOrderStatusViewModel vm)
+        {
+            await orderService.ChangeStatusAsync(vm);
+            return RedirectToAction("Index","AdminData");
+        }
+
+        [HttpPost]
+        [ActionName("DeleteOrder")]
+        public async Task<IActionResult> DeleteOrder(string Id)
+        {
+            var order = await orderService.GetOrderByIdAsync(Id);
+            if (Id != null && order != null)
+            {
+                await orderService.DeleteOrderAsync(Id);
+                return RedirectToAction("Index", "AdminData");
+            }
+            return BadRequest();
         }
 
         private async Task<ICollection<DeliveryMethodViewModel>> GetDeliveryMethods()

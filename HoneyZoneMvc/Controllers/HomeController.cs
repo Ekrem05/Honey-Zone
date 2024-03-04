@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HoneyZoneMvc.Infrastructure.ViewModels.Errors;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace HoneyZoneMvc.Controllers

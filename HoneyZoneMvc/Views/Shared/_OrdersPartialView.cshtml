@@ -32,10 +32,11 @@
 
                 <td class="col-md-4">
                     <a class="btn btn-outline-success"
+                       asp-controller="Order"
                        asp-action="ChangeStatus" asp-route-Id="@order.Id">
                         Промени статус
                     </a>
-                    <a class="btn btn-outline-danger" asp-action="OrderInformation" asp-route-Id="@order.Id">
+                    <a class="btn btn-outline-danger" asp-controller="Order" asp-action="OrderInformation" asp-route-Id="@order.Id">
                         Информация
                     </a>
                     <a class="btn btn-outline-primary">
@@ -54,7 +55,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
-                                    <form asp-action="DeleteOrder" method="post" class="d-inline-block">
+                                    <form asp-controller="Order" asp-action="DeleteOrder" method="post" class="d-inline-block">
                                         <input type="hidden" value="@order.Id" name="Id" />
                                         <button type="submit" class="btn btn-outline-danger">
                                             Изтрий

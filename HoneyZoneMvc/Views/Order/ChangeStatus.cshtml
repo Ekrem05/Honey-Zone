@@ -1,0 +1,31 @@
+﻿@model ChangeOrderStatusViewModel
+@{
+}
+
+<form asp-action="ChangeStatus"  method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <input asp-for="Id" type="hidden">
+        <div class="mb-3">
+            <label asp-for="StatusId" class="control-label">Категория</label>
+            <select asp-for="@Model.StatusId" class="form-control" aria-required="true">
+                <option disabled selected value="">Настоящ статус: "@Model.CurrentStatus"</option>
+                @foreach (var status in Model.Statuses)
+                {
+                    <option value="@status.Id">@status.Name</option>
+                }
+            </select>
+            <span asp-validation-for="StatusId" class="bg-danger"></span>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a type="button"
+           class="btn btn-secondary"
+           asp-controller="AdminData"
+           asp-action="Index">
+            Отказ
+        </a>
+        <button type="submit" class="btn btn-success" id="liveToastBtn">
+            Промени статуса
+        </button>
+    </div>
+</form>

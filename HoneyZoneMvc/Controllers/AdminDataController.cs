@@ -1,11 +1,13 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
+using HoneyZoneMvc.Common.Messages;
 using HoneyZoneMvc.Infrastructure.ViewModels;
 using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
-using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
 using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
 using HoneyZoneMvc.Infrastructure.ViewModels.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
+using static HoneyZoneMvc.Common.Messages.SuccessfulMessages;
 
 [Authorize]
 public class AdminDataController : Controller
@@ -23,7 +25,7 @@ public class AdminDataController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> Index(string ErrorMessage)
+    public async Task<IActionResult> Index()
     {
         AdminViewModel vm = new AdminViewModel();
         vm.Products = await productService.GetAllProductsAsync();
@@ -32,7 +34,7 @@ public class AdminDataController : Controller
         vm.Users = new List<UserViewModel>();
         vm.DiscountByCategoryViewModel = new DiscountByCategoryViewModel();
         vm.DiscountByCategoryViewModel.Categories = vm.Categories.Select(CategoryViewModel => new CategoryViewModel() { Name = CategoryViewModel.Name, Id = CategoryViewModel.Id });
-        vm.ErrorMessage = ErrorMessage;
+
         //vm.Users= (await userService.GetAllUsersAsync()); 
         //ADD DOWNLOADING FUNCTIONALLITY DOWNLOAD Business stats profit etc.
         return View(vm);
@@ -41,24 +43,38 @@ public class AdminDataController : Controller
     [ActionName("AddProduct")]
     public async Task<IActionResult> AddProductAsync()
     {
-
         ProductAddViewModel productAddViewModel = new ProductAddViewModel();
         productAddViewModel.Categories = await categoryService.GetAllCategoriesAsync();
         return View(productAddViewModel);
-
     }
     [HttpPost]
     [ActionName("AddProduct")]
     public async Task<IActionResult> AddProductAsync(ProductAddViewModel productvm)
     {
-        if (ModelState.IsValid)
+        var categoryExists = await categoryService.CategoryExistsAsync(productvm.CategoryId);
+        if (!categoryExists)
         {
-            if (await productService.AddProductAsync(productvm))
-            {
-                return RedirectToAction("index");
-            }
+            ModelState.AddModelError(string.Empty, CategoryMessages.InvalidCategory);
         }
-        return RedirectToAction("index");
+
+        if (!ModelState.IsValid)
+        {
+            ModelState.AddModelError(string.Empty, ModelStateInvalid);
+            productvm.Categories = await categoryService.GetAllCategoriesAsync();
+            return View(productvm);
+        }
+        try
+        {
+            await productService.AddProductAsync(productvm);
+            TempData["Message"] = ProductAdded;
+            return RedirectToAction(nameof(Index));
+        }
+        catch (Exception)
+        {
+            TempData["Message"] = GeneralException;
+            productvm.Categories = await categoryService.GetAllCategoriesAsync();
+            return View(productvm);
+        }
 
     }
     [HttpPost]
@@ -66,38 +82,73 @@ public class AdminDataController : Controller
     public async Task<IActionResult> AddProductCategoryAsync(CategoryAddViewModel productvm)
     {
         var categories = await categoryService.GetAllCategoriesAsync();
+       
         if (categories.Any(c => c.Name == productvm.Name))
         {
-            return RedirectToAction("index", new { ErrorMessage = "Категорията вече съществува!" });
+            TempData["Message"] = CategoryMessages.CategoryExists;
+            return RedirectToAction(nameof(Index));
         }
-        await categoryService.AddCategoryAsync(productvm);
+        try
+        {
+            TempData["Message"] = CategoryAdded;
+            await categoryService.AddCategoryAsync(productvm);
+            return RedirectToAction(nameof(Index));
+        }
+        catch (Exception)
+        {
+            TempData["Message"] = GeneralException;
+            return RedirectToAction(nameof(Index));
+        }
 
-        return RedirectToAction("index");
 
     }
     [HttpPost]
     [ActionName("SetDiscount")]
     public async Task<IActionResult> SetDiscountAsync(ProductDiscountViewModel vm)
     {
-        if (await productService.SetDiscountAsync(vm))
+
+        if (!ModelState.IsValid)
         {
-            return RedirectToAction("index");
+            TempData["Message"] = InvalidDiscountValue;
         }
-        return RedirectToAction("index");
+        try
+        {
+            await productService.SetDiscountAsync(vm);
+            TempData["Message"]= DiscountSet;
+            return RedirectToAction(nameof(Index));
+        }
+        catch (Exception)
+        {
+            TempData["Message"] = GeneralException;
+            return RedirectToAction(nameof(Index));
+        }
 
     }
     [HttpPost]
     [ActionName("SetDiscountByCategory")]
     public async Task<IActionResult> SetDiscountByCategory(DiscountByCategoryViewModel vm)
     {
-        if (ModelState.IsValid)
+        if (!await categoryService.CategoryExistsAsync(vm.CategoryId))
         {
-            if (await productService.SetDiscountByCategoryAsync(vm.CategoryId, vm.Discount))
-            {
-                return RedirectToAction("index");
-            }
+            TempData["Message"] = CategoryMessages.InvalidCategory;
+            return RedirectToAction(nameof(Index));
         }
-        return RedirectToAction("index", new { ErrorMessage = "Неуспешно!" });
+        if (!ModelState.IsValid)
+        {
+            TempData["Message"] = InvalidDiscountValue;
+            return RedirectToAction(nameof(Index));
+        }
+        try
+        {
+            await productService.SetDiscountByCategoryAsync(vm.CategoryId, vm.Discount);
+            TempData["Message"] = DiscountSetByCategory;
+            return RedirectToAction(nameof(Index));
+        }
+        catch (Exception)
+        {
+            TempData["Message"] = GeneralException;
+            return RedirectToAction(nameof(Index));
+        }
 
     }
     [HttpPost]
@@ -105,109 +156,183 @@ public class AdminDataController : Controller
     public async Task<IActionResult> CancelDiscountByCategory(string Id)
     {
         var products = await productService.GetProductsByCategoryIdAsync(Id);
-        foreach (var product in products)
+        if (!await categoryService.CategoryExistsAsync(Id))
         {
-            if (product.IsDiscounted)
-            {
-                await productService.RemoveDiscountAsync(product.Id.ToString());
-            }
+            TempData["Message"] = CategoryMessages.InvalidCategory;
+            return RedirectToAction(nameof(Index));
         }
-        return RedirectToAction("index");
+        try
+        {
+            foreach (var product in products)
+            {
+                if (product.IsDiscounted)
+                {
+                    await productService.RemoveDiscountAsync(product.Id.ToString());
+                }
+            }
+            TempData["Message"] = SuccessfulMessages.DiscountsByCategoryCancelled;
+            return RedirectToAction(nameof(Index));
+        }
+        catch (Exception)
+        {
+            TempData["Message"] = GeneralException;
+            return RedirectToAction(nameof(Index));
+        }
+
+
+
 
     }
     [HttpPost]
     [ActionName("RemoveDiscount")]
     public async Task<IActionResult> RemoveDiscount(string Id)
     {
+        if (Id == null)
+        {
+            TempData["Message"] = IdNull;
+            return RedirectToAction(nameof(Index));
+
+        }
         var product = await productService.GetProductByIdAsync(Id);
+        if (product == null)
+        {
+            TempData["Message"] = ProductMessages.ProductNotFound;
+            return RedirectToAction(nameof(Index));
+        }
         if (product.IsDiscounted == false)
         {
-            return RedirectToAction("index", new { ErrorMessage = "Не може да премахнете промоцията на продукт, който няма промоция!" });
+            TempData["Message"] = ProductMessages.DiscountCannotBeCancelled;
+            return RedirectToAction(nameof(Index));
         }
-        await productService.RemoveDiscountAsync(Id);
+        try
+        {
+            await productService.RemoveDiscountAsync(Id);
+            TempData["Message"] = DiscountRemoved;
+            return RedirectToAction(nameof(Index));
+        }
+        catch (Exception)
+        {
+            TempData["Message"] = GeneralException;
+            return RedirectToAction(nameof(Index));
+        }
 
-        return RedirectToAction("index");
+
+
 
     }
     [HttpGet]
     [ActionName("Edit")]
     public async Task<IActionResult> Edit(string Id)
     {
+        if (Id == null)
+        {
+            TempData["Message"] = IdNull;
+            return RedirectToAction(nameof(Index));
+        }
         ProductEditViewModel item = await productService.GetProductEditByIdAsync(Id.ToString());
-        item.Categories = await categoryService.GetAllCategoriesAsync();
+        if (item == null)
+        {
+            TempData["Message"] = ProductMessages.ProductNotFound;
+            return RedirectToAction(nameof(Index));
+        }
+        try
+        {
+            item.Categories = await categoryService.GetAllCategoriesAsync();
 
-        return View("EditProduct", item);
-
+            return View("EditProduct", item);
+        }
+        catch (Exception)
+        {
+            TempData["Message"] = GeneralException;
+            return RedirectToAction(nameof(Index));
+        }
     }
     [HttpPost]
     public async Task<IActionResult> SubmitChanges(ProductEditViewModel vm)
     {
-        if (ModelState.IsValid)
+        vm.Categories=await categoryService.GetAllCategoriesAsync();
+        var categoryExists = await categoryService.CategoryExistsAsync(vm.CategoryId);
+        if (!categoryExists)
         {
-            if (await productService.UpdateProductAsync(vm))
-            {
-                return RedirectToAction("Index");
-            }
+            ModelState.AddModelError(string.Empty, CategoryMessages.InvalidCategory);
+            vm.Categories = await categoryService.GetAllCategoriesAsync();
+            return View(RedirectToAction(nameof(Edit),vm.Id));
         }
 
-        return RedirectToAction("Edit", new { Id = vm.Id.ToString() });
-
-    }
-    [HttpGet]
-    [ActionName("OrderInformation")]
-    public async Task<IActionResult> OrderInformation(string Id)
-    {
-        var orderInfo = await orderService.GetOrderDetailsAsync(Id);
-        return View(orderInfo);
-    }
-    [HttpGet]
-    [ActionName("ChangeStatus")]
-    public async Task<IActionResult> ChangeStatus(string Id)
-    {
-        var order = await orderService.GetOrderByIdAsync(Id);
-        return View(order);
-    }
-    [HttpPost]
-    [ActionName("ChangeStatus")]
-    public async Task<IActionResult> ChangeStatus(ChangeOrderStatusViewModel vm)
-    {
-        await orderService.ChangeStatusAsync(vm);
-        return RedirectToAction("Index");
-    }
-
-    [HttpPost]
-    [ActionName("DeleteOrder")]
-    public async Task<IActionResult> DeleteOrder(string Id)
-    {
-        var order = await orderService.GetOrderByIdAsync(Id);
-        if (Id != null && order != null)
+        if (!ModelState.IsValid)
         {
-            await orderService.DeleteOrderAsync(Id);
-            return RedirectToAction("Index");
+            ModelState.AddModelError(string.Empty, ModelStateInvalid);
+            vm.Categories = await categoryService.GetAllCategoriesAsync();
+            return View(RedirectToAction(nameof(Edit),vm.Id));
         }
-        return BadRequest();
+        try
+        {
+            await productService.UpdateProductAsync(vm);
+            TempData["Message"] = ProductUpdated;
+            return RedirectToAction(nameof(Index));
+        }
+        catch (Exception)
+        {
+            TempData["Message"] = GeneralException;
+            vm.Categories = await categoryService.GetAllCategoriesAsync();
+            return View(RedirectToAction(nameof(Edit)));
+
+        }
     }
+    
     [HttpPost]
     [ActionName("DeleteCategory")]
     public async Task<IActionResult> DeleteCategory(string Id)
     {
-        if (await categoryService.DeleteCategoryAsync(Id))
+        if (!await categoryService.CategoryExistsAsync(Id))
         {
+            TempData["Message"] = CategoryMessages.InvalidCategory;
             return RedirectToAction(nameof(Index));
         }
-        return RedirectToAction(nameof(Index), new { ErrorMessage = "Все още има продукти с тази категория!" });
+        try
+        {
+            await categoryService.DeleteCategoryAsync(Id);
+            TempData["Message"] = CategoryDeleted;
+            return RedirectToAction(nameof(Index));
+        }
+        catch (InvalidOperationException e)
+        {
+            TempData["Message"] = e.Message;
+            return RedirectToAction(nameof(Index));
+        }
+        catch (Exception)
+        {
+            TempData["Message"] = GeneralException;
+            return RedirectToAction(nameof(Index));
+        }
 
     }
     [HttpPost]
     [ActionName("DeleteProduct")]
     public async Task<IActionResult> DeleteProduct(string Id)
     {
-
-        if (await productService.DeleteProductAsync(Id))
+        var product = await productService.GetProductByIdAsync(Id);
+        if (product==null)
         {
+            TempData["Message"] = ProductMessages.ProductNotFound;
             return RedirectToAction(nameof(Index));
         }
-        return RedirectToAction(nameof(Index), new { ErrorMessage = "Продуктът все още се използва в поръчка!" });
+        try
+        {
+            await productService.DeleteProductAsync(Id);
+            TempData["Message"] = ProductDeleted;
+            return RedirectToAction(nameof(Index));
+        }
+        catch (InvalidOperationException e)
+        {
+            TempData["Message"] = e.Message;
+            return RedirectToAction(nameof(Index));
+        }
+        catch (Exception)
+        {
+            TempData["Message"] = GeneralException;
+            return RedirectToAction(nameof(Index));
+        }
     }
 
 
