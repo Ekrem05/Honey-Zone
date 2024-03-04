@@ -12,7 +12,7 @@ namespace HoneyZoneMvc.Infrastructure.ViewModels
         public IEnumerable<CategoryViewModel> Categories { get; set; } = new List<CategoryViewModel>();
         public IEnumerable<UserViewModel> Users { get; set; } = new List<UserViewModel>();
         public DiscountByCategoryViewModel DiscountByCategoryViewModel { get; set; } = new DiscountByCategoryViewModel();
-        public string ErrorMessage { get; set; } = string.Empty;
+        
 
     }
 }

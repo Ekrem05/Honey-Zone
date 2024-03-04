@@ -3,11 +3,12 @@ using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
-using static HoneyZoneMvc.Messages.ExceptionMessages;
+using static HoneyZoneMvc.Common.Messages.ValidationMessages;
 namespace HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels
 {
     public class ProductEditViewModel
     {
+        [Required(ErrorMessage = RequiredField)]
         public Guid Id { get; set; } = Guid.Empty;
 
         [Required(ErrorMessage = RequiredField)]
@@ -15,7 +16,7 @@ namespace HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels
         public string Name { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredField)]
-        public string Category { get; set; } = string.Empty;
+        public string CategoryId { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredField)]
         [Range(DataConstants.Product.PriceMinValue, DataConstants.Product.PriceMaxValue, ErrorMessage = ProductPriceValueValidation)]
@@ -38,13 +39,13 @@ namespace HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels
         public string ProductAmount { get; set; } = string.Empty;
 
         [AllowNull]
-        public IFormFile MainImage { get; set; }
+        public IFormFile MainImage { get; set; }= null!;
 
         [AllowNull]
-        public ICollection<IFormFile> Images { get; set; }
+        public ICollection<IFormFile> Images { get; set; }= new List<IFormFile>();
 
         [AllowNull]
-        public IEnumerable<CategoryViewModel> Categories { get; set; }
+        public IEnumerable<CategoryViewModel> Categories { get; set; }= new List<CategoryViewModel>();
 
     }
 }

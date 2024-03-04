@@ -1,6 +1,6 @@
 ﻿using HoneyZoneMvc.Constraints;
 using System.ComponentModel.DataAnnotations;
-using static HoneyZoneMvc.Messages.ExceptionMessages;
+using static HoneyZoneMvc.Common.Messages.ValidationMessages;
 
 namespace HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels
 {
