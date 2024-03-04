@@ -2,7 +2,6 @@
 using HoneyZoneMvc.Constraints;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
-using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
 using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
 using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
 using Microsoft.EntityFrameworkCore;
@@ -56,7 +55,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             dbContext.OrderProducts.RemoveRange(dbContext.OrderProducts.Where(x => x.OrderId.ToString() == Id));
             dbContext.Orders.Remove(dbContext.Orders.FirstOrDefault(x => x.Id.ToString() == Id));
-            return await dbContext.SaveChangesAsync()>0;
+            return await dbContext.SaveChangesAsync() > 0;
         }
 
         public async Task<ICollection<Order>> GetAllAsync()
@@ -87,15 +86,15 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         }
 
         public async Task<IEnumerable<OrdersFromUserViewModel>> GetUserOrdersIdAsync(string userId)
-        {   
-            List<OrdersFromUserViewModel>result=new List<OrdersFromUserViewModel>();
+        {
+            List<OrdersFromUserViewModel> result = new List<OrdersFromUserViewModel>();
             var orders = await dbContext.Orders
                 .Include(Id => Id.OrderDetail)
                 .Include(Id => Id.DeliveryMethod)
                 .Include(Id => Id.OrderProducts)
                 .Include(Id => Id.State)
                 .Where(o => o.ClientId == userId).ToListAsync();
-            if (orders==null)
+            if (orders == null)
             {
                 throw new Exception();
             }
@@ -115,9 +114,9 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                         Name = op.Product.Name,
                         Price = op.Product.Price.ToString(),
                         IsDiscounted = op.Product.IsDiscounted,
-                        DiscountedPrice= (op.Product.Price - (op.Product.Price * op.Product.Discount / 100)).ToString("F2"),
+                        DiscountedPrice = (op.Product.Price - (op.Product.Price * op.Product.Discount / 100)).ToString("F2"),
                         Quantity = op.Quantity.ToString(),
-                        ProductAmount=op.Product.ProductAmount
+                        ProductAmount = op.Product.ProductAmount
                     }).ToList()
                 });
             }
@@ -136,8 +135,8 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 CurrentStatus = order.State.Name,
             };
 
-            vm.Statuses= await stateService.GetAllAsync();
-            return vm;    
+            vm.Statuses = await stateService.GetAllAsync();
+            return vm;
         }
         public async Task<OrderInfoViewModel> GetOrderDetailsAsync(string Id)
         {
@@ -146,9 +145,9 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 .Include(Id => Id.DeliveryMethod)
                 .Include(Id => Id.OrderProducts)
                 .Include(Id => Id.State)
-                .FirstOrDefaultAsync(o=>o.Id.ToString()==Id);
-            var orderProducts=dbContext.OrderProducts.Where(x => x.OrderId.ToString() == Id).Include(x => x.Product).ToList();
-            var result= new OrderInfoViewModel()
+                .FirstOrDefaultAsync(o => o.Id.ToString() == Id);
+            var orderProducts = dbContext.OrderProducts.Where(x => x.OrderId.ToString() == Id).Include(x => x.Product).ToList();
+            var result = new OrderInfoViewModel()
             {
                 Id = order.Id.ToString(),
                 TotalSum = order.TotalSum.ToString(),
@@ -169,12 +168,12 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             };
             return result;
         }
- 
+
 
         public async Task ChangeStatusAsync(ChangeOrderStatusViewModel vm)
         {
             dbContext.Orders.FirstOrDefault(x => x.Id.ToString() == vm.Id).StateId = Guid.Parse(vm.StatusId);
-             await dbContext.SaveChangesAsync();
+            await dbContext.SaveChangesAsync();
         }
     }
 }

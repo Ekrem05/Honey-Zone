@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
+﻿using HoneyZoneMvc.Infrastructure.ViewModels.Status;
 
 namespace HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels
 {
     public class ChangeOrderStatusViewModel
     {
-        public string Id { get; set; }
-        public string CurrentStatus { get; set; }
-        public IEnumerable<StatusDto> Statuses { get; set; }
-        public string StatusId { get; set; }
+        public string Id { get; set; } = string.Empty;
+        public string CurrentStatus { get; set; } = string.Empty;
+        public IEnumerable<StatusViewModel> Statuses { get; set; } = new List<StatusViewModel>();
+        public string StatusId { get; set; } = string.Empty;
     }
 }

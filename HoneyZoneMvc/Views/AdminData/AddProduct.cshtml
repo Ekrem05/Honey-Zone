@@ -4,7 +4,6 @@
 <section id="admin-operation-card">
     <form asp-action="AddProduct" method="post" enctype="multipart/form-data">
         <div class="mb-3">
-            <input asp-for="Id" type="hidden">
             <label class="form-label mt-2 " asp-for="Name">Име</label>
             <input asp-for="Name" class="form-control" />
             <span asp-validation-for="Name" class="bg-danger"></span>

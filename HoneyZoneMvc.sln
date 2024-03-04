@@ -9,7 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoneyZoneMvc.BusinessLogic"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoneyZoneMvc.Infrastructure", "HoneyZoneMvc.Infrastructure\HoneyZoneMvc.Infrastructure.csproj", "{2653B61C-E5CA-4BB5-8EA2-3F774AD7CC01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoneyZoneMvc.Common", "HoneyZoneMvc.Common\HoneyZoneMvc.Common.csproj", "{9A263067-9B82-4958-84FE-382D14EF7311}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoneyZoneMvc.Common", "HoneyZoneMvc.Common\HoneyZoneMvc.Common.csproj", "{9A263067-9B82-4958-84FE-382D14EF7311}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{644A7ED0-B509-446F-93DD-9489A7B7BE9B}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

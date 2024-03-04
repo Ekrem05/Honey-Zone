@@ -8,11 +8,11 @@ namespace HoneyZoneMvc.Models.Entities
     {
         [ForeignKey(nameof(ProductId))]
         public Guid ProductId { get; set; }
-        public Product Product { get; set; }
+        public Product Product { get; set; } = null!;
 
         [ForeignKey(nameof(ClientId))]
-        public string ClientId { get; set; }
-        public IdentityUser Client { get; set; }
+        public string ClientId { get; set; } = string.Empty;
+        public IdentityUser Client { get; set; } = null!;
 
         [Required]
         public int Quantity { get; set; }

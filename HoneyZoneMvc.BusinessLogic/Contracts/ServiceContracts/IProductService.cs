@@ -1,5 +1,4 @@
-﻿using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
-using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
+﻿using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {

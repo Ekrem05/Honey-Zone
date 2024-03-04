@@ -11,11 +11,11 @@ namespace HoneyZoneMvc.Models.Entities
 
         [Required]
         [MaxLength(60)]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         [ForeignKey(nameof(ProductId))]
         public Guid ProductId { get; set; }
-        public Product Product { get; set; }
+        public Product Product { get; set; } = null!;
 
     }
 }

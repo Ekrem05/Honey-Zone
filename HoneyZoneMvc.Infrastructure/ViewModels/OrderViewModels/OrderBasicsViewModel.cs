@@ -2,20 +2,20 @@
 {
     public class OrderBasicsViewModel
     {
-        public string Id { get; set; }
+        public string Id { get; set; } = string.Empty;
 
-        public string TotalSum { get; set; }
+        public string TotalSum { get; set; } = string.Empty;
 
-        public string DeliveryMethod { get; set; }
+        public string DeliveryMethod { get; set; } = string.Empty;
 
-        public string ClientName { get; set; }
+        public string ClientName { get; set; } = string.Empty;
 
-        public string OrderDate { get; set; }
-        public string Address { get; set; }
-        public string PhoneNumber { get; set; }
+        public string OrderDate { get; set; } = string.Empty;
+        public string Address { get; set; } = string.Empty;
+        public string PhoneNumber { get; set; } = string.Empty;
 
-        public string ExpectedDelivery { get; set; }
+        public string ExpectedDelivery { get; set; } = string.Empty;
 
-        public string State { get; set; }
+        public string State { get; set; } = string.Empty;
     }
 }

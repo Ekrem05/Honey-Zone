@@ -15,11 +15,11 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models.Entities
 
         [ForeignKey(nameof(DeliveryMethodId))]
         public Guid DeliveryMethodId { get; set; }
-        public DeliveryMethod DeliveryMethod { get; set; }
+        public DeliveryMethod DeliveryMethod { get; set; } = null!;
 
         [Required]
-        public string ClientId { get; set; }
-        public IdentityUser Client { get; set; }
+        public string ClientId { get; set; } = string.Empty;
+        public IdentityUser Client { get; set; } = null!;
 
         [Required]
         public DateTime OrderDate { get; set; }
@@ -29,11 +29,11 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models.Entities
 
         [ForeignKey(nameof(StateId))]
         public Guid StateId { get; set; }
-        public State State { get; set; }
+        public State State { get; set; } = null!;
 
         [ForeignKey(nameof(OrderDetailId))]
         public Guid OrderDetailId { get; set; }
-        public OrderDetail OrderDetail { get; set; }
+        public OrderDetail OrderDetail { get; set; } = null!;
 
         public ICollection<OrderProduct> OrderProducts { get; set; } = new HashSet<OrderProduct>();
     }

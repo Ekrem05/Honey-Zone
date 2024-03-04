@@ -1,13 +1,8 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Data;
-using HoneyZoneMvc.Infrastructure.ViewModels;
+using HoneyZoneMvc.Infrastructure.ViewModels.User;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
 {
@@ -41,7 +36,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         private async Task<string> GetRole(IdentityUser u)
         {
-            if (await userManager.IsInRoleAsync(u,"Admin"))
+            if (await userManager.IsInRoleAsync(u, "Admin"))
             {
                 return "Admin";
             }

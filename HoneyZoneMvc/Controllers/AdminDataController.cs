@@ -1,11 +1,9 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
-using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.ViewModels;
 using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
-using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
 using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
 using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
-using HoneyZoneMvc.Messages;
+using HoneyZoneMvc.Infrastructure.ViewModels.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -30,11 +28,11 @@ public class AdminDataController : Controller
         AdminViewModel vm = new AdminViewModel();
         vm.Products = await productService.GetAllProductsAsync();
         vm.Orders = await orderService.GetAllOrdersAsync();
-        vm.Categories = (await categoryService.GetAllCategoriesAsync()).Select(c=>new CategoryViewModel() { Name=c.Name, Id=c.Id.ToString()});
-        vm.Users=new List<UserViewModel>();
+        vm.Categories = (await categoryService.GetAllCategoriesAsync()).Select(c => new CategoryViewModel() { Name = c.Name, Id = c.Id.ToString() });
+        vm.Users = new List<UserViewModel>();
         vm.DiscountByCategoryViewModel = new DiscountByCategoryViewModel();
-        vm.DiscountByCategoryViewModel.Categories= vm.Categories.Select(CategoryViewModel => new CategoryViewModel() { Name = CategoryViewModel.Name, Id = CategoryViewModel.Id });
-        vm.ErrorMessage= ErrorMessage;
+        vm.DiscountByCategoryViewModel.Categories = vm.Categories.Select(CategoryViewModel => new CategoryViewModel() { Name = CategoryViewModel.Name, Id = CategoryViewModel.Id });
+        vm.ErrorMessage = ErrorMessage;
         //vm.Users= (await userService.GetAllUsersAsync()); 
         //ADD DOWNLOADING FUNCTIONALLITY DOWNLOAD Business stats profit etc.
         return View(vm);
@@ -53,9 +51,12 @@ public class AdminDataController : Controller
     [ActionName("AddProduct")]
     public async Task<IActionResult> AddProductAsync(ProductAddViewModel productvm)
     {
-        if (await productService.AddProductAsync(productvm))
+        if (ModelState.IsValid)
         {
-            return RedirectToAction("index");
+            if (await productService.AddProductAsync(productvm))
+            {
+                return RedirectToAction("index");
+            }
         }
         return RedirectToAction("index");
 
@@ -64,14 +65,14 @@ public class AdminDataController : Controller
     [ActionName("AddProductCategory")]
     public async Task<IActionResult> AddProductCategoryAsync(CategoryAddViewModel productvm)
     {
-        var categories= await categoryService.GetAllCategoriesAsync();
-        if (categories.Any(c=>c.Name==productvm.Name))
+        var categories = await categoryService.GetAllCategoriesAsync();
+        if (categories.Any(c => c.Name == productvm.Name))
         {
             return RedirectToAction("index", new { ErrorMessage = "Категорията вече съществува!" });
         }
         await categoryService.AddCategoryAsync(productvm);
-        
-            return RedirectToAction("index");
+
+        return RedirectToAction("index");
 
     }
     [HttpPost]
@@ -91,19 +92,19 @@ public class AdminDataController : Controller
     {
         if (ModelState.IsValid)
         {
-            if (await productService.SetDiscountByCategoryAsync(vm.CategoryId,vm.Discount))
+            if (await productService.SetDiscountByCategoryAsync(vm.CategoryId, vm.Discount))
             {
                 return RedirectToAction("index");
             }
         }
-        return RedirectToAction("index", new {ErrorMessage="Неуспешно!"});
+        return RedirectToAction("index", new { ErrorMessage = "Неуспешно!" });
 
     }
     [HttpPost]
     [ActionName("CancelDiscountByCategory")]
     public async Task<IActionResult> CancelDiscountByCategory(string Id)
     {
-        var products= await productService.GetProductsByCategoryIdAsync(Id);
+        var products = await productService.GetProductsByCategoryIdAsync(Id);
         foreach (var product in products)
         {
             if (product.IsDiscounted)
@@ -124,8 +125,8 @@ public class AdminDataController : Controller
             return RedirectToAction("index", new { ErrorMessage = "Не може да премахнете промоцията на продукт, който няма промоция!" });
         }
         await productService.RemoveDiscountAsync(Id);
-        
-            return RedirectToAction("index");
+
+        return RedirectToAction("index");
 
     }
     [HttpGet]
@@ -149,21 +150,21 @@ public class AdminDataController : Controller
             }
         }
 
-        return RedirectToAction("Edit",new { Id=vm.Id.ToString()});
+        return RedirectToAction("Edit", new { Id = vm.Id.ToString() });
 
     }
     [HttpGet]
     [ActionName("OrderInformation")]
     public async Task<IActionResult> OrderInformation(string Id)
     {
-        var orderInfo= await orderService.GetOrderDetailsAsync(Id);
-        return View(orderInfo); 
+        var orderInfo = await orderService.GetOrderDetailsAsync(Id);
+        return View(orderInfo);
     }
     [HttpGet]
     [ActionName("ChangeStatus")]
     public async Task<IActionResult> ChangeStatus(string Id)
     {
-        var order=await orderService.GetOrderByIdAsync(Id);
+        var order = await orderService.GetOrderByIdAsync(Id);
         return View(order);
     }
     [HttpPost]
@@ -179,7 +180,7 @@ public class AdminDataController : Controller
     public async Task<IActionResult> DeleteOrder(string Id)
     {
         var order = await orderService.GetOrderByIdAsync(Id);
-        if (Id!=null&&order!=null)
+        if (Id != null && order != null)
         {
             await orderService.DeleteOrderAsync(Id);
             return RedirectToAction("Index");
@@ -201,10 +202,10 @@ public class AdminDataController : Controller
     [ActionName("DeleteProduct")]
     public async Task<IActionResult> DeleteProduct(string Id)
     {
-        
+
         if (await productService.DeleteProductAsync(Id))
         {
-            return  RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index));
         }
         return RedirectToAction(nameof(Index), new { ErrorMessage = "Продуктът все още се използва в поръчка!" });
     }

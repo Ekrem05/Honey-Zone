@@ -1,20 +1,15 @@
 ﻿using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels
 {
     public class OrdersFromUserViewModel
     {
-        public string TotalSum { get; set; }
-        public string DeliveryMethod { get; set; }
-        public string OrderDate { get; set; }
-        public string ExpectedDelivery { get; set; }
-        public string State { get; set; }
-        public string Address { get; set; }
+        public string TotalSum { get; set; } = string.Empty;
+        public string DeliveryMethod { get; set; } = string.Empty;
+        public string OrderDate { get; set; } = string.Empty;
+        public string ExpectedDelivery { get; set; } = string.Empty;
+        public string State { get; set; } = string.Empty;
+        public string Address { get; set; } = string.Empty;
         public List<ProductsOrderedUserViewModel> Products { get; set; } = new List<ProductsOrderedUserViewModel>();
     }
 }

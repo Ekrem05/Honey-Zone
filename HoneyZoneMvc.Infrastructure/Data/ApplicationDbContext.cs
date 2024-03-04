@@ -30,7 +30,7 @@ namespace HoneyZoneMvc.Data
             builder.ApplyConfiguration(new ProductConfiguration());
             builder.ApplyConfiguration(new StateConfiguration());
             builder.ApplyConfiguration(new DeliveryMethodConfiguration());
-            builder.ApplyConfiguration(new CartProductConfiguration());            
+            builder.ApplyConfiguration(new CartProductConfiguration());
             base.OnModelCreating(builder);
         }
     }

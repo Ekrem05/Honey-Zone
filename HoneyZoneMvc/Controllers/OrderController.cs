@@ -1,6 +1,6 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
-using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
+using HoneyZoneMvc.Infrastructure.ViewModels.Delivery;
 using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -31,7 +31,7 @@ namespace HoneyZoneMvc.Controllers
         public async Task<IActionResult> OrderDetails()
         {
             var ordervm = new OrderDetailViewModel();
-            var cart=await cartProductService.GetCartByUserIdAsync(GetUserId().ToString());
+            var cart = await cartProductService.GetCartByUserIdAsync(GetUserId().ToString());
             ordervm.TotalSum = (await cartProductService.GetCartSumAsync(GetUserId().ToString())).ToString("F2");
             ordervm.DeliveryMethods = await GetDeliveryMethods();
             return View(ordervm);
@@ -47,7 +47,7 @@ namespace HoneyZoneMvc.Controllers
         {
             var cart = await cartProductService.GetCartByUserIdAsync(GetUserId().ToString());
             List<OrderProduct> orderProducts = new List<OrderProduct>();
-            
+
             foreach (var productItem in cart)
             {
                 var product = await productService.GetProductByIdAsync(productItem.ProductId);
@@ -57,16 +57,16 @@ namespace HoneyZoneMvc.Controllers
                     ProductId = Guid.Parse(productItem.ProductId),
                     Quantity = productItem.Quantity,
                 });
-              
+
             }
             var totalSumFormated = (await cartProductService.GetCartSumAsync(GetUserId().ToString())).ToString("F2");
             double totalSum = double.Parse(totalSumFormated);
-            await orderService.AddAsync(GetUserId().ToString(),totalSum, dto.DeliveryMethodId, dto, orderProducts);
+            await orderService.AddAsync(GetUserId().ToString(), totalSum, dto.DeliveryMethodId, dto, orderProducts);
             await cartProductService.DeleteCartProductAsync(GetUserId().ToString());
             return RedirectToAction("Index", "Shop");
         }
 
-        private async Task<ICollection<DeliveryMethodDto>> GetDeliveryMethods()
+        private async Task<ICollection<DeliveryMethodViewModel>> GetDeliveryMethods()
         {
             return await deliveryService.GetAllAsync();
         }

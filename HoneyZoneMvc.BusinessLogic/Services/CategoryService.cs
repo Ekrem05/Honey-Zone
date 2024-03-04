@@ -29,7 +29,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<bool> DeleteCategoryAsync(string Id)
         {
-           bool result= await dbContext.Products.AnyAsync(p => p.CategoryId.ToString() == Id);
+            bool result = await dbContext.Products.AnyAsync(p => p.CategoryId.ToString() == Id);
             if (result)
             {
                 return false;
@@ -41,7 +41,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 return true;
             }
             return false;
-           
+
         }
 
         public async Task<IEnumerable<CategoryViewModel>> GetAllCategoriesAsync()
@@ -67,7 +67,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return dto;
         }
 
-       
+
 
         public Task<bool> UpdateCategoryAsync(CategoryAddViewModel category)
         {

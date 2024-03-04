@@ -1,13 +1,13 @@
-﻿using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
+﻿using HoneyZoneMvc.Infrastructure.ViewModels.CartProduct;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {
     public interface ICartProductService
     {
 
-        Task<bool> AddCartProductAsync(CartProductDto dto);
+        Task<bool> AddCartProductAsync(CartProductViewModel dto);
         Task<bool> UpdateQuantityAsync(string productId, int quantity, string userId);
-        Task<IEnumerable<CartProductDto>> GetCartByUserIdAsync(string userId);
+        Task<IEnumerable<CartProductViewModel>> GetCartByUserIdAsync(string userId);
         Task<bool> DeleteCartProductAsync(string userId);
         Task<double> GetCartSumAsync(string userId);
     }

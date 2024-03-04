@@ -1,6 +1,5 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Data;
-using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
 using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
 using HoneyZoneMvc.Messages;
 using HoneyZoneMvc.Models.Entities;
@@ -32,7 +31,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             var imagesInDb = imageService.GetImages();
             foreach (var image in product.Images)
             {
-                
+
                 if (!imagesInDb.Any(i => i.Name == image.FileName))
                 {
                     var imagePath = await SaveLocally(image);
@@ -97,30 +96,30 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<IEnumerable<ProductAdminViewModel>> GetProductsByCategoryIdAsync(string Id)
         {
-           return await dbContext.Products
-                .Include(p => p.Category)
-                .Where(p => p.CategoryId.ToString() == Id)
-                .Select(p => new ProductAdminViewModel()
-                {
-                    Id = p.Id,
-                    Name = p.Name,
-                    Price = p.Price,
-                    Description = p.Description,
-                    QuantityInStock = p.QuantityInStock,
-                    ProductAmount = p.ProductAmount,
-                    Category = p.Category.Name,
-                    MainImageName = p.MainImageUrl,
-                    IsDiscounted=p.IsDiscounted,
-                    Discount=p.Discount
-                })
-                .ToListAsync();
+            return await dbContext.Products
+                 .Include(p => p.Category)
+                 .Where(p => p.CategoryId.ToString() == Id)
+                 .Select(p => new ProductAdminViewModel()
+                 {
+                     Id = p.Id,
+                     Name = p.Name,
+                     Price = p.Price,
+                     Description = p.Description,
+                     QuantityInStock = p.QuantityInStock,
+                     ProductAmount = p.ProductAmount,
+                     Category = p.Category.Name,
+                     MainImageName = p.MainImageUrl,
+                     IsDiscounted = p.IsDiscounted,
+                     Discount = p.Discount
+                 })
+                 .ToListAsync();
         }
 
         public async Task<ProductAdminViewModel> GetProductByIdAsync(string Id)
         {
             var model = await dbContext.Products
                 .Include(p => p.Category)
-                .Include(p=>p.Images)
+                .Include(p => p.Images)
                 .FirstOrDefaultAsync(p => p.Id.ToString() == Id);
 
             if (model != null)
@@ -159,7 +158,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 productToEdit.Price = product.Price;
                 productToEdit.Description = product.Description;
                 productToEdit.ProductAmount = product.ProductAmount;
-                if (product.Discount>0)
+                if (product.Discount > 0)
                 {
                     productToEdit.IsDiscounted = true;
                 }
@@ -175,9 +174,9 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 {
                     foreach (var image in product.Images)
                     {
-                     var imagePath = await SaveLocally(image);
-                      productToEdit.Images.Add(new ImageUrl() { Name = image.FileName,ProductId=product.Id });
-                         
+                        var imagePath = await SaveLocally(image);
+                        productToEdit.Images.Add(new ImageUrl() { Name = image.FileName, ProductId = product.Id });
+
                     }
 
                 }
@@ -199,10 +198,10 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
             }
             var orders = await dbContext.Orders
-                .Where(o=>o.State.Name
-                !="Завършена")
+                .Where(o => o.State.Name
+                != "Завършена")
                 .Where(o => o.OrderProducts.Any(op => op.ProductId == product.Id)).ToListAsync();
-            if (orders.Count()>0)
+            if (orders.Count() > 0)
             {
                 return false;
             }
@@ -219,8 +218,8 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<bool> SetDiscountAsync(ProductDiscountViewModel vm)
         {
-            var product=dbContext.Products.FirstOrDefault(p => p.Id.ToString() == vm.Id);
-            product.IsDiscounted= true;
+            var product = dbContext.Products.FirstOrDefault(p => p.Id.ToString() == vm.Id);
+            product.IsDiscounted = true;
             product.Discount = vm.Discount;
             if (await dbContext.SaveChangesAsync() > 0)
             {
@@ -231,7 +230,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<bool> SetDiscountByCategoryAsync(string Id, double discount)
         {
-            var product=dbContext.Products.Where(p => p.CategoryId.ToString() == Id);
+            var product = dbContext.Products.Where(p => p.CategoryId.ToString() == Id);
             foreach (var item in product)
             {
                 item.IsDiscounted = true;
@@ -246,15 +245,15 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<bool> RemoveDiscountAsync(string Id)
         {
-            var product=dbContext.Products.FirstOrDefault(p => p.Id.ToString() == Id);
-            
-                product.Discount = 0;
-                product.IsDiscounted = false;
-                if (await dbContext.SaveChangesAsync() > 0)
-                {
-                    return true;
-                }
-            
+            var product = dbContext.Products.FirstOrDefault(p => p.Id.ToString() == Id);
+
+            product.Discount = 0;
+            product.IsDiscounted = false;
+            if (await dbContext.SaveChangesAsync() > 0)
+            {
+                return true;
+            }
+
             return false;
         }
 
@@ -271,8 +270,8 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                     Name = cp.Product.Name,
                     MainImageName = cp.Product.MainImageUrl,
                     Price = cp.Product.Price,
-                    IsDiscounted=cp.Product.IsDiscounted,
-                    Discount=cp.Product.Discount,
+                    IsDiscounted = cp.Product.IsDiscounted,
+                    Discount = cp.Product.Discount,
                     ProductAmount = cp.Product.ProductAmount,
                     Quantity = 1
                 })
@@ -284,15 +283,15 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             }
             else { throw new Exception(); }///HERE!!
         }
-       
+
         public async Task DecreaseProductQuantityAsync(string Id)
         {
             var product = await dbContext.Products.FirstOrDefaultAsync(p => p.Id.ToString() == Id);
             if (product != null)
             {
-                product.QuantityInStock --;
+                product.QuantityInStock--;
                 await dbContext.SaveChangesAsync();
-               
+
             }
         }
 
@@ -309,8 +308,8 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 Id = product.Id,
                 Name = product.Name,
                 Price = product.Price,
-                IsDiscounted=product.IsDiscounted,
-                Discount=product.Discount,
+                IsDiscounted = product.IsDiscounted,
+                Discount = product.Discount,
                 Description = product.Description,
                 QuantityInStock = product.QuantityInStock,
                 ProductAmount = product.ProductAmount,
@@ -323,7 +322,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             return new Product()
             {
-                Id = product.Id,
                 Name = product.Name,
                 Price = product.Price,
                 Description = product.Description,

@@ -1,36 +1,37 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using HoneyZoneMvc.Infrastructure.ViewModels.Delivery;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
-using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
 
 namespace HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels
 {
     public class OrderDetailViewModel
     {
         [Required]
-        public string FirstName { get; set; }
+        public string FirstName { get; set; } = string.Empty;
 
         [Required]
-        public string SecondName { get; set; }
+        public string SecondName { get; set; } = string.Empty;
 
         [Required]
-        public string PhoneNumber { get; set; }
+        [Phone]
+        public string PhoneNumber { get; set; } = string.Empty;
 
         [AllowNull]
-        public string Email { get; set; }
+        public string Email { get; set; } = string.Empty;
 
         [Required]
-        public string Country { get; set; }
+        public string Country { get; set; } = string.Empty;
 
         [Required]
-        public string ZipCode { get; set; }
+        public string ZipCode { get; set; } = string.Empty;
 
         [Required]
-        public string Address { get; set; }
+        public string Address { get; set; } = string.Empty;
 
         [Required]
-        public string DeliveryMethodId { get; set; }
+        public string DeliveryMethodId { get; set; } = string.Empty;
 
-        public ICollection<DeliveryMethodDto> DeliveryMethods { get; set; }
-        public string TotalSum { get; set; }
+        public ICollection<DeliveryMethodViewModel> DeliveryMethods { get; set; } = new List<DeliveryMethodViewModel>();
+        public string TotalSum { get; set; } = string.Empty;
     }
 }

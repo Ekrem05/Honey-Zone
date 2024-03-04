@@ -1,6 +1,6 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Data;
-using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
+using HoneyZoneMvc.Infrastructure.ViewModels.CartProduct;
 using HoneyZoneMvc.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,7 +14,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             dbContext = _dbContext;
         }
-        public async Task<bool> AddCartProductAsync(CartProductDto dto)
+        public async Task<bool> AddCartProductAsync(CartProductViewModel dto)
         {
             var product = await dbContext.Products
               .Include(s => s.CartProducts)
@@ -48,11 +48,11 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return await dbContext.SaveChangesAsync() > 0;
         }
 
-        public async Task<IEnumerable<CartProductDto>> GetCartByUserIdAsync(string userId)
+        public async Task<IEnumerable<CartProductViewModel>> GetCartByUserIdAsync(string userId)
         {
             var cart = await dbContext.CartProducts
                 .Where(cp => cp.ClientId == userId)
-                .Select(cp => new CartProductDto()
+                .Select(cp => new CartProductViewModel()
                 {
                     BuyerId = userId,
                     ProductId = cp.ProductId.ToString(),
@@ -77,9 +77,9 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             return await dbContext.CartProducts
                 .Where(cp => cp.ClientId == userId)
-                .Select(cp => (cp.Product.Price-((cp.Product.Price*cp.Product.Discount)/100))*cp.Quantity)
+                .Select(cp => (cp.Product.Price - ((cp.Product.Price * cp.Product.Discount) / 100)) * cp.Quantity)
                 .SumAsync();
         }
-        
+
     }
 }

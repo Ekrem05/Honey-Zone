@@ -1,7 +1,7 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
-using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
+using HoneyZoneMvc.Infrastructure.ViewModels.Status;
 using Microsoft.EntityFrameworkCore;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
@@ -15,15 +15,15 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             dbContext = _dbContext;
         }
 
-        public async Task<IEnumerable<StatusDto>> GetAllAsync()
+        public async Task<IEnumerable<StatusViewModel>> GetAllAsync()
         {
-           return dbContext.States
-                .AsNoTracking()
-                .Select(s => new StatusDto()
-           {
-               Id = s.Id.ToString(),
-               Name = s.Name
-           }).ToList();
+            return dbContext.States
+                 .AsNoTracking()
+                 .Select(s => new StatusViewModel()
+                 {
+                     Id = s.Id.ToString(),
+                     Name = s.Name
+                 }).ToList();
 
         }
 

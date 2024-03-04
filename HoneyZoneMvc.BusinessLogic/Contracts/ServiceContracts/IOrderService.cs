@@ -1,5 +1,4 @@
 ﻿using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
-using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
 using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts

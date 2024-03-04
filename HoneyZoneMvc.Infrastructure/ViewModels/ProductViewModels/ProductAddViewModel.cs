@@ -1,7 +1,6 @@
 ﻿using HoneyZoneMvc.Constraints;
 using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
 using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using static HoneyZoneMvc.Messages.ExceptionMessages;
@@ -9,14 +8,13 @@ namespace HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels
 {
     public class ProductAddViewModel
     {
-        public Guid Id { get; set; }
 
         [Required(ErrorMessage = RequiredField)]
         [StringLength(DataConstants.Product.NameMaxValue, MinimumLength = DataConstants.Product.NameMinValue, ErrorMessage = ProductNameValueValidation)]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredField)]
-        public string CategoryId { get; set; }
+        public string CategoryId { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredField)]
         [Range(DataConstants.Product.PriceMinValue, DataConstants.Product.PriceMaxValue, ErrorMessage = ProductPriceValueValidation)]
@@ -31,7 +29,7 @@ namespace HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels
 
         [Required(ErrorMessage = RequiredField)]
         [StringLength(DataConstants.Product.DescriptionMaxValue, MinimumLength = DataConstants.Product.DescriptionMinValue, ErrorMessage = ProductDescriptionValueValidation)]
-        public string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
 
         [Required]
         [Range(DataConstants.Product.InStockMinValue, DataConstants.Product.InStockMaxValue, ErrorMessage = ProductInStockValueValidation)]
@@ -39,13 +37,13 @@ namespace HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels
 
         [Required]
         [RegularExpression("^\\d+\\s?(ml|l|g|mg|kg)$", ErrorMessage = ProductAmountValueValidation)]
-        public string ProductAmount { get; set; }
+        public string ProductAmount { get; set; } = string.Empty;
 
-        public IFormFile MainImage { get; set; }
+        public IFormFile MainImage { get; set; } = null!;
 
-        public ICollection<IFormFile> Images { get; set; }
+        public ICollection<IFormFile> Images { get; set; } = new List<IFormFile>();
 
-        public IEnumerable<CategoryViewModel> Categories { get; set; }
+        public IEnumerable<CategoryViewModel> Categories { get; set; } = new List<CategoryViewModel>();
 
 
     }

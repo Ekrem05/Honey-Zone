@@ -1,6 +1,6 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Data;
-using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
+using HoneyZoneMvc.Infrastructure.ViewModels.Delivery;
 using Microsoft.EntityFrameworkCore;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
@@ -13,7 +13,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             dbContext = _dbContext;
         }
-        public Task<bool> AddAsync(DeliveryMethodDto entity)
+        public Task<bool> AddAsync(DeliveryMethodViewModel entity)
         {
             throw new NotImplementedException();
         }
@@ -23,10 +23,10 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             throw new NotImplementedException();
         }
 
-        public async Task<ICollection<DeliveryMethodDto>> GetAllAsync()
+        public async Task<ICollection<DeliveryMethodViewModel>> GetAllAsync()
         {
             var items = await dbContext.DeliverMethods.ToListAsync();
-            return items.Select(d => new DeliveryMethodDto()
+            return items.Select(d => new DeliveryMethodViewModel()
             {
                 Id = d.Id.ToString(),
                 Name = d.Name
@@ -34,7 +34,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         }
 
-        public Task<bool> UpdateAsync(DeliveryMethodDto entity)
+        public Task<bool> UpdateAsync(DeliveryMethodViewModel entity)
         {
             throw new NotImplementedException();
         }

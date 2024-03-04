@@ -2,20 +2,19 @@
 using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.BusinessLogic.Services;
 using HoneyZoneMvc.Data;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.EntityFrameworkCore;
 namespace Microsoft.Extensions.DependencyInjection
 {
     public static class ServiceCollectionExtension
     {
-        public static IServiceCollection ConfigureApplication(this IServiceCollection services,IConfiguration config)
+        public static IServiceCollection ConfigureApplication(this IServiceCollection services, IConfiguration config)
         {
-            services=AddContext(services,config);
-            services=AddIdentityWithRoles(services);
+            services = AddContext(services, config);
+            services = AddIdentityWithRoles(services);
             services = AddServices(services);
             return services;
-        }   
+        }
 
         private static IServiceCollection AddServices(this IServiceCollection services)
         {
@@ -40,7 +39,7 @@ namespace Microsoft.Extensions.DependencyInjection
         }
         private static IServiceCollection AddIdentityWithRoles(this IServiceCollection services)
         {
-            services.AddDefaultIdentity<IdentityUser>(options => 
+            services.AddDefaultIdentity<IdentityUser>(options =>
             {
                 options.SignIn.RequireConfirmedAccount = false;
                 options.SignIn.RequireConfirmedPhoneNumber = false;

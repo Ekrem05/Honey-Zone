@@ -1,7 +1,7 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Infrastructure.ViewModels;
+using HoneyZoneMvc.Infrastructure.ViewModels.CartProduct;
 using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
-using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
 using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -31,15 +31,15 @@ namespace HoneyZoneMvc.Controllers
         {
             ShopViewModel vm = new ShopViewModel();
             List<ProductAdminViewModel> products = new List<ProductAdminViewModel>();
-            if (category==null)
+            if (category == null)
             {
                 products = (await productService.GetAllProductsAsync()).ToList();
             }
             else products = (await productService.GetProductsByCategoryNameAsync(category)).ToList();
-           
 
-                vm.Products = products.Select(p => new ProductShopCardViewModel()
-                {
+
+            vm.Products = products.Select(p => new ProductShopCardViewModel()
+            {
                 Id = p.Id.ToString(),
                 Name = p.Name,
                 Price = p.Price,
@@ -47,7 +47,7 @@ namespace HoneyZoneMvc.Controllers
                 IsAvailable = p.QuantityInStock > 0,
                 IsDiscounted = p.IsDiscounted,
                 Discount = p.Discount
-                }).ToList();
+            }).ToList();
             var categories = await categoryService.GetAllCategoriesAsync();
             vm.Categories = categories.Select(c => new CategoryViewModel()
             {
@@ -63,7 +63,7 @@ namespace HoneyZoneMvc.Controllers
         public async Task<IActionResult> ViewProduct(string Id)
         {
             var productDto = await productService.GetProductByIdAsync(Id);
-            var vm= new ProductShopDetailsViewModel()
+            var vm = new ProductShopDetailsViewModel()
             {
                 Id = productDto.Id,
                 Name = productDto.Name,
@@ -86,11 +86,11 @@ namespace HoneyZoneMvc.Controllers
             return View(productsInCart);
         }
 
-        
+
         [HttpGet]
         public async Task<IActionResult> AddToCart(string Id)
         {
-            bool successfull = await cartProductService.AddCartProductAsync(new CartProductDto()
+            bool successfull = await cartProductService.AddCartProductAsync(new CartProductViewModel()
             {
                 BuyerId = GetUserId().ToString(),
                 ProductId = Id
@@ -102,7 +102,7 @@ namespace HoneyZoneMvc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CartConfirmed(List<PostProductCart> cartProducts)
+        public async Task<IActionResult> CartConfirmed(List<PostProductCartViewModel> cartProducts)
         {
             foreach (var cartProduct in cartProducts)
             {

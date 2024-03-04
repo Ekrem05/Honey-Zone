@@ -11,8 +11,8 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models.Entities
 
         [Required]
         [MaxLength(DataConstants.Category.NameMaxValue)]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
-        public ICollection<Product> Products { get; set; }
+        public ICollection<Product> Products { get; set; } = new List<Product>();
     }
 }
