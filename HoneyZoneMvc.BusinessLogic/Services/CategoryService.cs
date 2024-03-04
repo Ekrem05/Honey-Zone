@@ -44,25 +44,25 @@ namespace HoneyZoneMvc.BusinessLogic.Services
            
         }
 
-        public async Task<IEnumerable<CategoryAddViewModel>> GetAllCategoriesAsync()
+        public async Task<IEnumerable<CategoryViewModel>> GetAllCategoriesAsync()
         {
             var models = await dbContext.Categories.ToListAsync();
-            List<CategoryAddViewModel> categoryDto = new List<CategoryAddViewModel>();
+            List<CategoryViewModel> categoryDto = new List<CategoryViewModel>();
             foreach (var category in models)
             {
-                categoryDto.Add(new CategoryAddViewModel()
+                categoryDto.Add(new CategoryViewModel()
                 {
-                    Id = category.Id,
+                    Id = category.Id.ToString(),
                     Name = category.Name
                 });
             }
             return categoryDto;
         }
-        public async Task<CategoryAddViewModel> GetCategoryById(string id)
+        public async Task<CategoryViewModel> GetCategoryById(string id)
         {
-            CategoryAddViewModel dto = new CategoryAddViewModel();
+            CategoryViewModel dto = new CategoryViewModel();
             var model = await dbContext.Categories.FirstOrDefaultAsync(c => c.Id.ToString() == id);
-            dto.Id = model.Id;
+            dto.Id = model.Id.ToString();
             dto.Name = model.Name;
             return dto;
         }

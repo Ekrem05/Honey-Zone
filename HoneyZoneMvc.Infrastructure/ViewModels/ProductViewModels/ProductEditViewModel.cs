@@ -44,7 +44,7 @@ namespace HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels
         public ICollection<IFormFile> Images { get; set; }
 
         [AllowNull]
-        public IEnumerable<CategoryAddViewModel> Categories { get; set; }
+        public IEnumerable<CategoryViewModel> Categories { get; set; }
 
     }
 }

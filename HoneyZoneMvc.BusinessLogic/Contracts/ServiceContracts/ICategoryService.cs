@@ -6,10 +6,10 @@ namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
     {
 
         Task<bool> AddCategoryAsync(CategoryAddViewModel category);
-        Task<IEnumerable<CategoryAddViewModel>> GetAllCategoriesAsync();
+        Task<IEnumerable<CategoryViewModel>> GetAllCategoriesAsync();
         Task<bool> UpdateCategoryAsync(CategoryAddViewModel category);
         Task<bool> DeleteCategoryAsync(string Id);
-        Task<CategoryAddViewModel> GetCategoryById(string name);
+        Task<CategoryViewModel> GetCategoryById(string name);
 
     }
 }
