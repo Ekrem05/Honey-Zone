@@ -1,6 +1,7 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
 using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
+using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -29,11 +30,11 @@ namespace HoneyZoneMvc.Controllers
         [HttpGet]
         public async Task<IActionResult> OrderDetails()
         {
-            var orderDto = new OrderDetailDto();
+            var ordervm = new OrderDetailViewModel();
             var cart=await cartProductService.GetCartByUserIdAsync(GetUserId().ToString());
-            orderDto.TotalSum = await cartProductService.GetCartSumAsync(GetUserId().ToString());
-            orderDto.DeliveryMethods = await GetDeliveryMethods();
-            return View(orderDto);
+            ordervm.TotalSum = (await cartProductService.GetCartSumAsync(GetUserId().ToString())).ToString("F2");
+            ordervm.DeliveryMethods = await GetDeliveryMethods();
+            return View(ordervm);
         }
         [HttpGet]
         public async Task<IActionResult> MyOrders()
@@ -42,7 +43,7 @@ namespace HoneyZoneMvc.Controllers
             return View(orders);
         }
         [HttpPost]
-        public async Task<IActionResult> OrderConfirmed(OrderDetailDto dto)
+        public async Task<IActionResult> OrderConfirmed(OrderDetailViewModel dto)
         {
             var cart = await cartProductService.GetCartByUserIdAsync(GetUserId().ToString());
             List<OrderProduct> orderProducts = new List<OrderProduct>();
@@ -58,7 +59,9 @@ namespace HoneyZoneMvc.Controllers
                 });
               
             }
-            await orderService.AddAsync(GetUserId().ToString(), dto.TotalSum, dto.DeliveryMethodId, dto, orderProducts);
+            var totalSumFormated = (await cartProductService.GetCartSumAsync(GetUserId().ToString())).ToString("F2");
+            double totalSum = double.Parse(totalSumFormated);
+            await orderService.AddAsync(GetUserId().ToString(),totalSum, dto.DeliveryMethodId, dto, orderProducts);
             await cartProductService.DeleteCartProductAsync(GetUserId().ToString());
             return RedirectToAction("Index", "Shop");
         }
