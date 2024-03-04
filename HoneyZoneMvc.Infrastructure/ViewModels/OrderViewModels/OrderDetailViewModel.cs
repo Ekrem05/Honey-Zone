@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
+using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
 
-namespace HoneyZoneMvc.Infrastructure.ViewModels.DTOs
+namespace HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels
 {
-    public class OrderDetailDto
+    public class OrderDetailViewModel
     {
         [Required]
         public string FirstName { get; set; }
@@ -30,6 +31,6 @@ namespace HoneyZoneMvc.Infrastructure.ViewModels.DTOs
         public string DeliveryMethodId { get; set; }
 
         public ICollection<DeliveryMethodDto> DeliveryMethods { get; set; }
-        public double TotalSum { get; set; }
+        public string TotalSum { get; set; }
     }
 }

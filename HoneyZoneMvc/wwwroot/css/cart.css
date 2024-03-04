@@ -12,7 +12,6 @@
 }
 .cart-information button{
     width:10em;
-    margin-bottom:2em;
 }
 .product-container img {
     width: 90px;
@@ -66,3 +65,6 @@
     .aside-checkout ul .disscount span{
         color:red;
     }
+#cart-buttons{
+    margin-bottom:4em;
+}
