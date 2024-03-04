@@ -29,7 +29,6 @@ public class AdminDataController : Controller
     {
         AdminViewModel vm = new AdminViewModel();
         vm.Products = await productService.GetAllProductsAsync();
-        vm.CategoryDtos = await categoryService.GetAllCategoriesAsync();
         vm.Orders = await orderService.GetAllOrdersAsync();
         vm.Categories = (await categoryService.GetAllCategoriesAsync()).Select(c=>new CategoryViewModel() { Name=c.Name, Id=c.Id.ToString()});
         vm.Users=new List<UserViewModel>();
@@ -59,21 +58,18 @@ public class AdminDataController : Controller
         return RedirectToAction("index");
 
     }
-    [HttpGet]
-    [ActionName("AddProductCategory")]
-    public async Task<IActionResult> AddProductCategoryAsync()
-    {//modal
-        return View("AddCategory");
-    }
     [HttpPost]
     [ActionName("AddProductCategory")]
     public async Task<IActionResult> AddProductCategoryAsync(CategoryAddViewModel productvm)
     {
-        if (await categoryService.AddCategoryAsync(productvm))
+        var categories= await categoryService.GetAllCategoriesAsync();
+        if (categories.Any(c=>c.Name==productvm.Name))
         {
-            return RedirectToAction("index");
+            return RedirectToAction("index", new { ErrorMessage = "Категорията вече съществува!" });
         }
-        return RedirectToAction("index");
+        await categoryService.AddCategoryAsync(productvm);
+        
+            return RedirectToAction("index");
 
     }
     [HttpPost]

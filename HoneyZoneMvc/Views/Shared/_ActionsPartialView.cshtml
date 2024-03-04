@@ -17,11 +17,31 @@
 
         </li>
         <li>
-            <a class="btn btn-outline-success btn-lg dropdown-item" asp-action="AddProductCategory">
+            <a class="btn btn-outline-success btn-lg dropdown-item" data-bs-toggle="modal" data-bs-target="#addNewCategory">
                 Добави Категория на продукт
             </a>
         </li>
     </ul>
+    <div class="modal fade" id="addNewCategory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form asp-action="AddProductCategory" method="post" class="d-inline-block">
+                    <div class="modal-body">
+                        <strong>Внимание!</strong>Ще добавите нова категория на продукт. Сигурни ли сте?
+                        <label>Въведи име на категорията</label>
+                        <input type="text" name="Name" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
+
+                        <button type="submit" class="btn btn-outline-success">
+                            Добави
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <button class="btn btn-outline-danger btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Изтрий
     </button>
