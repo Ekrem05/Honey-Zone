@@ -6,7 +6,7 @@ namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {
     public interface IOrderService
     {
-        Task<bool> AddAsync(string userId, double totalSum, string deliveryMethodId, OrderDetailDto orderDetailDto, List<OrderProduct> orderProducts);
+        Task<bool> AddAsync(string userId, double totalSum, string deliveryMethodId, OrderDetailViewModel orderDetailDto, List<OrderProduct> orderProducts);
         Task<IEnumerable<OrderInfoViewModel>> GetAllOrdersAsync();
         Task<IEnumerable<OrdersFromUserViewModel>> GetUserOrdersIdAsync(string userId);
         Task<ChangeOrderStatusViewModel> GetOrderByIdAsync(string Id);

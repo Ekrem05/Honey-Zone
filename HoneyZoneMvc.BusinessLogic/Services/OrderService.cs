@@ -22,7 +22,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             stateService = _serviceState;
         }
 
-        public async Task<bool> AddAsync(string userId, double totalSum, string deliveryMethodId, OrderDetailDto orderDetailDto, List<OrderProduct> orderProducts)
+        public async Task<bool> AddAsync(string userId, double totalSum, string deliveryMethodId, OrderDetailViewModel vm, List<OrderProduct> orderProducts)
         {
             await dbContext.Orders.AddAsync(new Order()
             {
@@ -31,20 +31,25 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 DeliveryMethodId = Guid.Parse(deliveryMethodId),
                 OrderDate = DateTime.Now,
                 State = await stateService.GetInitialOrderStatus(),
-                ExpectedDelivery = DateTime.Now.AddDays(4),
+                ExpectedDelivery = DateTime.Now.AddDays(7),
                 OrderDetail = new OrderDetail()
                 {
-                    FirstName = orderDetailDto.FirstName,
-                    SecondName = orderDetailDto.SecondName,
-                    PhoneNumber = orderDetailDto.PhoneNumber,
-                    Email = orderDetailDto.Email,
-                    Address = orderDetailDto.Address,
-                    Country = orderDetailDto.Country,
-                    ZipCode = orderDetailDto.ZipCode
+                    FirstName = vm.FirstName,
+                    SecondName = vm.SecondName,
+                    PhoneNumber = vm.PhoneNumber,
+                    Email = vm.Email,
+                    Address = vm.Address,
+                    Country = vm.Country,
+                    ZipCode = vm.ZipCode
                 },
                 OrderProducts = orderProducts
 
             });
+            foreach (var item in orderProducts)
+            {
+                await productService.DecreaseProductQuantityAsync(item.ProductId.ToString());
+            }
+
             return await dbContext.SaveChangesAsync() > 0;
         }
         public async Task<bool> DeleteOrderAsync(string Id)

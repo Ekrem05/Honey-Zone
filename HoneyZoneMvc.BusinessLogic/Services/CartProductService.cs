@@ -77,7 +77,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             return await dbContext.CartProducts
                 .Where(cp => cp.ClientId == userId)
-                .Select(cp => cp.Product.Price * cp.Quantity)
+                .Select(cp => (cp.Product.Price-((cp.Product.Price*cp.Product.Discount)/100))*cp.Quantity)
                 .SumAsync();
         }
         

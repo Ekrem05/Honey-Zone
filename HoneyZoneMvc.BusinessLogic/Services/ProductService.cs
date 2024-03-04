@@ -232,6 +232,8 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                     Name = cp.Product.Name,
                     MainImageName = cp.Product.MainImageUrl,
                     Price = cp.Product.Price,
+                    IsDiscounted=cp.Product.IsDiscounted,
+                    Discount=cp.Product.Discount,
                     ProductAmount = cp.Product.ProductAmount,
                     Quantity = 1
                 })
@@ -242,6 +244,17 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 return carProducts;
             }
             else { throw new Exception(); }///HERE!!
+        }
+        //deincrease product quantity in stock
+        public async Task DecreaseProductQuantityAsync(string Id)
+        {
+            var product = await dbContext.Products.FirstOrDefaultAsync(p => p.Id.ToString() == Id);
+            if (product != null)
+            {
+                product.QuantityInStock --;
+                await dbContext.SaveChangesAsync();
+               
+            }
         }
         //Private methods
       

@@ -16,7 +16,7 @@ namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
         Task<ProductEditViewModel> GetProductEditByIdAsync(string Id);
         Task<bool> SetDiscountAsync(ProductDiscountViewModel vm);
         Task<bool> RemoveDiscountAsync(string Id);
-
+        Task DecreaseProductQuantityAsync(string Id);
 
     }
 }
