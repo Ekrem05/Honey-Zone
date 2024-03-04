@@ -3,6 +3,7 @@ using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
 using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
 using Microsoft.EntityFrameworkCore;
+using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
 {
@@ -13,34 +14,33 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             dbContext = _dbContext;
         }
-        public async Task<bool> AddCategoryAsync(CategoryAddViewModel category)
+        public async Task AddCategoryAsync(CategoryAddViewModel category)
         {
             if (category == null)
             {
                 throw new ArgumentNullException();
             }
             dbContext.Categories.Add(new Category() { Name = category.Name });
-            if (await dbContext.SaveChangesAsync() > 0)
-            {
-                return true;
-            }
-            return false;
+           await dbContext.SaveChangesAsync();
+            
         }
 
-        public async Task<bool> DeleteCategoryAsync(string Id)
+        public async Task<bool> CategoryExistsAsync(string Id)
+        {
+            return await dbContext.Categories.AnyAsync(c => c.Id.ToString() == Id);
+        }
+
+        public async Task DeleteCategoryAsync(string Id)
         {
             bool result = await dbContext.Products.AnyAsync(p => p.CategoryId.ToString() == Id);
             if (result)
             {
-                return false;
+               throw new InvalidOperationException(CategoryMessages.CategoryCannotBeDeleted);
             }
             var category = await dbContext.Categories.FirstOrDefaultAsync(c => c.Id.ToString() == Id);
             dbContext.Categories.Remove(category);
-            if (await dbContext.SaveChangesAsync() > 0)
-            {
-                return true;
-            }
-            return false;
+            await dbContext.SaveChangesAsync();
+            
 
         }
 
@@ -69,7 +69,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
 
 
-        public Task<bool> UpdateCategoryAsync(CategoryAddViewModel category)
+        public Task UpdateCategoryAsync(CategoryAddViewModel category)
         {
             throw new NotImplementedException();
         }
