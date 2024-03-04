@@ -5,27 +5,56 @@
         <form asp-action="CartConfirmed" method="post" class="cart-information">
 
         <section class="products-cart">
-            
+            <section class="product-container">
+            <table class="table table-striped-colums table-dark  table-bordered border-warning table-hover table-md">
+                <thead>
+                    <tr class="text-center">
+                        <th scope="col">Снимка</th>
+                        <th scope="col">Име</th>
+                        <th scope="col">Цена</th>
+                        <th scope="col">Количество</th>
+
+                    </tr>
+                </thead>
                 @for (var i = 0; i < Model.Count(); i++)
                 {
-                    <section class="product-container">
                         <input type="text" name="[@i].Id" value="@Model.ElementAt(i).Id" hidden />
-                            <img src="~/productImages/@Model.ElementAt(i).MainImageName" />
-                            <label class="name">@Model.ElementAt(i).Name</label>
 
-                            <label class="price">@Model.ElementAt(i).Price</label>
+                        <tbody class="">
+                            
+                                <tr>
+                                <td> <img src="~/productImages/@Model.ElementAt(i).MainImageName" /></td>
+                                <td> <label class="name">@Model.ElementAt(i).Name</label></td>
+                                <td>
+                                    @if(Model.ElementAt(i).IsDiscounted)
+                                    {
+                                        <label class="price">
+                                            <span class="price-before">@Model.ElementAt(i).Price</span> @((Model.ElementAt(i).Price - (Model.ElementAt(i).Price * Model.ElementAt(i).Discount / 100)).ToString("F2"))лв
+                                            </label>
+                                    }
+                                    else
+                                    {
+                                        <label class="price">@Model.ElementAt(i).Price</label>
+                                    }
+                                    
+                                    
+                                </td>
+                                <td>  <input class="quantity" type="number" name="[@i].Quantity" value="@Model.ElementAt(i).Quantity" min="1" /></td>
 
-
-                            <input class="quantity" type="number" name="[@i].Quantity" value="@Model.ElementAt(i).Quantity" />
-                       
-                    </section>
+                                </tr>
+                            
+                        </tbody>
                 }
-          
+            </table>
+            </section>
             }
         </section>
-       
-            <button type="submit" class="btn btn-outline-success">Поръчай!</button>
-        
+        <div class="d-flex gap-3 align-items-center justify-content-center" id="cart-buttons">
+            <a asp-action="Index" class="btn btn-secondary">Назад</a>
+            <button type="submit" class="btn btn-outline-success btn-lg">Поръчай!</button>
+
+        </div>
+            
 
         </form>
         
