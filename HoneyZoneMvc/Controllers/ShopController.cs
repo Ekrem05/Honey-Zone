@@ -9,6 +9,7 @@ using System.Security.Claims;
 
 namespace HoneyZoneMvc.Controllers
 {
+    [Authorize]
     public class ShopController : Controller
     {
         private readonly IProductService productService;
@@ -25,6 +26,7 @@ namespace HoneyZoneMvc.Controllers
             cartProductService = _cartProductService;
         }
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> Index(string? category)
         {
             ShopViewModel vm = new ShopViewModel();
@@ -58,6 +60,7 @@ namespace HoneyZoneMvc.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> ViewProduct(string Id)
         {
             var productDto = await productService.GetProductByIdAsync(Id);
@@ -74,13 +77,15 @@ namespace HoneyZoneMvc.Controllers
 
             return View(vm);
         }
+
         [HttpGet]
         public async Task<IActionResult> Cart()
         {
             var productsInCart = await productService.GetUserCartAsync(GetUserId().ToString());
             return View(productsInCart);
         }
-        [Authorize]
+
+        
         [HttpGet]
         public async Task<IActionResult> AddToCart(string Id)
         {
@@ -94,6 +99,7 @@ namespace HoneyZoneMvc.Controllers
 
             return RedirectToAction("Cart", productsInCart);
         }
+
         [HttpPost]
         public async Task<IActionResult> CartConfirmed(List<PostProductCart> cartProducts)
         {

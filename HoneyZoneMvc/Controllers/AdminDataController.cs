@@ -5,6 +5,7 @@ using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
 using HoneyZoneMvc.Infrastructure.ViewModels.DTOs;
 using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
 using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
+using HoneyZoneMvc.Messages;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -61,7 +62,7 @@ public class AdminDataController : Controller
     [HttpGet]
     [ActionName("AddProductCategory")]
     public async Task<IActionResult> AddProductCategoryAsync()
-    {
+    {//modal
         return View("AddCategory");
     }
     [HttpPost]
@@ -73,6 +74,31 @@ public class AdminDataController : Controller
             return RedirectToAction("index");
         }
         return RedirectToAction("index");
+
+    }
+    [HttpPost]
+    [ActionName("SetDiscount")]
+    public async Task<IActionResult> SetDiscountAsync(ProductDiscountViewModel vm)
+    {
+        if (await productService.SetDiscountAsync(vm))
+        {
+            return RedirectToAction("index");
+        }
+        return RedirectToAction("index");
+
+    }
+    [HttpPost]
+    [ActionName("RemoveDiscount")]
+    public async Task<IActionResult> RemoveDiscount(string Id)
+    {
+        var product = await productService.GetProductByIdAsync(Id);
+        if (product.IsDiscounted == false)
+        {
+            return RedirectToAction("index", new { ErrorMessage = "Не може да премахнете промоцията на продукт, който няма промоция!" });
+        }
+        await productService.RemoveDiscountAsync(Id);
+        
+            return RedirectToAction("index");
 
     }
     [HttpGet]
@@ -96,7 +122,7 @@ public class AdminDataController : Controller
             }
         }
 
-        return Content("Unexpected Error");
+        return RedirectToAction("Edit",new { Id=vm.Id.ToString()});
 
     }
     [HttpGet]

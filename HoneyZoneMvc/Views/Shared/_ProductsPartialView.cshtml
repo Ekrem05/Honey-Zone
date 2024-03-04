@@ -9,6 +9,8 @@
             <th scope="col">Снимка</th>
             <th scope="col">Име</th>
             <th scope="col">Цена</th>
+            <th scope="col">Промоция</th>
+            <th scope="col">Промоция (%)</th>
             <th scope="col">Количесво</th>
             <th scope="col">Дозировка</th>
             <th scope="col">Категория</th>
@@ -28,19 +30,34 @@
                 </td>
                 <td class="col-md-1">@product.Name</td>
                 <td>@product.Price</td>
+                <td>@product.IsDiscounted</td>
+                <td>@product.Discount%</td>
                 <td>@product.QuantityInStock</td>
                 <td>@product.ProductAmount</td>
                 <td>@product.Category</td>
                 <td class="col-md-4">
                     @product.Description
                 </td>
-                <td class="col-md-4">
-                   
-                    <a class="btn btn-outline-success"
-                       asp-action="Edit" asp-route-Id="@product.Id">
+                <td class="col-md-5">
+                    <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Промоция
-                    </a>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <button class="btn" data-bs-toggle="modal" data-bs-target="#discountProduct-@product.GetHashCode()">
+                                Промоция
+                            </button>
 
+                        </li>
+                        @if (product.IsDiscounted)
+                        {
+                            <li>
+                                <button class="btn" data-bs-toggle="modal" data-bs-target="#remove-discountProduct-@product.GetHashCode()">
+                                    Премахни промоция
+                                </button>
+                            </li>
+                        }
+                    </ul>
                     <a class="btn btn-outline-primary">
                         Добави снимка
                     </a>
@@ -68,6 +85,47 @@
                                         </button>
                                     </form>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="discountProduct-@product.GetHashCode()" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form asp-action="SetDiscount" method="post" class="d-inline-block">
+                                <div class="modal-body">
+                                        <label>Въведи % промоция</label>
+                                        <input type="number" name="Discount" />
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
+                                   
+                                        <input type="hidden" value="@product.Id" name="Id" />
+                                        
+                                        <button type="submit" class="btn btn-outline-success">
+                                            Приложи
+                                        </button>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="remove-discountProduct-@product.GetHashCode()" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form asp-action="RemoveDiscount" method="post" class="d-inline-block">
+                                    <div class="modal-body">
+                                        <strong>Важно! </strong>Ще се изтрие промоцията на продукта. Сигурни ли сте?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
+
+                                        <input type="hidden" value="@product.Id" name="Id" />
+
+                                        <button type="submit" class="btn btn-outline-success">
+                                            Премахни
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

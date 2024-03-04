@@ -21,13 +21,9 @@ namespace HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels
         [Range(DataConstants.Product.PriceMinValue, DataConstants.Product.PriceMaxValue, ErrorMessage = ProductPriceValueValidation)]
         public double Price { get; set; }
 
-        [Required(ErrorMessage = RequiredField)]
-        public bool IsDiscounted { get; set; }
-
         [AllowNull]
         [Range(DataConstants.Product.DiscountMinValue, DataConstants.Product.DiscountMaxValue, ErrorMessage = ProductDiscountValueValidation)]
         public double Discount { get; set; }
-
 
         [Required(ErrorMessage = RequiredField)]
         [StringLength(DataConstants.Product.DescriptionMaxValue, MinimumLength = DataConstants.Product.DescriptionMinValue, ErrorMessage = ProductDescriptionValueValidation)]
@@ -41,10 +37,13 @@ namespace HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels
         [RegularExpression("^\\d+\\s?(ml|l|g|mg|kg)$", ErrorMessage = ProductAmountValueValidation)]
         public string ProductAmount { get; set; }
 
+        [AllowNull]
         public IFormFile MainImage { get; set; }
 
+        [AllowNull]
         public ICollection<IFormFile> Images { get; set; }
 
+        [AllowNull]
         public IEnumerable<CategoryAddViewModel> Categories { get; set; }
 
     }

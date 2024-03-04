@@ -2,7 +2,7 @@
 
 <section Id="admin-operation-card">
     <form asp-action="SubmitChanges" method="post" enctype="multipart/form-data">
-        <input hidden asp-for="Id" />
+        <input hidden asp-for="Id" value="@Model.Id"/>
         <div class="input-group mb-3">
             <label class="form-label mt-1" asp-for="MainImage">Основна снимка (Ако не се посочи снимка ще останат същите)</label>
             <input type="file" asp-for="MainImage"
@@ -21,9 +21,6 @@
                    class="form-control"
                    id="NameEdit"
                    asp-for="Name" />
-            <div id="currentName" class="form-text">
-                Текущо име:@Model.Name
-            </div>
             <span asp-validation-for="Name" class="bg-danger"></span>
         </div>
 
@@ -37,8 +34,12 @@
             <span class="input-group-text">0.00</span>
             <span asp-validation-for="Price" id="PriceValidation" class="bg-danger"></span>
         </div>
-        <div id="currentPrice" class="form-text">
-            Текуща цена:@Model.Price
+         <div class="mb-3">
+            <label class="form-label" asp-for="Discount">Промоция:</label>
+            <input type="number"
+                   class="form-control"
+                   asp-for="Discount" />
+            <span asp-validation-for="Discount" class="bg-danger"></span>
         </div>
         <div class="mb-3">
             <label asp-for="Category" class="control-label">Категория</label>
@@ -52,9 +53,6 @@
                    id="QuantityInStockEdit"
                    asp-for="QuantityInStock" />
             <span asp-validation-for="QuantityInStock" class="bg-danger"></span>
-            <div id="currentName" class="form-text">
-                Текущo количесво в склад:@Model.QuantityInStock
-            </div>
         </div>
         <div class="mb-3">
             <label class="form-label" asp-for="ProductAmount">Дозировка:</label>
@@ -63,9 +61,7 @@
                    id="ProductQuantityEdit"
                    asp-for="ProductAmount" />
             <span asp-validation-for="ProductAmount" class="bg-danger"></span>
-            <div id="currentName" class="form-text">
-                Текуща дозировка:@Model.ProductAmount
-            </div>
+            
         </div>
         <div class="mb-3">
             <label class="form-label" asp-for="Description">Описание:</label>
@@ -88,4 +84,8 @@
     </form>
 </section>
                
-            
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}   

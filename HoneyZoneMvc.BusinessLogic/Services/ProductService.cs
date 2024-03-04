@@ -137,6 +137,11 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 productToEdit.Price = product.Price;
                 productToEdit.Description = product.Description;
                 productToEdit.ProductAmount = product.ProductAmount;
+                if (product.Discount>0)
+                {
+                    productToEdit.IsDiscounted = true;
+                }
+                productToEdit.Discount = product.Discount;
                 productToEdit.Category = dbContext.Categories.FirstOrDefault(c => c.Name == product.Category);
                 productToEdit.QuantityInStock = product.QuantityInStock;
                 if (product.MainImage != null)
@@ -190,6 +195,30 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         }
 
+        public async Task<bool> SetDiscountAsync(ProductDiscountViewModel vm)
+        {
+            var product=dbContext.Products.FirstOrDefault(p => p.Id.ToString() == vm.Id);
+            product.IsDiscounted= true;
+            product.Discount = vm.Discount;
+            if (await dbContext.SaveChangesAsync() > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public async Task<bool> RemoveDiscountAsync(string Id)
+        {
+            var product=dbContext.Products.FirstOrDefault(p => p.Id.ToString() == Id);
+            
+                product.Discount = 0;
+                product.IsDiscounted = false;
+                if (await dbContext.SaveChangesAsync() > 0)
+                {
+                    return true;
+                }
+            
+            return false;
+        }
 
         public async Task<IEnumerable<ProductCartViewModel>> GetUserCartAsync(string Id)
         {
@@ -223,6 +252,8 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 Id = product.Id,
                 Name = product.Name,
                 Price = product.Price,
+                IsDiscounted=product.IsDiscounted,
+                Discount=product.Discount,
                 Description = product.Description,
                 QuantityInStock = product.QuantityInStock,
                 ProductAmount = product.ProductAmount,
@@ -270,7 +301,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             }
             return mainImage.FileName;
         }
-      
 
+      
     }
 }
