@@ -99,6 +99,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             var model = await dbContext.Products
                 .Include(p => p.Category)
+                .Include(p=>p.Images)
                 .FirstOrDefaultAsync(p => p.Id.ToString() == Id);
 
             if (model != null)
@@ -272,7 +273,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 ProductAmount = product.ProductAmount,
                 Category = product.Category.Name,
                 MainImageName = product.MainImageUrl,
-                Images = imageService.GetImages().Select(x=>x.Name).ToArray()
+                Images = product.Images.Select(i => i.Name).ToArray()
             };
         }
         private async Task<Product> TransformProduct(ProductAddViewModel product)

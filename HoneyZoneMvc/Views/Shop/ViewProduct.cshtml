@@ -56,7 +56,8 @@
                 <p class="text">
                     @Model.Description
                 </p>
-                <div class="quantity-box">
+                <div class="quantity-box d-flex justify-content-around align-items-center">
+                    <a asp-action="Index" class="btn btn-secondary">Назад</a>
                     <a asp-action="AddToCart" asp-route-Id="@Model.Id" class="add-to-cart btn" >Добави в количката</a>
                 </div>
             </div>
