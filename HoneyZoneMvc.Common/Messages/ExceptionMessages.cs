@@ -1,37 +1,50 @@
-﻿namespace HoneyZoneMvc.Messages
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HoneyZoneMvc.Common.Messages
 {
-    /// <summary>
-    /// This static class contains constants which are used for informing of an error or a success
-    /// </summary>
     public static class ExceptionMessages
     {
-        //Errors in product service
-        public const string NoProductsWithGivenCategory = "There are no products with category {0}";
-        public const string NoProductsWithGivenId = "There is no product with id {0}";
-        public const string ArgumentNull = "The argument {0} is null";
+        public static class ProductMessages
+        {
+            public const string ProductNotFound = "Product not found!";
+            public const string ProductCannotBeDeleted = "Product cannot be deleted because it is used in an order that is not finished !";
+            public const string NoProductsWithGivenCategory = "There are no products with category {0}";
+            public const string NoProductsWithGivenId = "There is no product with id {0}";
+            public const string DiscountCannotBeCancelled = "Discount cannot be cancelled because there isn't one!";
+        }
+       
+        public const string ModelStateInvalid = "Invalid model state";
+        public static class CategoryMessages
+        {
+            public const string CategoryCannotBeDeleted = "Category cannot be deleted because it is used in products!";
+            public const string CategoryExists = "Category with this name is already in the database!";
+            public const string InvalidCategory = "Invalid category!";
+            public const string InvalidNull = "Category is null!";
+
+        }
+        public const string UserNotFound = "User not found!";
+        public const string CartNotFound = "Cart not found!";
+        public const string InvalidDiscountValue = "Invalid value while setting discount!";
+        public const string ProductAlreadyExists = "Product already exists!";
+        public const string CategoryAlreadyExists = "Category already exists!";
+        public const string UserAlreadyExists = "User already exists!";
+        public const string CartAlreadyExists = "Cart already exists!";
+        public const string DiscountAlreadyExists = "Discount already exists!";
+        public const string ProductNotAdded = "Product not added!";
+        public const string ProductNotUpdated = "Product not updated!";
+        public const string ProductNotDeleted = "Product not deleted!";
+        public const string DiscountNotSet = "Discount not set!";
+        public const string DiscountNotRemoved = "Discount not removed!";
+        public const string QuantityNotDecreased = "Quantity not decreased!";
+        public const string DiscountNotSetByCategory = "Discount not set by category!";
 
 
 
-
-
-
-
-        //Product validation messages
-        public const string ProductNameValueValidation = "Името трябва да е от {2} до {1} символа!";
-        public const string ProductDescriptionValueValidation = "Описанието трябва да е от {2} до {1} символа!";
-        public const string ProductPriceValueValidation = "Цената трябва да е от {1} до {2} лв!";
-        public const string ProductInStockValueValidation = "Бройката в склад трябва да е от {1} до {2} броя!";
-        public const string ProductAmountValueValidation = "Количеството трябва да започва с число и да завърши с (ml;l;g;mg;kg) Пример: 100g";
-        public const string ProductDiscountValueValidation = "Отстъпката трябва да е от {1} до {2} процента!";
-        public const string RequiredField = "Това поле е задължително!";
-
-
-
-
-
-        //Category validatioin messages
-        public const string CategoryValidation = "Категорията трябва да е от {2} до {1} символа!";
-
-
+        public const string IdNull = "Id is null!";
+        public const string GeneralException = "An error occurred while processing your request! Please contact an Administrator!";
     }
 }
