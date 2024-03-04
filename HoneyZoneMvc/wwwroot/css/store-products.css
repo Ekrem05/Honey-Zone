@@ -81,3 +81,8 @@
   letter-spacing: 0.25em;
   margin-left: -0.6em;
 }
+.price-before {
+    text-decoration: line-through;
+    opacity: 0.7;
+    color: #ff0404;
+}

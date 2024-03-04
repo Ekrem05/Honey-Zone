@@ -12,6 +12,9 @@ namespace HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels
         public string Name { get; set; }    
         public double Price { get; set; }
         public string MainImageName { get; set; }
+        public bool IsAvailable { get; set; }
+        public bool IsDiscounted { get; set; }
+        public double Discount { get; set; }
 
     }
 }

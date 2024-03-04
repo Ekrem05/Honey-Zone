@@ -32,10 +32,24 @@
                     <p class="name">@productDto.Name</p>
                     <div class="row">
                         @{
-                            double number = productDto.Price;
-                            string formattedNumber = number.ToString("F2");
+                            double price = productDto.Price;
+                            string formattedNumber = string.Empty;
+                            if(productDto.IsDiscounted)
+                            {
+                               
+                                string priceBeforeDiscount = productDto.Price.ToString("F2");
+                                price = productDto.Price - (productDto.Price * productDto.Discount / 100);
+                                formattedNumber = price.ToString("F2");
+                                <p class="price"><span class="price-before">@(priceBeforeDiscount)лв</span>     @(formattedNumber)лв</p>
+                            }
+                            else
+                            {
+                                formattedNumber = price.ToString("F2");
+                                <p class="price ">@(formattedNumber)лв</p>
+                            }
+
                         }
-                        <p class="price ">@(formattedNumber)лв.</p>
+
                         <a class="buy btn" asp-action="ViewProduct" asp-route-id="@productDto.Id">КУПИ</a>
                     </div>
                 </li>

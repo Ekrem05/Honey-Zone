@@ -24,7 +24,24 @@
                 <i class="fa-regular fa-star"></i>
                 <i class="fa-regular fa-star"></i>
             </div>
-            <div class="price">@Model.Price лв.</div>
+            @{
+                double price = Model.Price;
+                string formattedNumber = string.Empty;
+                if (Model.IsDiscounted)
+                {
+
+                    string priceBeforeDiscount = Model.Price.ToString("F2");
+                    price = Model.Price - (Model.Price * Model.Discount / 100);
+                    formattedNumber = price.ToString("F2");
+                    <p class="price"><span class="price-before">@(priceBeforeDiscount)лв</span>     @(formattedNumber)лв</p>
+                }
+                else
+                {
+                    <p class="price">@(formattedNumber) лв.</p>
+                }
+
+            }
+            
             <div class="more-description">
                 @if (Model.QuantityInStock > 0)
                 {
@@ -38,9 +55,6 @@
 
                 <p class="text">
                     @Model.Description
-                </p>
-                <p >
-                    Количество: @Model.ProductAmount
                 </p>
                 <div class="quantity-box">
                     <a asp-action="AddToCart" asp-route-Id="@Model.Id" class="add-to-cart btn" >Добави в количката</a>

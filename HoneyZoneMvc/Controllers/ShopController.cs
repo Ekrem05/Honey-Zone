@@ -30,31 +30,30 @@ namespace HoneyZoneMvc.Controllers
         public async Task<IActionResult> Index(string? category)
         {
             ShopViewModel vm = new ShopViewModel();
-            var products = await productService.GetAllProductsAsync();
-            vm.Products = products.Select(p => new ProductShopCardViewModel()
+            List<ProductAdminViewModel> products = new List<ProductAdminViewModel>();
+            if (category==null)
             {
+                products = (await productService.GetAllProductsAsync()).ToList();
+            }
+            else products = (await productService.GetProductsByCategoryAsync(category)).ToList();
+           
+
+                vm.Products = products.Select(p => new ProductShopCardViewModel()
+                {
                 Id = p.Id.ToString(),
                 Name = p.Name,
                 Price = p.Price,
-                MainImageName = p.MainImageName
-            }).ToList();
+                MainImageName = p.MainImageName,
+                IsAvailable = p.QuantityInStock > 0,
+                IsDiscounted = p.IsDiscounted,
+                Discount = p.Discount
+                }).ToList();
             var categories = await categoryService.GetAllCategoriesAsync();
             vm.Categories = categories.Select(c => new CategoryViewModel()
             {
                 Id = c.Id.ToString(),
                 Name = c.Name
             }).ToList();
-            if (category != null)
-            {
-                var productsCategorized = await productService.GetProductsByCategoryAsync(category);
-               vm.Products = productsCategorized.Select(p => new ProductShopCardViewModel()
-               {
-                    Id = p.Id.ToString(),
-                    Name = p.Name,
-                    Price = p.Price,
-                    MainImageName = p.MainImageName
-                }).ToList();
-            }
 
             return View(vm);
         }
@@ -69,6 +68,8 @@ namespace HoneyZoneMvc.Controllers
                 Id = productDto.Id,
                 Name = productDto.Name,
                 Price = productDto.Price,
+                IsDiscounted = productDto.IsDiscounted,
+                Discount = productDto.Discount,
                 Description = productDto.Description,
                 QuantityInStock = productDto.QuantityInStock,
                 MainImageName = productDto.MainImageName,
