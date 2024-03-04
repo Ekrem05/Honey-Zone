@@ -27,12 +27,19 @@
                                             </tr>
                                         </thead>
                                         <tbody class="">
-                            @foreach (var product in order.Products)
+                                            @foreach (var product in order.Products)
                                             {
                                                 <tr>
                                                     <td>@product.Name</td>
                                                     <td>@product.Quantity</td>
-                                                    <td>@(product.Price)лв.</td>
+                                                    @if(product.IsDiscounted)
+                                                    {
+                                                     <td><span class="price-before">@product.Price</span> @(product.DiscountedPrice)лв</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>@product.Price</td>
+                                                    }
                                                     <td>@(product.ProductAmount)</td>
 
                                                 </tr>

@@ -114,6 +114,8 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                     {
                         Name = op.Product.Name,
                         Price = op.Product.Price.ToString(),
+                        IsDiscounted = op.Product.IsDiscounted,
+                        DiscountedPrice= (op.Product.Price - (op.Product.Price * op.Product.Discount / 100)).ToString("F2"),
                         Quantity = op.Quantity.ToString(),
                         ProductAmount=op.Product.ProductAmount
                     }).ToList()
