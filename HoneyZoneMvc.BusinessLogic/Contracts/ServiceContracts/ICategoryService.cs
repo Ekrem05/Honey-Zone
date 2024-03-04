@@ -10,6 +10,5 @@ namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
         Task<bool> UpdateCategoryAsync(CategoryAddViewModel category);
         Task<bool> DeleteCategoryAsync(string Id);
         Task<CategoryViewModel> GetCategoryById(string name);
-
     }
 }

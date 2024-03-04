@@ -69,7 +69,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return productsDto;
         }
 
-        public async Task<IEnumerable<ProductAdminViewModel>> GetProductsByCategoryAsync(string category)
+        public async Task<IEnumerable<ProductAdminViewModel>> GetProductsByCategoryNameAsync(string category)
         {
             if (category.ToUpper() == "ALL")
             {
@@ -93,6 +93,27 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             }
             throw new ArgumentNullException(string.Format(ExceptionMessages.NoProductsWithGivenCategory, category));
 
+        }
+
+        public async Task<IEnumerable<ProductAdminViewModel>> GetProductsByCategoryIdAsync(string Id)
+        {
+           return await dbContext.Products
+                .Include(p => p.Category)
+                .Where(p => p.CategoryId.ToString() == Id)
+                .Select(p => new ProductAdminViewModel()
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Price = p.Price,
+                    Description = p.Description,
+                    QuantityInStock = p.QuantityInStock,
+                    ProductAmount = p.ProductAmount,
+                    Category = p.Category.Name,
+                    MainImageName = p.MainImageUrl,
+                    IsDiscounted=p.IsDiscounted,
+                    Discount=p.Discount
+                })
+                .ToListAsync();
         }
 
         public async Task<ProductAdminViewModel> GetProductByIdAsync(string Id)
@@ -207,6 +228,22 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             }
             return false;
         }
+
+        public async Task<bool> SetDiscountByCategoryAsync(string Id, double discount)
+        {
+            var product=dbContext.Products.Where(p => p.CategoryId.ToString() == Id);
+            foreach (var item in product)
+            {
+                item.IsDiscounted = true;
+                item.Discount = discount;
+            }
+            if (dbContext.SaveChanges() > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public async Task<bool> RemoveDiscountAsync(string Id)
         {
             var product=dbContext.Products.FirstOrDefault(p => p.Id.ToString() == Id);
@@ -220,6 +257,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             
             return false;
         }
+
 
         public async Task<IEnumerable<ProductCartViewModel>> GetUserCartAsync(string Id)
         {
@@ -246,7 +284,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             }
             else { throw new Exception(); }///HERE!!
         }
-        //deincrease product quantity in stock
+       
         public async Task DecreaseProductQuantityAsync(string Id)
         {
             var product = await dbContext.Products.FirstOrDefaultAsync(p => p.Id.ToString() == Id);
@@ -257,8 +295,13 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                
             }
         }
+
+
+
+
+
+
         //Private methods
-      
         private ProductAdminViewModel TransformProduct(Product product)
         {
             return new ProductAdminViewModel()
@@ -316,6 +359,5 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return mainImage.FileName;
         }
 
-      
     }
 }

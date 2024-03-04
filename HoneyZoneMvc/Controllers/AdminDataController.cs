@@ -32,6 +32,8 @@ public class AdminDataController : Controller
         vm.Orders = await orderService.GetAllOrdersAsync();
         vm.Categories = (await categoryService.GetAllCategoriesAsync()).Select(c=>new CategoryViewModel() { Name=c.Name, Id=c.Id.ToString()});
         vm.Users=new List<UserViewModel>();
+        vm.DiscountByCategoryViewModel = new DiscountByCategoryViewModel();
+        vm.DiscountByCategoryViewModel.Categories= vm.Categories.Select(CategoryViewModel => new CategoryViewModel() { Name = CategoryViewModel.Name, Id = CategoryViewModel.Id });
         vm.ErrorMessage= ErrorMessage;
         //vm.Users= (await userService.GetAllUsersAsync()); 
         //ADD DOWNLOADING FUNCTIONALLITY DOWNLOAD Business stats profit etc.
@@ -79,6 +81,35 @@ public class AdminDataController : Controller
         if (await productService.SetDiscountAsync(vm))
         {
             return RedirectToAction("index");
+        }
+        return RedirectToAction("index");
+
+    }
+    [HttpPost]
+    [ActionName("SetDiscountByCategory")]
+    public async Task<IActionResult> SetDiscountByCategory(DiscountByCategoryViewModel vm)
+    {
+        if (ModelState.IsValid)
+        {
+            if (await productService.SetDiscountByCategoryAsync(vm.CategoryId,vm.Discount))
+            {
+                return RedirectToAction("index");
+            }
+        }
+        return RedirectToAction("index", new {ErrorMessage="Неуспешно!"});
+
+    }
+    [HttpPost]
+    [ActionName("CancelDiscountByCategory")]
+    public async Task<IActionResult> CancelDiscountByCategory(string Id)
+    {
+        var products= await productService.GetProductsByCategoryIdAsync(Id);
+        foreach (var product in products)
+        {
+            if (product.IsDiscounted)
+            {
+                await productService.RemoveDiscountAsync(product.Id.ToString());
+            }
         }
         return RedirectToAction("index");
 

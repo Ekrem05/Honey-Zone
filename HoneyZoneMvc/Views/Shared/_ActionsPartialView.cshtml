@@ -1,4 +1,4 @@
-﻿
+﻿@model DiscountByCategoryViewModel
 @{
 }
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -64,19 +64,82 @@
     <ul class="dropdown-menu">
         <li>
             <a class="btn btn-outline-success btn-lg dropdown-item" data-bs-toggle="modal"
-                    data-bs-target="#addProductModal">
+                    data-bs-target="#discount-by-category">
                 Промоция по категория
             </a>
 
         </li>
         <li>
             <a class="btn btn-outline-success btn-lg dropdown-item" data-bs-toggle="modal"
-                    data-bs-target="#addProductCategory">
-                Промоция по Id
+               data-bs-target="#cancel-discount-by-category">
+                Премахни промоция по категория
             </a>
         </li>
     </ul>
-  
-    
+    <!-- Modal -->
+    <div class="modal fade" id="discount-by-category" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form asp-action="SetDiscountByCategory" method="post" class="d-inline-block">
+                    <div class="modal-body">
+                        <strong>Внимание!</strong>Ще добавите нова категория на продукт. Сигурни ли сте?
+                        <div class="mb-3">
+                            <label>Избери категория</label>
+                            <select asp-for="CategoryId" class="form-control" aria-required="true">
+                                <option disabled selected value="">Select Category...</option>
+                                @foreach (var category in Model.Categories)
+                                {
+                                    <option value="@category.Id">@category.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="CategoryId" class="bg-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label>Въведи % промоция</label>
+                            <input asp-for="Discount" name="Discount" />
+                            <span asp-validation-for="Discount" class="bg-danger"></span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
+
+                        <button type="submit" class="btn btn-outline-success">
+                            Добави
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="cancel-discount-by-category" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form asp-action="CancelDiscountByCategory" method="post" class="d-inline-block">
+                    <div class="modal-body">
+                        <strong>Внимание!</strong>Ще премахнете промоцията на всички продукти от тази категория. Сигурни ли сте?
+                        <div class="mb-3">
+                            <label>Избери категория</label>
+                            <select name="Id" class="form-control" aria-required="true">
+                                <option disabled selected value="">Select Category...</option>
+                                @foreach (var category in Model.Categories)
+                                {
+                                    <option value="@category.Id">@category.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="CategoryId" class="bg-danger"></span>
+                        </div>
+                        <input hidden asp-for="Discount" value="10"/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
+
+                        <button type="submit" class="btn btn-outline-success">
+                            Добави
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     
 </div>

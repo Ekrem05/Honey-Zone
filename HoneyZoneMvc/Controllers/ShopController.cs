@@ -35,7 +35,7 @@ namespace HoneyZoneMvc.Controllers
             {
                 products = (await productService.GetAllProductsAsync()).ToList();
             }
-            else products = (await productService.GetProductsByCategoryAsync(category)).ToList();
+            else products = (await productService.GetProductsByCategoryNameAsync(category)).ToList();
            
 
                 vm.Products = products.Select(p => new ProductShopCardViewModel()

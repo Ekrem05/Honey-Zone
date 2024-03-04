@@ -12,6 +12,7 @@ namespace HoneyZoneMvc.Infrastructure.ViewModels
         public IEnumerable<OrderInfoViewModel> Orders { get; set; }
         public IEnumerable<CategoryViewModel> Categories { get; set; }
         public IEnumerable<UserViewModel> Users { get; set; }
+        public DiscountByCategoryViewModel DiscountByCategoryViewModel { get; set; }
         public string ErrorMessage { get; set; }
 
     }
