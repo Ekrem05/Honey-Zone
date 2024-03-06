@@ -1,11 +1,13 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
 
-.404-container{
+.error-container {
     text-align: center;
-
+    vertical-align:middle;
+    margin-top:10em;
 }
-.404{
-    font-size:120px;
-    font-style:Rowdies;
+
+.error {
+    font-size: 150px;
+    font-family: 'Rowdies', cursive;
     font-weight: 700;
 }

@@ -69,6 +69,14 @@
       "PackagePath": "staticwebassets\\css\\store.css"
     },
     {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\style404.css",
+      "PackagePath": "staticwebassets\\css\\style404.css"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\style500.css",
+      "PackagePath": "staticwebassets\\css\\style500.css"
+    },
+    {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

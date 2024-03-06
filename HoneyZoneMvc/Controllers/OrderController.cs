@@ -41,8 +41,8 @@ namespace HoneyZoneMvc.Controllers
             }
             catch (Exception)
             {
-                TempData["Error"]= GeneralException;
-                return RedirectToPage("404");
+                TempData["Error"] = GeneralException;
+                return RedirectToAction("Error", "Home", new { statusCode = 404 });
             }
           
         }
@@ -61,7 +61,7 @@ namespace HoneyZoneMvc.Controllers
             {
 
                 TempData["Error"] = GeneralException;
-                return RedirectToPage("404");
+                return RedirectToAction("Error", "Home", new { statusCode = 404 });
             }
          
         }
@@ -103,7 +103,7 @@ namespace HoneyZoneMvc.Controllers
             catch (Exception e)
             {
                 TempData["Error"] = GeneralException;
-                return RedirectToPage("404");
+                return RedirectToAction("Error", "Home", new { statusCode = 404 });
             }
             TempData["Message"] = OrderAdded;
             return RedirectToAction("MyOrders");
@@ -120,7 +120,7 @@ namespace HoneyZoneMvc.Controllers
             catch (Exception)
             {
                 TempData["Error"] = GeneralException;
-                return RedirectToPage("404");              
+                return RedirectToAction("Error", "Home",new { statusCode = 404 });
             }
         }
         [HttpGet]
@@ -135,7 +135,7 @@ namespace HoneyZoneMvc.Controllers
             catch (Exception)
             {
                 TempData["Error"] = GeneralException;
-                return RedirectToPage("404");
+                return RedirectToAction("Error", "Home", new { statusCode = 404 });
             }
         }
         [HttpPost]
@@ -151,7 +151,7 @@ namespace HoneyZoneMvc.Controllers
             catch (Exception)
             {
                 TempData["Error"] = GeneralException;
-                return RedirectToPage("404");
+                return RedirectToAction("Error", "Home", new { statusCode = 404 });
             }
           
         }
@@ -169,7 +169,7 @@ namespace HoneyZoneMvc.Controllers
                 return RedirectToAction("Index", "AdminData");
             }
             TempData["Error"] = GeneralException;
-            return RedirectToPage("404");
+            return RedirectToAction("Error", "Home", new { statusCode = 404 });
         }
 
         private async Task<ICollection<DeliveryMethodViewModel>> GetDeliveryMethods()
@@ -181,7 +181,6 @@ namespace HoneyZoneMvc.Controllers
             catch (Exception)
             {
                 throw new Exception();
-                
             }
           
         }
