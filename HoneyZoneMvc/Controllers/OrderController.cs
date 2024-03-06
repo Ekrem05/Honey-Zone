@@ -5,6 +5,8 @@ using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
+using static HoneyZoneMvc.Common.Messages.SuccessfulMessages;
 
 namespace HoneyZoneMvc.Controllers
 {
@@ -27,67 +29,131 @@ namespace HoneyZoneMvc.Controllers
             this.deliveryService = deliveryService;
 
         }
-        [HttpGet]
-        public async Task<IActionResult> OrderDetails()
-        {
-            var ordervm = new OrderDetailViewModel();
-            var cart = await cartProductService.GetCartByUserIdAsync(GetUserId().ToString());
-            ordervm.TotalSum = (await cartProductService.GetCartSumAsync(GetUserId().ToString())).ToString("F2");
-            ordervm.DeliveryMethods = await GetDeliveryMethods();
-            return View(ordervm);
-        }
+      
 
         [HttpGet]
         public async Task<IActionResult> MyOrders()
         {
-            var orders = await orderService.GetUserOrdersIdAsync(GetUserId().ToString());
-            return View(orders);
+            try
+            {
+                var orders = await orderService.GetUserOrdersIdAsync(GetUserId().ToString());
+                return View(orders);
+            }
+            catch (Exception)
+            {
+                TempData["Error"]= GeneralException;
+                return RedirectToPage("404");
+            }
+          
         }
+        [HttpGet]
+        public async Task<IActionResult> OrderDetails()
+        {
+            try
+            {
+                var ordervm = new OrderDetailViewModel();
+                var cart = await cartProductService.GetCartByUserIdAsync(GetUserId().ToString());
+                ordervm.TotalSum = (await cartProductService.GetCartSumAsync(GetUserId().ToString())).ToString("F2");
+                ordervm.DeliveryMethods = await GetDeliveryMethods();
+                return View(ordervm);
+            }
+            catch (Exception)
+            {
 
+                TempData["Error"] = GeneralException;
+                return RedirectToPage("404");
+            }
+         
+        }
         [HttpPost]
         public async Task<IActionResult> OrderConfirmed(OrderDetailViewModel dto)
         {
-            var cart = await cartProductService.GetCartByUserIdAsync(GetUserId().ToString());
-            List<OrderProduct> orderProducts = new List<OrderProduct>();
 
-            foreach (var productItem in cart)
+            if (!ModelState.IsValid)
             {
-                var product = await productService.GetProductByIdAsync(productItem.ProductId);
-
-                orderProducts.Add(new OrderProduct()
-                {
-                    ProductId = Guid.Parse(productItem.ProductId),
-                    Quantity = productItem.Quantity,
-                });
-
+                TempData["Error"] = "Invalid input";
+                return RedirectToAction(nameof(OrderDetails));
             }
-            var totalSumFormated = (await cartProductService.GetCartSumAsync(GetUserId().ToString())).ToString("F2");
-            double totalSum = double.Parse(totalSumFormated);
-            await orderService.AddAsync(GetUserId().ToString(), totalSum, dto.DeliveryMethodId, dto, orderProducts);
-            await cartProductService.DeleteCartProductAsync(GetUserId().ToString());
-            return RedirectToAction("Index", "Shop");
-        }
+            try
+            {
+                var cart = await cartProductService.GetCartByUserIdAsync(GetUserId().ToString());
+                List<OrderProduct> orderProducts = new List<OrderProduct>();
 
+                foreach (var productItem in cart)
+                {
+                    var product = await productService.GetProductByIdAsync(productItem.ProductId);
+
+                    orderProducts.Add(new OrderProduct()
+                    {
+                        ProductId = Guid.Parse(productItem.ProductId),
+                        Quantity = productItem.Quantity,
+                    });
+
+                }
+                var totalSumFormated = (await cartProductService.GetCartSumAsync(GetUserId().ToString())).ToString("F2");
+                double totalSum = double.Parse(totalSumFormated);
+                await orderService.AddAsync(GetUserId().ToString(), totalSum, dto.DeliveryMethodId, dto, orderProducts);
+                await cartProductService.DeleteCartProductAsync(GetUserId().ToString());
+            }
+            catch (InvalidOperationException e)
+            {
+                TempData["Error"] = "Your cart is empty";
+                return RedirectToAction(nameof(OrderDetails));
+            }
+            catch (Exception e)
+            {
+                TempData["Error"] = GeneralException;
+                return RedirectToPage("404");
+            }
+            TempData["Message"] = OrderAdded;
+            return RedirectToAction("MyOrders");
+        }
         [HttpGet]
         [ActionName("OrderInformation")]
         public async Task<IActionResult> OrderInformation(string Id)
         {
-            var orderInfo = await orderService.GetOrderDetailsAsync(Id);
-            return View(orderInfo);
+            try
+            {
+                var orderInfo = await orderService.GetOrderDetailsAsync(Id);
+                return View(orderInfo);
+            }
+            catch (Exception)
+            {
+                TempData["Error"] = GeneralException;
+                return RedirectToPage("404");              
+            }
         }
         [HttpGet]
         [ActionName("ChangeStatus")]
         public async Task<IActionResult> ChangeStatus(string Id)
         {
-            var order = await orderService.GetOrderByIdAsync(Id);
-            return View(order);
+            try
+            {
+                var order = await orderService.GetOrderByIdAsync(Id);
+                return View(order);
+            }
+            catch (Exception)
+            {
+                TempData["Error"] = GeneralException;
+                return RedirectToPage("404");
+            }
         }
         [HttpPost]
         [ActionName("ChangeStatus")]
         public async Task<IActionResult> ChangeStatus(ChangeOrderStatusViewModel vm)
         {
-            await orderService.ChangeStatusAsync(vm);
-            return RedirectToAction("Index","AdminData");
+            try
+            {
+                await orderService.ChangeStatusAsync(vm);
+                TempData["Success"] = OrderStatusChanged;
+                return RedirectToAction("Index", "AdminData");
+            }
+            catch (Exception)
+            {
+                TempData["Error"] = GeneralException;
+                return RedirectToPage("404");
+            }
+          
         }
 
         [HttpPost]
@@ -95,17 +161,29 @@ namespace HoneyZoneMvc.Controllers
         public async Task<IActionResult> DeleteOrder(string Id)
         {
             var order = await orderService.GetOrderByIdAsync(Id);
+
             if (Id != null && order != null)
             {
                 await orderService.DeleteOrderAsync(Id);
+                TempData["Success"]= OrderDeleted;
                 return RedirectToAction("Index", "AdminData");
             }
-            return BadRequest();
+            TempData["Error"] = GeneralException;
+            return RedirectToPage("404");
         }
 
         private async Task<ICollection<DeliveryMethodViewModel>> GetDeliveryMethods()
         {
-            return await deliveryService.GetAllAsync();
+            try
+            {
+                return await deliveryService.GetAllAsync();
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+                
+            }
+          
         }
         private Guid GetUserId()
         {
