@@ -23,8 +23,37 @@
             public const int NameMaxValue = 20;
             public const int NameMinValue = 3;
         }
+        public static class OrderDetail
+        {
+            public const int NameMaxValue = 30;
+            public const int NameMinValue = 2;
 
+            public const int AddressMaxValue = 100;
+            public const int AddressMinValue = 2;
 
+            public const int CityMaxValue = 30;
+            public const int CityMinValue = 2;
 
+            public const int PhoneNumberMaxValue = 13;
+            public const int PhoneNumberMinValue = 10;
+
+            public const int ZipCodeLength= 4;
+        }
+
+        public static class State
+        {
+            public const int NameMaxValue = 20;
+            public const int NameMinValue = 3;
+        }
+        public static class ImageUrl
+        {
+            public const int NameMaxValue = 120;
+            public const int NameMinValue = 2;
+        }
+        public static class DeliveryMethod
+        {
+            public const int NameMaxValue = 12;
+            public const int NameMinValue = 2;
+        }
     }
 }

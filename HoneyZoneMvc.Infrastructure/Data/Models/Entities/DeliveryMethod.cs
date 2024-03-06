@@ -8,6 +8,7 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models.Entities
         public Guid Id { get; set; }
 
         [Required]
+        [MaxLength(Constraints.DataConstants.DeliveryMethod.NameMaxValue)]
         public string Name { get; set; } = string.Empty;
 
         public ICollection<Order> Orders { get; set; } = new List<Order>();

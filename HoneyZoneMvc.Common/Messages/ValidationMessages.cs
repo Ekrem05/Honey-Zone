@@ -21,5 +21,13 @@
         public const string CategoryValidation = "Категорията трябва да е от {2} до {1} символа!";
 
 
+        //OrderDetail validation messages
+        public const string OrderDetailNameValueValidation = "Името трябва да е от {2} до {1} символа!";
+        public const string OrderDetailAddressValueValidation = "Адреса трябва да е от {2} до {1} символа!";
+        public const string OrderDetailCityValueValidation = "Града трябва да е от {2} до {1} символа!";
+        public const string OrderDetailPhoneNumberValueValidation = "Телефонният номер трябва да е от {2} до {1} символа!";
+        public const string OrderDetailZipCodeValueValidation = "Пощенският код трябва да е {1} символа!";
+        public const string OrderDetailEmailValueValidation = "Невалиден имейл адрес!";
+
     }
 }

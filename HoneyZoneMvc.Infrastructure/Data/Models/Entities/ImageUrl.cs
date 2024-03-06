@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using HoneyZoneMvc.Constraints;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HoneyZoneMvc.Models.Entities
@@ -10,7 +11,7 @@ namespace HoneyZoneMvc.Models.Entities
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(60)]
+        [MaxLength(DataConstants.ImageUrl.NameMaxValue)]
         public string Name { get; set; } = string.Empty;
 
         [ForeignKey(nameof(ProductId))]

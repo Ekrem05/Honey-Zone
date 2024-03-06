@@ -38,7 +38,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                     PhoneNumber = vm.PhoneNumber,
                     Email = vm.Email,
                     Address = vm.Address,
-                    Country = vm.Country,
+                    City = vm.City,
                     ZipCode = vm.ZipCode
                 },
                 OrderProducts = orderProducts

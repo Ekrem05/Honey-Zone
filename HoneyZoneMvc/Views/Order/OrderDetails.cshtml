@@ -30,9 +30,9 @@
         </div>
         <div class="form-group address">
           
-            <label asp-for="Country" class="form-label">Град</label>
-            <input asp-for="Country" class="form-control" />
-            <span asp-validation-for="Country" class="text-danger"></span>
+            <label asp-for="City" class="form-label">Град</label>
+            <input asp-for="City" class="form-control" />
+            <span asp-validation-for="City" class="text-danger"></span>
           
             <label asp-for="Address" class="form-label">Адрес</label>
             <input asp-for="Address" class="form-control" />
@@ -63,3 +63,7 @@
         </div>
     </form>
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
