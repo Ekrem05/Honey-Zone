@@ -1,0 +1,8 @@
+﻿@{
+    Layout = "~/Views/Shared/ErrorLayout.cshtml";
+}
+<div class="error-container">
+    <h1 class="error">404</h1>
+    <h3>@TempData["Error"]</h3>
+    <a asp-action="Index" class="btn btn-lg btn-primary">Назад</a>
+</div>
