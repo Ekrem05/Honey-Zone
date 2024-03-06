@@ -21,7 +21,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             stateService = _serviceState;
         }
 
-        public async Task<bool> AddAsync(string userId, double totalSum, string deliveryMethodId, OrderDetailViewModel vm, List<OrderProduct> orderProducts)
+        public async Task AddAsync(string userId, double totalSum, string deliveryMethodId, OrderDetailViewModel vm, List<OrderProduct> orderProducts)
         {
             await dbContext.Orders.AddAsync(new Order()
             {
@@ -49,13 +49,13 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 await productService.DecreaseProductQuantityAsync(item.ProductId.ToString());
             }
 
-            return await dbContext.SaveChangesAsync() > 0;
+            await dbContext.SaveChangesAsync();
         }
-        public async Task<bool> DeleteOrderAsync(string Id)
+        public async Task DeleteOrderAsync(string Id)
         {
             dbContext.OrderProducts.RemoveRange(dbContext.OrderProducts.Where(x => x.OrderId.ToString() == Id));
             dbContext.Orders.Remove(dbContext.Orders.FirstOrDefault(x => x.Id.ToString() == Id));
-            return await dbContext.SaveChangesAsync() > 0;
+            await dbContext.SaveChangesAsync();
         }
 
         public async Task<ICollection<Order>> GetAllAsync()
@@ -96,7 +96,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 .Where(o => o.ClientId == userId).ToListAsync();
             if (orders == null)
             {
-                throw new Exception();
+                throw new ArgumentNullException();
             }
             foreach (var order in orders)
             {
@@ -138,6 +138,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             vm.Statuses = await stateService.GetAllAsync();
             return vm;
         }
+
         public async Task<OrderInfoViewModel> GetOrderDetailsAsync(string Id)
         {
             var order = await dbContext.Orders
@@ -146,7 +147,15 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 .Include(Id => Id.OrderProducts)
                 .Include(Id => Id.State)
                 .FirstOrDefaultAsync(o => o.Id.ToString() == Id);
+            if (order==null)
+            {
+                throw new ArgumentNullException();
+            }
             var orderProducts = dbContext.OrderProducts.Where(x => x.OrderId.ToString() == Id).Include(x => x.Product).ToList();
+            if (orderProducts == null)
+            {
+                throw new ArgumentNullException();
+            }
             var result = new OrderInfoViewModel()
             {
                 Id = order.Id.ToString(),
@@ -166,13 +175,22 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                     Quantity = op.Quantity.ToString()
                 }).ToList()
             };
+            if (result == null)
+            {
+                throw new ArgumentNullException();
+            }
             return result;
         }
 
-
         public async Task ChangeStatusAsync(ChangeOrderStatusViewModel vm)
         {
-            dbContext.Orders.FirstOrDefault(x => x.Id.ToString() == vm.Id).StateId = Guid.Parse(vm.StatusId);
+
+            var order = dbContext.Orders.FirstOrDefault(x => x.Id.ToString() == vm.Id);
+            if (order==null)
+            {
+                throw new ArgumentNullException();
+            }
+            order.StateId = Guid.Parse(vm.StatusId);
             await dbContext.SaveChangesAsync();
         }
     }

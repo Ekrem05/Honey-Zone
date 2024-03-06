@@ -59,6 +59,10 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                     Quantity = cp.Quantity
                 })
                 .ToListAsync();
+            if (cart==null)
+            {
+                throw new InvalidOperationException("Cart is empty");
+            }
             return cart;
         }
 

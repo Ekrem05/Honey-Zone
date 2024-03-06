@@ -26,11 +26,16 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         public async Task<ICollection<DeliveryMethodViewModel>> GetAllAsync()
         {
             var items = await dbContext.DeliverMethods.ToListAsync();
-            return items.Select(d => new DeliveryMethodViewModel()
+            var deliveries= items.Select(d => new DeliveryMethodViewModel()
             {
                 Id = d.Id.ToString(),
                 Name = d.Name
             }).ToList();
+            if (deliveries == null)
+            {
+                throw new Exception();
+            }
+            return deliveries;
 
         }
 
