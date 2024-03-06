@@ -1,0 +1,11 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
+
+.404-container{
+    text-align: center;
+
+}
+.404{
+    font-size:120px;
+    font-style:Rowdies;
+    font-weight: 700;
+}
