@@ -1,6 +1,13 @@
 ﻿@model OrderDetailViewModel
 
 <div class="order-container">
+    @if (@TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible mt-2">
+            @TempData["Error"]
+            <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
+        </div>
+    }
     <header class="order-heading">
         <h1>Детайли на поръчката</h1>
     </header>

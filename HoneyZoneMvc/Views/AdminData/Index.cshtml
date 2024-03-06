@@ -1,14 +1,20 @@
 ﻿@model AdminViewModel
 
 
-@if (@TempData["Message"]!=null)
+@if (@TempData["Error"]!=null)
 {
-    <div class="alert alert-secondary alert-dismissible mt-2">
+    <div class="alert alert-danger alert-dismissible mt-2">
         @TempData["Message"]
         <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
     </div>
 }
-   
+@if (@TempData["Succeess"] != null)
+{
+    <div class="alert alert-success alert-dismissible mt-2">
+        @TempData["Message"]
+        <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
+    </div>
+}
 
 @Html.Partial("_ActionsPartialView", Model.DiscountByCategoryViewModel)
 
