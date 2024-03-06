@@ -18,5 +18,8 @@ namespace HoneyZoneMvc.Common.Messages
         public const string DiscountSetByCategory = "Discount set by category successfully!";
         public const string CategoryAdded = "Category added successfully!";
         public const string CategoryDeleted = "Category deleted successfully!";
+        public const string OrderAdded = "Order added successfully!";
+        public const string OrderDeleted = "Order deleted successfully!";
+        public const string OrderStatusChanged = "Order status changed successfully!";
     }
 }
