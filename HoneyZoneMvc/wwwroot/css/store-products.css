@@ -4,21 +4,35 @@
   gap: 1em;
   margin-bottom: 2em;
 }
-    .all-products .product-card {
-        display: flex;
-        flex-direction: column;
-        color: white;
-        padding: 2em;
+
+@keyframes fadein {
+    from {
         opacity: 0;
         filter: blur(5px);
-        transition: all 1s;
-        transform: translateX(-100%);
-        background-color: black;
-        max-width: 364px;
-        gap: 1em;
-        align-items: center;
+        transform: translateX(-10%);
     }
-.all-products .show {
+
+    to {
+        opacity: 1;
+        filter: none;
+        transform:translateX(0);
+    }
+}
+
+.all-products .product-card {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 2em;
+    
+    animation:fadein 1s;
+    /**/
+    background-color: black;
+    max-width: 364px;
+    gap: 1em;
+    align-items: center;
+}
+.all-products  {
   opacity: 1;
   transform: translateX(0);
   filter: blur(0px);

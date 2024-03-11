@@ -1,6 +1,12 @@
 ﻿@model ShopViewModel
 @{
 }
+<div class="search-bar">
+    <input type="text" id="productName" placeholder="Въведи име на продукт" class="productSearch" />
+    <button id="searchButton" class="btn btn-warning">Търси</button>
+</div>
+
+   
 <section class="store-section">
     <section class="filter">
         <ul type="none" id="filter">
@@ -25,36 +31,33 @@
     <section products>
 
         <ul type="none" class="all-products">
-            @foreach (var productDto in Model.Products)
-            {
-                <li class="product-card">
-                    <img src="~/productImages/@productDto.MainImageName" alt="" />
-                    <p class="name">@productDto.Name</p>
-                    <div class="row">
-                        @{
-                            double price = productDto.Price;
-                            string formattedNumber = string.Empty;
-                            if(productDto.IsDiscounted)
-                            {
-                               
-                                string priceBeforeDiscount = productDto.Price.ToString("F2");
-                                price = productDto.Price - (productDto.Price * productDto.Discount / 100);
-                                formattedNumber = price.ToString("F2");
-                                <p class="price"><span class="price-before">@(priceBeforeDiscount)лв</span>     @(formattedNumber)лв</p>
-                            }
-                            else
-                            {
-                                formattedNumber = price.ToString("F2");
-                                <p class="price ">@(formattedNumber)лв</p>
-                            }
-
-                        }
-
-                        <a class="buy btn" asp-action="ViewProduct" asp-route-id="@productDto.Id">КУПИ</a>
-                    </div>
-                </li>
-            }
+            <partial name="_ProductsInShopPartialView" model="Model.Products" />
         </ul>
     </section>
+
 </section>
-<script src="~/js/index.js"></script>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#searchButton').click(function () {
+                var productName = $('#productName').val();
+                console.log(productName);
+
+                $.ajax({
+                url: 'https://localhost:44323/Shop/Index', // Replace with the correct URL
+                method: 'GET',
+                data: { searchBy: productName },
+                success: function (response) {
+                    console.log(response);
+                    $('.all-products').html(response);
+                    
+                },
+                     error: function (xhr, status, error) {
+                    console.error(xhr.responseText); // Log any errors to the console
+                    }
+                });
+            });
+        });
+    </script>

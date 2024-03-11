@@ -576,8 +576,8 @@ C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\obj\Debug\n
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\obj\Debug\net6.0\scopedcss\bundle\HoneyZoneMvc.styles.css
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\obj\Debug\net6.0\scopedcss\projectbundle\HoneyZoneMvc.bundle.scp.css
-C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\obj\Debug\net6.0\HoneyZoneMvc.csproj.CopyComplete
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\obj\Debug\net6.0\HoneyZoneMvc.genruntimeconfig.cache
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\obj\Debug\net6.0\ref\HoneyZoneMvc.dll
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\bin\Debug\net6.0\HoneyZoneMvc.Common.dll
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\bin\Debug\net6.0\HoneyZoneMvc.Common.pdb
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\obj\Debug\net6.0\HoneyZon.D619497E.Up2Date
