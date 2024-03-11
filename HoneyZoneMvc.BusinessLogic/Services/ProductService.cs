@@ -300,7 +300,22 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             }
         }
 
-
+        public async Task<IEnumerable<ProductAdminViewModel>> SearchProductsAsync(string searchBy)
+        {
+            return await dbContext.Products.Where(p => p.Name.Contains(searchBy)).Select(p => new ProductAdminViewModel()
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Price = p.Price,
+                Description = p.Description,
+                QuantityInStock = p.QuantityInStock,
+                ProductAmount = p.ProductAmount,
+                Category = p.Category.Name,
+                MainImageName = p.MainImageUrl,
+                IsDiscounted = p.IsDiscounted,
+                Discount = p.Discount
+            }).ToListAsync();
+        }
 
 
 
@@ -363,5 +378,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return mainImage.FileName;
         }
 
+       
     }
 }

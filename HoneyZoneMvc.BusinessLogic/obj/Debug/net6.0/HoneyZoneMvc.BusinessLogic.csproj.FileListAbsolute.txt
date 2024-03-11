@@ -25,10 +25,10 @@ C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLog
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\obj\Debug\net6.0\HoneyZoneMvc.BusinessLogic.AssemblyInfo.cs
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\obj\Debug\net6.0\HoneyZoneMvc.BusinessLogic.csproj.CoreCompileInputs.cache
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\obj\Debug\net6.0\HoneyZoneMvc.BusinessLogic.sourcelink.json
-C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\obj\Debug\net6.0\HoneyZoneMvc.BusinessLogic.csproj.CopyComplete
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\obj\Debug\net6.0\HoneyZoneMvc.BusinessLogic.dll
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\obj\Debug\net6.0\refint\HoneyZoneMvc.BusinessLogic.dll
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\obj\Debug\net6.0\HoneyZoneMvc.BusinessLogic.pdb
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\obj\Debug\net6.0\ref\HoneyZoneMvc.BusinessLogic.dll
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\bin\Debug\net6.0\HoneyZoneMvc.Common.dll
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\bin\Debug\net6.0\HoneyZoneMvc.Common.pdb
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\obj\Debug\net6.0\HoneyZon.7E9301E0.Up2Date
