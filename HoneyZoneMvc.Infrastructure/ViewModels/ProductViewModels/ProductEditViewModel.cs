@@ -1,4 +1,5 @@
-﻿using HoneyZoneMvc.Constraints;
+﻿using HoneyZoneMvc.Common.Attributes;
+using HoneyZoneMvc.Constraints;
 using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
@@ -23,8 +24,10 @@ namespace HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels
         public double Price { get; set; }
 
         [AllowNull]
-        [Range(DataConstants.Product.DiscountMinValue, DataConstants.Product.DiscountMaxValue, ErrorMessage = ProductDiscountValueValidation)]
+        [DiscountRange(DataConstants.Product.DiscountMinValue, DataConstants.Product.DiscountMaxValue, ProductDiscountValueValidation)]
         public double Discount { get; set; }
+
+        public bool IsDiscounted { get; set; }  = false; 
 
         [Required(ErrorMessage = RequiredField)]
         [StringLength(DataConstants.Product.DescriptionMaxValue, MinimumLength = DataConstants.Product.DescriptionMinValue, ErrorMessage = ProductDescriptionValueValidation)]
@@ -37,13 +40,6 @@ namespace HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels
         [Required]
         [RegularExpression("^\\d+\\s?(ml|l|g|mg|kg)$", ErrorMessage = ProductAmountValueValidation)]
         public string ProductAmount { get; set; } = string.Empty;
-
-        [AllowNull]
-        public IFormFile MainImage { get; set; }= null!;
-
-        [AllowNull]
-        public ICollection<IFormFile> Images { get; set; }= new List<IFormFile>();
-
         [AllowNull]
         public IEnumerable<CategoryViewModel> Categories { get; set; }= new List<CategoryViewModel>();
 
