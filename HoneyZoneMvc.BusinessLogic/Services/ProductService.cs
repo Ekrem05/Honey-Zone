@@ -168,22 +168,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 productToEdit.Discount = product.Discount;
                 productToEdit.CategoryId = dbContext.Categories.FirstOrDefault(c => c.Id.ToString() == product.CategoryId).Id;
                 productToEdit.QuantityInStock = product.QuantityInStock;
-                if (product.MainImage != null)
-                {
-                    productToEdit.MainImageUrl = await SaveLocally(product.MainImage);
-
-                }
-                if (product.Images != null)
-                {
-                    productToEdit.Images.Add(new ImageUrl() { Name = productToEdit.MainImageUrl, ProductId = product.Id });
-                    foreach (var image in product.Images)
-                    {
-                        var imagePath = await SaveLocally(image);
-                        productToEdit.Images.Add(new ImageUrl() { Name = image.FileName, ProductId = product.Id });
-
-                    }
-
-                }
             }
             dbContext.SaveChanges();
             
@@ -362,7 +346,8 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 Description = product.Description,
                 QuantityInStock = product.QuantityInStock,
                 ProductAmount = product.ProductAmount,
-                CategoryId = product.Category.Name
+                IsDiscounted=product.IsDiscounted,
+                CategoryId = product.Category.Name,
             };
         }
 

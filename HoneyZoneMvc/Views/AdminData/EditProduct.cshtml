@@ -3,18 +3,6 @@
 <section Id="admin-operation-card">
     <form asp-action="SubmitChanges" method="post" enctype="multipart/form-data">
         <input hidden asp-for="Id" value="@Model.Id"/>
-        <div class="input-group mb-3">
-            <label class="form-label mt-1" asp-for="MainImage">Основна снимка (Ако не се посочи снимка ще останат същите)</label>
-            <input type="file" asp-for="MainImage"
-                   accept="image/jpg,image/png,image/jpeg" />
-            <span asp-validation-for="MainImage" class="bg-danger"></span>
-        </div>
-        <div class="input-group mb-3">
-            <label class="form-label mt-1" asp-for="Images">Други снимки <span class="bg-warning">(Ако не се посочи снимка ще останат същите)</span></label>
-            <input type="file" asp-for="Images"
-                   accept="image/jpg,image/png,image/jpeg" multiple />
-            <span asp-validation-for="Images" class="bg-danger"></span>
-        </div>
         <div class="mb-3">
             <label class="form-label" asp-for="Name">Име:</label>
             <input type="text"
@@ -34,17 +22,21 @@
             <span class="input-group-text">0.00</span>
             <span asp-validation-for="Price" id="PriceValidation" class="bg-danger"></span>
         </div>
-         <div class="mb-3">
-            <label class="form-label" asp-for="Discount">Промоция:</label>
-            <input type="number"
-                   class="form-control"
-                   asp-for="Discount" />
-            <span asp-validation-for="Discount" class="bg-danger"></span>
-        </div>
+        @if (Model.IsDiscounted)
+        {
+            <div class="mb-3">
+                <label class="form-label" asp-for="Discount">Промоция:</label>
+                <input type="number"
+                       class="form-control"
+                       asp-for="Discount" />
+                <span asp-validation-for="Discount" class="bg-danger"></span>
+            </div>
+        }
+       
         <div class="mb-3">
             <label asp-for="CategoryId" class="control-label">Категория</label>
             <select asp-for="@Model.CategoryId" class="form-control" aria-required="true">
-                <option disabled selected value="">Select Category...</option>
+                <option disabled selected value="@Model.CategoryId">@Model.CategoryId</option>
                 @foreach (var category in Model.Categories)
                 {
                     <option value="@category.Id">@category.Name</option>
@@ -78,11 +70,11 @@
             <span asp-validation-for="Description" class="bg-danger"></span>
         </div>
         <div class="modal-footer">
-            <button type="button"
+            <a type="button"
                     class="btn btn-secondary"
                     asp-action="Index">
                 Отказ
-            </button>
+            </a>
             <button type="submit" class="btn btn-success">
                 Запази промени
             </button>
