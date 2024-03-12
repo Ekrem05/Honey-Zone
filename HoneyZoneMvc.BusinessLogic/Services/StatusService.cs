@@ -1,6 +1,7 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
+using HoneyZoneMvc.Constraints;
 using HoneyZoneMvc.Data;
-using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
+using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.ViewModels.Status;
 using Microsoft.EntityFrameworkCore;
 
@@ -29,7 +30,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<State> GetInitialOrderStatus()
         {
-            return dbContext.States.FirstOrDefault(s => s.Name == "В обработка");
+            return dbContext.States.FirstOrDefault(s => s.Name == DataConstants.Satus.InitialStatus);
         }
     }
 }

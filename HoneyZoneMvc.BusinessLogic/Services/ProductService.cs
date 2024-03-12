@@ -2,11 +2,11 @@
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
 using HoneyZoneMvc.Common.Messages;
-using HoneyZoneMvc.Models.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
 using static System.Net.Mime.MediaTypeNames;
+using HoneyZoneMvc.Infrastructure.Data.Models;
 namespace HoneyZoneMvc.BusinessLogic.Services
 {
     public class ProductService : IProductService

@@ -373,6 +373,14 @@
       "PackagePath": "staticwebassets\\productImages\\ASP.NET Fundamentals - January 2024 - Certificate.jpeg"
     },
     {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\BeeMagnet.jpg",
+      "PackagePath": "staticwebassets\\productImages\\BeeMagnet.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\Fresh-beeswax-for-hair-on-the-table.jpg",
+      "PackagePath": "staticwebassets\\productImages\\Fresh-beeswax-for-hair-on-the-table.jpg"
+    },
+    {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\JAREESH-PREMIUM-100.png",
       "PackagePath": "staticwebassets\\productImages\\JAREESH-PREMIUM-100.png"
     },
@@ -407,6 +415,10 @@
     {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\black bg honey.png",
       "PackagePath": "staticwebassets\\productImages\\black bg honey.png"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\coffee-cup-bees.jpg",
+      "PackagePath": "staticwebassets\\productImages\\coffee-cup-bees.jpg"
     },
     {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\eren.jpg",

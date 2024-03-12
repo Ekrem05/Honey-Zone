@@ -40,10 +40,11 @@
             public const int ZipCodeLength= 4;
         }
 
-        public static class State
+        public static class Satus
         {
             public const int NameMaxValue = 20;
             public const int NameMinValue = 3;
+            public const string InitialStatus = "Pending";
         }
         public static class ImageUrl
         {
