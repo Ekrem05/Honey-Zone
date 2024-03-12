@@ -18,7 +18,7 @@ namespace HoneyZoneMvc.Infrastructure.Configuration
              .HasData(new Product()
              {
                  Id = Guid.NewGuid(),
-                 Name = "Sunflower honey",
+                 Name = "Sunflower Honey",
                  CategoryId = Guid.Parse("78355d47-6040-4676-9972-ac8be4f19882"),
                  Price = 19.99,
                  IsDiscounted = true,

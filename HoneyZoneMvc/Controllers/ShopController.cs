@@ -27,12 +27,26 @@ namespace HoneyZoneMvc.Controllers
         }
         [HttpGet]
         [AllowAnonymous]
-        public async Task<IActionResult> Index(string? category,string? searchBy)
+        public async Task<IActionResult> Index(string? category,string? searchBy,string? bestSellers)
         {
             ShopViewModel vm = new ShopViewModel();
             List<ProductAdminViewModel> products = new List<ProductAdminViewModel>();
-            if (category!=null)
+            if (bestSellers!=null)
             {
+                products = (await productService.GetBestSellersAsync()).Select(p => new ProductAdminViewModel()
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Price = p.Price,
+                    MainImageName = p.MainImageName,
+                    QuantityInStock = p.QuantityInStock,
+                    IsDiscounted = p.IsDiscounted,
+                    Discount = p.Discount
+                }).ToList();
+            }
+
+            else if(category!=null)
+            { 
                 products = (await productService.GetProductsByCategoryNameAsync(category)).ToList();    
             }
             else if (searchBy != null)
