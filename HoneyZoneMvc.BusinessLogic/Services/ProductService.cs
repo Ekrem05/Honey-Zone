@@ -149,6 +149,22 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             throw new ArgumentNullException(string.Format(ProductMessages.NoProductsWithGivenId, Id));
         }
 
+        public async Task<IEnumerable<ProductCartViewModel>> GetBestSellersAsync()
+        {
+           return await dbContext.Products.OrderBy(p=>p.TimesOrdered).Select(dbContext => new ProductCartViewModel()
+           {
+                Id = dbContext.Id,
+                Name = dbContext.Name,
+                MainImageName = dbContext.MainImageUrl,
+                Price = dbContext.Price,
+                IsDiscounted = dbContext.IsDiscounted,
+                Discount = dbContext.Discount,
+                ProductAmount = dbContext.ProductAmount,
+                Quantity = 1
+            }).ToListAsync();   
+        }
+
+
         public async Task UpdateProductAsync(ProductEditViewModel product)
         {
             var productToEdit = await dbContext.Products
@@ -363,6 +379,5 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return mainImage.FileName;
         }
 
-       
     }
 }
