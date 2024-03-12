@@ -1,12 +1,10 @@
-﻿
-using HoneyZoneMvc.Constraints;
-using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
+﻿using HoneyZoneMvc.Constraints;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
-namespace HoneyZoneMvc.Models.Entities
+namespace HoneyZoneMvc.Infrastructure.Data.Models
 {
     public class Product
     {
@@ -23,7 +21,7 @@ namespace HoneyZoneMvc.Models.Entities
         public Guid CategoryId { get; set; }
 
         [Required]
-        public Category Category { get; set; }=null!;
+        public Category Category { get; set; } = null!;
 
         [Required]
         [Comment("Product Price")]
@@ -48,6 +46,10 @@ namespace HoneyZoneMvc.Models.Entities
         [Required]
         [Comment("Product Amount")]
         public string ProductAmount { get; set; } = string.Empty;
+
+        [Required]
+        [Comment("Number of times product has been ordered")]
+        public int TimesOrdered { get; set; }
 
         [Required]
         public string MainImageUrl { get; set; } = string.Empty;

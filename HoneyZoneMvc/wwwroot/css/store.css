@@ -38,15 +38,15 @@ body {
         background-color: #ffc107;
     }
 #filter {
-  border: 1px solid rgb(227 202 88);
-  padding: 2em;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2em;
-  width: 300px;
-  align-items: flex-start;
-  align-content: flex-start;
-  background-color: black;
+    border: 1px solid #ffc107;
+    padding: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    width: 300px;
+    align-items: flex-start;
+    align-content: flex-start;
+    background-color: black;
 }
     #filter > li  {
         color: white;
@@ -73,3 +73,27 @@ body {
   flex-basis: 100%;
   color: white;
 }
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ffc107;
+    margin-top: 2em;
+    padding-bottom: 0.4em;
+}
+#productName{
+    width:20em;
+    height:2em;
+    padding:0.8em;
+    border-radius:0.5em;
+}
+
+
+
+    #productName:focus {
+        border-color: #ffc107;
+        border-width: 2px;
+        border-style: solid;
+        outline: none;
+    }
+#searchButton

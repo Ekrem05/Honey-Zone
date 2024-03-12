@@ -1,7 +1,7 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Constraints;
 using HoneyZoneMvc.Data;
-using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
+using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
 using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
 using Microsoft.EntityFrameworkCore;
@@ -46,6 +46,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             });
             foreach (var item in orderProducts)
             {
+                await productService.IncreaseTotalOrdersAsync(item.ProductId.ToString(), item.Quantity);
                 await productService.DecreaseProductQuantityAsync(item.ProductId.ToString());
             }
 

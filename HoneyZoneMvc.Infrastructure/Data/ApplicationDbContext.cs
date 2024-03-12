@@ -1,7 +1,6 @@
 ﻿
 using HoneyZoneMvc.Infrastructure.Configuration;
-using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
-using HoneyZoneMvc.Models.Entities;
+using HoneyZoneMvc.Infrastructure.Data.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 namespace HoneyZoneMvc.Data

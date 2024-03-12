@@ -1,4 +1,4 @@
-﻿using HoneyZoneMvc.Models.Entities;
+﻿using HoneyZoneMvc.Infrastructure.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

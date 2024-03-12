@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HoneyZoneMvc.Models.Entities
+namespace HoneyZoneMvc.Infrastructure.Data.Models
 {
     public class CartProduct
     {

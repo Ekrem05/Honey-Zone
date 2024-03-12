@@ -18,6 +18,8 @@ namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
         Task RemoveDiscountAsync(string Id);
         Task DecreaseProductQuantityAsync(string Id);
         Task SetDiscountByCategoryAsync(string Id, double discount);
-
+        Task<IEnumerable<ProductAdminViewModel>> SearchProductsAsync(string searchBy);
+        Task<IEnumerable<ProductShopCardViewModel>> GetBestSellersAsync();
+        Task IncreaseTotalOrdersAsync(string Id, int quantity);
     }
 }

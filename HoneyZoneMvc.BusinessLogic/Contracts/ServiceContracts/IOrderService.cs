@@ -1,4 +1,4 @@
-﻿using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
+﻿using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts

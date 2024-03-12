@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 
-namespace HoneyZoneMvc.Infrastructure.Data.Models.Entities
+namespace HoneyZoneMvc.Infrastructure.Data.Models
 {
     public class Order
     {

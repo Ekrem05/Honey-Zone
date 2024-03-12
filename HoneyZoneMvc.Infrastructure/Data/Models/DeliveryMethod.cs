@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace HoneyZoneMvc.Infrastructure.Data.Models.Entities
+namespace HoneyZoneMvc.Infrastructure.Data.Models
 {
     public class DeliveryMethod
     {

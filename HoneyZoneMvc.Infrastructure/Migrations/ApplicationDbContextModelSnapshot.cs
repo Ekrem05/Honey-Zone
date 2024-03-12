@@ -22,7 +22,25 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Category", b =>
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.CartProduct", b =>
+                {
+                    b.Property<string>("ClientId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("ClientId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("CartProducts");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Category", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -41,21 +59,26 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("78355d47-6040-4676-9972-ac8be4f19882"),
-                            Name = "Мед"
+                            Name = "Honey"
                         },
                         new
                         {
                             Id = new Guid("c7d08da8-a5af-4596-8ad2-d0f99091297f"),
-                            Name = "Прашец"
+                            Name = "Bee Pollen"
+                        },
+                        new
+                        {
+                            Id = new Guid("f4251d33-9582-4be6-8bea-be96dd30804e"),
+                            Name = "Beeswax"
                         },
                         new
                         {
                             Id = new Guid("eb2aecdd-7815-49aa-973b-ee3173760fc5"),
-                            Name = "Сувенири"
+                            Name = "Мerchandise"
                         });
                 });
 
-            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.DeliveryMethod", b =>
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.DeliveryMethod", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -73,17 +96,40 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("0e302594-d8b3-457d-808d-97ba9af89d92"),
-                            Name = "Спиди"
+                            Id = new Guid("c23cb100-3aca-48ae-9d70-a4cda6faa68c"),
+                            Name = "Speedy"
                         },
                         new
                         {
-                            Id = new Guid("60c10e31-570b-4a36-9fb4-771f582c5ff5"),
-                            Name = "Eконт"
+                            Id = new Guid("5d0df403-cbf4-4c25-ac0c-62b9021122a1"),
+                            Name = "Econt"
                         });
                 });
 
-            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Order", b =>
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.ImageUrl", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ImageUrls");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Order", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -124,7 +170,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.OrderDetail", b =>
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.OrderDetail", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -169,7 +215,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.ToTable("OrderDetail");
                 });
 
-            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.OrderProduct", b =>
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.OrderProduct", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -193,91 +239,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.ToTable("OrderProducts");
                 });
 
-            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.State", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("States");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("651080d1-0298-4c54-a7f6-d6dd648c78d2"),
-                            Name = "Получена"
-                        },
-                        new
-                        {
-                            Id = new Guid("3aba8c2f-9d8f-479b-948a-812f5a500d83"),
-                            Name = "В обработка"
-                        },
-                        new
-                        {
-                            Id = new Guid("398ea304-dd6c-4790-ae5b-2d13653e27ac"),
-                            Name = "Изпратена"
-                        },
-                        new
-                        {
-                            Id = new Guid("f912bb28-3607-423a-921b-59f3c9daeec3"),
-                            Name = "Доставена"
-                        },
-                        new
-                        {
-                            Id = new Guid("f58cb890-6a72-41ce-889c-f7ab1f8d5173"),
-                            Name = "Отменена"
-                        });
-                });
-
-            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.CartProduct", b =>
-                {
-                    b.Property<string>("ClientId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("ClientId", "ProductId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("CartProducts");
-                });
-
-            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.ImageUrl", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("ImageUrls");
-                });
-
-            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.Product", b =>
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Product", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -324,6 +286,10 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasComment("Quantity Of The Product Available In Stock");
 
+                    b.Property<int>("TimesOrdered")
+                        .HasColumnType("int")
+                        .HasComment("Number of times product has been ordered");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
@@ -333,42 +299,144 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("79d4366f-399d-43c5-88e7-af25576416a8"),
+                            Id = new Guid("c74bc044-9ec8-4f9b-b829-9de4b04f07cf"),
                             CategoryId = new Guid("78355d47-6040-4676-9972-ac8be4f19882"),
-                            Description = "Слънчогледовият мед е уникален продукт, получен от нектара на цветовете на слънчогледа. Този вид мед се отличава с лек, сладък вкус и ярко златист цвят. Ароматът му е нежен и приятен, с леки оттенъци на цветя. Слънчогледовият мед често се характеризира със средна до по-плътна консистенция и може да кристализира с времето, образувайки фини кристали. Този процес не влияе на качествата на меда и може бързо да се възстанови до течно състояние с леко загряване.",
+                            Description = "Savor the golden goodness of our Sunflower honey. With its rich, floral aroma and robust flavor, this honey is a true delight for your taste buds. Harvested from the vibrant blooms of sunflowers, it boasts a smooth texture and a hint of nutty sweetness. Perfect for adding a touch of sunshine to your morning tea or drizzling over freshly baked goods. Experience the pure taste of nature with our Sunflower honey.",
                             Discount = 20.0,
                             IsDiscounted = true,
                             MainImageUrl = "bg honey2.png",
-                            Name = "Слънчогледов мед",
+                            Name = "Sunflower honey",
                             Price = 19.989999999999998,
-                            ProductAmount = "800г",
-                            QuantityInStock = 82
+                            ProductAmount = "800g",
+                            QuantityInStock = 82,
+                            TimesOrdered = 0
                         },
                         new
                         {
-                            Id = new Guid("9fccb074-82db-4ad5-8aee-ceaf2fe00aaa"),
+                            Id = new Guid("abc1cdf0-6412-439a-ade4-21fbc6cbe4c2"),
                             CategoryId = new Guid("78355d47-6040-4676-9972-ac8be4f19882"),
-                            Description = "Акациевият мед е светъл и благороден, със свеж и деликатен вкус. Произведен от цветята на акацията, този мед е изключително чист и прозрачен. Сладък аромат и лека консистенция правят акациевия мед предпочитан избор. Също така се цени за потенциалните му благоприятни върху здравето свойства, като антибактериални и противовъзпалителни ефекти. Възможно е да бъде употребяван самостоятелно или като добавка към различни ястия и напитки.",
+                            Description = "Indulge in the delicate sweetness of our Acacia honey. Sourced from the pristine blossoms of Acacia trees, this golden nectar boasts a subtle floral aroma and a smooth, light taste. Perfect for drizzling over yogurt, spreading on toast, or sweetening your favorite beverages. Treat yourself to the pure, exquisite flavor of Acacia honey today.",
                             Discount = 0.0,
                             IsDiscounted = false,
                             MainImageUrl = "attachment_86137655.jpg",
-                            Name = "Акациев мед",
+                            Name = "Acacia honey",
                             Price = 25.989999999999998,
-                            ProductAmount = "1кг",
-                            QuantityInStock = 27
+                            ProductAmount = "1kg",
+                            QuantityInStock = 27,
+                            TimesOrdered = 0
                         },
                         new
                         {
-                            Id = new Guid("3a9c3b9d-56bf-4087-aa2c-20584dfaf935"),
+                            Id = new Guid("e42149a8-51e6-4a16-843d-f94e7de1cdc6"),
+                            CategoryId = new Guid("78355d47-6040-4676-9972-ac8be4f19882"),
+                            Description = "Indulge in the exquisite taste and health benefits of Manuka Honey. Sourced from the pristine landscapes of New Zealand, this rare honey is renowned for its rich flavor and potent medicinal properties. With its unique antibacterial and antioxidant qualities, Manuka Honey offers a natural boost to your immune system and promotes overall wellness.",
+                            Discount = 0.0,
+                            IsDiscounted = false,
+                            MainImageUrl = "black bg honey.png",
+                            Name = "Manuka Honey",
+                            Price = 18.989999999999998,
+                            ProductAmount = "1kg",
+                            QuantityInStock = 11,
+                            TimesOrdered = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("84484046-a13b-42c5-bee2-40e401322d3b"),
                             CategoryId = new Guid("c7d08da8-a5af-4596-8ad2-d0f99091297f"),
-                            Description = "Горският прашец е пчелен продукт, събран от пчели в горите от различни дървесни видове. Той е плътен и карамелен по цвят, с интензивен аромат и сладък вкус. Горският прашец е известен със своите богати хранителни и лечебни свойства, като се счита за естествен източник на витамини, минерали и антиоксиданти. Често се използва като добавка към храна или напитки за подобряване на имунната система и засилване на енергията.",
+                            Description = "Discover the power of nature with our premium bee pollen product. Packed with nutrients and harvested from the finest sources, our bee pollen is a natural boost for your health and wellness routine. Simply sprinkle it on your favorite foods or blend it into smoothies for a delicious and nutritious addition. Energize your day the natural way with our bee pollen.",
                             Discount = 55.0,
                             IsDiscounted = true,
                             MainImageUrl = "bee-pollen-2549125_1280.jpg",
-                            Name = "Горски прашец",
+                            Name = "Wildflower Pollen",
                             Price = 55.990000000000002,
-                            ProductAmount = "2кг",
-                            QuantityInStock = 102
+                            ProductAmount = "2kg",
+                            QuantityInStock = 102,
+                            TimesOrdered = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("7eac06be-de9c-4c0d-afe0-4997ee850978"),
+                            CategoryId = new Guid("f4251d33-9582-4be6-8bea-be96dd30804e"),
+                            Description = "Discover the versatile beauty of pure Beeswax. Known for its natural scent and golden hue, Beeswax is a versatile ingredient used in candles, skincare products, and more. Crafted by bees with precision, it offers a gentle, protective barrier for your skin and a warm, inviting glow when lit. Embrace the timeless elegance and natural charm of Beeswax in your daily rituals.",
+                            Discount = 10.0,
+                            IsDiscounted = true,
+                            MainImageUrl = "Fresh-beeswax-for-hair-on-the-table.jpg",
+                            Name = "Beeswax",
+                            Price = 31.989999999999998,
+                            ProductAmount = "900g",
+                            QuantityInStock = 202,
+                            TimesOrdered = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("d4d9eff0-a62f-4c86-a433-9c857dc71e02"),
+                            CategoryId = new Guid("eb2aecdd-7815-49aa-973b-ee3173760fc5"),
+                            Description = "Made from durable materials, it securely holds your notes, photos, and grocery lists in place while adding a pop of personality to your fridge door. Bring a little bit of nature indoors and brighten up your kitchen with our Bee Fridge Magnet today!",
+                            Discount = 0.0,
+                            IsDiscounted = false,
+                            MainImageUrl = "BeeMagnet.jpg",
+                            Name = "Fridge Magnet",
+                            Price = 1.99,
+                            ProductAmount = "Single item",
+                            QuantityInStock = 100,
+                            TimesOrdered = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("497aea16-ab27-4e76-b9e0-61726708bc6a"),
+                            CategoryId = new Guid("eb2aecdd-7815-49aa-973b-ee3173760fc5"),
+                            Description = "Introducing our ceramic coffee cup adorned with small bees, adding a touch of nature to your morning routine. Crafted with care, each bee is hand-painted for a unique and charming design. Enjoy your favorite brew in style and bring the beauty of the outdoors to your daily cup of coffee.",
+                            Discount = 0.0,
+                            IsDiscounted = false,
+                            MainImageUrl = "coffee-cup-bees.jpg",
+                            Name = "Coffee Cup",
+                            Price = 2.9900000000000002,
+                            ProductAmount = "Single item",
+                            QuantityInStock = 50,
+                            TimesOrdered = 0
+                        });
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.State", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("States");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("15107515-7785-424a-90f4-4588dabe5c6f"),
+                            Name = "Confirmed"
+                        },
+                        new
+                        {
+                            Id = new Guid("2fd2b441-ea4b-46c9-af1e-3c78ec03c4cf"),
+                            Name = "Pending"
+                        },
+                        new
+                        {
+                            Id = new Guid("3eb1024d-b32e-4f30-9651-1c7d43c850f7"),
+                            Name = "Sent"
+                        },
+                        new
+                        {
+                            Id = new Guid("675c84fa-b275-4531-87ea-c8210a6145d9"),
+                            Name = "Delivered"
+                        },
+                        new
+                        {
+                            Id = new Guid("1e289f24-10fe-43b8-bd08-3b0bb1c783f1"),
+                            Name = "Cancelled"
                         });
                 });
 
@@ -574,7 +642,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Order", b =>
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.CartProduct", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Client")
                         .WithMany()
@@ -582,19 +650,49 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Entities.DeliveryMethod", "DeliveryMethod")
+                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Product", "Product")
+                        .WithMany("CartProducts")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Client");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.ImageUrl", b =>
+                {
+                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Product", "Product")
+                        .WithMany("Images")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Order", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Client")
+                        .WithMany()
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.DeliveryMethod", "DeliveryMethod")
                         .WithMany("Orders")
                         .HasForeignKey("DeliveryMethodId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Entities.OrderDetail", "OrderDetail")
+                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.OrderDetail", "OrderDetail")
                         .WithMany()
                         .HasForeignKey("OrderDetailId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Entities.State", "State")
+                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.State", "State")
                         .WithMany()
                         .HasForeignKey("StateId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -609,15 +707,15 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.Navigation("State");
                 });
 
-            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.OrderProduct", b =>
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.OrderProduct", b =>
                 {
-                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Order", "Order")
+                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Order", "Order")
                         .WithMany("OrderProducts")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HoneyZoneMvc.Models.Entities.Product", "Product")
+                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -628,39 +726,9 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.CartProduct", b =>
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Product", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Client")
-                        .WithMany()
-                        .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("HoneyZoneMvc.Models.Entities.Product", "Product")
-                        .WithMany("CartProducts")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Client");
-
-                    b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.ImageUrl", b =>
-                {
-                    b.HasOne("HoneyZoneMvc.Models.Entities.Product", "Product")
-                        .WithMany("Images")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.Product", b =>
-                {
-                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Category", "Category")
+                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -720,22 +788,22 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Category", b =>
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Category", b =>
                 {
                     b.Navigation("Products");
                 });
 
-            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.DeliveryMethod", b =>
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.DeliveryMethod", b =>
                 {
                     b.Navigation("Orders");
                 });
 
-            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Entities.Order", b =>
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Order", b =>
                 {
                     b.Navigation("OrderProducts");
                 });
 
-            modelBuilder.Entity("HoneyZoneMvc.Models.Entities.Product", b =>
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Product", b =>
                 {
                     b.Navigation("CartProducts");
 

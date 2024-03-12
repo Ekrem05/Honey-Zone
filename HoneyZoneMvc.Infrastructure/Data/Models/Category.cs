@@ -1,8 +1,7 @@
 ﻿using HoneyZoneMvc.Constraints;
-using HoneyZoneMvc.Models.Entities;
 using System.ComponentModel.DataAnnotations;
 
-namespace HoneyZoneMvc.Infrastructure.Data.Models.Entities
+namespace HoneyZoneMvc.Infrastructure.Data.Models
 {
     public class Category
     {

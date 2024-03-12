@@ -8,6 +8,7 @@
         public string MainImageName { get; set; } = string.Empty;
         public bool IsAvailable { get; set; }
         public bool IsDiscounted { get; set; }
+        public int QuantityInStock { get; set; }
         public double Discount { get; set; }
 
     }

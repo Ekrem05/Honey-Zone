@@ -1,4 +1,4 @@
-﻿using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
+﻿using HoneyZoneMvc.Infrastructure.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -12,12 +12,12 @@ namespace HoneyZoneMvc.Infrastructure.Configuration
                  .HasData(new DeliveryMethod()
                  {
                      Id = Guid.NewGuid(),
-                     Name = "Спиди"
+                     Name = "Speedy"
                  },
                  new DeliveryMethod()
                  {
                      Id = Guid.NewGuid(),
-                     Name = "Eконт"
+                     Name = "Econt"
                  });
         }
     }

@@ -1,4 +1,4 @@
-﻿using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
+﻿using HoneyZoneMvc.Infrastructure.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -12,27 +12,27 @@ namespace HoneyZoneMvc.Infrastructure.Configuration
                .HasData(new State()
                {
                    Id = Guid.NewGuid(),
-                   Name = "Получена"
+                   Name = "Confirmed"
                },
                new State()
                {
                    Id = Guid.NewGuid(),
-                   Name = "В обработка"
+                   Name = "Pending"
                },
                new State()
                {
                    Id = Guid.NewGuid(),
-                   Name = "Изпратена"
+                   Name = "Sent"
                },
                new State()
                {
                    Id = Guid.NewGuid(),
-                   Name = "Доставена"
+                   Name = "Delivered"
                },
                new State()
                {
                    Id = Guid.NewGuid(),
-                   Name = "Отменена"
+                   Name = "Cancelled"
                });
         }
     }

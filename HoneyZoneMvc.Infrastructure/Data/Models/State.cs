@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace HoneyZoneMvc.Infrastructure.Data.Models.Entities
+namespace HoneyZoneMvc.Infrastructure.Data.Models
 {
     public class State
     {
@@ -8,7 +8,7 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models.Entities
         public Guid Id { get; set; }
 
         [Required]
-        [MaxLength(Constraints.DataConstants.State.NameMaxValue)]
+        [MaxLength(Constraints.DataConstants.Satus.NameMaxValue)]
         public string Name { get; set; } = string.Empty;
     }
 }

@@ -13,7 +13,7 @@
             public const int InStockMinValue = 0;
             public const int InStockMaxValue = 10000;
             public const int DiscountMaxValue = 100;
-            public const int DiscountMinValue = 1;
+            public const int DiscountMinValue = 0;
             public const string AmountRegx = "^\\d+\\s?(ml|l|g|mg|kg)$";
         }
         public const string DateFormat = "dd/MM/yyyy";
@@ -40,10 +40,11 @@
             public const int ZipCodeLength= 4;
         }
 
-        public static class State
+        public static class Satus
         {
             public const int NameMaxValue = 20;
             public const int NameMinValue = 3;
+            public const string InitialStatus = "Pending";
         }
         public static class ImageUrl
         {

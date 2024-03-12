@@ -1,8 +1,7 @@
-﻿using HoneyZoneMvc.Models.Entities;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HoneyZoneMvc.Infrastructure.Data.Models.Entities
+namespace HoneyZoneMvc.Infrastructure.Data.Models
 {
     public class OrderProduct
     {

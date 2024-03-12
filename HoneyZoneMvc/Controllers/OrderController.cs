@@ -1,5 +1,5 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
-using HoneyZoneMvc.Infrastructure.Data.Models.Entities;
+using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.ViewModels.Delivery;
 using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
 using Microsoft.AspNetCore.Authorization;
