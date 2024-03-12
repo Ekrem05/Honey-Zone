@@ -37,13 +37,13 @@
   transform: translateX(0);
   filter: blur(0px);
 }
-.all-products .product-card > img {
+ #product-image{
   color: white;
   max-width: 300px;
   height: 300px;
   margin-bottom:1em;
 }
-    .all-products .product-card > .name {
+    .product-card > .name {
         border-bottom: 1px solid #ffc107;
         padding-bottom: 1em;
         font-size: 18px;
@@ -53,14 +53,15 @@
         letter-spacing: 2px;
     }
 
-.all-products .view-here:hover {
+.view-here:hover {
   background-color: white;
   color: black;
   border-radius: 20px;
   filter: blur(0px);
 }
 .all-products .product-card:hover {
-  background-color: rgba(246, 246, 115, 0.488);
+    transition: 0.5s ease;
+    background-color: rgba(246, 246, 115, 0.488);
 }
 .product-card .price {
     margin-top: 0.5em;

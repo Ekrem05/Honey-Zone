@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<ProductCartViewModel>
+@{
     ViewData["Title"] = "Honey-Zone";
 }
 <section class="picture-quote">
@@ -66,4 +67,9 @@
             </button>
         </div>
     </div>
+</section>
+
+<section class="bestSellers-container">
+    <h2 class="best-sellers-header">Best Sellers</h2>
+    <partial name="_HomeBestSellersPartialView" model="Model"></partial>
 </section>

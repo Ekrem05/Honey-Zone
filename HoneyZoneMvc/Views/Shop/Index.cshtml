@@ -10,9 +10,9 @@
 <section class="store-section">
     <section class="filter">
         <ul type="none" id="filter">
-            <h1 class="ul-header">ФИЛТРИ</h1>
+            <h1 class="ul-header">Filters</h1>
             <li>
-                <a class="btn" id="filter-action" asp-action="Index" asp-route-category="All">Всички</a>
+                <a class="btn" id="filter-action" asp-action="Index" asp-route-category="All">All</a>
 
             </li>
             @foreach (var category in Model.Categories.Select(c=>c.Name))
@@ -24,7 +24,7 @@
             }
             <li>
             <li>
-                <a class ="btn" id="filter-action">Най-продавани</a>
+                <a class ="btn" id="filter-action">Best Sellers</a>
             </li>
         </ul>
     </section>

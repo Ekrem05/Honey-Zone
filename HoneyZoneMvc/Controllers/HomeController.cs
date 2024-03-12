@@ -1,4 +1,6 @@
-﻿using HoneyZoneMvc.Infrastructure.ViewModels.Errors;
+﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
+using HoneyZoneMvc.Common.Messages;
+using HoneyZoneMvc.Infrastructure.ViewModels.Errors;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,15 +9,27 @@ namespace HoneyZoneMvc.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IProductService productService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,IProductService _productService)
         {
             _logger = logger;
+            productService = _productService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            try
+            {
+                var topThreeBestSellers = (await productService.GetBestSellersAsync()).Take(3);
+                return View(topThreeBestSellers);
+            }
+            catch (Exception)
+            {
+                TempData["Message"]=ExceptionMessages.GeneralException;
+                return RedirectToAction("Error", new { statusCode = 500 });
+            }
+            
         }
 
         public IActionResult Privacy()
