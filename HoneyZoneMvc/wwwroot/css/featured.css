@@ -18,9 +18,9 @@
     background: white;
     padding: 6em 2em;
 }
-.product-card:nth-child(2) {
-    margin-top:-2em;
-}
+    .bestSellers  .product-card:nth-child(2) {
+        margin-top: -2em;
+    }
 
 .product-card {
     display: flex;
@@ -34,8 +34,8 @@
     gap: 1em;
     align-items: center;
 }
-    .product-card:hover {
-        cursor: pointer;
-        transition: 0.5s ease;
-        background-color: #6d6c3a;
-    }
+.bestSellers .product-card:hover {
+    cursor: pointer;
+    transition: 0.5s ease;
+    background-color: #6d6c3a;
+}

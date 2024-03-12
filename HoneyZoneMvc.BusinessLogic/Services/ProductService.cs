@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
 using static System.Net.Mime.MediaTypeNames;
 using HoneyZoneMvc.Infrastructure.Data.Models;
+using AutoMapper;
 namespace HoneyZoneMvc.BusinessLogic.Services
 {
     public class ProductService : IProductService
@@ -14,11 +15,13 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         private ApplicationDbContext dbContext;
         private ICategoryService categoryService;
         private IImageService imageService;
-        public ProductService(ApplicationDbContext _dbContext, ICategoryService _categoryService, IImageService _imageService)
+        private IMapper mapper;
+        public ProductService(ApplicationDbContext _dbContext, ICategoryService _categoryService, IImageService _imageService,IMapper _mapper)
         {
             dbContext = _dbContext;
             categoryService = _categoryService;
-            imageService = _imageService;
+           imageService = _imageService;
+            mapper = _mapper;
         }
         public async Task AddProductAsync(ProductAddViewModel product)
         {

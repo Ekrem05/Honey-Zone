@@ -581,3 +581,5 @@ C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\obj\Debug\n
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\bin\Debug\net6.0\HoneyZoneMvc.Common.dll
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\bin\Debug\net6.0\HoneyZoneMvc.Common.pdb
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\obj\Debug\net6.0\HoneyZon.D619497E.Up2Date
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

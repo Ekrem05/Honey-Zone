@@ -1,4 +1,5 @@
-﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
+﻿using AutoMapper;
+using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Infrastructure.ViewModels;
 using HoneyZoneMvc.Infrastructure.ViewModels.CartProduct;
 using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
@@ -15,15 +16,16 @@ namespace HoneyZoneMvc.Controllers
         private readonly IProductService productService;
         private readonly ICategoryService categoryService;
         private readonly ICartProductService cartProductService;
-
+        private IMapper mapper;
 
         public ShopController(IProductService _productService,
             ICategoryService _categoryService,
-            ICartProductService _cartProductService)
+            ICartProductService _cartProductService,IMapper _mapper)
         {
             productService = _productService;
             categoryService = _categoryService;
             cartProductService = _cartProductService;
+            mapper = _mapper;
         }
         [HttpGet]
         [AllowAnonymous]
@@ -67,16 +69,7 @@ namespace HoneyZoneMvc.Controllers
             else 
             products = (await productService.GetAllProductsAsync()).ToList();
 
-            vm.Products = products.Select(p => new ProductShopCardViewModel()
-            {
-                Id = p.Id.ToString(),
-                Name = p.Name,
-                Price = p.Price,
-                MainImageName = p.MainImageName,
-                IsAvailable = p.QuantityInStock > 0,
-                IsDiscounted = p.IsDiscounted,
-                Discount = p.Discount
-            }).ToList();
+            vm.Products = mapper.Map<List<ProductShopCardViewModel>>(products);
             var categories = await categoryService.GetAllCategoriesAsync();
             vm.Categories = categories.Select(c => new CategoryViewModel()
             {
