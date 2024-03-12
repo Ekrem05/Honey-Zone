@@ -102,7 +102,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                  .Where(p => p.CategoryId.ToString() == Id)
                  .Select(p => new ProductAdminViewModel()
                  {
-                     Id = p.Id,
+                     Id = p.Id.ToString(),
                      Name = p.Name,
                      Price = p.Price,
                      Description = p.Description,
@@ -149,19 +149,17 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             throw new ArgumentNullException(string.Format(ProductMessages.NoProductsWithGivenId, Id));
         }
 
-        public async Task<IEnumerable<ProductCartViewModel>> GetBestSellersAsync()
+        public async Task<IEnumerable<ProductShopCardViewModel>> GetBestSellersAsync()
         {
-           return await dbContext.Products.OrderBy(p=>p.TimesOrdered).Select(dbContext => new ProductCartViewModel()
-           {
-                Id = dbContext.Id,
+            return await dbContext.Products.OrderByDescending(p => p.TimesOrdered).Select(dbContext => new ProductShopCardViewModel()
+            {
+                Id = dbContext.Id.ToString(),
                 Name = dbContext.Name,
-                MainImageName = dbContext.MainImageUrl,
                 Price = dbContext.Price,
+                MainImageName = dbContext.MainImageUrl,
                 IsDiscounted = dbContext.IsDiscounted,
-                Discount = dbContext.Discount,
-                ProductAmount = dbContext.ProductAmount,
-                Quantity = 1
-            }).ToListAsync();   
+                Discount = dbContext.Discount
+            }).ToListAsync();
         }
 
 
@@ -299,12 +297,26 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
             }
         }
+        public async Task IncreaseTotalOrdersAsync(string Id, int quantity)
+        {
+            if (Id==null)
+            {
+                throw new ArgumentNullException(IdNull);
+            }
+            var product = dbContext.Products.FirstOrDefault(p => p.Id.ToString() == Id);
+            if (product==null)
+            {
+                throw new ArgumentNullException(string.Format(ProductMessages.NoProductsWithGivenId, Id));
+            }
+            product.TimesOrdered += quantity;
+            await dbContext.SaveChangesAsync();
+        }
 
         public async Task<IEnumerable<ProductAdminViewModel>> SearchProductsAsync(string searchBy)
         {
             return await dbContext.Products.Where(p => p.Name.Contains(searchBy)).Select(p => new ProductAdminViewModel()
             {
-                Id = p.Id,
+                Id = p.Id.ToString(),
                 Name = p.Name,
                 Price = p.Price,
                 Description = p.Description,
@@ -325,7 +337,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             return new ProductAdminViewModel()
             {
-                Id = product.Id,
+                Id = product.Id.ToString(),
                 Name = product.Name,
                 Price = product.Price,
                 IsDiscounted = product.IsDiscounted,
@@ -379,5 +391,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return mainImage.FileName;
         }
 
+       
     }
 }
