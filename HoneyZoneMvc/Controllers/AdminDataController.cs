@@ -1,11 +1,17 @@
-﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
+﻿using AutoMapper;
+using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
+using HoneyZoneMvc.BusinessLogic.Services;
 using HoneyZoneMvc.Common.Messages;
+using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.ViewModels;
 using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
+using HoneyZoneMvc.Infrastructure.ViewModels.Delivery;
+using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
 using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
 using HoneyZoneMvc.Infrastructure.ViewModels.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
 using static HoneyZoneMvc.Common.Messages.SuccessfulMessages;
 
@@ -15,12 +21,24 @@ public class AdminDataController : Controller
     private readonly IProductService productService;
     private readonly ICategoryService categoryService;
     private readonly IOrderService orderService;
+    private readonly IDeliveryService deliveryService;
+    private readonly ICartProductService cartProductService;
+    private IMapper mapper;
     //private readonly IUserService userService;
-    public AdminDataController(IProductService _productService, ICategoryService _categoryService, IOrderService _orderService/*, IUserService _userService*/)
+    public AdminDataController(IProductService _productService,
+        ICategoryService _categoryService,
+        IOrderService _orderService,
+        IMapper _mapper,
+        IDeliveryService _deliveryService,
+        ICartProductService _cartProductService
+        /*, IUserService _userService*/)
     {
         productService = _productService;
         categoryService = _categoryService;
         orderService = _orderService;
+        deliveryService = _deliveryService;
+        cartProductService = _cartProductService;
+        mapper = _mapper;
         //userService = _userService;
     }
 
@@ -43,9 +61,19 @@ public class AdminDataController : Controller
     [ActionName("AddProduct")]
     public async Task<IActionResult> AddProductAsync()
     {
-        ProductAddViewModel productAddViewModel = new ProductAddViewModel();
-        productAddViewModel.Categories = await categoryService.GetAllCategoriesAsync();
-        return View(productAddViewModel);
+        try
+        {
+            ProductAddViewModel productAddViewModel = new ProductAddViewModel();
+            productAddViewModel.Categories = await categoryService.GetAllCategoriesAsync();
+            return View(productAddViewModel);
+        }
+        catch (Exception)
+        {
+
+            TempData["Error"] = GeneralException;
+            return RedirectToAction(nameof(Index));
+        }     
+       
     }
     [HttpPost]
     [ActionName("AddProduct")]
@@ -66,12 +94,12 @@ public class AdminDataController : Controller
         try
         {
             await productService.AddProductAsync(productvm);
-            TempData["Message"] = ProductAdded;
+            TempData["Success"] = ProductAdded;
             return RedirectToAction(nameof(Index));
         }
         catch (Exception)
         {
-            TempData["Message"] = GeneralException;
+            TempData["Error"] = GeneralException;
             productvm.Categories = await categoryService.GetAllCategoriesAsync();
             return View(productvm);
         }
@@ -85,18 +113,23 @@ public class AdminDataController : Controller
        
         if (categories.Any(c => c.Name == productvm.Name))
         {
-            TempData["Message"] = CategoryMessages.CategoryExists;
+            TempData["Error"] = CategoryMessages.CategoryExists;
             return RedirectToAction(nameof(Index));
         }
         try
         {
-            TempData["Message"] = CategoryAdded;
+            TempData["Success"] = CategoryAdded;
             await categoryService.AddCategoryAsync(productvm);
+            return RedirectToAction(nameof(Index));
+        }
+        catch(InvalidOperationException ex)
+        {
+            TempData["Error"] = ex.Message;
             return RedirectToAction(nameof(Index));
         }
         catch (Exception)
         {
-            TempData["Message"] = GeneralException;
+            TempData["Error"] = GeneralException;
             return RedirectToAction(nameof(Index));
         }
 
@@ -109,17 +142,19 @@ public class AdminDataController : Controller
 
         if (!ModelState.IsValid)
         {
-            TempData["Message"] = InvalidDiscountValue;
+            TempData["Error"] = InvalidDiscountValue;
+            return RedirectToAction(nameof(Index));
+
         }
         try
         {
             await productService.SetDiscountAsync(vm);
-            TempData["Message"]= DiscountSet;
+            TempData["Success"]= DiscountSet;
             return RedirectToAction(nameof(Index));
         }
         catch (Exception)
         {
-            TempData["Message"] = GeneralException;
+            TempData["Error"] = GeneralException;
             return RedirectToAction(nameof(Index));
         }
 
@@ -130,23 +165,23 @@ public class AdminDataController : Controller
     {
         if (!await categoryService.CategoryExistsAsync(vm.CategoryId))
         {
-            TempData["Message"] = CategoryMessages.InvalidCategory;
+            TempData["Error"] = CategoryMessages.InvalidCategory;
             return RedirectToAction(nameof(Index));
         }
         if (!ModelState.IsValid)
         {
-            TempData["Message"] = InvalidDiscountValue;
+            TempData["Error"] = InvalidDiscountValue;
             return RedirectToAction(nameof(Index));
         }
         try
         {
             await productService.SetDiscountByCategoryAsync(vm.CategoryId, vm.Discount);
-            TempData["Message"] = DiscountSetByCategory;
+            TempData["Success"] = DiscountSetByCategory;
             return RedirectToAction(nameof(Index));
         }
         catch (Exception)
         {
-            TempData["Message"] = GeneralException;
+            TempData["Error"] = GeneralException;
             return RedirectToAction(nameof(Index));
         }
 
@@ -158,7 +193,7 @@ public class AdminDataController : Controller
         var products = await productService.GetProductsByCategoryIdAsync(Id);
         if (!await categoryService.CategoryExistsAsync(Id))
         {
-            TempData["Message"] = CategoryMessages.InvalidCategory;
+            TempData["Error"] = CategoryMessages.InvalidCategory;
             return RedirectToAction(nameof(Index));
         }
         try
@@ -170,7 +205,7 @@ public class AdminDataController : Controller
                     await productService.RemoveDiscountAsync(product.Id.ToString());
                 }
             }
-            TempData["Message"] = SuccessfulMessages.DiscountsByCategoryCancelled;
+            TempData["Success"] = DiscountsByCategoryCancelled;
             return RedirectToAction(nameof(Index));
         }
         catch (Exception)
@@ -189,30 +224,30 @@ public class AdminDataController : Controller
     {
         if (Id == null)
         {
-            TempData["Message"] = IdNull;
+            TempData["Error"] = IdNull;
             return RedirectToAction(nameof(Index));
 
         }
         var product = await productService.GetProductByIdAsync(Id);
         if (product == null)
         {
-            TempData["Message"] = ProductMessages.ProductNotFound;
+            TempData["Error"] = ProductMessages.ProductNotFound;
             return RedirectToAction(nameof(Index));
         }
         if (product.IsDiscounted == false)
         {
-            TempData["Message"] = ProductMessages.DiscountCannotBeCancelled;
+            TempData["Error"] = ProductMessages.DiscountCannotBeCancelled;
             return RedirectToAction(nameof(Index));
         }
         try
         {
             await productService.RemoveDiscountAsync(Id);
-            TempData["Message"] = DiscountRemoved;
+            TempData["Success"] = DiscountRemoved;
             return RedirectToAction(nameof(Index));
         }
         catch (Exception)
         {
-            TempData["Message"] = GeneralException;
+            TempData["Error"] = GeneralException;
             return RedirectToAction(nameof(Index));
         }
 
@@ -226,24 +261,25 @@ public class AdminDataController : Controller
     {
         if (Id == null)
         {
-            TempData["Message"] = IdNull;
+            TempData["Error"] = IdNull;
             return RedirectToAction(nameof(Index));
         }
-        ProductEditViewModel item = await productService.GetProductEditByIdAsync(Id.ToString());
-        if (item == null)
+        var item = await productService.GetProductByIdAsync(Id.ToString());
+        ProductEditViewModel vm=mapper.Map<ProductEditViewModel>(item);
+        if (vm == null)
         {
-            TempData["Message"] = ProductMessages.ProductNotFound;
+            TempData["Error"] = ProductMessages.ProductNotFound;
             return RedirectToAction(nameof(Index));
         }
         try
         {
-            item.Categories = await categoryService.GetAllCategoriesAsync();
-
-            return View("EditProduct", item);
+            vm.Categories = await categoryService.GetAllCategoriesAsync();
+            
+            return View("EditProduct", vm);
         }
         catch (Exception)
         {
-            TempData["Message"] = GeneralException;
+            TempData["Error"] = GeneralException;
             return RedirectToAction(nameof(Index));
         }
     }
@@ -256,53 +292,133 @@ public class AdminDataController : Controller
         {
             ModelState.AddModelError(string.Empty, CategoryMessages.InvalidCategory);
             vm.Categories = await categoryService.GetAllCategoriesAsync();
-            return View(RedirectToAction(nameof(Edit),vm.Id));
+            return RedirectToAction(nameof(Edit),vm.Id);
         }
 
         if (!ModelState.IsValid)
         {
             ModelState.AddModelError(string.Empty, ModelStateInvalid);
+            TempData["Error"] = ModelStateInvalid;
             vm.Categories = await categoryService.GetAllCategoriesAsync();
-            return View(RedirectToAction(nameof(Edit),vm.Id));
+            return RedirectToAction(nameof(Edit),new {Id =vm.Id});
         }
         try
         {
             await productService.UpdateProductAsync(vm);
-            TempData["Message"] = ProductUpdated;
+            TempData["Success"] = ProductUpdated;
             return RedirectToAction(nameof(Index));
         }
         catch (Exception)
         {
-            TempData["Message"] = GeneralException;
+            TempData["Error"] = GeneralException;
             vm.Categories = await categoryService.GetAllCategoriesAsync();
-            return View(RedirectToAction(nameof(Edit)));
+            return RedirectToAction(nameof(Edit));
 
         }
     }
     
+    [HttpGet]
+    [ActionName("OrderInformation")]
+    public async Task<IActionResult> OrderInformation(string Id)
+    {
+        if (Id==null)
+        {
+            TempData["Message"] = IdNull;
+            return RedirectToAction(nameof(Index));
+        }
+        try
+        {
+            var orderInfo = await orderService.GetOrderDetailsAsync(Id);
+            return View(orderInfo);
+        }
+        catch (Exception)
+        {
+            TempData["Error"] = OrderMessages.OrderNotFound;
+            return RedirectToAction(nameof(Index));
+        }
+    }
+
+   
+    [HttpGet]
+    [ActionName("ChangeStatus")]
+    public async Task<IActionResult> ChangeStatus(string Id)
+    {
+        try
+        {
+            var order = await orderService.GetOrderByIdAsync(Id);
+            return View(order);
+        }
+        catch (Exception)
+        {
+            TempData["Error"] = GeneralException;
+            return RedirectToAction("Error", "Home", new { statusCode = 404 });
+        }
+    }
+    [HttpPost]
+    [ActionName("ChangeStatus")]
+    public async Task<IActionResult> ChangeStatus(ChangeOrderStatusViewModel vm)
+    {
+        try
+        {
+            await orderService.ChangeStatusAsync(vm);
+            TempData["Success"] = OrderStatusChanged;
+            return RedirectToAction(nameof(Index));
+        }
+        catch (Exception e)
+        {
+            TempData["Error"] = e.Message;
+            return RedirectToAction(nameof(Index));
+        }
+
+    }
+
+    [HttpPost]
+    [ActionName("DeleteOrder")]
+    public async Task<IActionResult> DeleteOrder(string Id)
+    {
+        if(Id==null)
+        {
+            TempData["Error"] = IdNull;
+            return RedirectToAction(nameof(Index));
+        }
+        try
+        {      
+            await orderService.DeleteOrderAsync(Id);
+            TempData["Success"] = OrderDeleted;
+            return RedirectToAction(nameof(Index));
+        }
+        catch (Exception e)
+        {
+
+            TempData["Error"] = e.Message;
+            return RedirectToAction(nameof(Index));
+        }
+       
+    }
+
     [HttpPost]
     [ActionName("DeleteCategory")]
     public async Task<IActionResult> DeleteCategory(string Id)
     {
         if (!await categoryService.CategoryExistsAsync(Id))
         {
-            TempData["Message"] = CategoryMessages.InvalidCategory;
+            TempData["Error"] = CategoryMessages.InvalidCategory;
             return RedirectToAction(nameof(Index));
         }
         try
         {
             await categoryService.DeleteCategoryAsync(Id);
-            TempData["Message"] = CategoryDeleted;
+            TempData["Success"] = CategoryDeleted;
             return RedirectToAction(nameof(Index));
         }
         catch (InvalidOperationException e)
         {
-            TempData["Message"] = e.Message;
+            TempData["Error"] = e.Message;
             return RedirectToAction(nameof(Index));
         }
         catch (Exception)
         {
-            TempData["Message"] = GeneralException;
+            TempData["Error"] = GeneralException;
             return RedirectToAction(nameof(Index));
         }
 
@@ -314,28 +430,30 @@ public class AdminDataController : Controller
         var product = await productService.GetProductByIdAsync(Id);
         if (product==null)
         {
-            TempData["Message"] = ProductMessages.ProductNotFound;
+            TempData["Error"] = ProductMessages.ProductNotFound;
             return RedirectToAction(nameof(Index));
         }
         try
         {
             await productService.DeleteProductAsync(Id);
-            TempData["Message"] = ProductDeleted;
+            TempData["Success"] = ProductDeleted;
             return RedirectToAction(nameof(Index));
         }
         catch (InvalidOperationException e)
         {
-            TempData["Message"] = e.Message;
+            TempData["Error"] = e.Message;
             return RedirectToAction(nameof(Index));
         }
         catch (Exception)
         {
-            TempData["Message"] = GeneralException;
+            TempData["Error"] = GeneralException;
             return RedirectToAction(nameof(Index));
         }
     }
 
-
-
+    private Guid GetUserId()
+    {
+        return Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+    }
 }
 

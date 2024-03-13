@@ -2,6 +2,7 @@
 using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.BusinessLogic.Services;
 using HoneyZoneMvc.Data;
+using HoneyZoneMvc.Infrastructure.AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 namespace Microsoft.Extensions.DependencyInjection
@@ -25,6 +26,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IStatusService, StatusService>();
             services.AddScoped<IImageService, ImageService>();
+            services.AddAutoMapper(typeof(Program),typeof(ProductProfile));
             return services;
         }
         private static IServiceCollection AddContext(this IServiceCollection services, IConfiguration config)

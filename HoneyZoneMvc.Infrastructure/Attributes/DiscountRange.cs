@@ -1,4 +1,5 @@
 ﻿using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -12,23 +13,21 @@ namespace HoneyZoneMvc.Common.Attributes
     {
         private int minValue;
         private int maxValue;
-        private string? errorMessage;
-        public DiscountRange(int minValue,int maxValue,string? message)
+        public DiscountRange(int minValue,int maxValue)
         {
            this.minValue = minValue;
             this.maxValue = maxValue;
-            this.errorMessage = message;
         }
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             var model = (ProductEditViewModel)validationContext.ObjectInstance;
             if (model.IsDiscounted)
             {
-                if (model.Discount>=minValue&& model.Discount<=maxValue)
+                if (model.Discount>=minValue && model.Discount<=maxValue)
                 {
                     return ValidationResult.Success;
                 }
-                return new ValidationResult(errorMessage);
+                return new ValidationResult(this.ErrorMessage);
             }
             return ValidationResult.Success;
         }

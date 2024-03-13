@@ -32,11 +32,10 @@
 
                 <td class="col-md-4">
                     <a class="btn btn-outline-success"
-                       asp-controller="Order"
                        asp-action="ChangeStatus" asp-route-Id="@order.Id">
                         Промени статус
                     </a>
-                    <a class="btn btn-outline-danger" asp-controller="Order" asp-action="OrderInformation" asp-route-Id="@order.Id">
+                    <a class="btn btn-outline-danger" asp-action="OrderInformation" asp-route-Id="@order.Id">
                         Информация
                     </a>
                     <a class="btn btn-outline-primary">

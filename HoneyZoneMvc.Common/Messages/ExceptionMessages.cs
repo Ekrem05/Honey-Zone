@@ -26,6 +26,11 @@ namespace HoneyZoneMvc.Common.Messages
             public const string InvalidNull = "Category is null!";
 
         }
+        public static class OrderMessages
+        {
+           public const string OrderNotFound="Order not found!";
+
+        }
         public const string UserNotFound = "User not found!";
         public const string CartNotFound = "Cart not found!";
         public const string InvalidDiscountValue = "Invalid value while setting discount!";
@@ -33,6 +38,8 @@ namespace HoneyZoneMvc.Common.Messages
         public const string CategoryAlreadyExists = "Category already exists!";
         public const string UserAlreadyExists = "User already exists!";
         public const string CartAlreadyExists = "Cart already exists!";
+        public const string CartIsEmpty = "Cart is empty!";
+
         public const string DiscountAlreadyExists = "Discount already exists!";
         public const string ProductNotAdded = "Product not added!";
         public const string ProductNotUpdated = "Product not updated!";

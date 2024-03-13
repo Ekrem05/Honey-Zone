@@ -1,6 +1,12 @@
 ﻿@model IEnumerable<ProductCartViewModel>
 
-
+@if (@TempData["Message"] != null)
+{
+    <div class="alert alert-danger alert-dismissible mt-2">
+        @TempData["Message"]
+        <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
+    </div>
+}
     <div class="cart-container">
         <form asp-action="CartConfirmed" method="post" class="cart-information">
 
