@@ -19,33 +19,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             dbContext = _dbContext;
             productService = _productService;
         }
-        public async Task AddCartProductAsync(CartProductViewModel dto)
-        {
-            if (dto == null)
-            {
-                throw new InvalidOperationException();
-            }
-            if(!dbContext.Products.Any(p=>p.Id.ToString()==dto.ProductId))
-            {
-                throw new InvalidOperationException();
-            }
-            var product = await dbContext.Products
-              .Include(s => s.CartProducts)
-              .FirstOrDefaultAsync(s => s.Id.ToString() == dto.ProductId);
-
-            if (!product.CartProducts.Any(c => c.ClientId == dto.BuyerId.ToString()))
-            {
-                product.CartProducts.Add(new CartProduct()
-                {
-                    ProductId = Guid.Parse(dto.ProductId),
-                    ClientId = dto.BuyerId.ToString(),
-                    Quantity = dto.Quantity
-
-                });
-                await dbContext.SaveChangesAsync();
-            }
-        }
-
+     
         public async Task DeleteCartProductAsync(IHttpContextAccessor httpContextAccessor)
         {
             if (httpContextAccessor.HttpContext.Request.Cookies.ContainsKey("Cart"))
@@ -56,28 +30,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             {
                 throw new InvalidOperationException();
             }
-        }
-
-        public async Task<IEnumerable<CartProductViewModel>> GetCartByUserIdAsync(string userId)
-        {
-            if (userId == null)
-            {
-                throw new ArgumentNullException();
-            }
-            var cart = await dbContext.CartProducts
-                .Where(cp => cp.ClientId == userId)
-                .Select(cp => new CartProductViewModel()
-                {
-                    BuyerId = userId,
-                    ProductId = cp.ProductId.ToString(),
-                    Quantity = cp.Quantity
-                })
-                .ToListAsync();
-            if (cart==null)
-            {
-                throw new InvalidOperationException();
-            }
-            return cart;
         }
 
         public async Task AddOrUpdateCart(IHttpContextAccessor httpContextAccessor,string productId, int quantity)
@@ -104,32 +56,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             
         }
 
-        public async Task UpdateQuantityAsync(string productId, int quantity, string userId)
-        {
-            if (userId == null)
-            {
-                throw new ArgumentNullException();
-            }
-            if (productId == null)
-            {
-                throw new ArgumentNullException();
-            }
-            var product = await dbContext.Products
-                .Include(p => p.CartProducts)
-                .FirstOrDefaultAsync(p => p.Id.ToString() == productId);
-
-            if (product == null) { throw new ArgumentNullException(); }
-
-            var cartProduct = product.CartProducts
-                 .FirstOrDefault(cp => cp.ClientId == userId);
-
-            if (cartProduct == null) { throw new ArgumentNullException(); }
-
-            cartProduct.Quantity = quantity;
-             await dbContext.SaveChangesAsync();
-
-        }
-
+       
         public async Task<double> GetCartSumAsync(IHttpContextAccessor httpContextAccessor)
         {
             var cartProducts=await GetProductsFromCart(httpContextAccessor);

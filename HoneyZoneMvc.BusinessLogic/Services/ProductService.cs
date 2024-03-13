@@ -177,7 +177,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 throw new InvalidOperationException(ProductMessages.ProductCannotBeDeleted);
             }
             dbContext.ImageUrls.RemoveRange(dbContext.ImageUrls.Where(i => i.ProductId == product.Id));
-            dbContext.CartProducts.RemoveRange(dbContext.CartProducts.Where(cp => cp.ProductId == product.Id));
             dbContext.Remove(product);
             await dbContext.SaveChangesAsync();
            
@@ -234,31 +233,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
            
         }
 
-        public async Task<IEnumerable<ProductCartViewModel>> GetUserCartAsync(string Id)
-        {
-            var carProducts = await dbContext.CartProducts
-                .Include(cp => cp.Product)
-                .AsNoTracking()
-                .Where(cp => cp.ClientId == Id)
-                .Select(cp => new ProductCartViewModel()
-                {
-                    Id = cp.Product.Id.ToString(),
-                    Name = cp.Product.Name,
-                    MainImageName = cp.Product.MainImageUrl,
-                    Price = cp.Product.Price,
-                    IsDiscounted = cp.Product.IsDiscounted,
-                    Discount = cp.Product.Discount,
-                    ProductAmount = cp.Product.ProductAmount,
-                    Quantity = 1
-                })
-                .ToListAsync();
-
-            if (carProducts != null)
-            {
-                return carProducts;
-            }
-            else { throw new Exception(); }
-        }
 
         public async Task DecreaseProductQuantityAsync(string Id)
         {

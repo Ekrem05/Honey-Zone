@@ -12,7 +12,6 @@ namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
         Task<ProductAdminViewModel> GetProductByIdAsync(string Id);
         Task<IEnumerable<ProductAdminViewModel>> GetProductsByCategoryNameAsync(string category);
         Task<IEnumerable<ProductAdminViewModel>> GetProductsByCategoryIdAsync(string Id);
-        Task<IEnumerable<ProductCartViewModel>> GetUserCartAsync(string id);
         Task SetDiscountAsync(ProductDiscountViewModel vm);
         Task RemoveDiscountAsync(string Id);
         Task DecreaseProductQuantityAsync(string Id);
