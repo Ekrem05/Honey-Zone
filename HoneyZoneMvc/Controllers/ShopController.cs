@@ -35,16 +35,7 @@ namespace HoneyZoneMvc.Controllers
             List<ProductAdminViewModel> products = new List<ProductAdminViewModel>();
             if (bestSellers!=null)
             {
-                products = (await productService.GetBestSellersAsync()).Select(p => new ProductAdminViewModel()
-                {
-                    Id = p.Id,
-                    Name = p.Name,
-                    Price = p.Price,
-                    MainImageName = p.MainImageName,
-                    QuantityInStock = p.QuantityInStock,
-                    IsDiscounted = p.IsDiscounted,
-                    Discount = p.Discount
-                }).ToList();
+                products = (await productService.GetBestSellersAsync()).Select(p => mapper.Map<ProductAdminViewModel>(p)).ToList();
             }
 
             else if(category!=null)
@@ -54,16 +45,7 @@ namespace HoneyZoneMvc.Controllers
             else if (searchBy != null)
             {
                 products = (await productService.SearchProductsAsync(searchBy)).ToList();  
-                var model= products.Select(p => new ProductShopCardViewModel()
-                {
-                Id = p.Id.ToString(),
-                Name = p.Name,
-                Price = p.Price,
-                MainImageName = p.MainImageName,
-                IsAvailable = p.QuantityInStock > 0,
-                IsDiscounted = p.IsDiscounted,
-                Discount = p.Discount
-                }).ToList();
+                var model= products.Select(p=>mapper.Map<ProductShopCardViewModel>(p)).ToList();
                 return PartialView("_ProductsInShopPartialView", model);
             }
             else 
@@ -85,18 +67,7 @@ namespace HoneyZoneMvc.Controllers
         public async Task<IActionResult> ViewProduct(string Id)
         {
             var productDto = await productService.GetProductByIdAsync(Id);
-            var vm = new ProductShopDetailsViewModel()
-            {
-                Id = productDto.Id,
-                Name = productDto.Name,
-                Price = productDto.Price,
-                IsDiscounted = productDto.IsDiscounted,
-                Discount = productDto.Discount,
-                Description = productDto.Description,
-                QuantityInStock = productDto.QuantityInStock,
-                MainImageName = productDto.MainImageName,
-                ImagesNames = productDto.Images.ToList()
-            };
+            var vm = mapper.Map<ProductShopDetailsViewModel>(productDto);
 
             return View(vm);
         }

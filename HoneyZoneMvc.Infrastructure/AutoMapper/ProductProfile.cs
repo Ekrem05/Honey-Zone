@@ -10,7 +10,8 @@ namespace HoneyZoneMvc.Infrastructure.AutoMapper
         public ProductProfile()
         {
             CreateMap<ProductAdminViewModel, ProductShopCardViewModel>()
-             .ForMember(dest => dest.IsAvailable, opt => opt.MapFrom(src => src.QuantityInStock > 0));
+             .ForMember(dest => dest.IsAvailable, opt => opt.MapFrom(src => src.QuantityInStock > 0))
+             .ReverseMap(); 
 
             CreateMap<ProductAdminViewModel, ProductEditViewModel>()
                 .ForMember(m => m.Categories, map => map.Ignore());
@@ -26,6 +27,10 @@ namespace HoneyZoneMvc.Infrastructure.AutoMapper
                    .ForMember(vm => vm.MainImageName, map => map.MapFrom(m => m.MainImageUrl))
                    .ForMember(vm => vm.CategoryId, map =>map.MapFrom(m=>m.Category.Name))
                    .ForMember(vm => vm.Images, map => map.MapFrom(m => m.Images.Select(i => i.Name).ToArray()));
+
+            CreateMap<ProductAdminViewModel, ProductShopDetailsViewModel>()
+               .ForMember(m => m.ImagesNames,map=>map.MapFrom(m => m.Images.ToList()));
+
         }
     }
 }
