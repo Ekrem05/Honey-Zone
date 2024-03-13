@@ -58,8 +58,5 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models
         public ICollection<ImageUrl> Images = new List<ImageUrl>();
 
 
-        public ICollection<CartProduct> CartProducts { get; set; } = new HashSet<CartProduct>();
-
-
     }
 }
