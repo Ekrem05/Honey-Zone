@@ -29,7 +29,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             {
                 throw new ArgumentNullException(string.Format(ValidationMessages.ArgumentNull, nameof(ProductAddViewModel)));
             }
-            Product productToAdd = TransformProduct(product);
+            Product productToAdd = mapper.Map<Product>(product);
 
             productToAdd.MainImageUrl = await SaveLocally(product.MainImage);
 
@@ -67,7 +67,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
             foreach (var product in models)
             {
-                productsDto.Add(TransformProduct(product));
+                productsDto.Add(mapper.Map<ProductAdminViewModel>(product));
             }
             return productsDto;
         }
@@ -90,7 +90,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 List<ProductAdminViewModel> productsDto = new List<ProductAdminViewModel>();
                 foreach (var product in models)
                 {
-                    productsDto.Add(TransformProduct(product));
+                    productsDto.Add(mapper.Map<ProductAdminViewModel>(product));
                 }
                 return productsDto;
             }
@@ -103,19 +103,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return await dbContext.Products
                  .Include(p => p.Category)
                  .Where(p => p.CategoryId.ToString() == Id)
-                 .Select(p => new ProductAdminViewModel()
-                 {
-                     Id = p.Id.ToString(),
-                     Name = p.Name,
-                     Price = p.Price,
-                     Description = p.Description,
-                     QuantityInStock = p.QuantityInStock,
-                     ProductAmount = p.ProductAmount,
-                     Category = p.Category.Name,
-                     MainImageName = p.MainImageUrl,
-                     IsDiscounted = p.IsDiscounted,
-                     Discount = p.Discount
-                 })
+                 .Select(p => mapper.Map<ProductAdminViewModel>(p))
                  .ToListAsync();
         }
 
@@ -128,24 +116,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
             if (model != null)
             {
-                return TransformProduct(model);
-            }
-
-
-            throw new ArgumentNullException(string.Format(ProductMessages.NoProductsWithGivenId, Id));
-        }
-
-        public async Task<ProductEditViewModel> GetProductEditByIdAsync(string Id)
-        {
-            var model = await dbContext.Products
-                .Include(p => p.Category)
-                .Include(p => p.Images)
-                .AsNoTracking()
-                .FirstOrDefaultAsync(p => p.Id.ToString() == Id);
-
-            if (model != null)
-            {
-                return GetProductEditViewModel(model);
+                return mapper.Map<ProductAdminViewModel>(model);
             }
 
 
@@ -164,7 +135,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 Discount = dbContext.Discount
             }).ToListAsync();
         }
-
 
         public async Task UpdateProductAsync(ProductEditViewModel product)
         {
@@ -263,7 +233,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
            
         }
 
-
         public async Task<IEnumerable<ProductCartViewModel>> GetUserCartAsync(string Id)
         {
             var carProducts = await dbContext.CartProducts
@@ -287,7 +256,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             {
                 return carProducts;
             }
-            else { throw new Exception(); }///HERE!!
+            else { throw new Exception(); }
         }
 
         public async Task DecreaseProductQuantityAsync(string Id)
@@ -317,70 +286,12 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<IEnumerable<ProductAdminViewModel>> SearchProductsAsync(string searchBy)
         {
-            return await dbContext.Products.Where(p => p.Name.Contains(searchBy)).Select(p => new ProductAdminViewModel()
-            {
-                Id = p.Id.ToString(),
-                Name = p.Name,
-                Price = p.Price,
-                Description = p.Description,
-                QuantityInStock = p.QuantityInStock,
-                ProductAmount = p.ProductAmount,
-                Category = p.Category.Name,
-                MainImageName = p.MainImageUrl,
-                IsDiscounted = p.IsDiscounted,
-                Discount = p.Discount
-            }).ToListAsync();
+            return await dbContext.Products
+                .Where(p => p.Name.Contains(searchBy))
+                .Select(p => mapper.Map<ProductAdminViewModel>(p))
+                .ToListAsync();
         }
 
-
-
-
-        //Private methods
-        private ProductAdminViewModel TransformProduct(Product product)
-        {
-            return new ProductAdminViewModel()
-            {
-                Id = product.Id.ToString(),
-                Name = product.Name,
-                Price = product.Price,
-                IsDiscounted = product.IsDiscounted,
-                Discount = product.Discount,
-                Description = product.Description,
-                QuantityInStock = product.QuantityInStock,
-                ProductAmount = product.ProductAmount,
-                Category = product.Category.Name,
-                MainImageName = product.MainImageUrl,
-                Images = product.Images.Select(i => i.Name).ToArray()
-            };
-        }
-        private Product TransformProduct(ProductAddViewModel product)
-        {
-            return new Product()
-            {
-                Name = product.Name,
-                Price = product.Price,
-                Description = product.Description,
-                QuantityInStock = product.QuantityInStock,
-                ProductAmount = product.ProductAmount,
-                CategoryId = Guid.Parse(product.CategoryId),
-            };
-        }
-
-        private ProductEditViewModel GetProductEditViewModel(Product product)
-        {
-            return new ProductEditViewModel()
-            {
-                Id = product.Id,
-                Name = product.Name,
-                Price = product.Price,
-                Discount = product.Discount,
-                Description = product.Description,
-                QuantityInStock = product.QuantityInStock,
-                ProductAmount = product.ProductAmount,
-                IsDiscounted=product.IsDiscounted,
-                CategoryId = product.Category.Name,
-            };
-        }
 
         private async Task<string> SaveLocally(IFormFile mainImage)
         {

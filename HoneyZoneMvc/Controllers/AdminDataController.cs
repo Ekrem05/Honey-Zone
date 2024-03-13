@@ -1,4 +1,5 @@
-﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
+﻿using AutoMapper;
+using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Common.Messages;
 using HoneyZoneMvc.Infrastructure.ViewModels;
 using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
@@ -15,12 +16,18 @@ public class AdminDataController : Controller
     private readonly IProductService productService;
     private readonly ICategoryService categoryService;
     private readonly IOrderService orderService;
+    private IMapper mapper;
     //private readonly IUserService userService;
-    public AdminDataController(IProductService _productService, ICategoryService _categoryService, IOrderService _orderService/*, IUserService _userService*/)
+    public AdminDataController(IProductService _productService,
+        ICategoryService _categoryService,
+        IOrderService _orderService,
+        IMapper _mapper
+        /*, IUserService _userService*/)
     {
         productService = _productService;
         categoryService = _categoryService;
         orderService = _orderService;
+        mapper = _mapper;
         //userService = _userService;
     }
 
@@ -229,7 +236,8 @@ public class AdminDataController : Controller
             TempData["Message"] = IdNull;
             return RedirectToAction(nameof(Index));
         }
-        ProductEditViewModel item = await productService.GetProductEditByIdAsync(Id.ToString());
+        var item = await productService.GetProductByIdAsync(Id.ToString());
+        ProductEditViewModel vm=mapper.Map<ProductEditViewModel>(item);
         if (item == null)
         {
             TempData["Message"] = ProductMessages.ProductNotFound;
@@ -237,7 +245,7 @@ public class AdminDataController : Controller
         }
         try
         {
-            item.Categories = await categoryService.GetAllCategoriesAsync();
+            vm.Categories = await categoryService.GetAllCategoriesAsync();
 
             return View("EditProduct", item);
         }
