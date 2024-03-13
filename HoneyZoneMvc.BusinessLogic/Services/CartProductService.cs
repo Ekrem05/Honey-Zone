@@ -3,16 +3,21 @@ using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.ViewModels.CartProduct;
 using HoneyZoneMvc.Infrastructure.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
+using static HoneyZoneMvc.Constraints.DataConstants;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
 {
     public class CartProductService : ICartProductService
     {
         private ApplicationDbContext dbContext;
+        private IProductService productService;
 
-        public CartProductService(ApplicationDbContext _dbContext)
+        public CartProductService(ApplicationDbContext _dbContext,IProductService _productService)
         {
             dbContext = _dbContext;
+            productService = _productService;
         }
         public async Task AddCartProductAsync(CartProductViewModel dto)
         {
@@ -41,29 +46,16 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             }
         }
 
-        public async Task DeleteCartProductAsync(string userId)
+        public async Task DeleteCartProductAsync(IHttpContextAccessor httpContextAccessor)
         {
-            if (userId == null)
+            if (httpContextAccessor.HttpContext.Request.Cookies.ContainsKey("Cart"))
             {
-                throw new ArgumentNullException();
+                httpContextAccessor.HttpContext.Response.Cookies.Delete("Cart");
             }
-            var cartProduct = await dbContext.CartProducts
-                .Where(cp => cp.ClientId == userId)
-                .ToListAsync();
-            if (cartProduct==null)
-            {
-                throw new ArgumentNullException();
-            }
-            var productsWithThisCart = await dbContext.Products
-                .Include(p => p.CartProducts)
-                .Where(p => p.CartProducts.Any(cp => cp.ClientId == userId)).ToListAsync();
-            if (productsWithThisCart == null)
+            else
             {
                 throw new InvalidOperationException();
             }
-            productsWithThisCart.ForEach(p => p.CartProducts.Remove(cartProduct.FirstOrDefault(cp => cp.ProductId == p.Id)));
-            dbContext.CartProducts.RemoveRange(cartProduct);
-            await dbContext.SaveChangesAsync(); 
         }
 
         public async Task<IEnumerable<CartProductViewModel>> GetCartByUserIdAsync(string userId)
@@ -86,6 +78,30 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 throw new InvalidOperationException();
             }
             return cart;
+        }
+
+        public async Task AddOrUpdateCart(IHttpContextAccessor httpContextAccessor,string productId, int quantity)
+        {
+            
+                var cartItems = await GetProductsFromCart(httpContextAccessor);
+                var existingCartItem = cartItems
+                    .Find(item => item.ProductId == productId);
+
+                if (existingCartItem != null)
+                {
+                    existingCartItem.Quantity = quantity;
+                }
+                else
+                {
+                    cartItems.Add(new PostProductCartViewModel { ProductId = productId, Quantity = quantity });
+                }
+
+                var cartCookieValue = JsonConvert.SerializeObject(cartItems);
+                httpContextAccessor.HttpContext.Response.Cookies.Append("Cart", cartCookieValue, new CookieOptions
+                {
+                    Expires = DateTimeOffset.Now.AddDays(3) 
+                });
+            
         }
 
         public async Task UpdateQuantityAsync(string productId, int quantity, string userId)
@@ -113,16 +129,40 @@ namespace HoneyZoneMvc.BusinessLogic.Services
              await dbContext.SaveChangesAsync();
 
         }
-        public async Task<double> GetCartSumAsync(string userId)
+
+        public async Task<double> GetCartSumAsync(IHttpContextAccessor httpContextAccessor)
         {
-            if (userId == null)
+            var cartProducts=await GetProductsFromCart(httpContextAccessor);
+            if (cartProducts.Count==0)
             {
                 throw new ArgumentNullException();
             }
-            return await dbContext.CartProducts
-                .Where(cp => cp.ClientId == userId)
-                .Select(cp => (cp.Product.Price - ((cp.Product.Price * cp.Product.Discount) / 100)) * cp.Quantity)
-                .SumAsync();
+            var productSum= (await productService.GetAllProductsAsync())
+                .Where(p=>cartProducts.Any(cp=>cp.ProductId==p.Id))
+                .Select(p=>{
+                    if (p.IsDiscounted)
+                    {
+                        p.Price = p.Price - (p.Price * p.Discount / 100);
+                    }
+                    return p.Price * cartProducts.FirstOrDefault(cp => cp.ProductId == p.Id).Quantity;
+                
+                })
+                .Sum();
+            return productSum;
+        }
+
+
+        public async Task<List<PostProductCartViewModel>> GetProductsFromCart(IHttpContextAccessor httpContextAccessor)
+        {
+            var httpContext = httpContextAccessor.HttpContext;
+            List<PostProductCartViewModel> cartItems = new List<PostProductCartViewModel>();
+            var existingCartCookie = httpContext.Request.Cookies["Cart"];
+            if (!string.IsNullOrEmpty(existingCartCookie))
+            {
+                cartItems = JsonConvert.DeserializeObject<List<PostProductCartViewModel>>(existingCartCookie);
+            }
+            return cartItems.ToList();
+
         }
 
     }

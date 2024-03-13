@@ -242,7 +242,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 .Where(cp => cp.ClientId == Id)
                 .Select(cp => new ProductCartViewModel()
                 {
-                    Id = cp.Product.Id,
+                    Id = cp.Product.Id.ToString(),
                     Name = cp.Product.Name,
                     MainImageName = cp.Product.MainImageUrl,
                     Price = cp.Product.Price,

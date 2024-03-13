@@ -2,7 +2,7 @@
 {
     public class ProductCartViewModel
     {
-        public Guid Id { get; set; } = Guid.Empty;
+        public string Id { get; set; } = string.Empty;
         public string Name { get; set; } = string.Empty;
         public double Price { get; set; }
         public bool IsDiscounted { get; set; }
