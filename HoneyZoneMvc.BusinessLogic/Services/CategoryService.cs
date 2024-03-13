@@ -20,6 +20,10 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             {
                 throw new ArgumentNullException();
             }
+            if (await dbContext.Categories.AnyAsync(c => c.Name == category.Name))
+            {
+                throw new InvalidOperationException(CategoryMessages.CategoryExists);
+            }
             dbContext.Categories.Add(new Category() { Name = category.Name });
            await dbContext.SaveChangesAsync();
             
@@ -32,12 +36,20 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task DeleteCategoryAsync(string Id)
         {
+            if(Id == null)
+            {
+                throw new ArgumentNullException();
+            }
             bool result = await dbContext.Products.AnyAsync(p => p.CategoryId.ToString() == Id);
             if (result)
             {
                throw new InvalidOperationException(CategoryMessages.CategoryCannotBeDeleted);
             }
             var category = await dbContext.Categories.FirstOrDefaultAsync(c => c.Id.ToString() == Id);
+            if (category==null)
+            {
+                throw new ArgumentNullException();
+            }
             dbContext.Categories.Remove(category);
             await dbContext.SaveChangesAsync();
             

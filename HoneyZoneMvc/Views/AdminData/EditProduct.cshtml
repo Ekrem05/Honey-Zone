@@ -1,5 +1,12 @@
 ﻿@model ProductEditViewModel
 
+@if (@TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible mt-2">
+        @TempData["Error"]
+        <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
+    </div>
+}
 <section Id="admin-operation-card">
     <form asp-action="SubmitChanges" method="post" enctype="multipart/form-data">
         <input hidden asp-for="Id" value="@Model.Id"/>
@@ -28,9 +35,10 @@
                 <label class="form-label" asp-for="Discount">Промоция:</label>
                 <input type="number"
                        class="form-control"
-                       asp-for="Discount" />
+                       asp-for="Discount" data-val-customvalidation="Your error message here" />
                 <span asp-validation-for="Discount" class="bg-danger"></span>
             </div>
+            <input asp-for="IsDiscounted" value="true" hidden/>
         }
        
         <div class="mb-3">

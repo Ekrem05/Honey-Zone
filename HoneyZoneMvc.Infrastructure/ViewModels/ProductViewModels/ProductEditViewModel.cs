@@ -24,7 +24,7 @@ namespace HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels
         public double Price { get; set; }
 
         [AllowNull]
-        [DiscountRange(DataConstants.Product.DiscountMinValue, DataConstants.Product.DiscountMaxValue, ProductDiscountValueValidation)]
+        [DiscountRange(DataConstants.Product.DiscountMinValue, DataConstants.Product.DiscountMaxValue,ErrorMessage = ProductDiscountValueValidation)]
         public double Discount { get; set; }
 
         public bool IsDiscounted { get; set; }  = false; 

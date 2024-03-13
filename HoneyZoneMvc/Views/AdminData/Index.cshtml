@@ -4,14 +4,14 @@
 @if (@TempData["Error"]!=null)
 {
     <div class="alert alert-danger alert-dismissible mt-2">
-        @TempData["Message"]
+        @TempData["Error"]
         <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
     </div>
 }
-@if (@TempData["Succeess"] != null)
+@if (@TempData["Success"] != null)
 {
     <div class="alert alert-success alert-dismissible mt-2">
-        @TempData["Message"]
+        @TempData["Success"]
         <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
     </div>
 }

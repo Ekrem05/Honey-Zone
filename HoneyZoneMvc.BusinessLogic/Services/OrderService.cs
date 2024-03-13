@@ -5,6 +5,7 @@ using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
 using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
 using Microsoft.EntityFrameworkCore;
+using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
 {
@@ -185,11 +186,14 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task ChangeStatusAsync(ChangeOrderStatusViewModel vm)
         {
-
+            if (vm.Id==null)
+            {
+                throw new ArgumentNullException(IdNull);
+            }
             var order = dbContext.Orders.FirstOrDefault(x => x.Id.ToString() == vm.Id);
             if (order==null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(OrderMessages.OrderNotFound);
             }
             order.StateId = Guid.Parse(vm.StatusId);
             await dbContext.SaveChangesAsync();

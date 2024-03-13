@@ -116,7 +116,8 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
             if (model != null)
             {
-                return mapper.Map<ProductAdminViewModel>(model);
+                var item =mapper.Map<ProductAdminViewModel>(model);
+                return item;
             }
 
 

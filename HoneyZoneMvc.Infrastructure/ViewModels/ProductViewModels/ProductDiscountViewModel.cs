@@ -1,4 +1,5 @@
-﻿using HoneyZoneMvc.Common.Messages;
+﻿using HoneyZoneMvc.Common.Attributes;
+using HoneyZoneMvc.Common.Messages;
 using HoneyZoneMvc.Constraints;
 using System.ComponentModel.DataAnnotations;
 
