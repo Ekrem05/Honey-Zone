@@ -48,7 +48,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             foreach (var item in orderProducts)
             {
                 await productService.IncreaseTotalOrdersAsync(item.ProductId.ToString(), item.Quantity);
-                await productService.DecreaseProductQuantityAsync(item.ProductId.ToString());
+                await productService.DecreaseQuantityAsync(item.ProductId.ToString());
             }
 
             await dbContext.SaveChangesAsync();

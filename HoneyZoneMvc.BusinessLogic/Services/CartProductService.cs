@@ -64,7 +64,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             {
                 throw new ArgumentNullException();
             }
-            var productSum= (await productService.GetAllProductsAsync())
+            var productSum= (await productService.AllAsync())
                 .Where(p=>cartProducts.Any(cp=>cp.ProductId==p.Id))
                 .Select(p=>{
                     if (p.IsDiscounted)

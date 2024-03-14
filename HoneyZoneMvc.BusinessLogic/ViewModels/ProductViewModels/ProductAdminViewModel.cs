@@ -16,6 +16,8 @@
 
         public string Description { get; set; } = null!;
 
+        public int TimesOrdered { get; set; }
+
         public int QuantityInStock { get; set; }
 
         public string ProductAmount { get; set; } = string.Empty;
