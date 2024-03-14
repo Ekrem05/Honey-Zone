@@ -5,12 +5,12 @@ namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
     public interface ICategoryService
     {
 
-        Task AddCategoryAsync(CategoryAddViewModel category);
-        Task<IEnumerable<CategoryViewModel>> GetAllCategoriesAsync();
-        Task UpdateCategoryAsync(CategoryAddViewModel category);
-        Task DeleteCategoryAsync(string Id);
-        Task<CategoryViewModel> GetCategoryById(string name);
-        Task<bool> CategoryExistsAsync(string Id);
+        Task AddAsync(CategoryAddViewModel category);
+        Task<IEnumerable<CategoryViewModel>> AllAsync();
+        Task UpdateAsync(CategoryAddViewModel category);
+        Task DeleteAsync(string Id);
+        Task<CategoryViewModel> GetById(string name);
+        Task<bool> ExistsAsync(string Id);
 
     }
 }

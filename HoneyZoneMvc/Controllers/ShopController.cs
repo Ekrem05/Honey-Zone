@@ -62,19 +62,19 @@ namespace HoneyZoneMvc.Controllers
 
                 else if (category != null)
                 {
-                    products = (await productService.GetProductsByCategoryNameAsync(category)).ToList();
+                    products = (await productService.GetByCategoryNameAsync(category)).ToList();
                 }
                 else if (searchBy != null)
                 {
-                    products = (await productService.SearchProductsAsync(searchBy)).ToList();
+                    products = (await productService.SearchAsync(searchBy)).ToList();
                     var model = products.Select(p => mapper.Map<ProductShopCardViewModel>(p)).ToList();
                     return PartialView("_ProductsInShopPartialView", model);
                 }
                 else
-                    products = (await productService.GetAllProductsAsync()).ToList();
+                    products = (await productService.AllAsync()).ToList();
 
                 vm.Products = mapper.Map<List<ProductShopCardViewModel>>(products);
-                var categories = await categoryService.GetAllCategoriesAsync();
+                var categories = await categoryService.AllAsync();
                 vm.Categories = categories.Select(c => new CategoryViewModel()
                 {
                     Id = c.Id.ToString(),
@@ -102,7 +102,7 @@ namespace HoneyZoneMvc.Controllers
             }
             try
             {
-                var productDto = await productService.GetProductByIdAsync(Id);
+                var productDto = await productService.GetByIdAsync(Id);
                 var vm = mapper.Map<ProductShopDetailsViewModel>(productDto);
                 return View(vm);
             }
@@ -124,7 +124,7 @@ namespace HoneyZoneMvc.Controllers
                 List<ProductCartViewModel> productsInCart = new List<ProductCartViewModel>();
                 foreach (var item in productsInCookie)
                 {
-                    var product = await productService.GetProductByIdAsync(item.ProductId);
+                    var product = await productService.GetByIdAsync(item.ProductId);
                     productsInCart.Add(new ProductCartViewModel()
                     {
                         Id = product.Id,
@@ -163,7 +163,7 @@ namespace HoneyZoneMvc.Controllers
                 List<ProductCartViewModel> productsInCart = new List<ProductCartViewModel>();
                 foreach (var item in productsInCookie)
                 {
-                    var product= await productService.GetProductByIdAsync(item.ProductId);
+                    var product= await productService.GetByIdAsync(item.ProductId);
                     productsInCart.Add(new ProductCartViewModel()
                     {
                         Id = product.Id,
@@ -259,7 +259,7 @@ namespace HoneyZoneMvc.Controllers
                 }
                 foreach (var productItem in productsInCart)
                 {
-                    var product = await productService.GetProductByIdAsync(productItem.ProductId);
+                    var product = await productService.GetByIdAsync(productItem.ProductId);
 
                     orderProducts.Add(new OrderProduct()
                     {
