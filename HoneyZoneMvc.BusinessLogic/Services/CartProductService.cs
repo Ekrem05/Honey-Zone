@@ -1,6 +1,6 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Data;
-using HoneyZoneMvc.Infrastructure.ViewModels.CartProduct;
+using HoneyZoneMvc.BusinessLogic.ViewModels.CartProduct;
 using HoneyZoneMvc.Infrastructure.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;

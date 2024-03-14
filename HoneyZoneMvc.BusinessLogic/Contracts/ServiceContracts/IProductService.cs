@@ -1,4 +1,4 @@
-﻿using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
+﻿using HoneyZoneMvc.BusinessLogic.ViewModels.ProductViewModels;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {

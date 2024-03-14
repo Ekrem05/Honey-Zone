@@ -2,8 +2,8 @@
 using HoneyZoneMvc.Constraints;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
-using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
+using HoneyZoneMvc.BusinessLogic.ViewModels.OrderViewModels;
+using HoneyZoneMvc.BusinessLogic.ViewModels.ProductViewModels;
 using Microsoft.EntityFrameworkCore;
 using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
 

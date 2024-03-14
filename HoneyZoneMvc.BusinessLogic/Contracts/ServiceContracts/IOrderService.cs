@@ -1,5 +1,5 @@
 ﻿using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
+using HoneyZoneMvc.BusinessLogic.ViewModels.OrderViewModels;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {

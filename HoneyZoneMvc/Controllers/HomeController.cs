@@ -1,6 +1,6 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Common.Messages;
-using HoneyZoneMvc.Infrastructure.ViewModels.Errors;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Errors;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

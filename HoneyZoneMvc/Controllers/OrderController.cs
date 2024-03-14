@@ -1,7 +1,7 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.Infrastructure.ViewModels.Delivery;
-using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Delivery;
+using HoneyZoneMvc.BusinessLogic.ViewModels.OrderViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;

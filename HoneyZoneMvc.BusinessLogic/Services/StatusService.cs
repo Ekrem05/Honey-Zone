@@ -2,7 +2,7 @@
 using HoneyZoneMvc.Constraints;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.Infrastructure.ViewModels.Status;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Status;
 using Microsoft.EntityFrameworkCore;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
@@ -18,13 +18,13 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<IEnumerable<StatusViewModel>> GetAllAsync()
         {
-            return dbContext.States
+            return await(dbContext.States
                  .AsNoTracking()
                  .Select(s => new StatusViewModel()
                  {
                      Id = s.Id.ToString(),
                      Name = s.Name
-                 }).ToList();
+                 }).ToListAsync());
 
         }
 

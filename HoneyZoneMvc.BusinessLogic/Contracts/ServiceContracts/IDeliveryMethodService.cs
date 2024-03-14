@@ -1,5 +1,5 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.SubContracts;
-using HoneyZoneMvc.Infrastructure.ViewModels.Delivery;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Delivery;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {

@@ -1,4 +1,4 @@
-﻿using HoneyZoneMvc.Infrastructure.ViewModels.CartProduct;
+﻿using HoneyZoneMvc.BusinessLogic.ViewModels.CartProduct;
 using Microsoft.AspNetCore.Http;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts

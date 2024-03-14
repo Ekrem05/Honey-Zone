@@ -1,6 +1,6 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Data;
-using HoneyZoneMvc.Infrastructure.ViewModels.Delivery;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Delivery;
 using Microsoft.EntityFrameworkCore;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
