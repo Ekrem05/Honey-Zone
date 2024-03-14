@@ -1,21 +1,20 @@
 ﻿@model IEnumerable<ProductAdminViewModel>
 @{
-   
 }
 <table class="table mb-10 mt-3 table-striped table-light table-bordered border-warning table-hover table-sm datatable" id="products">
     <thead>
         <tr class="text-center">
             <th scope="col">Id</th>
-            <th scope="col">Снимка</th>
-            <th scope="col">Име</th>
-            <th scope="col">Цена</th>
-            <th scope="col">Промоция</th>
-            <th scope="col">Промоция (%)</th>
-            <th scope="col">Количесво</th>
-            <th scope="col">Дозировка</th>
-            <th scope="col">Категория</th>
-            <th scope="col">Описание</th>
-            <th scope="col">Операции</th>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">TimesOrdered</th>
+            <th scope="col">Discount (%)</th>
+            <th scope="col">Amont left</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Category</th>
+            <th scope="col">Description</th>
+            <th scope="col">Actions</th>
         </tr>
     </thead>
     <tbody class="table-group-divider">
@@ -24,13 +23,13 @@
             <tr>
                 <th scope="row" class="align-middle">@product.Id</th>
                 <td class="col-md-1">
-                    <img src="productImages/@product.MainImageName"
+                    <img src="~/productImages/@product.MainImageName"
                          class="img-fluid"
                          alt="Все още няма снимки" />
                 </td>
                 <td class="col-md-1">@product.Name</td>
                 <td>@product.Price</td>
-                <td>@product.IsDiscounted</td>
+                <td>@product.TimesOrdered</td>
                 <td>@product.Discount%</td>
                 <td>@product.QuantityInStock</td>
                 <td>@product.ProductAmount</td>
@@ -61,16 +60,16 @@
                         Редактирай
                     </a>
                     <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteProduct-@product.GetHashCode()">
-                         Изтрий
-                     </button>
+                        Изтрий
+                    </button>
 
                     <!-- Modal -->
                     <div class="modal fade" id="deleteProduct-@product.GetHashCode()" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                    <strong>Важно! </strong>За да бъде изтрит продуктът, трябва да не се съдържа в някоя поръчка (освен ако поръчката не е завършена) 
-                                   <strong>Предупреждение! </strong> Продуктът ще бъде изтрит. Сигурни ли сте?
+                                    <strong>Важно! </strong>За да бъде изтрит продуктът, трябва да не се съдържа в някоя поръчка (освен ако поръчката не е завършена)
+                                    <strong>Предупреждение! </strong> Продуктът ще бъде изтрит. Сигурни ли сте?
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
@@ -88,19 +87,19 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <form asp-action="SetDiscount" method="post" class="d-inline-block">
-                                <div class="modal-body">
+                                    <div class="modal-body">
                                         <label>Въведи % промоция</label>
                                         <input type="number" name="Discount" />
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
-                                   
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
+
                                         <input type="hidden" value="@product.Id" name="Id" />
-                                        
+
                                         <button type="submit" class="btn btn-outline-success">
                                             Приложи
                                         </button>
-                                </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>

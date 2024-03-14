@@ -1,6 +1,8 @@
 ﻿@model AdminViewModel
 
-
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
 @if (@TempData["Error"]!=null)
 {
     <div class="alert alert-danger alert-dismissible mt-2">
@@ -16,23 +18,10 @@
     </div>
 }
 
-@Html.Partial("_ActionsPartialView", Model.DiscountByCategoryViewModel)
+@Html.Partial("_AdminNavPartialView")
 
 <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
-    <div>
-        <button class="btn admin-table-heading" data-bs-toggle="collapse" data-bs-target="#products-table" aria-expanded="false" aria-controls="collapseExample">
-            Продукти
-        </button>
-        <div class="collapse" id="products-table">
-            <div class=".my-card-body">
-                <section class="search-bar">
-                    <input type="text" class="bar" placeholder="Въведи име на продукт" />
-                </section>
-                @await Html.PartialAsync("_ProductsPartialView", Model.Products)
-            </div>
-        </div>
-    </div>
-   
+    
     <div>
         <button class="btn admin-table-heading" data-bs-toggle="collapse" data-bs-target="#order-table" aria-expanded="false" aria-controls="collapseExample">
             Поръчки
