@@ -1,7 +1,7 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.BusinessLogic.ViewModels.Delivery;
-using HoneyZoneMvc.BusinessLogic.ViewModels.OrderViewModels;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Order;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -25,7 +25,7 @@ namespace HoneyZoneMvc.Controllers
         {
             try
             {
-                var orders = await orderService.GetUserOrdersIdAsync(GetUserId().ToString());
+                var orders = await orderService.OrdersByUserIdAsync(GetUserId().ToString());
                 return View(orders);
             }
             catch (Exception)

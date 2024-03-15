@@ -1,0 +1,91 @@
+﻿@model AllOrdersQueryModel
+
+<div class="product-data">
+    <form method="get">
+
+        <section class="product-sorting-filters">
+      
+            <div class="actions bg-warning p-2 d-flex d-flex justify-content-around w-50 ">
+                <select asp-for="Category" class="btn btn-outline-danger btn-sm dropdown-toggle">
+                    <button class="btn btn-outline-primary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Category
+                    </button>
+                    <ul class="dropdown-menu">
+
+                    <option value="">All</option>
+                        @foreach (var category in Model.Categories)
+                        {
+                        <option value="@category">@category</option>
+                        }
+                    </ul>
+                </select>
+                <select asp-for="SortBy" class="btn btn-outline-primary btn-sm dropdown-toggle">
+                    <button class="btn btn-outline-primary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Sort By
+                    </button>
+                    <ul class="dropdown-menu">
+
+                    <option value="3">Name</option>
+                    <option value="5">Price</option>
+                    <option value="2">TimesOrdered</option>
+                    </ul>
+                </select>
+            </div>
+
+            <section class="search-bar">
+                <input type="text" class="productSearch" id="productName" asp-for="SearchTerm" placeholder="Enter product name" />
+            </section>
+            <div class="col-md-3">
+                <div class="form-group mt-4 p-2 d-flex justify-content-center">
+                    <input type="submit" value="Search" class="btn btn-primary" />
+                </div>
+            </div>
+        </section>
+    </form>
+    @{
+        var previousPage = Model.CurrentPage - 1;
+        if (previousPage < 1)
+        {
+            previousPage = 1;
+        }
+
+        var maxPage = Math.Ceiling((double)Model.TotalProductsCount /
+        Model.ProductsPerPage);
+    }
+    <div class="pager">
+        <div class="arrows">
+            <a class="btn btn-primary @(Model.CurrentPage == 1 ? "disabled" : string.Empty)"
+               asp-controller="Admin"
+               asp-action="Products"
+               asp-route-currentPage="@previousPage"
+               asp-route-category="@Model.Category"
+               asp-route-searchTerm="@Model.SearchTerm"
+               asp-route-sortBy="@((int)Model.SortBy)"><<</a>
+        </div>
+
+        @{
+            var shouldButtonBeDisabled = Model.CurrentPage == maxPage ||
+            !Model.Products.Any();
+        }
+
+        <div class="arrows">
+            <a class="btn btn-primary
+           @(shouldButtonBeDisabled ? "disabled" : string.Empty)"
+               asp-controller="Admin"
+               asp-action="Products"
+               asp-route-currentPage="@(Model.CurrentPage + 1)"
+               asp-route-category="@Model.Category"
+               asp-route-searchTerm="@Model.SearchTerm"
+               asp-route-sortBy="@((int)Model.SortBy)">>></a>
+        </div>
+    </div>
+
+    @if (!Model.Products.Any())
+    {
+        <h2 class="text-center text-light bg-danger mt-3">No products found by the given criteria!</h2>
+    }
+
+    <partial name="_ProductsTablePartial" model="@Model.Products" />
+
+
+</div>

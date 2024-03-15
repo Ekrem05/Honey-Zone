@@ -6,8 +6,8 @@ using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.BusinessLogic.ViewModels;
 using HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels;
 using HoneyZoneMvc.BusinessLogic.ViewModels.Delivery;
-using HoneyZoneMvc.BusinessLogic.ViewModels.OrderViewModels;
-using HoneyZoneMvc.BusinessLogic.ViewModels.ProductViewModels;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Order;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Product;
 using HoneyZoneMvc.BusinessLogic.ViewModels.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -16,6 +16,7 @@ using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
 using static HoneyZoneMvc.Common.Messages.SuccessfulMessages;
 
 [Authorize]
+[Area("Admin")]
 public class AdminController : Controller
 {
     private readonly IProductService productService;
@@ -47,7 +48,6 @@ public class AdminController : Controller
     {
         AdminViewModel vm = new AdminViewModel();
         vm.Products = await productService.AllAsync();
-        vm.Orders = await orderService.GetAllOrdersAsync();
         vm.Categories = (await categoryService.AllAsync()).Select(c => new CategoryViewModel() { Name = c.Name, Id = c.Id.ToString() });
         vm.Users = new List<UserViewModel>();
         vm.DiscountByCategoryViewModel = new DiscountByCategoryViewModel();
@@ -75,6 +75,32 @@ public class AdminController : Controller
         queryModel.Products = vm.Products;
 
         return View(queryModel);
+    }
+
+    [HttpGet]
+    [ActionName("Orders")]
+    public async Task<IActionResult> Orders([FromQuery] AllOrdersQueryModel queryModel)
+    {
+        
+        try
+        {
+            AllOrdersQueryModel vm = await orderService.AllAsync(queryModel.Day,
+            queryModel.Month,
+            queryModel.Year,
+            queryModel.SearchTerm,
+            queryModel.SortBy,
+            queryModel.CurrentPage,
+            queryModel.OrdersPerPage);
+            queryModel.TotalOrdersCount = vm.TotalOrdersCount;
+            queryModel.Orders = vm.Orders;
+            return View(queryModel);
+        }
+        catch (Exception)
+        {
+            //Add Admin Error Page
+            return RedirectToAction("Error", "Home", new { statusCode = 404 });
+        }
+       
     }
     [HttpGet]
     [ActionName("AddProduct")]
@@ -347,7 +373,7 @@ public class AdminController : Controller
         }
         try
         {
-            var orderInfo = await orderService.GetOrderDetailsAsync(Id);
+            var orderInfo = await orderService.DetailsAsync(Id);
             return View(orderInfo);
         }
         catch (Exception)
@@ -364,7 +390,7 @@ public class AdminController : Controller
     {
         try
         {
-            var order = await orderService.GetOrderByIdAsync(Id);
+            var order = await orderService.OrderByIdAsync(Id);
             return View(order);
         }
         catch (Exception)
@@ -402,7 +428,7 @@ public class AdminController : Controller
         }
         try
         {      
-            await orderService.DeleteOrderAsync(Id);
+            await orderService.DeleteAsync(Id);
             TempData["Success"] = OrderDeleted;
             return RedirectToAction(nameof(Index));
         }
