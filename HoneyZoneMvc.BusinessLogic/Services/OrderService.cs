@@ -103,7 +103,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             }
             orders = sorting switch
             {
-                OrderSorting.Date => orders.OrderByDescending(x => x.OrderDate),
+                OrderSorting.Date => orders.OrderBy(x => x.OrderDate),
                 OrderSorting.TotalSum => orders.OrderByDescending(x => x.TotalSum),
                 _ => orders.OrderByDescending(x => x.OrderDate)
             };
