@@ -22,12 +22,6 @@ namespace HoneyZoneMvc.BusinessLogic.ViewModels.Product
         [Range(DataConstants.Product.PriceMinValue, DataConstants.Product.PriceMaxValue, ErrorMessage = ProductPriceValueValidation)]
         public double Price { get; set; }
 
-        [AllowNull]
-        [Range(DataConstants.Product.DiscountMinValue, DataConstants.Product.DiscountMaxValue,ErrorMessage = ProductDiscountValueValidation)]
-        public double Discount { get; set; }
-
-        public bool IsDiscounted { get; set; }  = false; 
-
         [Required(ErrorMessage = RequiredField)]
         [StringLength(DataConstants.Product.DescriptionMaxValue, MinimumLength = DataConstants.Product.DescriptionMinValue, ErrorMessage = ProductDescriptionValueValidation)]
         public string Description { get; set; } = string.Empty;

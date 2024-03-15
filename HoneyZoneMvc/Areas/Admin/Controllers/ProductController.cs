@@ -24,8 +24,8 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        [ActionName("All")]
-        public async Task<IActionResult> All([FromQuery] AllProductsQueryModel queryModel)
+        [ActionName("Index")]
+        public async Task<IActionResult> Index([FromQuery] AllProductsQueryModel queryModel)
         {
 
             AllProductsQueryModel vm
@@ -56,11 +56,42 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
             {
 
                 TempData["Error"] = GeneralException;
-                return RedirectToAction(nameof(All));
+                return RedirectToAction(nameof(Index));
             }
 
         }
-        
+
+        [HttpPost]
+        [ActionName("AddProduct")]
+        public async Task<IActionResult> AddProductAsync(ProductAddViewModel productvm)
+        {
+            var categoryExists = await categoryService.ExistsAsync(productvm.CategoryId);
+            if (!categoryExists)
+            {
+                ModelState.AddModelError(string.Empty, CategoryMessages.InvalidCategory);
+            }
+
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError(string.Empty, ModelStateInvalid);
+                productvm.Categories = await categoryService.AllAsync();
+                return View(productvm);
+            }
+            try
+            {
+                await productService.AddAsync(productvm);
+                TempData["Success"] = ProductAdded;
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception)
+            {
+                TempData["Error"] = GeneralException;
+                productvm.Categories = await categoryService.AllAsync();
+                return View(productvm);
+            }
+
+        }
+
         [HttpPost]
         [ActionName("SetDiscount")]
         public async Task<IActionResult> SetDiscountAsync(ProductDiscountViewModel vm)
@@ -69,19 +100,19 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
             if (!ModelState.IsValid)
             {
                 TempData["Error"] = InvalidDiscountValue;
-                return RedirectToAction(nameof(All));
+                return RedirectToAction(nameof(Index));
 
             }
             try
             {
                 await productService.SetDiscountAsync(vm);
                 TempData["Success"] = DiscountSet;
-                return RedirectToAction(nameof(All));
+                return RedirectToAction(nameof(Index));
             }
             catch (Exception)
             {
                 TempData["Error"] = GeneralException;
-                return RedirectToAction(nameof(All));
+                return RedirectToAction(nameof(Index));
             }
 
         }
@@ -93,23 +124,23 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
             if (!await categoryService.ExistsAsync(vm.CategoryId))
             {
                 TempData["Error"] = CategoryMessages.InvalidCategory;
-                return RedirectToAction(nameof(All));
+                return RedirectToAction(nameof(Index));
             }
             if (!ModelState.IsValid)
             {
                 TempData["Error"] = InvalidDiscountValue;
-                return RedirectToAction(nameof(All));
+                return RedirectToAction(nameof(Index));
             }
             try
             {
                 await productService.SetDiscountByCategoryAsync(vm.CategoryId, vm.Discount);
                 TempData["Success"] = DiscountSetByCategory;
-                return RedirectToAction(nameof(All));
+                return RedirectToAction(nameof(Index));
             }
             catch (Exception)
             {
                 TempData["Error"] = GeneralException;
-                return RedirectToAction(nameof(All));
+                return RedirectToAction(nameof(Index));
             }
 
         }
@@ -122,7 +153,7 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
             if (!await categoryService.ExistsAsync(Id))
             {
                 TempData["Error"] = CategoryMessages.InvalidCategory;
-                return RedirectToAction(nameof(All));
+                return RedirectToAction(nameof(Index));
             }
             try
             {
@@ -134,13 +165,22 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
                     }
                 }
                 TempData["Success"] = DiscountsByCategoryCancelled;
-                return RedirectToAction(nameof(All));
+                return RedirectToAction(nameof(Index));
             }
             catch (Exception)
             {
                 TempData["Message"] = GeneralException;
-                return RedirectToAction(nameof(All));
+                return RedirectToAction(nameof(Index));
             }
+        }
+
+        [HttpGet]
+        [ActionName("ProductDiscount")]
+        public async Task<IActionResult> ProductDiscount()
+        {
+            DiscountByCategoryViewModel vm = new DiscountByCategoryViewModel();
+            vm.Categories=await categoryService.AllAsync();
+            return View(vm);
         }
 
         [HttpPost]
@@ -157,23 +197,23 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
             if (product == null)
             {
                 TempData["Error"] = ProductMessages.ProductNotFound;
-                return RedirectToAction(nameof(All));
+                return RedirectToAction(nameof(Index));
             }
             if (product.IsDiscounted == false)
             {
                 TempData["Error"] = ProductMessages.DiscountCannotBeCancelled;
-                return RedirectToAction(nameof(All));
+                return RedirectToAction(nameof(Index));
             }
             try
             {
                 await productService.RemoveDiscountAsync(Id);
                 TempData["Success"] = DiscountRemoved;
-                return RedirectToAction(nameof(All));
+                return RedirectToAction(nameof(Index));
             }
             catch (Exception)
             {
                 TempData["Error"] = GeneralException;
-                return RedirectToAction(nameof(All));
+                return RedirectToAction(nameof(Index));
             }
         }
 
@@ -184,14 +224,14 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
             if (Id == null)
             {
                 TempData["Error"] = IdNull;
-                return RedirectToAction(nameof(All));
+                return RedirectToAction(nameof(Index));
             }
             var item = await productService.GetByIdAsync(Id.ToString());
             ProductEditViewModel vm = mapper.Map<ProductEditViewModel>(item);
             if (vm == null)
             {
                 TempData["Error"] = ProductMessages.ProductNotFound;
-                return RedirectToAction(nameof(All));
+                return RedirectToAction(nameof(Index));
             }
             try
             {
@@ -202,7 +242,7 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
             catch (Exception)
             {
                 TempData["Error"] = GeneralException;
-                return RedirectToAction(nameof(All));
+                return RedirectToAction(nameof(Index));
             }
         }
 

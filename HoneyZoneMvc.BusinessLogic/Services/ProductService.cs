@@ -190,11 +190,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 productToEdit.Price = product.Price;
                 productToEdit.Description = product.Description;
                 productToEdit.ProductAmount = product.ProductAmount;
-                if (product.Discount > 0)
-                {
-                    productToEdit.IsDiscounted = true;
-                }
-                productToEdit.Discount = product.Discount;
                 productToEdit.CategoryId = dbContext.Categories.FirstOrDefault(c => c.Id.ToString() == product.CategoryId).Id;
                 productToEdit.QuantityInStock = product.QuantityInStock;
             }

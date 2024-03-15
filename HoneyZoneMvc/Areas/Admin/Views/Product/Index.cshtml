@@ -1,6 +1,20 @@
 ﻿@model AllProductsQueryModel
 
 
+@if (@TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible mt-2">
+        @TempData["Error"]
+        <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
+    </div>
+}
+@if (@TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible mt-2">
+        @TempData["Success"]
+        <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
+    </div>
+}
     <div class="product-data">
     <form method="get">
         
@@ -17,50 +31,11 @@
                         </a>
 
                     </li>
-                    <li>
-                        <a class="btn btn-outline-success btn-lg dropdown-item" data-bs-toggle="modal" data-bs-target="#addNewCategory">
-                            Добави Категория на продукт
-                        </a>
-                    </li>
+                   
                 </ul>
-                <div class="modal fade" id="addNewCategory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <form asp-action="AddProductCategory" method="post" class="d-inline-block">
-                                <div class="modal-body">
-                                    <strong>Внимание!</strong>Ще добавите нова категория на продукт. Сигурни ли сте?
-                                    <label>Въведи име на категорията</label>
-                                    <input type="text" name="Name" />
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
-
-                                    <button type="submit" class="btn btn-outline-success">
-                                        Добави
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <button class="btn btn-outline-success btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="btn btn-outline-dark btn-lg " type="button" asp-action="ProductDiscount">
                     Промоции
-                </button>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a class="btn btn-outline-success btn-lg dropdown-item" data-bs-toggle="modal"
-                           data-bs-target="#discount-by-category">
-                            Промоция по категория
-                        </a>
-
-                    </li>
-                    <li>
-                        <a class="btn btn-outline-success btn-lg dropdown-item"
-                           asp-action="CancelDiscountByCategory">
-                            Премахни промоция по категория
-                        </a>
-                    </li>
-                </ul>
+                </a>
             </div>
             <div class="actions bg-warning p-2 d-flex d-flex justify-content-around w-50 ">
                 <select asp-for="Category" class="btn btn-outline-danger btn-sm dropdown-toggle">
@@ -112,8 +87,8 @@
     <div class="pager">
         <div class="arrows">
             <a class="btn btn-primary @(Model.CurrentPage == 1 ? "disabled" : string.Empty)"
-               asp-controller="Admin"
-               asp-action="Products"
+               asp-controller="Product"
+               asp-action="Index"
                asp-route-currentPage="@previousPage"
                asp-route-category="@Model.Category"
                asp-route-searchTerm="@Model.SearchTerm"
@@ -128,8 +103,8 @@
         <div class="arrows">
             <a class="btn btn-primary
            @(shouldButtonBeDisabled ? "disabled" : string.Empty)"
-               asp-controller="Admin"
-               asp-action="Products"
+               asp-controller="Product"
+               asp-action="Index"
                asp-route-currentPage="@(Model.CurrentPage + 1)"
                asp-route-category="@Model.Category"
                asp-route-searchTerm="@Model.SearchTerm"

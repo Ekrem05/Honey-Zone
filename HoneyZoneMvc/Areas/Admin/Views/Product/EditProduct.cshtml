@@ -29,22 +29,11 @@
             <span class="input-group-text">0.00</span>
             <span asp-validation-for="Price" id="PriceValidation" class="bg-danger"></span>
         </div>
-        @if (Model.IsDiscounted)
-        {
-            <div class="mb-3">
-                <label class="form-label" asp-for="Discount">Промоция:</label>
-                <input type="number"
-                       class="form-control"
-                       asp-for="Discount" data-val-customvalidation="Your error message here" />
-                <span asp-validation-for="Discount" class="bg-danger"></span>
-            </div>
-            <input asp-for="IsDiscounted" value="true" hidden/>
-        }
        
         <div class="mb-3">
             <label asp-for="CategoryId" class="control-label">Категория</label>
             <select asp-for="@Model.CategoryId" class="form-control" aria-required="true">
-                <option disabled selected value="@Model.CategoryId">@Model.CategoryId</option>
+                <option selected value="@Model.CategoryId">@Model.CategoryId</option>
                 @foreach (var category in Model.Categories)
                 {
                     <option value="@category.Id">@category.Name</option>

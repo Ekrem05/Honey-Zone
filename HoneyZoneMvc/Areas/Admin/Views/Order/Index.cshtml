@@ -1,5 +1,19 @@
 ﻿@model AllOrdersQueryModel
 
+@if (@TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible mt-2">
+        @TempData["Error"]
+        <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
+    </div>
+}
+@if (@TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible mt-2">
+        @TempData["Success"]
+        <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
+    </div>
+}
 <div class="product-data">
     <form method="get">
 
@@ -85,8 +99,8 @@
     <div class="pager">
         <div class="arrows">
             <a class="btn btn-primary @(Model.CurrentPage == 1 ? "disabled" : string.Empty)"
-               asp-controller="Admin"
-               asp-action="Orders"
+               asp-controller="Order"
+               asp-action="Index"
                asp-route-currentPage="@previousPage"
                asp-route-day="@Model.Day"
                asp-route-month="@Model.Month"
@@ -103,8 +117,8 @@
         <div class="arrows">
             <a class="btn btn-primary
            @(shouldButtonBeDisabled ? "disabled" : string.Empty)"
-               asp-controller="Admin"
-               asp-action="Orders"
+               asp-controller="Order"
+               asp-action="Index"
                asp-route-currentPage="@previousPage"
                asp-route-day="@Model.Day"
                asp-route-month="@Model.Month"

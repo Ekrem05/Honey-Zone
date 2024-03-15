@@ -23,8 +23,8 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
             return View(await categoryService.AllAsync());
         }
         [HttpPost]
-        [ActionName("AddProductCategory")]
-        public async Task<IActionResult> AddProductCategoryAsync(CategoryAddViewModel productvm)
+        [ActionName("AddCategory")]
+        public async Task<IActionResult> AddCategoryAsync(CategoryAddViewModel productvm)
         {
             var categories = await categoryService.AllAsync();
 

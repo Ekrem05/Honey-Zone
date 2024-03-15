@@ -2,7 +2,7 @@
 @{
 }
 <section id="admin-operation-card">
-    <form asp-action="AddProduct" method="post" enctype="multipart/form-data">
+    <form asp-action="AddProduct" asp-area="Admin" method="post" enctype="multipart/form-data">
         <div class="mb-3">
             <label class="form-label mt-2 " asp-for="Name">Име</label>
             <input asp-for="Name" class="form-control" />
@@ -12,7 +12,7 @@
         <div class="mb-3">
             <label asp-for="CategoryId" class="control-label">Категория</label>
             <select asp-for="@Model.CategoryId" class="form-control" aria-required="true">
-                <option disabled selected value="">Select Category...</option>
+                <option disabled value="">Select Category...</option>
                 @foreach (var category in Model.Categories)
                 {
                     <option value="@category.Id">@category.Name</option>
