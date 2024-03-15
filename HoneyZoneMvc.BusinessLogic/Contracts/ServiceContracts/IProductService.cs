@@ -1,5 +1,5 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Enums;
-using HoneyZoneMvc.BusinessLogic.ViewModels.ProductViewModels;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Product;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {

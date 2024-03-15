@@ -11,31 +11,31 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models
         public Guid Id { get; set; }
 
         [Required]
-        [MaxLength(DataConstants.OrderDetail.NameMaxValue)]
+        [MaxLength(DataConstants.OrderDetails.NameMaxValue)]
         public string FirstName { get; set; } = string.Empty;
 
         [Required]
-        [MaxLength(DataConstants.OrderDetail.NameMaxValue)]
+        [MaxLength(DataConstants.OrderDetails.NameMaxValue)]
 
         public string SecondName { get; set; } = string.Empty;
 
         [Required]
-        [MaxLength(DataConstants.OrderDetail.PhoneNumberMaxValue)]
+        [MaxLength(DataConstants.OrderDetails.PhoneNumberMaxValue)]
         public string PhoneNumber { get; set; } = string.Empty;
 
         [AllowNull]
         public string Email { get; set; } = string.Empty;
 
         [Required]
-        [MaxLength(DataConstants.OrderDetail.CityMaxValue)]
+        [MaxLength(DataConstants.OrderDetails.CityMaxValue)]
         public string City { get; set; } = string.Empty;
 
         [Required]
-        [MaxLength(DataConstants.OrderDetail.ZipCodeLength)]
+        [MaxLength(DataConstants.OrderDetails.ZipCodeLength)]
         public string ZipCode { get; set; } = string.Empty;
 
         [Required]
-        [MaxLength(DataConstants.OrderDetail.AddressMaxValue)]
+        [MaxLength(DataConstants.OrderDetails.AddressMaxValue)]
         public string Address { get; set; } = string.Empty;
 
     }

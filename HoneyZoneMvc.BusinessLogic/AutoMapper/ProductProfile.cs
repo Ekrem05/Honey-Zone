@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.BusinessLogic.ViewModels.ProductViewModels;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Product;
 
 namespace HoneyZoneMvc.BusinessLogic.AutoMapper
 {

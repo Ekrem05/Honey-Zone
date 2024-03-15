@@ -1,6 +1,6 @@
 ﻿using HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels;
-using HoneyZoneMvc.BusinessLogic.ViewModels.OrderViewModels;
-using HoneyZoneMvc.BusinessLogic.ViewModels.ProductViewModels;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Order;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Product;
 using HoneyZoneMvc.BusinessLogic.ViewModels.User;
 
 namespace HoneyZoneMvc.BusinessLogic.ViewModels

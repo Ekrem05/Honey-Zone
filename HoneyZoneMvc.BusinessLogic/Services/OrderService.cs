@@ -2,10 +2,12 @@
 using HoneyZoneMvc.Constraints;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.BusinessLogic.ViewModels.OrderViewModels;
-using HoneyZoneMvc.BusinessLogic.ViewModels.ProductViewModels;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Order;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Product;
 using Microsoft.EntityFrameworkCore;
 using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
+using HoneyZoneMvc.BusinessLogic.Enums;
+using static HoneyZoneMvc.Constraints.DataConstants;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
 {
@@ -53,18 +55,82 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
             await dbContext.SaveChangesAsync();
         }
-        public async Task DeleteOrderAsync(string Id)
+        public async Task DeleteAsync(string Id)
         {
             dbContext.OrderProducts.RemoveRange(dbContext.OrderProducts.Where(x => x.OrderId.ToString() == Id));
             dbContext.Orders.Remove(dbContext.Orders.FirstOrDefault(x => x.Id.ToString() == Id));
             await dbContext.SaveChangesAsync();
         }
 
-        public async Task<ICollection<Order>> GetAllAsync()
+        //Fix this method it must return vm
+        public async Task<IEnumerable<Order>> AllAsync()
         {
             return await dbContext.Orders.ToListAsync();
         }
 
+        public async Task<AllOrdersQueryModel> AllAsync(int day=0, int month=0, int year=0,
+            string? searchTerm = null,
+            OrderSorting sorting = OrderSorting.Date,
+            int currentPage = 1,
+            int ordersPerPage = 1)
+        {
+            var orders = dbContext.Orders
+                .Include(x => x.OrderDetail)
+                .Include(x => x.DeliveryMethod)
+                .Include(x => x.State)
+                .AsQueryable();
+            if (day>0)
+            {
+                orders = orders.Where(o => o.OrderDate.Day == day);
+            }
+            if (month > 0)
+            {
+                orders = orders.Where(o => o.OrderDate.Month == month);
+            }
+            if (year > 0)
+            {
+                orders = orders.Where(o => o.OrderDate.Year == year);
+            }
+            if (searchTerm != null)
+            {
+                orders = orders.Where(x => 
+                x.OrderDetail.FirstName
+                .ToLower().Contains(searchTerm.ToLower()) || 
+                x.OrderDetail.SecondName
+                .ToLower().Contains(searchTerm.ToLower()) ||
+                x.OrderDetail.PhoneNumber.StartsWith(searchTerm)
+                );
+            }
+            orders = sorting switch
+            {
+                OrderSorting.Date => orders.OrderByDescending(x => x.OrderDate),
+                OrderSorting.TotalSum => orders.OrderByDescending(x => x.TotalSum),
+                _ => orders.OrderByDescending(x => x.OrderDate)
+            };
+            var ordersToShow = orders
+               .Skip((currentPage - 1) * ordersPerPage)
+               .Take(ordersPerPage)
+               .ToList();
+
+            return new AllOrdersQueryModel()
+            {
+                TotalOrdersCount = orders.Count(),
+                Orders = ordersToShow.Select(x => new OrderAdminViewModel()
+                {
+                    Id = x.Id.ToString(),
+                    TotalSum = x.TotalSum.ToString(),
+                    DeliveryMethod = x.DeliveryMethod.Name,
+                    ClientName = x.OrderDetail.FirstName + " " + x.OrderDetail.SecondName,
+                    OrderDate = x.OrderDate.ToString(DataConstants.DateFormat),
+                    Address = x.OrderDetail.Address,
+                    PhoneNumber = x.OrderDetail.PhoneNumber,
+                    ExpectedDelivery = x.ExpectedDelivery.ToString(DataConstants.DateFormat),
+                    State = x.State.Name
+                }).ToList()
+            };
+
+
+        }
         public async Task<IEnumerable<OrderInfoViewModel>> GetAllOrdersAsync()
         {
             var orders = await dbContext.Orders
@@ -87,7 +153,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return orders;
         }
 
-        public async Task<IEnumerable<OrdersFromUserViewModel>> GetUserOrdersIdAsync(string userId)
+        public async Task<IEnumerable<OrdersFromUserViewModel>> OrdersByUserIdAsync(string userId)
         {
             List<OrdersFromUserViewModel> result = new List<OrdersFromUserViewModel>();
             var orders = await dbContext.Orders
@@ -125,7 +191,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return result;
         }
 
-        public async Task<ChangeOrderStatusViewModel> GetOrderByIdAsync(string Id)
+        public async Task<ChangeOrderStatusViewModel> OrderByIdAsync(string Id)
         {
             var order = await dbContext.Orders
                 .Include(x => x.State)
@@ -141,7 +207,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return vm;
         }
 
-        public async Task<OrderInfoViewModel> GetOrderDetailsAsync(string Id)
+        public async Task<OrderInfoViewModel> DetailsAsync(string Id)
         {
             var order = await dbContext.Orders
                 .Include(Id => Id.OrderDetail)
@@ -198,5 +264,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             order.StateId = Guid.Parse(vm.StatusId);
             await dbContext.SaveChangesAsync();
         }
+
+       
     }
 }

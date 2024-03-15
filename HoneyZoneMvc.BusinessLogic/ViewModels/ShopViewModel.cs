@@ -1,5 +1,5 @@
 ﻿using HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels;
-using HoneyZoneMvc.BusinessLogic.ViewModels.ProductViewModels;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Product;
 
 namespace HoneyZoneMvc.BusinessLogic.ViewModels
 {
