@@ -39,7 +39,7 @@ namespace HoneyZoneMvc.BusinessLogic.ViewModels.Order
        
         public string DeliveryMethodId { get; set; } = string.Empty;
 
-        public ICollection<DeliveryMethodViewModel> DeliveryMethods { get; set; } = new List<DeliveryMethodViewModel>();
+        public IEnumerable<DeliveryMethodViewModel> DeliveryMethods { get; set; } = new List<DeliveryMethodViewModel>();
         public string TotalSum { get; set; } = string.Empty;
     }
 }

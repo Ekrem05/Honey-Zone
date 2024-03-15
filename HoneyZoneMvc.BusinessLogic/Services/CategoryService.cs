@@ -70,7 +70,8 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             }
             return categoryDto;
         }
-        public async Task<CategoryViewModel> GetById(string id)
+
+        public async Task<CategoryViewModel> GetByIdAsync(string id)
         {
             CategoryViewModel dto = new CategoryViewModel();
             var model = await dbContext.Categories.FirstOrDefaultAsync(c => c.Id.ToString() == id);
@@ -78,8 +79,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             dto.Name = model.Name;
             return dto;
         }
-
-
 
         public Task UpdateAsync(CategoryAddViewModel category)
         {

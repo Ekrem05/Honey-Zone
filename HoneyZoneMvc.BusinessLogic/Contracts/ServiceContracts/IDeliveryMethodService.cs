@@ -3,7 +3,7 @@ using HoneyZoneMvc.BusinessLogic.ViewModels.Delivery;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {
-    public interface IDeliveryService : ICrud<DeliveryMethodViewModel>
+    public interface IDeliveryService : IReadable<DeliveryMethodViewModel>
     {
     }
 }
