@@ -3,14 +3,16 @@ using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.BusinessLogic.Services;
 using HoneyZoneMvc.Common.Messages;
 using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.Infrastructure.ViewModels;
-using HoneyZoneMvc.Infrastructure.ViewModels.CartProduct;
-using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
-using HoneyZoneMvc.Infrastructure.ViewModels.Delivery;
-using HoneyZoneMvc.Infrastructure.ViewModels.OrderViewModels;
-using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
+using HoneyZoneMvc.BusinessLogic.ViewModels;
+using HoneyZoneMvc.BusinessLogic.ViewModels.CartProduct;
+using HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Delivery;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Order;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Product;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System.Security.Claims;
 using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
 using static HoneyZoneMvc.Common.Messages.SuccessfulMessages;
@@ -26,7 +28,7 @@ namespace HoneyZoneMvc.Controllers
         private readonly ICartProductService cartProductService;
         private readonly IOrderService orderService;
         private readonly IDeliveryService deliveryService;
-
+        private readonly IHttpContextAccessor httpContextAccessor;
         private IMapper mapper;
 
         public ShopController(IProductService _productService,
@@ -34,6 +36,7 @@ namespace HoneyZoneMvc.Controllers
             ICartProductService _cartProductService,
             IOrderService _orderService,
             IDeliveryService _deliveryService,
+            IHttpContextAccessor _httpContextAccessor,
             IMapper _mapper)
         {
             productService = _productService;
@@ -42,6 +45,7 @@ namespace HoneyZoneMvc.Controllers
             mapper = _mapper;
             orderService = _orderService;
             deliveryService = _deliveryService;
+            httpContextAccessor = _httpContextAccessor;
         }
         [HttpGet]
         [AllowAnonymous]
@@ -58,19 +62,19 @@ namespace HoneyZoneMvc.Controllers
 
                 else if (category != null)
                 {
-                    products = (await productService.GetProductsByCategoryNameAsync(category)).ToList();
+                    products = (await productService.GetByCategoryNameAsync(category)).ToList();
                 }
                 else if (searchBy != null)
                 {
-                    products = (await productService.SearchProductsAsync(searchBy)).ToList();
+                    products = (await productService.SearchAsync(searchBy)).ToList();
                     var model = products.Select(p => mapper.Map<ProductShopCardViewModel>(p)).ToList();
                     return PartialView("_ProductsInShopPartialView", model);
                 }
                 else
-                    products = (await productService.GetAllProductsAsync()).ToList();
+                    products = (await productService.AllAsync()).ToList();
 
                 vm.Products = mapper.Map<List<ProductShopCardViewModel>>(products);
-                var categories = await categoryService.GetAllCategoriesAsync();
+                var categories = await categoryService.AllAsync();
                 vm.Categories = categories.Select(c => new CategoryViewModel()
                 {
                     Id = c.Id.ToString(),
@@ -98,7 +102,7 @@ namespace HoneyZoneMvc.Controllers
             }
             try
             {
-                var productDto = await productService.GetProductByIdAsync(Id);
+                var productDto = await productService.GetByIdAsync(Id);
                 var vm = mapper.Map<ProductShopDetailsViewModel>(productDto);
                 return View(vm);
             }
@@ -116,7 +120,23 @@ namespace HoneyZoneMvc.Controllers
         {
             try
             {
-                var productsInCart = await productService.GetUserCartAsync(GetUserId().ToString());
+                var productsInCookie = await cartProductService.GetProductsFromCart(httpContextAccessor);
+                List<ProductCartViewModel> productsInCart = new List<ProductCartViewModel>();
+                foreach (var item in productsInCookie)
+                {
+                    var product = await productService.GetByIdAsync(item.ProductId);
+                    productsInCart.Add(new ProductCartViewModel()
+                    {
+                        Id = product.Id,
+                        Name = product.Name,
+                        Price = product.Price,
+                        IsDiscounted = product.IsDiscounted,
+                        Discount = product.Discount,
+                        MainImageName = product.MainImageName,
+                        ProductAmount = product.ProductAmount,
+                        Quantity = item.Quantity
+                    });
+                }
                 return View(productsInCart);
             }
             catch (Exception)
@@ -137,14 +157,25 @@ namespace HoneyZoneMvc.Controllers
             }
             try
             {
-               await cartProductService.AddCartProductAsync(new CartProductViewModel()
+               cartProductService.AddOrUpdateCart(httpContextAccessor, Id, 1);
+                var productsInCookie=await cartProductService.GetProductsFromCart(httpContextAccessor);
+
+                List<ProductCartViewModel> productsInCart = new List<ProductCartViewModel>();
+                foreach (var item in productsInCookie)
                 {
-                    BuyerId = GetUserId().ToString(),
-                    ProductId = Id
-                });
-
-                var productsInCart = await productService.GetUserCartAsync(GetUserId().ToString());
-
+                    var product= await productService.GetByIdAsync(item.ProductId);
+                    productsInCart.Add(new ProductCartViewModel()
+                    {
+                        Id = product.Id,
+                        Name = product.Name,
+                        Price = product.Price,
+                        IsDiscounted = product.IsDiscounted,
+                        Discount = product.Discount,
+                        MainImageName = product.MainImageName,
+                        ProductAmount = product.ProductAmount,
+                        Quantity = item.Quantity
+                    });
+                }
                 return RedirectToAction("Cart", productsInCart);
             }
             catch (Exception)
@@ -168,7 +199,7 @@ namespace HoneyZoneMvc.Controllers
             {
                 foreach (var cartProduct in cartProducts)
                 {
-                    await cartProductService.UpdateQuantityAsync(cartProduct.Id, cartProduct.Quantity, GetUserId().ToString());
+                    await cartProductService.AddOrUpdateCart(httpContextAccessor, cartProduct.ProductId, cartProduct.Quantity);
                 }
 
                 return RedirectToAction(nameof(OrderDetails));
@@ -184,18 +215,18 @@ namespace HoneyZoneMvc.Controllers
         [HttpGet]
         public async Task<IActionResult> OrderDetails()
         {
-            var productsInCart = await productService.GetUserCartAsync(GetUserId().ToString());
-
-            if (productsInCart.Count()==0)
-            {
-
-                TempData["Message"] = CartIsEmpty;
-                return RedirectToAction(nameof(Cart));
-            }
+           
             try
             {
+                var productsInCart = await cartProductService.GetProductsFromCart(httpContextAccessor);
+                if (productsInCart.Count() == 0)
+                {
+
+                    TempData["Message"] = CartIsEmpty;
+                    return RedirectToAction(nameof(Cart));
+                }
                 var ordervm = new OrderDetailViewModel();
-                ordervm.TotalSum = (await cartProductService.GetCartSumAsync(GetUserId().ToString())).ToString("F2");
+                ordervm.TotalSum = (await cartProductService.GetCartSumAsync(httpContextAccessor)).ToString("F2");
                 ordervm.DeliveryMethods = await GetDeliveryMethods();
                 return View(ordervm);
             }
@@ -219,12 +250,16 @@ namespace HoneyZoneMvc.Controllers
             }
             try
             {
-                var cart = await cartProductService.GetCartByUserIdAsync(GetUserId().ToString());
+                var productsInCart = await cartProductService.GetProductsFromCart(httpContextAccessor);
                 List<OrderProduct> orderProducts = new List<OrderProduct>();
-
-                foreach (var productItem in cart)
+                if (productsInCart.Count == 0)
                 {
-                    var product = await productService.GetProductByIdAsync(productItem.ProductId);
+                    TempData["Error"] = CartIsEmpty;
+                    return RedirectToAction(nameof(Cart));
+                }
+                foreach (var productItem in productsInCart)
+                {
+                    var product = await productService.GetByIdAsync(productItem.ProductId);
 
                     orderProducts.Add(new OrderProduct()
                     {
@@ -233,10 +268,10 @@ namespace HoneyZoneMvc.Controllers
                     });
 
                 }
-                var totalSumFormated = (await cartProductService.GetCartSumAsync(GetUserId().ToString())).ToString("F2");
+                var totalSumFormated = (await cartProductService.GetCartSumAsync(httpContextAccessor)).ToString("F2");
                 double totalSum = double.Parse(totalSumFormated);
                 await orderService.AddAsync(GetUserId().ToString(), totalSum, dto.DeliveryMethodId, dto, orderProducts);
-                await cartProductService.DeleteCartProductAsync(GetUserId().ToString());
+                await cartProductService.DeleteCartProductAsync(httpContextAccessor);
             }
             catch (InvalidOperationException e)
             {

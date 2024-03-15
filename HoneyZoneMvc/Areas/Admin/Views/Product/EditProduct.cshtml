@@ -1,0 +1,86 @@
+﻿@model ProductEditViewModel
+
+@if (@TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible mt-2">
+        @TempData["Error"]
+        <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
+    </div>
+}
+<section Id="admin-operation-card">
+    <form asp-action="SubmitChanges" method="post" enctype="multipart/form-data">
+        <input hidden asp-for="Id" value="@Model.Id"/>
+        <div class="mb-3">
+            <label class="form-label" asp-for="Name">Име:</label>
+            <input type="text"
+                   class="form-control"
+                   id="NameEdit"
+                   asp-for="Name" />
+            <span asp-validation-for="Name" class="bg-danger"></span>
+        </div>
+
+        <div class="input-group">
+            <label class="form-label m-1" asp-for="Price">Цена:</label>
+            <input type="number"
+                   class="form-control"
+                   id="PriceEdit"
+                   asp-for="Price" />
+            <span class="input-group-text">лв</span>
+            <span class="input-group-text">0.00</span>
+            <span asp-validation-for="Price" id="PriceValidation" class="bg-danger"></span>
+        </div>
+       
+        <div class="mb-3">
+            <label asp-for="CategoryId" class="control-label">Категория</label>
+            <select asp-for="@Model.CategoryId" class="form-control" aria-required="true">
+                <option selected value="@Model.CategoryId">@Model.CategoryId</option>
+                @foreach (var category in Model.Categories)
+                {
+                    <option value="@category.Id">@category.Name</option>
+                }
+            </select>
+            <span asp-validation-for="CategoryId" class="bg-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="QuantityInStock">Количество в склад:</label>
+            <input type="number"
+                   class="form-control"
+                   id="QuantityInStockEdit"
+                   asp-for="QuantityInStock" />
+            <span asp-validation-for="QuantityInStock" class="bg-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="ProductAmount">Дозировка:</label>
+            <input type="text"
+                   class="form-control"
+                   id="ProductQuantityEdit"
+                   asp-for="ProductAmount" />
+            <span asp-validation-for="ProductAmount" class="bg-danger"></span>
+            
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="Description">Описание:</label>
+            <input rows="4" cols="50" type="text"
+                   class="form-control"
+                   id="DescriptionEdit"
+                   asp-for="Description" />
+            <span asp-validation-for="Description" class="bg-danger"></span>
+        </div>
+        <div class="modal-footer">
+            <a type="button"
+                    class="btn btn-secondary"
+                    asp-action="Index">
+                Отказ
+            </a>
+            <button type="submit" class="btn btn-success">
+                Запази промени
+            </button>
+        </div>
+    </form>
+</section>
+               
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}   

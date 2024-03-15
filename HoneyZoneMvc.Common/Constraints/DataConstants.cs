@@ -23,7 +23,7 @@
             public const int NameMaxValue = 20;
             public const int NameMinValue = 3;
         }
-        public static class OrderDetail
+        public static class OrderDetails
         {
             public const int NameMaxValue = 30;
             public const int NameMinValue = 2;

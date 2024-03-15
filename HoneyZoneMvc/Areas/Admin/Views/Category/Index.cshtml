@@ -1,0 +1,43 @@
+﻿@model IEnumerable<CategoryViewModel>
+@if (@TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible mt-2">
+        @TempData["Error"]
+        <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
+    </div>
+}
+@if (@TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible mt-2">
+        @TempData["Success"]
+        <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
+    </div>
+}
+<div class="actions bg-warning p-2 d-flex d-flex justify-content-around w-50 ">
+   
+        <a class="btn btn-outline-success btn-lg" data-bs-toggle="modal" data-bs-target="#addNewCategory">
+            Добави Категория на продукт
+        </a>
+    <div class="modal fade" id="addNewCategory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form asp-action="AddCategory" method="post" class="d-inline-block">
+                    <div class="modal-body">
+                        <strong>Внимание!</strong>Ще добавите нова категория на продукт. Сигурни ли сте?
+                        <label>Въведи име на категорията</label>
+                        <input type="text" name="Name" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
+
+                        <button type="submit" class="btn btn-outline-success">
+                            Добави
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_CategoriesPartialView" model="Model"></partial>

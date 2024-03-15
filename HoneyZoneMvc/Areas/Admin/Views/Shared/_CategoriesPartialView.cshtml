@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CategoryViewModel>
+@{
+}
+<table class="table mb-10 mt-3 table-striped table-light table-bordered border-warning table-hover table-sm" id="categories"
+style="width:50%;">
+    <thead>
+        <tr class="text-center">
+            <th scope="col">Id</th>
+            <th scope="col">Име</th>
+            <th scope="col">Операции</th>
+
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        @foreach (var category in Model)
+        {
+            <tr>
+                <th scope="row" class="align-middle">@category.Id</th>
+                <td class="col-md-1">@category.Name</td>
+
+                <td class="">
+                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteCategory-@category.GetHashCode()">
+                        Изтрий
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteCategory-@category.GetHashCode()" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <strong>Важно! </strong>За да бъде изтрита категорията, трябва да няма продукти от нея
+                                    <br />
+                                    <strong>Предупреждение! </strong> Категорията ще бъде изтрита, Сигурни ли сте?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
+                                    <form asp-action="DeleteCategory" method="post" class="d-inline-block">
+                                        <input type="hidden" value="@category.Id" name="Id" />
+                                        <button type="submit" class="btn btn-outline-danger">
+                                            Изтрий
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

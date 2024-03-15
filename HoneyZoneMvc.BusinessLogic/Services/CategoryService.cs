@@ -1,7 +1,7 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.Infrastructure.ViewModels.CategoryViewModels;
+using HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels;
 using Microsoft.EntityFrameworkCore;
 using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
 
@@ -14,7 +14,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             dbContext = _dbContext;
         }
-        public async Task AddCategoryAsync(CategoryAddViewModel category)
+        public async Task AddAsync(CategoryAddViewModel category)
         {
             if (category == null)
             {
@@ -29,12 +29,12 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             
         }
 
-        public async Task<bool> CategoryExistsAsync(string Id)
+        public async Task<bool> ExistsAsync(string Id)
         {
             return await dbContext.Categories.AnyAsync(c => c.Id.ToString() == Id);
         }
 
-        public async Task DeleteCategoryAsync(string Id)
+        public async Task DeleteAsync(string Id)
         {
             if(Id == null)
             {
@@ -56,7 +56,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         }
 
-        public async Task<IEnumerable<CategoryViewModel>> GetAllCategoriesAsync()
+        public async Task<IEnumerable<CategoryViewModel>> AllAsync()
         {
             var models = await dbContext.Categories.ToListAsync();
             List<CategoryViewModel> categoryDto = new List<CategoryViewModel>();
@@ -70,7 +70,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             }
             return categoryDto;
         }
-        public async Task<CategoryViewModel> GetCategoryById(string id)
+        public async Task<CategoryViewModel> GetById(string id)
         {
             CategoryViewModel dto = new CategoryViewModel();
             var model = await dbContext.Categories.FirstOrDefaultAsync(c => c.Id.ToString() == id);
@@ -81,7 +81,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
 
 
-        public Task UpdateCategoryAsync(CategoryAddViewModel category)
+        public Task UpdateAsync(CategoryAddViewModel category)
         {
             throw new NotImplementedException();
         }

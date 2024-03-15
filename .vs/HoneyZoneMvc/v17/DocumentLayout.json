@@ -3,48 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc\\controllers\\admindatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|solutionrelative:honeyzonemvc\\controllers\\admindatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc\\areas\\admin\\views\\product\\editproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|solutionrelative:honeyzonemvc\\areas\\admin\\views\\product\\editproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2653B61C-E5CA-4BB5-8EA2-3F774AD7CC01}|HoneyZoneMvc.Infrastructure\\HoneyZoneMvc.Infrastructure.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc.infrastructure\\viewmodels\\productviewmodels\\productdiscountviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2653B61C-E5CA-4BB5-8EA2-3F774AD7CC01}|HoneyZoneMvc.Infrastructure\\HoneyZoneMvc.Infrastructure.csproj|solutionrelative:honeyzonemvc.infrastructure\\viewmodels\\productviewmodels\\productdiscountviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc\\areas\\admin\\views\\product\\addproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|solutionrelative:honeyzonemvc\\areas\\admin\\views\\product\\addproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2653B61C-E5CA-4BB5-8EA2-3F774AD7CC01}|HoneyZoneMvc.Infrastructure\\HoneyZoneMvc.Infrastructure.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc.infrastructure\\viewmodels\\productviewmodels\\producteditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2653B61C-E5CA-4BB5-8EA2-3F774AD7CC01}|HoneyZoneMvc.Infrastructure\\HoneyZoneMvc.Infrastructure.csproj|solutionrelative:honeyzonemvc.infrastructure\\viewmodels\\productviewmodels\\producteditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|solutionrelative:honeyzonemvc\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc\\views\\admindata\\editproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|solutionrelative:honeyzonemvc\\views\\admindata\\editproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc\\areas\\admin\\views\\product\\productdiscount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|solutionrelative:honeyzonemvc\\areas\\admin\\views\\product\\productdiscount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2653B61C-E5CA-4BB5-8EA2-3F774AD7CC01}|HoneyZoneMvc.Infrastructure\\HoneyZoneMvc.Infrastructure.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc.infrastructure\\attributes\\discountrange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2653B61C-E5CA-4BB5-8EA2-3F774AD7CC01}|HoneyZoneMvc.Infrastructure\\HoneyZoneMvc.Infrastructure.csproj|solutionrelative:honeyzonemvc.infrastructure\\attributes\\discountrange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc\\areas\\admin\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|solutionrelative:honeyzonemvc\\areas\\admin\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc\\views\\shop\\orderdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|solutionrelative:honeyzonemvc\\views\\shop\\orderdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc\\areas\\admin\\views\\shared\\_categoriespartialview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|solutionrelative:honeyzonemvc\\areas\\admin\\views\\shared\\_categoriespartialview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2653B61C-E5CA-4BB5-8EA2-3F774AD7CC01}|HoneyZoneMvc.Infrastructure\\HoneyZoneMvc.Infrastructure.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc.infrastructure\\data\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2653B61C-E5CA-4BB5-8EA2-3F774AD7CC01}|HoneyZoneMvc.Infrastructure\\HoneyZoneMvc.Infrastructure.csproj|solutionrelative:honeyzonemvc.infrastructure\\data\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|solutionrelative:honeyzonemvc\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39043FB1-8CA5-4B8B-A06C-1E91653B608F}|HoneyZoneMvc.BusinessLogic\\HoneyZoneMvc.BusinessLogic.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc.businesslogic\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39043FB1-8CA5-4B8B-A06C-1E91653B608F}|HoneyZoneMvc.BusinessLogic\\HoneyZoneMvc.BusinessLogic.csproj|solutionrelative:honeyzonemvc.businesslogic\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc\\areas\\admin\\views\\shared\\_adminnavpartialview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|solutionrelative:honeyzonemvc\\areas\\admin\\views\\shared\\_adminnavpartialview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|solutionrelative:honeyzonemvc\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc\\areas\\admin\\views\\shared\\_productstablepartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|solutionrelative:honeyzonemvc\\areas\\admin\\views\\shared\\_productstablepartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc\\controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|solutionrelative:honeyzonemvc\\controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|solutionrelative:honeyzonemvc\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc\\views\\shop\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5740FC2F-8E99-4BDE-B924-69E9B1168CA6}|HoneyZoneMvc\\HoneyZoneMvc.csproj|solutionrelative:honeyzonemvc\\views\\shop\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{39043FB1-8CA5-4B8B-A06C-1E91653B608F}|HoneyZoneMvc.BusinessLogic\\HoneyZoneMvc.BusinessLogic.csproj|c:\\users\\ekrem\\documents\\github\\honeyzonemvc\\honey-zone\\honeyzonemvc.businesslogic\\viewmodels\\category\\discountbycategoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39043FB1-8CA5-4B8B-A06C-1E91653B608F}|HoneyZoneMvc.BusinessLogic\\HoneyZoneMvc.BusinessLogic.csproj|solutionrelative:honeyzonemvc.businesslogic\\viewmodels\\category\\discountbycategoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,8 +54,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EditProduct.cshtml",
+              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Areas\\Admin\\Views\\Product\\EditProduct.cshtml",
+              "RelativeDocumentMoniker": "HoneyZoneMvc\\Areas\\Admin\\Views\\Product\\EditProduct.cshtml",
+              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Areas\\Admin\\Views\\Product\\EditProduct.cshtml",
+              "RelativeToolTip": "HoneyZoneMvc\\Areas\\Admin\\Views\\Product\\EditProduct.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACMAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-15T15:35:11.112Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
@@ -66,145 +79,132 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Infrastructure\\Data\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "HoneyZoneMvc.Infrastructure\\Data\\Models\\Product.cs",
-              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Infrastructure\\Data\\Models\\Product.cs",
-              "RelativeToolTip": "HoneyZoneMvc.Infrastructure\\Data\\Models\\Product.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T12:09:19.199Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProductDiscountViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Infrastructure\\ViewModels\\ProductViewModels\\ProductDiscountViewModel.cs",
-              "RelativeDocumentMoniker": "HoneyZoneMvc.Infrastructure\\ViewModels\\ProductViewModels\\ProductDiscountViewModel.cs",
-              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Infrastructure\\ViewModels\\ProductViewModels\\ProductDiscountViewModel.cs",
-              "RelativeToolTip": "HoneyZoneMvc.Infrastructure\\ViewModels\\ProductViewModels\\ProductDiscountViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T12:07:37.4Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductEditViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Infrastructure\\ViewModels\\ProductViewModels\\ProductEditViewModel.cs",
-              "RelativeDocumentMoniker": "HoneyZoneMvc.Infrastructure\\ViewModels\\ProductViewModels\\ProductEditViewModel.cs",
-              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Infrastructure\\ViewModels\\ProductViewModels\\ProductEditViewModel.cs",
-              "RelativeToolTip": "HoneyZoneMvc.Infrastructure\\ViewModels\\ProductViewModels\\ProductEditViewModel.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAAABYAAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T11:40:54.296Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EditProduct.cshtml",
-              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Views\\AdminData\\EditProduct.cshtml",
-              "RelativeDocumentMoniker": "HoneyZoneMvc\\Views\\AdminData\\EditProduct.cshtml",
-              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Views\\AdminData\\EditProduct.cshtml",
-              "RelativeToolTip": "HoneyZoneMvc\\Views\\AdminData\\EditProduct.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
+              "Title": "AddProduct.cshtml",
+              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Areas\\Admin\\Views\\Product\\AddProduct.cshtml",
+              "RelativeDocumentMoniker": "HoneyZoneMvc\\Areas\\Admin\\Views\\Product\\AddProduct.cshtml",
+              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Areas\\Admin\\Views\\Product\\AddProduct.cshtml",
+              "RelativeToolTip": "HoneyZoneMvc\\Areas\\Admin\\Views\\Product\\AddProduct.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-13T11:25:16.912Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DiscountRange.cs",
-              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Infrastructure\\Attributes\\DiscountRange.cs",
-              "RelativeDocumentMoniker": "HoneyZoneMvc.Infrastructure\\Attributes\\DiscountRange.cs",
-              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Infrastructure\\Attributes\\DiscountRange.cs",
-              "RelativeToolTip": "HoneyZoneMvc.Infrastructure\\Attributes\\DiscountRange.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABUAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T11:07:10.766Z",
+              "WhenOpened": "2024-03-15T15:34:48.933Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "OrderDetails.cshtml",
-              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Views\\Shop\\OrderDetails.cshtml",
-              "RelativeDocumentMoniker": "HoneyZoneMvc\\Views\\Shop\\OrderDetails.cshtml",
-              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Views\\Shop\\OrderDetails.cshtml",
-              "RelativeToolTip": "HoneyZoneMvc\\Views\\Shop\\OrderDetails.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAFAAAA",
+              "Title": "_CategoriesPartialView.cshtml",
+              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Areas\\Admin\\Views\\Shared\\_CategoriesPartialView.cshtml",
+              "RelativeDocumentMoniker": "HoneyZoneMvc\\Areas\\Admin\\Views\\Shared\\_CategoriesPartialView.cshtml",
+              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Areas\\Admin\\Views\\Shared\\_CategoriesPartialView.cshtml",
+              "RelativeToolTip": "HoneyZoneMvc\\Areas\\Admin\\Views\\Shared\\_CategoriesPartialView.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-13T10:45:01.99Z",
+              "WhenOpened": "2024-03-15T15:27:46.961Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AdminDataController.cs",
-              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Controllers\\AdminDataController.cs",
-              "RelativeDocumentMoniker": "HoneyZoneMvc\\Controllers\\AdminDataController.cs",
-              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Controllers\\AdminDataController.cs",
-              "RelativeToolTip": "HoneyZoneMvc\\Controllers\\AdminDataController.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAiwJIAAAAAAAAA",
+              "DocumentIndex": 6,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Areas\\Admin\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "HoneyZoneMvc\\Areas\\Admin\\Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Areas\\Admin\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "HoneyZoneMvc\\Areas\\Admin\\Controllers\\CategoryController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T10:17:06.362Z",
+              "WhenOpened": "2024-03-15T15:20:56.107Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.BusinessLogic\\Services\\ProductService.cs",
-              "RelativeDocumentMoniker": "HoneyZoneMvc.BusinessLogic\\Services\\ProductService.cs",
-              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.BusinessLogic\\Services\\ProductService.cs",
-              "RelativeToolTip": "HoneyZoneMvc.BusinessLogic\\Services\\ProductService.cs",
-              "ViewState": "AQIAAHAAAAAAAAAAAAAwwJsAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T12:23:50.561Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "HoneyZoneMvc\\Controllers\\OrderController.cs",
-              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Controllers\\OrderController.cs",
-              "RelativeToolTip": "HoneyZoneMvc\\Controllers\\OrderController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T12:28:46.747Z",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "RelativeDocumentMoniker": "HoneyZoneMvc\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "RelativeToolTip": "HoneyZoneMvc\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-15T15:19:48.634Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "Cart.cshtml",
-              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Views\\Shop\\Cart.cshtml",
-              "RelativeDocumentMoniker": "HoneyZoneMvc\\Views\\Shop\\Cart.cshtml",
-              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Views\\Shop\\Cart.cshtml",
-              "RelativeToolTip": "HoneyZoneMvc\\Views\\Shop\\Cart.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-13T10:40:43.619Z",
+              "Title": "DiscountByCategoryViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.BusinessLogic\\ViewModels\\Category\\DiscountByCategoryViewModel.cs",
+              "RelativeDocumentMoniker": "HoneyZoneMvc.BusinessLogic\\ViewModels\\Category\\DiscountByCategoryViewModel.cs",
+              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.BusinessLogic\\ViewModels\\Category\\DiscountByCategoryViewModel.cs",
+              "RelativeToolTip": "HoneyZoneMvc.BusinessLogic\\ViewModels\\Category\\DiscountByCategoryViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-15T15:09:59.71Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "ShopController.cs",
-              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Controllers\\ShopController.cs",
-              "RelativeDocumentMoniker": "HoneyZoneMvc\\Controllers\\ShopController.cs",
-              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Controllers\\ShopController.cs",
-              "RelativeToolTip": "HoneyZoneMvc\\Controllers\\ShopController.cs",
-              "ViewState": "AQIAAFsAAAAAAAAAAAAuwMQAAAA5AAAA",
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "HoneyZoneMvc\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "HoneyZoneMvc\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "ViewState": "AQIAAF4AAAAAAAAAAADwv7YAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T10:12:59.575Z",
+              "WhenOpened": "2024-03-15T15:07:09.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductDiscount.cshtml",
+              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Areas\\Admin\\Views\\Product\\ProductDiscount.cshtml",
+              "RelativeDocumentMoniker": "HoneyZoneMvc\\Areas\\Admin\\Views\\Product\\ProductDiscount.cshtml",
+              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Areas\\Admin\\Views\\Product\\ProductDiscount.cshtml",
+              "RelativeToolTip": "HoneyZoneMvc\\Areas\\Admin\\Views\\Product\\ProductDiscount.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-15T15:06:07.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_ProductsTablePartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Areas\\Admin\\Views\\Shared\\_ProductsTablePartial.cshtml",
+              "RelativeDocumentMoniker": "HoneyZoneMvc\\Areas\\Admin\\Views\\Shared\\_ProductsTablePartial.cshtml",
+              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Areas\\Admin\\Views\\Shared\\_ProductsTablePartial.cshtml",
+              "RelativeToolTip": "HoneyZoneMvc\\Areas\\Admin\\Views\\Shared\\_ProductsTablePartial.cshtml",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAFUAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-15T15:00:11.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "HoneyZoneMvc\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "HoneyZoneMvc\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-15T14:59:42.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_AdminNavPartialView.cshtml",
+              "DocumentMoniker": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Areas\\Admin\\Views\\Shared\\_AdminNavPartialView.cshtml",
+              "RelativeDocumentMoniker": "HoneyZoneMvc\\Areas\\Admin\\Views\\Shared\\_AdminNavPartialView.cshtml",
+              "ToolTip": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\Areas\\Admin\\Views\\Shared\\_AdminNavPartialView.cshtml",
+              "RelativeToolTip": "HoneyZoneMvc\\Areas\\Admin\\Views\\Shared\\_AdminNavPartialView.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-15T15:26:34.175Z",
               "EditorCaption": ""
             }
           ]

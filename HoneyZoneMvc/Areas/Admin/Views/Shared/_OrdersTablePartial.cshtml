@@ -1,0 +1,72 @@
+﻿@model IEnumerable<OrderAdminViewModel>
+@{
+}
+<table class="table mb-10 mt-3 table-striped table-light table-bordered border-warning table-hover table-sm datatable" id="orders">
+    <thead>
+        <tr class="text-center">
+            <th scope="col">Id</th>
+            <th scope="col">Сума</th>
+            <th scope="col">Доставка</th>
+            <th scope="col">Име на клиент</th>
+            <th scope="col">Адрес</th>
+            <th scope="col">Телефон</th>
+            <th scope="col">Поръчана на</th>
+            <th scope="col">Очаквана дата за пристигане</th>
+            <th scope="col">Статус</th>
+            <th scope="col">Операции</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        @foreach (var order in Model)
+        {
+            <tr>
+                <th scope="row" class="align-middle">@order.Id</th>
+                <td class="col-md-1">@order.TotalSum</td>
+                <td>@order.DeliveryMethod</td>
+                <td>@order.ClientName</td>
+                <td>@order.Address</td>
+                <td>@order.PhoneNumber</td>
+                <td> @order.OrderDate</td>
+                <td> @order.ExpectedDelivery </td>
+                <td> @order.State </td>
+
+                <td class="col-md-4">
+                    <a class="btn btn-outline-success"
+                       asp-action="ChangeStatus" asp-route-Id="@order.Id">
+                        Промени статус
+                    </a>
+                    <a class="btn btn-outline-danger" asp-action="OrderInformation" asp-route-Id="@order.Id">
+                        Информация
+                    </a>
+                    <a class="btn btn-outline-primary">
+                        Промени очаквана дата
+                    </a>
+                    <button type="button" class="btn btn-outline-danger d-inline-block" data-bs-toggle="modal" data-bs-target="#deleteOrder-@order.GetHashCode()">
+                        Изтрий
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteOrder-@order.GetHashCode()" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <strong>Предупреждение! </strong> Поръчката ще бъде изтрита. Сигурни ли сте?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
+                                    <form asp-controller="Order" asp-action="DeleteOrder" method="post" class="d-inline-block">
+                                        <input type="hidden" value="@order.Id" name="Id" />
+                                        <button type="submit" class="btn btn-outline-danger">
+                                            Изтрий
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

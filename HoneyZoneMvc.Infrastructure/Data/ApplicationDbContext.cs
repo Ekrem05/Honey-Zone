@@ -15,7 +15,6 @@ namespace HoneyZoneMvc.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<ImageUrl> ImageUrls { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<CartProduct> CartProducts { get; set; }
         public DbSet<DeliveryMethod> DeliverMethods { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderProduct> OrderProducts { get; set; }
@@ -29,7 +28,6 @@ namespace HoneyZoneMvc.Data
             builder.ApplyConfiguration(new ProductConfiguration());
             builder.ApplyConfiguration(new StateConfiguration());
             builder.ApplyConfiguration(new DeliveryMethodConfiguration());
-            builder.ApplyConfiguration(new CartProductConfiguration());
             base.OnModelCreating(builder);
         }
     }

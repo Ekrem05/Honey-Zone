@@ -1,4 +1,4 @@
-﻿using HoneyZoneMvc.Infrastructure.ViewModels.User;
+﻿using HoneyZoneMvc.BusinessLogic.ViewModels.User;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {

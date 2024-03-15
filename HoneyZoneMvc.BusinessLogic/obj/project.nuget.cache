@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KzO3ilt54h5oLUQ1Hw4FhX+UIlT98hreXvBSd5hH57AZNx9PvgTsYq3uoDIi3OQs4ID/ixtRIG3WjsUq5syPAg==",
+  "dgSpecHash": "yuDFHPcmklfaG0z4E0DXg2Qo5fWgZ5YIc7K3WGJcuMa/d9K1TJvP9H0AiF1o5J3JKgyB+9dyJVQf79YaHYGOwg==",
   "success": true,
   "projectFilePath": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.BusinessLogic\\HoneyZoneMvc.BusinessLogic.csproj",
   "expectedPackageFiles": [
@@ -40,6 +40,7 @@
     "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\ekrem\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\ekrem\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\ekrem\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\ekrem\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",

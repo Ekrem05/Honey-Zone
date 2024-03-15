@@ -1,0 +1,25 @@
+﻿@model AdminViewModel
+
+
+@if (@TempData["Error"]!=null)
+{
+    <div class="alert alert-danger alert-dismissible mt-2">
+        @TempData["Error"]
+        <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
+    </div>
+}
+@if (@TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible mt-2">
+        @TempData["Success"]
+        <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
+    </div>
+}
+
+<partial name="_AdminNavPartialView"/>
+
+
+
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

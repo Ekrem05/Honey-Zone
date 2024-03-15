@@ -1,6 +1,6 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.Data;
-using HoneyZoneMvc.Infrastructure.ViewModels.ProductViewModels;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Product;
 using HoneyZoneMvc.Common.Messages;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +8,7 @@ using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
 using static System.Net.Mime.MediaTypeNames;
 using HoneyZoneMvc.Infrastructure.Data.Models;
 using AutoMapper;
+using HoneyZoneMvc.BusinessLogic.Enums;
 namespace HoneyZoneMvc.BusinessLogic.Services
 {
     public class ProductService : IProductService
@@ -23,7 +24,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
            imageService = _imageService;
             mapper = _mapper;
         }
-        public async Task AddProductAsync(ProductAddViewModel product)
+        public async Task AddAsync(ProductAddViewModel product)
         {
             if (product == null)
             {
@@ -57,7 +58,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         }
 
-        public async Task<IEnumerable<ProductAdminViewModel>> GetAllProductsAsync()
+        public async Task<IEnumerable<ProductAdminViewModel>> AllAsync()
         {
             var models = await dbContext.Products
                 .Include(p => p.Category)
@@ -72,11 +73,51 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return productsDto;
         }
 
-        public async Task<IEnumerable<ProductAdminViewModel>> GetProductsByCategoryNameAsync(string category)
+        public async Task<AllProductsQueryModel> AllAsync(string? category = null,
+            string? searchTerm = null,
+            ProductSorting sorting = ProductSorting.Name,
+            int currentPage = 1,
+            int productsPerPage = 1)
+        {
+            var products = await AllAsync();
+
+            if (!string.IsNullOrWhiteSpace(category))
+            {
+                products = await (GetByCategoryNameAsync(category));
+            }
+            if (!string.IsNullOrWhiteSpace(searchTerm))
+            {
+                products = products
+                    .Where(p => p.Name.ToLower().Contains(searchTerm.ToLower())).ToList();
+            }
+            products = sorting switch
+            {
+                ProductSorting.Name => products.OrderBy(p => p.Name).ToList(),
+                ProductSorting.Price => products.OrderBy(p => p.Price).ToList(),
+                ProductSorting.TimesOrdered => products.OrderByDescending(p => p.TimesOrdered).ToList(),
+                _ => products
+                .OrderBy(p=>p.Name).ToList()
+            };
+            var productsToShow = products
+                .Skip((currentPage - 1) * productsPerPage)
+                .Take(productsPerPage)
+                .ToList();
+
+            return new AllProductsQueryModel
+            {
+                Categories = (await categoryService.AllAsync()).Select(c=>c.Name).ToList(),
+                Products = productsToShow,
+                TotalProductsCount = products.Count()
+            };
+
+
+        }
+
+        public async Task<IEnumerable<ProductAdminViewModel>> GetByCategoryNameAsync(string category)
         {
             if (category.ToUpper() == "ALL")
             {
-                return await GetAllProductsAsync();
+                return await AllAsync();
 
             }
 
@@ -98,7 +139,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         }
 
-        public async Task<IEnumerable<ProductAdminViewModel>> GetProductsByCategoryIdAsync(string Id)
+        public async Task<IEnumerable<ProductAdminViewModel>> GetByCategoryIdAsync(string Id)
         {
             return await dbContext.Products
                  .Include(p => p.Category)
@@ -107,7 +148,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                  .ToListAsync();
         }
 
-        public async Task<ProductAdminViewModel> GetProductByIdAsync(string Id)
+        public async Task<ProductAdminViewModel> GetByIdAsync(string Id)
         {
             var model = await dbContext.Products
                 .Include(p => p.Category)
@@ -137,7 +178,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             }).ToListAsync();
         }
 
-        public async Task UpdateProductAsync(ProductEditViewModel product)
+        public async Task UpdateAsync(ProductEditViewModel product)
         {
             var productToEdit = await dbContext.Products
                 .Include(p => p.Category)
@@ -149,11 +190,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 productToEdit.Price = product.Price;
                 productToEdit.Description = product.Description;
                 productToEdit.ProductAmount = product.ProductAmount;
-                if (product.Discount > 0)
-                {
-                    productToEdit.IsDiscounted = true;
-                }
-                productToEdit.Discount = product.Discount;
                 productToEdit.CategoryId = dbContext.Categories.FirstOrDefault(c => c.Id.ToString() == product.CategoryId).Id;
                 productToEdit.QuantityInStock = product.QuantityInStock;
             }
@@ -161,7 +197,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             
         }
 
-        public async Task DeleteProductAsync(string Id)
+        public async Task DeleteAsync(string Id)
         {
             var product = await dbContext.Products.FirstOrDefaultAsync(x => x.Id.ToString() == Id);
             if (product == null)
@@ -177,7 +213,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 throw new InvalidOperationException(ProductMessages.ProductCannotBeDeleted);
             }
             dbContext.ImageUrls.RemoveRange(dbContext.ImageUrls.Where(i => i.ProductId == product.Id));
-            dbContext.CartProducts.RemoveRange(dbContext.CartProducts.Where(cp => cp.ProductId == product.Id));
             dbContext.Remove(product);
             await dbContext.SaveChangesAsync();
            
@@ -234,33 +269,8 @@ namespace HoneyZoneMvc.BusinessLogic.Services
            
         }
 
-        public async Task<IEnumerable<ProductCartViewModel>> GetUserCartAsync(string Id)
-        {
-            var carProducts = await dbContext.CartProducts
-                .Include(cp => cp.Product)
-                .AsNoTracking()
-                .Where(cp => cp.ClientId == Id)
-                .Select(cp => new ProductCartViewModel()
-                {
-                    Id = cp.Product.Id,
-                    Name = cp.Product.Name,
-                    MainImageName = cp.Product.MainImageUrl,
-                    Price = cp.Product.Price,
-                    IsDiscounted = cp.Product.IsDiscounted,
-                    Discount = cp.Product.Discount,
-                    ProductAmount = cp.Product.ProductAmount,
-                    Quantity = 1
-                })
-                .ToListAsync();
 
-            if (carProducts != null)
-            {
-                return carProducts;
-            }
-            else { throw new Exception(); }
-        }
-
-        public async Task DecreaseProductQuantityAsync(string Id)
+        public async Task DecreaseQuantityAsync(string Id)
         {
             var product = await dbContext.Products.FirstOrDefaultAsync(p => p.Id.ToString() == Id);
             if (product != null)
@@ -285,10 +295,10 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             await dbContext.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<ProductAdminViewModel>> SearchProductsAsync(string searchBy)
+        public async Task<IEnumerable<ProductAdminViewModel>> SearchAsync(string searchBy)
         {
             return await dbContext.Products
-                .Where(p => p.Name.Contains(searchBy))
+                .Where(p => p.Name.ToLower().Contains(searchBy.ToLower()))
                 .Select(p => mapper.Map<ProductAdminViewModel>(p))
                 .ToListAsync();
         }
@@ -306,6 +316,5 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return mainImage.FileName;
         }
 
-       
     }
 }

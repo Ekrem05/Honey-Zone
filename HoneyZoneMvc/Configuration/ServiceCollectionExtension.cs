@@ -2,7 +2,7 @@
 using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.BusinessLogic.Services;
 using HoneyZoneMvc.Data;
-using HoneyZoneMvc.Infrastructure.AutoMapper;
+using HoneyZoneMvc.BusinessLogic.AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 namespace Microsoft.Extensions.DependencyInjection
