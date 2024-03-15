@@ -31,4 +31,9 @@
     <ProjectReference Include="..\HoneyZoneMvc.Infrastructure\HoneyZoneMvc.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Views\Admin\" />
+    <Folder Include="Areas\Admin\Views\Category\" />
+  </ItemGroup>
+
 </Project>

@@ -1,5 +1,49 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model AdminViewModel
+
+
+@if (@TempData["Error"]!=null)
+{
+    <div class="alert alert-danger alert-dismissible mt-2">
+        @TempData["Error"]
+        <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
+    </div>
+}
+@if (@TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible mt-2">
+        @TempData["Success"]
+        <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
+    </div>
+}
+
+@Html.Partial("_AdminNavPartialView")
+
+<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+    
+    
+        <button class="btn admin-table-heading" data-bs-toggle="collapse" data-bs-target="#categories" aria-expanded="false" aria-controls="collapseExample">
+            Категории на продукти
+        </button>
+        <div class="collapse" id="categories">
+            <div class=".my-card-body">
+                
+                @await Html.PartialAsync("_CategoriesPartialView", Model.Categories)
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="btn admin-table-heading" data-bs-toggle="collapse" data-bs-target="#users" aria-expanded="false" aria-controls="collapseExample">
+            Потребители
+        </button>
+        <div class="collapse" id="users">
+            <div class=".my-card-body">
+                @await Html.PartialAsync("_UsersPartialView", Model.Users)
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

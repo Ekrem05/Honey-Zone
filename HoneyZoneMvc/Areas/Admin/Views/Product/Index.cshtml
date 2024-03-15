@@ -43,6 +43,24 @@
                         </div>
                     </div>
                 </div>
+                <button class="btn btn-outline-success btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Промоции
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="btn btn-outline-success btn-lg dropdown-item" data-bs-toggle="modal"
+                           data-bs-target="#discount-by-category">
+                            Промоция по категория
+                        </a>
+
+                    </li>
+                    <li>
+                        <a class="btn btn-outline-success btn-lg dropdown-item"
+                           asp-action="CancelDiscountByCategory">
+                            Премахни промоция по категория
+                        </a>
+                    </li>
+                </ul>
             </div>
             <div class="actions bg-warning p-2 d-flex d-flex justify-content-around w-50 ">
                 <select asp-for="Category" class="btn btn-outline-danger btn-sm dropdown-toggle">

@@ -1,0 +1,125 @@
+﻿@model AllOrdersQueryModel
+
+<div class="product-data">
+    <form method="get">
+
+        <section class="product-sorting-filters">
+      
+            <div class="actions bg-warning p-2 d-flex d-flex justify-content-around w-50 ">
+                <div class="date-sroting">
+                    <select asp-for="Day" class="btn btn-outline-danger btn-sm dropdown-toggle">
+                       
+                        <ul class="dropdown-menu">
+                        <option value="0">Day</option>
+                            @for (int i = 1; i < 31; i++)
+                            {
+                            <option value="@i">@i</option>
+
+                            }
+                        </ul>
+                    </select>
+                    <select asp-for="Month" class="btn btn-outline-danger btn-sm dropdown-toggle">
+                        
+                        <ul class="dropdown-menu">
+                        <option value="0">Month</option>
+                            <option value="1">January</option>
+                            <option value="5">Februry</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </ul>
+                    </select>
+                    <select asp-for="Year" class="btn btn-outline-danger btn-sm dropdown-toggle">
+                        
+                        <ul class="dropdown-menu">
+                        <option value="0">Year</option>
+                            @for (int i = 2022; i < 2030; i++)
+                            {
+                                <option value="@i">@i</option>
+
+                            }
+                        </ul>
+                    </select>
+                </div>
+               
+                <select asp-for="SortBy" class="btn btn-outline-primary btn-sm dropdown-toggle">
+                    <button class="btn btn-outline-primary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Sort By
+                    </button>
+                    <ul class="dropdown-menu">
+
+                        <option value="0">Date</option>
+                        <option value="1">TotalSum</option>
+
+                    </ul>
+                </select>
+            </div>
+
+            <section class="search-bar">
+                <input type="text" class="productSearch" id="productName" asp-for="SearchTerm" placeholder="Enter client names or phone number" />
+            </section>
+            <div class="col-md-3">
+                <div class="form-group mt-4 p-2 d-flex justify-content-center">
+                    <input type="submit" value="Search" class="btn btn-primary" />
+                </div>
+            </div>
+        </section>
+    </form>
+    @{
+        var previousPage = Model.CurrentPage - 1;
+        if (previousPage < 1)
+        {
+            previousPage = 1;
+        }
+
+        var maxPage = Math.Ceiling((double)Model.TotalOrdersCount /
+        Model.TotalOrdersCount);
+    }
+    <div class="pager">
+        <div class="arrows">
+            <a class="btn btn-primary @(Model.CurrentPage == 1 ? "disabled" : string.Empty)"
+               asp-controller="Admin"
+               asp-action="Orders"
+               asp-route-currentPage="@previousPage"
+               asp-route-day="@Model.Day"
+               asp-route-month="@Model.Month"
+               asp-route-year="@Model.Year"
+               asp-route-searchTerm="@Model.SearchTerm"
+               asp-route-sortBy="@((int)Model.SortBy)"><<</a>
+        </div>
+
+        @{
+            var shouldButtonBeDisabled = Model.CurrentPage == maxPage ||
+            !Model.Orders.Any();
+        }
+
+        <div class="arrows">
+            <a class="btn btn-primary
+           @(shouldButtonBeDisabled ? "disabled" : string.Empty)"
+               asp-controller="Admin"
+               asp-action="Orders"
+               asp-route-currentPage="@previousPage"
+               asp-route-day="@Model.Day"
+               asp-route-month="@Model.Month"
+               asp-route-year="@Model.Year"
+               asp-route-searchTerm="@Model.SearchTerm"
+               asp-route-sortBy="@((int)Model.SortBy)">>></a>
+        </div>
+    </div>
+
+    @if (!Model.Orders.Any())
+    {
+        <h2 class="text-center text-light bg-danger mt-3">No orders found by the given criteria!</h2>
+    }
+
+    <partial name="_OrdersTablePartial" model="@Model.Orders" />
+
+
+</div>
