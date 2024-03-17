@@ -20,7 +20,7 @@ using static HoneyZoneMvc.Common.Messages.SuccessfulMessages;
 
 namespace HoneyZoneMvc.Controllers
 {
-    [Authorize]
+
     public class ShopController : Controller
     {
         private readonly IProductService productService;
@@ -48,7 +48,6 @@ namespace HoneyZoneMvc.Controllers
             httpContextAccessor = _httpContextAccessor;
         }
         [HttpGet]
-        [AllowAnonymous]
         public async Task<IActionResult> Index(string? category,string? searchBy,string? bestSellers)
         {
             ShopViewModel vm = new ShopViewModel();
@@ -92,7 +91,6 @@ namespace HoneyZoneMvc.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
         public async Task<IActionResult> ViewProduct(string Id)
         {
             if (Id == null)
@@ -188,6 +186,7 @@ namespace HoneyZoneMvc.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> CartConfirmed(List<PostProductCartViewModel> cartProducts)
         {
             if (cartProducts.Count==0)
@@ -213,6 +212,7 @@ namespace HoneyZoneMvc.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> OrderDetails()
         {
            
@@ -240,6 +240,7 @@ namespace HoneyZoneMvc.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> OrderConfirmed(OrderDetailViewModel dto)
         {
 
@@ -251,7 +252,7 @@ namespace HoneyZoneMvc.Controllers
             try
             {
                 var productsInCart = await cartProductService.ProductsFromCart(httpContextAccessor);
-                List<OrderProduct> orderProducts = new List<OrderProduct>();
+                HashSet<OrderProduct> orderProducts = new HashSet<OrderProduct>();
                 if (productsInCart.Count == 0)
                 {
                     TempData["Error"] = CartIsEmpty;
@@ -289,7 +290,7 @@ namespace HoneyZoneMvc.Controllers
                 return RedirectToAction("Error", "Home", new { statusCode = 404 });
             }
             TempData["Message"] = OrderAdded;
-            return RedirectToAction("MyOrders","Order");
+            return RedirectToAction("MyOrders","Profile");
         }
 
         private Guid GetUserId()

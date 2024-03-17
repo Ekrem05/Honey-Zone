@@ -1,21 +1,17 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
-using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.BusinessLogic.ViewModels.Delivery;
-using HoneyZoneMvc.BusinessLogic.ViewModels.Order;
-using Microsoft.AspNetCore.Authorization;
+using HoneyZoneMvc.BusinessLogic.Services;
+using HoneyZoneMvc.BusinessLogic.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
-using static HoneyZoneMvc.Common.Messages.SuccessfulMessages;
 
 namespace HoneyZoneMvc.Controllers
 {
-    [Authorize]
-    public class OrderController : Controller
+    public class ProfileController:Controller
     {
         private readonly IOrderService orderService;
 
-        public OrderController(IOrderService _orderService)
+        public ProfileController(IOrderService _orderService)
         {
             orderService = _orderService;
 
@@ -24,18 +20,16 @@ namespace HoneyZoneMvc.Controllers
         public async Task<IActionResult> MyOrders()
         {
             try
-            {
-                var orders = await orderService.OrdersByUserIdAsync(GetUserId().ToString());
+            {   
+                var orders= await orderService.OrdersByUserIdAsync(GetUserId().ToString());               
                 return View(orders);
             }
             catch (Exception)
             {
                 TempData["Error"] = GeneralException;
-                return RedirectToAction("Error", "Home", new { statusCode = 404 });
+                return RedirectToAction("Error", "Home", new { statusCode = 500 });
             }
-          
         }
-
         private Guid GetUserId()
         {
             return Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
