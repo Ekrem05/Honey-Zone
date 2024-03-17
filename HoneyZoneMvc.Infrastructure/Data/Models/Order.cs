@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using HoneyZoneMvc.Infrastructure.Data.Models.IdentityModels;
+using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
@@ -18,8 +19,8 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models
         public DeliveryMethod DeliveryMethod { get; set; } = null!;
 
         [Required]
-        public string ClientId { get; set; } = string.Empty;
-        public IdentityUser Client { get; set; } = null!;
+        public Guid ClientId { get; set; }
+        public ApplicationUser Client { get; set; } = null!;
 
         [Required]
         public DateTime OrderDate { get; set; }
@@ -35,6 +36,6 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models
         public Guid OrderDetailId { get; set; }
         public OrderDetail OrderDetail { get; set; } = null!;
 
-        public ICollection<OrderProduct> OrderProducts { get; set; } = new HashSet<OrderProduct>();
+        public IEnumerable<OrderProduct> OrderProducts { get; set; } = new HashSet<OrderProduct>();
     }
 }
