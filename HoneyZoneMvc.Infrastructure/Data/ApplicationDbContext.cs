@@ -1,11 +1,15 @@
 ﻿
 using HoneyZoneMvc.Infrastructure.Configuration;
 using HoneyZoneMvc.Infrastructure.Data.Models;
+using HoneyZoneMvc.Infrastructure.Data.Models.IdentityModels;
+using HoneyZoneMvc.Infrastructure.Database_Configuration;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 namespace HoneyZoneMvc.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser,ApplicationRole,Guid>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -28,6 +32,10 @@ namespace HoneyZoneMvc.Data
             builder.ApplyConfiguration(new ProductConfiguration());
             builder.ApplyConfiguration(new StateConfiguration());
             builder.ApplyConfiguration(new DeliveryMethodConfiguration());
+            builder.ApplyConfiguration(new UserConfiguration());
+            builder.ApplyConfiguration(new RoleConfiguration());
+            builder.ApplyConfiguration(new UserRoleConfiguration());
+           
             base.OnModelCreating(builder);
         }
     }

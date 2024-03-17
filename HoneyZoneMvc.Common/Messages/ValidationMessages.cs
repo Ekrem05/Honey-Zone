@@ -29,5 +29,9 @@
         public const string OrderDetailZipCodeValueValidation = "Пощенският код трябва да е {1} символа!";
         public const string OrderDetailEmailValueValidation = "Невалиден имейл адрес!";
 
+        public const string NamesLength = "The {0} must be at least {2} and at max {1} characters long.";
+        public const string EmailIsInvalid = "Invalid email address!";
+        public const string PasswordLength = "The password must be at least {2} and at max {1} characters long.";
+        public const string PasswordsMustMatch="Password and Confirm Password must match!";
     }
 }

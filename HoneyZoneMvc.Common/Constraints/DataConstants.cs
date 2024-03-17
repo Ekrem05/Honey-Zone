@@ -56,5 +56,15 @@
             public const int NameMaxValue = 12;
             public const int NameMinValue = 2;
         }
+
+        public static class UserValidation
+        {
+            public const int NameMinValue = 2;
+            public const int NameMaxValue = 20;
+            public const int UserNameMinValue = 2;
+            public const int UserNameMaxValue = 20;
+            public const int PasswordMinValue = 6;
+            public const int PasswordMaxValue = 100;
+        }
     }
 }

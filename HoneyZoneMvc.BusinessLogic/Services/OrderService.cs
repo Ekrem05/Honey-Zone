@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
 using HoneyZoneMvc.BusinessLogic.Enums;
 using static HoneyZoneMvc.Constraints.DataConstants;
+using HoneyZoneMvc.BusinessLogic.Contracts.SubContracts;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
 {
@@ -24,30 +25,30 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             stateService = _serviceState;
         }
 
-        public async Task AddAsync(string userId, double totalSum, string deliveryMethodId, OrderDetailViewModel vm, List<OrderProduct> orderProducts)
+        public async Task AddAsync(OrderAddViewModel vm)
         {
             await dbContext.Orders.AddAsync(new Order()
             {
-                ClientId = userId,
-                TotalSum = totalSum,
-                DeliveryMethodId = Guid.Parse(deliveryMethodId),
-                OrderDate = DateTime.Now,
+                ClientId = Guid.Parse(vm.ClientId),
+                TotalSum = vm.TotalSum,
+                DeliveryMethodId = Guid.Parse(vm.DeliveryMethodId),
+                OrderDate = vm.OrderDate,
                 State = await stateService.GetInitialOrderStatus(),
-                ExpectedDelivery = DateTime.Now.AddDays(7),
+                ExpectedDelivery = DateTime.Now.AddDays(3),
                 OrderDetail = new OrderDetail()
                 {
-                    FirstName = vm.FirstName,
-                    SecondName = vm.SecondName,
-                    PhoneNumber = vm.PhoneNumber,
-                    Email = vm.Email,
-                    Address = vm.Address,
-                    City = vm.City,
-                    ZipCode = vm.ZipCode
+                    FirstName = vm.OrderDetail.FirstName,
+                    SecondName = vm.OrderDetail.SecondName,
+                    PhoneNumber = vm.OrderDetail.PhoneNumber,
+                    Email = vm.OrderDetail.Email,
+                    Address = vm.OrderDetail.Address,
+                    City = vm.OrderDetail.City,
+                    ZipCode = vm.OrderDetail.ZipCode
                 },
-                OrderProducts = orderProducts
+                OrderProducts = vm.OrderProducts
 
             });
-            foreach (var item in orderProducts)
+            foreach (var item in vm.OrderProducts)
             {
                 await productService.IncreaseTotalOrdersAsync(item.ProductId.ToString(), item.Quantity);
                 await productService.DecreaseQuantityAsync(item.ProductId.ToString());
@@ -161,7 +162,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 .Include(Id => Id.DeliveryMethod)
                 .Include(Id => Id.OrderProducts)
                 .Include(Id => Id.State)
-                .Where(o => o.ClientId == userId).ToListAsync();
+                .Where(o => o.ClientId.ToString() == userId).ToListAsync();
             if (orders == null)
             {
                 throw new ArgumentNullException();
@@ -265,6 +266,5 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             await dbContext.SaveChangesAsync();
         }
 
-       
     }
 }

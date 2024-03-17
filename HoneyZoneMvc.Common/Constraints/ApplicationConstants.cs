@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace HoneyZoneMvc.Common.Constraints
 {
-    public class ApplicationConstants
+    public static class ApplicationConstants
     {
         public const string AdminAreaName = "Admin";
+        public const string AdministratorRoleName = "Admin";
     }
 }

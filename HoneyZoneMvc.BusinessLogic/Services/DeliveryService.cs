@@ -23,7 +23,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             throw new NotImplementedException();
         }
 
-        public async Task<ICollection<DeliveryMethodViewModel>> GetAllAsync()
+        public async Task<IEnumerable<DeliveryMethodViewModel>> AllAsync()
         {
             var items = await dbContext.DeliverMethods.ToListAsync();
             var deliveries= items.Select(d => new DeliveryMethodViewModel()
@@ -40,6 +40,11 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         }
 
         public Task<bool> UpdateAsync(DeliveryMethodViewModel entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<DeliveryMethodViewModel> GetByIdAsync(string Id)
         {
             throw new NotImplementedException();
         }

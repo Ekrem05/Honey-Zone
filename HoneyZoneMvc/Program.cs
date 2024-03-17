@@ -3,7 +3,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.ConfigureApplication(builder.Configuration);
-
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/User/Login";
+    options.LogoutPath = "/User/Logout";
+    options.AccessDeniedPath = "/Home/AccessDenied";
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -35,6 +40,6 @@ app.UseEndpoints(config =>
 
     config.MapDefaultControllerRoute();
 
-    config.MapRazorPages();
+ 
 });
 app.Run();

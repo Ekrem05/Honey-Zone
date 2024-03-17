@@ -1,16 +1,13 @@
-﻿using HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels;
+﻿using HoneyZoneMvc.BusinessLogic.Contracts.SubContracts;
+using HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {
-    public interface ICategoryService
+    public interface ICategoryService:IAddable<CategoryAddViewModel>
+        ,IUpdateAble<CategoryAddViewModel>
+        ,IDeletable
+        ,IReadable<CategoryViewModel>
     {
-
-        Task AddAsync(CategoryAddViewModel category);
-        Task<IEnumerable<CategoryViewModel>> AllAsync();
-        Task UpdateAsync(CategoryAddViewModel category);
-        Task DeleteAsync(string Id);
-        Task<CategoryViewModel> GetById(string name);
         Task<bool> ExistsAsync(string Id);
-
     }
 }

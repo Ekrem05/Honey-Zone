@@ -3,16 +3,17 @@ using HoneyZoneMvc.Data;
 using HoneyZoneMvc.BusinessLogic.ViewModels.User;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using HoneyZoneMvc.Infrastructure.Data.Models.IdentityModels;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
 {
     public class UserService : IUserService
     {
         private readonly ApplicationDbContext dbContext;
-        private readonly UserManager<IdentityUser> userManager;
-        private readonly RoleManager<IdentityRole> roleManager;
+        private readonly UserManager<ApplicationUser> userManager;
+        private readonly RoleManager<ApplicationRole> roleManager;
 
-        public UserService(UserManager<IdentityUser> _userManager, RoleManager<IdentityRole> _roleManager)
+        public UserService(UserManager<ApplicationUser> _userManager, RoleManager<ApplicationRole> _roleManager)
         {
             userManager = _userManager;
             roleManager = _roleManager;
@@ -23,7 +24,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
             var userViewModels = users.Select(async u => new UserViewModel
             {
-                Id = u.Id,
+                Id = u.Id.ToString(),
                 UserName = u.UserName,
                 Email = u.Email,
                 PhoneNumber = u.PhoneNumber,
@@ -34,7 +35,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return completedViewModels;
         }
 
-        private async Task<string> GetRole(IdentityUser u)
+        private async Task<string> GetRole(ApplicationUser u)
         {
             if (await userManager.IsInRoleAsync(u, "Admin"))
             {

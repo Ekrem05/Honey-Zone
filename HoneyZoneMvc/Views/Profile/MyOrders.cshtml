@@ -2,14 +2,18 @@
 
 @if (@TempData["Message"] != null)
 {
-    <div class="alert alert-secondary alert-dismissible mt-2">
+    <div class="alert alert-success alert-dismissible mt-2">
         @TempData["Message"]
         <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
     </div>
 }
-<section class="products-cart">
- 
-            @foreach (var order in Model)
+<section class="products-cart ">
+    @if(Model.Count() == 0)
+    {
+        <h2 class="text-center text-light">You have no orders</h2>
+    }
+   
+   @foreach (var order in Model)
             {
                  <div>
                         <button class="btn my-orders" data-bs-toggle="collapse" data-bs-target="#order-products-@(order.GetHashCode())" aria-expanded="false" aria-controls="collapseExample">

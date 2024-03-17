@@ -20,7 +20,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             productService = _productService;
         }
      
-        public async Task DeleteCartProductAsync(IHttpContextAccessor httpContextAccessor)
+        public async Task DeleteAsync(IHttpContextAccessor httpContextAccessor)
         {
             if (httpContextAccessor.HttpContext.Request.Cookies.ContainsKey("Cart"))
             {
@@ -35,7 +35,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         public async Task AddOrUpdateCart(IHttpContextAccessor httpContextAccessor,string productId, int quantity)
         {
             
-                var cartItems = await GetProductsFromCart(httpContextAccessor);
+                var cartItems = await ProductsFromCart(httpContextAccessor);
                 var existingCartItem = cartItems
                     .Find(item => item.ProductId == productId);
 
@@ -57,9 +57,9 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         }
 
        
-        public async Task<double> GetCartSumAsync(IHttpContextAccessor httpContextAccessor)
+        public async Task<double> CartSumAsync(IHttpContextAccessor httpContextAccessor)
         {
-            var cartProducts=await GetProductsFromCart(httpContextAccessor);
+            var cartProducts=await ProductsFromCart(httpContextAccessor);
             if (cartProducts.Count==0)
             {
                 throw new ArgumentNullException();
@@ -79,7 +79,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         }
 
 
-        public async Task<List<PostProductCartViewModel>> GetProductsFromCart(IHttpContextAccessor httpContextAccessor)
+        public async Task<List<PostProductCartViewModel>> ProductsFromCart(IHttpContextAccessor httpContextAccessor)
         {
             var httpContext = httpContextAccessor.HttpContext;
             List<PostProductCartViewModel> cartItems = new List<PostProductCartViewModel>();
