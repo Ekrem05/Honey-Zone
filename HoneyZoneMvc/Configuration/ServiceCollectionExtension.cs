@@ -5,6 +5,8 @@ using HoneyZoneMvc.Data;
 using HoneyZoneMvc.BusinessLogic.AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using HoneyZoneMvc.Infrastructure.Data.Models.IdentityModels;
+using Microsoft.Extensions.Options;
 namespace Microsoft.Extensions.DependencyInjection
 {
     public static class ServiceCollectionExtension
@@ -41,15 +43,19 @@ namespace Microsoft.Extensions.DependencyInjection
         }
         private static IServiceCollection AddIdentityWithRoles(this IServiceCollection services)
         {
-            services.AddDefaultIdentity<IdentityUser>(options =>
+            services.AddIdentity<ApplicationUser,ApplicationRole>(services =>
             {
-                options.SignIn.RequireConfirmedAccount = false;
-                options.SignIn.RequireConfirmedPhoneNumber = false;
-                options.Password.RequireDigit = false;
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireUppercase = false;
+                services.SignIn.RequireConfirmedAccount = false;
+                services.SignIn.RequireConfirmedPhoneNumber = false;
+                services.Password.RequireDigit = false;
+                services.Password.RequireNonAlphanumeric = false;
+                services.Password.RequireUppercase = false;
             })
+            .AddRoles<ApplicationRole>()
            .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddControllersWithViews();
+            
             return services;
         }
     }
