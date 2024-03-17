@@ -14,6 +14,7 @@ namespace HoneyZoneMvc.BusinessLogic.AutoMapper
              .ReverseMap(); 
 
             CreateMap<ProductAdminViewModel, ProductEditViewModel>()
+                .ForMember(m => m.CategoryId, map => map.MapFrom(a => a.CategoryId))
                 .ForMember(m => m.Categories, map => map.Ignore());
 
 
@@ -25,7 +26,7 @@ namespace HoneyZoneMvc.BusinessLogic.AutoMapper
             CreateMap<Product, ProductAdminViewModel>()
                    .ForMember(vm => vm.Id, map => map.MapFrom(m => m.Id.ToString()))
                    .ForMember(vm => vm.MainImageName, map => map.MapFrom(m => m.MainImageUrl))
-                   .ForMember(vm => vm.CategoryId, map =>map.MapFrom(m=>m.Category.Name))
+                   .ForMember(vm => vm.CategoryId, map =>map.MapFrom(m=>m.Category.Id))
                    .ForMember(vm => vm.Images, map => map.MapFrom(m => m.Images.Select(i => i.Name).ToArray()));
 
             CreateMap<ProductAdminViewModel, ProductShopDetailsViewModel>()

@@ -29,6 +29,6 @@ namespace HoneyZoneMvc.BusinessLogic.ViewModels.Order
 
         public OrderDetailViewModel OrderDetail { get; set; } = null!;
 
-        public ICollection<OrderProduct> OrderProducts { get; set; } = new HashSet<OrderProduct>();
+        public IEnumerable<OrderProduct> OrderProducts { get; set; } = new HashSet<OrderProduct>();
     }
 }

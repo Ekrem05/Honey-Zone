@@ -29,7 +29,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             await dbContext.Orders.AddAsync(new Order()
             {
-                ClientId = vm.ClientId,
+                ClientId = Guid.Parse(vm.ClientId),
                 TotalSum = vm.TotalSum,
                 DeliveryMethodId = Guid.Parse(vm.DeliveryMethodId),
                 OrderDate = vm.OrderDate,
@@ -162,7 +162,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 .Include(Id => Id.DeliveryMethod)
                 .Include(Id => Id.OrderProducts)
                 .Include(Id => Id.State)
-                .Where(o => o.ClientId == userId).ToListAsync();
+                .Where(o => o.ClientId.ToString() == userId).ToListAsync();
             if (orders == null)
             {
                 throw new ArgumentNullException();
