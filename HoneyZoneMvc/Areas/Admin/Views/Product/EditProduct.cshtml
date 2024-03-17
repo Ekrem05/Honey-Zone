@@ -33,7 +33,7 @@
         <div class="mb-3">
             <label asp-for="CategoryId" class="control-label">Категория</label>
             <select asp-for="@Model.CategoryId" class="form-control" aria-required="true">
-                <option selected value="@Model.CategoryId">@Model.CategoryId</option>
+                <option selected value="@Model.CategoryId">@Model.Categories.FirstOrDefault(c=>c.Id==Model.CategoryId).Name</option>
                 @foreach (var category in Model.Categories)
                 {
                     <option value="@category.Id">@category.Name</option>
