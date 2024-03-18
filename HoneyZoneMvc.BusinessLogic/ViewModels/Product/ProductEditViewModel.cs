@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using static HoneyZoneMvc.Common.Messages.ValidationMessages;
+using System.ComponentModel;
 namespace HoneyZoneMvc.BusinessLogic.ViewModels.Product
 {
     public class ProductEditViewModel
@@ -16,6 +17,7 @@ namespace HoneyZoneMvc.BusinessLogic.ViewModels.Product
         public string Name { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredField)]
+        [DisplayName("Category")]
         public string CategoryId { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredField)]
@@ -28,12 +30,15 @@ namespace HoneyZoneMvc.BusinessLogic.ViewModels.Product
 
         [Required]
         [Range(DataConstants.Product.InStockMinValue, DataConstants.Product.InStockMaxValue, ErrorMessage = ProductInStockValueValidation)]
+        [DisplayName("Quantity In Stock")]
         public int QuantityInStock { get; set; }
 
         [Required]
-        [RegularExpression("^\\d+\\s?(ml|l|g|mg|kg)$", ErrorMessage = ProductAmountValueValidation)]
+        [RegularExpression(DataConstants.Product.AmountRegx, ErrorMessage = ProductAmountValueValidation)]
+        [DisplayName("Product Amount")]
         public string ProductAmount { get; set; } = string.Empty;
-        [AllowNull]
+
+
         public IEnumerable<CategoryViewModel> Categories { get; set; }= new List<CategoryViewModel>();
 
     }

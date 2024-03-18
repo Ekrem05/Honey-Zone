@@ -1,6 +1,11 @@
 .search-bar {
   text-align: center;
 }
+#user-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .pager {
     display: flex;
     justify-content: space-between;

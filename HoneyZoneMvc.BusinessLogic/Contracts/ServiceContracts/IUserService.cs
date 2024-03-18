@@ -1,9 +1,12 @@
-﻿using HoneyZoneMvc.BusinessLogic.ViewModels.User;
+﻿using HoneyZoneMvc.BusinessLogic.Contracts.SubContracts;
+using HoneyZoneMvc.BusinessLogic.ViewModels.User;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {
-    public interface IUserService
+    public interface IUserService:IReadable<UserViewModel>
     {
-        Task<IEnumerable<UserViewModel>> GetAllUsersAsync();
+        Task<AllUsersQueryModel> AllAsync(string role,string searchTerm,int currentPage,int usersPerPage);
+        Task<IEnumerable<UserViewModel>> GetByRoleAsync(string role);
+        Task AddUserToRoleAsync(string roleName, string userId);
     }
 }

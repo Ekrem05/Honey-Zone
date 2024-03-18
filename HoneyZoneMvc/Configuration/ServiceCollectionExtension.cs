@@ -28,6 +28,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IStatusService, StatusService>();
             services.AddScoped<IImageService, ImageService>();
+            services.AddScoped<IUserService, UserService>();
             services.AddAutoMapper(typeof(Program),typeof(ProductProfile));
             return services;
         }
