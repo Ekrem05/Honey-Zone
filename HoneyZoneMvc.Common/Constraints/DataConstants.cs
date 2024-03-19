@@ -14,7 +14,7 @@
             public const int InStockMaxValue = 10000;
             public const int DiscountMaxValue = 100;
             public const int DiscountMinValue = 1;
-            public const string AmountRegx = "^(Single Item|\\d+(\\.\\d+)?\\s?(ml|l|g|mg|kg))$";
+            public const string AmountRegx = "^\\d+\\s?(ml|l|g|mg|kg)$";
         }
         public const string DateFormat = "dd/MM/yyyy";
 

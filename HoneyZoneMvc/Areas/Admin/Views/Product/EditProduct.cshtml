@@ -11,7 +11,7 @@
     <form asp-action="SubmitChanges" method="post" enctype="multipart/form-data">
         <input hidden asp-for="Id" value="@Model.Id"/>
         <div class="mb-3">
-            <label class="form-label" asp-for="Name"></label>
+            <label class="form-label" asp-for="Name">Име:</label>
             <input type="text"
                    class="form-control"
                    id="NameEdit"
@@ -20,7 +20,7 @@
         </div>
 
         <div class="input-group">
-            <label class="form-label m-1" asp-for="Price"></label>
+            <label class="form-label m-1" asp-for="Price">Цена:</label>
             <input type="number"
                    class="form-control"
                    id="PriceEdit"
@@ -31,7 +31,7 @@
         </div>
        
         <div class="mb-3">
-            <label asp-for="CategoryId" class="control-label"></label>
+            <label asp-for="CategoryId" class="control-label">Категория</label>
             <select asp-for="@Model.CategoryId" class="form-control" aria-required="true">
                 <option selected value="@Model.CategoryId">@Model.Categories.FirstOrDefault(c=>c.Id==Model.CategoryId).Name</option>
                 @foreach (var category in Model.Categories)
@@ -42,7 +42,7 @@
             <span asp-validation-for="CategoryId" class="bg-danger"></span>
         </div>
         <div class="mb-3">
-            <label class="form-label" asp-for="QuantityInStock"></label>
+            <label class="form-label" asp-for="QuantityInStock">Количество в склад:</label>
             <input type="number"
                    class="form-control"
                    id="QuantityInStockEdit"
@@ -50,16 +50,16 @@
             <span asp-validation-for="QuantityInStock" class="bg-danger"></span>
         </div>
         <div class="mb-3">
-            <label class="form-label" asp-for="ProductAmount"></label>
+            <label class="form-label" asp-for="ProductAmount">Дозировка:</label>
             <input type="text"
                    class="form-control"
                    id="ProductQuantityEdit"
-                   asp-for="ProductAmount" placeholder="Single Item/500g/1.5kg/2l" />
+                   asp-for="ProductAmount" />
             <span asp-validation-for="ProductAmount" class="bg-danger"></span>
             
         </div>
         <div class="mb-3">
-            <label class="form-label" asp-for="Description"></label>
+            <label class="form-label" asp-for="Description">Описание:</label>
             <input rows="4" cols="50" type="text"
                    class="form-control"
                    id="DescriptionEdit"

@@ -14,19 +14,13 @@ namespace HoneyZoneMvc.BusinessLogic.Services
     {
         private readonly IProductService productService;
         private readonly IStatusService stateService;
-        private readonly IUserService userService;
         private ApplicationDbContext dbContext;
 
-        public OrderService(ApplicationDbContext _dbContext, 
-            IProductService _productService, 
-            IStatusService _serviceState,
-            IUserService _userService
-            )
+        public OrderService(ApplicationDbContext _dbContext, IProductService _productService, IStatusService _serviceState)
         {
             dbContext = _dbContext;
             productService = _productService;
             stateService = _serviceState;
-            userService = _userService;
         }
 
         public async Task AddAsync(OrderAddViewModel vm)
@@ -57,7 +51,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 await productService.IncreaseTotalOrdersAsync(item.ProductId.ToString(), item.Quantity);
                 await productService.DecreaseQuantityAsync(item.ProductId.ToString());
             }
-            await userService.AddUserToRoleAsync(nameof(Roles.Client), vm.ClientId);
+
             await dbContext.SaveChangesAsync();
         }
         public async Task DeleteAsync(string Id)
