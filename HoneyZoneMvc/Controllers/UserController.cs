@@ -1,5 +1,4 @@
-﻿using HoneyZoneMvc.BusinessLogic.Services;
-using HoneyZoneMvc.BusinessLogic.ViewModels.User;
+﻿using HoneyZoneMvc.BusinessLogic.ViewModels.User;
 using HoneyZoneMvc.Infrastructure.Data.Models.IdentityModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -68,7 +67,7 @@ namespace HoneyZoneMvc.Controllers
             await userManager.AddToRoleAsync(user, nameof(Roles.User));
             if (result.Succeeded)
             {
-                await signInManager.SignInAsync(user, isPersistent: false);              
+                await signInManager.SignInAsync(user, isPersistent: false);
                 return RedirectToAction("Index", "Home");
             }
 
@@ -91,7 +90,7 @@ namespace HoneyZoneMvc.Controllers
 
             var model = new LoginViewModel();
 
-           
+
             return View(model);
         }
 
@@ -105,7 +104,7 @@ namespace HoneyZoneMvc.Controllers
             }
 
             var user = await userManager.FindByEmailAsync(model.Email);
-            
+
             if (user != null)
             {
                 var result = await signInManager.PasswordSignInAsync(user, model.Password, false, false);
@@ -128,7 +127,7 @@ namespace HoneyZoneMvc.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-      
-       
+
+
     }
 }

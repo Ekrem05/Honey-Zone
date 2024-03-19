@@ -2,17 +2,12 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HoneyZoneMvc.Infrastructure.Database_Configuration
 {
     public class UserConfiguration : IEntityTypeConfiguration<ApplicationUser>
     {
-        private PasswordHasher<ApplicationUser> passwordHasher=new PasswordHasher<ApplicationUser>();
+        private PasswordHasher<ApplicationUser> passwordHasher = new PasswordHasher<ApplicationUser>();
         public void Configure(EntityTypeBuilder<ApplicationUser> builder)
         {
             builder.HasData(new ApplicationUser()

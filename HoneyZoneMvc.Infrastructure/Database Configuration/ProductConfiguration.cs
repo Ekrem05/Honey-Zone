@@ -1,7 +1,6 @@
 ﻿using HoneyZoneMvc.Infrastructure.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace HoneyZoneMvc.Infrastructure.Configuration
 {
@@ -42,7 +41,7 @@ namespace HoneyZoneMvc.Infrastructure.Configuration
                  ProductAmount = "1kg",
                  TimesOrdered = 0,
                  MainImageUrl = "attachment_86137655.jpg"
-             }, 
+             },
              new Product()
              {
                  Id = Guid.NewGuid(),
@@ -109,8 +108,8 @@ namespace HoneyZoneMvc.Infrastructure.Configuration
                  ProductAmount = "Single item",
                  TimesOrdered = 0,
                  MainImageUrl = "coffee-cup-bees.jpg"
-             }); 
+             });
         }
-        
+
     }
 }

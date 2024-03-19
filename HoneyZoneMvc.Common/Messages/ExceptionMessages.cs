@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HoneyZoneMvc.Common.Messages
+﻿namespace HoneyZoneMvc.Common.Messages
 {
     public static class ExceptionMessages
     {
@@ -16,7 +10,7 @@ namespace HoneyZoneMvc.Common.Messages
             public const string NoProductsWithGivenId = "There is no product with id {0}";
             public const string DiscountCannotBeCancelled = "Discount cannot be cancelled because there isn't one!";
         }
-       
+
         public const string ModelStateInvalid = "Invalid model state";
         public static class CategoryMessages
         {
@@ -28,7 +22,7 @@ namespace HoneyZoneMvc.Common.Messages
         }
         public static class OrderMessages
         {
-           public const string OrderNotFound="Order not found!";
+            public const string OrderNotFound = "Order not found!";
 
         }
         public const string UserNotFound = "User not found!";

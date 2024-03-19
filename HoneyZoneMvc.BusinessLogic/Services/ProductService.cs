@@ -1,14 +1,13 @@
-﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
-using HoneyZoneMvc.Data;
+﻿using AutoMapper;
+using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
+using HoneyZoneMvc.BusinessLogic.Enums;
 using HoneyZoneMvc.BusinessLogic.ViewModels.Product;
 using HoneyZoneMvc.Common.Messages;
+using HoneyZoneMvc.Data;
+using HoneyZoneMvc.Infrastructure.Data.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
-using static System.Net.Mime.MediaTypeNames;
-using HoneyZoneMvc.Infrastructure.Data.Models;
-using AutoMapper;
-using HoneyZoneMvc.BusinessLogic.Enums;
 namespace HoneyZoneMvc.BusinessLogic.Services
 {
     public class ProductService : IProductService
@@ -17,11 +16,11 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         private ICategoryService categoryService;
         private IImageService imageService;
         private IMapper mapper;
-        public ProductService(ApplicationDbContext _dbContext, ICategoryService _categoryService, IImageService _imageService,IMapper _mapper)
+        public ProductService(ApplicationDbContext _dbContext, ICategoryService _categoryService, IImageService _imageService, IMapper _mapper)
         {
             dbContext = _dbContext;
             categoryService = _categoryService;
-           imageService = _imageService;
+            imageService = _imageService;
             mapper = _mapper;
         }
         public async Task AddAsync(ProductAddViewModel product)
@@ -54,7 +53,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             }
             await dbContext.Products.AddAsync(productToAdd);
             await dbContext.SaveChangesAsync();
-           
+
 
         }
 
@@ -96,7 +95,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 ProductSorting.Price => products.OrderBy(p => p.Price).ToList(),
                 ProductSorting.TimesOrdered => products.OrderByDescending(p => p.TimesOrdered).ToList(),
                 _ => products
-                .OrderBy(p=>p.Name).ToList()
+                .OrderBy(p => p.Name).ToList()
             };
             var productsToShow = products
                 .Skip((currentPage - 1) * productsPerPage)
@@ -105,7 +104,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
             return new AllProductsQueryModel
             {
-                Categories = (await categoryService.AllAsync()).Select(c=>c.Name).ToList(),
+                Categories = (await categoryService.AllAsync()).Select(c => c.Name).ToList(),
                 Products = productsToShow,
                 TotalProductsCount = products.Count()
             };
@@ -157,7 +156,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
             if (model != null)
             {
-                var item =mapper.Map<ProductAdminViewModel>(model);
+                var item = mapper.Map<ProductAdminViewModel>(model);
                 return item;
             }
 
@@ -194,7 +193,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 productToEdit.QuantityInStock = product.QuantityInStock;
             }
             dbContext.SaveChanges();
-            
+
         }
 
         public async Task DeleteAsync(string Id)
@@ -215,7 +214,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             dbContext.ImageUrls.RemoveRange(dbContext.ImageUrls.Where(i => i.ProductId == product.Id));
             dbContext.Remove(product);
             await dbContext.SaveChangesAsync();
-           
+
         }
 
         public async Task SetDiscountAsync(ProductDiscountViewModel vm)
@@ -228,12 +227,12 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             product.IsDiscounted = true;
             product.Discount = vm.Discount;
             await dbContext.SaveChangesAsync();
-        
+
         }
 
         public async Task SetDiscountByCategoryAsync(string Id, double discount)
         {
-            if (Id==null)
+            if (Id == null)
             {
                 throw new ArgumentNullException();
             }
@@ -248,25 +247,25 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 item.Discount = discount;
             }
             await dbContext.SaveChangesAsync();
-           
+
         }
 
         public async Task RemoveDiscountAsync(string Id)
         {
-            if (Id==null)
+            if (Id == null)
             {
                 throw new ArgumentNullException();
 
             }
             var product = dbContext.Products.FirstOrDefault(p => p.Id.ToString() == Id);
-            if (product==null)
+            if (product == null)
             {
                 throw new ArgumentNullException();
             }
             product.Discount = 0;
             product.IsDiscounted = false;
             await dbContext.SaveChangesAsync();
-           
+
         }
 
 
@@ -282,12 +281,12 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         }
         public async Task IncreaseTotalOrdersAsync(string Id, int quantity)
         {
-            if (Id==null)
+            if (Id == null)
             {
                 throw new ArgumentNullException(IdNull);
             }
             var product = dbContext.Products.FirstOrDefault(p => p.Id.ToString() == Id);
-            if (product==null)
+            if (product == null)
             {
                 throw new ArgumentNullException(string.Format(ProductMessages.NoProductsWithGivenId, Id));
             }

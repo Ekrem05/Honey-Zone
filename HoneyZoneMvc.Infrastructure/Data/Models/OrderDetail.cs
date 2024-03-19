@@ -1,7 +1,6 @@
 ﻿using HoneyZoneMvc.Constraints;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
-using static HoneyZoneMvc.Common.Messages.ValidationMessages;
 
 namespace HoneyZoneMvc.Infrastructure.Data.Models
 {

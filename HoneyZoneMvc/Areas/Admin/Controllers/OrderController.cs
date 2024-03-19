@@ -1,20 +1,18 @@
-﻿using AutoMapper;
-using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
+﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.BusinessLogic.ViewModels.Order;
 using Microsoft.AspNetCore.Mvc;
 using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
-using System;
 
 using static HoneyZoneMvc.Common.Messages.SuccessfulMessages;
 namespace HoneyZoneMvc.Areas.Admin.Controllers
 {
-    
+
     public class OrderController : BaseAdminController
     {
         private readonly IOrderService orderService;
-       
+
         public OrderController(IOrderService _orderService)
-        {  
+        {
             orderService = _orderService;
         }
 

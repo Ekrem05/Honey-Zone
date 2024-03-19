@@ -1,7 +1,7 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
+using HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels;
 using Microsoft.EntityFrameworkCore;
 using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
 
@@ -25,8 +25,8 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 throw new InvalidOperationException(CategoryMessages.CategoryExists);
             }
             dbContext.Categories.Add(new Category() { Name = category.Name });
-           await dbContext.SaveChangesAsync();
-            
+            await dbContext.SaveChangesAsync();
+
         }
 
         public async Task<bool> ExistsAsync(string Id)
@@ -36,23 +36,23 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task DeleteAsync(string Id)
         {
-            if(Id == null)
+            if (Id == null)
             {
                 throw new ArgumentNullException();
             }
             bool result = await dbContext.Products.AnyAsync(p => p.CategoryId.ToString() == Id);
             if (result)
             {
-               throw new InvalidOperationException(CategoryMessages.CategoryCannotBeDeleted);
+                throw new InvalidOperationException(CategoryMessages.CategoryCannotBeDeleted);
             }
             var category = await dbContext.Categories.FirstOrDefaultAsync(c => c.Id.ToString() == Id);
-            if (category==null)
+            if (category == null)
             {
                 throw new ArgumentNullException();
             }
             dbContext.Categories.Remove(category);
             await dbContext.SaveChangesAsync();
-            
+
 
         }
 

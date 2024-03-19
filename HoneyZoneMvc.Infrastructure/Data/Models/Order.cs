@@ -1,5 +1,4 @@
 ﻿using HoneyZoneMvc.Infrastructure.Data.Models.IdentityModels;
-using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;

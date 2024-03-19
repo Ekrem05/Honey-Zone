@@ -1,14 +1,12 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
+using HoneyZoneMvc.BusinessLogic.Enums;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Order;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Product;
 using HoneyZoneMvc.Constraints;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.BusinessLogic.ViewModels.Order;
-using HoneyZoneMvc.BusinessLogic.ViewModels.Product;
 using Microsoft.EntityFrameworkCore;
 using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
-using HoneyZoneMvc.BusinessLogic.Enums;
-using static HoneyZoneMvc.Constraints.DataConstants;
-using HoneyZoneMvc.BusinessLogic.Contracts.SubContracts;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
 {
@@ -75,7 +73,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return await dbContext.Orders.ToListAsync();
         }
 
-        public async Task<AllOrdersQueryModel> AllAsync(int day=0, int month=0, int year=0,
+        public async Task<AllOrdersQueryModel> AllAsync(int day = 0, int month = 0, int year = 0,
             string? searchTerm = null,
             OrderSorting sorting = OrderSorting.Date,
             int currentPage = 1,
@@ -86,7 +84,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 .Include(x => x.DeliveryMethod)
                 .Include(x => x.State)
                 .AsQueryable();
-            if (day>0)
+            if (day > 0)
             {
                 orders = orders.Where(o => o.OrderDate.Day == day);
             }
@@ -100,9 +98,9 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             }
             if (searchTerm != null)
             {
-                orders = orders.Where(x => 
+                orders = orders.Where(x =>
                 x.OrderDetail.FirstName
-                .ToLower().Contains(searchTerm.ToLower()) || 
+                .ToLower().Contains(searchTerm.ToLower()) ||
                 x.OrderDetail.SecondName
                 .ToLower().Contains(searchTerm.ToLower()) ||
                 x.OrderDetail.PhoneNumber.StartsWith(searchTerm)
@@ -222,7 +220,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 .Include(Id => Id.OrderProducts)
                 .Include(Id => Id.State)
                 .FirstOrDefaultAsync(o => o.Id.ToString() == Id);
-            if (order==null)
+            if (order == null)
             {
                 throw new ArgumentNullException();
             }
@@ -259,12 +257,12 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task ChangeStatusAsync(ChangeOrderStatusViewModel vm)
         {
-            if (vm.Id==null)
+            if (vm.Id == null)
             {
                 throw new ArgumentNullException(IdNull);
             }
             var order = dbContext.Orders.FirstOrDefault(x => x.Id.ToString() == vm.Id);
-            if (order==null)
+            if (order == null)
             {
                 throw new ArgumentNullException(OrderMessages.OrderNotFound);
             }

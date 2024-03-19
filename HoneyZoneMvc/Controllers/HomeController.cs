@@ -1,6 +1,6 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
-using HoneyZoneMvc.Common.Messages;
 using HoneyZoneMvc.BusinessLogic.ViewModels.Errors;
+using HoneyZoneMvc.Common.Messages;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -11,7 +11,7 @@ namespace HoneyZoneMvc.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IProductService productService;
 
-        public HomeController(ILogger<HomeController> logger,IProductService _productService)
+        public HomeController(ILogger<HomeController> logger, IProductService _productService)
         {
             _logger = logger;
             productService = _productService;
@@ -26,10 +26,10 @@ namespace HoneyZoneMvc.Controllers
             }
             catch (Exception)
             {
-                TempData["Message"]=ExceptionMessages.GeneralException;
+                TempData["Message"] = ExceptionMessages.GeneralException;
                 return RedirectToAction("Error", new { statusCode = 500 });
             }
-            
+
         }
 
         public IActionResult Privacy()
@@ -40,7 +40,7 @@ namespace HoneyZoneMvc.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error(int statusCode)
         {
-            if (statusCode==404)
+            if (statusCode == 404)
             {
                 return View("Error404");
             }

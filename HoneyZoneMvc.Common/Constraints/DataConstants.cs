@@ -37,7 +37,7 @@
             public const int PhoneNumberMaxValue = 13;
             public const int PhoneNumberMinValue = 10;
 
-            public const int ZipCodeLength= 4;
+            public const int ZipCodeLength = 4;
         }
 
         public static class Satus

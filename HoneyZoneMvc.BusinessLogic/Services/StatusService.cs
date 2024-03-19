@@ -1,8 +1,8 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Status;
 using HoneyZoneMvc.Constraints;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.BusinessLogic.ViewModels.Status;
 using Microsoft.EntityFrameworkCore;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
@@ -18,7 +18,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<IEnumerable<StatusViewModel>> GetAllAsync()
         {
-            return await(dbContext.States
+            return await (dbContext.States
                  .AsNoTracking()
                  .Select(s => new StatusViewModel()
                  {

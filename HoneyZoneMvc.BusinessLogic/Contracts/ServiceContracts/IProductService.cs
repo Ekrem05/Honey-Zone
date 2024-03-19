@@ -4,12 +4,12 @@ using HoneyZoneMvc.BusinessLogic.ViewModels.Product;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {
-    public interface IProductService:IAddable<ProductAddViewModel>
-        ,IUpdateAble<ProductEditViewModel>
-        ,IDeletable
-        ,IReadable<ProductAdminViewModel>
+    public interface IProductService : IAddable<ProductAddViewModel>
+        , IUpdateAble<ProductEditViewModel>
+        , IDeletable
+        , IReadable<ProductAdminViewModel>
     {
-        Task<AllProductsQueryModel> AllAsync(string category, string searchTerm, ProductSorting sorting, int currentPage, int productsPerPage);  
+        Task<AllProductsQueryModel> AllAsync(string category, string searchTerm, ProductSorting sorting, int currentPage, int productsPerPage);
         Task<IEnumerable<ProductAdminViewModel>> GetByCategoryNameAsync(string category);
         Task<IEnumerable<ProductAdminViewModel>> GetByCategoryIdAsync(string Id);
         Task SetDiscountAsync(ProductDiscountViewModel vm);

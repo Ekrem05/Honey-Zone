@@ -1,5 +1,5 @@
-﻿using HoneyZoneMvc.Constraints;
-using HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels;
+﻿using HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels;
+using HoneyZoneMvc.Constraints;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 using static HoneyZoneMvc.Common.Messages.ValidationMessages;

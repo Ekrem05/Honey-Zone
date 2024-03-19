@@ -40,6 +40,6 @@ app.UseEndpoints(config =>
 
     config.MapDefaultControllerRoute();
 
- 
+
 });
 app.Run();

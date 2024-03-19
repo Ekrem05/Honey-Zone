@@ -1,6 +1,6 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
-using HoneyZoneMvc.Data;
 using HoneyZoneMvc.BusinessLogic.ViewModels.Delivery;
+using HoneyZoneMvc.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
@@ -26,7 +26,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         public async Task<IEnumerable<DeliveryMethodViewModel>> AllAsync()
         {
             var items = await dbContext.DeliverMethods.ToListAsync();
-            var deliveries= items.Select(d => new DeliveryMethodViewModel()
+            var deliveries = items.Select(d => new DeliveryMethodViewModel()
             {
                 Id = d.Id.ToString(),
                 Name = d.Name

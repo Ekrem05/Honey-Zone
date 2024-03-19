@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
-using HoneyZoneMvc.BusinessLogic.Services;
 using HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels;
 using HoneyZoneMvc.BusinessLogic.ViewModels.Product;
 using Microsoft.AspNetCore.Mvc;
@@ -179,7 +178,7 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
         public async Task<IActionResult> ProductDiscount()
         {
             DiscountByCategoryViewModel vm = new DiscountByCategoryViewModel();
-            vm.Categories=await categoryService.AllAsync();
+            vm.Categories = await categoryService.AllAsync();
             return View(vm);
         }
 

@@ -1,25 +1,20 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
-using HoneyZoneMvc.Data;
 using HoneyZoneMvc.BusinessLogic.ViewModels.CartProduct;
-using HoneyZoneMvc.Infrastructure.Data.Models;
-using Microsoft.EntityFrameworkCore;
+using HoneyZoneMvc.Data;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
-using static HoneyZoneMvc.Constraints.DataConstants;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
 {
     public class CartProductService : ICartProductService
     {
-        private ApplicationDbContext dbContext;
         private IProductService productService;
 
-        public CartProductService(ApplicationDbContext _dbContext,IProductService _productService)
+        public CartProductService(IProductService _productService)
         {
-            dbContext = _dbContext;
             productService = _productService;
         }
-     
+
         public async Task DeleteAsync(IHttpContextAccessor httpContextAccessor)
         {
             if (httpContextAccessor.HttpContext.Request.Cookies.ContainsKey("Cart"))
@@ -32,47 +27,61 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             }
         }
 
-        public async Task AddOrUpdateCart(IHttpContextAccessor httpContextAccessor,string productId, int quantity)
+        public async Task AddOrUpdateCart(IHttpContextAccessor httpContextAccessor, string productId, int quantity)
         {
-            
-                var cartItems = await ProductsFromCart(httpContextAccessor);
-                var existingCartItem = cartItems
-                    .Find(item => item.ProductId == productId);
 
-                if (existingCartItem != null)
-                {
-                    existingCartItem.Quantity = quantity;
-                }
-                else
-                {
-                    cartItems.Add(new PostProductCartViewModel { ProductId = productId, Quantity = quantity });
-                }
+            var cartItems = await ProductsFromCart(httpContextAccessor);
+            var existingCartItem = cartItems
+                .Find(item => item.ProductId == productId);
 
-                var cartCookieValue = JsonConvert.SerializeObject(cartItems);
-                httpContextAccessor.HttpContext.Response.Cookies.Append("Cart", cartCookieValue, new CookieOptions
-                {
-                    Expires = DateTimeOffset.Now.AddDays(3) 
-                });
-            
+            if (existingCartItem != null)
+            {
+                existingCartItem.Quantity = quantity;
+            }
+            else
+            {
+                cartItems.Add(new PostProductCartViewModel { ProductId = productId, Quantity = quantity });
+            }
+
+            var cartCookieValue = JsonConvert.SerializeObject(cartItems);
+            httpContextAccessor.HttpContext.Response.Cookies.Append("Cart", cartCookieValue, new CookieOptions
+            {
+                Expires = DateTimeOffset.Now.AddDays(3)
+            });
+
+        }
+        public async Task RemoveProductFromCart(IHttpContextAccessor httpContextAccessor, string id)
+        {
+            var cartItems = await ProductsFromCart(httpContextAccessor);
+            if (!cartItems.Any(p=>p.ProductId==id))
+            {
+                throw new InvalidOperationException();
+            }
+            cartItems.RemoveAll(p => p.ProductId == id);
+            var cartCookieValue = JsonConvert.SerializeObject(cartItems);
+            httpContextAccessor.HttpContext?.Response.Cookies.Append("Cart", cartCookieValue, new CookieOptions
+            {
+                Expires = DateTimeOffset.Now.AddDays(3)
+            });
         }
 
-       
         public async Task<double> CartSumAsync(IHttpContextAccessor httpContextAccessor)
         {
-            var cartProducts=await ProductsFromCart(httpContextAccessor);
-            if (cartProducts.Count==0)
+            var cartProducts = await ProductsFromCart(httpContextAccessor);
+            if (cartProducts.Count == 0)
             {
                 throw new ArgumentNullException();
             }
-            var productSum= (await productService.AllAsync())
-                .Where(p=>cartProducts.Any(cp=>cp.ProductId==p.Id))
-                .Select(p=>{
+            var productSum = (await productService.AllAsync())
+                .Where(p => cartProducts.Any(cp => cp.ProductId == p.Id))
+                .Select(p =>
+                {
                     if (p.IsDiscounted)
                     {
                         p.Price = p.Price - (p.Price * p.Discount / 100);
                     }
                     return p.Price * cartProducts.FirstOrDefault(cp => cp.ProductId == p.Id).Quantity;
-                
+
                 })
                 .Sum();
             return productSum;
@@ -92,5 +101,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         }
 
+       
     }
 }

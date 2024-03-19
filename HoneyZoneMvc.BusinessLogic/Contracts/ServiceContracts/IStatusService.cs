@@ -1,5 +1,5 @@
-﻿using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.BusinessLogic.ViewModels.Status;
+﻿using HoneyZoneMvc.BusinessLogic.ViewModels.Status;
+using HoneyZoneMvc.Infrastructure.Data.Models;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {

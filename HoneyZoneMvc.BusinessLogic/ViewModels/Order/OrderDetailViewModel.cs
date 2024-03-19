@@ -1,14 +1,14 @@
-﻿using static HoneyZoneMvc.Common.Messages.ValidationMessages;
-using HoneyZoneMvc.BusinessLogic.ViewModels.Delivery;
+﻿using HoneyZoneMvc.BusinessLogic.ViewModels.Delivery;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
-    
+using static HoneyZoneMvc.Common.Messages.ValidationMessages;
+
 namespace HoneyZoneMvc.BusinessLogic.ViewModels.Order
-{ 
+{
     public class OrderDetailViewModel
     {
-        [Required(ErrorMessage =RequiredField)]
-        [StringLength(Constraints.DataConstants.OrderDetails.NameMaxValue, MinimumLength = Constraints.DataConstants.OrderDetails.NameMinValue,ErrorMessage = OrderDetailNameValueValidation)]
+        [Required(ErrorMessage = RequiredField)]
+        [StringLength(Constraints.DataConstants.OrderDetails.NameMaxValue, MinimumLength = Constraints.DataConstants.OrderDetails.NameMinValue, ErrorMessage = OrderDetailNameValueValidation)]
         public string FirstName { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredField)]
@@ -36,7 +36,7 @@ namespace HoneyZoneMvc.BusinessLogic.ViewModels.Order
         [StringLength(Constraints.DataConstants.OrderDetails.AddressMaxValue, MinimumLength = Constraints.DataConstants.OrderDetails.AddressMinValue, ErrorMessage = OrderDetailAddressValueValidation)]
         public string Address { get; set; } = string.Empty;
 
-       
+
         public string DeliveryMethodId { get; set; } = string.Empty;
 
         public IEnumerable<DeliveryMethodViewModel> DeliveryMethods { get; set; } = new List<DeliveryMethodViewModel>();
