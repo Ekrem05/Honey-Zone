@@ -1,7 +1,9 @@
-﻿using HoneyZoneMvc.BusinessLogic.ViewModels.User;
+﻿using HoneyZoneMvc.BusinessLogic.Services;
+using HoneyZoneMvc.BusinessLogic.ViewModels.User;
 using HoneyZoneMvc.Infrastructure.Data.Models.IdentityModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using HoneyZoneMvc.BusinessLogic.Enums;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HoneyZoneMvc.Controllers
@@ -10,14 +12,17 @@ namespace HoneyZoneMvc.Controllers
     {
 
         private readonly UserManager<ApplicationUser> userManager;
+        private readonly RoleManager<ApplicationRole> roleManager;
         private readonly SignInManager<ApplicationUser> signInManager;
 
         public UserController(
             UserManager<ApplicationUser> _userManager,
-            SignInManager<ApplicationUser> _signInManager)
+            SignInManager<ApplicationUser> _signInManager,
+            RoleManager<ApplicationRole> _roleManager)
         {
             userManager = _userManager;
             signInManager = _signInManager;
+            roleManager = _roleManager;
         }
 
         [HttpGet]
@@ -52,7 +57,15 @@ namespace HoneyZoneMvc.Controllers
             };
 
             var result = await userManager.CreateAsync(user, model.Password);
-
+            if (!await roleManager.RoleExistsAsync(nameof(Roles.User)))
+            {
+                await roleManager.CreateAsync(new ApplicationRole()
+                {
+                    Name = nameof(Roles.User),
+                    NormalizedName = nameof(Roles.User).ToUpper()
+                });
+            }
+            await userManager.AddToRoleAsync(user, nameof(Roles.User));
             if (result.Succeeded)
             {
                 await signInManager.SignInAsync(user, isPersistent: false);

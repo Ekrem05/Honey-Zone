@@ -1,9 +1,9 @@
-﻿using HoneyZoneMvc.Constraints;
-using HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels;
+﻿using HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels;
+using HoneyZoneMvc.Constraints;
 using Microsoft.AspNetCore.Http;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using static HoneyZoneMvc.Common.Messages.ValidationMessages;
-using System.ComponentModel;
 namespace HoneyZoneMvc.BusinessLogic.ViewModels.Product
 {
     public class ProductAddViewModel

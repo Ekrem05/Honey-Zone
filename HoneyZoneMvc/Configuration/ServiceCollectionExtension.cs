@@ -1,12 +1,10 @@
 ﻿
+using HoneyZoneMvc.BusinessLogic.AutoMapper;
 using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.BusinessLogic.Services;
 using HoneyZoneMvc.Data;
-using HoneyZoneMvc.BusinessLogic.AutoMapper;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using HoneyZoneMvc.Infrastructure.Data.Models.IdentityModels;
-using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore;
 namespace Microsoft.Extensions.DependencyInjection
 {
     public static class ServiceCollectionExtension

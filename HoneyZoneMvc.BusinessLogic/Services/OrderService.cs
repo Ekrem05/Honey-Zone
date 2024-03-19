@@ -1,14 +1,12 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
+using HoneyZoneMvc.BusinessLogic.Enums;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Order;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Product;
 using HoneyZoneMvc.Constraints;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.BusinessLogic.ViewModels.Order;
-using HoneyZoneMvc.BusinessLogic.ViewModels.Product;
 using Microsoft.EntityFrameworkCore;
 using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
-using HoneyZoneMvc.BusinessLogic.Enums;
-using static HoneyZoneMvc.Constraints.DataConstants;
-using HoneyZoneMvc.BusinessLogic.Contracts.SubContracts;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
 {

@@ -17,11 +17,11 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
             roleManager = _roleManager;
             userService = _userService;
         }
-        public async Task<IActionResult> Index([FromQuery]AllUsersQueryModel model)
+        public async Task<IActionResult> Index([FromQuery] AllUsersQueryModel model)
         {
-            AllUsersQueryModel vm=await userService
-                .AllAsync(model.Role, model.SearchTerm, model.CurrentPage,model.UsersPerPage);
-            
+            AllUsersQueryModel vm = await userService
+                .AllAsync(model.Role, model.SearchTerm, model.CurrentPage, model.UsersPerPage);
+
             model.TotalUsers = vm.TotalUsers;
             model.Roles = vm.Roles;
             model.Users = vm.Users;
@@ -29,21 +29,20 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddToRole(string roleName,string userId)
+        public async Task<IActionResult> AddUserToRole(string roleName, string userId)
         {
-            var result = await roleManager.RoleExistsAsync(roleName);
-            if (result == false)
+            try
             {
-                var role = new ApplicationRole()
-                {
-                    Name = roleName
-                };
+                await userService.AddUserToRoleAsync(roleName, userId);
+            }
+            catch (Exception)
+            {
 
-                await roleManager.CreateAsync(role);
+                
             }
 
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction(nameof(Index));
         }
     }
 }

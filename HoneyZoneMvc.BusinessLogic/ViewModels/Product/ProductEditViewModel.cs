@@ -1,10 +1,8 @@
-﻿using HoneyZoneMvc.Constraints;
-using HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels;
-using Microsoft.AspNetCore.Http;
-using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.CodeAnalysis;
-using static HoneyZoneMvc.Common.Messages.ValidationMessages;
+﻿using HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels;
+using HoneyZoneMvc.Constraints;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using static HoneyZoneMvc.Common.Messages.ValidationMessages;
 namespace HoneyZoneMvc.BusinessLogic.ViewModels.Product
 {
     public class ProductEditViewModel

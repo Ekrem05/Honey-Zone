@@ -181,8 +181,8 @@ namespace HoneyZoneMvc.Controllers
 
         }
         [HttpPost]
-        public async Task<IActionResult> RemoveFromCart(string id) 
-        {             
+        public async Task<IActionResult> RemoveFromCart(string id)
+        {
             if (id == null)
             {
                 TempData["Message"] = GeneralException;

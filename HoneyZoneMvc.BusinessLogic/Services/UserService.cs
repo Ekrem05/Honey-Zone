@@ -1,10 +1,8 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
-using HoneyZoneMvc.Data;
 using HoneyZoneMvc.BusinessLogic.ViewModels.User;
+using HoneyZoneMvc.Infrastructure.Data.Models.IdentityModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using HoneyZoneMvc.Infrastructure.Data.Models.IdentityModels;
-using HoneyZoneMvc.Infrastructure.Data.Models;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
 {

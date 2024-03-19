@@ -1,6 +1,5 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.BusinessLogic.ViewModels.CartProduct;
-using HoneyZoneMvc.Data;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
@@ -53,7 +52,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         public async Task RemoveProductFromCart(IHttpContextAccessor httpContextAccessor, string id)
         {
             var cartItems = await ProductsFromCart(httpContextAccessor);
-            if (!cartItems.Any(p=>p.ProductId==id))
+            if (!cartItems.Any(p => p.ProductId == id))
             {
                 throw new InvalidOperationException();
             }
@@ -101,6 +100,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         }
 
-       
+
     }
 }
