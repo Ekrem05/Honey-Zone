@@ -1,12 +1,14 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
-using HoneyZoneMvc.BusinessLogic.Enums;
-using HoneyZoneMvc.BusinessLogic.ViewModels.Order;
-using HoneyZoneMvc.BusinessLogic.ViewModels.Product;
 using HoneyZoneMvc.Constraints;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Order;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Product;
 using Microsoft.EntityFrameworkCore;
 using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
+using HoneyZoneMvc.BusinessLogic.Enums;
+using static HoneyZoneMvc.Constraints.DataConstants;
+using HoneyZoneMvc.BusinessLogic.Contracts.SubContracts;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
 {
@@ -14,13 +16,19 @@ namespace HoneyZoneMvc.BusinessLogic.Services
     {
         private readonly IProductService productService;
         private readonly IStatusService stateService;
+        private readonly IUserService userService;
         private ApplicationDbContext dbContext;
 
-        public OrderService(ApplicationDbContext _dbContext, IProductService _productService, IStatusService _serviceState)
+        public OrderService(ApplicationDbContext _dbContext,
+            IProductService _productService,
+            IStatusService _serviceState,
+            IUserService _userService
+            )
         {
             dbContext = _dbContext;
             productService = _productService;
             stateService = _serviceState;
+            userService = _userService;
         }
 
         public async Task AddAsync(OrderAddViewModel vm)
@@ -51,7 +59,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 await productService.IncreaseTotalOrdersAsync(item.ProductId.ToString(), item.Quantity);
                 await productService.DecreaseQuantityAsync(item.ProductId.ToString());
             }
-
+            await userService.AddUserToRoleAsync(nameof(Roles.Client), vm.ClientId);
             await dbContext.SaveChangesAsync();
         }
         public async Task DeleteAsync(string Id)

@@ -13,7 +13,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         private readonly UserManager<ApplicationUser> userManager;
         private readonly RoleManager<ApplicationRole> roleManager;
 
-        public UserService( UserManager<ApplicationUser> _userManager, RoleManager<ApplicationRole> _roleManager)
+        public UserService(UserManager<ApplicationUser> _userManager, RoleManager<ApplicationRole> _roleManager)
         {
             userManager = _userManager;
             roleManager = _roleManager;
@@ -21,12 +21,12 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task AddUserToRoleAsync(string roleName, string userId)
         {
-            if (roleName==null||userId==null)
+            if (roleName == null || userId == null)
             {
                 throw new ArgumentNullException();
             }
-            var user= await userManager.FindByIdAsync(userId);
-            if (user==null)
+            var user = await userManager.FindByIdAsync(userId);
+            if (user == null)
             {
                 throw new ArgumentNullException();
             }
@@ -38,7 +38,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                     NormalizedName = roleName.ToUpper()
                 });
             }
-            if (!await userManager.IsInRoleAsync(user,roleName))
+            if (!await userManager.IsInRoleAsync(user, roleName))
             {
                 await userManager.AddToRoleAsync(user, roleName);
             }
@@ -47,7 +47,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         public async Task<IEnumerable<UserViewModel>> AllAsync()
         {
             var users = await userManager.Users.ToListAsync();
-            List<UserViewModel> userViewModels= new List<UserViewModel>();
+            List<UserViewModel> userViewModels = new List<UserViewModel>();
             foreach (var user in users)
             {
                 UserViewModel vm = new UserViewModel()
@@ -64,18 +64,18 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         }
 
-        public async Task<AllUsersQueryModel> AllAsync(string role, string searchTerm, int currentPage=1,int usersPerPage=1)
+        public async Task<AllUsersQueryModel> AllAsync(string role, string searchTerm, int currentPage = 1, int usersPerPage = 1)
         {
             var users = await userManager.Users.ToListAsync();
             List<UserViewModel> userViewModels = new List<UserViewModel>();
-            if (role!="All")
+            if (role != "All")
             {
-                users=(await userManager.GetUsersInRoleAsync(role)).ToList();
+                users = (await userManager.GetUsersInRoleAsync(role)).ToList();
             }
             if (searchTerm != null)
             {
                 users = users.Where(x => x.Email.ToLower()
-                .Contains(searchTerm.ToLower()) || 
+                .Contains(searchTerm.ToLower()) ||
                 x.FirstName.ToLower().Contains(searchTerm.ToLower()) ||
                 x.LastName.ToLower().Contains(searchTerm.ToLower())).ToList();
             }

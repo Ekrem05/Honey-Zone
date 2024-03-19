@@ -29,7 +29,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<IStatusService, StatusService>();
             services.AddScoped<IImageService, ImageService>();
             services.AddScoped<IUserService, UserService>();
-            services.AddAutoMapper(typeof(Program),typeof(ProductProfile));
+            services.AddAutoMapper(typeof(Program), typeof(ProductProfile));
             return services;
         }
         private static IServiceCollection AddContext(this IServiceCollection services, IConfiguration config)
@@ -44,7 +44,7 @@ namespace Microsoft.Extensions.DependencyInjection
         }
         private static IServiceCollection AddIdentityWithRoles(this IServiceCollection services)
         {
-            services.AddIdentity<ApplicationUser,ApplicationRole>(services =>
+            services.AddIdentity<ApplicationUser, ApplicationRole>(services =>
             {
                 services.SignIn.RequireConfirmedAccount = false;
                 services.SignIn.RequireConfirmedPhoneNumber = false;
@@ -56,7 +56,7 @@ namespace Microsoft.Extensions.DependencyInjection
            .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddControllersWithViews();
-            
+
             return services;
         }
     }

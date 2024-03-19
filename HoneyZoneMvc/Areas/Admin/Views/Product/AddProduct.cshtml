@@ -4,13 +4,13 @@
 <section id="admin-operation-card">
     <form asp-action="AddProduct" asp-area="Admin" method="post" enctype="multipart/form-data">
         <div class="mb-3">
-            <label class="form-label mt-2 " asp-for="Name">Име</label>
+            <label class="form-label mt-2 " asp-for="Name"></label>
             <input asp-for="Name" class="form-control" />
             <span asp-validation-for="Name" class="bg-danger"></span>
         </div>
 
         <div class="mb-3">
-            <label asp-for="CategoryId" class="control-label">Категория</label>
+            <label asp-for="CategoryId" class="control-label"></label>
             <select asp-for="@Model.CategoryId" class="form-control" aria-required="true">
                 <option disabled value="">Select Category...</option>
                 @foreach (var category in Model.Categories)
@@ -21,7 +21,7 @@
             <span asp-validation-for="CategoryId" class="bg-danger"></span>
         </div>
         <div class="input-group mb-2">
-            <label class="form-label mt-2 w-100" asp-for="Price">Цена</label>
+            <label class="form-label mt-2 w-100" asp-for="Price"></label>
             <input asp-for="Price" class="form-control w-20 h-10" />
             <span id="PriceValidation" asp-validation-for="Price" class="bg-danger"></span>
             <div class="input-group-prepend">
@@ -33,31 +33,31 @@
 
         <div class="mb-3">
 
-            <label class="form-label mt-2 " asp-for="Description">Описание</label>
+            <label class="form-label mt-2 " asp-for="Description"></label>
             <input type="text" asp-for="Description" class="form-control" />
             <span asp-validation-for="Description" class="bg-danger"></span>
         </div>
         <div class="mb-3">
 
-            <label class="form-label mt-2 " asp-for="QuantityInStock">Наличност в склад</label>
+            <label class="form-label mt-2 " asp-for="QuantityInStock"></label>
             <input asp-for="QuantityInStock" class="form-control" min="0" />
             <span asp-validation-for="QuantityInStock" class="bg-danger"></span>
         </div>
         <div class="mb-3">
 
-            <label class="form-label mt-2 " asp-for="ProductAmount">Количество на продукта</label>
+            <label class="form-label mt-2 " asp-for="ProductAmount"></label>
             <input asp-for="ProductAmount" class="form-control" />
             <span asp-validation-for="ProductAmount" class="bg-danger"></span>
         </div>
         <div class="input-group mb-3">
-            <label class="form-label mt-1" asp-for="MainImage">Основна снимка</label>
+            <label class="form-label mt-1" asp-for="MainImage"></label>
             <input type="file" asp-for="MainImage"
                    accept="image/jpg,image/png,image/jpeg" />
             <span asp-validation-for="MainImage" class="bg-danger"></span>
         </div>
         <div class="input-group mb-3">
-            <label class="form-label mt-1" asp-for="Images">Други снимки</label>
-            <input type="file" asp-for="Images"
+            <label class="form-label mt-1" asp-for="Images"></label>
+            <input type="file" asp-for="Images" 
                    accept="image/jpg,image/png,image/jpeg" multiple/>
             <span asp-validation-for="Images" class="bg-danger"></span>
         </div>

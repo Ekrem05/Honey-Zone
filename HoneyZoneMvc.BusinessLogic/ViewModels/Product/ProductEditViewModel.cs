@@ -39,7 +39,7 @@ namespace HoneyZoneMvc.BusinessLogic.ViewModels.Product
         public string ProductAmount { get; set; } = string.Empty;
 
 
-        public IEnumerable<CategoryViewModel> Categories { get; set; }= new List<CategoryViewModel>();
+        public IEnumerable<CategoryViewModel> Categories { get; set; } = new List<CategoryViewModel>();
 
     }
 }
