@@ -7,9 +7,11 @@ namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
     {
 
         Task DeleteAsync(IHttpContextAccessor httpContextAccessor);
-        public Task<double> CartSumAsync(IHttpContextAccessor httpContextAccessor);
+        Task<double> CartSumAsync(IHttpContextAccessor httpContextAccessor);
         Task AddOrUpdateCart(IHttpContextAccessor httpContextAccessor, string productId, int quantity);
-        public Task<List<PostProductCartViewModel>> ProductsFromCart(IHttpContextAccessor httpContextAccessor);
+        Task<List<PostProductCartViewModel>> ProductsFromCart(IHttpContextAccessor httpContextAccessor);
+        Task RemoveProductFromCart(IHttpContextAccessor httpContextAccessor, string id);
+
 
 
     }
