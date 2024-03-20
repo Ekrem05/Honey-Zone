@@ -1,13 +1,30 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
+using HoneyZoneMvc.BusinessLogic.ViewModels.Statistics;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HoneyZoneMvc.Areas.Admin.Controllers
 {
     public class HomeController : BaseAdminController
     {
-        public IActionResult Index()
+        private readonly IStatisticService statisticService;
+
+        public HomeController(IStatisticService _statisticService)
         {
-            //Show Orders today, Show Profit today, Show Total Orders, Show Total Profit
-            return View();
+           statisticService = _statisticService;
+        }
+        public async Task<IActionResult> Index()
+        {
+            try
+            {
+                StatisticsViewModel stats = await statisticService.CategoryStatisticsAsync();
+                return View(stats);
+            }
+            catch (Exception)
+            {
+               
+            }
+           return View();
+
         }
     }
 }
