@@ -270,5 +270,9 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             await dbContext.SaveChangesAsync();
         }
 
+        public Task<Order> GetByIdAsync(string Id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
