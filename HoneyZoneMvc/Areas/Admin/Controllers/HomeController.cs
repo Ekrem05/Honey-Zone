@@ -18,7 +18,9 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
         {
             try
             {
-                StatisticsViewModel stats = await statisticService.CategoryStatisticsAsync();
+                StatisticsViewModel stats = new StatisticsViewModel();
+                stats.CategoryStatistic=await statisticService.CategoryStatisticsAsync();
+                stats.StockStatistic=await statisticService.StockStatisticsAsync();
                 return View(stats);
             }
             catch (Exception e)

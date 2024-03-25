@@ -4,6 +4,7 @@ namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {
     public interface IStatisticService
     {
-        Task<StatisticsViewModel> CategoryStatisticsAsync();
+        Task<CategoryStatisticsViewModel> CategoryStatisticsAsync();
+        Task<StockStatisticsViewModel> StockStatisticsAsync();
     }
 }

@@ -22,7 +22,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             context = _context;
         }
 
-        public async Task<StatisticsViewModel> CategoryStatisticsAsync()
+        public async Task<CategoryStatisticsViewModel> CategoryStatisticsAsync()
         {
             var categories = await categoryService.AllAsync();
             Dictionary<string, int> productsSoldbyCategory = new Dictionary<string, int>();
@@ -37,14 +37,27 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
                 productsSoldbyCategory.Add(category.Name, quantityOfProductsSoldInCategory);
             }
-            return new StatisticsViewModel
+            return new CategoryStatisticsViewModel
             {
-                CategoryStatistic = new CategoryStatisticsViewModel
-                {
-                    Categories = categories.Select(x => x.Name).ToArray(),
-                    ProductsSoldInCategory = productsSoldbyCategory
-                }
+                Categories = categories.Select(x => x.Name).ToArray(),
+                ProductsSoldInCategory = productsSoldbyCategory
+            };
+            
+        }
+
+        public async Task<StockStatisticsViewModel> StockStatisticsAsync()
+        {
+            var products=await productService.AllAsync();
+            Dictionary<string,int>kvp=new Dictionary<string, int>();
+            foreach (var item in products)
+            {
+                kvp[item.Name] = item.QuantityInStock;
+            }
+            return new StockStatisticsViewModel
+            {
+                ProductsInStockPair = kvp
             };
         }
+
     }
 }
