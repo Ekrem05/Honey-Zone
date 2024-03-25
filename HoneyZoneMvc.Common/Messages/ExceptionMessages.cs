@@ -7,7 +7,8 @@
             public const string ProductNotFound = "Product not found!";
             public const string ProductCannotBeDeleted = "Product cannot be deleted because it is used in an order that is not finished !";
             public const string NoProductsWithGivenCategory = "There are no products with category {0}";
-            public const string NoProductsWithGivenId = "There is no product with id {0}";
+            public const string NoProductWithGivenId = "There is no product with id {0}";
+            public const string ProductAlreadyExists = "Product already exists!";
             public const string DiscountCannotBeCancelled = "Discount cannot be cancelled because there isn't one!";
         }
 
@@ -28,19 +29,11 @@
         public const string UserNotFound = "User not found!";
         public const string CartNotFound = "Cart not found!";
         public const string InvalidDiscountValue = "Invalid value while setting discount!";
-        public const string ProductAlreadyExists = "Product already exists!";
+        
         public const string CategoryAlreadyExists = "Category already exists!";
         public const string UserAlreadyExists = "User already exists!";
         public const string CartAlreadyExists = "Cart already exists!";
         public const string CartIsEmpty = "Cart is empty!";
-
-        public const string DiscountAlreadyExists = "Discount already exists!";
-        public const string ProductNotAdded = "Product not added!";
-        public const string ProductNotUpdated = "Product not updated!";
-        public const string ProductNotDeleted = "Product not deleted!";
-        public const string DiscountNotSet = "Discount not set!";
-        public const string DiscountNotRemoved = "Discount not removed!";
-        public const string QuantityNotDecreased = "Quantity not decreased!";
         public const string DiscountNotSetByCategory = "Discount not set by category!";
 
 

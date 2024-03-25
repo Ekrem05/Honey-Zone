@@ -38,11 +38,9 @@ namespace HoneyZoneMvc.Controllers
             {
                 return View("Error404");
             }
-            else if (statusCode == 500)
-            {
-                return View("Error500");
-            }
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+
+            return View("Error500");
+            
         }
 
         [HttpGet]

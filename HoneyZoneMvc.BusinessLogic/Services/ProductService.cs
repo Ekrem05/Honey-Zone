@@ -27,7 +27,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             if (product == null)
             {
-                throw new ArgumentNullException(string.Format(ValidationMessages.ArgumentNull, nameof(ProductAddViewModel)));
+                throw new ArgumentNullException(ProductMessages.ProductNotFound);
             }
             Product productToAdd = mapper.Map<Product>(product);
 
@@ -159,9 +159,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 var item = mapper.Map<ProductAdminViewModel>(model);
                 return item;
             }
-
-
-            throw new ArgumentNullException(string.Format(ProductMessages.NoProductsWithGivenId, Id));
+            throw new ArgumentNullException(string.Format(ProductMessages.NoProductWithGivenId, Id));
         }
 
         public async Task<IEnumerable<ProductShopCardViewModel>> GetBestSellersAsync()
@@ -201,7 +199,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             var product = await dbContext.Products.FirstOrDefaultAsync(x => x.Id.ToString() == Id);
             if (product == null)
             {
-                throw new ArgumentNullException(string.Format(ProductMessages.NoProductsWithGivenId, Id));
+                throw new ArgumentNullException(string.Format(ProductMessages.NoProductWithGivenId, Id));
             }
             var orders = await dbContext.Orders
                 .Where(o => o.State.Name
@@ -222,7 +220,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             var product = dbContext.Products.FirstOrDefault(p => p.Id.ToString() == vm.Id);
             if (product == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(string.Format(ProductMessages.NoProductWithGivenId, vm.Id));
             }
             product.IsDiscounted = true;
             product.Discount = vm.Discount;
@@ -234,12 +232,12 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             if (Id == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(ProductMessages.ProductNotFound);
             }
             var product = dbContext.Products.Where(p => p.CategoryId.ToString() == Id);
             if (product == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(string.Format(ProductMessages.NoProductWithGivenId,Id));
             }
             foreach (var item in product)
             {
@@ -254,13 +252,12 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             if (Id == null)
             {
-                throw new ArgumentNullException();
-
+                throw new ArgumentNullException(IdNull);
             }
             var product = dbContext.Products.FirstOrDefault(p => p.Id.ToString() == Id);
             if (product == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(string.Format(ProductMessages.NoProductWithGivenId, Id));
             }
             product.Discount = 0;
             product.IsDiscounted = false;
@@ -288,7 +285,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             var product = dbContext.Products.FirstOrDefault(p => p.Id.ToString() == Id);
             if (product == null)
             {
-                throw new ArgumentNullException(string.Format(ProductMessages.NoProductsWithGivenId, Id));
+                throw new ArgumentNullException(string.Format(ProductMessages.NoProductWithGivenId, Id));
             }
             product.TimesOrdered += quantity;
             await dbContext.SaveChangesAsync();

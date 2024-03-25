@@ -19,13 +19,21 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index([FromQuery] AllUsersQueryModel model)
         {
-            AllUsersQueryModel vm = await userService
-                .AllAsync(model.Role, model.SearchTerm, model.CurrentPage, model.UsersPerPage);
+            try
+            {
+                AllUsersQueryModel vm = await userService
+               .AllAsync(model.Role, model.SearchTerm, model.CurrentPage, model.UsersPerPage);
 
-            model.TotalUsers = vm.TotalUsers;
-            model.Roles = vm.Roles;
-            model.Users = vm.Users;
-            return View(model);
+                model.TotalUsers = vm.TotalUsers;
+                model.Roles = vm.Roles;
+                model.Users = vm.Users;
+                return View(model);
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Error", "Home", new { e });
+            }
+           
         }
 
         [HttpPost]
