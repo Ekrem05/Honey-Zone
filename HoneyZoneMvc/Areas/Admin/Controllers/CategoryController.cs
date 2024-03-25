@@ -56,7 +56,7 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
             }
             catch (Exception e)
             {
-                return RedirectToAction("Error", "Home", new {e});
+                return RedirectToAction("Error", "Home", new { e });
             }
         }
 

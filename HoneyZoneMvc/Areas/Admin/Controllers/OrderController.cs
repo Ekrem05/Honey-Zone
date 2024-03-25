@@ -34,7 +34,7 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
                 return View(queryModel);
             }
             catch (Exception e)
-            { 
+            {
                 return RedirectToAction("Error", "Home", new { e });
             }
 
@@ -79,7 +79,7 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
                 var order = await orderService.OrderByIdAsync(Id);
                 return View(order);
             }
-            catch(ArgumentNullException e)
+            catch (ArgumentNullException e)
             {
                 TempData["Error"] = e.Message;
                 return RedirectToAction(nameof(Index));

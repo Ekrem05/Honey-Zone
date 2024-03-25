@@ -1,8 +1,5 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
-using HoneyZoneMvc.BusinessLogic.ViewModels.Errors;
-using HoneyZoneMvc.Common.Messages;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace HoneyZoneMvc.Controllers
 {
@@ -26,7 +23,7 @@ namespace HoneyZoneMvc.Controllers
             }
             catch (Exception)
             {
-               return StatusCode(500);
+                return StatusCode(500);
             }
 
         }
@@ -40,7 +37,7 @@ namespace HoneyZoneMvc.Controllers
             }
 
             return View("Error500");
-            
+
         }
 
         [HttpGet]

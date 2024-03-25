@@ -2,11 +2,6 @@
 using HoneyZoneMvc.BusinessLogic.ViewModels.Statistics;
 using HoneyZoneMvc.Data;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HoneyZoneMvc.BusinessLogic.Services
 {
@@ -17,9 +12,9 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         private readonly ICategoryService categoryService;
         private readonly ApplicationDbContext context;
         public StatisticService(IOrderService _orderService
-            ,IProductService _productService
-            ,ICategoryService _categoryService
-            ,ApplicationDbContext _context)
+            , IProductService _productService
+            , ICategoryService _categoryService
+            , ApplicationDbContext _context)
         {
             orderService = _orderService;
             productService = _productService;
@@ -34,17 +29,17 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             foreach (var category in categories)
             {
                 int sumOfUnitsSold = 0;
-               
-                    int productsSold = await context.OrderProducts
-                        .Include(op => op.Product)
-                        .Include(op => op.Product.Category)
-                        .Where(x => x.Product.Category.Id.ToString() == category.Id)
-                        .GroupBy(op => op.ProductId)
-                        .Select(result => result.Sum(x => x.Quantity)).FirstOrDefaultAsync();
-  
+
+                int productsSold = await context.OrderProducts
+                    .Include(op => op.Product)
+                    .Include(op => op.Product.Category)
+                    .Where(x => x.Product.Category.Id.ToString() == category.Id)
+                    .GroupBy(op => op.ProductId)
+                    .Select(result => result.Sum(x => x.Quantity)).FirstOrDefaultAsync();
+
                 sumOfUnitsSold += productsSold;
-                              
-                productsSoldbyCategory.Add(category.Name,sumOfUnitsSold);
+
+                productsSoldbyCategory.Add(category.Name, sumOfUnitsSold);
             }
             return new StatisticsViewModel
             {

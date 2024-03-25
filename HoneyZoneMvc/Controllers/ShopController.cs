@@ -12,7 +12,6 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
 using static HoneyZoneMvc.Common.Messages.SuccessfulMessages;
-using static HoneyZoneMvc.Constraints.DataConstants;
 
 
 namespace HoneyZoneMvc.Controllers
@@ -102,7 +101,7 @@ namespace HoneyZoneMvc.Controllers
             }
             catch (Exception)
             {
-               return StatusCode(404);
+                return StatusCode(404);
             }
 
         }
@@ -147,7 +146,7 @@ namespace HoneyZoneMvc.Controllers
             }
             try
             {
-                
+
                 await cartProductService.AddOrUpdateCart(httpContextAccessor, Id, 1);
                 var productsInCookie = await cartProductService.ProductsFromCart(httpContextAccessor);
 

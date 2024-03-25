@@ -1,7 +1,6 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
 
 namespace HoneyZoneMvc.Controllers
 {

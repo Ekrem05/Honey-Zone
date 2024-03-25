@@ -2,7 +2,6 @@
 using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.BusinessLogic.Enums;
 using HoneyZoneMvc.BusinessLogic.ViewModels.Product;
-using HoneyZoneMvc.Common.Messages;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models;
 using Microsoft.AspNetCore.Http;
@@ -237,7 +236,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             var product = dbContext.Products.Where(p => p.CategoryId.ToString() == Id);
             if (product == null)
             {
-                throw new ArgumentNullException(string.Format(ProductMessages.NoProductWithGivenId,Id));
+                throw new ArgumentNullException(string.Format(ProductMessages.NoProductWithGivenId, Id));
             }
             foreach (var item in product)
             {

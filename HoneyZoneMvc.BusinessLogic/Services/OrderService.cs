@@ -207,7 +207,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<ChangeOrderStatusViewModel> OrderByIdAsync(string Id)
         {
-            if (Id==null)
+            if (Id == null)
             {
                 throw new ArgumentNullException(IdNull);
             }
@@ -240,7 +240,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             {
                 throw new InvalidOperationException(OrderMessages.OrderNotFound);
             }
-            var orderProducts = dbContext.OrderProducts.Where(x => x.OrderId.ToString() == Id).Include(x => x.Product).ToList();           
+            var orderProducts = dbContext.OrderProducts.Where(x => x.OrderId.ToString() == Id).Include(x => x.Product).ToList();
             var result = new OrderInfoViewModel()
             {
                 Id = order.Id.ToString(),

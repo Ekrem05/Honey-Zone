@@ -35,8 +35,8 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             catch (Exception)
             {
                 throw new InvalidOperationException();
-            } 
-           
+            }
+
 
             var cartItems = await ProductsFromCart(httpContextAccessor);
             var existingCartItem = cartItems

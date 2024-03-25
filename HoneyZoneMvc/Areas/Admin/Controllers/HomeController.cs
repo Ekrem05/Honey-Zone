@@ -12,7 +12,7 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
 
         public HomeController(IStatisticService _statisticService)
         {
-           statisticService = _statisticService;
+            statisticService = _statisticService;
         }
         public async Task<IActionResult> Index()
         {
@@ -21,17 +21,17 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
                 StatisticsViewModel stats = await statisticService.CategoryStatisticsAsync();
                 return View(stats);
             }
-            catch (Exception e) 
+            catch (Exception e)
             {
-               RedirectToAction("Error", new { e });
+                RedirectToAction("Error", new { e });
             }
-           return View();
+            return View();
 
         }
         public IActionResult Error(Exception e)
         {
-            return View(new ErrorViewModel 
-            { 
+            return View(new ErrorViewModel
+            {
                 RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier,
                 Message = e.Message,
                 StackTrace = e.StackTrace,

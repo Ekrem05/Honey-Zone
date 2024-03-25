@@ -1,9 +1,8 @@
-﻿using HoneyZoneMvc.BusinessLogic.Services;
+﻿using HoneyZoneMvc.BusinessLogic.Enums;
 using HoneyZoneMvc.BusinessLogic.ViewModels.User;
 using HoneyZoneMvc.Infrastructure.Data.Models.IdentityModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using HoneyZoneMvc.BusinessLogic.Enums;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HoneyZoneMvc.Controllers

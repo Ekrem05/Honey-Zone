@@ -29,7 +29,7 @@
         public const string UserNotFound = "User not found!";
         public const string CartNotFound = "Cart not found!";
         public const string InvalidDiscountValue = "Invalid value while setting discount!";
-        
+
         public const string CategoryAlreadyExists = "Category already exists!";
         public const string UserAlreadyExists = "User already exists!";
         public const string CartAlreadyExists = "Cart already exists!";

@@ -45,7 +45,7 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
             {
                 return RedirectToAction("Error", "Home", new { e });
             }
-            
+
         }
 
         [HttpGet]
@@ -164,7 +164,7 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
         [ActionName("CancelDiscountByCategory")]
         public async Task<IActionResult> CancelDiscountByCategory(string Id)
         {
-            if (Id==null)
+            if (Id == null)
             {
                 TempData["Message"] = IdNull;
                 return RedirectToAction(nameof(Index));
@@ -212,7 +212,7 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
             {
                 return RedirectToAction("Error", "Home", new { e });
             }
-           
+
         }
 
         [HttpPost]
@@ -277,7 +277,7 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
             }
             catch (Exception e)
             {
-               return RedirectToAction("Error", "Home",new {e});
+                return RedirectToAction("Error", "Home", new { e });
             }
         }
 
@@ -308,7 +308,7 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
             }
             catch (Exception e)
             {
-               return RedirectToAction("Error", "Home", new { e });
+                return RedirectToAction("Error", "Home", new { e });
             }
         }
 

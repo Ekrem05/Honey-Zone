@@ -1,5 +1,4 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
-using HoneyZoneMvc.BusinessLogic.Services;
 using HoneyZoneMvc.BusinessLogic.ViewModels.User;
 using HoneyZoneMvc.Infrastructure.Data.Models.IdentityModels;
 using Microsoft.AspNetCore.Identity;
@@ -33,7 +32,7 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
             {
                 return RedirectToAction("Error", "Home", new { e });
             }
-           
+
         }
 
         [HttpPost]
@@ -46,7 +45,7 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
             catch (Exception)
             {
 
-                
+
             }
 
 
