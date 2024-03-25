@@ -1,6 +1,7 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.BusinessLogic.ViewModels.Statistics;
 using HoneyZoneMvc.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,25 +33,18 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             Dictionary<string, int> productsSoldbyCategory = new Dictionary<string, int>();
             foreach (var category in categories)
             {
-                var products = await productService.GetByCategoryIdAsync(category.Id);
-                Dictionary<string, int> productsSoldInCategory = new Dictionary<string, int>();
-                foreach (var product in products)
-                {
-
-                    var productsSold = context.OrderProducts.GroupBy(op => op.ProductId)
-                        .Select(g => new
-                        {
-                            ProductId = g.Key,
-                            Quantity = g.Sum(x => x.Quantity)
-                        }).Where(x => x.ProductId.ToString() == product.Id).FirstOrDefault();
-
-                    if (productsSold != null) 
-                    { 
-                        productsSoldInCategory.Add(product.Name, productsSold.Quantity); 
-                    }
-
-                }
-                productsSoldbyCategory.Add(category.Name, productsSoldInCategory.Sum(x => x.Value));
+                int sumOfUnitsSold = 0;
+               
+                    int productsSold = await context.OrderProducts
+                        .Include(op => op.Product)
+                        .Include(op => op.Product.Category)
+                        .Where(x => x.Product.Category.Id.ToString() == category.Id)
+                        .GroupBy(op => op.ProductId)
+                        .Select(result => result.Sum(x => x.Quantity)).FirstOrDefaultAsync();
+  
+                sumOfUnitsSold += productsSold;
+                              
+                productsSoldbyCategory.Add(category.Name,sumOfUnitsSold);
             }
             return new StatisticsViewModel
             {
