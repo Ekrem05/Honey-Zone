@@ -14,22 +14,12 @@ E-commerce web app for selling and managing bee products
 - [Razor Pages](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-8.0&tabs=visual-studio)
 
 
-## Lessons Learned
+## Featuring
 
 - ## Design Patterns and Principles
 • MVC Pattern
 • Repository Pattern
 • Dependency Injection
-
-
-- ##  Entity Framework Core 
-• Code First Approach
-• Entity Framework Core Components
-• Entity Framework Core Configuration
-• Fluent API
-• CRUD Operations
-• Database Migrations
-• Seeding the Database
 
 - ## ASP.NET Identity
 • ASP.NET Core Identity System
@@ -38,6 +28,17 @@ E-commerce web app for selling and managing bee products
 • Authentication 
 • Roles
 
+- ## Libraries
+• jQuery, AJAX
+• Chart.js
+
+- ## Other
+• Model Validation (Server and client side)
+• Areas
+• Working with cookies
+• Custom Error pages
+• Extending methods
+• Auto Mapper
 
 
 
