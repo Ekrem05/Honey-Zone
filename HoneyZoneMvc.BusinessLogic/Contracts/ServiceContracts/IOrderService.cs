@@ -6,8 +6,8 @@ using HoneyZoneMvc.Infrastructure.Data.Models;
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {
     public interface IOrderService : IAddable<OrderAddViewModel>
-        ,IDeletable
-        ,IReadable<Order>
+        , IDeletable
+        , IReadable<Order>
     {
         Task<AllOrdersQueryModel> AllAsync(int day, int month, int year, string? searchTerm, OrderSorting sorting, int currentPage, int ordersPerPage);
         Task<IEnumerable<OrdersFromUserViewModel>> OrdersByUserIdAsync(string userId);

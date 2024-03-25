@@ -33,13 +33,13 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
                 queryModel.Orders = vm.Orders;
                 return View(queryModel);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                //Add Admin Error Page
-                return RedirectToAction("Error", "Home", new { statusCode = 404 });
+                return RedirectToAction("Error", "Home", new { e });
             }
 
         }
+
         [HttpGet]
         [ActionName("OrderInformation")]
         public async Task<IActionResult> OrderInformation(string Id)
@@ -54,10 +54,14 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
                 var orderInfo = await orderService.DetailsAsync(Id);
                 return View(orderInfo);
             }
-            catch (Exception)
+            catch (InvalidOperationException e)
             {
-                TempData["Error"] = OrderMessages.OrderNotFound;
+                TempData["Error"] = e.Message;
                 return RedirectToAction(nameof(Index));
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Error", "Home", new { e });
             }
         }
 
@@ -65,17 +69,32 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
         [ActionName("ChangeStatus")]
         public async Task<IActionResult> ChangeStatus(string Id)
         {
+            if (Id == null)
+            {
+                TempData["Message"] = IdNull;
+                return RedirectToAction(nameof(Index));
+            }
             try
             {
                 var order = await orderService.OrderByIdAsync(Id);
                 return View(order);
             }
-            catch (Exception)
+            catch (ArgumentNullException e)
             {
-                TempData["Error"] = GeneralException;
-                return RedirectToAction("Error", "Home", new { statusCode = 404 });
+                TempData["Error"] = e.Message;
+                return RedirectToAction(nameof(Index));
+            }
+            catch (InvalidOperationException e)
+            {
+                TempData["Error"] = e.Message;
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Error", "Home", new { e });
             }
         }
+
         [HttpPost]
         [ActionName("ChangeStatus")]
         public async Task<IActionResult> ChangeStatus(ChangeOrderStatusViewModel vm)
@@ -86,10 +105,14 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
                 TempData["Success"] = OrderStatusChanged;
                 return RedirectToAction(nameof(Index));
             }
-            catch (Exception e)
+            catch (ArgumentNullException e)
             {
                 TempData["Error"] = e.Message;
                 return RedirectToAction(nameof(Index));
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Error", "Home", new { e });
             }
 
         }
@@ -98,6 +121,7 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
         [ActionName("DeleteOrder")]
         public async Task<IActionResult> DeleteOrder(string Id)
         {
+            //TEST
             if (Id == null)
             {
                 TempData["Error"] = IdNull;
@@ -109,9 +133,18 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
                 TempData["Success"] = OrderDeleted;
                 return RedirectToAction(nameof(Index));
             }
+            catch (ArgumentNullException e)
+            {
+                TempData["Error"] = e.Message;
+                return RedirectToAction(nameof(Index));
+            }
+            catch (InvalidOperationException e)
+            {
+                TempData["Error"] = e.Message;
+                return RedirectToAction(nameof(Index));
+            }
             catch (Exception e)
             {
-
                 TempData["Error"] = e.Message;
                 return RedirectToAction(nameof(Index));
             }

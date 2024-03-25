@@ -62,8 +62,17 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         }
         public async Task DeleteAsync(string Id)
         {
+            if (Id == null)
+            {
+                throw new ArgumentNullException(IdNull);
+            }
+            Order order = await dbContext.Orders.FirstOrDefaultAsync(x => x.Id.ToString() == Id);
+            if (order == null)
+            {
+                throw new InvalidOperationException(OrderMessages.OrderNotFound);
+            }
             dbContext.OrderProducts.RemoveRange(dbContext.OrderProducts.Where(x => x.OrderId.ToString() == Id));
-            dbContext.Orders.Remove(dbContext.Orders.FirstOrDefault(x => x.Id.ToString() == Id));
+            dbContext.Orders.Remove(order);
             await dbContext.SaveChangesAsync();
         }
 
@@ -198,10 +207,17 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<ChangeOrderStatusViewModel> OrderByIdAsync(string Id)
         {
+            if (Id == null)
+            {
+                throw new ArgumentNullException(IdNull);
+            }
             var order = await dbContext.Orders
                 .Include(x => x.State)
                  .FirstOrDefaultAsync(x => x.Id.ToString() == Id);
-
+            if (order == null)
+            {
+                throw new InvalidOperationException(OrderMessages.OrderNotFound);
+            }
             ChangeOrderStatusViewModel vm = new ChangeOrderStatusViewModel()
             {
                 Id = order.Id.ToString(),
@@ -222,13 +238,9 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 .FirstOrDefaultAsync(o => o.Id.ToString() == Id);
             if (order == null)
             {
-                throw new ArgumentNullException();
+                throw new InvalidOperationException(OrderMessages.OrderNotFound);
             }
             var orderProducts = dbContext.OrderProducts.Where(x => x.OrderId.ToString() == Id).Include(x => x.Product).ToList();
-            if (orderProducts == null)
-            {
-                throw new ArgumentNullException();
-            }
             var result = new OrderInfoViewModel()
             {
                 Id = order.Id.ToString(),
@@ -248,10 +260,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                     Quantity = op.Quantity.ToString()
                 }).ToList()
             };
-            if (result == null)
-            {
-                throw new ArgumentNullException();
-            }
             return result;
         }
 

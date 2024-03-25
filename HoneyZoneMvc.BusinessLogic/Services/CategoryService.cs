@@ -18,7 +18,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             if (category == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(CategoryMessages.InvalidNull);
             }
             if (await dbContext.Categories.AnyAsync(c => c.Name == category.Name))
             {
@@ -38,7 +38,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             if (Id == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(IdNull);
             }
             bool result = await dbContext.Products.AnyAsync(p => p.CategoryId.ToString() == Id);
             if (result)
@@ -48,7 +48,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             var category = await dbContext.Categories.FirstOrDefaultAsync(c => c.Id.ToString() == Id);
             if (category == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(CategoryMessages.InvalidNull);
             }
             dbContext.Categories.Remove(category);
             await dbContext.SaveChangesAsync();

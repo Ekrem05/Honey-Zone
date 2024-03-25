@@ -3,6 +3,6 @@
     public static class ApplicationConstants
     {
         public const string AdminAreaName = "Admin";
-        public const string AdministratorRoleName = "Admin";
+        public const string AdministratorRoleName = "Administrator";
     }
 }

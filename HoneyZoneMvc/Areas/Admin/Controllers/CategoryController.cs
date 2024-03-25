@@ -19,34 +19,44 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
         [ActionName("Index")]
         public async Task<IActionResult> Index()
         {
-            return View(await categoryService.AllAsync());
+            try
+            {
+                return View(await categoryService.AllAsync());
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Error", "Home", new { e });
+            }
         }
+
         [HttpPost]
         [ActionName("AddCategory")]
         public async Task<IActionResult> AddCategoryAsync(CategoryAddViewModel productvm)
         {
-            var categories = await categoryService.AllAsync();
-
-            if (categories.Any(c => c.Name == productvm.Name))
+            if (!ModelState.IsValid)
             {
-                TempData["Error"] = CategoryMessages.CategoryExists;
+                TempData["Error"] = CategoryMessages.InvalidCategory;
                 return RedirectToAction(nameof(Index));
             }
             try
             {
-                TempData["Success"] = CategoryAdded;
                 await categoryService.AddAsync(productvm);
+                TempData["Success"] = CategoryAdded;
                 return RedirectToAction(nameof(Index));
             }
-            catch (InvalidOperationException ex)
+            catch (ArgumentNullException e)
             {
-                TempData["Error"] = ex.Message;
+                TempData["Error"] = e.Message;
                 return RedirectToAction(nameof(Index));
             }
-            catch (Exception)
+            catch (InvalidOperationException e)
             {
-                TempData["Error"] = GeneralException;
+                TempData["Error"] = e.Message;
                 return RedirectToAction(nameof(Index));
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Error", "Home", new { e });
             }
         }
 
@@ -65,15 +75,19 @@ namespace HoneyZoneMvc.Areas.Admin.Controllers
                 TempData["Success"] = CategoryDeleted;
                 return RedirectToAction(nameof(Index));
             }
+            catch (ArgumentNullException e)
+            {
+                TempData["Error"] = e.Message;
+                return RedirectToAction(nameof(Index));
+            }
             catch (InvalidOperationException e)
             {
                 TempData["Error"] = e.Message;
                 return RedirectToAction(nameof(Index));
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                TempData["Error"] = GeneralException;
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Error", "Home", new { e });
             }
 
         }
