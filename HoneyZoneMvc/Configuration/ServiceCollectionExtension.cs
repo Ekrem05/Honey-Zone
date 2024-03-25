@@ -4,6 +4,7 @@ using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.BusinessLogic.Services;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models.IdentityModels;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -28,7 +29,6 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<IImageService, ImageService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IStatisticService, StatisticService>();
-
             services.AddAutoMapper(typeof(Program), typeof(ProductProfile));
             return services;
         }
@@ -55,7 +55,11 @@ namespace Microsoft.Extensions.DependencyInjection
             .AddRoles<ApplicationRole>()
            .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews(options =>
+            {
+                options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
+
+            });
 
             return services;
         }
