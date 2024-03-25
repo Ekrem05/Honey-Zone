@@ -37,31 +37,24 @@
         data: {
             labels: [
               
-                    @Html.Raw(string.Join(", ", Model.CategoryStatistic.Categories.Select(x => $"'{x}'")))
+                    @Html.Raw(Model.CategoryStatistic.GetCategoryLabels())
             ],
             datasets: [{
                 label: 'Sold Items',
                 data: [
-                        @{
-                            List<string>values=new();
-                        }
-                        @foreach (var categoryName in Model.CategoryStatistic.Categories)
-                        {
-                            values.Add(Model.CategoryStatistic.ProductsSoldInCategory[categoryName].ToString());    
-                        }       
-                        @string.Join(", ",values)
+                       @Model.CategoryStatistic.GetCategoryData()
                     ],
                 backgroundColor: [
 
                     @foreach (var item in Model.CategoryStatistic.ProductsSoldInCategory)
                     {
                         Random rnd = new Random();
-                        int value = rnd.Next(0,255);
-                        @: 'rgb(@value, @value, @value)',
+                        int valueR = rnd.Next(0,255);
+                        int valueG = rnd.Next(0,255);
+                        int valueB = rnd.Next(0, 255);
+
+                        @: 'rgb(@valueR, @valueG, @valueB)',
                     }
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)'
                 ],
                 hoverOffset: 4
             }]

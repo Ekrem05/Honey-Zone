@@ -28,6 +28,15 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task AddOrUpdateCart(IHttpContextAccessor httpContextAccessor, string productId, int quantity)
         {
+            try
+            {
+                await productService.GetByIdAsync(productId);
+            }
+            catch (Exception)
+            {
+                throw new InvalidOperationException();
+            } 
+           
 
             var cartItems = await ProductsFromCart(httpContextAccessor);
             var existingCartItem = cartItems

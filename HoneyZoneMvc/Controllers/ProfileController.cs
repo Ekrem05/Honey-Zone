@@ -24,8 +24,8 @@ namespace HoneyZoneMvc.Controllers
             }
             catch (Exception)
             {
-                TempData["Error"] = GeneralException;
-                return RedirectToAction("Error", "Home", new { statusCode = 500 });
+                return StatusCode(500);
+
             }
         }
         private Guid GetUserId()

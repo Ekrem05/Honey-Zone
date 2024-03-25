@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
 using static HoneyZoneMvc.Common.Messages.SuccessfulMessages;
+using static HoneyZoneMvc.Constraints.DataConstants;
 
 
 namespace HoneyZoneMvc.Controllers
@@ -80,8 +81,7 @@ namespace HoneyZoneMvc.Controllers
             }
             catch (Exception)
             {
-
-                return RedirectToAction("Error", "Home", new { statusCode = 500 });
+                return StatusCode(500);
             }
 
         }
@@ -102,9 +102,7 @@ namespace HoneyZoneMvc.Controllers
             }
             catch (Exception)
             {
-
-                TempData["Message"] = GeneralException;
-                return RedirectToAction("Error", "Home", new { statusCode = 404 });
+               return StatusCode(404);
             }
 
         }
@@ -135,8 +133,7 @@ namespace HoneyZoneMvc.Controllers
             }
             catch (Exception)
             {
-                TempData["Message"] = GeneralException;
-                return RedirectToAction("Error", "Home", new { statusCode = 404 });
+                return StatusCode(404);
             }
 
         }
@@ -146,12 +143,12 @@ namespace HoneyZoneMvc.Controllers
         {
             if (Id == null)
             {
-                TempData["Message"] = GeneralException;
-                return RedirectToAction("Error", "Home", new { statusCode = 404 });
+                return StatusCode(404);
             }
             try
             {
-                cartProductService.AddOrUpdateCart(httpContextAccessor, Id, 1);
+                
+                await cartProductService.AddOrUpdateCart(httpContextAccessor, Id, 1);
                 var productsInCookie = await cartProductService.ProductsFromCart(httpContextAccessor);
 
                 List<ProductCartViewModel> productsInCart = new List<ProductCartViewModel>();
@@ -174,9 +171,7 @@ namespace HoneyZoneMvc.Controllers
             }
             catch (Exception)
             {
-
-                TempData["Message"] = GeneralException;
-                return RedirectToAction("Error", "Home", new { statusCode = 404 });
+                return StatusCode(404);
             }
 
         }
@@ -185,8 +180,7 @@ namespace HoneyZoneMvc.Controllers
         {
             if (id == null)
             {
-                TempData["Message"] = GeneralException;
-                return RedirectToAction("Error", "Home", new { statusCode = 404 });
+                return StatusCode(404);
             }
             try
             {
@@ -195,8 +189,7 @@ namespace HoneyZoneMvc.Controllers
             }
             catch (Exception)
             {
-                TempData["Message"] = GeneralException;
-                return RedirectToAction("Error", "Home", new { statusCode = 404 });
+                return StatusCode(404);
             }
 
         }
@@ -221,8 +214,7 @@ namespace HoneyZoneMvc.Controllers
             }
             catch (Exception)
             {
-                TempData["Message"] = GeneralException;
-                return RedirectToAction("Error", "Home", new { statusCode = 404 });
+                return StatusCode(404);
             }
 
         }
@@ -248,9 +240,7 @@ namespace HoneyZoneMvc.Controllers
             }
             catch (Exception)
             {
-
-                TempData["Error"] = GeneralException;
-                return RedirectToAction("Error", "Home", new { statusCode = 500 });
+                return StatusCode(500);
             }
 
         }
@@ -302,8 +292,7 @@ namespace HoneyZoneMvc.Controllers
             }
             catch (Exception e)
             {
-                TempData["Error"] = GeneralException;
-                return RedirectToAction("Error", "Home", new { statusCode = 404 });
+                return StatusCode(404);
             }
             TempData["Message"] = OrderAdded;
             return RedirectToAction("MyOrders", "Profile");

@@ -26,8 +26,7 @@ namespace HoneyZoneMvc.Controllers
             }
             catch (Exception)
             {
-                TempData["Message"] = ExceptionMessages.GeneralException;
-                return RedirectToAction("Error", new { statusCode = 500 });
+               return StatusCode(500);
             }
 
         }
