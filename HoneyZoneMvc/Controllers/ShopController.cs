@@ -111,7 +111,7 @@ namespace HoneyZoneMvc.Controllers
         {
             try
             {
-                var productsInCookie = await cartProductService.ProductsFromCart(httpContextAccessor);
+                var productsInCookie = await cartProductService.ProductsFromCartAsync(httpContextAccessor);
                 List<ProductCartViewModel> productsInCart = new List<ProductCartViewModel>();
                 foreach (var item in productsInCookie)
                 {
@@ -147,8 +147,8 @@ namespace HoneyZoneMvc.Controllers
             try
             {
 
-                await cartProductService.AddOrUpdateCart(httpContextAccessor, Id, 1);
-                var productsInCookie = await cartProductService.ProductsFromCart(httpContextAccessor);
+                await cartProductService.AddCartAsync(httpContextAccessor, Id, 1);
+                var productsInCookie = await cartProductService.ProductsFromCartAsync(httpContextAccessor);
 
                 List<ProductCartViewModel> productsInCart = new List<ProductCartViewModel>();
                 foreach (var item in productsInCookie)
@@ -183,7 +183,7 @@ namespace HoneyZoneMvc.Controllers
             }
             try
             {
-                await cartProductService.RemoveProductFromCart(httpContextAccessor, id);
+                await cartProductService.RemoveProductFromCartAsync(httpContextAccessor, id);
                 return RedirectToAction(nameof(Cart));
             }
             catch (Exception)
@@ -204,10 +204,7 @@ namespace HoneyZoneMvc.Controllers
             }
             try
             {
-                foreach (var cartProduct in cartProducts)
-                {
-                    await cartProductService.AddOrUpdateCart(httpContextAccessor, cartProduct.ProductId, cartProduct.Quantity);
-                }
+                await cartProductService.UpdateCartAsync(httpContextAccessor, cartProducts);
 
                 return RedirectToAction(nameof(OrderDetails));
             }
@@ -225,7 +222,7 @@ namespace HoneyZoneMvc.Controllers
 
             try
             {
-                var productsInCart = await cartProductService.ProductsFromCart(httpContextAccessor);
+                var productsInCart = await cartProductService.ProductsFromCartAsync(httpContextAccessor);
                 if (productsInCart.Count() == 0)
                 {
 
@@ -256,7 +253,7 @@ namespace HoneyZoneMvc.Controllers
             }
             try
             {
-                var productsInCart = await cartProductService.ProductsFromCart(httpContextAccessor);
+                var productsInCart = await cartProductService.ProductsFromCartAsync(httpContextAccessor);
                 HashSet<OrderProduct> orderProducts = new HashSet<OrderProduct>();
                 if (productsInCart.Count == 0)
                 {

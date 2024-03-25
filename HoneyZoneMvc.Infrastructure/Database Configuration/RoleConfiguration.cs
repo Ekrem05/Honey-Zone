@@ -11,8 +11,8 @@ namespace HoneyZoneMvc.Infrastructure.Database_Configuration
             builder.HasData(new ApplicationRole()
             {
                 Id = Guid.Parse("83e83014-e29a-4d0e-9238-b52cf68bf6b7"),
-                Name = "Admin",
-                NormalizedName = "ADMIN",
+                Name = "Administrator",
+                NormalizedName = "ADMINISTRATOR",
                 ConcurrencyStamp = Guid.NewGuid().ToString(),
             });
         }

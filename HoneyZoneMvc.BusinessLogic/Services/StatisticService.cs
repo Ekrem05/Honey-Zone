@@ -28,18 +28,14 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             Dictionary<string, int> productsSoldbyCategory = new Dictionary<string, int>();
             foreach (var category in categories)
             {
-                int sumOfUnitsSold = 0;
-
-                int productsSold = await context.OrderProducts
+                var productsSold = await context.OrderProducts
                     .Include(op => op.Product)
                     .Include(op => op.Product.Category)
-                    .Where(x => x.Product.Category.Id.ToString() == category.Id)
-                    .GroupBy(op => op.ProductId)
-                    .Select(result => result.Sum(x => x.Quantity)).FirstOrDefaultAsync();
+                    .Where(x => x.Product.Category.Id.ToString() == category.Id).ToListAsync();
 
-                sumOfUnitsSold += productsSold;
+                    int quantityOfProductsSoldInCategory=productsSold.Sum(p=>p.Quantity);
 
-                productsSoldbyCategory.Add(category.Name, sumOfUnitsSold);
+                productsSoldbyCategory.Add(category.Name, quantityOfProductsSoldInCategory);
             }
             return new StatisticsViewModel
             {
