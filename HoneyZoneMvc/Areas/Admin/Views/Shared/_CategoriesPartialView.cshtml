@@ -6,8 +6,8 @@ style="width:50%;">
     <thead>
         <tr class="text-center">
             <th scope="col">Id</th>
-            <th scope="col">Име</th>
-            <th scope="col">Операции</th>
+            <th scope="col">Name</th>
+            <th scope="col">Actions</th>
 
         </tr>
     </thead>
@@ -20,7 +20,7 @@ style="width:50%;">
 
                 <td class="">
                     <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteCategory-@category.GetHashCode()">
-                        Изтрий
+                        Delete
                     </button>
 
                     <!-- Modal -->
@@ -28,19 +28,20 @@ style="width:50%;">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                    <strong>Важно! </strong>За да бъде изтрита категорията, трябва да няма продукти от нея
+                                    <strong>Important! </strong>To delete the category, there should be no products associated with it.
                                     <br />
-                                    <strong>Предупреждение! </strong> Категорията ще бъде изтрита, Сигурни ли сте?
+                                    <strong>Warning! </strong> The category will be deleted. Are you sure?
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                                     <form asp-action="DeleteCategory" method="post" class="d-inline-block">
                                         <input type="hidden" value="@category.Id" name="Id" />
                                         <button type="submit" class="btn btn-outline-danger">
-                                            Изтрий
+                                            Delete
                                         </button>
                                     </form>
                                 </div>
+
                             </div>
                         </div>
                     </div>

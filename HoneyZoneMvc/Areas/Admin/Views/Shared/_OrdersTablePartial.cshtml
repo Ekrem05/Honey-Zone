@@ -5,15 +5,15 @@
     <thead>
         <tr class="text-center">
             <th scope="col">Id</th>
-            <th scope="col">Сума</th>
-            <th scope="col">Доставка</th>
-            <th scope="col">Име на клиент</th>
-            <th scope="col">Адрес</th>
-            <th scope="col">Телефон</th>
-            <th scope="col">Поръчана на</th>
-            <th scope="col">Очаквана дата за пристигане</th>
-            <th scope="col">Статус</th>
-            <th scope="col">Операции</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Delivery</th>
+            <th scope="col">Client Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Ordered On</th>
+            <th scope="col">Expected Delivery Date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
         </tr>
     </thead>
     <tbody class="table-group-divider">
@@ -26,23 +26,23 @@
                 <td>@order.ClientName</td>
                 <td>@order.Address</td>
                 <td>@order.PhoneNumber</td>
-                <td> @order.OrderDate</td>
-                <td> @order.ExpectedDelivery </td>
-                <td> @order.State </td>
+                <td>@order.OrderDate</td>
+                <td>@order.ExpectedDelivery</td>
+                <td>@order.State</td>
 
                 <td class="col-md-4">
                     <a class="btn btn-outline-success"
                        asp-action="ChangeStatus" asp-route-Id="@order.Id">
-                        Промени статус
+                        Change Status
                     </a>
                     <a class="btn btn-outline-danger" asp-action="OrderInformation" asp-route-Id="@order.Id">
-                        Информация
+                        Information
                     </a>
                     <a class="btn btn-outline-primary">
-                        Промени очаквана дата
+                        Change Expected Delivery Date
                     </a>
                     <button type="button" class="btn btn-outline-danger d-inline-block" data-bs-toggle="modal" data-bs-target="#deleteOrder-@order.GetHashCode()">
-                        Изтрий
+                        Delete
                     </button>
 
                     <!-- Modal -->
@@ -50,14 +50,14 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                    <strong>Предупреждение! </strong> Поръчката ще бъде изтрита. Сигурни ли сте?
+                                    <strong>Warning! </strong>The order will be deleted. Are you sure?
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                                     <form asp-controller="Order" asp-action="DeleteOrder" method="post" class="d-inline-block">
                                         <input type="hidden" value="@order.Id" name="Id" />
                                         <button type="submit" class="btn btn-outline-danger">
-                                            Изтрий
+                                            Delete
                                         </button>
                                     </form>
                                 </div>

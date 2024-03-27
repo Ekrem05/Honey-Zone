@@ -42,7 +42,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 OrderDetail = new OrderDetail()
                 {
                     FirstName = vm.OrderDetail.FirstName,
-                    SecondName = vm.OrderDetail.SecondName,
+                    SecondName = vm.OrderDetail.LastName,
                     PhoneNumber = vm.OrderDetail.PhoneNumber,
                     Email = vm.OrderDetail.Email,
                     Address = vm.OrderDetail.Address,

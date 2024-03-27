@@ -4,12 +4,12 @@
       
             <a class="btn btn-outline-success btn-lg " data-bs-toggle="modal"
                data-bs-target="#discount-by-category">
-                Промоция по категория
+                Set Discount By Category
             </a>
 
             <a class="btn btn-outline-dark btn-lg" data-bs-toggle="modal"
                data-bs-target="#cancel-discount-by-category">
-                Премахни промоция по категория
+                Remove Discount By Category
             </a>
     
 
@@ -18,9 +18,9 @@
             <div class="modal-content">
                 <form asp-action="SetDiscountByCategory" method="post" class="d-inline-block">
                     <div class="modal-body">
-                        <strong>Внимание!</strong>Ще добавите нова категория на продукт. Сигурни ли сте?
+                        <strong>Warning!</strong>Are you sure you want to set a discount?
                         <div class="mb-3">
-                            <label>Избери категория</label>
+                            <label>Select category</label>
                             <select asp-for="CategoryId" class="form-control" aria-required="true">
                                 <option disabled selected value="">Select Category...</option>
                                 @foreach (var category in Model.Categories)
@@ -31,16 +31,16 @@
                             <span asp-validation-for="CategoryId" class="bg-danger"></span>
                         </div>
                         <div class="mb-3">
-                            <label>Въведи % промоция</label>
+                            <label>Enter % discount</label>
                             <input asp-for="Discount" name="Discount" />
                             <span asp-validation-for="Discount" class="bg-danger"></span>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
 
                         <button type="submit" class="btn btn-outline-success">
-                            Добави
+                            Apply
                         </button>
                     </div>
                 </form>
@@ -79,3 +79,8 @@
     </div>
 
 </div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

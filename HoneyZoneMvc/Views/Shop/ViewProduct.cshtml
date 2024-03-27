@@ -33,11 +33,11 @@
                     string priceBeforeDiscount = Model.Price.ToString("F2");
                     price = Model.Price - (Model.Price * Model.Discount / 100);
                     formattedNumber = price.ToString("F2");
-                    <p class="price"><span class="price-before">@(priceBeforeDiscount)лв</span>     @(formattedNumber)лв</p>
+                    <p class="price"><span class="price-before">@(priceBeforeDiscount)lv</span>     @(formattedNumber)lv</p>
                 }
                 else
                 {
-                    <p class="price">@(price.ToString("F2")) лв.</p>
+                    <p class="price">@(price.ToString("F2")) lv.</p>
                 }
 
             }
@@ -45,11 +45,11 @@
             <div class="more-description">
                 @if (Model.QuantityInStock > 0)
                 {
-                    <div class="available">Наличност: Наличен </div>
+                    <div class="available">Available In Stock </div>
                 }
                 else
                 {
-                    <div class="available ">Наличност: <span class="bg-danger">Не е наличен</span>  </div>
+                    <div class="available "><span class="bg-danger">Out of Stock</span>  </div>
 
                 }
 
@@ -57,8 +57,11 @@
                     @Model.Description
                 </p>
                 <div class="quantity-box d-flex justify-content-around align-items-center">
-                    <a asp-action="Index" class="btn btn-secondary">Назад</a>
-                    <a asp-action="AddToCart" asp-route-Id="@Model.Id" class="add-to-cart btn" >Добави в количката</a>
+                    <a asp-action="Index" class="btn btn-secondary">Back</a>
+                    @if (Model.QuantityInStock > 0)
+                    {
+                        <a asp-action="AddToCart" asp-route-Id="@Model.Id" class="add-to-cart btn">Add to cart</a>
+                    }
                 </div>
             </div>
         </div>

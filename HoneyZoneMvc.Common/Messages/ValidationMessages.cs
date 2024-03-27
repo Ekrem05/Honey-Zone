@@ -7,27 +7,25 @@
     {
         public const string ArgumentNull = "The argument {0} is null";
 
-        //Product validation messages
-        public const string ProductNameValueValidation = "Името трябва да е от {2} до {1} символа!";
-        public const string ProductDescriptionValueValidation = "Описанието трябва да е от {2} до {1} символа!";
-        public const string ProductPriceValueValidation = "Цената трябва да е от {1} до {2} лв!";
-        public const string ProductInStockValueValidation = "Бройката в склад трябва да е от {1} до {2} броя!";
-        public const string ProductAmountValueValidation = "Количеството трябва да започва с число и да завърши с (ml;l;g;mg;kg) Пример: 100g";
-        public const string ProductDiscountValueValidation = "Отстъпката трябва да е от {1} до {2} процента!";
-        public const string RequiredField = "Това поле е задължително!";
+        // Product validation messages
+        public const string ProductNameValueValidation = "The name must be between {2} and {1} characters!";
+        public const string ProductDescriptionValueValidation = "The description must be between {2} and {1} characters!";
+        public const string ProductPriceValueValidation = "The price must be between {1} and {2} BGN!";
+        public const string ProductInStockValueValidation = "The stock quantity must be between {1} and {2} units!";
+        public const string ProductAmountValueValidation = "The quantity must start with a number and end with (ml; l; g; mg; kg). Example: 100g";
+        public const string ProductDiscountValueValidation = "The discount must be between {1} and {2} percent!";
+        public const string RequiredField = "This field is required!";
 
+        // Category validation messages
+        public const string CategoryValidation = "The category must be between {2} and {1} characters!";
 
-        //Category validatioin messages
-        public const string CategoryValidation = "Категорията трябва да е от {2} до {1} символа!";
-
-
-        //OrderDetail validation messages
-        public const string OrderDetailNameValueValidation = "Името трябва да е от {2} до {1} символа!";
-        public const string OrderDetailAddressValueValidation = "Адреса трябва да е от {2} до {1} символа!";
-        public const string OrderDetailCityValueValidation = "Града трябва да е от {2} до {1} символа!";
-        public const string OrderDetailPhoneNumberValueValidation = "Телефонният номер трябва да е от {2} до {1} символа!";
-        public const string OrderDetailZipCodeValueValidation = "Пощенският код трябва да е {1} символа!";
-        public const string OrderDetailEmailValueValidation = "Невалиден имейл адрес!";
+        // OrderDetail validation messages
+        public const string OrderDetailNameValueValidation = "The name must be between {2} and {1} characters!";
+        public const string OrderDetailAddressValueValidation = "The address must be between {2} and {1} characters!";
+        public const string OrderDetailCityValueValidation = "The city must be between {2} and {1} characters!";
+        public const string OrderDetailPhoneNumberValueValidation = "The phone number must be between {2} and {1} characters!";
+        public const string OrderDetailZipCodeValueValidation = "The ZIP code must be {1} characters!";
+        public const string OrderDetailEmailValueValidation = "Invalid email address!";
 
         public const string NamesLength = "The {0} must be at least {2} and at max {1} characters long.";
         public const string EmailIsInvalid = "Invalid email address!";
