@@ -4,6 +4,7 @@ using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.BusinessLogic.Services;
 using HoneyZoneMvc.Data;
 using HoneyZoneMvc.Infrastructure.Data.Models.IdentityModels;
+using HoneyZoneMvc.ModelBinders;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 namespace Microsoft.Extensions.DependencyInjection
@@ -57,8 +58,8 @@ namespace Microsoft.Extensions.DependencyInjection
 
             services.AddControllersWithViews(options =>
             {
+                options.ModelBinderProviders.Insert(0, new DoubleModelBinderProvider());
                 options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
-
             });
 
             return services;
