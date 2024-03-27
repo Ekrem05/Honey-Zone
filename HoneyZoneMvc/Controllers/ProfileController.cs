@@ -4,6 +4,9 @@ using System.Security.Claims;
 
 namespace HoneyZoneMvc.Controllers
 {
+    /// <summary>
+    /// This controller is responsible for handling the user profile page.
+    /// </summary>
     public class ProfileController : Controller
     {
         private readonly IOrderService orderService;

@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HoneyZoneMvc.Areas.Admin.Controllers
 {
+    /// <summary>
+    /// Controller responsible for handling administrative operations related to users.
+    /// </summary>
     public class UserController : BaseAdminController
     {
         private readonly RoleManager<ApplicationRole> roleManager;

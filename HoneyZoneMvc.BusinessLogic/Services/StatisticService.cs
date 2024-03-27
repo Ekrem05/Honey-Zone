@@ -22,6 +22,10 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             context = _context;
         }
 
+        /// <summary>
+        /// This method returns how many products are sold by category
+        /// </summary>
+        /// <returns></returns>
         public async Task<CategoryStatisticsViewModel> CategoryStatisticsAsync()
         {
             var categories = await categoryService.AllAsync();
@@ -45,6 +49,10 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             
         }
 
+        /// <summary>
+        /// This method returns how units are in stock for each product
+        /// </summary>
+        /// <returns></returns>
         public async Task<StockStatisticsViewModel> StockStatisticsAsync()
         {
             var products=await productService.AllAsync();

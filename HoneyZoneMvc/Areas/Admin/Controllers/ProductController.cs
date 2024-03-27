@@ -7,6 +7,9 @@ using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
 using static HoneyZoneMvc.Common.Messages.SuccessfulMessages;
 namespace HoneyZoneMvc.Areas.Admin.Controllers
 {
+    /// <summary>
+    /// Controller responsible for handling administrative operations related to products.
+    /// </summary>
     public class ProductController : BaseAdminController
     {
         private readonly IProductService productService;

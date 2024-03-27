@@ -52,7 +52,7 @@
         <div class="deliveryMethods">
             <label asp-for="@Model.DeliveryMethodId" class="form-label-add-edit"></label>
             <select asp-for="@Model.DeliveryMethodId" class="form-control" aria-required="true">
-                <option disabled selected value="">Избери доставчик...</option>
+                <option disabled selected value="">Choose delivery...</option>
                 @foreach (var category in Model.DeliveryMethods)
                 {
                     <option value="@category.Id">@category.Name</option>

@@ -6,6 +6,9 @@ using System.Diagnostics;
 
 namespace HoneyZoneMvc.Areas.Admin.Controllers
 {
+    /// <summary>
+    /// This controller is the main controller for the admin panel.
+    /// </summary>
     public class HomeController : BaseAdminController
     {
         private readonly IStatisticService statisticService;

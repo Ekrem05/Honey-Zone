@@ -2,7 +2,7 @@
 
 namespace HoneyZoneMvc.BusinessLogic.ViewModels.Order
 {
-    public class OrderInfoViewModel
+    public class OrderViewModel
     {
         public string Id { get; set; } = string.Empty;
 
