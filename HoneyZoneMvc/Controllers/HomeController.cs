@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HoneyZoneMvc.Controllers
 {
+    /// <summary>
+    /// This controller is responsible for handling the home page of the application.
+    /// </summary>
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

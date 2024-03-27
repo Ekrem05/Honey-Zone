@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HoneyZoneMvc.BusinessLogic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b91e1a52a7d99c71ff46080716c8d16e1a74b464")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9fb662a61d257a1cfb93dcfe856f86911862a88")]
 [assembly: System.Reflection.AssemblyProductAttribute("HoneyZoneMvc.BusinessLogic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HoneyZoneMvc.BusinessLogic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -16,7 +16,9 @@ using static HoneyZoneMvc.Common.Messages.SuccessfulMessages;
 
 namespace HoneyZoneMvc.Controllers
 {
-
+    /// <summary>
+    /// Controller responsible for handling shop operations.
+    /// </summary>
     public class ShopController : Controller
     {
         private readonly IProductService productService;

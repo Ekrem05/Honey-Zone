@@ -13,7 +13,12 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             productService = _productService;
         }
-
+        /// <summary>
+        /// This method deletes the cart cookie.
+        /// </summary>
+        /// <param name="httpContextAccessor"></param>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException"></exception>
         public async Task DeleteAsync(IHttpContextAccessor httpContextAccessor)
         {
             if (httpContextAccessor.HttpContext.Request.Cookies.ContainsKey("Cart"))
@@ -26,6 +31,14 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             }
         }
 
+        /// <summary>
+        /// This method adds a product to the cart.
+        /// </summary>
+        /// <param name="httpContextAccessor"></param>
+        /// <param name="productId"></param>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException">Throws exception if the product is not found in the database </exception>
         public async Task AddCartAsync(IHttpContextAccessor httpContextAccessor, string productId, int quantity)
         {
             try
@@ -59,6 +72,13 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         }
 
+        /// <summary>
+        /// This method removes a product from the cart.
+        /// </summary>
+        /// <param name="httpContextAccessor"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException">Throws exception if the product is not found in the database</exception>
         public async Task RemoveProductFromCartAsync(IHttpContextAccessor httpContextAccessor, string id)
         {
             var cartItems = await ProductsFromCartAsync(httpContextAccessor);
@@ -74,6 +94,13 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             });
         }
 
+        /// <summary>
+        /// This method updates the cart.
+        /// </summary>
+        /// <param name="httpContextAccessor"></param>
+        /// <param name="cart"></param>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException"></exception>
         public async Task UpdateCartAsync(IHttpContextAccessor httpContextAccessor, List<PostProductCartViewModel> cart)
         {
             foreach (var item in cart)
@@ -96,6 +123,12 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         }
 
+        /// <summary>
+        /// This method calculates the sum of the products in the cart.
+        /// </summary>
+        /// <param name="httpContextAccessor"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public async Task<double> CartSumAsync(IHttpContextAccessor httpContextAccessor)
         {
             var cartProducts = await ProductsFromCartAsync(httpContextAccessor);
@@ -118,7 +151,11 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return productSum;
         }
 
-
+        /// <summary>
+        /// This method gets the products from the cart.
+        /// </summary>
+        /// <param name="httpContextAccessor"></param>
+        /// <returns></returns>
         public async Task<List<PostProductCartViewModel>> ProductsFromCartAsync(IHttpContextAccessor httpContextAccessor)
         {
             var httpContext = httpContextAccessor.HttpContext;

@@ -42,7 +42,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 OrderDetail = new OrderDetail()
                 {
                     FirstName = vm.OrderDetail.FirstName,
-                    SecondName = vm.OrderDetail.SecondName,
+                    SecondName = vm.OrderDetail.LastName,
                     PhoneNumber = vm.OrderDetail.PhoneNumber,
                     Email = vm.OrderDetail.Email,
                     Address = vm.OrderDetail.Address,
@@ -60,6 +60,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             await userService.AddUserToRoleAsync(nameof(Roles.Client), vm.ClientId);
             await dbContext.SaveChangesAsync();
         }
+
         public async Task DeleteAsync(string Id)
         {
             if (Id == null)
@@ -75,13 +76,18 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             dbContext.Orders.Remove(order);
             await dbContext.SaveChangesAsync();
         }
-
-        //Fix this method it must return vm
-        public async Task<IEnumerable<Order>> AllAsync()
-        {
-            return await dbContext.Orders.ToListAsync();
-        }
-
+                     
+        /// <summary>
+        /// This method is used to get all orders with pagination and search functionality
+        /// </summary>
+        /// <param name="day"></param>
+        /// <param name="month"></param>
+        /// <param name="year"></param>
+        /// <param name="searchTerm"></param>
+        /// <param name="sorting"></param>
+        /// <param name="currentPage"></param>
+        /// <param name="ordersPerPage"></param>
+        /// <returns></returns>
         public async Task<AllOrdersQueryModel> AllAsync(int day = 0, int month = 0, int year = 0,
             string? searchTerm = null,
             OrderSorting sorting = OrderSorting.Date,
@@ -121,10 +127,10 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 OrderSorting.TotalSum => orders.OrderByDescending(x => x.TotalSum),
                 _ => orders.OrderByDescending(x => x.OrderDate)
             };
-            var ordersToShow = orders
+            var ordersToShow = await orders
                .Skip((currentPage - 1) * ordersPerPage)
                .Take(ordersPerPage)
-               .ToList();
+               .ToListAsync();
 
             return new AllOrdersQueryModel()
             {
@@ -145,14 +151,15 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
 
         }
-        public async Task<IEnumerable<OrderInfoViewModel>> GetAllOrdersAsync()
+
+        public async Task<IEnumerable<OrderViewModel>> AllAsync()
         {
             var orders = await dbContext.Orders
                 .Include(x => x.OrderDetail)
                 .Include(x => x.DeliveryMethod)
                 .Include(x => x.OrderProducts)
                 .Include(x => x.State)
-                .Select(x => new OrderInfoViewModel()
+                .Select(x => new OrderViewModel()
                 {
                     Id = x.Id.ToString(),
                     TotalSum = x.TotalSum.ToString(),
@@ -228,7 +235,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return vm;
         }
 
-        public async Task<OrderInfoViewModel> DetailsAsync(string Id)
+        public async Task<OrderViewModel> DetailsAsync(string Id)
         {
             var order = await dbContext.Orders
                 .Include(Id => Id.OrderDetail)
@@ -241,7 +248,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 throw new InvalidOperationException(OrderMessages.OrderNotFound);
             }
             var orderProducts = dbContext.OrderProducts.Where(x => x.OrderId.ToString() == Id).Include(x => x.Product).ToList();
-            var result = new OrderInfoViewModel()
+            var result = new OrderViewModel()
             {
                 Id = order.Id.ToString(),
                 TotalSum = order.TotalSum.ToString(),
@@ -278,7 +285,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             await dbContext.SaveChangesAsync();
         }
 
-        public Task<Order> GetByIdAsync(string Id)
+        public Task<OrderViewModel> GetByIdAsync(string Id)
         {
             throw new NotImplementedException();
         }

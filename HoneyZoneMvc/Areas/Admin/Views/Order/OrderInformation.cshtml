@@ -1,36 +1,37 @@
-﻿@model OrderInfoViewModel
+﻿@model OrderViewModel
 @{
 }
 <div class="container">
     <div class="row">
         <div class="col-md-6 text-light order-info-table">
             <section class="order-info">
-                <h3>Информация за поръчка</h3>
+                <h3>Order Information</h3>
                 <div class="row">
                     <div class="col-md-6">
-                        <p>Номер на поръчка (Id): @Model.Id</p>
-                        <p>Сума: @Model.TotalSum</p>
-                        <p>Доставка: @Model.DeliveryMethod</p>
-                        <p>Име на клиент: @Model.ClientName</p>
-                        <p>Адрес: @Model.Address</p>
-                        <p>Телефон: @Model.PhoneNumber</p>
-                        <p>Поръчана на: @Model.OrderDate</p>
-                        <p>Очаквана дата за пристигане: @Model.ExpectedDelivery</p>
-                        <p>Статус: @Model.State</p>
+                        <p>Order Number (Id): @Model.Id</p>
+                        <p>Total Amount: @Model.TotalSum</p>
+                        <p>Delivery Method: @Model.DeliveryMethod</p>
+                        <p>Client Name: @Model.ClientName</p>
+                        <p>Address: @Model.Address</p>
+                        <p>Phone Number: @Model.PhoneNumber</p>
+                        <p>Ordered On: @Model.OrderDate</p>
+                        <p>Expected Delivery Date: @Model.ExpectedDelivery</p>
+                        <p>Status: @Model.State</p>
                     </div>
             </section>
-            
-                <div class="">
-                    <h3>Продукти</h3>
-                    <table class="table table-striped-colums table-dark  table-bordered border-warning table-hover table-md">
-                        <thead>
-                            <tr class="text-center">
-                                <th scope="col">Id</th>
-                                <th scope="col">Име</th>
-                                <th scope="col">Количество</th>
-                                <th scope="col">Цена</th>
-                            </tr>
-                        </thead>
+
+            <div class="">
+                <h3>Products</h3>
+                <table class="table table-striped-colums table-dark  table-bordered border-warning table-hover table-md">
+                    <thead>
+                        <tr class="text-center">
+                            <th scope="col">Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+
                     <tbody class="">
                             @foreach (var product in Model.Products)
                             {

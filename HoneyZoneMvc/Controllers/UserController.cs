@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HoneyZoneMvc.Controllers
 {
+    /// <summary>
+    /// Contoller responsible for handling user operations.
+    /// </summary>
     public class UserController : Controller
     {
 

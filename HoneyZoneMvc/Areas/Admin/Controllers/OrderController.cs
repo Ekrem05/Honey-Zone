@@ -6,7 +6,9 @@ using static HoneyZoneMvc.Common.Messages.ExceptionMessages;
 using static HoneyZoneMvc.Common.Messages.SuccessfulMessages;
 namespace HoneyZoneMvc.Areas.Admin.Controllers
 {
-
+    /// <summary>
+    /// Controller responsible for handling administrative operations related to orders.
+    /// </summary>
     public class OrderController : BaseAdminController
     {
         private readonly IOrderService orderService;

@@ -62,6 +62,14 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         }
 
+        /// <summary>
+        /// This method returns all users with a pagination and serach functionality
+        /// </summary>
+        /// <param name="role"></param>
+        /// <param name="searchTerm"></param>
+        /// <param name="currentPage"></param>
+        /// <param name="usersPerPage"></param>
+        /// <returns></returns>
         public async Task<AllUsersQueryModel> AllAsync(string role, string searchTerm, int currentPage = 1, int usersPerPage = 1)
         {
             var users = await userManager.Users.ToListAsync();
@@ -112,6 +120,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             throw new NotImplementedException();
         }
+
         private async Task<string[]> GetUserRole(ApplicationUser user)
         {
             return (await userManager.GetRolesAsync(user)).ToArray();
