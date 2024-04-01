@@ -5,7 +5,7 @@ namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {
     public interface IStatusService
     {
-        Task<State> GetInitialOrderStatus();
+        Task<Status> GetInitialOrderStatus();
         Task<IEnumerable<StatusViewModel>> GetAllAsync();
 
     }

@@ -15,13 +15,20 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         private ICategoryService categoryService;
         private IImageService imageService;
         private IMapper mapper;
-        public ProductService(ApplicationDbContext _dbContext, ICategoryService _categoryService, IImageService _imageService, IMapper _mapper)
+        private IFileStorageService fileStorageService;
+        public ProductService(ApplicationDbContext _dbContext,
+            ICategoryService _categoryService,
+            IImageService _imageService,
+            IMapper _mapper,
+            IFileStorageService _fileStorageService)
         {
             dbContext = _dbContext;
             categoryService = _categoryService;
             imageService = _imageService;
             mapper = _mapper;
+            fileStorageService = _fileStorageService;
         }
+
         public async Task AddAsync(ProductAddViewModel product)
         {
             if (product == null)
@@ -47,7 +54,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 else
                 {
                     productToAdd.Images.Add(await imageService.ImageByNameAsync(image.FileName));
-
                 }
             }
             await dbContext.Products.AddAsync(productToAdd);
@@ -113,10 +119,13 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<IEnumerable<ProductAdminViewModel>> GetByCategoryNameAsync(string category)
         {
+            if (category==null)
+            {
+                throw new ArgumentNullException();
+            }
             if (category.ToUpper() == "ALL")
             {
                 return await AllAsync();
-
             }
 
             var models = await dbContext.Products
@@ -124,16 +133,14 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 .Where(p => p.Category.Name == category)
                 .ToListAsync();
 
-            if (models != null)
-            {
+           
                 List<ProductAdminViewModel> productsDto = new List<ProductAdminViewModel>();
                 foreach (var product in models)
                 {
                     productsDto.Add(mapper.Map<ProductAdminViewModel>(product));
                 }
                 return productsDto;
-            }
-            throw new ArgumentNullException(string.Format(ProductMessages.NoProductsWithGivenCategory, category));
+            
 
         }
 
@@ -148,17 +155,19 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<ProductAdminViewModel> GetByIdAsync(string Id)
         {
+            if (Id==null)
+            {
+                throw new ArgumentNullException();
+            }
             var model = await dbContext.Products
                 .Include(p => p.Category)
                 .Include(p => p.Images)
                 .FirstOrDefaultAsync(p => p.Id.ToString() == Id);
 
-            if (model != null)
-            {
-                var item = mapper.Map<ProductAdminViewModel>(model);
-                return item;
-            }
-            throw new ArgumentNullException(string.Format(ProductMessages.NoProductWithGivenId, Id));
+            
+            var item = mapper.Map<ProductAdminViewModel>(model);
+            return item;
+            
         }
 
         public async Task<IEnumerable<ProductShopCardViewModel>> GetBestSellersAsync()
@@ -202,7 +211,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             }
             var orders = await dbContext.Orders
                 .Where(o => o.State.Name
-                != "Завършена")
+                != "Delivered")
                 .Where(o => o.OrderProducts.Any(op => op.ProductId == product.Id)).ToListAsync();
             if (orders.Count() > 0)
             {
@@ -302,12 +311,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         private async Task<string> SaveLocally(IFormFile mainImage)
         {
             string url = Path.Combine(Environment.CurrentDirectory, "wwwroot", "productImages");
-
-            string filePath = Path.Combine(url, mainImage.FileName);
-            using (var fileStream = new FileStream(filePath, FileMode.Create))
-            {
-                await mainImage.CopyToAsync(fileStream);
-            }
+            await fileStorageService.SaveFileAsync(mainImage, url);
             return mainImage.FileName;
         }
 

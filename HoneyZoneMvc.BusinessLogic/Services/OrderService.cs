@@ -42,7 +42,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 OrderDetail = new OrderDetail()
                 {
                     FirstName = vm.OrderDetail.FirstName,
-                    SecondName = vm.OrderDetail.LastName,
+                    LastName = vm.OrderDetail.LastName,
                     PhoneNumber = vm.OrderDetail.PhoneNumber,
                     Email = vm.OrderDetail.Email,
                     Address = vm.OrderDetail.Address,
@@ -116,7 +116,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 orders = orders.Where(x =>
                 x.OrderDetail.FirstName
                 .ToLower().Contains(searchTerm.ToLower()) ||
-                x.OrderDetail.SecondName
+                x.OrderDetail.LastName
                 .ToLower().Contains(searchTerm.ToLower()) ||
                 x.OrderDetail.PhoneNumber.StartsWith(searchTerm)
                 );
@@ -140,7 +140,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                     Id = x.Id.ToString(),
                     TotalSum = x.TotalSum.ToString(),
                     DeliveryMethod = x.DeliveryMethod.Name,
-                    ClientName = x.OrderDetail.FirstName + " " + x.OrderDetail.SecondName,
+                    ClientName = x.OrderDetail.FirstName + " " + x.OrderDetail.LastName,
                     OrderDate = x.OrderDate.ToString(DataConstants.DateFormat),
                     Address = x.OrderDetail.Address,
                     PhoneNumber = x.OrderDetail.PhoneNumber,
@@ -168,7 +168,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                     State = x.State.Name,
                     Address = x.OrderDetail.Address,
                     PhoneNumber = x.OrderDetail.PhoneNumber,
-                    ClientName = x.OrderDetail.FirstName + " " + x.OrderDetail.SecondName,
+                    ClientName = x.OrderDetail.FirstName + " " + x.OrderDetail.LastName,
                     ExpectedDelivery = x.ExpectedDelivery.ToString(DataConstants.DateFormat),
                 }).ToListAsync();
             return orders;
@@ -257,7 +257,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 State = order.State.Name,
                 Address = order.OrderDetail.Address,
                 PhoneNumber = order.OrderDetail.PhoneNumber,
-                ClientName = order.OrderDetail.FirstName + " " + order.OrderDetail.SecondName,
+                ClientName = order.OrderDetail.FirstName + " " + order.OrderDetail.LastName,
                 ExpectedDelivery = order.ExpectedDelivery.ToString(DataConstants.DateFormat),
                 Products = orderProducts.Select(op => new ProductOrderedAdminViewModel()
                 {

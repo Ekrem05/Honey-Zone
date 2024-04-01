@@ -28,7 +28,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         }
 
-        public async Task<State> GetInitialOrderStatus()
+        public async Task<Status> GetInitialOrderStatus()
         {
             return dbContext.States.FirstOrDefault(s => s.Name == DataConstants.Satus.InitialStatus);
         }
