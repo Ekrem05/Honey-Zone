@@ -30,7 +30,8 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<IImageService, ImageService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IStatisticService, StatisticService>();
-            services.AddAutoMapper(typeof(Program), typeof(ProductProfile));
+            services.AddScoped<IFileStorageService, FileStorageService>();
+            services.AddAutoMapper(typeof(Program), typeof(MyProfile));
             return services;
         }
         private static IServiceCollection AddContext(this IServiceCollection services, IConfiguration config)

@@ -18,7 +18,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<IEnumerable<StatusViewModel>> GetAllAsync()
         {
-            return await (dbContext.States
+            return await (dbContext.Statuses
                  .AsNoTracking()
                  .Select(s => new StatusViewModel()
                  {
@@ -28,9 +28,9 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         }
 
-        public async Task<State> GetInitialOrderStatus()
+        public async Task<Status> GetInitialOrderStatus()
         {
-            return dbContext.States.FirstOrDefault(s => s.Name == DataConstants.Satus.InitialStatus);
+            return dbContext.Statuses.FirstOrDefault(s => s.Name == DataConstants.Satus.InitialStatus);
         }
     }
 }

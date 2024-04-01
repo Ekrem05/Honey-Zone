@@ -16,7 +16,7 @@ namespace HoneyZoneMvc.Infrastructure.Configuration
             builder
              .HasData(new Product()
              {
-                 Id = Guid.NewGuid(),
+                 Id = Guid.Parse("c7ecd019-40b1-47f3-89c4-67e3625f796b"),
                  Name = "Sunflower Honey",
                  CategoryId = Guid.Parse("78355d47-6040-4676-9972-ac8be4f19882"),
                  Price = 19.99,
@@ -25,7 +25,7 @@ namespace HoneyZoneMvc.Infrastructure.Configuration
                  Description = "Savor the golden goodness of our Sunflower honey. With its rich, floral aroma and robust flavor, this honey is a true delight for your taste buds. Harvested from the vibrant blooms of sunflowers, it boasts a smooth texture and a hint of nutty sweetness. Perfect for adding a touch of sunshine to your morning tea or drizzling over freshly baked goods. Experience the pure taste of nature with our Sunflower honey.",
                  QuantityInStock = 82,
                  ProductAmount = "800g",
-                 TimesOrdered = 0,
+                 TimesOrdered = 1,
                  MainImageUrl = "bg honey2.png"
 
              },
@@ -39,7 +39,7 @@ namespace HoneyZoneMvc.Infrastructure.Configuration
                  Description = "Indulge in the delicate sweetness of our Acacia honey. Sourced from the pristine blossoms of Acacia trees, this golden nectar boasts a subtle floral aroma and a smooth, light taste. Perfect for drizzling over yogurt, spreading on toast, or sweetening your favorite beverages. Treat yourself to the pure, exquisite flavor of Acacia honey today.",
                  QuantityInStock = 27,
                  ProductAmount = "1kg",
-                 TimesOrdered = 0,
+                 TimesOrdered = 2,
                  MainImageUrl = "attachment_86137655.jpg"
              },
              new Product()
@@ -52,7 +52,7 @@ namespace HoneyZoneMvc.Infrastructure.Configuration
                  Description = "Indulge in the exquisite taste and health benefits of Manuka Honey. Sourced from the pristine landscapes of New Zealand, this rare honey is renowned for its rich flavor and potent medicinal properties. With its unique antibacterial and antioxidant qualities, Manuka Honey offers a natural boost to your immune system and promotes overall wellness.",
                  QuantityInStock = 11,
                  ProductAmount = "1kg",
-                 TimesOrdered = 0,
+                 TimesOrdered = 3,
                  MainImageUrl = "black bg honey.png"
              },
              new Product()
