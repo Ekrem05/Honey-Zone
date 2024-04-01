@@ -16,7 +16,7 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models
         [Required]
         [MaxLength(DataConstants.OrderDetails.NameMaxValue)]
 
-        public string SecondName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
 
         [Required]
         [MaxLength(DataConstants.OrderDetails.PhoneNumberMaxValue)]

@@ -210,7 +210,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 throw new ArgumentNullException(string.Format(ProductMessages.NoProductWithGivenId, Id));
             }
             var orders = await dbContext.Orders
-                .Where(o => o.State.Name
+                .Where(o => o.Status.Name
                 != "Delivered")
                 .Where(o => o.OrderProducts.Any(op => op.ProductId == product.Id)).ToListAsync();
             if (orders.Count() > 0)

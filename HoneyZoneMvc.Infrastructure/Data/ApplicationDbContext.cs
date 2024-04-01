@@ -20,7 +20,7 @@ namespace HoneyZoneMvc.Data
         public DbSet<DeliveryMethod> DeliverMethods { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderProduct> OrderProducts { get; set; }
-        public DbSet<State> States { get; set; }
+        public DbSet<Status> Statuses { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -28,7 +28,7 @@ namespace HoneyZoneMvc.Data
 
             builder.ApplyConfiguration(new CategoryConfiguration());
             builder.ApplyConfiguration(new ProductConfiguration());
-            builder.ApplyConfiguration(new StateConfiguration());
+            builder.ApplyConfiguration(new StatusConfiguration());
             builder.ApplyConfiguration(new DeliveryMethodConfiguration());
             builder.ApplyConfiguration(new UserConfiguration());
             builder.ApplyConfiguration(new RoleConfiguration());

@@ -37,7 +37,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 TotalSum = vm.TotalSum,
                 DeliveryMethodId = Guid.Parse(vm.DeliveryMethodId),
                 OrderDate = vm.OrderDate,
-                State = await stateService.GetInitialOrderStatus(),
+                Status = await stateService.GetInitialOrderStatus(),
                 ExpectedDelivery = DateTime.Now.AddDays(3),
                 OrderDetail = new OrderDetail()
                 {
@@ -97,7 +97,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             var orders = dbContext.Orders
                 .Include(x => x.OrderDetail)
                 .Include(x => x.DeliveryMethod)
-                .Include(x => x.State)
+                .Include(x => x.Status)
                 .AsQueryable();
             if (day > 0)
             {
@@ -145,7 +145,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                     Address = x.OrderDetail.Address,
                     PhoneNumber = x.OrderDetail.PhoneNumber,
                     ExpectedDelivery = x.ExpectedDelivery.ToString(DataConstants.DateFormat),
-                    State = x.State.Name
+                    State = x.Status.Name
                 }).ToList()
             };
 
@@ -158,14 +158,14 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 .Include(x => x.OrderDetail)
                 .Include(x => x.DeliveryMethod)
                 .Include(x => x.OrderProducts)
-                .Include(x => x.State)
+                .Include(x => x.Status)
                 .Select(x => new OrderViewModel()
                 {
                     Id = x.Id.ToString(),
                     TotalSum = x.TotalSum.ToString(),
                     DeliveryMethod = x.DeliveryMethod.Name,
                     OrderDate = x.OrderDate.ToString(DataConstants.DateFormat),
-                    State = x.State.Name,
+                    State = x.Status.Name,
                     Address = x.OrderDetail.Address,
                     PhoneNumber = x.OrderDetail.PhoneNumber,
                     ClientName = x.OrderDetail.FirstName + " " + x.OrderDetail.LastName,
@@ -181,7 +181,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 .Include(Id => Id.OrderDetail)
                 .Include(Id => Id.DeliveryMethod)
                 .Include(Id => Id.OrderProducts)
-                .Include(Id => Id.State)
+                .Include(Id => Id.Status)
                 .Where(o => o.ClientId.ToString() == userId).ToListAsync();
             if (orders == null)
             {
@@ -196,7 +196,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                     DeliveryMethod = order.DeliveryMethod.Name,
                     OrderDate = order.OrderDate.ToString(DataConstants.DateFormat),
                     ExpectedDelivery = order.ExpectedDelivery.ToString(DataConstants.DateFormat),
-                    State = order.State.Name,
+                    State = order.Status.Name,
                     Address = order.OrderDetail.Address,
                     Products = orderProducts.Select(op => new ProductsOrderedUserViewModel()
                     {
@@ -219,7 +219,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 throw new ArgumentNullException(IdNull);
             }
             var order = await dbContext.Orders
-                .Include(x => x.State)
+                .Include(x => x.Status)
                  .FirstOrDefaultAsync(x => x.Id.ToString() == Id);
             if (order == null)
             {
@@ -228,7 +228,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             ChangeOrderStatusViewModel vm = new ChangeOrderStatusViewModel()
             {
                 Id = order.Id.ToString(),
-                CurrentStatus = order.State.Name,
+                CurrentStatus = order.Status.Name,
             };
 
             vm.Statuses = await stateService.GetAllAsync();
@@ -241,7 +241,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 .Include(Id => Id.OrderDetail)
                 .Include(Id => Id.DeliveryMethod)
                 .Include(Id => Id.OrderProducts)
-                .Include(Id => Id.State)
+                .Include(Id => Id.Status)
                 .FirstOrDefaultAsync(o => o.Id.ToString() == Id);
             if (order == null)
             {
@@ -254,7 +254,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 TotalSum = order.TotalSum.ToString(),
                 DeliveryMethod = order.DeliveryMethod.Name,
                 OrderDate = order.OrderDate.ToString(DataConstants.DateFormat),
-                State = order.State.Name,
+                State = order.Status.Name,
                 Address = order.OrderDetail.Address,
                 PhoneNumber = order.OrderDetail.PhoneNumber,
                 ClientName = order.OrderDetail.FirstName + " " + order.OrderDetail.LastName,
@@ -281,7 +281,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             {
                 throw new ArgumentNullException(OrderMessages.OrderNotFound);
             }
-            order.StateId = Guid.Parse(vm.StatusId);
+            order.StatusId = Guid.Parse(vm.StatusId);
             await dbContext.SaveChangesAsync();
         }
 

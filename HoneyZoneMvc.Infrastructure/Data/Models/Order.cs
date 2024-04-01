@@ -27,9 +27,9 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models
         [AllowNull]
         public DateTime ExpectedDelivery { get; set; }
 
-        [ForeignKey(nameof(StateId))]
-        public Guid StateId { get; set; }
-        public State State { get; set; } = null!;
+        [ForeignKey(nameof(StatusId))]
+        public Guid StatusId { get; set; }
+        public Status Status { get; set; } = null!;
 
         [ForeignKey(nameof(OrderDetailId))]
         public Guid OrderDetailId { get; set; }
