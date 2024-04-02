@@ -80,9 +80,5 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return dto;
         }
 
-        public Task UpdateAsync(CategoryAddViewModel category)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

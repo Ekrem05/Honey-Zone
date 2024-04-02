@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.731513083048919" branch-rate="0.533742331288344" lines-covered="1286" lines-valid="1758" branches-covered="87" branches-valid="163" complexity="493" version="0" timestamp="1712059552">
+<coverage line-rate="0.772249861802101" branch-rate="0.607361963190184" lines-covered="1397" lines-valid="1809" branches-covered="99" branches-valid="163" complexity="502" version="0" timestamp="1712063215">
   <sources>
     <source>C:\Users\ekrem\</source>
   </sources>
   <packages>
-    <package name="HoneyZoneMvc.BusinessLogic" line-rate="0.543499511241447" branch-rate="0.537931034482759" complexity="363">
+    <package name="HoneyZoneMvc.BusinessLogic" line-rate="0.599409448818898" branch-rate="0.620689655172414" complexity="362">
       <classes>
         <class name="HoneyZoneMvc.BusinessLogic.AutoMapper.MyProfile" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\AutoMapper\MyProfile.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
@@ -315,7 +315,7 @@
             <line number="170" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="HoneyZoneMvc.BusinessLogic.Services.CategoryService" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\CategoryService.cs" line-rate="0" branch-rate="0" complexity="16">
+        <class name="HoneyZoneMvc.BusinessLogic.Services.CategoryService" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\CategoryService.cs" line-rate="0.962962962962963" branch-rate="1" complexity="16">
           <methods>
             <method name="UpdateAsync" signature="(...)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -323,136 +323,136 @@
                 <line number="85" hits="0" branch="false" />
               </lines>
             </method>
-            <method name=".ctor" signature="(...)" line-rate="0" branch-rate="1" complexity="1">
+            <method name=".ctor" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="13" hits="0" branch="false" />
-                <line number="14" hits="0" branch="false" />
-                <line number="15" hits="0" branch="false" />
-                <line number="16" hits="0" branch="false" />
+                <line number="13" hits="1" branch="false" />
+                <line number="14" hits="1" branch="false" />
+                <line number="15" hits="1" branch="false" />
+                <line number="16" hits="1" branch="false" />
               </lines>
             </method>
-            <method name="AddAsync" signature="()" line-rate="0" branch-rate="0" complexity="4">
+            <method name="AddAsync" signature="()" line-rate="1" branch-rate="1" complexity="4">
               <lines>
-                <line number="18" hits="0" branch="false" />
-                <line number="19" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="20" hits="0" branch="false" />
-                <line number="21" hits="0" branch="false" />
-                <line number="23" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="24" hits="0" branch="false" />
-                <line number="25" hits="0" branch="false" />
-                <line number="27" hits="0" branch="false" />
-                <line number="28" hits="0" branch="false" />
-                <line number="30" hits="0" branch="false" />
+                <line number="18" hits="3" branch="false" />
+                <line number="19" hits="3" branch="true" condition-coverage="100% (2/2)" />
+                <line number="20" hits="1" branch="false" />
+                <line number="21" hits="1" branch="false" />
+                <line number="23" hits="2" branch="true" condition-coverage="100% (2/2)" />
+                <line number="24" hits="1" branch="false" />
+                <line number="25" hits="1" branch="false" />
+                <line number="27" hits="1" branch="false" />
+                <line number="28" hits="1" branch="false" />
+                <line number="30" hits="1" branch="false" />
               </lines>
             </method>
-            <method name="AllAsync" signature="()" line-rate="0" branch-rate="0" complexity="2">
+            <method name="AllAsync" signature="()" line-rate="1" branch-rate="1" complexity="2">
               <lines>
-                <line number="60" hits="0" branch="false" />
-                <line number="61" hits="0" branch="false" />
-                <line number="62" hits="0" branch="false" />
-                <line number="63" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="64" hits="0" branch="false" />
-                <line number="65" hits="0" branch="false" />
-                <line number="66" hits="0" branch="false" />
-                <line number="67" hits="0" branch="false" />
-                <line number="68" hits="0" branch="false" />
-                <line number="69" hits="0" branch="false" />
-                <line number="70" hits="0" branch="false" />
-                <line number="71" hits="0" branch="false" />
-                <line number="72" hits="0" branch="false" />
+                <line number="60" hits="1" branch="false" />
+                <line number="61" hits="1" branch="false" />
+                <line number="62" hits="1" branch="false" />
+                <line number="63" hits="11" branch="true" condition-coverage="100% (2/2)" />
+                <line number="64" hits="4" branch="false" />
+                <line number="65" hits="4" branch="false" />
+                <line number="66" hits="4" branch="false" />
+                <line number="67" hits="4" branch="false" />
+                <line number="68" hits="4" branch="false" />
+                <line number="69" hits="4" branch="false" />
+                <line number="70" hits="4" branch="false" />
+                <line number="71" hits="1" branch="false" />
+                <line number="72" hits="1" branch="false" />
               </lines>
             </method>
-            <method name="DeleteAsync" signature="()" line-rate="0" branch-rate="0" complexity="6">
+            <method name="DeleteAsync" signature="()" line-rate="1" branch-rate="1" complexity="6">
               <lines>
-                <line number="38" hits="0" branch="false" />
-                <line number="39" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="40" hits="0" branch="false" />
-                <line number="41" hits="0" branch="false" />
-                <line number="43" hits="0" branch="false" />
-                <line number="44" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="45" hits="0" branch="false" />
-                <line number="46" hits="0" branch="false" />
-                <line number="48" hits="0" branch="false" />
-                <line number="49" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="50" hits="0" branch="false" />
-                <line number="51" hits="0" branch="false" />
-                <line number="53" hits="0" branch="false" />
-                <line number="54" hits="0" branch="false" />
-                <line number="57" hits="0" branch="false" />
+                <line number="38" hits="4" branch="false" />
+                <line number="39" hits="4" branch="true" condition-coverage="100% (2/2)" />
+                <line number="40" hits="1" branch="false" />
+                <line number="41" hits="1" branch="false" />
+                <line number="43" hits="3" branch="false" />
+                <line number="44" hits="3" branch="true" condition-coverage="100% (2/2)" />
+                <line number="45" hits="1" branch="false" />
+                <line number="46" hits="1" branch="false" />
+                <line number="48" hits="2" branch="false" />
+                <line number="49" hits="2" branch="true" condition-coverage="100% (2/2)" />
+                <line number="50" hits="1" branch="false" />
+                <line number="51" hits="1" branch="false" />
+                <line number="53" hits="1" branch="false" />
+                <line number="54" hits="1" branch="false" />
+                <line number="57" hits="1" branch="false" />
               </lines>
             </method>
-            <method name="ExistsAsync" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="ExistsAsync" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="33" hits="0" branch="false" />
-                <line number="34" hits="0" branch="false" />
-                <line number="35" hits="0" branch="false" />
+                <line number="33" hits="2" branch="false" />
+                <line number="34" hits="2" branch="false" />
+                <line number="35" hits="2" branch="false" />
               </lines>
             </method>
-            <method name="GetByIdAsync" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="GetByIdAsync" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="75" hits="0" branch="false" />
-                <line number="76" hits="0" branch="false" />
-                <line number="77" hits="0" branch="false" />
-                <line number="78" hits="0" branch="false" />
-                <line number="79" hits="0" branch="false" />
-                <line number="80" hits="0" branch="false" />
-                <line number="81" hits="0" branch="false" />
+                <line number="75" hits="1" branch="false" />
+                <line number="76" hits="1" branch="false" />
+                <line number="77" hits="1" branch="false" />
+                <line number="78" hits="1" branch="false" />
+                <line number="79" hits="1" branch="false" />
+                <line number="80" hits="1" branch="false" />
+                <line number="81" hits="1" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="13" hits="0" branch="false" />
-            <line number="14" hits="0" branch="false" />
-            <line number="15" hits="0" branch="false" />
-            <line number="16" hits="0" branch="false" />
-            <line number="18" hits="0" branch="false" />
-            <line number="19" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="20" hits="0" branch="false" />
-            <line number="21" hits="0" branch="false" />
-            <line number="23" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="24" hits="0" branch="false" />
-            <line number="25" hits="0" branch="false" />
-            <line number="27" hits="0" branch="false" />
-            <line number="28" hits="0" branch="false" />
-            <line number="30" hits="0" branch="false" />
-            <line number="33" hits="0" branch="false" />
-            <line number="34" hits="0" branch="false" />
-            <line number="35" hits="0" branch="false" />
-            <line number="38" hits="0" branch="false" />
-            <line number="39" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="40" hits="0" branch="false" />
-            <line number="41" hits="0" branch="false" />
-            <line number="43" hits="0" branch="false" />
-            <line number="44" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="45" hits="0" branch="false" />
-            <line number="46" hits="0" branch="false" />
-            <line number="48" hits="0" branch="false" />
-            <line number="49" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="50" hits="0" branch="false" />
-            <line number="51" hits="0" branch="false" />
-            <line number="53" hits="0" branch="false" />
-            <line number="54" hits="0" branch="false" />
-            <line number="57" hits="0" branch="false" />
-            <line number="60" hits="0" branch="false" />
-            <line number="61" hits="0" branch="false" />
-            <line number="62" hits="0" branch="false" />
-            <line number="63" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="64" hits="0" branch="false" />
-            <line number="65" hits="0" branch="false" />
-            <line number="66" hits="0" branch="false" />
-            <line number="67" hits="0" branch="false" />
-            <line number="68" hits="0" branch="false" />
-            <line number="69" hits="0" branch="false" />
-            <line number="70" hits="0" branch="false" />
-            <line number="71" hits="0" branch="false" />
-            <line number="72" hits="0" branch="false" />
-            <line number="75" hits="0" branch="false" />
-            <line number="76" hits="0" branch="false" />
-            <line number="77" hits="0" branch="false" />
-            <line number="78" hits="0" branch="false" />
-            <line number="79" hits="0" branch="false" />
-            <line number="80" hits="0" branch="false" />
-            <line number="81" hits="0" branch="false" />
+            <line number="13" hits="1" branch="false" />
+            <line number="14" hits="1" branch="false" />
+            <line number="15" hits="1" branch="false" />
+            <line number="16" hits="1" branch="false" />
+            <line number="18" hits="3" branch="false" />
+            <line number="19" hits="3" branch="true" condition-coverage="100% (2/2)" />
+            <line number="20" hits="1" branch="false" />
+            <line number="21" hits="1" branch="false" />
+            <line number="23" hits="2" branch="true" condition-coverage="100% (2/2)" />
+            <line number="24" hits="1" branch="false" />
+            <line number="25" hits="1" branch="false" />
+            <line number="27" hits="1" branch="false" />
+            <line number="28" hits="1" branch="false" />
+            <line number="30" hits="1" branch="false" />
+            <line number="33" hits="2" branch="false" />
+            <line number="34" hits="2" branch="false" />
+            <line number="35" hits="2" branch="false" />
+            <line number="38" hits="4" branch="false" />
+            <line number="39" hits="4" branch="true" condition-coverage="100% (2/2)" />
+            <line number="40" hits="1" branch="false" />
+            <line number="41" hits="1" branch="false" />
+            <line number="43" hits="3" branch="false" />
+            <line number="44" hits="3" branch="true" condition-coverage="100% (2/2)" />
+            <line number="45" hits="1" branch="false" />
+            <line number="46" hits="1" branch="false" />
+            <line number="48" hits="2" branch="false" />
+            <line number="49" hits="2" branch="true" condition-coverage="100% (2/2)" />
+            <line number="50" hits="1" branch="false" />
+            <line number="51" hits="1" branch="false" />
+            <line number="53" hits="1" branch="false" />
+            <line number="54" hits="1" branch="false" />
+            <line number="57" hits="1" branch="false" />
+            <line number="60" hits="1" branch="false" />
+            <line number="61" hits="1" branch="false" />
+            <line number="62" hits="1" branch="false" />
+            <line number="63" hits="11" branch="true" condition-coverage="100% (2/2)" />
+            <line number="64" hits="4" branch="false" />
+            <line number="65" hits="4" branch="false" />
+            <line number="66" hits="4" branch="false" />
+            <line number="67" hits="4" branch="false" />
+            <line number="68" hits="4" branch="false" />
+            <line number="69" hits="4" branch="false" />
+            <line number="70" hits="4" branch="false" />
+            <line number="71" hits="1" branch="false" />
+            <line number="72" hits="1" branch="false" />
+            <line number="75" hits="1" branch="false" />
+            <line number="76" hits="1" branch="false" />
+            <line number="77" hits="1" branch="false" />
+            <line number="78" hits="1" branch="false" />
+            <line number="79" hits="1" branch="false" />
+            <line number="80" hits="1" branch="false" />
+            <line number="81" hits="1" branch="false" />
             <line number="84" hits="0" branch="false" />
             <line number="85" hits="0" branch="false" />
           </lines>
@@ -621,7 +621,7 @@
             <line number="34" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="HoneyZoneMvc.BusinessLogic.Services.OrderService" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\OrderService.cs" line-rate="0.944206008583691" branch-rate="0.970588235294118" complexity="36">
+        <class name="HoneyZoneMvc.BusinessLogic.Services.OrderService" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\OrderService.cs" line-rate="0.956140350877193" branch-rate="0.970588235294118" complexity="36">
           <methods>
             <method name=".ctor" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -755,7 +755,7 @@
                 <line number="175" hits="1" branch="false" />
               </lines>
             </method>
-            <method name="ChangeStatusAsync" signature="()" line-rate="0.823529411764706" branch-rate="1" complexity="4">
+            <method name="ChangeStatusAsync" signature="()" line-rate="1" branch-rate="1" complexity="4">
               <lines>
                 <line number="278" hits="3" branch="false" />
                 <line number="279" hits="3" branch="true" condition-coverage="100% (2/2)" />
@@ -765,15 +765,10 @@
                 <line number="284" hits="2" branch="true" condition-coverage="100% (2/2)" />
                 <line number="285" hits="1" branch="false" />
                 <line number="286" hits="1" branch="false" />
-                <line number="289" hits="1" branch="false" />
+                <line number="288" hits="1" branch="false" />
                 <line number="290" hits="1" branch="false" />
                 <line number="291" hits="1" branch="false" />
-                <line number="292" hits="0" branch="false" />
-                <line number="293" hits="0" branch="false" />
-                <line number="294" hits="0" branch="false" />
-                <line number="296" hits="1" branch="false" />
-                <line number="297" hits="1" branch="false" />
-                <line number="298" hits="1" branch="false" />
+                <line number="292" hits="1" branch="false" />
               </lines>
             </method>
             <method name="DeleteAsync" signature="()" line-rate="1" branch-rate="1" complexity="4">
@@ -1118,15 +1113,10 @@
             <line number="284" hits="2" branch="true" condition-coverage="100% (2/2)" />
             <line number="285" hits="1" branch="false" />
             <line number="286" hits="1" branch="false" />
-            <line number="289" hits="1" branch="false" />
+            <line number="288" hits="1" branch="false" />
             <line number="290" hits="1" branch="false" />
             <line number="291" hits="1" branch="false" />
-            <line number="292" hits="0" branch="false" />
-            <line number="293" hits="0" branch="false" />
-            <line number="294" hits="0" branch="false" />
-            <line number="296" hits="1" branch="false" />
-            <line number="297" hits="1" branch="false" />
-            <line number="298" hits="1" branch="false" />
+            <line number="292" hits="1" branch="false" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.BusinessLogic.Services.ProductService" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\ProductService.cs" line-rate="0.981481481481482" branch-rate="1" complexity="52">
@@ -1815,18 +1805,12 @@
             <line number="51" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="HoneyZoneMvc.BusinessLogic.Services.UserService" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\UserService.cs" line-rate="0" branch-rate="0" complexity="22">
+        <class name="HoneyZoneMvc.BusinessLogic.Services.UserService" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\UserService.cs" line-rate="0" branch-rate="0" complexity="21">
           <methods>
             <method name="GetByIdAsync" signature="(...)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
                 <line number="115" hits="0" branch="false" />
                 <line number="116" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="GetByRoleAsync" signature="(...)" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="120" hits="0" branch="false" />
-                <line number="121" hits="0" branch="false" />
               </lines>
             </method>
             <method name=".ctor" signature="(...)" line-rate="0" branch-rate="1" complexity="1">
@@ -1929,9 +1913,9 @@
             </method>
             <method name="GetUserRole" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="125" hits="0" branch="false" />
-                <line number="126" hits="0" branch="false" />
-                <line number="127" hits="0" branch="false" />
+                <line number="119" hits="0" branch="false" />
+                <line number="120" hits="0" branch="false" />
+                <line number="121" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
@@ -2020,11 +2004,9 @@
             <line number="112" hits="0" branch="false" />
             <line number="115" hits="0" branch="false" />
             <line number="116" hits="0" branch="false" />
+            <line number="119" hits="0" branch="false" />
             <line number="120" hits="0" branch="false" />
             <line number="121" hits="0" branch="false" />
-            <line number="125" hits="0" branch="false" />
-            <line number="126" hits="0" branch="false" />
-            <line number="127" hits="0" branch="false" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.BusinessLogic.ViewModels.AdminViewModel" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\ViewModels\AdminViewModel.cs" line-rate="0" branch-rate="1" complexity="5">
@@ -2105,34 +2087,34 @@
             <line number="6" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels.CategoryAddViewModel" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\ViewModels\Category\CategoryAddViewModel.cs" line-rate="0" branch-rate="1" complexity="1">
+        <class name="HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels.CategoryAddViewModel" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\ViewModels\Category\CategoryAddViewModel.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
-            <method name="get_Name" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_Name" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="11" hits="0" branch="false" />
+                <line number="11" hits="7" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="11" hits="0" branch="false" />
+            <line number="11" hits="7" branch="false" />
           </lines>
         </class>
-        <class name="HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels.CategoryViewModel" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\ViewModels\Category\CategoryViewModel.cs" line-rate="0" branch-rate="1" complexity="2">
+        <class name="HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels.CategoryViewModel" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\ViewModels\Category\CategoryViewModel.cs" line-rate="1" branch-rate="1" complexity="2">
           <methods>
-            <method name="get_Id" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="5" hits="0" branch="false" />
+                <line number="5" hits="5" branch="false" />
               </lines>
             </method>
-            <method name="get_Name" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_Name" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="6" hits="0" branch="false" />
+                <line number="6" hits="6" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="5" hits="0" branch="false" />
-            <line number="6" hits="0" branch="false" />
+            <line number="5" hits="5" branch="false" />
+            <line number="6" hits="6" branch="false" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels.DiscountByCategoryViewModel" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\ViewModels\Category\DiscountByCategoryViewModel.cs" line-rate="0" branch-rate="1" complexity="3">
@@ -3367,37 +3349,37 @@
           <methods>
             <method name="get_Products" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="17" hits="48" branch="false" />
+                <line number="17" hits="52" branch="false" />
               </lines>
             </method>
             <method name="get_ImageUrls" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="18" hits="4" branch="false" />
+                <line number="18" hits="5" branch="false" />
               </lines>
             </method>
             <method name="get_Categories" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="19" hits="3" branch="false" />
+                <line number="19" hits="17" branch="false" />
               </lines>
             </method>
             <method name="get_DeliverMethods" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="20" hits="42" branch="false" />
+                <line number="20" hits="43" branch="false" />
               </lines>
             </method>
             <method name="get_Orders" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="21" hits="69" branch="false" />
+                <line number="21" hits="70" branch="false" />
               </lines>
             </method>
             <method name="get_OrderProducts" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="22" hits="7" branch="false" />
+                <line number="22" hits="8" branch="false" />
               </lines>
             </method>
             <method name="get_Statuses" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="23" hits="42" branch="false" />
+                <line number="23" hits="43" branch="false" />
               </lines>
             </method>
             <method name="OnModelCreating" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
@@ -3416,23 +3398,23 @@
             </method>
             <method name=".ctor" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="13" hits="2" branch="false" />
-                <line number="14" hits="2" branch="false" />
-                <line number="15" hits="2" branch="false" />
+                <line number="13" hits="3" branch="false" />
+                <line number="14" hits="3" branch="false" />
+                <line number="15" hits="3" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="13" hits="2" branch="false" />
-            <line number="14" hits="2" branch="false" />
-            <line number="15" hits="2" branch="false" />
-            <line number="17" hits="48" branch="false" />
-            <line number="18" hits="4" branch="false" />
-            <line number="19" hits="3" branch="false" />
-            <line number="20" hits="42" branch="false" />
-            <line number="21" hits="69" branch="false" />
-            <line number="22" hits="7" branch="false" />
-            <line number="23" hits="42" branch="false" />
+            <line number="13" hits="3" branch="false" />
+            <line number="14" hits="3" branch="false" />
+            <line number="15" hits="3" branch="false" />
+            <line number="17" hits="52" branch="false" />
+            <line number="18" hits="5" branch="false" />
+            <line number="19" hits="17" branch="false" />
+            <line number="20" hits="43" branch="false" />
+            <line number="21" hits="70" branch="false" />
+            <line number="22" hits="8" branch="false" />
+            <line number="23" hits="43" branch="false" />
             <line number="27" hits="2" branch="false" />
             <line number="29" hits="2" branch="false" />
             <line number="30" hits="2" branch="false" />
@@ -3823,24 +3805,24 @@
           <methods>
             <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="9" hits="77" branch="false" />
+                <line number="9" hits="83" branch="false" />
               </lines>
             </method>
             <method name="get_Name" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="13" hits="120" branch="false" />
+                <line number="13" hits="171" branch="false" />
               </lines>
             </method>
             <method name="get_Products" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="15" hits="112" branch="false" />
+                <line number="15" hits="154" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="9" hits="77" branch="false" />
-            <line number="13" hits="120" branch="false" />
-            <line number="15" hits="112" branch="false" />
+            <line number="9" hits="83" branch="false" />
+            <line number="13" hits="171" branch="false" />
+            <line number="15" hits="154" branch="false" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.Infrastructure.Data.Models.DeliveryMethod" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\Data\Models\DeliveryMethod.cs" line-rate="1" branch-rate="1" complexity="3">
@@ -3852,19 +3834,19 @@
             </method>
             <method name="get_Name" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="12" hits="95" branch="false" />
+                <line number="12" hits="113" branch="false" />
               </lines>
             </method>
             <method name="get_Orders" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="14" hits="68" branch="false" />
+                <line number="14" hits="86" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
             <line number="8" hits="18" branch="false" />
-            <line number="12" hits="95" branch="false" />
-            <line number="14" hits="68" branch="false" />
+            <line number="12" hits="113" branch="false" />
+            <line number="14" hits="86" branch="false" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.Infrastructure.Data.Models.IdentityModels.ApplicationUser" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\Data\Models\IdentityModels\ApplicationUser.cs" line-rate="1" branch-rate="1" complexity="2">
@@ -4104,7 +4086,7 @@
             </method>
             <method name="get_Name" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="16" hits="309" branch="false" />
+                <line number="16" hits="372" branch="false" />
               </lines>
             </method>
             <method name="get_CategoryId" signature="()" line-rate="1" branch-rate="1" complexity="1">
@@ -4114,7 +4096,7 @@
             </method>
             <method name="get_Category" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="24" hits="279" branch="false" />
+                <line number="24" hits="342" branch="false" />
               </lines>
             </method>
             <method name="get_Price" signature="()" line-rate="1" branch-rate="1" complexity="1">
@@ -4134,7 +4116,7 @@
             </method>
             <method name="get_Description" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="40" hits="295" branch="false" />
+                <line number="40" hits="358" branch="false" />
               </lines>
             </method>
             <method name="get_QuantityInStock" signature="()" line-rate="1" branch-rate="1" complexity="1">
@@ -4144,7 +4126,7 @@
             </method>
             <method name="get_ProductAmount" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="48" hits="295" branch="false" />
+                <line number="48" hits="358" branch="false" />
               </lines>
             </method>
             <method name="get_TimesOrdered" signature="()" line-rate="1" branch-rate="1" complexity="1">
@@ -4154,29 +4136,29 @@
             </method>
             <method name="get_MainImageUrl" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="55" hits="296" branch="false" />
+                <line number="55" hits="359" branch="false" />
               </lines>
             </method>
             <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="58" hits="211" branch="false" />
+                <line number="58" hits="274" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
             <line number="12" hits="100" branch="false" />
-            <line number="16" hits="309" branch="false" />
+            <line number="16" hits="372" branch="false" />
             <line number="21" hits="16" branch="false" />
-            <line number="24" hits="279" branch="false" />
+            <line number="24" hits="342" branch="false" />
             <line number="28" hits="86" branch="false" />
             <line number="31" hits="92" branch="false" />
             <line number="35" hits="84" branch="false" />
-            <line number="40" hits="295" branch="false" />
+            <line number="40" hits="358" branch="false" />
             <line number="44" hits="87" branch="false" />
-            <line number="48" hits="295" branch="false" />
+            <line number="48" hits="358" branch="false" />
             <line number="52" hits="85" branch="false" />
-            <line number="55" hits="296" branch="false" />
-            <line number="58" hits="211" branch="false" />
+            <line number="55" hits="359" branch="false" />
+            <line number="58" hits="274" branch="false" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.Infrastructure.Data.Models.Status" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\Data\Models\Status.cs" line-rate="1" branch-rate="1" complexity="2">
@@ -4188,13 +4170,13 @@
             </method>
             <method name="get_Name" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="12" hits="213" branch="false" />
+                <line number="12" hits="258" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
             <line number="8" hits="24" branch="false" />
-            <line number="12" hits="213" branch="false" />
+            <line number="12" hits="258" branch="false" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.Infrastructure.Database_Configuration.RoleConfiguration" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\Database Configuration\RoleConfiguration.cs" line-rate="1" branch-rate="1" complexity="1">
@@ -4307,7 +4289,7 @@
         </class>
       </classes>
     </package>
-    <package name="HoneyZoneMvc.Tests" line-rate="0.99781181619256" branch-rate="0.5" complexity="59">
+    <package name="HoneyZoneMvc.Tests" line-rate="0.998058252427184" branch-rate="0.5" complexity="69">
       <classes>
         <class name="AutoGeneratedProgram" filename="C:\Users\ekrem\.nuget\packages\microsoft.net.test.sdk\17.5.0\build\netcoreapp3.1\Microsoft.NET.Test.Sdk.Program.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
@@ -4319,6 +4301,168 @@
           </methods>
           <lines>
             <line number="4" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="HoneyZoneMvc.Tests.CategoryServiceTests" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Tests\CategoryServiceTests.cs" line-rate="1" branch-rate="1" complexity="10">
+          <methods>
+            <method name="Setup" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="21" hits="1" branch="false" />
+                <line number="22" hits="1" branch="false" />
+                <line number="23" hits="1" branch="false" />
+                <line number="24" hits="1" branch="false" />
+                <line number="26" hits="1" branch="false" />
+                <line number="27" hits="1" branch="false" />
+                <line number="29" hits="1" branch="false" />
+                <line number="30" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="AddAsync_ShouldThrowException" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="46" hits="1" branch="false" />
+                <line number="47" hits="2" branch="false" />
+                <line number="48" hits="2" branch="false" />
+                <line number="50" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="DeleteAsync_ShouldThrowException" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="79" hits="1" branch="false" />
+                <line number="80" hits="2" branch="false" />
+                <line number="81" hits="2" branch="false" />
+                <line number="82" hits="2" branch="false" />
+                <line number="83" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="Cleanup" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="99" hits="8" branch="false" />
+                <line number="100" hits="8" branch="false" />
+                <line number="101" hits="8" branch="false" />
+                <line number="102" hits="8" branch="false" />
+              </lines>
+            </method>
+            <method name="AddAsync_ShouldAddCategory" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="34" hits="1" branch="false" />
+                <line number="36" hits="1" branch="false" />
+                <line number="37" hits="1" branch="false" />
+                <line number="38" hits="1" branch="false" />
+                <line number="39" hits="1" branch="false" />
+                <line number="40" hits="1" branch="false" />
+                <line number="41" hits="1" branch="false" />
+                <line number="42" hits="1" branch="false" />
+                <line number="43" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="AllAsync_ShouldReturnAllCategories" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="86" hits="1" branch="false" />
+                <line number="87" hits="1" branch="false" />
+                <line number="88" hits="1" branch="false" />
+                <line number="89" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="DeleteAsync_ShouldDeleteCategory" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="65" hits="1" branch="false" />
+                <line number="66" hits="1" branch="false" />
+                <line number="67" hits="1" branch="false" />
+                <line number="68" hits="1" branch="false" />
+                <line number="69" hits="1" branch="false" />
+                <line number="70" hits="1" branch="false" />
+                <line number="71" hits="1" branch="false" />
+                <line number="72" hits="1" branch="false" />
+                <line number="73" hits="1" branch="false" />
+                <line number="74" hits="1" branch="false" />
+                <line number="75" hits="1" branch="false" />
+                <line number="76" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="ExistsAsync_ShouldReturnFalse" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="59" hits="1" branch="false" />
+                <line number="60" hits="1" branch="false" />
+                <line number="61" hits="1" branch="false" />
+                <line number="62" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="ExistsAsync_ShouldReturnTrue" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="53" hits="1" branch="false" />
+                <line number="54" hits="1" branch="false" />
+                <line number="55" hits="1" branch="false" />
+                <line number="56" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="GetByIdAsync_ShouldReturnCategory" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="92" hits="1" branch="false" />
+                <line number="93" hits="1" branch="false" />
+                <line number="94" hits="1" branch="false" />
+                <line number="95" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="21" hits="1" branch="false" />
+            <line number="22" hits="1" branch="false" />
+            <line number="23" hits="1" branch="false" />
+            <line number="24" hits="1" branch="false" />
+            <line number="26" hits="1" branch="false" />
+            <line number="27" hits="1" branch="false" />
+            <line number="29" hits="1" branch="false" />
+            <line number="30" hits="1" branch="false" />
+            <line number="34" hits="1" branch="false" />
+            <line number="36" hits="1" branch="false" />
+            <line number="37" hits="1" branch="false" />
+            <line number="38" hits="1" branch="false" />
+            <line number="39" hits="1" branch="false" />
+            <line number="40" hits="1" branch="false" />
+            <line number="41" hits="1" branch="false" />
+            <line number="42" hits="1" branch="false" />
+            <line number="43" hits="1" branch="false" />
+            <line number="46" hits="1" branch="false" />
+            <line number="47" hits="2" branch="false" />
+            <line number="48" hits="2" branch="false" />
+            <line number="50" hits="1" branch="false" />
+            <line number="53" hits="1" branch="false" />
+            <line number="54" hits="1" branch="false" />
+            <line number="55" hits="1" branch="false" />
+            <line number="56" hits="1" branch="false" />
+            <line number="59" hits="1" branch="false" />
+            <line number="60" hits="1" branch="false" />
+            <line number="61" hits="1" branch="false" />
+            <line number="62" hits="1" branch="false" />
+            <line number="65" hits="1" branch="false" />
+            <line number="66" hits="1" branch="false" />
+            <line number="67" hits="1" branch="false" />
+            <line number="68" hits="1" branch="false" />
+            <line number="69" hits="1" branch="false" />
+            <line number="70" hits="1" branch="false" />
+            <line number="71" hits="1" branch="false" />
+            <line number="72" hits="1" branch="false" />
+            <line number="73" hits="1" branch="false" />
+            <line number="74" hits="1" branch="false" />
+            <line number="75" hits="1" branch="false" />
+            <line number="76" hits="1" branch="false" />
+            <line number="79" hits="1" branch="false" />
+            <line number="80" hits="2" branch="false" />
+            <line number="81" hits="2" branch="false" />
+            <line number="82" hits="2" branch="false" />
+            <line number="83" hits="1" branch="false" />
+            <line number="86" hits="1" branch="false" />
+            <line number="87" hits="1" branch="false" />
+            <line number="88" hits="1" branch="false" />
+            <line number="89" hits="1" branch="false" />
+            <line number="92" hits="1" branch="false" />
+            <line number="93" hits="1" branch="false" />
+            <line number="94" hits="1" branch="false" />
+            <line number="95" hits="1" branch="false" />
+            <line number="99" hits="8" branch="false" />
+            <line number="100" hits="8" branch="false" />
+            <line number="101" hits="8" branch="false" />
+            <line number="102" hits="8" branch="false" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.Tests.OrderServiceTests" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Tests\OrderServiceTests.cs" line-rate="1" branch-rate="1" complexity="20">
