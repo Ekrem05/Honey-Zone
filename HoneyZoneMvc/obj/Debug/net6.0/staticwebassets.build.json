@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tl1wSyzvZ3GrpfD1WIhQYBb2QVpSxijKGr/TYj1jv5c=",
+  "Hash": "kVUNHwW1Xz+AW7aszHKBFYF4hRZsXG8pUEgmbxKdeOY=",
   "Source": "HoneyZoneMvc",
   "BasePath": "_content/HoneyZoneMvc",
   "Mode": "Default",
@@ -3701,25 +3701,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\productImages\\Model-3-Interior-.jpg.webp"
-    },
-    {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\NCrunch_VS2022_5.4.0.3.msi",
-      "SourceId": "HoneyZoneMvc",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
-      "BasePath": "_content/HoneyZoneMvc",
-      "RelativePath": "productImages/NCrunch_VS2022_5.4.0.3.msi",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\productImages\\NCrunch_VS2022_5.4.0.3.msi"
     },
     {
       "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\Official_Emblem_of_the_Court_of_Justice_of_the_European_Union.svg.png",

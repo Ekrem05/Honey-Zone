@@ -437,10 +437,6 @@
       "PackagePath": "staticwebassets\\productImages\\Model-3-Interior-.jpg.webp"
     },
     {
-      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\NCrunch_VS2022_5.4.0.3.msi",
-      "PackagePath": "staticwebassets\\productImages\\NCrunch_VS2022_5.4.0.3.msi"
-    },
-    {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\Official_Emblem_of_the_Court_of_Justice_of_the_European_Union.svg.png",
       "PackagePath": "staticwebassets\\productImages\\Official_Emblem_of_the_Court_of_Justice_of_the_European_Union.svg.png"
     },
