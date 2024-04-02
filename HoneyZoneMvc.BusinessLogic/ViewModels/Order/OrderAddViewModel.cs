@@ -12,10 +12,6 @@ namespace HoneyZoneMvc.BusinessLogic.ViewModels.Order
 
         public DateTime OrderDate { get; set; }
 
-        public DateTime ExpectedDelivery { get; set; }
-
-        public string StateId { get; set; }
-
         public string OrderDetailId { get; set; }
 
         public OrderDetailViewModel OrderDetail { get; set; } = null!;

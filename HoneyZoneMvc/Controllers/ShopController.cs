@@ -283,12 +283,12 @@ namespace HoneyZoneMvc.Controllers
                 await orderService.AddAsync(vm);
                 await cartProductService.DeleteAsync(httpContextAccessor);
             }
-            catch (InvalidOperationException e)
+            catch (InvalidOperationException)
             {
                 TempData["Error"] = CartIsEmpty;
                 return RedirectToAction(nameof(OrderDetails));
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return StatusCode(404);
             }

@@ -115,12 +115,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             throw new NotImplementedException();
         }
-
-        public Task<IEnumerable<UserViewModel>> GetByRoleAsync(string role)
-        {
-            throw new NotImplementedException();
-        }
-
         private async Task<string[]> GetUserRole(ApplicationUser user)
         {
             return (await userManager.GetRolesAsync(user)).ToArray();

@@ -16,7 +16,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             dbContext = _dbContext;
         }
 
-        public async Task<IEnumerable<StatusViewModel>> GetAllAsync()
+        public async Task<IEnumerable<StatusViewModel>> AllAsync()
         {
             return await (dbContext.Statuses
                  .AsNoTracking()
@@ -25,12 +25,29 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                      Id = s.Id.ToString(),
                      Name = s.Name
                  }).ToListAsync());
+        }
 
+        public async Task<StatusViewModel> GetByIdAsync(string Id)
+        {
+            if (Id == null)
+            {
+                throw new ArgumentNullException();
+            }
+            var status = await dbContext.Statuses.FindAsync(Guid.Parse(Id));
+            if (status == null)
+            {
+                throw new ArgumentNullException();
+            }
+            return new StatusViewModel()
+            {
+                Id = status.Id.ToString(),
+                Name = status.Name
+            };
         }
 
         public async Task<Status> GetInitialOrderStatus()
         {
-            return dbContext.Statuses.FirstOrDefault(s => s.Name == DataConstants.Satus.InitialStatus);
+            return await dbContext.Statuses.FirstOrDefaultAsync(s => s.Name == DataConstants.Satus.InitialStatus);
         }
     }
 }

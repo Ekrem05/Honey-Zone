@@ -58,7 +58,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<IEnumerable<CategoryViewModel>> AllAsync()
         {
-            var models = await dbContext.Categories.ToListAsync();
+            var models = await dbContext.Categories.AsNoTracking().ToListAsync();
             List<CategoryViewModel> categoryDto = new List<CategoryViewModel>();
             foreach (var category in models)
             {
@@ -80,9 +80,5 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return dto;
         }
 
-        public Task UpdateAsync(CategoryAddViewModel category)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
