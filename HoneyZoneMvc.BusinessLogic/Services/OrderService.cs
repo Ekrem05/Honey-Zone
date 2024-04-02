@@ -13,7 +13,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
     public class OrderService : IOrderService
     {
         private readonly IProductService productService;
-        private readonly IStatusService stateService;
+        private readonly IStatusService statusService;
         private readonly IUserService userService;
         private ApplicationDbContext dbContext;
 
@@ -25,7 +25,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             dbContext = _dbContext;
             productService = _productService;
-            stateService = _serviceState;
+            statusService = _serviceState;
             userService = _userService;
         }
 
@@ -37,7 +37,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 TotalSum = vm.TotalSum,
                 DeliveryMethodId = Guid.Parse(vm.DeliveryMethodId),
                 OrderDate = vm.OrderDate,
-                Status = await stateService.GetInitialOrderStatus(),
+                Status = await statusService.GetInitialOrderStatus(),
                 ExpectedDelivery = DateTime.Now.AddDays(3),
                 OrderDetail = new OrderDetail()
                 {
@@ -176,17 +176,17 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<IEnumerable<OrdersFromUserViewModel>> OrdersByUserIdAsync(string userId)
         {
+            if (userId == null)
+            {
+                throw new ArgumentNullException(IdNull);
+            }
             List<OrdersFromUserViewModel> result = new List<OrdersFromUserViewModel>();
             var orders = await dbContext.Orders
                 .Include(Id => Id.OrderDetail)
                 .Include(Id => Id.DeliveryMethod)
                 .Include(Id => Id.OrderProducts)
                 .Include(Id => Id.Status)
-                .Where(o => o.ClientId.ToString() == userId).ToListAsync();
-            if (orders == null)
-            {
-                throw new ArgumentNullException();
-            }
+                .Where(o => o.ClientId.ToString() == userId).ToListAsync();           
             foreach (var order in orders)
             {
                 var orderProducts = dbContext.OrderProducts.Where(x => x.OrderId.ToString() == order.Id.ToString()).Include(x => x.Product).ToList();
@@ -231,12 +231,16 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 CurrentStatus = order.Status.Name,
             };
 
-            vm.Statuses = await stateService.GetAllAsync();
+            vm.Statuses = await statusService.AllAsync();
             return vm;
         }
 
         public async Task<OrderViewModel> DetailsAsync(string Id)
         {
+            if (Id == null)
+            {
+                throw new ArgumentNullException(IdNull);
+            }
             var order = await dbContext.Orders
                 .Include(Id => Id.OrderDetail)
                 .Include(Id => Id.DeliveryMethod)
@@ -279,15 +283,13 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             var order = dbContext.Orders.FirstOrDefault(x => x.Id.ToString() == vm.Id);
             if (order == null)
             {
-                throw new ArgumentNullException(OrderMessages.OrderNotFound);
+                throw new InvalidOperationException(OrderMessages.OrderNotFound);
             }
+            var status = await statusService.GetByIdAsync(vm.StatusId);
+
             order.StatusId = Guid.Parse(vm.StatusId);
             await dbContext.SaveChangesAsync();
         }
 
-        public Task<OrderViewModel> GetByIdAsync(string Id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

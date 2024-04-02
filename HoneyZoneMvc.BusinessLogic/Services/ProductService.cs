@@ -242,11 +242,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             {
                 throw new ArgumentNullException(ProductMessages.ProductNotFound);
             }
-            var product = dbContext.Products.Where(p => p.CategoryId.ToString() == Id);
-            if (product == null)
-            {
-                throw new ArgumentNullException(string.Format(ProductMessages.NoProductWithGivenId, Id));
-            }
+            var product = dbContext.Products.Where(p => p.CategoryId.ToString() == Id);           
             foreach (var item in product)
             {
                 item.IsDiscounted = true;
@@ -273,7 +269,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         }
 
-
         public async Task DecreaseQuantityAsync(string Id)
         {
             var product = await dbContext.Products.FirstOrDefaultAsync(p => p.Id.ToString() == Id);
@@ -281,9 +276,9 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             {
                 product.QuantityInStock--;
                 await dbContext.SaveChangesAsync();
-
             }
         }
+
         public async Task IncreaseTotalOrdersAsync(string Id, int quantity)
         {
             if (Id == null)
