@@ -58,7 +58,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<IEnumerable<CategoryViewModel>> AllAsync()
         {
-            var models = await dbContext.Categories.ToListAsync();
+            var models = await dbContext.Categories.AsNoTracking().ToListAsync();
             List<CategoryViewModel> categoryDto = new List<CategoryViewModel>();
             foreach (var category in models)
             {

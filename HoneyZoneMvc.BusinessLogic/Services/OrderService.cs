@@ -76,7 +76,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             dbContext.Orders.Remove(order);
             await dbContext.SaveChangesAsync();
         }
-                     
+
         /// <summary>
         /// This method is used to get all orders with pagination and search functionality
         /// </summary>
@@ -186,7 +186,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 .Include(Id => Id.DeliveryMethod)
                 .Include(Id => Id.OrderProducts)
                 .Include(Id => Id.Status)
-                .Where(o => o.ClientId.ToString() == userId).ToListAsync();           
+                .Where(o => o.ClientId.ToString() == userId).ToListAsync();
             foreach (var order in orders)
             {
                 var orderProducts = dbContext.OrderProducts.Where(x => x.OrderId.ToString() == order.Id.ToString()).Include(x => x.Product).ToList();

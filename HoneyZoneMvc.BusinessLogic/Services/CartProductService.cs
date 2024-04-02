@@ -105,11 +105,11 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             foreach (var item in cart)
             {
-                if (item.Quantity <= 0||await productService.GetByIdAsync(item.ProductId)==null)
+                if (item.Quantity <= 0 || await productService.GetByIdAsync(item.ProductId) == null)
                 {
                     throw new InvalidOperationException();
                 }
-            }   
+            }
             var productsFromCookie = await ProductsFromCartAsync(httpContextAccessor);
             foreach (var item in productsFromCookie)
             {
@@ -169,6 +169,6 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         }
 
-       
+
     }
 }

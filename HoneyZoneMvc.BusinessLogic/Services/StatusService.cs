@@ -33,16 +33,16 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             {
                 throw new ArgumentNullException();
             }
-            var status=await dbContext.Statuses.FindAsync(Guid.Parse(Id));
-            if (status==null)
+            var status = await dbContext.Statuses.FindAsync(Guid.Parse(Id));
+            if (status == null)
             {
                 throw new ArgumentNullException();
             }
-           return new StatusViewModel()
-                  {
-                    Id = status.Id.ToString(),
-                    Name = status.Name
-                  };
+            return new StatusViewModel()
+            {
+                Id = status.Id.ToString(),
+                Name = status.Name
+            };
         }
 
         public async Task<Status> GetInitialOrderStatus()

@@ -1,7 +1,6 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.SubContracts;
 using HoneyZoneMvc.BusinessLogic.Enums;
 using HoneyZoneMvc.BusinessLogic.ViewModels.Order;
-using HoneyZoneMvc.Infrastructure.Data.Models;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {

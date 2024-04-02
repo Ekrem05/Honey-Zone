@@ -7,16 +7,14 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 {
     public class StatisticService : IStatisticService
     {
-        private readonly IOrderService orderService;
+
         private readonly IProductService productService;
         private readonly ICategoryService categoryService;
         private readonly ApplicationDbContext context;
-        public StatisticService(IOrderService _orderService
-            , IProductService _productService
+        public StatisticService(IProductService _productService
             , ICategoryService _categoryService
             , ApplicationDbContext _context)
         {
-            orderService = _orderService;
             productService = _productService;
             categoryService = _categoryService;
             context = _context;
@@ -37,7 +35,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                     .Include(op => op.Product.Category)
                     .Where(x => x.Product.Category.Id.ToString() == category.Id).ToListAsync();
 
-                    int quantityOfProductsSoldInCategory=productsSold.Sum(p=>p.Quantity);
+                int quantityOfProductsSoldInCategory = productsSold.Sum(p => p.Quantity);
 
                 productsSoldbyCategory.Add(category.Name, quantityOfProductsSoldInCategory);
             }
@@ -46,7 +44,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 Categories = categories.Select(x => x.Name).ToArray(),
                 ProductsSoldInCategory = productsSoldbyCategory
             };
-            
+
         }
 
         /// <summary>
@@ -55,8 +53,8 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         /// <returns></returns>
         public async Task<StockStatisticsViewModel> StockStatisticsAsync()
         {
-            var products=await productService.AllAsync();
-            Dictionary<string,int>kvp=new Dictionary<string, int>();
+            var products = await productService.AllAsync();
+            Dictionary<string, int> kvp = new Dictionary<string, int>();
             foreach (var item in products)
             {
                 kvp[item.Name] = item.QuantityInStock;

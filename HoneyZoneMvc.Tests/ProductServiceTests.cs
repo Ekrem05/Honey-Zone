@@ -9,7 +9,6 @@ using HoneyZoneMvc.Infrastructure.Data.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Moq;
-using System.Text;
 
 namespace HoneyZoneMvc.Tests
 {
@@ -32,12 +31,12 @@ namespace HoneyZoneMvc.Tests
         [OneTimeSetUp]
         public void Setup()
         {
-           dbOptions = new DbContextOptionsBuilder<ApplicationDbContext>()
-                 .UseInMemoryDatabase("HoneyZoneMvc" + Guid.NewGuid().ToString())
-                 .Options;
+            dbOptions = new DbContextOptionsBuilder<ApplicationDbContext>()
+                  .UseInMemoryDatabase("HoneyZoneMvc" + Guid.NewGuid().ToString())
+                  .Options;
             dbContext = new ApplicationDbContext(dbOptions);
             dbContext.Database.EnsureCreated();
-     
+
             categoryService = new Mock<ICategoryService>().Object;
             var imageServiceMock = new Mock<IImageService>();
             imageServiceMock.Setup(s => s.All()).Returns(new List<ImageUrl>());
@@ -54,19 +53,19 @@ namespace HoneyZoneMvc.Tests
                                   .ReturnsAsync("test.jpg");
             fileStorageService = fileStorageServiceMock.Object;
 
-            productService = new ProductService(dbContext,categoryService,imageService,mapper,fileStorageService);
+            productService = new ProductService(dbContext, categoryService, imageService, mapper, fileStorageService);
         }
 
         [Test]
         public async Task AddProductAsync_Successfully_Test()
         {
-         
+
             var imageMockOne = new Mock<IFormFile>();
             imageMockOne.Setup(f => f.FileName).Returns("image1.jpg");
             var imageMockTwo = new Mock<IFormFile>();
             imageMockTwo.Setup(f => f.FileName).Returns("image2.jpg");
             productService.AddAsync(new ProductAddViewModel
-           {
+            {
                 Name = "Test Product",
                 CategoryId = Guid.Parse("78355d47-6040-4676-9972-ac8be4f19882").ToString(),
                 Price = 29.99,
@@ -74,15 +73,15 @@ namespace HoneyZoneMvc.Tests
                 QuantityInStock = 27,
                 ProductAmount = "1kg",
                 MainImage = fileMock,
-                Images = new List<IFormFile>(){ imageMockOne.Object,imageMockTwo.Object }
+                Images = new List<IFormFile>() { imageMockOne.Object, imageMockTwo.Object }
             }).Wait();
 
-            Assert.That(dbContext.Products.FirstOrDefault(p => p.Name == "Test Product").Images.Any(i=>i.Name=="image1.jpg"),"Adding product does not save the image");
-            Assert.That(dbContext.Products.FirstOrDefault(p => p.Name == "Test Product").Images.Count()==3, "Adding product does not save the image");
+            Assert.That(dbContext.Products.FirstOrDefault(p => p.Name == "Test Product").Images.Any(i => i.Name == "image1.jpg"), "Adding product does not save the image");
+            Assert.That(dbContext.Products.FirstOrDefault(p => p.Name == "Test Product").Images.Count() == 3, "Adding product does not save the image");
 
-            Assert.That((dbContext.Products.FirstOrDefault(p => p.Name == "Test Product")?.MainImageUrl== "test.jpg"), "Adding product does not save the image");
-            Assert.That(dbContext.Products.Any(p => p.Name == "Test Product"),"Adding product does not work");
-            Assert.That(dbContext.Products.Count()==8, "Adding product does not work");
+            Assert.That((dbContext.Products.FirstOrDefault(p => p.Name == "Test Product")?.MainImageUrl == "test.jpg"), "Adding product does not save the image");
+            Assert.That(dbContext.Products.Any(p => p.Name == "Test Product"), "Adding product does not work");
+            Assert.That(dbContext.Products.Count() == 8, "Adding product does not work");
 
         }
         [Test]
@@ -99,15 +98,15 @@ namespace HoneyZoneMvc.Tests
         [Test]
         public async Task AllAsyncSorting_WorksCorrectly()
         {
-            var vm = await productService.AllAsync("Honey","a",ProductSorting.Price,1,3);
-            Assert.That(vm.Products.ElementAt(0).Name== "Manuka Honey" && vm.Products.ElementAt(1).Name== "Acacia honey", "AllAsync does not sort correctly");
+            var vm = await productService.AllAsync("Honey", "a", ProductSorting.Price, 1, 3);
+            Assert.That(vm.Products.ElementAt(0).Name == "Manuka Honey" && vm.Products.ElementAt(1).Name == "Acacia honey", "AllAsync does not sort correctly");
             vm = await productService.AllAsync("Honey", "a", ProductSorting.Name, 1, 3);
             Assert.That(vm.Products.ElementAt(0).Name == "Acacia honey" && vm.Products.ElementAt(1).Name == "Manuka Honey", "AllAsync does not return all products");
             vm = await productService.AllAsync("Honey", "a", ProductSorting.TimesOrdered, 1, 3);
             Assert.That(vm.Products.ElementAt(0).Name == "Manuka Honey" && vm.Products.ElementAt(1).Name == "Acacia honey", "AllAsync does not return all products");
             vm = await productService.AllAsync("Honey", "a", 0, 1, 3);
             Assert.That(vm.Products.ElementAt(0).Name == "Acacia honey" && vm.Products.ElementAt(1).Name == "Manuka Honey", "AllAsync does not return all products");
-          
+
         }
         [Test]
         public async Task GetByCategoryNameAsync_WorksCorrectly()
@@ -117,7 +116,7 @@ namespace HoneyZoneMvc.Tests
             products = await productService.GetByCategoryNameAsync("Honey");
             Assert.That(products.Count() == 3, "GetByCategoryNameAsync does not return products with sepcified category");
             products = await productService.GetByCategoryNameAsync("Bee Pollen");
-            Assert.That(products.Count() == 1, "GetByCategoryNameAsyncdoes not return products with sepcified category"); 
+            Assert.That(products.Count() == 1, "GetByCategoryNameAsyncdoes not return products with sepcified category");
         }
         [Test]
         public void GetByCategoryNameAsync_ThrowsException()
@@ -135,7 +134,7 @@ namespace HoneyZoneMvc.Tests
         [Test]
         public async Task GetById_WorksCorrectly()
         {
-            var product=await productService.GetByIdAsync("c7ecd019-40b1-47f3-89c4-67e3625f796b");
+            var product = await productService.GetByIdAsync("c7ecd019-40b1-47f3-89c4-67e3625f796b");
             Assert.That(product.Name == "Sunflower Honey", "GetById does not return a correct value");
 
         }
@@ -147,14 +146,14 @@ namespace HoneyZoneMvc.Tests
         [Test]
         public async Task GetBestSellersAsync_WorksCorrectly()
         {
-           var products=await productService.GetBestSellersAsync();
-            Assert.That(products.First().Name == "Manuka Honey" && products.ElementAt(1).Name=="Acacia honey", "GetBestSellersAsync does not return a correct value");
+            var products = await productService.GetBestSellersAsync();
+            Assert.That(products.First().Name == "Manuka Honey" && products.ElementAt(1).Name == "Acacia honey", "GetBestSellersAsync does not return a correct value");
         }
         [Test]
         public async Task UpdateAsync_WorksCorrectly()
         {
-            var products= dbContext.Products.ToList();
-            ProductEditViewModel vm= new ProductEditViewModel
+            var products = dbContext.Products.ToList();
+            ProductEditViewModel vm = new ProductEditViewModel
             {
                 Id = Guid.Parse("c7ecd019-40b1-47f3-89c4-67e3625f796b"),
                 Name = "Test Product",
@@ -164,7 +163,7 @@ namespace HoneyZoneMvc.Tests
                 QuantityInStock = 27,
                 ProductAmount = "1kg",
             };
-            var product=await productService.GetByIdAsync("c7ecd019-40b1-47f3-89c4-67e3625f796b"); 
+            var product = await productService.GetByIdAsync("c7ecd019-40b1-47f3-89c4-67e3625f796b");
             await productService.UpdateAsync(vm);
             Assert.That(dbContext.Products.FirstOrDefault(p => p.Name == "Test Product").Price == 1.99, "UpdateAsync does not work");
         }
@@ -218,7 +217,7 @@ namespace HoneyZoneMvc.Tests
         [Test]
         public async Task SetDiscountAsync_WorksCorrectly()
         {
-            ProductDiscountViewModel vm= new ProductDiscountViewModel
+            ProductDiscountViewModel vm = new ProductDiscountViewModel
             {
                 Id = "c7ecd019-40b1-47f3-89c4-67e3625f796b",
                 Discount = 10
@@ -226,7 +225,7 @@ namespace HoneyZoneMvc.Tests
 
             await productService.SetDiscountAsync(vm);
             var proudct = dbContext.Products.FirstOrDefault(p => p.Id == Guid.Parse("c7ecd019-40b1-47f3-89c4-67e3625f796b"));
-            Assert.That(proudct.Discount == 10&& proudct.IsDiscounted==true, "SetDiscountAsync does not work");
+            Assert.That(proudct.Discount == 10 && proudct.IsDiscounted == true, "SetDiscountAsync does not work");
         }
         [Test]
         public void SetDiscountAsync_ThrowsException()
@@ -235,9 +234,9 @@ namespace HoneyZoneMvc.Tests
             {
                 Id = "INVALID ID",
                 Discount = 10
-            };     
+            };
             Assert.ThrowsAsync<ArgumentNullException>(async () => await productService.SetDiscountAsync(vm));
-            
+
         }
         [Test]
         public async Task SetDiscountByCategoryAsync_WorksCorrectly()
@@ -245,12 +244,12 @@ namespace HoneyZoneMvc.Tests
             await productService.SetDiscountByCategoryAsync("78355d47-6040-4676-9972-ac8be4f19882", 10);
             var products = dbContext.Products.Where(p => p.CategoryId == Guid.Parse("78355d47-6040-4676-9972-ac8be4f19882")).ToList();
             Assert.That(products.All(p => p.Discount == 10 && p.IsDiscounted == true), "SetDiscountByCategoryAsync does not work");
-            
+
         }
         [Test]
         public void SetDiscountByCategoryAsync_ThrowsException()
         {
-            Assert.ThrowsAsync<ArgumentNullException>(async () => await productService.SetDiscountByCategoryAsync(null,10),"SetDiscountByCategoryAsync doesnt throw exception when id is null");
+            Assert.ThrowsAsync<ArgumentNullException>(async () => await productService.SetDiscountByCategoryAsync(null, 10), "SetDiscountByCategoryAsync doesnt throw exception when id is null");
         }
         [Test]
         public async Task RemoveDiscountAsync_WorksCorrectly()
@@ -261,7 +260,7 @@ namespace HoneyZoneMvc.Tests
 
         }
         [Test]
-        public void  RemoveDiscountAsync_ThrowsException()
+        public void RemoveDiscountAsync_ThrowsException()
         {
             Assert.ThrowsAsync<ArgumentNullException>(async () => await productService.RemoveDiscountAsync("Invalid ID"));
             Assert.ThrowsAsync<ArgumentNullException>(async () => await productService.RemoveDiscountAsync(null));
@@ -277,7 +276,7 @@ namespace HoneyZoneMvc.Tests
         [Test]
         public async Task IncreaseTotalOrdersAsync_WorksCorrectly()
         {
-            await productService.IncreaseTotalOrdersAsync("c7ecd019-40b1-47f3-89c4-67e3625f796b",3);
+            await productService.IncreaseTotalOrdersAsync("c7ecd019-40b1-47f3-89c4-67e3625f796b", 3);
             var product = dbContext.Products.FirstOrDefault(p => p.Id == Guid.Parse("c7ecd019-40b1-47f3-89c4-67e3625f796b"));
             Assert.That(product.TimesOrdered == 4, "IncreaseTotalOrdersAsync does not work");
         }

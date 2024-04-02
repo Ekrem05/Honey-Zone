@@ -457,6 +457,10 @@
       "PackagePath": "staticwebassets\\productImages\\Tesla-02.jpg"
     },
     {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\VA_X_Setup2511_0.exe",
+      "PackagePath": "staticwebassets\\productImages\\VA_X_Setup2511_0.exe"
+    },
+    {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\VisualStudioSetup.exe",
       "PackagePath": "staticwebassets\\productImages\\VisualStudioSetup.exe"
     },

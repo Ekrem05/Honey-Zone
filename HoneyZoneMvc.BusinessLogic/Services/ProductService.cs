@@ -66,6 +66,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             var models = await dbContext.Products
                 .Include(p => p.Category)
+                .AsNoTracking()
                 .ToListAsync();
 
             List<ProductAdminViewModel> productsDto = new List<ProductAdminViewModel>();
@@ -119,7 +120,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<IEnumerable<ProductAdminViewModel>> GetByCategoryNameAsync(string category)
         {
-            if (category==null)
+            if (category == null)
             {
                 throw new ArgumentNullException();
             }
@@ -133,14 +134,14 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 .Where(p => p.Category.Name == category)
                 .ToListAsync();
 
-           
-                List<ProductAdminViewModel> productsDto = new List<ProductAdminViewModel>();
-                foreach (var product in models)
-                {
-                    productsDto.Add(mapper.Map<ProductAdminViewModel>(product));
-                }
-                return productsDto;
-            
+
+            List<ProductAdminViewModel> productsDto = new List<ProductAdminViewModel>();
+            foreach (var product in models)
+            {
+                productsDto.Add(mapper.Map<ProductAdminViewModel>(product));
+            }
+            return productsDto;
+
 
         }
 
@@ -155,7 +156,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<ProductAdminViewModel> GetByIdAsync(string Id)
         {
-            if (Id==null)
+            if (Id == null)
             {
                 throw new ArgumentNullException();
             }
@@ -164,10 +165,10 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 .Include(p => p.Images)
                 .FirstOrDefaultAsync(p => p.Id.ToString() == Id);
 
-            
+
             var item = mapper.Map<ProductAdminViewModel>(model);
             return item;
-            
+
         }
 
         public async Task<IEnumerable<ProductShopCardViewModel>> GetBestSellersAsync()
@@ -242,7 +243,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             {
                 throw new ArgumentNullException(ProductMessages.ProductNotFound);
             }
-            var product = dbContext.Products.Where(p => p.CategoryId.ToString() == Id);           
+            var product = dbContext.Products.Where(p => p.CategoryId.ToString() == Id);
             foreach (var item in product)
             {
                 item.IsDiscounted = true;

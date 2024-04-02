@@ -4,7 +4,7 @@ using HoneyZoneMvc.Infrastructure.Data.Models;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {
-    public interface IStatusService: IReadable<StatusViewModel>
+    public interface IStatusService : IReadable<StatusViewModel>
     {
         Task<Status> GetInitialOrderStatus();
 

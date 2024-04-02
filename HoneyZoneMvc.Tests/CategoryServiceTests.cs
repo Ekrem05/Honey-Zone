@@ -1,14 +1,9 @@
-﻿using HoneyZoneMvc.Data;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HoneyZoneMvc.Infrastructure.Data.Models;
-using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
+﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
 using HoneyZoneMvc.BusinessLogic.Services;
 using HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels;
+using HoneyZoneMvc.Data;
+using HoneyZoneMvc.Infrastructure.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HoneyZoneMvc.Tests
 {
@@ -17,8 +12,8 @@ namespace HoneyZoneMvc.Tests
         private ApplicationDbContext dbContext;
         private ICategoryService categoryService;
         [OneTimeSetUp]
-        public void Setup() 
-        { 
+        public void Setup()
+        {
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
                 .UseInMemoryDatabase("HoneyZoneMvcTEST")
                 .Options;
@@ -32,7 +27,7 @@ namespace HoneyZoneMvc.Tests
         [Test]
         public async Task AddAsync_ShouldAddCategory()
         {
-           
+
             var category = new CategoryAddViewModel()
             {
                 Name = "Test"
@@ -44,8 +39,8 @@ namespace HoneyZoneMvc.Tests
         [Test]
         public void AddAsync_ShouldThrowException()
         {
-             Assert.ThrowsAsync<ArgumentNullException>(async () => await categoryService.AddAsync(null));
-            Assert.ThrowsAsync<InvalidOperationException>(async () => await categoryService.AddAsync(new CategoryAddViewModel() { Name= "Honey" }));
+            Assert.ThrowsAsync<ArgumentNullException>(async () => await categoryService.AddAsync(null));
+            Assert.ThrowsAsync<InvalidOperationException>(async () => await categoryService.AddAsync(new CategoryAddViewModel() { Name = "Honey" }));
 
         }
         [Test]

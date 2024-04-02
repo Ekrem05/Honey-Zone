@@ -7,12 +7,6 @@ using HoneyZoneMvc.Infrastructure.Data.Models;
 using HoneyZoneMvc.Infrastructure.Data.Models.IdentityModels;
 using Microsoft.EntityFrameworkCore;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HoneyZoneMvc.Tests
 {
@@ -41,8 +35,8 @@ namespace HoneyZoneMvc.Tests
 
             statusService = statusServiceMock.Object;
             userService = new Mock<IUserService>().Object;
-            
-            orderService= new OrderService(dbContext, productService, statusService, userService);
+
+            orderService = new OrderService(dbContext, productService, statusService, userService);
         }
         [SetUp]
         public void SeedData()
@@ -112,8 +106,8 @@ namespace HoneyZoneMvc.Tests
         [Test]
         public async Task OrderSorting_ShouldSortOrders()
         {
-            var all=dbContext.Orders.ToList();
-            var orders=await orderService.AllAsync(0,0,0, null, OrderSorting.TotalSum, 1, 3);
+            var all = dbContext.Orders.ToList();
+            var orders = await orderService.AllAsync(0, 0, 0, null, OrderSorting.TotalSum, 1, 3);
             Assert.AreEqual(2, orders.Orders.Count());
             Assert.AreEqual(100, double.Parse(orders.Orders.First().TotalSum));
 
@@ -126,7 +120,7 @@ namespace HoneyZoneMvc.Tests
             Assert.AreEqual(1, orders.Orders.Count());
             orders = await orderService.AllAsync(0, 0, 0, "0888888888", OrderSorting.Date, 1, 3);
             Assert.AreEqual(1, orders.Orders.Count());
-            orders = await orderService.AllAsync(0, 0, 0,null, 0, 1, 3);
+            orders = await orderService.AllAsync(0, 0, 0, null, 0, 1, 3);
             Assert.AreEqual(100, double.Parse(orders.Orders.First().TotalSum));
         }
         [Test]
@@ -176,11 +170,11 @@ namespace HoneyZoneMvc.Tests
         [Test]
         public async Task ChangeStatusAsync_ShouldChangeStatus()
         {
-            var order = dbContext.Orders.FirstOrDefault(X=>X.Id==Guid.Parse("1625dc3c-9673-48be-a1af-8011c01f3735"));
+            var order = dbContext.Orders.FirstOrDefault(X => X.Id == Guid.Parse("1625dc3c-9673-48be-a1af-8011c01f3735"));
             var status = new ChangeOrderStatusViewModel()
             {
                 Id = "1625dc3c-9673-48be-a1af-8011c01f3735",
-                StatusId= "22258d7b-33f7-4574-b0ea-4cf5d564bb6e"
+                StatusId = "22258d7b-33f7-4574-b0ea-4cf5d564bb6e"
             };
             await orderService.ChangeStatusAsync(status);
             var result = await dbContext.Orders.FirstOrDefaultAsync(x => x.Id == Guid.Parse("1625dc3c-9673-48be-a1af-8011c01f3735"));
@@ -194,7 +188,7 @@ namespace HoneyZoneMvc.Tests
                 Id = "INVALID ID",
                 StatusId = Guid.NewGuid().ToString()
             };
-            Assert.ThrowsAsync<ArgumentNullException>(() => orderService.ChangeStatusAsync(new ChangeOrderStatusViewModel() {Id=null }));
+            Assert.ThrowsAsync<ArgumentNullException>(() => orderService.ChangeStatusAsync(new ChangeOrderStatusViewModel() { Id = null }));
             Assert.ThrowsAsync<InvalidOperationException>(() => orderService.ChangeStatusAsync(status));
         }
 
@@ -216,7 +210,7 @@ namespace HoneyZoneMvc.Tests
             return new Order[]
             {
                 new Order()
-                {  
+                {
                     Id=Guid.Parse("1625dc3c-9673-48be-a1af-8011c01f3735"),
                     Client= new ApplicationUser()
                     {
@@ -233,7 +227,7 @@ namespace HoneyZoneMvc.Tests
                     OrderProducts = new List<OrderProduct>()
                     {
                         new OrderProduct()
-                        { 
+                        {
                             Product=new Product(){
                                 Id=Guid.NewGuid(),
                                 Name="Sunflower Honey"
@@ -288,8 +282,8 @@ namespace HoneyZoneMvc.Tests
 
         private ApplicationUser[] SeedUsers()
         {
-           return new ApplicationUser[]
-           {
+            return new ApplicationUser[]
+            {
                new ApplicationUser()
                {
                    Id=Guid.Parse("59d88877-cbc5-4b48-ab0c-5b9bfc89a512"),
@@ -308,7 +302,7 @@ namespace HoneyZoneMvc.Tests
                    UserName="Test",
                    PasswordHash="Test",
                }
-           };
+            };
         }
 
         private DeliveryMethod[] SeedDeliverMethods()
