@@ -50,9 +50,10 @@ namespace Microsoft.Extensions.DependencyInjection
             {
                 services.SignIn.RequireConfirmedAccount = false;
                 services.SignIn.RequireConfirmedPhoneNumber = false;
-                services.Password.RequireDigit = false;
+                services.Password.RequireDigit = true;
                 services.Password.RequireNonAlphanumeric = false;
                 services.Password.RequireUppercase = false;
+                services.Password.RequiredLength = 6;
             })
             .AddRoles<ApplicationRole>()
            .AddEntityFrameworkStores<ApplicationDbContext>();
