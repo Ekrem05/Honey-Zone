@@ -53,7 +53,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 services.Password.RequireDigit = true;
                 services.Password.RequireNonAlphanumeric = false;
                 services.Password.RequireUppercase = false;
-                services.Password.RequiredLength = 6;
+                services.Password.RequiredLength = 8;
             })
             .AddRoles<ApplicationRole>()
            .AddEntityFrameworkStores<ApplicationDbContext>();
