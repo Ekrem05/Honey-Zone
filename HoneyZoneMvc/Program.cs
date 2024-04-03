@@ -38,9 +38,6 @@ app.UseEndpoints(config =>
         name: "areas",
         pattern: "/{area:exists}/{controller=Home}/{action=Index}/{id?}"
     );
-
     config.MapDefaultControllerRoute();
-
-
 });
 app.Run();

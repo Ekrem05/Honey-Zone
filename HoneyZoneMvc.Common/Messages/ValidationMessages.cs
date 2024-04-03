@@ -31,5 +31,6 @@
         public const string EmailIsInvalid = "Invalid email address!";
         public const string PasswordLength = "The password must be at least {2} and at max {1} characters long.";
         public const string PasswordsMustMatch = "Password and Confirm Password must match!";
+        public const string PasswordDigit = "The password must contain at least one digit!";
     }
 }

@@ -20,6 +20,7 @@ namespace HoneyZoneMvc.BusinessLogic.ViewModels.User
 
         [Required(ErrorMessage = RequiredField)]
         [StringLength(UserValidation.PasswordMaxValue, MinimumLength = UserValidation.PasswordMinValue, ErrorMessage = PasswordLength)]
+        [RegularExpression(UserValidation.PasswordContainsDigit, ErrorMessage = PasswordDigit)]
         [DataType(DataType.Password)]
         public string Password { get; set; } = string.Empty;
 

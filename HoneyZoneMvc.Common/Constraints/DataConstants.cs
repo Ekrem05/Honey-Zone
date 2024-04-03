@@ -64,8 +64,9 @@ namespace HoneyZoneMvc.Constraints
             public const int NameMaxValue = 20;
             public const int UserNameMinValue = 2;
             public const int UserNameMaxValue = 20;
-            public const int PasswordMinValue = 6;
+            public const int PasswordMinValue = 8;
             public const int PasswordMaxValue = 100;
+            public const string PasswordContainsDigit = @"^(?=.*\d).+$";
         }
     }
 }
