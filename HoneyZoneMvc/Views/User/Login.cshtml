@@ -29,12 +29,15 @@
                 </label>
             </div>
         </div>
-        <div>
-            <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-warning">Влез</button>
+        <div class="d-flex flex-column">
+            <div class="mb-4">
+                <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-warning">Log In</button>
+            </div>
+            <div>
+                <a class="" asp-action="Register" class="w-100 btn btn-lg btn-warning">I don't have an account</a>
+            </div>
         </div>
-        <div>
-            <a class="btn btn-warning" asp-action="Register" class="w-100 btn btn-lg btn-warning">Регистрирай се</a>
-        </div>
+       
     </form>
 
 </div>
