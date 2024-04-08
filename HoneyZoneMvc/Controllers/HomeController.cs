@@ -1,4 +1,6 @@
 ﻿using HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HoneyZoneMvc.Controllers
@@ -30,7 +32,18 @@ namespace HoneyZoneMvc.Controllers
             }
 
         }
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult SetLanguage(string culture, string returnUrl)
+        {
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+            );
 
+            return LocalRedirect(returnUrl);
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error(int statusCode)
         {

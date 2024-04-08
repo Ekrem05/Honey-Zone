@@ -1,5 +1,5 @@
 ﻿@model OrderDetailViewModel
-
+@inject IViewLocalizer Localizer
 <div class="order-container">
     @if (@TempData["Error"] != null)
     {
@@ -64,9 +64,9 @@
         
         <div class="submit-button">
             <a class="w-100 btn btn-lg btn-outline-secondary" asp-action="Cart" asp-controller="Shop">
-                Cancel
+                @Localizer["cancel"]
             </a>
-            <button type="submit" class="w-100 btn btn-lg btn-warning">Confirm order</button>
+            <button type="submit" class="w-100 btn btn-lg btn-warning">@Localizer["confirmorder"]</button>
         </div>
     </form>
 </div>

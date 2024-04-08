@@ -2,7 +2,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.ConfigureApplication(builder.Configuration);
+builder.Services.ConfigureAllServices(builder.Configuration);
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/User/Login";
@@ -25,6 +25,9 @@ else
 }
 
 app.UseHttpsRedirection();
+
+app.UseRequestLocalization(); 
+
 app.UseStaticFiles();
 
 app.UseRouting();

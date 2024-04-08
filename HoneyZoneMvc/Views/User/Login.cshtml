@@ -1,5 +1,5 @@
 ﻿@model LoginViewModel
-
+@inject IViewLocalizer Localizer
 @{
     ViewData["Title"] = "Log in";
 }
@@ -30,10 +30,10 @@
         </div>
         <div class="d-flex flex-column">
             <div class="mb-4">
-                <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-warning">Log In</button>
+                <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-warning">@Localizer["Login"]</button>
             </div>
             <div>
-                <a class="" asp-action="Register" class="w-100 btn btn-lg btn-warning">I don't have an account</a>
+                <a class="" asp-action="Register" class="w-100 btn btn-lg btn-warning">@Localizer["no account"]</a>
             </div>
         </div>
        

@@ -1,5 +1,5 @@
 ﻿@model RegisterViewModel
-
+@inject IViewLocalizer Localizer
 @{
     ViewData["Title"] = "Register";
 }
@@ -37,9 +37,9 @@
             <label asp-for="ConfirmPassword"></label>
             <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
         </div>
-        <button class="btn btn-warning mt-5" id="registerSubmit" type="submit" class="w-100 btn btn-lg">Register</button>
+        <button class="btn btn-warning mt-5" id="registerSubmit" type="submit" class="w-100 btn btn-lg">@Localizer["Register"]</button>
         <div>
-            <a class="" asp-action="LogIn" class="w-100 btn btn-lg btn-warning">I already have an account</a>
+            <a class="" asp-action="LogIn" class="w-100 btn btn-lg btn-warning">@Localizer["ihaveaccount"]</a>
         </div>
     </form>
 </div>

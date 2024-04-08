@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<ProductCartViewModel>
-
+@inject IViewLocalizer Localizer
 @if (@TempData["Message"] != null)
 {
     <div class="alert alert-danger alert-dismissible mt-2">
@@ -61,8 +61,8 @@
             }
         </section>
         <div class="d-flex gap-3 align-items-center justify-content-center" id="cart-buttons">
-            <a asp-action="Index" class="btn back-button">Keep shopping</a>
-            <button type="submit" class="btn btn-outline-success order-button">Order!</button>
+            <a asp-action="Index" class="btn back-button">@Localizer["keepshoping"]</a>
+            <button type="submit" class="btn btn-outline-success order-button">@Localizer["order"]</button>
 
         </div>
             

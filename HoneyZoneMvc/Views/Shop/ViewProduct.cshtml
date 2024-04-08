@@ -1,4 +1,5 @@
 ﻿@model ProductShopDetailsViewModel
+@inject IViewLocalizer Localizer
 <div class="my-card">
     <section class="main-view">
         <div class="product-picture">
@@ -57,10 +58,10 @@
                     @Model.Description
                 </p>
                 <div class="product-actions d-flex justify-content-around align-items-center">
-                    <a asp-action="Index" class="btn back-button">Back</a>
+                    <a asp-action="Index" class="btn back-button">@Localizer["back"]</a>
                     @if (Model.QuantityInStock > 0)
                     {
-                        <a asp-action="AddToCart" asp-route-Id="@Model.Id" class="add-to-cart btn">Add to cart</a>
+                        <a asp-action="AddToCart" asp-route-Id="@Model.Id" class="add-to-cart btn">@Localizer["addtocart"]</a>
                     }
                 </div>
             </div>

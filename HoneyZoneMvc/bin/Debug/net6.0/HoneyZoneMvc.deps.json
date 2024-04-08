@@ -22,6 +22,11 @@
         },
         "runtime": {
           "HoneyZoneMvc.dll": {}
+        },
+        "resources": {
+          "bg/HoneyZoneMvc.resources.dll": {
+            "locale": "bg"
+          }
         }
       },
       "AutoMapper/12.0.1": {

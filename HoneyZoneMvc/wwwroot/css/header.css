@@ -1,8 +1,25 @@
-.logo {
-  width: 100px;
-  height: auto;
-  border-radius:3px;
+.language-bar {
+    background-color: #404040;
+    display: flex;
+    justify-content: flex-end;
 }
+    .language-bar > .dropdown-toggle {
+        text-decoration: none;
+        color: white;
+        margin-right: 1em;
+        font-size: 0.8em;
+        font-family:"Roboto Mono";
+        letter-spacing:0.2em;
+    }
+        .language-bar > .dropdown-toggle > a {
+            color: black;
+            
+        }
+    .logo {
+        width: 100px;
+        height: auto;
+        border-radius: 3px;
+    }
 @keyframes blink {
     0% {
         border-color: #ffc107;

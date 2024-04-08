@@ -1,33 +1,33 @@
 ﻿@inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
-
+@inject IViewLocalizer Localizer
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
     {
         <li class="nav-item">
             <div class="dropdown">
                 <button class="btn text-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Profile
+                    @Localizer["Profile"]
                 </button>
                 <ul class="dropdown-menu bg-black">
-                    <li class="d-flex justify-content-center"> <a class="btn btn-outline-warning "asp-controller="Profile" asp-action="MyOrders">My Orders</a></li>
+                    <li class="d-flex justify-content-center"> <a class="btn btn-outline-warning " asp-controller="Profile" asp-action="MyOrders">@Localizer["Myorders"]</a></li>
                 </ul>
             </div>
 
         </li>
         <li class="nav-item">
             <form class="form-inline" asp-area="" asp-controller="User" asp-action="Logout">
-                <button type="submit" class="nav-link btn  text-light">Logout</button>
+                <button type="submit" class="nav-link btn  text-light">@Localizer["Logout"]</button>
             </form>
         </li>
     }
     else
     {
         <li class="nav-item">
-            <a class="nav-link btn  text-light" asp-area="" asp-controller="User" asp-action="Register">Register</a>
+            <a class="nav-link btn  text-light" asp-area="" asp-controller="User" asp-action="Register">@Localizer["Register"]</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link btn  text-light" asp-controller="User" asp-action="Login">Login</a>
+            <a class="nav-link btn  text-light" asp-controller="User" asp-action="Login">@Localizer["Login"]</a>
         </li>
     }
 </ul>

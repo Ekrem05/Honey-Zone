@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<ProductShopCardViewModel>
+@inject IViewLocalizer Localizer
 @{
     ViewData["Title"] = "Honey-Zone";
 }
@@ -70,6 +71,6 @@
 </section>
 
 <section class="bestSellers-container">
-    <h2 class="best-sellers-header">Best Sellers</h2>
+    <h2 class="best-sellers-header">@Localizer["Bs"]</h2>
     <partial name="_HomeBestSellersPartialView" model="Model"></partial>
 </section>

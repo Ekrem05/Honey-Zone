@@ -1,4 +1,5 @@
 ﻿@model List<ProductShopCardViewModel>
+@inject IViewLocalizer Localizer
 
 @foreach (var productDto in Model)
 {
@@ -25,7 +26,7 @@
 
             }
 
-            <a class="buy btn" asp-action="ViewProduct" asp-route-id="@productDto.Id">Buy</a>
+        <a class="buy btn" asp-action="ViewProduct" asp-route-id="@productDto.Id">@Localizer["Buy"]</a>
         
     </li>
 }
