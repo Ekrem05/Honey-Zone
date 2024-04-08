@@ -5,12 +5,12 @@
   padding: 5em 13em;
   background-color: black;
 }
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 8em 12em;
-  border: none;
+.my-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 8em 12em;
+    border: none;
 }
 .image-container>img{
     max-width:500px;
@@ -32,10 +32,10 @@
   border-bottom: 1px solid rgb(227 202 88);
 }
 .description {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2em;
-
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    max-width: 50%;
 }
 .description * {
   color: white;
@@ -45,46 +45,47 @@
     flex-direction: column;
     gap: 2em;
     font-family: Roboto;
-    letter-spacing:1px;
+    letter-spacing: 1px;
 }
 
-.quantity-box {
-  display: flex;
-  gap: 0.3em;
+.product-actions {
+    display: flex;
+    gap: 0.3em;
 }
-.minus,
-.plus,
-.quantity,
-.add-to-cart {
-    width: 52px;
-    height: 60px;
-    background-color: #ffc10700;
-    color: rgb(227 202 88);
-    font-size: 28px;
-    cursor: pointer;
-    font-weight: bold;
-    border: 3px solid rgb(227 202 88);
-    border-radius: 0.2em;
-    box-shadow: inset 0 0 0 0 #54b3d6;
-    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    transition-property: background;
+.product-actions > * {
+    font-family: 'Roboto Mono';
+    letter-spacing:0.1em;
+    font-weight: 700;
 }
-/*@keyframes s {
-    0% {
-        margin-top: -10px;
-    }
-
-    50% {
-        margin-top: -20px;
-    }
-
-    100% {
-        margin-top: -10px;
-    }
+.back-button {
+    border-color: #00008E;
+    font-weight: 300;
+    width: 10em;
+    color:white;
+    transition: .15s;
 }
-.add-to-cart {
-    animation: s 5s 
-}*/
+    .back-button:hover {
+        color: #FFC107;
+        background-color: white;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+    }
+    .minus,
+    .plus,
+    .quantity {
+        width: 52px;
+        height: 60px;
+        background-color: #ffc10700;
+        color: rgb(227 202 88);
+        font-size: 28px;
+        cursor: pointer;
+        font-weight: bold;
+        border: 3px solid rgb(227 202 88);
+        border-radius: 0.2em;
+        box-shadow: inset 0 0 0 0 #54b3d6;
+        transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        transition-property: background;
+    }
 .quantity {
     width: 150px;
     cursor: default;
@@ -92,19 +93,127 @@
     line-height: 60px;
 }
 .add-to-cart {
-  width: 250px;
-  font-size: 18px;
-  box-shadow: inset 0 0 0 0 #54b3d6;
-  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  margin-left: 4em;
-  transition: transform 1000ms;
+    border-color: #ffc107;
+    border-width:2px;
+    width: 250px;
+    font-size: 18px;
+    box-shadow: inset 0 0 0 0 #54b3d6;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-left: 4em;
+    transition: transform 1000ms;
 }
 .scrollspy .row {
   display: flex;
   align-items: center;
 }
-@media (max-width:575px){
-    .card{
+.more-products {
+    padding:2em;
+    background-color: black;
+    border: 1px solid black;
+    height: 600px;
+    display:flex;
+    justify-content:center;
+    width:100em;
+}
+.slider-background{
+    background-color:white;
+    width:70em;
+    display:flex;
+    flex-wrap:wrap; 
+    justify-content:center;
+    align-content:center;
+}
+.slider-content {
+    background-color:white;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    display: flex;
+    gap: 2em;
+    width:70%;
+    padding:1em;
+    height:28em;
+}
+
+    /* Define the scrollbar style */
+    .slider-content::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    /* Define the thumb style */
+    .slider-content::-webkit-scrollbar-thumb {
+        background: #00008E;
+        border-radius: 5px;
+    }
+
+    /* Define the track style */
+    .slider-content::-webkit-scrollbar-track {
+        background-color: #FFC107;
+        border: 1px solid #ccc;
+    }
+
+    /* Define the button style */
+    .slider-content::-webkit-scrollbar-button {
+        background-color: #00008E;
+        border-radius: 5px;
+    }
+
+        /* Define the button style when being hovered over */
+        .slider-content::-webkit-scrollbar-button:hover {
+            background-color: #FFC107;
+        }
+
+.more-products-card {
+    font-family: 'Roboto Mono';
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 12em;
+    height: 25em;
+    background-color: black;
+    color: white;
+    padding: 1em;
+    border-radius: 1em;
+    transition: 0.5s;
+    align-items: center;
+    justify-content: center;
+}
+    .more-products-card>#product-image{
+        width:10em;
+        height:10em;
+    }
+    .more-products-card > .row {
+       display:flex;
+       flex-basis:50%;
+       gap:2em;
+       flex-direction:column;
+       align-items:center;
+    }
+    .more-products-card .buy {
+        background-color: #FFC107;
+        margin-top: auto;
+        padding: 0.2em 3em;
+        border: 2px;
+        transition: 0.15s;
+    }
+        .more-products-card .buy:hover {
+            letter-spacing: 0.2em;
+            border: 2px;
+            color:white;
+            background-color: #00008E;
+            border-color: #FFC107;
+        }
+    .more-products-card .price {
+        display:flex;
+        margin:0px;
+        flex-direction:column;
+        align-items:center;
+    }
+    .more-products > div {
+    }
+    @media (max-width:575px) {
+        .card{
     }
 
     .main-view {

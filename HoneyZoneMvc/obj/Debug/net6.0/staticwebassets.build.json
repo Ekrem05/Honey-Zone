@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ko/1Sjq4gDCtZNFooP32crQ16rFRGlwcB+GrCbUS5Dg=",
+  "Hash": "NWIGbdVUEDRhSlkVbxghzgOMLCAKKO92dAPgYw22m98=",
   "Source": "HoneyZoneMvc",
   "BasePath": "_content/HoneyZoneMvc",
   "Mode": "Default",
@@ -3437,6 +3437,25 @@
       "OriginalItemSpec": "wwwroot\\productImages\\desktop-wallpaper-mercedes-w140-w140-thumbnail.jpg"
     },
     {
+      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\DiscordSetup.exe",
+      "SourceId": "HoneyZoneMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "BasePath": "_content/HoneyZoneMvc",
+      "RelativePath": "productImages/DiscordSetup.exe",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\productImages\\DiscordSetup.exe"
+    },
+    {
       "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\eren.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
@@ -3722,6 +3741,25 @@
       "OriginalItemSpec": "wwwroot\\productImages\\MyDiagram.jpg"
     },
     {
+      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\OBS-Studio-30.1.1-Full-Installer-x64.exe",
+      "SourceId": "HoneyZoneMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "BasePath": "_content/HoneyZoneMvc",
+      "RelativePath": "productImages/OBS-Studio-30.1.1-Full-Installer-x64.exe",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\productImages\\OBS-Studio-30.1.1-Full-Installer-x64.exe"
+    },
+    {
       "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\Official_Emblem_of_the_Court_of_Justice_of_the_European_Union.svg.png",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
@@ -3777,6 +3815,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\productImages\\publishable.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\ScreenRec_webinstall_all.exe",
+      "SourceId": "HoneyZoneMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "BasePath": "_content/HoneyZoneMvc",
+      "RelativePath": "productImages/ScreenRec_webinstall_all.exe",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\productImages\\ScreenRec_webinstall_all.exe"
     },
     {
       "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\screen-shot-2019-11-22-at-10-52-32-am-1574437990.png",

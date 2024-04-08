@@ -98,12 +98,15 @@
         </main>
     </div>
     
-    
+    @if (!Context.Request.Path.StartsWithSegments("/User"))
+    {
         <footer class="border-top footer text-muted" id="myFooter">
             <div class="container">
                 &copy; 2024 - HoneyZoneMvc
             </div>
         </footer>
+    }
+   
     
    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
