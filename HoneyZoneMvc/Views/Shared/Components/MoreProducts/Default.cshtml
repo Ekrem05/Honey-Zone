@@ -1,0 +1,31 @@
+﻿@model List<ProductShopCardViewModel>
+
+@foreach (var productDto in Model)
+{
+    <li class="more-products-card">
+        <img src="~/productImages/@productDto.MainImageName" alt="" Id="product-image"/>
+        <p class="name">@productDto.Name</p>
+        
+            @{
+                double price = productDto.Price;
+                string formattedNumber = string.Empty;
+                if (productDto.IsDiscounted)
+                {
+
+                    string priceBeforeDiscount = productDto.Price.ToString("F2");
+                    price = productDto.Price - (productDto.Price * productDto.Discount / 100);
+                    formattedNumber = price.ToString("F2");
+                    <p class="price"><span class="price-before">@(priceBeforeDiscount)lv</span>     @(formattedNumber)lv</p>
+                }
+                else
+                {
+                    formattedNumber = price.ToString("F2");
+                    <p class="price ">@(formattedNumber)lv</p>
+                }
+
+            }
+
+            <a class="buy btn" asp-action="ViewProduct" asp-route-id="@productDto.Id">Buy</a>
+        
+    </li>
+}

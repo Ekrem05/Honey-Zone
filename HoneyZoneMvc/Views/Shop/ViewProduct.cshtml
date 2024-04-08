@@ -1,5 +1,5 @@
 ﻿@model ProductShopDetailsViewModel
-<div class="card">
+<div class="my-card">
     <section class="main-view">
         <div class="product-picture">
             <div class="image-container">
@@ -56,8 +56,8 @@
                 <p class="text">
                     @Model.Description
                 </p>
-                <div class="quantity-box d-flex justify-content-around align-items-center">
-                    <a asp-action="Index" class="btn btn-secondary">Back</a>
+                <div class="product-actions d-flex justify-content-around align-items-center">
+                    <a asp-action="Index" class="btn back-button">Back</a>
                     @if (Model.QuantityInStock > 0)
                     {
                         <a asp-action="AddToCart" asp-route-Id="@Model.Id" class="add-to-cart btn">Add to cart</a>
@@ -66,8 +66,14 @@
             </div>
         </div>
     </section>
-    <div class="scrollspy">
-    </div>
+    <section class="more-products">
+        <div class="slider-background">
+            <div class="slider-content">
+                @await Component.InvokeAsync("MoreProducts")
+            </div>
+        </div>
+       
+    </section>
 </div>
 <script src="~/js/quantity.js"></script>
 <script src="~/js/showImage.js"></script>
