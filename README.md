@@ -12,6 +12,7 @@ E-commerce web app for selling and managing bee products
 - [Entity Framework Core](https://learn.microsoft.com/en-us/ef/core/)
 - [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 - [Razor Pages](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-8.0&tabs=visual-studio)
+- [NUnit Testing](https://nunit.org)
 
 
 ## Featuring
