@@ -413,6 +413,10 @@
       "PackagePath": "staticwebassets\\productImages\\Court-599243.jpg"
     },
     {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\DiscordSetup.exe",
+      "PackagePath": "staticwebassets\\productImages\\DiscordSetup.exe"
+    },
+    {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\Fresh-beeswax-for-hair-on-the-table.jpg",
       "PackagePath": "staticwebassets\\productImages\\Fresh-beeswax-for-hair-on-the-table.jpg"
     },
@@ -441,6 +445,10 @@
       "PackagePath": "staticwebassets\\productImages\\MyDiagram.jpg"
     },
     {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\OBS-Studio-30.1.1-Full-Installer-x64.exe",
+      "PackagePath": "staticwebassets\\productImages\\OBS-Studio-30.1.1-Full-Installer-x64.exe"
+    },
+    {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\Official_Emblem_of_the_Court_of_Justice_of_the_European_Union.svg.png",
       "PackagePath": "staticwebassets\\productImages\\Official_Emblem_of_the_Court_of_Justice_of_the_European_Union.svg.png"
     },
@@ -451,6 +459,10 @@
     {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\SD_BMW_7SERIES_10-1920x1280.jpg",
       "PackagePath": "staticwebassets\\productImages\\SD_BMW_7SERIES_10-1920x1280.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\ScreenRec_webinstall_all.exe",
+      "PackagePath": "staticwebassets\\productImages\\ScreenRec_webinstall_all.exe"
     },
     {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\Shawarma-1_16dc440eab1_medium.jpg",

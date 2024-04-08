@@ -35,9 +35,12 @@
     flex-direction:column;
     margin-top:2em;
     gap:1em;
-    align-items:start;
-    
+    align-items:start; 
 }
+    .order-form > * {
+        border-top: 1px solid #ffc107;
+        padding: 1em;
+    }
 .address, .deliveryMethods, .other {
     max-width: 16em;
 }
@@ -46,7 +49,10 @@
     gap: 1em;
 }
 .submit-button {
-    margin: auto;
+   display:flex;
+   gap:2em;
+   justify-content:center;
+   width:100%;
 }
 
 .order-heading h1 {

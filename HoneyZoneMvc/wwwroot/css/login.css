@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
-body {
-  height: 1000px;
-  justify-content: center;
-}
+
 .login-form-container {
     background-color: black;
     color: white;

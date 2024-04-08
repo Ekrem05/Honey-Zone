@@ -1,8 +1,11 @@
+.my-products-section{
+    width:100%;
+}
 .all-products {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-  margin-bottom: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-bottom: 2em;
 }
 
 @keyframes fadein {
@@ -24,7 +27,7 @@
     flex-direction: column;
     color: white;
     padding: 2em;
-    
+    flex-basis:50%;
     animation:fadein 1s;
     /**/
     background-color: black;
@@ -37,11 +40,12 @@
   transform: translateX(0);
   filter: blur(0px);
 }
- #product-image{
-  color: white;
-  max-width: 300px;
-  height: 300px;
-  margin-bottom:1em;
+#product-image {
+    color: white;
+    max-width: 20em;
+    max-height: 20em;
+    margin-bottom: 1em;
+    flex-shrink:1;
 }
     .product-card > .name {
         border-bottom: 1px solid #ffc107;
@@ -60,21 +64,21 @@
   filter: blur(0px);
 }
 .all-products .product-card:hover {
-    transition: 0.5s ease;
-    background-color: rgba(246, 246, 115, 0.488);
+    transition: 1.5s linear;
+    background-color: #000000a1;
 }
 .product-card .price {
     margin-top: 0.5em;
     font-size: 20px;
     text-align: center;
     display: inline;
-    flex-basis: 80%;
     font-family: "Roboto Mono";
     font-weight: 300;
 }
 .row {
   margin-top: 0.2em;
   display: flex;
+  flex-direction:column;
   justify-content: center;
   align-items: center;
   gap: 1em;
@@ -84,20 +88,51 @@
     color: white;
     font-size: 20px;
     letter-spacing: 0.1em;
-    transition: 0.5s;
+    transition: 0.15s;
     background-color: #ffc107;
     font-family: "Roboto Mono";
     font-weight: 800;
+    margin-top:auto;
+    width:8em;
 }
-.product-card .buy:hover {
-  background-color: white;
-  color: black;
-  filter: blur(0px);
-  letter-spacing: 0.25em;
-  margin-left: -0.6em;
-}
+    .product-card .buy:hover {
+        background-color: white;
+        color: #ffc107;
+        filter: blur(0px);
+        letter-spacing: 0.25em;
+        box-shadow: 0 0 100px #ffc107;
+    }
 .price-before {
     text-decoration: line-through;
     opacity: 0.7;
     color: #ff0404;
+}
+@media (max-width: 1025px) {
+    #product-image {
+        max-width: 10em;
+        max-height: 10em;
+    }
+}
+@media (max-width: 650px) {
+    #product-image {
+        max-width: 5em;
+        max-height: 5em;
+    }
+    .product-card{
+        width:100px;
+        font-size:11pt;
+    }
+    .product-card > .name{
+        border:none;
+        font-size:7pt;
+    }
+    .best-sellers-header {
+        font-size: 7pt;
+    }
+    .product-card .row > * {
+        font-size: 7pt;
+    }
+    .product-card .buy {
+            width: 5em;
+    }
 }

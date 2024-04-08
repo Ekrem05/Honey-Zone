@@ -2,6 +2,7 @@
     width: 95%;
     background-color: black;
     margin-top:3em;
+    font-family:"Roboto Mono"
 }
 .cart-information{
     display:flex;
@@ -68,3 +69,19 @@
 #cart-buttons{
     margin-bottom:4em;
 }
+.order-button{
+    transition:.15s
+}
+#cart-buttons > .back-button {
+    width: 12em;
+    font-size: 12pt;
+}
+        #cart-buttons > .back-button:hover {
+            color: #FFC107;
+            background-color: white;
+        }
+        #cart-buttons >*:hover {
+           
+            font-weight: 300;
+            letter-spacing: 0.1em;
+        }

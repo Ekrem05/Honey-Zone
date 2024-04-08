@@ -23,19 +23,19 @@ body {
 #filter-action {
     border-radius: 3px;
     padding: 0.3em 0.5em;
-    transition: 0.5s;
+    transition: 0.35s;
     align-self: center;
-    background-color: rgb(10 0 69);
+    background-color: #00008E;
     width: 20vh;
     font-family: "Roboto Mono";
     font-weight: 300;
     letter-spacing: 2px;
     color: white;
-   
 }
     #filter-action:hover {
         box-shadow: 0 0 30px #ffc107;
         background-color: #ffc107;
+        letter-spacing:0.2em;
     }
 #filter {
     border: 1px solid #ffc107;
@@ -96,4 +96,3 @@ body {
         border-style: solid;
         outline: none;
     }
-#searchButton
