@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/HoneyZoneMvc/obj/Debug/net6.0
+/HoneyZoneMvc/obj
+/HoneyZoneMvc.Tests/obj/Debug/net6.0
