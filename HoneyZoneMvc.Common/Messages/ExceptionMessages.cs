@@ -15,7 +15,7 @@
         public const string ModelStateInvalid = "Invalid model state";
         public static class CategoryMessages
         {
-            public const string CategoryCannotBeDeleted = "Category cannot be deleted because it is used in products!";
+            public const string CategoryCannotBeDeleted = "Category cannot be deleted because it is associated with products!";
             public const string CategoryExists = "Category with this name is already in the database!";
             public const string InvalidCategory = "Invalid category!";
             public const string InvalidNull = "Category is null!";

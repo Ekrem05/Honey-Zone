@@ -2,13 +2,15 @@
 @{
 }
 
-<form asp-action="ChangeStatus"  method="post" enctype="multipart/form-data">
+<form asp-action="ChangeStatus" class="bg-light mt-5 p-5" method="post" enctype="multipart/form-data">
     <div class="mb-3">
         <input asp-for="Id" type="hidden">
         <div class="mb-3">
-            <label asp-for="StatusId" class="control-label">Категория</label>
+            <label><string class="bg-warning">Warning</string> You will change the status of the order! Are you sure?</label>
+            <br />
+            <label>Select Status: </label>
             <select asp-for="@Model.StatusId" class="form-control" aria-required="true">
-                <option disabled selected value="">Current status: "@Model.CurrentStatus"</option>
+                <option disabled >Current status: "@Model.CurrentStatus"</option>
                 @foreach (var status in Model.Statuses)
                 {
                     <option value="@status.Id">@status.Name</option>

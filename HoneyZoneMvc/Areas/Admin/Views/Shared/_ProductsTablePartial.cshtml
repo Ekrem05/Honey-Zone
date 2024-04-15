@@ -68,8 +68,8 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                    <strong>Important! </strong>To delete the product, it should not be included in any order (unless the order is completed).
-                                    <strong>Warning! </strong> The product will be deleted. Are you sure?
+                                    <strong class="bg-info">Important!</strong> To delete the product, it should not be included in any order (unless the order is completed).
+                                    <strong class="bg-warning">Warning!</strong> The product will be deleted. Are you sure?
                                 </div>
                                 <div class="my-modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -88,8 +88,9 @@
                             <div class="modal-content">
                                 <form asp-action="SetDiscount" method="post" class="d-inline-block">
                                     <div class="modal-body">
+                                        <strong class="bg-warning">Warning!</strong> You will set a discount to the product, are you sure?
                                         <label>Enter % Discount</label>
-                                        <input type="number" name="Discount" />
+                                        <input type="number" name="Discount" min="1" />
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -109,7 +110,7 @@
                             <div class="modal-content">
                                 <form asp-action="RemoveDiscount" method="post" class="d-inline-block">
                                     <div class="modal-body">
-                                        <strong>Important! </strong>The product's promotion will be removed. Are you sure?
+                                        <strong class="bg-warning">Warning!</strong> The product's discount will be removed. Are you sure?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

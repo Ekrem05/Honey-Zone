@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using static HoneyZoneMvc.Common.Messages.ValidationMessages;
 using static HoneyZoneMvc.Constraints.DataConstants;
 
@@ -8,10 +9,12 @@ namespace HoneyZoneMvc.BusinessLogic.ViewModels.User
     {
         [Required(ErrorMessage = RequiredField)]
         [StringLength(UserValidation.NameMaxValue, MinimumLength = UserValidation.NameMinValue, ErrorMessage = NamesLength)]
+        [DisplayName("First Name")]
         public string FirstName { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredField)]
         [StringLength(UserValidation.NameMaxValue, MinimumLength = UserValidation.NameMinValue, ErrorMessage = NamesLength)]
+        [DisplayName("Last Name")]
         public string LastName { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredField)]
@@ -27,6 +30,7 @@ namespace HoneyZoneMvc.BusinessLogic.ViewModels.User
         [Required(ErrorMessage = RequiredField)]
         [DataType(DataType.Password)]
         [Compare(nameof(Password), ErrorMessage = PasswordsMustMatch)]
+        [DisplayName("Confirm Password")]
         public string ConfirmPassword { get; set; } = string.Empty;
     }
 }
