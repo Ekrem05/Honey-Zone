@@ -41,7 +41,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
             productToAdd.Images.Add(new ImageUrl() { Name = productToAdd.MainImageUrl });
 
-            var imagesInDb = imageService.All();
+            var imagesInDb = await imageService.AllAsync();
 
             foreach (var image in product.Images)
             {
@@ -53,7 +53,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 }
                 else
                 {
-                    productToAdd.Images.Add(await imageService.ImageByNameAsync(image.FileName));
+                    productToAdd.Images.Add(await imageService.ByNameAsync(image.FileName));
                 }
             }
             await dbContext.Products.AddAsync(productToAdd);

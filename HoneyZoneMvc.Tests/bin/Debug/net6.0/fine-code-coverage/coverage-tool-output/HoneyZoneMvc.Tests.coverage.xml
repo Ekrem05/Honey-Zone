@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.7888" branch-rate="0.6107" version="1.9" timestamp="1712060971" lines-covered="1446" lines-valid="1833" branches-covered="102" branches-valid="167">
+<coverage line-rate="0.8367" branch-rate="0.6491" version="1.9" timestamp="1713188554" lines-covered="1620" lines-valid="1936" branches-covered="111" branches-valid="171">
   <sources>
     <source>C:\Users\ekrem\</source>
   </sources>
   <packages>
-    <package name="HoneyZoneMvc.BusinessLogic" line-rate="0.6229" branch-rate="0.6241" complexity="385">
+    <package name="HoneyZoneMvc.BusinessLogic" line-rate="0.6938" branch-rate="0.6666" complexity="385">
       <classes>
         <class name="HoneyZoneMvc.BusinessLogic.ViewModels.AdminViewModel" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\ViewModels\AdminViewModel.cs" line-rate="0" branch-rate="1" complexity="5">
           <methods>
@@ -117,19 +117,19 @@
             </method>
             <method name="get_Password" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="17" hits="0" branch="False" />
+                <line number="18" hits="0" branch="False" />
               </lines>
             </method>
             <method name="get_RememberMe" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="20" hits="0" branch="False" />
+                <line number="21" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
             <line number="12" hits="0" branch="False" />
-            <line number="17" hits="0" branch="False" />
-            <line number="20" hits="0" branch="False" />
+            <line number="18" hits="0" branch="False" />
+            <line number="21" hits="0" branch="False" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.BusinessLogic.ViewModels.User.RegisterViewModel" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\ViewModels\User\RegisterViewModel.cs" line-rate="0" branch-rate="1" complexity="5">
@@ -151,12 +151,12 @@
             </method>
             <method name="get_Password" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="24" hits="0" branch="False" />
+                <line number="25" hits="0" branch="False" />
               </lines>
             </method>
             <method name="get_ConfirmPassword" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="29" hits="0" branch="False" />
+                <line number="30" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
@@ -164,8 +164,8 @@
             <line number="11" hits="0" branch="False" />
             <line number="15" hits="0" branch="False" />
             <line number="19" hits="0" branch="False" />
-            <line number="24" hits="0" branch="False" />
-            <line number="29" hits="0" branch="False" />
+            <line number="25" hits="0" branch="False" />
+            <line number="30" hits="0" branch="False" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.BusinessLogic.ViewModels.User.UserViewModel" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\ViewModels\User\UsersViewModel.cs" line-rate="0" branch-rate="1" complexity="5">
@@ -204,22 +204,22 @@
             <line number="10" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="HoneyZoneMvc.BusinessLogic.ViewModels.Status.StatusViewModel" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\ViewModels\Status\StatusViewModel.cs" line-rate="0" branch-rate="1" complexity="2">
+        <class name="HoneyZoneMvc.BusinessLogic.ViewModels.Status.StatusViewModel" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\ViewModels\Status\StatusViewModel.cs" line-rate="1" branch-rate="1" complexity="2">
           <methods>
-            <method name="get_Id" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="5" hits="0" branch="False" />
+                <line number="5" hits="12" branch="False" />
               </lines>
             </method>
-            <method name="get_Name" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_Name" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="6" hits="0" branch="False" />
+                <line number="6" hits="18" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="5" hits="0" branch="False" />
-            <line number="6" hits="0" branch="False" />
+            <line number="5" hits="12" branch="False" />
+            <line number="6" hits="18" branch="False" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.BusinessLogic.ViewModels.Statistics.CategoryStatisticsViewModel" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\ViewModels\Statistics\CategoryStatisticsViewModel.cs" line-rate="0" branch-rate="1" complexity="2">
@@ -1224,22 +1224,22 @@
             <line number="8" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="HoneyZoneMvc.BusinessLogic.ViewModels.Delivery.DeliveryMethodViewModel" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\ViewModels\Delivery\DeliveryMethodViewModel.cs" line-rate="0" branch-rate="1" complexity="2">
+        <class name="HoneyZoneMvc.BusinessLogic.ViewModels.Delivery.DeliveryMethodViewModel" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\ViewModels\Delivery\DeliveryMethodViewModel.cs" line-rate="1" branch-rate="1" complexity="2">
           <methods>
-            <method name="get_Id" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="5" hits="0" branch="False" />
+                <line number="5" hits="6" branch="False" />
               </lines>
             </method>
-            <method name="get_Name" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_Name" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="6" hits="0" branch="False" />
+                <line number="6" hits="9" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="5" hits="0" branch="False" />
-            <line number="6" hits="0" branch="False" />
+            <line number="5" hits="6" branch="False" />
+            <line number="6" hits="9" branch="False" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.BusinessLogic.ViewModels.CategoryViewModels.CategoryAddViewModel" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\ViewModels\Category\CategoryAddViewModel.cs" line-rate="1" branch-rate="1" complexity="1">
@@ -1930,106 +1930,128 @@
             <line number="81" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="HoneyZoneMvc.BusinessLogic.Services.DeliveryService" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\DeliveryService.cs" line-rate="0" branch-rate="1" complexity="5">
+        <class name="HoneyZoneMvc.BusinessLogic.Services.DeliveryService" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\DeliveryService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
-            <method name="AddAsync" signature="(HoneyZoneMvc.BusinessLogic.ViewModels.Delivery.DeliveryMethodViewModel)" line-rate="0" branch-rate="1" complexity="1">
+            <method name=".ctor" signature="(HoneyZoneMvc.Data.ApplicationDbContext)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="17" hits="0" branch="False" />
-                <line number="18" hits="0" branch="False" />
-              </lines>
-            </method>
-            <method name="DeleteAsync" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="22" hits="0" branch="False" />
-                <line number="23" hits="0" branch="False" />
-              </lines>
-            </method>
-            <method name="UpdateAsync" signature="(HoneyZoneMvc.BusinessLogic.ViewModels.Delivery.DeliveryMethodViewModel)" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="43" hits="0" branch="False" />
-                <line number="44" hits="0" branch="False" />
-              </lines>
-            </method>
-            <method name="GetByIdAsync" signature="(System.String)" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="48" hits="0" branch="False" />
-                <line number="49" hits="0" branch="False" />
-              </lines>
-            </method>
-            <method name=".ctor" signature="(HoneyZoneMvc.Data.ApplicationDbContext)" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="12" hits="0" branch="False" />
-                <line number="13" hits="0" branch="False" />
-                <line number="14" hits="0" branch="False" />
-                <line number="15" hits="0" branch="False" />
+                <line number="12" hits="1" branch="False" />
+                <line number="13" hits="1" branch="False" />
+                <line number="14" hits="1" branch="False" />
+                <line number="15" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="17" hits="0" branch="False" />
-            <line number="18" hits="0" branch="False" />
-            <line number="22" hits="0" branch="False" />
-            <line number="23" hits="0" branch="False" />
-            <line number="43" hits="0" branch="False" />
-            <line number="44" hits="0" branch="False" />
-            <line number="48" hits="0" branch="False" />
-            <line number="49" hits="0" branch="False" />
-            <line number="12" hits="0" branch="False" />
-            <line number="13" hits="0" branch="False" />
-            <line number="14" hits="0" branch="False" />
-            <line number="15" hits="0" branch="False" />
+            <line number="12" hits="1" branch="False" />
+            <line number="13" hits="1" branch="False" />
+            <line number="14" hits="1" branch="False" />
+            <line number="15" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="HoneyZoneMvc.BusinessLogic.Services.DeliveryService/&lt;&gt;c" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\DeliveryService.cs" line-rate="0" branch-rate="1" complexity="1">
+        <class name="HoneyZoneMvc.BusinessLogic.Services.DeliveryService/&lt;&gt;c" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\DeliveryService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
-            <method name="&lt;AllAsync&gt;b__4_0" signature="(HoneyZoneMvc.Infrastructure.Data.Models.DeliveryMethod)" line-rate="0" branch-rate="1" complexity="1">
+            <method name="&lt;AllAsync&gt;b__2_0" signature="(HoneyZoneMvc.Infrastructure.Data.Models.DeliveryMethod)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="29" hits="0" branch="False" />
-                <line number="30" hits="0" branch="False" />
-                <line number="31" hits="0" branch="False" />
-                <line number="32" hits="0" branch="False" />
-                <line number="33" hits="0" branch="False" />
+                <line number="20" hits="3" branch="False" />
+                <line number="21" hits="3" branch="False" />
+                <line number="22" hits="3" branch="False" />
+                <line number="23" hits="3" branch="False" />
+                <line number="24" hits="3" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="29" hits="0" branch="False" />
-            <line number="30" hits="0" branch="False" />
-            <line number="31" hits="0" branch="False" />
-            <line number="32" hits="0" branch="False" />
-            <line number="33" hits="0" branch="False" />
+            <line number="20" hits="3" branch="False" />
+            <line number="21" hits="3" branch="False" />
+            <line number="22" hits="3" branch="False" />
+            <line number="23" hits="3" branch="False" />
+            <line number="24" hits="3" branch="False" />
           </lines>
         </class>
-        <class name="HoneyZoneMvc.BusinessLogic.Services.DeliveryService/&lt;AllAsync&gt;d__4" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\DeliveryService.cs" line-rate="0" branch-rate="0" complexity="2">
+        <class name="HoneyZoneMvc.BusinessLogic.Services.DeliveryService/&lt;AllAsync&gt;d__2" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\DeliveryService.cs" line-rate="0.7142000000000001" branch-rate="0.5" complexity="2">
           <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="2">
+            <method name="MoveNext" signature="()" line-rate="0.7142000000000001" branch-rate="0.5" complexity="2">
               <lines>
-                <line number="27" hits="0" branch="False" />
-                <line number="28" hits="0" branch="False" />
-                <line number="34" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="18" hits="1" branch="False" />
+                <line number="19" hits="1" branch="False" />
+                <line number="25" hits="1" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
-                    <condition number="226" type="jump" coverage="0%" />
+                    <condition number="226" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="35" hits="0" branch="False" />
-                <line number="36" hits="0" branch="False" />
-                <line number="38" hits="0" branch="False" />
-                <line number="40" hits="0" branch="False" />
+                <line number="26" hits="0" branch="False" />
+                <line number="27" hits="0" branch="False" />
+                <line number="29" hits="1" branch="False" />
+                <line number="31" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="27" hits="0" branch="False" />
-            <line number="28" hits="0" branch="False" />
-            <line number="34" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="18" hits="1" branch="False" />
+            <line number="19" hits="1" branch="False" />
+            <line number="25" hits="1" branch="True" condition-coverage="50% (1/2)">
               <conditions>
-                <condition number="226" type="jump" coverage="0%" />
+                <condition number="226" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="35" hits="0" branch="False" />
-            <line number="36" hits="0" branch="False" />
-            <line number="38" hits="0" branch="False" />
-            <line number="40" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+            <line number="27" hits="0" branch="False" />
+            <line number="29" hits="1" branch="False" />
+            <line number="31" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HoneyZoneMvc.BusinessLogic.Services.DeliveryService/&lt;GetByIdAsync&gt;d__3" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\DeliveryService.cs" line-rate="1" branch-rate="1" complexity="4">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="4">
+              <lines>
+                <line number="33" hits="3" branch="False" />
+                <line number="34" hits="3" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="26" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="35" hits="1" branch="False" />
+                <line number="36" hits="1" branch="False" />
+                <line number="38" hits="2" branch="False" />
+                <line number="39" hits="2" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="213" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="40" hits="1" branch="False" />
+                <line number="41" hits="1" branch="False" />
+                <line number="43" hits="1" branch="False" />
+                <line number="44" hits="1" branch="False" />
+                <line number="45" hits="1" branch="False" />
+                <line number="46" hits="1" branch="False" />
+                <line number="47" hits="1" branch="False" />
+                <line number="48" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="33" hits="3" branch="False" />
+            <line number="34" hits="3" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="26" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="35" hits="1" branch="False" />
+            <line number="36" hits="1" branch="False" />
+            <line number="38" hits="2" branch="False" />
+            <line number="39" hits="2" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="213" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="40" hits="1" branch="False" />
+            <line number="41" hits="1" branch="False" />
+            <line number="43" hits="1" branch="False" />
+            <line number="44" hits="1" branch="False" />
+            <line number="45" hits="1" branch="False" />
+            <line number="46" hits="1" branch="False" />
+            <line number="47" hits="1" branch="False" />
+            <line number="48" hits="1" branch="False" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.BusinessLogic.Services.FileStorageService/&lt;SaveFileAsync&gt;d__0" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\FileStorageService.cs" line-rate="0" branch-rate="1" complexity="1">
@@ -2058,82 +2080,88 @@
             <line number="16" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="HoneyZoneMvc.BusinessLogic.Services.ImageService" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\ImageService.cs" line-rate="0" branch-rate="1" complexity="2">
+        <class name="HoneyZoneMvc.BusinessLogic.Services.ImageService" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\ImageService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
-            <method name="All" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name=".ctor" signature="(HoneyZoneMvc.Data.ApplicationDbContext)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="32" hits="0" branch="False" />
-                <line number="33" hits="0" branch="False" />
-                <line number="34" hits="0" branch="False" />
-              </lines>
-            </method>
-            <method name=".ctor" signature="(HoneyZoneMvc.Data.ApplicationDbContext)" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="12" hits="0" branch="False" />
-                <line number="13" hits="0" branch="False" />
-                <line number="14" hits="0" branch="False" />
-                <line number="15" hits="0" branch="False" />
+                <line number="12" hits="1" branch="False" />
+                <line number="13" hits="1" branch="False" />
+                <line number="14" hits="1" branch="False" />
+                <line number="15" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="32" hits="0" branch="False" />
-            <line number="33" hits="0" branch="False" />
-            <line number="34" hits="0" branch="False" />
-            <line number="12" hits="0" branch="False" />
-            <line number="13" hits="0" branch="False" />
-            <line number="14" hits="0" branch="False" />
-            <line number="15" hits="0" branch="False" />
+            <line number="12" hits="1" branch="False" />
+            <line number="13" hits="1" branch="False" />
+            <line number="14" hits="1" branch="False" />
+            <line number="15" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="HoneyZoneMvc.BusinessLogic.Services.ImageService/&lt;AddAsync&gt;d__2" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\ImageService.cs" line-rate="0" branch-rate="1" complexity="1">
+        <class name="HoneyZoneMvc.BusinessLogic.Services.ImageService/&lt;AddAsync&gt;d__2" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\ImageService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="18" hits="0" branch="False" />
-                <line number="19" hits="0" branch="False" />
-                <line number="20" hits="0" branch="False" />
-                <line number="21" hits="0" branch="False" />
+                <line number="18" hits="1" branch="False" />
+                <line number="19" hits="1" branch="False" />
+                <line number="20" hits="1" branch="False" />
+                <line number="21" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="18" hits="0" branch="False" />
-            <line number="19" hits="0" branch="False" />
-            <line number="20" hits="0" branch="False" />
-            <line number="21" hits="0" branch="False" />
+            <line number="18" hits="1" branch="False" />
+            <line number="19" hits="1" branch="False" />
+            <line number="20" hits="1" branch="False" />
+            <line number="21" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="HoneyZoneMvc.BusinessLogic.Services.ImageService/&lt;ImageByIdAsync&gt;d__3" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\ImageService.cs" line-rate="0" branch-rate="1" complexity="1">
+        <class name="HoneyZoneMvc.BusinessLogic.Services.ImageService/&lt;AllAsync&gt;d__5" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\ImageService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="24" hits="0" branch="False" />
-                <line number="25" hits="0" branch="False" />
-                <line number="26" hits="0" branch="False" />
+                <line number="32" hits="1" branch="False" />
+                <line number="33" hits="1" branch="False" />
+                <line number="34" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="24" hits="0" branch="False" />
-            <line number="25" hits="0" branch="False" />
-            <line number="26" hits="0" branch="False" />
+            <line number="32" hits="1" branch="False" />
+            <line number="33" hits="1" branch="False" />
+            <line number="34" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="HoneyZoneMvc.BusinessLogic.Services.ImageService/&lt;ImageByNameAsync&gt;d__4" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\ImageService.cs" line-rate="0" branch-rate="1" complexity="1">
+        <class name="HoneyZoneMvc.BusinessLogic.Services.ImageService/&lt;ByNameAsync&gt;d__4" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\ImageService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="28" hits="0" branch="False" />
-                <line number="29" hits="0" branch="False" />
-                <line number="30" hits="0" branch="False" />
+                <line number="28" hits="1" branch="False" />
+                <line number="29" hits="1" branch="False" />
+                <line number="30" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="28" hits="0" branch="False" />
-            <line number="29" hits="0" branch="False" />
-            <line number="30" hits="0" branch="False" />
+            <line number="28" hits="1" branch="False" />
+            <line number="29" hits="1" branch="False" />
+            <line number="30" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HoneyZoneMvc.BusinessLogic.Services.ImageService/&lt;GetByIdAsync&gt;d__3" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\ImageService.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="26" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="26" hits="1" branch="False" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.BusinessLogic.Services.OrderService" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\OrderService.cs" line-rate="1" branch-rate="1" complexity="1">
@@ -2931,7 +2959,7 @@
                 <line number="33" hits="2" branch="False" />
                 <line number="34" hits="2" branch="True" condition-coverage="100% (2/2)">
                   <conditions>
-                    <condition number="67" type="jump" coverage="100%" />
+                    <condition number="76" type="jump" coverage="100%" />
                   </conditions>
                 </line>
                 <line number="35" hits="1" branch="False" />
@@ -2942,7 +2970,7 @@
                 <line number="44" hits="1" branch="False" />
                 <line number="46" hits="7" branch="True" condition-coverage="100% (2/2)">
                   <conditions>
-                    <condition number="845" type="jump" coverage="100%" />
+                    <condition number="965" type="jump" coverage="100%" />
                   </conditions>
                 </line>
                 <line number="47" hits="2" branch="False" />
@@ -2964,7 +2992,7 @@
             <line number="33" hits="2" branch="False" />
             <line number="34" hits="2" branch="True" condition-coverage="100% (2/2)">
               <conditions>
-                <condition number="67" type="jump" coverage="100%" />
+                <condition number="76" type="jump" coverage="100%" />
               </conditions>
             </line>
             <line number="35" hits="1" branch="False" />
@@ -2975,7 +3003,7 @@
             <line number="44" hits="1" branch="False" />
             <line number="46" hits="7" branch="True" condition-coverage="100% (2/2)">
               <conditions>
-                <condition number="845" type="jump" coverage="100%" />
+                <condition number="965" type="jump" coverage="100%" />
               </conditions>
             </line>
             <line number="47" hits="2" branch="False" />
@@ -3784,104 +3812,104 @@
             <line number="66" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="HoneyZoneMvc.BusinessLogic.Services.StatusService" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\StatusService.cs" line-rate="0" branch-rate="1" complexity="1">
+        <class name="HoneyZoneMvc.BusinessLogic.Services.StatusService" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\StatusService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
-            <method name=".ctor" signature="(HoneyZoneMvc.Data.ApplicationDbContext)" line-rate="0" branch-rate="1" complexity="1">
+            <method name=".ctor" signature="(HoneyZoneMvc.Data.ApplicationDbContext)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="14" hits="0" branch="False" />
-                <line number="15" hits="0" branch="False" />
-                <line number="16" hits="0" branch="False" />
-                <line number="17" hits="0" branch="False" />
+                <line number="14" hits="1" branch="False" />
+                <line number="15" hits="1" branch="False" />
+                <line number="16" hits="1" branch="False" />
+                <line number="17" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="14" hits="0" branch="False" />
-            <line number="15" hits="0" branch="False" />
-            <line number="16" hits="0" branch="False" />
-            <line number="17" hits="0" branch="False" />
+            <line number="14" hits="1" branch="False" />
+            <line number="15" hits="1" branch="False" />
+            <line number="16" hits="1" branch="False" />
+            <line number="17" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="HoneyZoneMvc.BusinessLogic.Services.StatusService/&lt;AllAsync&gt;d__2" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\StatusService.cs" line-rate="0" branch-rate="1" complexity="1">
+        <class name="HoneyZoneMvc.BusinessLogic.Services.StatusService/&lt;AllAsync&gt;d__2" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\StatusService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="20" hits="0" branch="False" />
-                <line number="21" hits="0" branch="False" />
-                <line number="22" hits="0" branch="False" />
-                <line number="23" hits="0" branch="False" />
-                <line number="24" hits="0" branch="False" />
-                <line number="25" hits="0" branch="False" />
-                <line number="26" hits="0" branch="False" />
-                <line number="27" hits="0" branch="False" />
-                <line number="28" hits="0" branch="False" />
+                <line number="20" hits="1" branch="False" />
+                <line number="21" hits="1" branch="False" />
+                <line number="22" hits="1" branch="False" />
+                <line number="23" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="26" hits="1" branch="False" />
+                <line number="27" hits="1" branch="False" />
+                <line number="28" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="20" hits="0" branch="False" />
-            <line number="21" hits="0" branch="False" />
-            <line number="22" hits="0" branch="False" />
-            <line number="23" hits="0" branch="False" />
-            <line number="24" hits="0" branch="False" />
-            <line number="25" hits="0" branch="False" />
-            <line number="26" hits="0" branch="False" />
-            <line number="27" hits="0" branch="False" />
-            <line number="28" hits="0" branch="False" />
+            <line number="20" hits="1" branch="False" />
+            <line number="21" hits="1" branch="False" />
+            <line number="22" hits="1" branch="False" />
+            <line number="23" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="26" hits="1" branch="False" />
+            <line number="27" hits="1" branch="False" />
+            <line number="28" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="HoneyZoneMvc.BusinessLogic.Services.StatusService/&lt;GetByIdAsync&gt;d__3" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\StatusService.cs" line-rate="0" branch-rate="0" complexity="4">
+        <class name="HoneyZoneMvc.BusinessLogic.Services.StatusService/&lt;GetByIdAsync&gt;d__3" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\StatusService.cs" line-rate="1" branch-rate="1" complexity="4">
           <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="4">
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="4">
               <lines>
-                <line number="31" hits="0" branch="False" />
-                <line number="32" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="31" hits="3" branch="False" />
+                <line number="32" hits="3" branch="True" condition-coverage="100% (2/2)">
                   <conditions>
-                    <condition number="26" type="jump" coverage="0%" />
+                    <condition number="26" type="jump" coverage="100%" />
                   </conditions>
                 </line>
-                <line number="33" hits="0" branch="False" />
-                <line number="34" hits="0" branch="False" />
-                <line number="36" hits="0" branch="False" />
-                <line number="37" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="33" hits="1" branch="False" />
+                <line number="34" hits="1" branch="False" />
+                <line number="36" hits="2" branch="False" />
+                <line number="37" hits="2" branch="True" condition-coverage="100% (2/2)">
                   <conditions>
-                    <condition number="213" type="jump" coverage="0%" />
+                    <condition number="213" type="jump" coverage="100%" />
                   </conditions>
                 </line>
-                <line number="38" hits="0" branch="False" />
-                <line number="39" hits="0" branch="False" />
-                <line number="41" hits="0" branch="False" />
-                <line number="42" hits="0" branch="False" />
-                <line number="43" hits="0" branch="False" />
-                <line number="44" hits="0" branch="False" />
-                <line number="45" hits="0" branch="False" />
-                <line number="46" hits="0" branch="False" />
+                <line number="38" hits="1" branch="False" />
+                <line number="39" hits="1" branch="False" />
+                <line number="41" hits="1" branch="False" />
+                <line number="42" hits="1" branch="False" />
+                <line number="43" hits="1" branch="False" />
+                <line number="44" hits="1" branch="False" />
+                <line number="45" hits="1" branch="False" />
+                <line number="46" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="31" hits="0" branch="False" />
-            <line number="32" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="31" hits="3" branch="False" />
+            <line number="32" hits="3" branch="True" condition-coverage="100% (2/2)">
               <conditions>
-                <condition number="26" type="jump" coverage="0%" />
+                <condition number="26" type="jump" coverage="100%" />
               </conditions>
             </line>
-            <line number="33" hits="0" branch="False" />
-            <line number="34" hits="0" branch="False" />
-            <line number="36" hits="0" branch="False" />
-            <line number="37" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="33" hits="1" branch="False" />
+            <line number="34" hits="1" branch="False" />
+            <line number="36" hits="2" branch="False" />
+            <line number="37" hits="2" branch="True" condition-coverage="100% (2/2)">
               <conditions>
-                <condition number="213" type="jump" coverage="0%" />
+                <condition number="213" type="jump" coverage="100%" />
               </conditions>
             </line>
-            <line number="38" hits="0" branch="False" />
-            <line number="39" hits="0" branch="False" />
-            <line number="41" hits="0" branch="False" />
-            <line number="42" hits="0" branch="False" />
-            <line number="43" hits="0" branch="False" />
-            <line number="44" hits="0" branch="False" />
-            <line number="45" hits="0" branch="False" />
-            <line number="46" hits="0" branch="False" />
+            <line number="38" hits="1" branch="False" />
+            <line number="39" hits="1" branch="False" />
+            <line number="41" hits="1" branch="False" />
+            <line number="42" hits="1" branch="False" />
+            <line number="43" hits="1" branch="False" />
+            <line number="44" hits="1" branch="False" />
+            <line number="45" hits="1" branch="False" />
+            <line number="46" hits="1" branch="False" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.BusinessLogic.Services.StatusService/&lt;GetInitialOrderStatus&gt;d__4" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\Services\StatusService.cs" line-rate="0" branch-rate="1" complexity="1">
@@ -4313,43 +4341,43 @@
     <package name="HoneyZoneMvc.Common" line-rate="1" branch-rate="1" complexity="0">
       <classes />
     </package>
-    <package name="HoneyZoneMvc.Infrastructure" line-rate="0.9856" branch-rate="1" complexity="71">
+    <package name="HoneyZoneMvc.Infrastructure" line-rate="0.9892" branch-rate="1" complexity="71">
       <classes>
         <class name="HoneyZoneMvc.Data.ApplicationDbContext" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\Data\ApplicationDbContext.cs" line-rate="1" branch-rate="1" complexity="9">
           <methods>
             <method name="get_Products" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="17" hits="53" branch="False" />
+                <line number="17" hits="56" branch="False" />
               </lines>
             </method>
             <method name="get_ImageUrls" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="18" hits="6" branch="False" />
+                <line number="18" hits="17" branch="False" />
               </lines>
             </method>
             <method name="get_Categories" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="19" hits="18" branch="False" />
+                <line number="19" hits="21" branch="False" />
               </lines>
             </method>
             <method name="get_DeliverMethods" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="20" hits="44" branch="False" />
+                <line number="20" hits="51" branch="False" />
               </lines>
             </method>
             <method name="get_Orders" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="21" hits="71" branch="False" />
+                <line number="21" hits="74" branch="False" />
               </lines>
             </method>
             <method name="get_OrderProducts" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="22" hits="9" branch="False" />
+                <line number="22" hits="12" branch="False" />
               </lines>
             </method>
             <method name="get_Statuses" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="23" hits="44" branch="False" />
+                <line number="23" hits="51" branch="False" />
               </lines>
             </method>
             <method name="OnModelCreating" signature="(Microsoft.EntityFrameworkCore.ModelBuilder)" line-rate="1" branch-rate="1" complexity="1">
@@ -4368,20 +4396,20 @@
             </method>
             <method name=".ctor" signature="(Microsoft.EntityFrameworkCore.DbContextOptions`1&lt;HoneyZoneMvc.Data.ApplicationDbContext&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="13" hits="4" branch="False" />
-                <line number="14" hits="4" branch="False" />
-                <line number="15" hits="4" branch="False" />
+                <line number="13" hits="7" branch="False" />
+                <line number="14" hits="7" branch="False" />
+                <line number="15" hits="7" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="17" hits="53" branch="False" />
-            <line number="18" hits="6" branch="False" />
-            <line number="19" hits="18" branch="False" />
-            <line number="20" hits="44" branch="False" />
-            <line number="21" hits="71" branch="False" />
-            <line number="22" hits="9" branch="False" />
-            <line number="23" hits="44" branch="False" />
+            <line number="17" hits="56" branch="False" />
+            <line number="18" hits="17" branch="False" />
+            <line number="19" hits="21" branch="False" />
+            <line number="20" hits="51" branch="False" />
+            <line number="21" hits="74" branch="False" />
+            <line number="22" hits="12" branch="False" />
+            <line number="23" hits="51" branch="False" />
             <line number="27" hits="2" branch="False" />
             <line number="29" hits="2" branch="False" />
             <line number="30" hits="2" branch="False" />
@@ -4392,9 +4420,9 @@
             <line number="35" hits="2" branch="False" />
             <line number="37" hits="2" branch="False" />
             <line number="38" hits="2" branch="False" />
-            <line number="13" hits="4" branch="False" />
-            <line number="14" hits="4" branch="False" />
-            <line number="15" hits="4" branch="False" />
+            <line number="13" hits="7" branch="False" />
+            <line number="14" hits="7" branch="False" />
+            <line number="15" hits="7" branch="False" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.Infrastructure.Data.Models.Category" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\Data\Models\Category.cs" line-rate="1" branch-rate="1" complexity="3">
@@ -4406,73 +4434,73 @@
             </method>
             <method name="get_Name" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="13" hits="217" branch="False" />
+                <line number="13" hits="229" branch="False" />
               </lines>
             </method>
             <method name="get_Products" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="15" hits="200" branch="False" />
+                <line number="15" hits="212" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
             <line number="9" hits="83" branch="False" />
-            <line number="13" hits="217" branch="False" />
-            <line number="15" hits="200" branch="False" />
+            <line number="13" hits="229" branch="False" />
+            <line number="15" hits="212" branch="False" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.Infrastructure.Data.Models.DeliveryMethod" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\Data\Models\DeliveryMethod.cs" line-rate="1" branch-rate="1" complexity="3">
           <methods>
             <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="8" hits="18" branch="False" />
+                <line number="8" hits="22" branch="False" />
               </lines>
             </method>
             <method name="get_Name" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="12" hits="115" branch="False" />
+                <line number="12" hits="128" branch="False" />
               </lines>
             </method>
             <method name="get_Orders" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="14" hits="88" branch="False" />
+                <line number="14" hits="97" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="8" hits="18" branch="False" />
-            <line number="12" hits="115" branch="False" />
-            <line number="14" hits="88" branch="False" />
+            <line number="8" hits="22" branch="False" />
+            <line number="12" hits="128" branch="False" />
+            <line number="14" hits="97" branch="False" />
           </lines>
         </class>
-        <class name="HoneyZoneMvc.Infrastructure.Data.Models.ImageUrl" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\Data\Models\ImageUrl.cs" line-rate="0.5" branch-rate="1" complexity="4">
+        <class name="HoneyZoneMvc.Infrastructure.Data.Models.ImageUrl" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\Data\Models\ImageUrl.cs" line-rate="0.75" branch-rate="1" complexity="4">
           <methods>
-            <method name="get_Id" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="11" hits="0" branch="False" />
+                <line number="10" hits="1" branch="False" />
               </lines>
             </method>
             <method name="get_Name" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="15" hits="8" branch="False" />
+                <line number="14" hits="21" branch="False" />
               </lines>
             </method>
             <method name="get_ProductId" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="18" hits="0" branch="False" />
+                <line number="17" hits="0" branch="False" />
               </lines>
             </method>
             <method name="get_Product" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="19" hits="3" branch="False" />
+                <line number="18" hits="8" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="11" hits="0" branch="False" />
-            <line number="15" hits="8" branch="False" />
-            <line number="18" hits="0" branch="False" />
-            <line number="19" hits="3" branch="False" />
+            <line number="10" hits="1" branch="False" />
+            <line number="14" hits="21" branch="False" />
+            <line number="17" hits="0" branch="False" />
+            <line number="18" hits="8" branch="False" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.Infrastructure.Data.Models.Order" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\Data\Models\Order.cs" line-rate="1" branch-rate="1" complexity="13">
@@ -4664,7 +4692,7 @@
             </method>
             <method name="get_Name" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="16" hits="421" branch="False" />
+                <line number="16" hits="442" branch="False" />
               </lines>
             </method>
             <method name="get_CategoryId" signature="()" line-rate="1" branch-rate="1" complexity="1">
@@ -4674,7 +4702,7 @@
             </method>
             <method name="get_Category" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="24" hits="391" branch="False" />
+                <line number="24" hits="412" branch="False" />
               </lines>
             </method>
             <method name="get_Price" signature="()" line-rate="1" branch-rate="1" complexity="1">
@@ -4694,7 +4722,7 @@
             </method>
             <method name="get_Description" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="40" hits="407" branch="False" />
+                <line number="40" hits="428" branch="False" />
               </lines>
             </method>
             <method name="get_QuantityInStock" signature="()" line-rate="1" branch-rate="1" complexity="1">
@@ -4704,7 +4732,7 @@
             </method>
             <method name="get_ProductAmount" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="48" hits="407" branch="False" />
+                <line number="48" hits="428" branch="False" />
               </lines>
             </method>
             <method name="get_TimesOrdered" signature="()" line-rate="1" branch-rate="1" complexity="1">
@@ -4714,47 +4742,47 @@
             </method>
             <method name="get_MainImageUrl" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="55" hits="408" branch="False" />
+                <line number="55" hits="429" branch="False" />
               </lines>
             </method>
             <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="58" hits="323" branch="False" />
+                <line number="58" hits="344" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
             <line number="12" hits="100" branch="False" />
-            <line number="16" hits="421" branch="False" />
+            <line number="16" hits="442" branch="False" />
             <line number="21" hits="16" branch="False" />
-            <line number="24" hits="391" branch="False" />
+            <line number="24" hits="412" branch="False" />
             <line number="28" hits="86" branch="False" />
             <line number="31" hits="92" branch="False" />
             <line number="35" hits="84" branch="False" />
-            <line number="40" hits="407" branch="False" />
+            <line number="40" hits="428" branch="False" />
             <line number="44" hits="87" branch="False" />
-            <line number="48" hits="407" branch="False" />
+            <line number="48" hits="428" branch="False" />
             <line number="52" hits="85" branch="False" />
-            <line number="55" hits="408" branch="False" />
-            <line number="58" hits="323" branch="False" />
+            <line number="55" hits="429" branch="False" />
+            <line number="58" hits="344" branch="False" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.Infrastructure.Data.Models.Status" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\Data\Models\Status.cs" line-rate="1" branch-rate="1" complexity="2">
           <methods>
             <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="8" hits="24" branch="False" />
+                <line number="8" hits="26" branch="False" />
               </lines>
             </method>
             <method name="get_Name" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="12" hits="263" branch="False" />
+                <line number="12" hits="281" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="8" hits="24" branch="False" />
-            <line number="12" hits="263" branch="False" />
+            <line number="8" hits="26" branch="False" />
+            <line number="12" hits="281" branch="False" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.Infrastructure.Data.Models.IdentityModels.ApplicationUser" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\Data\Models\IdentityModels\ApplicationUser.cs" line-rate="1" branch-rate="1" complexity="2">
@@ -5259,7 +5287,7 @@
         </class>
       </classes>
     </package>
-    <package name="HoneyZoneMvc.Tests" line-rate="0.9981" branch-rate="0.5" complexity="75">
+    <package name="HoneyZoneMvc.Tests" line-rate="0.9984000000000001" branch-rate="0.5" complexity="91">
       <classes>
         <class name="AutoGeneratedProgram" filename=".nuget\packages\microsoft.net.test.sdk\17.5.0\build\netcoreapp3.1\Microsoft.NET.Test.Sdk.Program.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
@@ -5469,6 +5497,230 @@
             <line number="88" hits="1" branch="False" />
             <line number="89" hits="1" branch="False" />
             <line number="90" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HoneyZoneMvc.Tests.DeliveryServiceTests" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Tests\DeliveryServiceTests.cs" line-rate="1" branch-rate="1" complexity="3">
+          <methods>
+            <method name="Setup" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="26" hits="1" branch="False" />
+                <line number="27" hits="1" branch="False" />
+                <line number="28" hits="1" branch="False" />
+                <line number="29" hits="1" branch="False" />
+                <line number="31" hits="1" branch="False" />
+                <line number="32" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="GetByIdAsync_ThrowsException" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="57" hits="1" branch="False" />
+                <line number="58" hits="2" branch="False" />
+                <line number="59" hits="1" branch="False" />
+                <line number="61" hits="2" branch="False" />
+                <line number="62" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="CleanUp" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="66" hits="3" branch="False" />
+                <line number="67" hits="3" branch="False" />
+                <line number="68" hits="3" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="26" hits="1" branch="False" />
+            <line number="27" hits="1" branch="False" />
+            <line number="28" hits="1" branch="False" />
+            <line number="29" hits="1" branch="False" />
+            <line number="31" hits="1" branch="False" />
+            <line number="32" hits="1" branch="False" />
+            <line number="57" hits="1" branch="False" />
+            <line number="58" hits="2" branch="False" />
+            <line number="59" hits="1" branch="False" />
+            <line number="61" hits="2" branch="False" />
+            <line number="62" hits="1" branch="False" />
+            <line number="66" hits="3" branch="False" />
+            <line number="67" hits="3" branch="False" />
+            <line number="68" hits="3" branch="False" />
+          </lines>
+        </class>
+        <class name="HoneyZoneMvc.Tests.DeliveryServiceTests/&lt;AllAsync_ReturnsCorrectData&gt;d__4" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Tests\DeliveryServiceTests.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="36" hits="1" branch="False" />
+                <line number="37" hits="1" branch="False" />
+                <line number="39" hits="1" branch="False" />
+                <line number="40" hits="1" branch="False" />
+                <line number="41" hits="1" branch="False" />
+                <line number="43" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="36" hits="1" branch="False" />
+            <line number="37" hits="1" branch="False" />
+            <line number="39" hits="1" branch="False" />
+            <line number="40" hits="1" branch="False" />
+            <line number="41" hits="1" branch="False" />
+            <line number="43" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HoneyZoneMvc.Tests.DeliveryServiceTests/&lt;GetByIdAsync_ReturnsCorrectData&gt;d__5" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Tests\DeliveryServiceTests.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="47" hits="1" branch="False" />
+                <line number="48" hits="1" branch="False" />
+                <line number="49" hits="1" branch="False" />
+                <line number="51" hits="1" branch="False" />
+                <line number="52" hits="1" branch="False" />
+                <line number="53" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="47" hits="1" branch="False" />
+            <line number="48" hits="1" branch="False" />
+            <line number="49" hits="1" branch="False" />
+            <line number="51" hits="1" branch="False" />
+            <line number="52" hits="1" branch="False" />
+            <line number="53" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HoneyZoneMvc.Tests.ImageServiceTests" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Tests\ImageServiceTests.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="Setup" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="22" hits="1" branch="False" />
+                <line number="23" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="26" hits="1" branch="False" />
+                <line number="27" hits="1" branch="False" />
+                <line number="29" hits="1" branch="False" />
+                <line number="30" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="CleanUp" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="71" hits="4" branch="False" />
+                <line number="72" hits="4" branch="False" />
+                <line number="73" hits="4" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="22" hits="1" branch="False" />
+            <line number="23" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="26" hits="1" branch="False" />
+            <line number="27" hits="1" branch="False" />
+            <line number="29" hits="1" branch="False" />
+            <line number="30" hits="1" branch="False" />
+            <line number="71" hits="4" branch="False" />
+            <line number="72" hits="4" branch="False" />
+            <line number="73" hits="4" branch="False" />
+          </lines>
+        </class>
+        <class name="HoneyZoneMvc.Tests.ImageServiceTests/&lt;AddAsync_ShouldAddImage&gt;d__4" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Tests\ImageServiceTests.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="35" hits="1" branch="False" />
+                <line number="36" hits="1" branch="False" />
+                <line number="37" hits="1" branch="False" />
+                <line number="38" hits="1" branch="False" />
+                <line number="39" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="35" hits="1" branch="False" />
+            <line number="36" hits="1" branch="False" />
+            <line number="37" hits="1" branch="False" />
+            <line number="38" hits="1" branch="False" />
+            <line number="39" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HoneyZoneMvc.Tests.ImageServiceTests/&lt;AllAsync_ShouldReturnAllImages&gt;d__7" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Tests\ImageServiceTests.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="60" hits="1" branch="False" />
+                <line number="61" hits="1" branch="False" />
+                <line number="62" hits="1" branch="False" />
+                <line number="63" hits="1" branch="False" />
+                <line number="64" hits="1" branch="False" />
+                <line number="65" hits="1" branch="False" />
+                <line number="66" hits="1" branch="False" />
+                <line number="67" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="60" hits="1" branch="False" />
+            <line number="61" hits="1" branch="False" />
+            <line number="62" hits="1" branch="False" />
+            <line number="63" hits="1" branch="False" />
+            <line number="64" hits="1" branch="False" />
+            <line number="65" hits="1" branch="False" />
+            <line number="66" hits="1" branch="False" />
+            <line number="67" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HoneyZoneMvc.Tests.ImageServiceTests/&lt;GetByIdAsync_ShouldReturnImage&gt;d__5" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Tests\ImageServiceTests.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="42" hits="1" branch="False" />
+                <line number="43" hits="1" branch="False" />
+                <line number="44" hits="1" branch="False" />
+                <line number="45" hits="1" branch="False" />
+                <line number="46" hits="1" branch="False" />
+                <line number="47" hits="1" branch="False" />
+                <line number="48" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="42" hits="1" branch="False" />
+            <line number="43" hits="1" branch="False" />
+            <line number="44" hits="1" branch="False" />
+            <line number="45" hits="1" branch="False" />
+            <line number="46" hits="1" branch="False" />
+            <line number="47" hits="1" branch="False" />
+            <line number="48" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HoneyZoneMvc.Tests.ImageServiceTests/&lt;ImageByNameAsync_ShouldReturnImage&gt;d__6" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Tests\ImageServiceTests.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="51" hits="1" branch="False" />
+                <line number="52" hits="1" branch="False" />
+                <line number="53" hits="1" branch="False" />
+                <line number="54" hits="1" branch="False" />
+                <line number="55" hits="1" branch="False" />
+                <line number="56" hits="1" branch="False" />
+                <line number="57" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="51" hits="1" branch="False" />
+            <line number="52" hits="1" branch="False" />
+            <line number="53" hits="1" branch="False" />
+            <line number="54" hits="1" branch="False" />
+            <line number="55" hits="1" branch="False" />
+            <line number="56" hits="1" branch="False" />
+            <line number="57" hits="1" branch="False" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.Tests.OrderServiceTests" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Tests\OrderServiceTests.cs" line-rate="1" branch-rate="1" complexity="12">
@@ -6895,6 +7147,106 @@
             <line number="49" hits="1" branch="False" />
             <line number="50" hits="1" branch="False" />
             <line number="51" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HoneyZoneMvc.Tests.StatusServiceTests" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Tests\StatusServiceTests.cs" line-rate="1" branch-rate="1" complexity="3">
+          <methods>
+            <method name="Setup" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="26" hits="1" branch="False" />
+                <line number="27" hits="1" branch="False" />
+                <line number="28" hits="1" branch="False" />
+                <line number="29" hits="1" branch="False" />
+                <line number="31" hits="1" branch="False" />
+                <line number="32" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="GetByIdAsync_ThrowsException" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="59" hits="1" branch="False" />
+                <line number="60" hits="2" branch="False" />
+                <line number="61" hits="1" branch="False" />
+                <line number="63" hits="2" branch="False" />
+                <line number="64" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="CleanUp" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="68" hits="3" branch="False" />
+                <line number="69" hits="3" branch="False" />
+                <line number="70" hits="3" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="26" hits="1" branch="False" />
+            <line number="27" hits="1" branch="False" />
+            <line number="28" hits="1" branch="False" />
+            <line number="29" hits="1" branch="False" />
+            <line number="31" hits="1" branch="False" />
+            <line number="32" hits="1" branch="False" />
+            <line number="59" hits="1" branch="False" />
+            <line number="60" hits="2" branch="False" />
+            <line number="61" hits="1" branch="False" />
+            <line number="63" hits="2" branch="False" />
+            <line number="64" hits="1" branch="False" />
+            <line number="68" hits="3" branch="False" />
+            <line number="69" hits="3" branch="False" />
+            <line number="70" hits="3" branch="False" />
+          </lines>
+        </class>
+        <class name="HoneyZoneMvc.Tests.StatusServiceTests/&lt;AllAsync_ReturnsCorrectData&gt;d__4" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Tests\StatusServiceTests.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="36" hits="1" branch="False" />
+                <line number="37" hits="1" branch="False" />
+                <line number="39" hits="1" branch="False" />
+                <line number="40" hits="1" branch="False" />
+                <line number="41" hits="1" branch="False" />
+                <line number="42" hits="1" branch="False" />
+                <line number="43" hits="1" branch="False" />
+                <line number="44" hits="1" branch="False" />
+                <line number="45" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="36" hits="1" branch="False" />
+            <line number="37" hits="1" branch="False" />
+            <line number="39" hits="1" branch="False" />
+            <line number="40" hits="1" branch="False" />
+            <line number="41" hits="1" branch="False" />
+            <line number="42" hits="1" branch="False" />
+            <line number="43" hits="1" branch="False" />
+            <line number="44" hits="1" branch="False" />
+            <line number="45" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="HoneyZoneMvc.Tests.StatusServiceTests/&lt;GetByIdAsync_ReturnsCorrectData&gt;d__5" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Tests\StatusServiceTests.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="49" hits="1" branch="False" />
+                <line number="50" hits="1" branch="False" />
+                <line number="51" hits="1" branch="False" />
+                <line number="53" hits="1" branch="False" />
+                <line number="54" hits="1" branch="False" />
+                <line number="55" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="49" hits="1" branch="False" />
+            <line number="50" hits="1" branch="False" />
+            <line number="51" hits="1" branch="False" />
+            <line number="53" hits="1" branch="False" />
+            <line number="54" hits="1" branch="False" />
+            <line number="55" hits="1" branch="False" />
           </lines>
         </class>
       </classes>

@@ -1,12 +1,11 @@
-﻿using HoneyZoneMvc.Infrastructure.Data.Models;
+﻿using HoneyZoneMvc.BusinessLogic.Contracts.SubContracts;
+using HoneyZoneMvc.Infrastructure.Data.Models;
 
 namespace HoneyZoneMvc.BusinessLogic.Contracts.ServiceContracts
 {
-    public interface IImageService
+    public interface IImageService:IReadable<ImageUrl>
     {
-        IEnumerable<ImageUrl> All();
         Task<bool> AddAsync(string name);
-        Task<ImageUrl> ImageByIdAsync(int Id);
-        Task<ImageUrl> ImageByNameAsync(string fileName);
+        Task<ImageUrl> ByNameAsync(string fileName);
     }
 }

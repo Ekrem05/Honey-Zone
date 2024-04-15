@@ -52,7 +52,7 @@ namespace HoneyZoneMvc.Tests
             var image = new ImageUrl() { Name = "image1.jpg" };
             await dbContext.ImageUrls.AddAsync(image);
             await dbContext.SaveChangesAsync();
-            var result = await imageService.ImageByNameAsync("image1.jpg");
+            var result = await imageService.ByNameAsync("image1.jpg");
             Assert.AreEqual("image1.jpg", result.Name);
         }
         [Test]

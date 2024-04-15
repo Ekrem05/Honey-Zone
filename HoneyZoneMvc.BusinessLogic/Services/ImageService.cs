@@ -20,17 +20,18 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return await dbContext.SaveChangesAsync() > 0;
         }
 
-        public async Task<ImageUrl> ImageByIdAsync(int Id)
+        public async Task<ImageUrl> GetByIdAsync(string Id)
         {
-            return await dbContext.ImageUrls.FirstOrDefaultAsync(x => x.Id == Id);
+            return await dbContext.ImageUrls.FirstOrDefaultAsync(x => x.Id == Guid.Parse(Id));
         }
-        public async Task<ImageUrl> ImageByNameAsync(string fileName)
+        public async Task<ImageUrl> ByNameAsync(string fileName)
         {
             return await dbContext.ImageUrls.FirstOrDefaultAsync(x => x.Name == fileName);
         }
-        public IEnumerable<ImageUrl> All()
+        public async Task<IEnumerable<ImageUrl>> AllAsync()
         {
-            return dbContext.ImageUrls.ToList();
+            return await dbContext.ImageUrls.ToListAsync();
         }
+
     }
 }

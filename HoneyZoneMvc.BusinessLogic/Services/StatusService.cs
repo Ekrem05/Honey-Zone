@@ -36,7 +36,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             var status = await dbContext.Statuses.FindAsync(Guid.Parse(Id));
             if (status == null)
             {
-                throw new ArgumentNullException();
+                throw new InvalidOperationException();
             }
             return new StatusViewModel()
             {

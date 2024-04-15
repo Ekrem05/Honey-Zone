@@ -78,12 +78,12 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("7ced43c3-8830-4f26-8f0f-ec3bb66bb470"),
+                            Id = new Guid("fbf795c2-7516-4fd9-9979-c44bab57858c"),
                             Name = "Speedy"
                         },
                         new
                         {
-                            Id = new Guid("a276633d-541d-49f4-8b07-bb52af57ec6e"),
+                            Id = new Guid("37a420b3-6fd5-4922-a741-4298583813af"),
                             Name = "Econt"
                         });
                 });
@@ -119,7 +119,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("83e83014-e29a-4d0e-9238-b52cf68bf6b7"),
-                            ConcurrencyStamp = "a2a66816-c4bf-4c81-9df5-a6ac074c420f",
+                            ConcurrencyStamp = "e57840fd-1e5e-4e74-abaf-0f024d679d6b",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -203,7 +203,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         {
                             Id = new Guid("10b051ec-ea4e-45a1-a02e-8c7fecab633f"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "97ea9233-f9fa-410e-906d-83017c79742e",
+                            ConcurrencyStamp = "36a51ff6-4883-4ecb-a05b-925c8cde19de",
                             Email = "administrator@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Admin",
@@ -211,9 +211,9 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                             LockoutEnabled = true,
                             NormalizedEmail = "ADMINISTRATOR@GMAIL.COM",
                             NormalizedUserName = "FIRSTADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAENU1FiXBAkUleG0TGnzT+7rHwlhUqo2lRFUzA8P+Tfjm8GwYegq9Cb4kKhK1P+oGPg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDZtWFhj2eSAp9khqjH7vCVd88FUrLoAHyBbXWl/6w6UEw3YVmM99tHoPN0XOkqjlg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "81DF712F-BF63-42CF-9E60-0FF1D8F7B64F",
+                            SecurityStamp = "BC48566F-9B56-44DB-A108-9851E717099C",
                             TwoFactorEnabled = false,
                             UserName = "FirstAdmin"
                         });
@@ -221,11 +221,9 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
 
             modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.ImageUrl", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -425,7 +423,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9d95cb9e-94fe-440f-ad58-160e4537393e"),
+                            Id = new Guid("29d58e82-afc0-4433-9794-526ad44e6976"),
                             CategoryId = new Guid("78355d47-6040-4676-9972-ac8be4f19882"),
                             Description = "Indulge in the delicate sweetness of our Acacia honey. Sourced from the pristine blossoms of Acacia trees, this golden nectar boasts a subtle floral aroma and a smooth, light taste. Perfect for drizzling over yogurt, spreading on toast, or sweetening your favorite beverages. Treat yourself to the pure, exquisite flavor of Acacia honey today.",
                             Discount = 0.0,
@@ -439,7 +437,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f963fbf4-45e5-40f8-956c-a482ed5c03e9"),
+                            Id = new Guid("7ca61d2a-a232-4d85-94a1-518c17b3d849"),
                             CategoryId = new Guid("78355d47-6040-4676-9972-ac8be4f19882"),
                             Description = "Indulge in the exquisite taste and health benefits of Manuka Honey. Sourced from the pristine landscapes of New Zealand, this rare honey is renowned for its rich flavor and potent medicinal properties. With its unique antibacterial and antioxidant qualities, Manuka Honey offers a natural boost to your immune system and promotes overall wellness.",
                             Discount = 0.0,
@@ -453,7 +451,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7f25aa16-3811-4895-8e79-0e86b2e2cf45"),
+                            Id = new Guid("b4cccfd9-7b25-44fe-a785-1c0b286e0bff"),
                             CategoryId = new Guid("c7d08da8-a5af-4596-8ad2-d0f99091297f"),
                             Description = "Discover the power of nature with our premium bee pollen product. Packed with nutrients and harvested from the finest sources, our bee pollen is a natural boost for your health and wellness routine. Simply sprinkle it on your favorite foods or blend it into smoothies for a delicious and nutritious addition. Energize your day the natural way with our bee pollen.",
                             Discount = 55.0,
@@ -467,7 +465,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0a11696d-6e30-4ef5-b35f-e3cb93c487cf"),
+                            Id = new Guid("db09dc54-9636-4fd8-a6dd-fee9edfd739c"),
                             CategoryId = new Guid("f4251d33-9582-4be6-8bea-be96dd30804e"),
                             Description = "Discover the versatile beauty of pure Beeswax. Known for its natural scent and golden hue, Beeswax is a versatile ingredient used in candles, skincare products, and more. Crafted by bees with precision, it offers a gentle, protective barrier for your skin and a warm, inviting glow when lit. Embrace the timeless elegance and natural charm of Beeswax in your daily rituals.",
                             Discount = 10.0,
@@ -481,7 +479,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fda68289-e1bb-46df-8963-13b2c5f57a1d"),
+                            Id = new Guid("fb35088a-2a15-40d8-9207-0596b3c2cf99"),
                             CategoryId = new Guid("eb2aecdd-7815-49aa-973b-ee3173760fc5"),
                             Description = "Made from durable materials, it securely holds your notes, photos, and grocery lists in place while adding a pop of personality to your fridge door. Bring a little bit of nature indoors and brighten up your kitchen with our Bee Fridge Magnet today!",
                             Discount = 0.0,
@@ -495,7 +493,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("524e411f-32f4-4246-8fbf-7501513f1b5a"),
+                            Id = new Guid("4d4c94dc-fe3a-46f0-b1c5-3c35048e959a"),
                             CategoryId = new Guid("eb2aecdd-7815-49aa-973b-ee3173760fc5"),
                             Description = "Introducing our ceramic coffee cup adorned with small bees, adding a touch of nature to your morning routine. Crafted with care, each bee is hand-painted for a unique and charming design. Enjoy your favorite brew in style and bring the beauty of the outdoors to your daily cup of coffee.",
                             Discount = 0.0,
@@ -527,27 +525,27 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1969cbfb-ecf9-4c6b-af5b-06201b0ecd8d"),
+                            Id = new Guid("aa54a723-dd2c-4232-bee5-7be89494f178"),
                             Name = "Confirmed"
                         },
                         new
                         {
-                            Id = new Guid("81dbced2-b1ab-4c5f-adb5-a7d7c7fcac53"),
+                            Id = new Guid("efdf191d-7ffb-4c7c-a917-ec030a7cba2a"),
                             Name = "Pending"
                         },
                         new
                         {
-                            Id = new Guid("4f32b78e-1265-4b48-96e2-f4ba019209df"),
+                            Id = new Guid("ccfce986-e38a-4c30-b8b0-af4e50c1f931"),
                             Name = "Sent"
                         },
                         new
                         {
-                            Id = new Guid("a3b85338-97c8-429c-b6f2-0d47c421e5cd"),
+                            Id = new Guid("ff2ccc15-cb3c-42ed-93e2-b6d8ac8e6946"),
                             Name = "Delivered"
                         },
                         new
                         {
-                            Id = new Guid("d6beb071-9224-4610-8f8c-9f79bcb17de8"),
+                            Id = new Guid("caa61a04-b961-4aa5-9851-1226ebeea072"),
                             Name = "Cancelled"
                         });
                 });

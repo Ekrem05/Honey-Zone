@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HoneyZoneMvc.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240317114111_Initial")]
+    [Migration("20240415134337_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -80,12 +80,12 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("33f3d4a9-5299-440a-be8e-fcac88d5a83f"),
+                            Id = new Guid("fbf795c2-7516-4fd9-9979-c44bab57858c"),
                             Name = "Speedy"
                         },
                         new
                         {
-                            Id = new Guid("1ff7062d-f7a9-4d06-be57-e2604f05649c"),
+                            Id = new Guid("37a420b3-6fd5-4922-a741-4298583813af"),
                             Name = "Econt"
                         });
                 });
@@ -121,9 +121,9 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("83e83014-e29a-4d0e-9238-b52cf68bf6b7"),
-                            ConcurrencyStamp = "e54db294-dc9e-489c-a32e-a470fe6b5ee3",
-                            Name = "Admin",
-                            NormalizedName = "ADMIN"
+                            ConcurrencyStamp = "e57840fd-1e5e-4e74-abaf-0f024d679d6b",
+                            Name = "Administrator",
+                            NormalizedName = "ADMINISTRATOR"
                         });
                 });
 
@@ -205,7 +205,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         {
                             Id = new Guid("10b051ec-ea4e-45a1-a02e-8c7fecab633f"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4c135a84-8372-44c8-a772-3b1647a09690",
+                            ConcurrencyStamp = "36a51ff6-4883-4ecb-a05b-925c8cde19de",
                             Email = "administrator@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Admin",
@@ -213,9 +213,9 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                             LockoutEnabled = true,
                             NormalizedEmail = "ADMINISTRATOR@GMAIL.COM",
                             NormalizedUserName = "FIRSTADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAECvb1MXI3Dn0yTbq5ZjpPnADpnnxeIzWpK/dYHM4xuSY7/Is+ZBy7A7+dKygVvXAkA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDZtWFhj2eSAp9khqjH7vCVd88FUrLoAHyBbXWl/6w6UEw3YVmM99tHoPN0XOkqjlg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "33FAF4AC-9656-4FCF-A773-D588D0A343A8",
+                            SecurityStamp = "BC48566F-9B56-44DB-A108-9851E717099C",
                             TwoFactorEnabled = false,
                             UserName = "FirstAdmin"
                         });
@@ -223,11 +223,9 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
 
             modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.ImageUrl", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -265,7 +263,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.Property<Guid>("OrderDetailId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("StateId")
+                    b.Property<Guid>("StatusId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<double>("TotalSum")
@@ -279,7 +277,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
 
                     b.HasIndex("OrderDetailId");
 
-                    b.HasIndex("StateId");
+                    b.HasIndex("StatusId");
 
                     b.ToTable("Orders");
                 });
@@ -309,15 +307,15 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasMaxLength(13)
                         .HasColumnType("nvarchar(13)");
-
-                    b.Property<string>("SecondName")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("ZipCode")
                         .IsRequired()
@@ -413,7 +411,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1a49709a-867a-44c8-a007-cc7d849d837a"),
+                            Id = new Guid("c7ecd019-40b1-47f3-89c4-67e3625f796b"),
                             CategoryId = new Guid("78355d47-6040-4676-9972-ac8be4f19882"),
                             Description = "Savor the golden goodness of our Sunflower honey. With its rich, floral aroma and robust flavor, this honey is a true delight for your taste buds. Harvested from the vibrant blooms of sunflowers, it boasts a smooth texture and a hint of nutty sweetness. Perfect for adding a touch of sunshine to your morning tea or drizzling over freshly baked goods. Experience the pure taste of nature with our Sunflower honey.",
                             Discount = 20.0,
@@ -423,11 +421,11 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                             Price = 19.989999999999998,
                             ProductAmount = "800g",
                             QuantityInStock = 82,
-                            TimesOrdered = 0
+                            TimesOrdered = 1
                         },
                         new
                         {
-                            Id = new Guid("320edc42-7737-4c5a-b7fe-ef9e13f6a7a2"),
+                            Id = new Guid("29d58e82-afc0-4433-9794-526ad44e6976"),
                             CategoryId = new Guid("78355d47-6040-4676-9972-ac8be4f19882"),
                             Description = "Indulge in the delicate sweetness of our Acacia honey. Sourced from the pristine blossoms of Acacia trees, this golden nectar boasts a subtle floral aroma and a smooth, light taste. Perfect for drizzling over yogurt, spreading on toast, or sweetening your favorite beverages. Treat yourself to the pure, exquisite flavor of Acacia honey today.",
                             Discount = 0.0,
@@ -437,11 +435,11 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                             Price = 25.989999999999998,
                             ProductAmount = "1kg",
                             QuantityInStock = 27,
-                            TimesOrdered = 0
+                            TimesOrdered = 2
                         },
                         new
                         {
-                            Id = new Guid("9f3c5c84-0dea-4021-8349-3bb3db6606a4"),
+                            Id = new Guid("7ca61d2a-a232-4d85-94a1-518c17b3d849"),
                             CategoryId = new Guid("78355d47-6040-4676-9972-ac8be4f19882"),
                             Description = "Indulge in the exquisite taste and health benefits of Manuka Honey. Sourced from the pristine landscapes of New Zealand, this rare honey is renowned for its rich flavor and potent medicinal properties. With its unique antibacterial and antioxidant qualities, Manuka Honey offers a natural boost to your immune system and promotes overall wellness.",
                             Discount = 0.0,
@@ -451,11 +449,11 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                             Price = 18.989999999999998,
                             ProductAmount = "1kg",
                             QuantityInStock = 11,
-                            TimesOrdered = 0
+                            TimesOrdered = 3
                         },
                         new
                         {
-                            Id = new Guid("5a32c880-58f6-47ef-ad68-d41b3ddab27e"),
+                            Id = new Guid("b4cccfd9-7b25-44fe-a785-1c0b286e0bff"),
                             CategoryId = new Guid("c7d08da8-a5af-4596-8ad2-d0f99091297f"),
                             Description = "Discover the power of nature with our premium bee pollen product. Packed with nutrients and harvested from the finest sources, our bee pollen is a natural boost for your health and wellness routine. Simply sprinkle it on your favorite foods or blend it into smoothies for a delicious and nutritious addition. Energize your day the natural way with our bee pollen.",
                             Discount = 55.0,
@@ -469,7 +467,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a97b181d-ebb9-43aa-a074-dd31a691c91b"),
+                            Id = new Guid("db09dc54-9636-4fd8-a6dd-fee9edfd739c"),
                             CategoryId = new Guid("f4251d33-9582-4be6-8bea-be96dd30804e"),
                             Description = "Discover the versatile beauty of pure Beeswax. Known for its natural scent and golden hue, Beeswax is a versatile ingredient used in candles, skincare products, and more. Crafted by bees with precision, it offers a gentle, protective barrier for your skin and a warm, inviting glow when lit. Embrace the timeless elegance and natural charm of Beeswax in your daily rituals.",
                             Discount = 10.0,
@@ -483,7 +481,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("726ec219-880c-401f-af6c-ef12560b68d3"),
+                            Id = new Guid("fb35088a-2a15-40d8-9207-0596b3c2cf99"),
                             CategoryId = new Guid("eb2aecdd-7815-49aa-973b-ee3173760fc5"),
                             Description = "Made from durable materials, it securely holds your notes, photos, and grocery lists in place while adding a pop of personality to your fridge door. Bring a little bit of nature indoors and brighten up your kitchen with our Bee Fridge Magnet today!",
                             Discount = 0.0,
@@ -497,7 +495,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7efb80c5-1268-4db7-9dd5-d97f9535afc5"),
+                            Id = new Guid("4d4c94dc-fe3a-46f0-b1c5-3c35048e959a"),
                             CategoryId = new Guid("eb2aecdd-7815-49aa-973b-ee3173760fc5"),
                             Description = "Introducing our ceramic coffee cup adorned with small bees, adding a touch of nature to your morning routine. Crafted with care, each bee is hand-painted for a unique and charming design. Enjoy your favorite brew in style and bring the beauty of the outdoors to your daily cup of coffee.",
                             Discount = 0.0,
@@ -511,7 +509,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         });
                 });
 
-            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.State", b =>
+            modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Status", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -524,32 +522,32 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("States");
+                    b.ToTable("Statuses");
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ffc485a3-e9a3-4577-a2f3-5803e7879dba"),
+                            Id = new Guid("aa54a723-dd2c-4232-bee5-7be89494f178"),
                             Name = "Confirmed"
                         },
                         new
                         {
-                            Id = new Guid("a1232c70-b6c0-4c6a-ad38-1b4cc703a63e"),
+                            Id = new Guid("efdf191d-7ffb-4c7c-a917-ec030a7cba2a"),
                             Name = "Pending"
                         },
                         new
                         {
-                            Id = new Guid("f1fc29ae-44c2-4bcf-ab9a-05712ce64de6"),
+                            Id = new Guid("ccfce986-e38a-4c30-b8b0-af4e50c1f931"),
                             Name = "Sent"
                         },
                         new
                         {
-                            Id = new Guid("fe374271-0272-4536-a893-131b36f4525a"),
+                            Id = new Guid("ff2ccc15-cb3c-42ed-93e2-b6d8ac8e6946"),
                             Name = "Delivered"
                         },
                         new
                         {
-                            Id = new Guid("dfe120ea-b9df-4fa6-a176-1a163d4f38d4"),
+                            Id = new Guid("caa61a04-b961-4aa5-9851-1226ebeea072"),
                             Name = "Cancelled"
                         });
                 });
@@ -695,9 +693,9 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.State", "State")
+                    b.HasOne("HoneyZoneMvc.Infrastructure.Data.Models.Status", "Status")
                         .WithMany()
-                        .HasForeignKey("StateId")
+                        .HasForeignKey("StatusId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -707,7 +705,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
 
                     b.Navigation("OrderDetail");
 
-                    b.Navigation("State");
+                    b.Navigation("Status");
                 });
 
             modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.OrderProduct", b =>

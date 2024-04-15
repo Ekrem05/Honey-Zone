@@ -6,9 +6,8 @@ namespace HoneyZoneMvc.Infrastructure.Data.Models
 {
     public class ImageUrl
     {
-
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required]
         [MaxLength(DataConstants.ImageUrl.NameMaxValue)]

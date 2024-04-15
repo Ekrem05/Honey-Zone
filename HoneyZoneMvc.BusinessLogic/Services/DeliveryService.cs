@@ -13,16 +13,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
         {
             dbContext = _dbContext;
         }
-        public Task<bool> AddAsync(DeliveryMethodViewModel entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> DeleteAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
+       
         public async Task<IEnumerable<DeliveryMethodViewModel>> AllAsync()
         {
             var items = await dbContext.DeliverMethods.ToListAsync();
@@ -38,15 +29,22 @@ namespace HoneyZoneMvc.BusinessLogic.Services
             return deliveries;
 
         }
-
-        public Task<bool> UpdateAsync(DeliveryMethodViewModel entity)
+        public async Task<DeliveryMethodViewModel> GetByIdAsync(string Id)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<DeliveryMethodViewModel> GetByIdAsync(string Id)
-        {
-            throw new NotImplementedException();
+            if (Id==null)
+            {
+                throw new ArgumentNullException();
+            }
+            var model= await dbContext.DeliverMethods.FindAsync(Guid.Parse(Id));
+            if (model==null)
+            {
+                throw new InvalidOperationException();
+            }
+            return new DeliveryMethodViewModel()
+            {
+                Id = model.Id.ToString(),
+                Name = model.Name
+            };
         }
     }
 }

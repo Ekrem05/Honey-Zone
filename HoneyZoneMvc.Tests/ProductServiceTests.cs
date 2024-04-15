@@ -39,7 +39,7 @@ namespace HoneyZoneMvc.Tests
 
             categoryService = new Mock<ICategoryService>().Object;
             var imageServiceMock = new Mock<IImageService>();
-            imageServiceMock.Setup(s => s.All()).Returns(new List<ImageUrl>());
+            imageServiceMock.Setup(s => s.AllAsync()).ReturnsAsync(new List<ImageUrl>());
             imageService = imageServiceMock.Object;
 
             mapper = new MapperConfiguration(mc => mc.AddProfile(new MyProfile())).CreateMapper();
