@@ -156,6 +156,7 @@ namespace HoneyZoneMvc.BusinessLogic.Services
 
         public async Task<ProductAdminViewModel> GetByIdAsync(string Id)
         {
+            //old syntax
             if (Id == null)
             {
                 throw new ArgumentNullException();
@@ -165,6 +166,8 @@ namespace HoneyZoneMvc.BusinessLogic.Services
                 .Include(p => p.Images)
                 .FirstOrDefaultAsync(p => p.Id.ToString() == Id);
 
+            //new syntax
+            ArgumentNullException.ThrowIfNull(model);
 
             var item = mapper.Map<ProductAdminViewModel>(model);
             return item;

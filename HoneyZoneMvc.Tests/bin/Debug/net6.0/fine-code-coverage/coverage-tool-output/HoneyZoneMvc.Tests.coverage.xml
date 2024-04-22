@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.8367" branch-rate="0.6491" version="1.9" timestamp="1713188554" lines-covered="1620" lines-valid="1936" branches-covered="111" branches-valid="171">
+<coverage line-rate="0.8367" branch-rate="0.6491" version="1.9" timestamp="1713698338" lines-covered="1620" lines-valid="1936" branches-covered="111" branches-valid="171">
   <sources>
     <source>C:\Users\ekrem\</source>
   </sources>
@@ -136,36 +136,36 @@
           <methods>
             <method name="get_FirstName" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="11" hits="0" branch="False" />
+                <line number="13" hits="0" branch="False" />
               </lines>
             </method>
             <method name="get_LastName" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="15" hits="0" branch="False" />
+                <line number="18" hits="0" branch="False" />
               </lines>
             </method>
             <method name="get_Email" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="19" hits="0" branch="False" />
+                <line number="22" hits="0" branch="False" />
               </lines>
             </method>
             <method name="get_Password" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="25" hits="0" branch="False" />
+                <line number="28" hits="0" branch="False" />
               </lines>
             </method>
             <method name="get_ConfirmPassword" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="30" hits="0" branch="False" />
+                <line number="34" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="11" hits="0" branch="False" />
-            <line number="15" hits="0" branch="False" />
-            <line number="19" hits="0" branch="False" />
-            <line number="25" hits="0" branch="False" />
-            <line number="30" hits="0" branch="False" />
+            <line number="13" hits="0" branch="False" />
+            <line number="18" hits="0" branch="False" />
+            <line number="22" hits="0" branch="False" />
+            <line number="28" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.BusinessLogic.ViewModels.User.UserViewModel" filename="Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\ViewModels\User\UsersViewModel.cs" line-rate="0" branch-rate="1" complexity="5">

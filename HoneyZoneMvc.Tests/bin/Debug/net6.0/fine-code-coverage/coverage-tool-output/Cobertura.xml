@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.836776859504132" branch-rate="0.658682634730539" lines-covered="1620" lines-valid="1936" branches-covered="110" branches-valid="167" complexity="520" version="0" timestamp="1713199354">
+<coverage line-rate="0.836776859504132" branch-rate="0.658682634730539" lines-covered="1620" lines-valid="1936" branches-covered="110" branches-valid="167" complexity="520" version="0" timestamp="1713709139">
   <sources>
     <source>C:\Users\ekrem\</source>
   </sources>
@@ -3263,36 +3263,36 @@
           <methods>
             <method name="get_FirstName" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="11" hits="0" branch="false" />
+                <line number="13" hits="0" branch="false" />
               </lines>
             </method>
             <method name="get_LastName" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="15" hits="0" branch="false" />
+                <line number="18" hits="0" branch="false" />
               </lines>
             </method>
             <method name="get_Email" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="19" hits="0" branch="false" />
+                <line number="22" hits="0" branch="false" />
               </lines>
             </method>
             <method name="get_Password" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="25" hits="0" branch="false" />
+                <line number="28" hits="0" branch="false" />
               </lines>
             </method>
             <method name="get_ConfirmPassword" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="30" hits="0" branch="false" />
+                <line number="34" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="11" hits="0" branch="false" />
-            <line number="15" hits="0" branch="false" />
-            <line number="19" hits="0" branch="false" />
-            <line number="25" hits="0" branch="false" />
-            <line number="30" hits="0" branch="false" />
+            <line number="13" hits="0" branch="false" />
+            <line number="18" hits="0" branch="false" />
+            <line number="22" hits="0" branch="false" />
+            <line number="28" hits="0" branch="false" />
+            <line number="34" hits="0" branch="false" />
           </lines>
         </class>
         <class name="HoneyZoneMvc.BusinessLogic.ViewModels.User.UserViewModel" filename="C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.BusinessLogic\ViewModels\User\UsersViewModel.cs" line-rate="0" branch-rate="1" complexity="5">

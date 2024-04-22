@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/F2YlohyLtHKLmMn3/vVGv10Gh+GaKUELxIk61Rz4Os=",
+  "Hash": "RJfnUI3pz/sTHGaNffNwoAGdfO0rUNjN/aVulUUdwKY=",
   "Source": "HoneyZoneMvc",
   "BasePath": "_content/HoneyZoneMvc",
   "Mode": "Default",
@@ -2829,6 +2829,25 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
+      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\1920x1080_mig_29_9_13_logo_af6b9c998ed6a8ae0dbabe3e888694e0.jpg",
+      "SourceId": "HoneyZoneMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "BasePath": "_content/HoneyZoneMvc",
+      "RelativePath": "productImages/1920x1080_mig_29_9_13_logo_af6b9c998ed6a8ae0dbabe3e888694e0.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\productImages\\1920x1080_mig_29_9_13_logo_af6b9c998ed6a8ae0dbabe3e888694e0.jpg"
+    },
+    {
       "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\406065568_1583395059083573_1947896664196653747_n.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
@@ -2922,6 +2941,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\productImages\\427989749_1807262889719462_8959949575883266596_n.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\435384763_7344857445598778_1692297226733761900_n.png",
+      "SourceId": "HoneyZoneMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "BasePath": "_content/HoneyZoneMvc",
+      "RelativePath": "productImages/435384763_7344857445598778_1692297226733761900_n.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\productImages\\435384763_7344857445598778_1692297226733761900_n.png"
     },
     {
       "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\ASP.NET Fundamentals - January 2024 - Certificate.jpeg",
@@ -3209,6 +3247,44 @@
       "OriginalItemSpec": "wwwroot\\productImages\\image (2).png"
     },
     {
+      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\MyDiagram.png",
+      "SourceId": "HoneyZoneMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "BasePath": "_content/HoneyZoneMvc",
+      "RelativePath": "productImages/MyDiagram.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\productImages\\MyDiagram.png"
+    },
+    {
+      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\Screenshot 2024-04-02 155614.png",
+      "SourceId": "HoneyZoneMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "BasePath": "_content/HoneyZoneMvc",
+      "RelativePath": "productImages/Screenshot 2024-04-02 155614.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\productImages\\Screenshot 2024-04-02 155614.png"
+    },
+    {
       "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\s-l1600.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
@@ -3264,6 +3340,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\productImages\\Tesla-02.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\vecteezy_a-futuristic-car-design-racer-car-desktop-ai-generated_22460208.jpg",
+      "SourceId": "HoneyZoneMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "BasePath": "_content/HoneyZoneMvc",
+      "RelativePath": "productImages/vecteezy_a-futuristic-car-design-racer-car-desktop-ai-generated_22460208.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\productImages\\vecteezy_a-futuristic-car-design-racer-car-desktop-ai-generated_22460208.jpg"
     }
   ]
 }

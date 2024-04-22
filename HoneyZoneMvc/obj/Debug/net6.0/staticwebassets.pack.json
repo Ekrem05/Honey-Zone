@@ -349,6 +349,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\1920x1080_mig_29_9_13_logo_af6b9c998ed6a8ae0dbabe3e888694e0.jpg",
+      "PackagePath": "staticwebassets\\productImages\\1920x1080_mig_29_9_13_logo_af6b9c998ed6a8ae0dbabe3e888694e0.jpg"
+    },
+    {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\406065568_1583395059083573_1947896664196653747_n.jpg",
       "PackagePath": "staticwebassets\\productImages\\406065568_1583395059083573_1947896664196653747_n.jpg"
     },
@@ -369,6 +373,10 @@
       "PackagePath": "staticwebassets\\productImages\\427989749_1807262889719462_8959949575883266596_n.jpg"
     },
     {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\435384763_7344857445598778_1692297226733761900_n.png",
+      "PackagePath": "staticwebassets\\productImages\\435384763_7344857445598778_1692297226733761900_n.png"
+    },
+    {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\ASP.NET Fundamentals - January 2024 - Certificate.jpeg",
       "PackagePath": "staticwebassets\\productImages\\ASP.NET Fundamentals - January 2024 - Certificate.jpeg"
     },
@@ -379,6 +387,14 @@
     {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\Fresh-beeswax-for-hair-on-the-table.jpg",
       "PackagePath": "staticwebassets\\productImages\\Fresh-beeswax-for-hair-on-the-table.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\MyDiagram.png",
+      "PackagePath": "staticwebassets\\productImages\\MyDiagram.png"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\Screenshot 2024-04-02 155614.png",
+      "PackagePath": "staticwebassets\\productImages\\Screenshot 2024-04-02 155614.png"
     },
     {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\Tesla-02.jpg",
@@ -439,6 +455,10 @@
     {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\s-l225.jpg",
       "PackagePath": "staticwebassets\\productImages\\s-l225.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\vecteezy_a-futuristic-car-design-racer-car-desktop-ai-generated_22460208.jpg",
+      "PackagePath": "staticwebassets\\productImages\\vecteezy_a-futuristic-car-design-racer-car-desktop-ai-generated_22460208.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.HoneyZoneMvc.Microsoft.AspNetCore.StaticWebAssets.props",
