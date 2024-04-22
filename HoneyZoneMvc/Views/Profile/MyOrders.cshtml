@@ -10,7 +10,7 @@
 <section class="products-cart ">
     @if(Model.Count() == 0)
     {
-        <h2 class="text-center text-light">You have no orders</h2>
+        <h2 class="text-center text-light">Нямате активни поръчки</h2>
     }
 
     @foreach (var order in Model)
@@ -18,15 +18,15 @@
         <div>
             <button class="btn my-orders" data-bs-toggle="collapse" data-bs-target="#order-products-@(order.GetHashCode())" aria-expanded="false" aria-controls="collapseExample">
                 <ul type="none">
-                    <li>Total Amount <span>@(order.TotalSum) BGN</span></li>
-                    <li>Ordered On  <span>@order.OrderDate</span></li>
-                    <li>Address  <span>@order.Address</span></li>
-                    <li>Order Status  <span>@order.State</span></li>
+                    <li>Общо сума <span>@(order.TotalSum) лв.</span></li>
+                    <li>Поръчано на  <span>@order.OrderDate</span></li>
+                    <li>Адрес  <span>@order.Address</span></li>
+                    <li>Статус на поръчката  <span>@order.State</span></li>
                 </ul>
             </button>
             <div class="collapse" id="order-products-@(order.GetHashCode())">
                 <div class=".my-card-body">
-                    <h3 class="products-header">Products</h3>
+                    <h3 class="products-header">Продукти</h3>
                     <table class="table table-striped-colums table-dark  table-bordered border-warning table-hover table-md">
                         <thead>
                             <tr class="text-center">
@@ -44,7 +44,7 @@
                                     <td>@product.Quantity</td>
                                     @if (product.IsDiscounted)
                                     {
-                                        <td><span class="price-before">@product.Price</span> @(product.DiscountedPrice) BGN</td>
+                                        <td><span class="price-before">@product.Price</span> @(product.DiscountedPrice) лв</td>
                                     }
                                     else
                                     {

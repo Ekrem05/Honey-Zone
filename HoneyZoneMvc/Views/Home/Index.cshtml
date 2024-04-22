@@ -1,76 +1,76 @@
 ﻿@model IEnumerable<ProductShopCardViewModel>
 @inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Honey-Zone";
+        ViewData["Title"] = "Медена Зона";
 }
 <section class="picture-quote">
-    <div class="opening-card">
-        <div id="carouselExampleCaptions"
-             class="carousel slide"
-             data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button"
-                        data-bs-target="#carouselExampleCaptions"
-                        data-bs-slide-to="0"
-                        class="active"
-                        aria-current="true"
-                        aria-label="Slide 1"></button>
-                <button type="button"
-                        data-bs-target="#carouselExampleCaptions"
-                        data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                <button type="button"
-                        data-bs-target="#carouselExampleCaptions"
-                        data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner w-70">
-                <div class="carousel-item active" data-bs-interval="4000">
-                    <img src="images/busy-bee-pollinating-flower-bumblebee-work-generated-by-ai.jpg" class="d-block" alt="..." />
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Health</h5>
-                        <p>Investment in the future</p>
+        <div class="opening-card">
+            <div id="carouselExampleCaptions"
+                 class="carousel slide"
+                 data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button"
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Слайд 1"></button>
+                    <button type="button"
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="1"
+                            aria-label="Слайд 2"></button>
+                    <button type="button"
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="2"
+                            aria-label="Слайд 3"></button>
+                </div>
+                <div class="carousel-inner w-70">
+                    <div class="carousel-item active" data-bs-interval="4000">
+                        <img src="images/busy-bee-pollinating-flower-bumblebee-work-generated-by-ai.jpg" class="d-block" alt="..." />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Здраве</h5>
+                            <p>Инвестиция в бъдещето</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="4000">
+                        <img src="images/bees-gd2a4cbde8_1920.jpg"
+                             class="d-block w-100"
+                             alt="..." />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Български мед</h5>
+                            <p>Българският мед е известен с чистотата и вкуса си</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="4000">
+                        <img src="images/closeup.jpg" class="d-block w-100" alt="..." />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Пчелата</h5>
+                            <p>
+                                Приятел и спасител на природата, работещ за хармония и изобилие.
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="4000">
-                    <img src="images/bees-gd2a4cbde8_1920.jpg"
-                         class="d-block w-100"
-                         alt="..." />
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Bulgarian honey</h5>
-                        <p>Bulgarian honey is known for its purity and taste</p>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="4000">
-                    <img src="images/closeup.jpg" class="d-block w-100" alt="..." />
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>The Bee</h5>
-                        <p>
-                            A friend and a savior of nature, working for harmony and abundance.
-                        </p>
-                    </div>
-                </div>
-            </div>
 
-            <button class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+                <button class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Предишен</span>
+                </button>
+                <button class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Следващ</span>
+                </button>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 <section class="bestSellers-container">
-    <h2 class="best-sellers-header">@Localizer["Bs"]</h2>
-    <partial name="_HomeBestSellersPartialView" model="Model"></partial>
-</section>
+        <h2 class="best-sellers-header">@Localizer["Bs"]</h2>
+        <partial name="_HomeBestSellersPartialView" model="Model"></partial>
+    </section>

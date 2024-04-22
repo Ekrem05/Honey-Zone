@@ -15,10 +15,10 @@
             <table class="table table-striped-colums table-dark  table-bordered border-warning table-hover table-sm">
                 <thead>
                     <tr class="text-center">
-                            <th scope="col">Image</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Quantity</th>
+                            <th scope="col">Снимка</th>
+                            <th scope="col">Име</th>
+                            <th scope="col">Цена</th>
+                            <th scope="col">Количество</th>
                         <th scope="col"></th>
 
                     </tr>
@@ -41,14 +41,14 @@
                                     }
                                     else
                                     {
-                                        <label class="price">@Model.ElementAt(i).Price</label>
+                                        <label class="price">@Model.ElementAt(i).Price лв</label>
                                     }
                                     
                                     
                                 </td>
                                 <td>  <input class="quantity" type="number" name="[@i].Quantity" value="@Model.ElementAt(i).Quantity" min="1" /></td>
                                 <td>
-                                    <button class="btn btn-outline-danger" asp-action="RemoveFromCart" asp-route-id="@Model.ElementAt(i).Id">Remove</button>
+                                    <button class="btn btn-outline-danger" asp-action="RemoveFromCart" asp-route-id="@Model.ElementAt(i).Id">Премахни</button>
 
                                 </td>
                                 </tr>

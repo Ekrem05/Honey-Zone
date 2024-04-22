@@ -1,28 +1,28 @@
 ﻿@model DiscountByCategoryViewModel
 <div class="actions bg-warning p-2 d-flex d-flex justify-content-around w-50 ">
-    
-      
-            <a class="btn btn-outline-success btn-lg " data-bs-toggle="modal"
-               data-bs-target="#discount-by-category">
-                Set Discount By Category
-            </a>
 
-            <a class="btn btn-outline-dark btn-lg" data-bs-toggle="modal"
-               data-bs-target="#cancel-discount-by-category">
-                Remove Discount By Category
-            </a>
-    
+
+    <a class="btn btn-outline-success btn-lg " data-bs-toggle="modal"
+       data-bs-target="#discount-by-category">
+        Задаване на отстъпка по категория
+    </a>
+
+    <a class="btn btn-outline-dark btn-lg" data-bs-toggle="modal"
+       data-bs-target="#cancel-discount-by-category">
+        Премахване на отстъпка по категория
+    </a>
+
 
     <div class="modal fade" id="discount-by-category" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form asp-action="SetDiscountByCategory" method="post" class="d-inline-block">
                     <div class="modal-body">
-                        <strong class="bg-warning">Warning!</strong> Are you sure you want to set a discount for all products in the category?
+                        <strong class="bg-warning">Внимание!</strong> Сигурни ли сте, че искате да зададете отстъпка за всички продукти в категорията?
                         <div class="mb-3">
-                            <label>Select category</label>
+                            <label>Изберете категория</label>
                             <select asp-for="CategoryId" class="form-control" aria-required="true">
-                                <option disabled selected value="">Select Category...</option>
+                                <option disabled selected value="">Изберете категория...</option>
                                 @foreach (var category in Model.Categories)
                                 {
                                     <option value="@category.Id">@category.Name</option>
@@ -31,16 +31,16 @@
                             <span asp-validation-for="CategoryId" class="bg-danger"></span>
                         </div>
                         <div class="mb-3">
-                            <label>Enter % discount</label>
-                            <input asp-for="Discount" name="Discount" min="1"/>
+                            <label>Въведете % отстъпка</label>
+                            <input asp-for="Discount" name="Discount" min="1" />
                             <span asp-validation-for="Discount" class="bg-danger"></span>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
 
                         <button type="submit" class="btn btn-outline-success">
-                            Apply
+                            Приложи
                         </button>
                     </div>
                 </form>
@@ -52,11 +52,11 @@
             <div class="modal-content">
                 <form asp-action="CancelDiscountByCategory" method="post" class="d-inline-block">
                     <div class="modal-body">
-                        <strong class="bg-warning">Warning!</strong> Are you sure you want to <strong class="bg-danger">REMOVE</strong> all discounts for this category
+                        <strong class="bg-warning">Внимание!</strong> Сигурни ли сте, че искате да <strong class="bg-danger">ПРЕМАХНЕТЕ</strong> всички отстъпки за тази категория?
                         <div class="mb-3">
-                            <label>Select a category</label>
+                            <label>Изберете категория</label>
                             <select name="Id" class="form-control" aria-required="true">
-                                <option disabled selected>Select Category...</option>
+                                <option disabled selected>Изберете категория...</option>
                                 @foreach (var category in Model.Categories)
                                 {
                                     <option value="@category.Id">@category.Name</option>
@@ -67,10 +67,10 @@
                         <input hidden asp-for="Discount" value="10" />
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
 
                         <button type="submit" class="btn btn-outline-success">
-                            Remove discounts
+                            Премахни отстъпките
                         </button>
                     </div>
                 </form>

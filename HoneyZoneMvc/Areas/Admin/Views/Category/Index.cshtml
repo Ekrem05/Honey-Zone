@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<CategoryViewModel>
+
 @if (@TempData["Error"] != null)
 {
     <div class="alert alert-danger alert-dismissible mt-2">
@@ -6,6 +7,7 @@
         <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
     </div>
 }
+
 @if (@TempData["Success"] != null)
 {
     <div class="alert alert-success alert-dismissible mt-2">
@@ -13,29 +15,27 @@
         <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
     </div>
 }
-<div class="actions bg-warning p-2 d-flex d-flex justify-content-around w-50 ">
-   
-        <a class="btn btn-outline-success btn-lg" data-bs-toggle="modal" data-bs-target="#addNewCategory">
-            Add Category
-        </a>
-    <div class="modal fade" id="addNewCategory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form asp-action="AddCategory" method="post" class="d-inline-block">
-                    <div class="modal-body">
-                        <strong class="bg-warning">Warning!</strong> Are you sure you want to add a new category of products?
-                        <label>Enter category name: </label>
-                        <input type="text" name="Name" />
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
 
-                        <button type="submit" class="btn btn-outline-success">
-                            Add
-                        </button>
-                    </div>
-                </form>
-            </div>
+<div class="actions bg-warning p-2 d-flex justify-content-around w-50">
+    <a class="btn btn-outline-success btn-lg" data-bs-toggle="modal" data-bs-target="#addNewCategory">
+        Добави категория
+    </a>
+</div>
+
+<div class="modal fade" id="addNewCategory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="AddCategory" method="post" class="d-inline-block">
+                <div class="modal-body">
+                    <strong class="bg-warning">Внимание!</strong> Сигурни ли сте, че искате да добавите нова категория на продукти?
+                    <label>Въведете име на категорията: </label>
+                    <input type="text" name="Name" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
+                    <button type="submit" class="btn btn-outline-success">Добави</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

@@ -4,16 +4,16 @@
 <table class="table mb-10 mt-3 table-striped table-light table-bordered border-warning table-hover table-sm datatable" id="orders">
     <thead>
         <tr class="text-center">
-            <th scope="col">Id</th>
-            <th scope="col">Amount</th>
-            <th scope="col">Delivery</th>
-            <th scope="col">Client Name</th>
-            <th scope="col">Address</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Ordered On</th>
-            <th scope="col">Expected Delivery Date</th>
-            <th scope="col">Status</th>
-            <th scope="col">Actions</th>
+            <th scope="col">Идентификационен номер</th>
+            <th scope="col">Сума</th>
+            <th scope="col">Доставка</th>
+            <th scope="col">Име на клиента</th>
+            <th scope="col">Адрес</th>
+            <th scope="col">Телефонен номер</th>
+            <th scope="col">Поръчано на</th>
+            <th scope="col">Очаквана дата на доставка</th>
+            <th scope="col">Статус</th>
+            <th scope="col">Действия</th>
         </tr>
     </thead>
     <tbody class="table-group-divider">
@@ -33,16 +33,16 @@
                 <td class="col-md-4">
                     <a class="btn btn-outline-success"
                        asp-action="ChangeStatus" asp-route-Id="@order.Id">
-                        Change Status
+                        Промяна на статуса
                     </a>
                     <a class="btn btn-outline-danger" asp-action="OrderInformation" asp-route-Id="@order.Id">
-                        Information
+                        Информация
                     </a>
                     <a class="btn btn-outline-primary">
-                        Change Expected Delivery Date
+                        Промяна на очакваната дата на доставка
                     </a>
                     <button type="button" class="btn btn-outline-danger d-inline-block" data-bs-toggle="modal" data-bs-target="#deleteOrder-@order.GetHashCode()">
-                        Delete
+                        Изтриване
                     </button>
 
                     <!-- Modal -->
@@ -50,14 +50,14 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                    <strong>Warning! </strong>The order will be deleted. Are you sure?
+                                    <strong>Внимание! </strong>Поръчката ще бъде изтрита. Сигурни ли сте?
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
                                     <form asp-controller="Order" asp-action="DeleteOrder" method="post" class="d-inline-block">
                                         <input type="hidden" value="@order.Id" name="Id" />
                                         <button type="submit" class="btn btn-outline-danger">
-                                            Delete
+                                            Изтриване
                                         </button>
                                     </form>
                                 </div>

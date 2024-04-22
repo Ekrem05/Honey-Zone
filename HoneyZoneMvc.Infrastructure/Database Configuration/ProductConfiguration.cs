@@ -17,98 +17,98 @@ namespace HoneyZoneMvc.Infrastructure.Configuration
              .HasData(new Product()
              {
                  Id = Guid.Parse("c7ecd019-40b1-47f3-89c4-67e3625f796b"),
-                 Name = "Sunflower Honey",
+                 Name = "Слънчогледов мед",
                  CategoryId = Guid.Parse("78355d47-6040-4676-9972-ac8be4f19882"),
                  Price = 19.99,
                  IsDiscounted = true,
                  Discount = 20,
-                 Description = "Savor the golden goodness of our Sunflower honey. With its rich, floral aroma and robust flavor, this honey is a true delight for your taste buds. Harvested from the vibrant blooms of sunflowers, it boasts a smooth texture and a hint of nutty sweetness. Perfect for adding a touch of sunshine to your morning tea or drizzling over freshly baked goods. Experience the pure taste of nature with our Sunflower honey.",
+                 Description = "Насладете се на златистистият вкус на нашия слънчогледов мед. С богатия си, цветен аромат и силен вкус, този мед е истинско удоволствие. Събран от живите цветя на слънчогледите, той се отличава с гладка текстура и леко орехов сладникав вкус. Идеален за добавяне на допир от слънце към вашето сутрешно чайче или за поръсване върху свежо изпечени изделия. Преживейте чистия вкус на природата с нашия слънчогледов мед.",
                  QuantityInStock = 82,
                  ProductAmount = "800g",
                  TimesOrdered = 1,
                  MainImageUrl = "bg honey2.png"
 
              },
+            new Product()
+            {
+                Id = Guid.NewGuid(),
+                Name = "Акациев мед",
+                CategoryId = Guid.Parse("78355d47-6040-4676-9972-ac8be4f19882"),
+                Price = 25.99,
+                IsDiscounted = false,
+                Description = "Акациевият мед е светъл, почти безцветен и прозрачен, с лек аромат на цветя. Има фина текстура и деликатен вкус, който може да варира от леко сладък до умерено сладък в зависимост от източника на нектар. Често се използва в готвенето и печенето поради естествената си сладост и мек вкус.",
+                QuantityInStock = 27,
+                ProductAmount = "1kg",
+                TimesOrdered = 2,
+                MainImageUrl = "attachment_86137655.jpg"
+            },
              new Product()
              {
                  Id = Guid.NewGuid(),
-                 Name = "Acacia honey",
-                 CategoryId = Guid.Parse("78355d47-6040-4676-9972-ac8be4f19882"),
-                 Price = 25.99,
-                 IsDiscounted = false,
-                 Description = "Indulge in the delicate sweetness of our Acacia honey. Sourced from the pristine blossoms of Acacia trees, this golden nectar boasts a subtle floral aroma and a smooth, light taste. Perfect for drizzling over yogurt, spreading on toast, or sweetening your favorite beverages. Treat yourself to the pure, exquisite flavor of Acacia honey today.",
-                 QuantityInStock = 27,
-                 ProductAmount = "1kg",
-                 TimesOrdered = 2,
-                 MainImageUrl = "attachment_86137655.jpg"
-             },
-             new Product()
-             {
-                 Id = Guid.NewGuid(),
-                 Name = "Manuka Honey",
+                 Name = "Манов мед",
                  CategoryId = Guid.Parse("78355d47-6040-4676-9972-ac8be4f19882"),
                  Price = 18.99,
                  IsDiscounted = false,
-                 Description = "Indulge in the exquisite taste and health benefits of Manuka Honey. Sourced from the pristine landscapes of New Zealand, this rare honey is renowned for its rich flavor and potent medicinal properties. With its unique antibacterial and antioxidant qualities, Manuka Honey offers a natural boost to your immune system and promotes overall wellness.",
+                 Description = "Потопете се в изискания вкус и ползите за здравето на мановият мед. Произведен от чистите пейзажи на Нова Зеландия, този рядък мед е известен с богатия си вкус и мощните си лечебни свойства. Със своите уникални антибактериални и антиоксидантни качества, медът Манука предлага естествено стимулиране на имунната ви система и стимулира общото ви благополучие.",
                  QuantityInStock = 11,
                  ProductAmount = "1kg",
                  TimesOrdered = 3,
                  MainImageUrl = "black bg honey.png"
              },
-             new Product()
-             {
-                 Id = Guid.NewGuid(),
-                 Name = "Wildflower Pollen",
-                 CategoryId = Guid.Parse("c7d08da8-a5af-4596-8ad2-d0f99091297f"),
-                 Price = 55.99,
-                 IsDiscounted = true,
-                 Discount = 55,
-                 Description = "Discover the power of nature with our premium bee pollen product. Packed with nutrients and harvested from the finest sources, our bee pollen is a natural boost for your health and wellness routine. Simply sprinkle it on your favorite foods or blend it into smoothies for a delicious and nutritious addition. Energize your day the natural way with our bee pollen.",
-                 QuantityInStock = 102,
-                 ProductAmount = "2kg",
-                 TimesOrdered = 0,
-                 MainImageUrl = "bee-pollen-2549125_1280.jpg"
-             },
-             new Product()
-             {
-                 Id = Guid.NewGuid(),
-                 Name = "Beeswax",
-                 CategoryId = Guid.Parse("f4251d33-9582-4be6-8bea-be96dd30804e"),
-                 Price = 31.99,
-                 IsDiscounted = true,
-                 Discount = 10,
-                 Description = "Discover the versatile beauty of pure Beeswax. Known for its natural scent and golden hue, Beeswax is a versatile ingredient used in candles, skincare products, and more. Crafted by bees with precision, it offers a gentle, protective barrier for your skin and a warm, inviting glow when lit. Embrace the timeless elegance and natural charm of Beeswax in your daily rituals.",
-                 QuantityInStock = 202,
-                 ProductAmount = "900g",
-                 TimesOrdered = 0,
-                 MainImageUrl = "Fresh-beeswax-for-hair-on-the-table.jpg"
-             },
-             new Product()
-             {
-                 Id = Guid.NewGuid(),
-                 Name = "Fridge Magnet",
-                 CategoryId = Guid.Parse("eb2aecdd-7815-49aa-973b-ee3173760fc5"),
-                 Price = 1.99,
-                 IsDiscounted = false,
-                 Description = "Made from durable materials, it securely holds your notes, photos, and grocery lists in place while adding a pop of personality to your fridge door. Bring a little bit of nature indoors and brighten up your kitchen with our Bee Fridge Magnet today!",
-                 QuantityInStock = 100,
-                 ProductAmount = "Single item",
-                 TimesOrdered = 0,
-                 MainImageUrl = "BeeMagnet.jpg"
-             },
-             new Product()
-             {
-                 Id = Guid.NewGuid(),
-                 Name = "Coffee Cup",
-                 CategoryId = Guid.Parse("eb2aecdd-7815-49aa-973b-ee3173760fc5"),
-                 Price = 2.99,
-                 IsDiscounted = false,
-                 Description = "Introducing our ceramic coffee cup adorned with small bees, adding a touch of nature to your morning routine. Crafted with care, each bee is hand-painted for a unique and charming design. Enjoy your favorite brew in style and bring the beauty of the outdoors to your daily cup of coffee.",
-                 QuantityInStock = 50,
-                 ProductAmount = "Single item",
-                 TimesOrdered = 0,
-                 MainImageUrl = "coffee-cup-bees.jpg"
-             });
+            new Product()
+            {
+                Id = Guid.NewGuid(),
+                Name = "Пчелен прашец",
+                CategoryId = Guid.Parse("c7d08da8-a5af-4596-8ad2-d0f99091297f"),
+                Price = 55.99,
+                IsDiscounted = true,
+                Discount = 55,
+                Description = "Открийте силата на природата с нашия премиум продукт от пчелен прашец. Пълен с хранителни вещества и събран от най-добрите източници, нашият пчелен прашец е естествено стимулиращ за здравето ви и рутината за благополучие. Просто поръсете го върху любимите си храни или го смесете в смутита за вкусно и хранително допълнение. Дайте енергия на деня си по естествен начин с нашия пчелен прашец.",
+                QuantityInStock = 102,
+                ProductAmount = "2kg",
+                TimesOrdered = 0,
+                MainImageUrl = "bee-pollen-2549125_1280.jpg"
+            },
+            new Product()
+            {
+                Id = Guid.NewGuid(),
+                Name = "Пчелен восък",
+                CategoryId = Guid.Parse("f4251d33-9582-4be6-8bea-be96dd30804e"),
+                Price = 31.99,
+                IsDiscounted = true,
+                Discount = 10,
+                Description = "Открийте универсалната красота на чистия пчелен восък. Известен с естествения си аромат и златист цвят, пчелният восък е универсална съставка, използвана в свещи, козметични продукти и други. Създаден от пчели с прецизност, той предлага нежна, защитна бариера за кожата ви и топъл, пригласителен блясък, когато се запали. Прегърнете вечната елегантност и естествената привлекателност на пчелния восък в ежедневните си ритуали.",
+                QuantityInStock = 202,
+                ProductAmount = "900g",
+                TimesOrdered = 0,
+                MainImageUrl = "Fresh-beeswax-for-hair-on-the-table.jpg"
+            },
+            new Product()
+            {
+                Id = Guid.NewGuid(),
+                Name = "Магнит",
+                CategoryId = Guid.Parse("eb2aecdd-7815-49aa-973b-ee3173760fc5"),
+                Price = 1.99,
+                IsDiscounted = false,
+                Description = "Изработен от издръжливи материали, той сигурно държи вашите бележки, снимки и списъци с покупки на място, като добавя искрица на личност на вратата на вашата хладилна витрина.",
+                QuantityInStock = 100,
+                ProductAmount = "Единичен артикул",
+                TimesOrdered = 0,
+                MainImageUrl = "BeeMagnet.jpg"
+            },
+            new Product()
+            {
+                Id = Guid.NewGuid(),
+                Name = "Чаша за кафе",
+                CategoryId = Guid.Parse("eb2aecdd-7815-49aa-973b-ee3173760fc5"),
+                Price = 2.99,
+                IsDiscounted = false,
+                Description = "Представяме ви керамична чаша с малки пчелички, добавяща допир на природа към вашето сутрешно ежедневие. Изработена с внимание, всяка пчела е ръчно рисувана за уникален и очарователен дизайн.",
+                QuantityInStock = 50,
+                ProductAmount = "Единичен артикул",
+                TimesOrdered = 0,
+                MainImageUrl = "coffee-cup-bees.jpg"
+});
         }
 
     }

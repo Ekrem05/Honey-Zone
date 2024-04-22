@@ -2,18 +2,18 @@
 {
     public static class SuccessfulMessages
     {
-        public const string ProductAdded = "Product added successfully!";
-        public const string ProductUpdated = "Product updated successfully!";
-        public const string ProductDeleted = "Product deleted successfully!";
-        public const string DiscountSet = "Discount set successfully!";
-        public const string DiscountRemoved = "Discount removed successfully!";
-        public const string DiscountsByCategoryCancelled = "Discounts by category removed successfully!";
-        public const string QuantityDecreased = "Quantity decreased successfully!";
-        public const string DiscountSetByCategory = "Discount set by category successfully!";
-        public const string CategoryAdded = "Category added successfully!";
-        public const string CategoryDeleted = "Category deleted successfully!";
-        public const string OrderAdded = "Order added successfully!";
-        public const string OrderDeleted = "Order deleted successfully!";
-        public const string OrderStatusChanged = "Order status changed successfully!";
+        public const string ProductAdded = "Продуктът е добавен успешно!";
+        public const string ProductUpdated = "Продуктът е актуализиран успешно!";
+        public const string ProductDeleted = "Продуктът е изтрит успешно!";
+        public const string DiscountSet = "Отстъпката е зададена успешно!";
+        public const string DiscountRemoved = "Отстъпката е премахната успешно!";
+        public const string DiscountsByCategoryCancelled = "Отстъпките по категории са премахнати успешно!";
+        public const string QuantityDecreased = "Количеството е намалено успешно!";
+        public const string DiscountSetByCategory = "Отстъпката по категория е зададена успешно!";
+        public const string CategoryAdded = "Категорията е добавена успешно!";
+        public const string CategoryDeleted = "Категорията е изтрита успешно!";
+        public const string OrderAdded = "Поръчката е добавена успешно!";
+        public const string OrderDeleted = "Поръчката е изтрита успешно!";
+        public const string OrderStatusChanged = "Статусът на поръчката е променен успешно!";
     }
 }

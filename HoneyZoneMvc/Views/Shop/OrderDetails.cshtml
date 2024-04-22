@@ -9,10 +9,10 @@
         </div>
     }
     <header class="order-heading">
-        <h1>Order Details</h1>
+        <h1>Данни за поръчката</h1>
     </header>
     <section id="totalPrice">
-        <h3>Total: <span>@(Model.TotalSum)lv.</span></h3>
+        <h3>Обща сума: <span>@(Model.TotalSum)лв.</span></h3>
     </section>
     <form asp-action="OrderConfirmed" method="post" class="order-form">
       
@@ -45,14 +45,14 @@
             <input asp-for="Address" class="form-control" />
             <span asp-validation-for="Address" class="text-danger"></span>
           
-            <label asp-for="ZipCode" class="form-label">ZipCode</label>
+            <label asp-for="ZipCode" class="form-label"></label>
             <input asp-for="ZipCode" class="form-control" />
             <span asp-validation-for="ZipCode" class="text-danger"></span>
         </div>
         <div class="deliveryMethods">
             <label asp-for="@Model.DeliveryMethodId" class="form-label-add-edit"></label>
             <select asp-for="@Model.DeliveryMethodId" class="form-control" aria-required="true">
-                <option disabled selected value="">Choose delivery...</option>
+                <option disabled selected value="">Куриер...</option>
                 @foreach (var category in Model.DeliveryMethods)
                 {
                     <option value="@category.Id">@category.Name</option>

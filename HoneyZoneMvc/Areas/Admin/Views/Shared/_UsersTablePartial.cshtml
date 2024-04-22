@@ -5,12 +5,12 @@
 <table class="table mb-10 mt-3 table-striped table-light table-bordered border-warning table-hover table-sm datatable" id="products">
     <thead>
         <tr class="text-center">
-            <th scope="col">Id</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Roles</th>
-            <th scope="col">Actions</th>
+            <th scope="col">Идентификационен номер</th>
+            <th scope="col">Име</th>
+            <th scope="col">Фамилия</th>
+            <th scope="col">Електронна поща</th>
+            <th scope="col">Роли</th>
+            <th scope="col">Действия</th>
 
         </tr>
     </thead>
@@ -22,26 +22,26 @@
                 <td>@user.FirstName</td>
                 <td>@user.LastName</td>
                 <td>@user.Email</td>
-                <td>@string.Join("; ",user.Roles)</td>
+                <td>@string.Join("; ", user.Roles)</td>
                 <td class="col-md-3">
                     <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addrole-@user.GetHashCode()">
-                       Add To Role
+                        Добавяне към Роля
                     </button>
                     <div class="modal fade" id="addrole-@user.GetHashCode()" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <form asp-action="AddUserToRole" method="post" class="d-inline-block">
                                     <div class="modal-body">
-                                        <label>Enter Role Name</label>
+                                        <label>Въведете Име на Роля</label>
                                         <input type="text" name="roleName" />
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
 
                                         <input type="hidden" value="@user.Id" name="userId" />
 
                                         <button type="submit" class="btn btn-outline-success">
-                                            Apply
+                                            Приложи
                                         </button>
                                     </div>
                                 </form>

@@ -23,7 +23,7 @@
             <label class="form-label m-1" asp-for="Price"></label>
             <input type="number"
                    class="form-control"
-                   id="PriceEdit"
+                   id="PriceEdit" min="1"
                    asp-for="Price" />
             <span class="input-group-text">лв</span>
             <span class="input-group-text">0.00</span>
@@ -70,10 +70,10 @@
             <a type="button"
                     class="btn btn-secondary"
                     asp-action="Index">
-                Cancel
+                Отказ
             </a>
             <button type="submit" class="btn btn-success">
-                Apply changes
+                Приложи
             </button>
         </div>
     </form>

@@ -1,75 +1,75 @@
 ﻿@model AllProductsQueryModel
 
 
-@if (@TempData["Error"] != null)
+@if (TempData["Error"] != null)
 {
     <div class="alert alert-danger alert-dismissible mt-2">
         @TempData["Error"]
         <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
     </div>
 }
-@if (@TempData["Success"] != null)
+@if (TempData["Success"] != null)
 {
     <div class="alert alert-success alert-dismissible mt-2">
         @TempData["Success"]
         <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
     </div>
 }
-    <div class="product-data">
+<div class="product-data">
     <form method="get">
-        
+
         <section class="product-sorting-filters">
             <div class="actions bg-success p-2 d-flex d-flex justify-content-around w-50 ">
 
                 <button class="btn btn-primary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Add
+                    Добавяне
                 </button>
                 <ul class="dropdown-menu">
                     <li>
                         <a class="btn btn-outline-success btn-lg dropdown-item" asp-action="AddProduct">
-                            Add Product
+                            Добавяне на продукт
                         </a>
 
                     </li>
-                   
+
                 </ul>
                 <a class="btn btn-outline-dark btn-lg " type="button" asp-action="ProductDiscount">
-                    Discounts
+                    Отстъпки
                 </a>
             </div>
             <div class="actions bg-warning p-2 d-flex d-flex justify-content-around w-50 ">
                 <select asp-for="Category" class="btn btn-outline-danger btn-sm dropdown-toggle">
-                <button class="btn btn-outline-primary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Category
-                </button>
-                <ul class="dropdown-menu">
-                      
-                        <option value="">All</option>
+                    <button class="btn btn-outline-primary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Категория
+                    </button>
+                    <ul class="dropdown-menu">
+
+                    <option value="">Всички</option>
                         @foreach (var category in Model.Categories)
                         {
-                            <option value="@category">@category</option>
+                        <option value="@category">@category</option>
                         }
-                </ul>
+                    </ul>
                 </select>
                 <select asp-for="SortBy" class="btn btn-outline-primary btn-sm dropdown-toggle">
-                <button class="btn btn-outline-primary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Sort By
-                </button>
-                <ul class="dropdown-menu">
-                   
-                        <option value="3">Name</option>
-                        <option value="5">Price</option>
-                        <option value="2">TimesOrdered</option>
-                </ul>
+                    <button class="btn btn-outline-primary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Сортиране по
+                    </button>
+                    <ul class="dropdown-menu">
+
+                    <option value="3">Име</option>
+                    <option value="5">Цена</option>
+                    <option value="2">Брой поръчки</option>
+                    </ul>
                 </select>
             </div>
-           
+
             <section class="search-bar">
-                <input type="text" class="productSearch" id="productName" asp-for="SearchTerm" placeholder="Enter product name" />
+                <input type="text" class="productSearch" id="productName" asp-for="SearchTerm" placeholder="Въведете име на продукт" />
             </section>
             <div class="col-md-3">
                 <div class="form-group mt-4 p-2 d-flex justify-content-center">
-                    <input type="submit" value="Search" class="btn btn-primary" />
+                    <input type="submit" value="Търсене" class="btn btn-primary" />
                 </div>
             </div>
         </section>
@@ -114,10 +114,10 @@
 
     @if (!Model.Products.Any())
     {
-        <h2 class="text-center text-light bg-danger mt-3">No products found by the given criteria!</h2>
+        <h2 class="text-center text-light bg-danger mt-3">Не са намерени продукти по зададените критерии!</h2>
     }
 
     <partial name="_ProductsTablePartial" model="@Model.Products" />
 
 
-    </div>
+</div>

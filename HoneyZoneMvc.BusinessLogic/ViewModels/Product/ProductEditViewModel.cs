@@ -12,28 +12,31 @@ namespace HoneyZoneMvc.BusinessLogic.ViewModels.Product
 
         [Required(ErrorMessage = RequiredField)]
         [StringLength(DataConstants.Product.NameMaxValue, MinimumLength = DataConstants.Product.NameMinValue, ErrorMessage = ProductNameValueValidation)]
+        [DisplayName("Име")]
         public string Name { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredField)]
-        [DisplayName("Category")]
+        [DisplayName("Категория")]
         public string CategoryId { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredField)]
         [Range(DataConstants.Product.PriceMinValue, DataConstants.Product.PriceMaxValue, ErrorMessage = ProductPriceValueValidation)]
+        [DisplayName("Цена")]
         public double Price { get; set; }
 
         [Required(ErrorMessage = RequiredField)]
         [StringLength(DataConstants.Product.DescriptionMaxValue, MinimumLength = DataConstants.Product.DescriptionMinValue, ErrorMessage = ProductDescriptionValueValidation)]
+        [DisplayName("Описание")]
         public string Description { get; set; } = string.Empty;
 
         [Required]
         [Range(DataConstants.Product.InStockMinValue, DataConstants.Product.InStockMaxValue, ErrorMessage = ProductInStockValueValidation)]
-        [DisplayName("Quantity In Stock")]
+        [DisplayName("Количество в склад")]
         public int QuantityInStock { get; set; }
 
         [Required]
         [RegularExpression(DataConstants.Product.AmountRegx, ErrorMessage = ProductAmountValueValidation)]
-        [DisplayName("Product Amount")]
+        [DisplayName("Разфасофка")]
         public string ProductAmount { get; set; } = string.Empty;
 
 

@@ -5,32 +5,33 @@
     /// </summary>
     public static class ValidationMessages
     {
-        public const string ArgumentNull = "The argument {0} is null";
+        public const string ArgumentNull = "Аргументът {0} е нулев";
 
-        // Product validation messages
-        public const string ProductNameValueValidation = "The name must be between {2} and {1} characters!";
-        public const string ProductDescriptionValueValidation = "The description must be between {2} and {1} characters!";
-        public const string ProductPriceValueValidation = "The price must be between {1} and {2} BGN!";
-        public const string ProductInStockValueValidation = "The stock quantity must be between {1} and {2} units!";
-        public const string ProductAmountValueValidation = "The quantity must start with a number and end with (ml; l; g; mg; kg). Example: 100g";
-        public const string ProductDiscountValueValidation = "The discount must be between {1} and {2} percent!";
-        public const string RequiredField = "This field is required!";
+        // Съобщения за валидация на продукта
+        public const string ProductNameValueValidation = "Името трябва да бъде между {2} и {1} символа!";
+        public const string ProductDescriptionValueValidation = "Описанието трябва да бъде между {2} и {1} символа!";
+        public const string ProductPriceValueValidation = "Цената трябва да бъде между {1} и {2} BGN!";
+        public const string ProductInStockValueValidation = "Количеството в наличност трябва да бъде между {1} и {2} броя!";
+        public const string ProductAmountValueValidation = "Количеството трябва да започва с число и да завършва с (ml; l; g; mg; kg). Пример: 100g";
+        public const string ProductDiscountValueValidation = "Отстъпката трябва да бъде между {1} и {2} процента!";
+        public const string RequiredField = "Това поле е задължително!";
 
-        // Category validation messages
-        public const string CategoryValidation = "The category must be between {2} and {1} characters!";
+        // Съобщения за валидация на категорията
+        public const string CategoryValidation = "Категорията трябва да бъде между {2} и {1} символа!";
 
-        // OrderDetail validation messages
-        public const string OrderDetailNameValueValidation = "The name must be between {2} and {1} characters!";
-        public const string OrderDetailAddressValueValidation = "The address must be between {2} and {1} characters!";
-        public const string OrderDetailCityValueValidation = "The city must be between {2} and {1} characters!";
-        public const string OrderDetailPhoneNumberValueValidation = "The phone number must be between {2} and {1} characters!";
-        public const string OrderDetailZipCodeValueValidation = "The ZIP code must be {1} characters!";
-        public const string OrderDetailEmailValueValidation = "Invalid email address!";
+        // Съобщения за валидация на детайлите на поръчката
+        public const string OrderDetailNameValueValidation = "Името трябва да бъде между {2} и {1} символа!";
+        public const string OrderDetailAddressValueValidation = "Адресът трябва да бъде между {2} и {1} символа!";
+        public const string OrderDetailCityValueValidation = "Градът трябва да бъде между {2} и {1} символа!";
+        public const string OrderDetailPhoneNumberValueValidation = "Телефонният номер трябва да бъде между {2} и {1} символа!";
+        public const string OrderDetailZipCodeValueValidation = "Пощенският код трябва да бъде {1} символа!";
+        public const string OrderDetailEmailValueValidation = "Невалиден имейл адрес!";
 
-        public const string NamesLength = "The {0} must be at least {2} and at max {1} characters long.";
-        public const string EmailIsInvalid = "Invalid email address!";
-        public const string PasswordLength = "The password must be at least {2} and at max {1} characters long.";
-        public const string PasswordsMustMatch = "Password and Confirm Password must match!";
-        public const string PasswordDigit = "The password must contain at least one digit!";
+        public const string NamesLength = "{0} трябва да е поне {2} и максимум {1} символа дълга.";
+        public const string EmailIsInvalid = "Невалиден имейл адрес!";
+        public const string PasswordLength = "Паролата трябва да е поне {2} и максимум {1} символа дълга.";
+        public const string PasswordsMustMatch = "Паролата и Потвърди паролата трябва да съвпадат!";
+        public const string PasswordDigit = "Паролата трябва да съдържа поне една цифра!";
     }
+
 }

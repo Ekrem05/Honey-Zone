@@ -6,11 +6,11 @@
     <div class="mb-3">
         <input asp-for="Id" type="hidden">
         <div class="mb-3">
-            <label><string class="bg-warning">Warning</string> You will change the status of the order! Are you sure?</label>
+            <label><strong class="bg-warning">Внимание:</strong> Ще промените статуса на поръчката! Сигурни ли сте?</label>
             <br />
-            <label>Select Status: </label>
-            <select asp-for="@Model.StatusId" class="form-control" aria-required="true">
-                <option disabled >Current status: "@Model.CurrentStatus"</option>
+            <label>Изберете статус: </label>
+            <select asp-for="StatusId" class="form-control" aria-required="true">
+                <option disabled>Текущ статус: "@Model.CurrentStatus"</option>
                 @foreach (var status in Model.Statuses)
                 {
                     <option value="@status.Id">@status.Name</option>
@@ -23,10 +23,10 @@
         <a type="button"
            class="btn btn-secondary"
            asp-action="Index">
-            Cancel
+            Отказ
         </a>
         <button type="submit" class="btn btn-success" id="liveToastBtn">
-            Change status
+            Промени статуса
         </button>
     </div>
 </form>

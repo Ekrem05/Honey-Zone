@@ -10,38 +10,38 @@ namespace HoneyZoneMvc.BusinessLogic.ViewModels.Order
     {
         [Required(ErrorMessage = RequiredField)]
         [StringLength(Constraints.DataConstants.OrderDetails.NameMaxValue, MinimumLength = Constraints.DataConstants.OrderDetails.NameMinValue, ErrorMessage = OrderDetailNameValueValidation)]
-        [DisplayName("First Name")]
+        [DisplayName("Име ")]
         public string FirstName { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredField)]
         [StringLength(Constraints.DataConstants.OrderDetails.NameMaxValue, MinimumLength = Constraints.DataConstants.OrderDetails.NameMinValue, ErrorMessage = OrderDetailNameValueValidation)]
-        [DisplayName("Last Name")]
+        [DisplayName("Фамилия")]
         public string LastName { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredField)]
         [Phone]
         [StringLength(Constraints.DataConstants.OrderDetails.PhoneNumberMaxValue, MinimumLength = Constraints.DataConstants.OrderDetails.PhoneNumberMinValue, ErrorMessage = OrderDetailPhoneNumberValueValidation)]
-        [DisplayName("Phone Number")]
+        [DisplayName("Телефонен номер")]
         public string PhoneNumber { get; set; } = string.Empty;
 
         [AllowNull]
         [EmailAddress(ErrorMessage = OrderDetailEmailValueValidation)]
-        [DisplayName("Email")]
+        [DisplayName("Е-поща")]
         public string Email { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredField)]
         [StringLength(Constraints.DataConstants.OrderDetails.CityMaxValue, MinimumLength = Constraints.DataConstants.OrderDetails.CityMinValue, ErrorMessage = OrderDetailCityValueValidation)]
-        [DisplayName("City")]
+        [DisplayName("Град")]
         public string City { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredField)]
         [StringLength(Constraints.DataConstants.OrderDetails.ZipCodeLength, MinimumLength = Constraints.DataConstants.OrderDetails.ZipCodeLength, ErrorMessage = OrderDetailZipCodeValueValidation)]
-        [DisplayName("ZIP Code")]
+        [DisplayName("Пощенски код")]
         public string ZipCode { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredField)]
         [StringLength(Constraints.DataConstants.OrderDetails.AddressMaxValue, MinimumLength = Constraints.DataConstants.OrderDetails.AddressMinValue, ErrorMessage = OrderDetailAddressValueValidation)]
-        [DisplayName("Address")]
+        [DisplayName("Адрес")]
         public string Address { get; set; } = string.Empty;
 
 

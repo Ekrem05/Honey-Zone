@@ -27,7 +27,7 @@
                 </button>
                 <ul class="dropdown-menu">
 
-                <option value="All">All</option>
+                <option value="All">Роля</option>
                     @foreach (var role in Model.Roles)
                     {
                     <option value="@role">@role</option>
@@ -36,11 +36,11 @@
             </select>
         </div>
         <section class="search-bar">
-            <input type="text" class="productSearch" id="productName" asp-for="SearchTerm" placeholder="Enter product name" />
+            <input type="text" class="productSearch" id="productName" asp-for="SearchTerm" placeholder="Въведи име" />
         </section>
         <div class="col-md-3">
             <div class="form-group mt-4 p-2 d-flex justify-content-center">
-                <input type="submit" value="Search" class="btn btn-primary" />
+                <input type="submit" value="Търси" class="btn btn-primary" />
             </div>
         </div>
     </form>
@@ -82,7 +82,7 @@
 
     @if (!Model.Users.Any())
     {
-        <h2 class="text-center text-light bg-danger mt-3">No users found!</h2>
+        <h2 class="text-center text-light bg-danger mt-3">Не са намерени потребители!</h2>
     }
 
     <partial name="_UsersTablePartial" model="@Model.Users" />
