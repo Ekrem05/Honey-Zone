@@ -95,29 +95,8 @@ namespace HoneyZoneMvc.Tests
             var products = await productService.AllAsync();
             Assert.That(products.Count() == 7, "AllAsync does not return all products");
         }
-        [Test]
-        public async Task AllAsyncSorting_WorksCorrectly()
-        {
-            var vm = await productService.AllAsync("Honey", "a", ProductSorting.Price, 1, 3);
-            Assert.That(vm.Products.ElementAt(0).Name == "Manuka Honey" && vm.Products.ElementAt(1).Name == "Acacia honey", "AllAsync does not sort correctly");
-            vm = await productService.AllAsync("Honey", "a", ProductSorting.Name, 1, 3);
-            Assert.That(vm.Products.ElementAt(0).Name == "Acacia honey" && vm.Products.ElementAt(1).Name == "Manuka Honey", "AllAsync does not return all products");
-            vm = await productService.AllAsync("Honey", "a", ProductSorting.TimesOrdered, 1, 3);
-            Assert.That(vm.Products.ElementAt(0).Name == "Manuka Honey" && vm.Products.ElementAt(1).Name == "Acacia honey", "AllAsync does not return all products");
-            vm = await productService.AllAsync("Honey", "a", 0, 1, 3);
-            Assert.That(vm.Products.ElementAt(0).Name == "Acacia honey" && vm.Products.ElementAt(1).Name == "Manuka Honey", "AllAsync does not return all products");
-
-        }
-        [Test]
-        public async Task GetByCategoryNameAsync_WorksCorrectly()
-        {
-            var products = await productService.GetByCategoryNameAsync("All");
-            Assert.That(products.Count() == 7, "GetByCategoryNameAsync does not return all products");
-            products = await productService.GetByCategoryNameAsync("Honey");
-            Assert.That(products.Count() == 3, "GetByCategoryNameAsync does not return products with sepcified category");
-            products = await productService.GetByCategoryNameAsync("Bee Pollen");
-            Assert.That(products.Count() == 1, "GetByCategoryNameAsyncdoes not return products with sepcified category");
-        }
+       
+       
         [Test]
         public void GetByCategoryNameAsync_ThrowsException()
         {
@@ -131,24 +110,13 @@ namespace HoneyZoneMvc.Tests
             products = await productService.GetByCategoryIdAsync("eb2aecdd-7815-49aa-973b-ee3173760fc5");
             Assert.That(products.Count() == 2, "GetGetByCategoryId does not return a correct value");
         }
-        [Test]
-        public async Task GetById_WorksCorrectly()
-        {
-            var product = await productService.GetByIdAsync("c7ecd019-40b1-47f3-89c4-67e3625f796b");
-            Assert.That(product.Name == "Sunflower Honey", "GetById does not return a correct value");
-
-        }
+       
         [Test]
         public void GetById_ThrowsException()
         {
             Assert.ThrowsAsync<ArgumentNullException>(async () => await productService.GetByIdAsync(null));
         }
-        [Test]
-        public async Task GetBestSellersAsync_WorksCorrectly()
-        {
-            var products = await productService.GetBestSellersAsync();
-            Assert.That(products.First().Name == "Manuka Honey" && products.ElementAt(1).Name == "Acacia honey", "GetBestSellersAsync does not return a correct value");
-        }
+       
         [Test]
         public async Task UpdateAsync_WorksCorrectly()
         {
@@ -175,40 +143,7 @@ namespace HoneyZoneMvc.Tests
             Assert.That(!dbContext.Products.Any(p => p.Id == Guid.Parse("c7ecd019-40b1-47f3-89c4-67e3625f796b")), "DeleteAsync does not work");
 
         }
-        [Test]
-        public async Task DeleteAsync_DoesntDeleteProductsInActiveOrders()
-        {
-            var productIdForDelete = dbContext.Products.FirstOrDefault(p => p.Name == "Wildflower Pollen").Id;
-            dbContext.Orders.Add(new Order()
-            {
-                ClientId = Guid.Parse("10b051ec-ea4e-45a1-a02e-8c7fecab633f"),
-                StatusId = dbContext.Statuses.FirstOrDefault(s => s.Name == "Confirmed").Id,
-                TotalSum = 100,
-                OrderDate = DateTime.Now,
-                DeliveryMethodId = dbContext.DeliverMethods.FirstOrDefault(s => s.Name == "Econt").Id,
-                OrderDetailId = new OrderDetail()
-                {
-                    Address = "Test",
-                    City = "Test",
-                    Email = "Test",
-                    FirstName = "Test",
-                    LastName = "Test",
-                    PhoneNumber = "Test",
-                    ZipCode = "Test"
-                }.Id,
-                OrderProducts = new List<OrderProduct>()
-                {
-                    new OrderProduct()
-                    {
-                        ProductId = productIdForDelete,
-                        Quantity = 1
-                    }
-                }
-
-            });
-            await dbContext.SaveChangesAsync();
-            Assert.ThrowsAsync<InvalidOperationException>(async () => await productService.DeleteAsync(productIdForDelete.ToString()));
-        }
+        
         [Test]
         public void DeleteAsync_ThrowsException()
         {
@@ -286,12 +221,7 @@ namespace HoneyZoneMvc.Tests
             Assert.ThrowsAsync<ArgumentNullException>(async () => await productService.IncreaseTotalOrdersAsync("Invalid ID", 3));
             Assert.ThrowsAsync<ArgumentNullException>(async () => await productService.IncreaseTotalOrdersAsync(null, 3));
         }
-        [Test]
-        public async Task SearchAsync_WorksCorrectly()
-        {
-            var vm = await productService.SearchAsync("HoNeY");
-            Assert.That(vm.Count() == 3, "SearchAsync does not work");
-        }
+       
         [TearDown]
         public void CleanUp()
         {

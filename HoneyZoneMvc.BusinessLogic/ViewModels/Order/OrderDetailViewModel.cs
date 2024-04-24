@@ -44,7 +44,8 @@ namespace HoneyZoneMvc.BusinessLogic.ViewModels.Order
         [DisplayName("Адрес")]
         public string Address { get; set; } = string.Empty;
 
-
+        [Required(ErrorMessage = RequiredField)]
+        [DisplayName("Куриер")]
         public string DeliveryMethodId { get; set; } = string.Empty;
 
         public IEnumerable<DeliveryMethodViewModel> DeliveryMethods { get; set; } = new List<DeliveryMethodViewModel>();

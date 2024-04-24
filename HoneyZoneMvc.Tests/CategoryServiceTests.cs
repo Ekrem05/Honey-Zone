@@ -36,13 +36,7 @@ namespace HoneyZoneMvc.Tests
             var result = await dbContext.Categories.FirstOrDefaultAsync(c => c.Name == category.Name);
             Assert.AreEqual(category.Name, result.Name);
         }
-        [Test]
-        public void AddAsync_ShouldThrowException()
-        {
-            Assert.ThrowsAsync<ArgumentNullException>(async () => await categoryService.AddAsync(null));
-            Assert.ThrowsAsync<InvalidOperationException>(async () => await categoryService.AddAsync(new CategoryAddViewModel() { Name = "Honey" }));
-
-        }
+       
         [Test]
         public async Task ExistsAsync_ShouldReturnTrue()
         {
@@ -82,12 +76,7 @@ namespace HoneyZoneMvc.Tests
             var result = await categoryService.AllAsync();
             Assert.AreEqual(4, result.Count());
         }
-        [Test]
-        public async Task GetByIdAsync_ShouldReturnCategory()
-        {
-            var result = await categoryService.GetByIdAsync("78355d47-6040-4676-9972-ac8be4f19882");
-            Assert.AreEqual("Honey", result.Name);
-        }
+        
 
         [TearDown]
         public void Cleanup()

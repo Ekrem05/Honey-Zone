@@ -49,7 +49,12 @@ namespace HoneyZoneMvc.Controllers
             {
                 return View(model);
             }
-
+            var userExists = await userManager.FindByEmailAsync(model.Email);
+            if (userExists != null)
+            {
+                ModelState.AddModelError("", "User with this email already exists");
+                return View(model);
+            }
             var user = new ApplicationUser()
             {
                 Email = model.Email,

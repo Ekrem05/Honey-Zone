@@ -43,10 +43,11 @@
         $(document).ready(function () {
             $('#searchButton').click(function () {
                 var productName = $('#productName').val();
-                console.log(productName);
-
+                if (!productName) {
+                    return; 
+                }
                 $.ajax({
-                url: 'https://localhost:7176/Shop/Index', // Replace with the correct URL
+                url: 'https://localhost:7176/Shop/Index', 
                 method: 'GET',
                 data: { searchBy: productName },
                 success: function (response) {
@@ -55,7 +56,7 @@
                     
                 },
                      error: function (xhr, status, error) {
-                    console.error(xhr.responseText); // Log any errors to the console
+                    console.error(xhr.responseText); 
                     }
                 });
             });
