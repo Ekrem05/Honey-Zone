@@ -43,7 +43,9 @@
         $(document).ready(function () {
             $('#searchButton').click(function () {
                 var productName = $('#productName').val();
-                console.log(productName);
+                if (!productName) {
+                    return; 
+                }
 
                 $.ajax({
                 url: 'https://localhost:7176/Shop/Index', // Replace with the correct URL
