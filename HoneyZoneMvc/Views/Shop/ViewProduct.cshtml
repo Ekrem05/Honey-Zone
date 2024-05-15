@@ -34,11 +34,11 @@
                     string priceBeforeDiscount = Model.Price.ToString("F2");
                     price = Model.Price - (Model.Price * Model.Discount / 100);
                     formattedNumber = price.ToString("F2");
-                    <p class="price"><span class="price-before">@(priceBeforeDiscount)lv</span>     @(formattedNumber)lv</p>
+                    <p class="price"><span class="price-before">@(priceBeforeDiscount)лв</span>     @(formattedNumber)лв</p>
                 }
                 else
                 {
-                    <p class="price">@(price.ToString("F2")) lv.</p>
+                    <p class="price">@(price.ToString("F2")) лв.</p>
                 }
 
             }
@@ -46,11 +46,11 @@
             <div class="more-description">
                 @if (Model.QuantityInStock > 0)
                 {
-                    <div class="available">Available In Stock </div>
+                    <div class="available">Наличен в склад</div>
                 }
                 else
                 {
-                    <div class="available "><span class="bg-danger">Out of Stock</span>  </div>
+                    <div class="available "><span class="bg-danger">Изчерпан</span>  </div>
 
                 }
 
