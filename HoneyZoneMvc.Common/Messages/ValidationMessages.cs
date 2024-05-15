@@ -12,7 +12,7 @@
         public const string ProductDescriptionValueValidation = "Описанието трябва да бъде между {2} и {1} символа!";
         public const string ProductPriceValueValidation = "Цената трябва да бъде между {1} и {2} BGN!";
         public const string ProductInStockValueValidation = "Количеството в наличност трябва да бъде между {1} и {2} броя!";
-        public const string ProductAmountValueValidation = "Количеството трябва да започва с число и да завършва с (ml; l; g; mg; kg). Пример: 100g";
+        public const string ProductAmountValueValidation = "Количеството трябва да е \"Единичен артикул\" или число завършващо с (ml; l; g; mg; kg). Пример: 100g";
         public const string ProductDiscountValueValidation = "Отстъпката трябва да бъде между {1} и {2} процента!";
         public const string RequiredField = "Това поле е задължително!";
 
