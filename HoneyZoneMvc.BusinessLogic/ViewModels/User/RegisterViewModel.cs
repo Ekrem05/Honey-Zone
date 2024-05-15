@@ -8,12 +8,12 @@ namespace HoneyZoneMvc.BusinessLogic.ViewModels.User
     public class RegisterViewModel
     {
         [Required(ErrorMessage = RequiredField)]
-        [StringLength(UserValidation.NameMaxValue, MinimumLength = UserValidation.NameMinValue, ErrorMessage = NamesLength)]
+        [StringLength(UserValidation.NameMaxValue, MinimumLength = UserValidation.NameMinValue, ErrorMessage = FirstNameLength)]
         [DisplayName("Име")]
         public string FirstName { get; set; } = string.Empty;
 
         [Required(ErrorMessage = RequiredField)]
-        [StringLength(UserValidation.NameMaxValue, MinimumLength = UserValidation.NameMinValue, ErrorMessage = NamesLength)]
+        [StringLength(UserValidation.NameMaxValue, MinimumLength = UserValidation.NameMinValue, ErrorMessage = SecondNameLength)]
         [DisplayName("Фамилия")]
         public string LastName { get; set; } = string.Empty;
 

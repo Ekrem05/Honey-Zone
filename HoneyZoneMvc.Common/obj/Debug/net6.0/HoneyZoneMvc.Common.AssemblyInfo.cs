@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HoneyZoneMvc.Common")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3c71a14e30dc9a7f6cafc5130541c79c3ff9daf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+23fe07e1df22c574406c44068aefef68884f6883")]
 [assembly: System.Reflection.AssemblyProductAttribute("HoneyZoneMvc.Common")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HoneyZoneMvc.Common")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
