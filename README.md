@@ -34,11 +34,11 @@ E-commerce web app for selling and managing bee products
 • Chart.js
 
 - ## Other
+• CRUD operations
 • Model Validation (Server and client side)
 • Areas
 • Working with cookies
 • Custom Error pages
-• Extending methods
 • Auto Mapper
 
 
