@@ -22,9 +22,7 @@
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.752);
 }
-.carousel-caption p {
-  text-transform: capitalize;
-}
+
 .carousel-item-next, .carousel-item-prev, .carousel-item.active {
     display: flex;
     justify-content: center;
