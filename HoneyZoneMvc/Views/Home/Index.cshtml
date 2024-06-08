@@ -23,7 +23,7 @@
         <div class="carousel-item">
             <div class="card-slides" id="secondCard">
                 <section id="card-content">
-                    <h2 id="catch"><span id="highlightWord">Exquisite</span> honey collection</h2>
+                    <h2 id="catch">Exquisite <span id="highlightWord">honey</span>  collection</h2>
                     <p id="info">Indulge in the ultimate honey experience and tantalize your taste buds with our exceptional selection.</p>
                     <a asp-action="Index" asp-controller="Shop" class="btn btn-warning">Shop</a>
                 </section>
@@ -32,8 +32,8 @@
         <div class="carousel-item">
             <div class="card-slides" id="thirdCard">
                 <section id="card-content">
-                    <h2 id="catch">Exquisite honey collection</h2>
-                    <p id="info">Get in touch with the best honey your senses can experiense</p>
+                    <h2 id="catch">From the <span id="highlightWord">beehive</span> <br /> to your kitchen</h2>
+                    <p id="info">We bring you the finest, purest honey and beeswax products.</p>
                     <a asp-action="Index" asp-controller="Shop" class="btn btn-warning">Shop</a>
                 </section>
             </div>
@@ -48,7 +48,104 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
+
 <section class="bestSellers-container">
     <h2 class="best-sellers-header">@Localizer["Bs"]</h2>
     <partial name="_HomeBestSellersPartialView" model="Model"></partial>
+</section>
+<section id="whoAreWe">
+    <img src="~/images/pexels-anete-lusina-5247966.jpg" alt="A beekeeper" />
+    <section>
+        <h2>Who are we?</h2>
+        <p>We are the premier providers of Bulgarian honey, dedicated to producing the purest honey available. Understanding the numerous health benefits honey offers, we are committed to delivering this natural wellness to you in every jar. Our beekeepers meticulously tend to their hives, ensuring that our honey is of the highest quality, with every drop bursting with rich flavor and nutritional goodness.</p>
+        <a asp-controller="Shop" asp-action="Index" class="btn btn-warning">Check our products</a>
+    </section>
+</section>
+<section id="faq">
+    <h2>FAQ's</h2>
+    <section>
+        <div id="questions">
+            <p class="d-inline-flex gap-1">
+                <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#first" aria-expanded="false" aria-controls="collapseExample">
+                    What makes your honey unique?
+                </button>
+            </p>
+            <div class="collapse" id="first">
+                <div class="card card-body">
+                    Our honey is sourced from the pristine landscapes of Bulgaria, known for its rich floral diversity. Our bees collect nectar from a variety of flowers, resulting in a distinct and flavorful honey that captures the essence of our region.
+                </div>
+            </div>
+            <p class="d-inline-flex gap-1">
+                <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#second" aria-expanded="false" aria-controls="collapseExample">
+                    Where do you source your honey from?
+                </button>
+            </p>
+            <div class="collapse" id="second">
+                <div class="card card-body">
+                    We source our honey from our own apiaries as well as trusted local beekeepers across Bulgaria who share our commitment to quality and sustainability.
+                </div>
+            </div>
+            <p class="d-inline-flex gap-1">
+                <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#third" aria-expanded="false" aria-controls="collapseExample">
+                    Is your honey raw or processed?
+                </button>
+            </p>
+            <div class="collapse" id="third">
+                <div class="card card-body">
+                    We take pride in offering raw honey, which means it is minimally processed and retains all of its natural enzymes, vitamins, and antioxidants.
+                </div>
+            </div>
+            <p class="d-inline-flex gap-1">
+                <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#fourth" aria-expanded="false" aria-controls="collapseExample">
+                    How do you ensure the quality and purity of your honey?
+                </button>
+            </p>
+            <div class="collapse" id="fourth">
+                <div class="card card-body">
+                    We implement rigorous quality control measures throughout the production process, including regular testing for purity and authenticity.
+                </div>
+            </div>
+            <p class="d-inline-flex gap-1">
+                <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#fifth" aria-expanded="false" aria-controls="collapseExample">
+                    Can I visit your apiaries or production facilities?
+                </button>
+            </p>
+            <div class="collapse" id="fifth">
+                <div class="card card-body">
+                    Absolutely! We welcome visitors to our apiaries and production facilities by appointment to see firsthand how our honey is produced.
+                </div>
+            </div>
+            <p class="d-inline-flex gap-1">
+                <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#sixth" aria-expanded="false" aria-controls="collapseExample">
+                    What are the health benefits of consuming your honey?
+                </button>
+            </p>
+            <div class="collapse" id="sixth">
+                <div class="card card-body">
+                    Our honey is rich in antioxidants, vitamins, and minerals, and is known for its antibacterial and anti-inflammatory properties, supporting overall health and wellness.
+                </div>
+            </div>
+            <p class="d-inline-flex gap-1">
+                <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#seventh" aria-expanded="false" aria-controls="collapseExample">
+                    Can I use your honey for cooking or baking?
+                </button>
+            </p>
+            <div class="collapse" id="seventh">
+                <div class="card card-body">
+                    Absolutely! Our honey is versatile and can be used in a wide range of culinary applications, from sweetening beverages to enhancing the flavors of savory dishes and desserts.
+                </div>
+            </div>
+            <p class="d-inline-flex gap-1">
+                <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#eighth" aria-expanded="false" aria-controls="collapseExample">
+                    Do you ship internationally?
+                </button>
+            </p>
+            <div class="collapse" id="eighth">
+                <div class="card card-body">
+                    Yes, we offer international shipping to bring our premium Bulgarian honey to customers around the world.
+                </div>
+            </div>
+        </div>
+        <img src="~/images/pexels-valeriya-1872902.jpg" alt="Honey jar" />
+    </section>
 </section>

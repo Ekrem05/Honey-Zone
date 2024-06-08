@@ -52,8 +52,40 @@
 }
 #info {
     font-size: 20pt;
-    margin-bottom: 2em
+    margin-bottom: 2em;
+    width: 80%;
 }
 #card-content a{
     width:6em;
+}
+@media (max-width: 650px){
+    #card-content h2{
+        font-size:40pt;
+    }
+    #card-content p {
+        font-size: 14pt;
+    }
+}
+
+#faq{
+    padding:4em;
+    background-color:white;
+    color:black;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+    #faq h2 {
+        letter-spacing: 0.2em;
+        font-size: 40pt
+    }
+    #faq section  {
+        display:flex;
+        justify-content:space-around;
+    }
+#faq section img{
+    width:20%;
+}
+#faq section #questions {
+   width: 30%;
 }

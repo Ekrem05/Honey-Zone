@@ -8,7 +8,6 @@ header {
     top: 0;
     z-index:10;
 }
-header:
 .language-bar > .dropdown-toggle {
     text-decoration: none;
     color: white;
