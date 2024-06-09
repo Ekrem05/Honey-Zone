@@ -41,6 +41,7 @@
     background-size: cover;
     background-position: center;
 }
+
 #card-content {
     color: white;
     display: flex;
@@ -81,6 +82,7 @@
     }
     #faq section  {
         display:flex;
+        align-items:center;
         justify-content:space-around;
     }
 #faq section img{
@@ -88,4 +90,13 @@
 }
 #faq section #questions {
    width: 30%;
+}
+@media (max-width: 650px) {
+    #faq section #questions {
+        display:flex;
+        flex-wrap:wrap;
+    }
+    #faq section img {
+        width: 40%;
+    }
 }

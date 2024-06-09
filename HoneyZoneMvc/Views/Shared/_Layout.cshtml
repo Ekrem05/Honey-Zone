@@ -103,6 +103,19 @@
     @if (!Context.Request.Path.StartsWithSegments("/User"))
     {
         <footer class="border-top footer text-muted" id="myFooter">
+            <section id="footer-menu">
+                <ul type="none">
+                    <li id ="company">
+                        <img src="~/images/logo.png" />
+                        <h5>Honey Zone</h5>
+                        <p>Summary</p>
+                    </li>
+                    <li>
+                        <h5>Browse</h5>
+                        <a href=""></a>
+                    </li>
+                </ul>
+            </section>
             <div class="container">
                 &copy; 2024 - HoneyZoneMvc
             </div>
