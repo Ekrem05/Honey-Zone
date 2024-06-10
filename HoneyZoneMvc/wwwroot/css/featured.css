@@ -1,21 +1,20 @@
 .bestSellers-container{
     width:100%;
 }
-.best-sellers-header{
-    background-color:white;
-    margin-bottom:0px;
-    text-align:center;
-    padding-top:2em;
-    font-size:3em;
-    font-family:'Roboto-Mono';
-    letter-spacing:0.4em;
+.best-sellers-header {
+    background-color: #eeeeee;
+    margin-bottom: 0px;
+    text-align: center;
+    padding-top: 2em;
+    font-size: 3em;
+    font-family: 'Roboto-Mono';
+    letter-spacing: 0.2em;
 }
 .bestSellers {
-    
+    background-color: #eeeeee;
     display: flex;
     width: 100%;
     justify-content: space-evenly;
-    background: white;
     padding: 6em 2em;
 }
     .bestSellers  .product-card:nth-child(2) {
@@ -38,4 +37,118 @@
     cursor: pointer;
     transition: 0.5s ease;
     background-color: #6d6c3a;
+}
+.firstWhoAreWe {
+    background-color: #191919;
+    color: white;
+}
+.secondWhoAreWe {
+    background-color: #eeeeee;
+}
+#whoAreWe {
+    font-family:"Roboto Mono";
+    padding: 6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10em;
+}
+#whoAreWe img{
+    width:18%;
+    height:auto;
+}
+#whoAreWe section{
+    display:flex;
+    flex-direction:column;
+    flex-basis:30%;
+    align-items:start;
+}
+    #whoAreWe section h2 {
+        margin-bottom: 1em;
+            letter-spacing: 0.1em;
+        flex-grow: 1;
+        font-size: 40pt;
+        font-weight: 500;
+    }
+    #whoAreWe section p {
+        margin-bottom: 1em;
+        flex-grow: 1;
+        font-size: 14pt;
+    }
+@media (max-width: 650px) {
+    #whoAreWe{
+        gap:4em;
+    }
+    #whoAreWe img {
+        width: 50%;
+        height: auto;
+    }
+    #whoAreWe section {
+        height: 400px;
+        width:60%;
+    }
+        #whoAreWe section h2 {
+            margin-bottom: 1em;
+            width: 200px;
+            font-size: 20pt;
+        }
+        #whoAreWe section p {
+            margin-bottom: 1em;
+            font-size: 8pt;
+        }
+}
+
+#testimonials {
+    padding:5em;
+    background-color: #191919;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+    #testimonials > section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 3em;
+        padding: 0% 0% 0% 15%;
+    }
+    #testimonials h2 {
+        margin-bottom: 1em;
+        letter-spacing: 0.1em;
+        flex-grow: 1;
+        font-size: 40pt;
+        font-weight: 500;
+    }
+.customer-story{
+    flex-basis:50%;
+    width:30%;
+    display:flex;
+    flex-direction:column;
+}
+    .customer-story> p{
+        width:80%;
+    }
+    #bio {
+        display: flex;
+        align-items: start;
+        gap: 1em;
+    }
+    #bio img {
+        width: 2em;
+        border-radius:30%;
+    }
+.customerInfo{
+    display:flex;
+    flex-direction:column;
+}
+.nameOfTheClient {
+    color: #ffc107;
+}
+.qualification {
+    color: #d4d4d4;
+}
+.customerInfo p, .customerInfo h5 {
+    margin: 0px;
 }

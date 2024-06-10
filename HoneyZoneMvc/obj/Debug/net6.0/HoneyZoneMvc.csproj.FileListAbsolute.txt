@@ -612,3 +612,4 @@ C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\obj\Debug\n
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\obj\Debug\net6.0\HoneyZoneMvc.Resources.Views.Shop.ViewProduct.bg.resources
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\obj\Debug\net6.0\HoneyZoneMvc.Resources.Views.Shared.Components.MoreProducts.Default.resources
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\obj\Debug\net6.0\HoneyZoneMvc.Resources.Views.Shared.Components.MoreProducts.Default.bg.resources
+C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc\obj\Debug\net6.0\HoneyZoneMvc.Resources.Views.About.Index.resources

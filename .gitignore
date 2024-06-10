@@ -365,3 +365,13 @@ FodyWeavers.xsd
 /HoneyZoneMvc/obj
 /HoneyZoneMvc.Tests/obj/Debug/net6.0
 /HoneyZoneMvc/wwwroot/productImages
+/HoneyZoneMvc.Common/obj/Debug/net6.0/HoneyZoneMvc.Common.AssemblyInfo.cs
+/HoneyZoneMvc/bin/Debug/net6.0/bg/HoneyZoneMvc.resources.dll
+/HoneyZoneMvc/bin/Debug/net6.0/HoneyZoneMvc.BusinessLogic.dll
+/HoneyZoneMvc/bin/Debug/net6.0/HoneyZoneMvc.Common.dll
+/HoneyZoneMvc/obj/Debug/net6.0/bg/HoneyZoneMvc.resources.dll
+/HoneyZoneMvc/obj/Debug/net6.0/ref/HoneyZoneMvc.dll
+/HoneyZoneMvc/obj/Debug/net6.0/refint/HoneyZoneMvc.dll
+/HoneyZoneMvc/obj/Debug/net6.0/HoneyZoneMvc.Resources.Views.Shop.Index.resources
+/HoneyZoneMvc/obj/Debug/net6.0/HoneyZoneMvc.AssemblyInfoInputs.cache
+/HoneyZoneMvc/obj/Debug/net6.0/HoneyZoneMvc.sourcelink.json

@@ -1,54 +1,48 @@
 .cart-container {
-    width: 95%;
-    background-color: black;
-    margin-top:3em;
-    font-family:"Roboto Mono"
-}
-.cart-information{
-    text-align:center;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    align-content:center;
-    justify-content:space-around;
-}
-.cart-information button{
-    width:10em;
-}
-.product-container img {
-    width: 90px;
-}
-.product-container .name {
-    flex-basis:50%;
-    font-family:'Roboto Mono';
-}
-.product-container {
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #0768ff52;
-    padding: 0.3em;
-    color: white;
-    border-radius: 0.3em;
-}
-.products-cart {
-    display: flex;
-    gap: 1em;
     flex-direction: column;
-    padding: 2em;
-    width: 100em;
-    align-items: center
+    align-items: center;
+    color: white;
+    background-color: #202020;
+    padding: 10em 20em;
+    margin-top: 2em;
+    gap: 4em;
+}
+    .cart-container h2{
+        font-size:40pt;
+    }
+    .cart-information {
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        gap: 2em;
+    }
+.product-in-cart{
+    display:flex;
+    justify-content:center;
+    gap:2em;
+}
+.product-in-cart> img{
+    width:20%;
+}
+.quantity {
+    width: 30%;
+}
+.product-cart-info {
+    font-size:14pt;
+    display: flex;
+    flex-direction: column;
 }
 .aside-checkout {
     padding: 3em;
-    color:white;
-    display:flex;
-    flex-direction:column;
-    text-align:center;
-    gap:3em;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3em;
     background-color: #0768ff52;
-    flex-basis:30%;
+    flex-basis: 30%;
 }
 .aside-checkout h2{
     padding-bottom:1em;

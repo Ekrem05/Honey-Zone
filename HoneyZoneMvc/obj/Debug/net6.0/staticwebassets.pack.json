@@ -81,6 +81,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\beekeeper.jpg",
+      "PackagePath": "staticwebassets\\images\\beekeeper.jpg"
+    },
+    {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\bees-gd2a4cbde8_1920.jpg",
       "PackagePath": "staticwebassets\\images\\bees-gd2a4cbde8_1920.jpg"
     },
@@ -89,8 +93,16 @@
       "PackagePath": "staticwebassets\\images\\busy-bee-pollinating-flower-bumblebee-work-generated-by-ai.jpg"
     },
     {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\ceo.jpg",
+      "PackagePath": "staticwebassets\\images\\ceo.jpg"
+    },
+    {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\closeup.jpg",
       "PackagePath": "staticwebassets\\images\\closeup.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\cus-relat.jpg",
+      "PackagePath": "staticwebassets\\images\\cus-relat.jpg"
     },
     {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\honey.jpg",
@@ -103,6 +115,50 @@
     {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\logo.png",
       "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\mar.jpg",
+      "PackagePath": "staticwebassets\\images\\mar.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\opera.jpg",
+      "PackagePath": "staticwebassets\\images\\opera.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-anete-lusina-5247966.jpg",
+      "PackagePath": "staticwebassets\\images\\pexels-anete-lusina-5247966.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-gabby-k-7144971.jpg",
+      "PackagePath": "staticwebassets\\images\\pexels-gabby-k-7144971.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-maksgelatin-5611966.jpg",
+      "PackagePath": "staticwebassets\\images\\pexels-maksgelatin-5611966.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-miquel-ferran-gomez-figueroa-2172703-3814446.jpg",
+      "PackagePath": "staticwebassets\\images\\pexels-miquel-ferran-gomez-figueroa-2172703-3814446.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-olly-762020.jpg",
+      "PackagePath": "staticwebassets\\images\\pexels-olly-762020.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-olly-774909.jpg",
+      "PackagePath": "staticwebassets\\images\\pexels-olly-774909.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-rehan-sayyed-2999544-20489066.jpg",
+      "PackagePath": "staticwebassets\\images\\pexels-rehan-sayyed-2999544-20489066.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-valeriya-1872902.jpg",
+      "PackagePath": "staticwebassets\\images\\pexels-valeriya-1872902.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\productdev.jpg",
+      "PackagePath": "staticwebassets\\images\\productdev.jpg"
     },
     {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\js\\index.js",
@@ -365,6 +421,10 @@
       "PackagePath": "staticwebassets\\productImages\\417442820_10159954320628785_9074303620615910138_n.jpg"
     },
     {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\419124841_287950090933497_1468210684960386220_n.jpg",
+      "PackagePath": "staticwebassets\\productImages\\419124841_287950090933497_1468210684960386220_n.jpg"
+    },
+    {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\424611185_770121641808960_4685740710360165011_n.jpg",
       "PackagePath": "staticwebassets\\productImages\\424611185_770121641808960_4685740710360165011_n.jpg"
     },
@@ -375,6 +435,10 @@
     {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\435384763_7344857445598778_1692297226733761900_n.png",
       "PackagePath": "staticwebassets\\productImages\\435384763_7344857445598778_1692297226733761900_n.png"
+    },
+    {
+      "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\437713813_10160288439438215_8051808785354432891_n.jpg",
+      "PackagePath": "staticwebassets\\productImages\\437713813_10160288439438215_8051808785354432891_n.jpg"
     },
     {
       "Id": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\ASP.NET Fundamentals - January 2024 - Certificate.jpeg",

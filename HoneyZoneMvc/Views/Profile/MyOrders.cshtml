@@ -7,59 +7,62 @@
         <a href="#" class="btn btn-close close" data-dismiss="alert" aria-label="close"></a>
     </div>
 }
-<section class="products-cart ">
-    @if(Model.Count() == 0)
-    {
-        <h2 class="text-center text-light">You have no orders</h2>
-    }
+<main class="orders-container">
+    <h2>@(User.Identity?.Name)'s orders</h2>
+    <section class="products-cart ">
+        @if (Model.Count() == 0)
+        {
+            <h2 class="text-center text-light">You have no orders :/</h2>
+        }
 
-    @foreach (var order in Model)
-    {
-        <div>
-            <button class="btn my-orders" data-bs-toggle="collapse" data-bs-target="#order-products-@(order.GetHashCode())" aria-expanded="false" aria-controls="collapseExample">
-                <ul type="none">
-                    <li>Total Amount <span>@(order.TotalSum) BGN</span></li>
-                    <li>Ordered On  <span>@order.OrderDate</span></li>
-                    <li>Address  <span>@order.Address</span></li>
-                    <li>Order Status  <span>@order.State</span></li>
-                </ul>
-            </button>
-            <div class="collapse" id="order-products-@(order.GetHashCode())">
-                <div class=".my-card-body">
-                    <h3 class="products-header">Products</h3>
-                    <table class="table table-striped-colums table-dark  table-bordered border-warning table-hover table-md">
-                        <thead>
-                            <tr class="text-center">
-                                <th scope="col">Name</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Amount</th>
-                            </tr>
-                        </thead>
-                        <tbody class="">
-                            @foreach (var product in order.Products)
-                            {
-                                <tr>
-                                    <td>@product.Name</td>
-                                    <td>@product.Quantity</td>
-                                    @if (product.IsDiscounted)
-                                    {
-                                        <td><span class="price-before">@product.Price</span> @(product.DiscountedPrice) BGN</td>
-                                    }
-                                    else
-                                    {
-                                        <td>@product.Price</td>
-                                    }
-                                    <td>@(product.ProductAmount)</td>
+        @foreach (var order in Model)
+        {
+            <div>
+                <button class="btn my-orders" data-bs-toggle="collapse" data-bs-target="#order-products-@(order.GetHashCode())" aria-expanded="false" aria-controls="collapseExample">
+                    <ul type="none">
+                        <li>Total Amount <span>@(order.TotalSum) BGN</span></li>
+                        <li>Ordered On  <span>@order.OrderDate</span></li>
+                        <li>Address  <span>@order.Address</span></li>
+                        <li>Order Status  <span>@order.State</span></li>
+                    </ul>
+                </button>
+                <div class="collapse" id="order-products-@(order.GetHashCode())">
+                    <div class=".my-card-body">
+                        <h3 class="products-header">Products</h3>
+                        <table class="table table-striped-colums table-dark  table-bordered border-warning table-hover table-md">
+                            <thead>
+                                <tr class="text-center">
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Amount</th>
                                 </tr>
-                            }
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody class="">
+                                @foreach (var product in order.Products)
+                                {
+                                    <tr>
+                                        <td>@product.Name</td>
+                                        <td>@product.Quantity</td>
+                                        @if (product.IsDiscounted)
+                                        {
+                                            <td><span class="price-before">@product.Price</span> @(product.DiscountedPrice) BGN</td>
+                                        }
+                                        else
+                                        {
+                                            <td>@product.Price</td>
+                                        }
+                                        <td>@(product.ProductAmount)</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-    }
+        }
 
-   
-    
-</section>
+
+
+    </section>
+</main>

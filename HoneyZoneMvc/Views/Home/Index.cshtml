@@ -3,74 +3,203 @@
 @{
     ViewData["Title"] = "Honey-Zone";
 }
-<section class="picture-quote">
-    <div class="opening-card">
-        <div id="carouselExampleCaptions"
-             class="carousel slide"
-             data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button"
-                        data-bs-target="#carouselExampleCaptions"
-                        data-bs-slide-to="0"
-                        class="active"
-                        aria-current="true"
-                        aria-label="Slide 1"></button>
-                <button type="button"
-                        data-bs-target="#carouselExampleCaptions"
-                        data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                <button type="button"
-                        data-bs-target="#carouselExampleCaptions"
-                        data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
+<div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active ">
+            <div class="card-slides" id="firstCard">
+                <section id="card-content">
+                    <h2 id="catch">Nature's <span id="highlightWord">golden</span> gift</h2>
+                    <p id="info">Get in touch with the best <span id="highlightWord">honey</span> your senses can experiense</p>
+                    <a asp-action="Index" asp-controller="Shop" class="btn btn-warning">Shop</a>
+                </section>
+               
             </div>
-            <div class="carousel-inner w-70">
-                <div class="carousel-item active" data-bs-interval="4000">
-                    <img src="images/busy-bee-pollinating-flower-bumblebee-work-generated-by-ai.jpg" class="d-block" alt="..." />
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Health</h5>
-                        <p>Investment in the future</p>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="4000">
-                    <img src="images/bees-gd2a4cbde8_1920.jpg"
-                         class="d-block w-100"
-                         alt="..." />
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Bulgarian honey</h5>
-                        <p>Bulgarian honey is known for its purity and taste</p>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="4000">
-                    <img src="images/closeup.jpg" class="d-block w-100" alt="..." />
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>The Bee</h5>
-                        <p>
-                            A friend and a savior of nature, working for harmony and abundance.
-                        </p>
-                    </div>
-                </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card-slides" id="secondCard">
+                <section id="card-content">
+                    <h2 id="catch">Exquisite <span id="highlightWord">honey</span>  collection</h2>
+                    <p id="info">Indulge in the ultimate honey experience and tantalize your taste buds with our exceptional selection.</p>
+                    <a asp-action="Index" asp-controller="Shop" class="btn btn-warning">Shop</a>
+                </section>
             </div>
-
-            <button class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+        </div>
+        <div class="carousel-item">
+            <div class="card-slides" id="thirdCard">
+                <section id="card-content">
+                    <h2 id="catch">From the <span id="highlightWord">beehive</span> <br /> to your kitchen</h2>
+                    <p id="info">We bring you the finest, purest honey and beeswax products.</p>
+                    <a asp-action="Index" asp-controller="Shop" class="btn btn-warning">Shop</a>
+                </section>
+            </div>
         </div>
     </div>
-</section>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 
 <section class="bestSellers-container">
     <h2 class="best-sellers-header">@Localizer["Bs"]</h2>
     <partial name="_HomeBestSellersPartialView" model="Model"></partial>
+</section>
+<section id="whoAreWe" class="firstWhoAreWe">
+    <img src="~/images/pexels-anete-lusina-5247966.jpg" alt="A beekeeper" />
+    <section>
+        <h2>Who are we?</h2>
+        <p>We are the premier providers of Bulgarian honey, dedicated to producing the purest honey available. Understanding the numerous health benefits honey offers, we are committed to delivering this natural wellness to you in every jar. Our beekeepers meticulously tend to their hives, ensuring that our honey is of the highest quality, with every drop bursting with rich flavor and nutritional goodness.</p>
+        <a asp-controller="Shop" asp-action="Index" class="btn btn-warning">Check our products</a>
+    </section>
+</section>
+<section id="whoAreWe" class="secondWhoAreWe">
+    <section>
+        <h2>Our honey</h2>
+        <p>Our honey is sourced from the pristine and diverse floral landscapes of Bulgaria, ensuring a product of exceptional quality and rich flavor. We offer raw, unprocessed honey that retains all of its natural enzymes, vitamins, and antioxidants, providing maximum health benefits.
+        </p>
+    </section>
+    <img src="~/images/pexels-gabby-k-7144971.jpg" alt="A beekeeper" />
+</section>
+<section id="testimonials">
+    <h2>Customer Stories</h2>
+    <section>
+        <div class="customer-story">
+            <section id="bio">
+                <img src="~/images/pexels-maksgelatin-5611966.jpg"/>
+                <section class="customerInfo">
+                    <h5 class="nameOfTheClient">Emma L.</h5>
+                    <p class="qualification">Model</p>
+                </section>
+            </section>
+            <p>Emma had always struggled with dry, sensitive skin and was wary of using harsh chemicals found in most skincare products. She started using a honey face mask twice a week and added a bit of honey to her daily moisturizer. Within a month, Emma noticed that her skin was more hydrated, smoother, and had a healthy glow. "Incorporating this honey into my skincare routine has been incredible. My skin looks and feels so much better naturally," Emma shares happily.</p>
+        </div>
+        <div class="customer-story">
+            <section id="bio">
+                <img src="~/images/pexels-rehan-sayyed-2999544-20489066.jpg" />
+                <section class="customerInfo">
+                    <h5 class="nameOfTheClient">Alex T.</h5>
+                    <p class="qualification">Runner</p>
+                </section>
+            </section>
+            <p>As an avid runner, Alex was always looking for natural ways to enhance his performance and recovery. He discovered our honey and decided to give it a try. He started consuming a tablespoon of honey before his runs for an energy boost and added it to his post-workout smoothie for recovery. "Using this honey has been a fantastic addition to my fitness routine. I feel stronger and recover faster, which helps me train harder and smarter," Alex reports.</p>
+        </div>
+        <div class="customer-story">
+            <section id="bio">
+                <img src="~/images/pexels-olly-774909.jpg" />
+                <section class="customerInfo">
+                    <h5 class="nameOfTheClient">Maria K.</h5>
+                    <p class="qualification">Fitness instructor</p>
+                </section>
+            </section>
+            <p>After being diagnosed with a mild form of anemia, Maria was on the lookout for natural ways to boost her iron levels and overall energy. A friend recommended trying Bulgarian honey from our website. Maria started incorporating a spoonful of our raw honey into her morning tea and yogurt. Within a few weeks, she noticed a significant improvement in her energy levels and overall well-being. I feel more vibrant and energetic than I have in years. This honey has been a game-changer for my health," Maria shares enthusiastically.</p>
+        </div>
+        <div class="customer-story">
+            <section id="bio">
+                <img src="~/images/pexels-miquel-ferran-gomez-figueroa-2172703-3814446.jpg" />
+                <section class="customerInfo">
+                    <h5 class="nameOfTheClient">Chef Luca R.</h5>
+                    <p class="qualification">Chef</p>
+                </section>
+            </section>
+            <p>Chef Luca, a renowned pastry chef, discovered our Bulgarian honey and began using it in his desserts. He created a honey-infused panna cotta that quickly became a customer favorite, thanks to the honey's rich, floral notes. Chef Luca also used it in honey-glazed figs and his signature baklava, adding a unique twist to classic recipes. "The depth and complexity of this honey have transformed my desserts, making them irresistible to my customers," Chef Luca shares.</p>
+        </div>
+    </section>
+
+</section>
+<section id="faq">
+    <h2>FAQ's</h2>
+    <section>
+        <div id="questions">
+            <p class="d-inline-flex gap-1">
+                <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#first" aria-expanded="false" aria-controls="collapseExample">
+                    What makes your honey unique?
+                </button>
+            </p>
+            <div class="collapse" id="first">
+                <div class="card card-body">
+                    Our honey is sourced from the pristine landscapes of Bulgaria, known for its rich floral diversity. Our bees collect nectar from a variety of flowers, resulting in a distinct and flavorful honey that captures the essence of our region.
+                </div>
+            </div>
+            <p class="d-inline-flex gap-1">
+                <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#second" aria-expanded="false" aria-controls="collapseExample">
+                    Where do you source your honey from?
+                </button>
+            </p>
+            <div class="collapse" id="second">
+                <div class="card card-body">
+                    We source our honey from our own apiaries as well as trusted local beekeepers across Bulgaria who share our commitment to quality and sustainability.
+                </div>
+            </div>
+            <p class="d-inline-flex gap-1">
+                <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#third" aria-expanded="false" aria-controls="collapseExample">
+                    Is your honey raw or processed?
+                </button>
+            </p>
+            <div class="collapse" id="third">
+                <div class="card card-body">
+                    We take pride in offering raw honey, which means it is minimally processed and retains all of its natural enzymes, vitamins, and antioxidants.
+                </div>
+            </div>
+            <p class="d-inline-flex gap-1">
+                <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#fourth" aria-expanded="false" aria-controls="collapseExample">
+                    How do you ensure the quality and purity of your honey?
+                </button>
+            </p>
+            <div class="collapse" id="fourth">
+                <div class="card card-body">
+                    We implement rigorous quality control measures throughout the production process, including regular testing for purity and authenticity.
+                </div>
+            </div>
+            <p class="d-inline-flex gap-1">
+                <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#fifth" aria-expanded="false" aria-controls="collapseExample">
+                    Can I visit your apiaries or production facilities?
+                </button>
+            </p>
+            <div class="collapse" id="fifth">
+                <div class="card card-body">
+                    Absolutely! We welcome visitors to our apiaries and production facilities by appointment to see firsthand how our honey is produced.
+                </div>
+            </div>
+            <p class="d-inline-flex gap-1">
+                <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#sixth" aria-expanded="false" aria-controls="collapseExample">
+                    What are the health benefits of consuming your honey?
+                </button>
+            </p>
+            <div class="collapse" id="sixth">
+                <div class="card card-body">
+                    Our honey is rich in antioxidants, vitamins, and minerals, and is known for its antibacterial and anti-inflammatory properties, supporting overall health and wellness.
+                </div>
+            </div>
+            <p class="d-inline-flex gap-1">
+                <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#seventh" aria-expanded="false" aria-controls="collapseExample">
+                    Can I use your honey for cooking or baking?
+                </button>
+            </p>
+            <div class="collapse" id="seventh">
+                <div class="card card-body">
+                    Absolutely! Our honey is versatile and can be used in a wide range of culinary applications, from sweetening beverages to enhancing the flavors of savory dishes and desserts.
+                </div>
+            </div>
+            <p class="d-inline-flex gap-1">
+                <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#eighth" aria-expanded="false" aria-controls="collapseExample">
+                    Do you ship internationally?
+                </button>
+            </p>
+            <div class="collapse" id="eighth">
+                <div class="card card-body">
+                    Yes, we offer international shipping to bring our premium Bulgarian honey to customers around the world.
+                </div>
+            </div>
+        </div>
+        <img src="~/images/pexels-valeriya-1872902.jpg" alt="Honey jar" />
+    </section>
 </section>
