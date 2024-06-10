@@ -54,3 +54,69 @@ footer .copy {
     width: 100%;
     background-color: rgb(255 239 166);
 }
+#about-us {
+    position: relative;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+    #about-us::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("../images/bees-gd2a4cbde8_1920.jpg");
+        filter: brightness(0.4);    
+        z-index: -1;
+    }
+
+#about-us {
+    padding:5em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    gap:2em;
+}
+#about-us h2{
+    font-size:40pt;
+}
+#about-us p{
+    font-size:14pt;
+    width:50%;
+}
+#our-staff {
+    padding:4em;
+    background-color: #eeeeee;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:4em;
+}
+#our-staff h2{
+    font-size:40pt;
+}
+    #our-staff img {
+        width: 100%;
+    }
+#our-staff ul{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+}
+    #our-staff ul li {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 30%;
+        margin:1em;
+        box-shadow: 6px 4px 33px -6px rgba(0,0,0,0.75);
+    }
+        #our-staff ul li .card-text {
+            padding:2em;
+            width: 100%;
+        }
+            #our-staff ul li .card-text h4 {
+                color: #ffc107;
+            }

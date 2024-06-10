@@ -3,10 +3,10 @@
     display: flex;
     justify-content: flex-end;
 }
-header {
+#navigation-header {
     position: sticky;
     top: 0;
-    z-index:10;
+    z-index: 10;
 }
 .language-bar > .dropdown-toggle {
     text-decoration: none;

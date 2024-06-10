@@ -43,7 +43,7 @@
     @if (!Context.Request.Path.StartsWithSegments("/Identity/Account"))
     {
         <partial name="_LanguagePartial" />
-        <header>
+        <header id="navigation-header">
             <nav class="navbar navbar-expand-sm navbar-toggleable-sm box-shadow">
                 <div class="container-fluid" id="myNav">
                     <div class="myImageContainer ">
@@ -69,7 +69,9 @@
                             <li class="nav-item">
                                 <a class="nav-link  text-light" asp-area="" asp-controller="Shop" asp-action="Index">@Localizer["Shop"]</a>
                             </li>
-                          
+                            <li class="nav-item">
+                                <a class="nav-link  text-light" asp-area="" asp-controller="About" asp-action="Index">@Localizer["About"]</a>
+                            </li>
 
                         </ul>
                     </div>
@@ -114,7 +116,7 @@
                         <h5>Browse</h5>
                         <a asp-action="Index">Home</a>
                         <a asp-action="Index" asp-controller="Shop">Shop</a>
-                        <a href="">About us</a>
+                        <a asp-action="Index" asp-controller="About">About us</a>
                         <a href="">Gallery</a>
                     </li>
                     <li>

@@ -20,8 +20,8 @@
     right: 0;
     bottom: 0;
     left: 0;
-    /* Adjust the brightness */
-    z-index: -1; /* Ensure the background is behind content */
+    
+    z-index: -1;
 }
 #firstCard::before {
     background-image: url("../images/bees-gd2a4cbde8_1920.jpg");
