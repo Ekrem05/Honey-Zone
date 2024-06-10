@@ -3,7 +3,8 @@ body {
 }
 .store-section {
     display: flex;
-    gap: 10em;
+    justify-content:center;
+    gap: 4em;
     margin-top: 3em;
     width: 100%
 }
@@ -19,6 +20,12 @@ body {
     100% {
         margin-bottom: 300px;
     }
+}
+.filter{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:4em;
 }
 #filter-action {
     border-radius: 3px;

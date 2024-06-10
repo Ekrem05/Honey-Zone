@@ -10,23 +10,27 @@
    
 <section class="store-section">
     <section class="filter">
-        <ul type="none" id="filter">
-            <h1 class="ul-header">@Localizer["Filter"]</h1>
-            <li>
-                <a class="btn" id="filter-action" asp-action="Index" asp-route-category="All">@Localizer["All"]</a>
-            </li>
-            @foreach (var category in Model.Categories.Select(c=>c.Name))
-            {
-                <li>
-                    <a class="btn" id="filter-action" asp-action="Index" asp-route-category="@category">@category</a>
+         <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#filter-options" aria-expanded="false" aria-controls="collapseWidthExample">
+             @Localizer["Filter"]
+             </button>
+              <div class="collapse collapse-horizontal" id="filter-options">
+                   <ul type="none" id="filter">
+                    <li>
+                        <a class="btn" id="filter-action" asp-action="Index" asp-route-category="All">@Localizer["All"]</a>
+                    </li>
+                    @foreach (var category in Model.Categories.Select(c=>c.Name))
+                    {
+                        <li>
+                            <a class="btn" id="filter-action" asp-action="Index" asp-route-category="@category">@category</a>
 
-                </li>
-            }
-            <li>
-            <li>
-                <a class="btn" id="filter-action" asp-action="Index" asp-route-bestSellers="Best Sellers">@Localizer["Bs"]</a>
-            </li
-        </ul>
+                        </li>
+                    }
+                    <li>
+                        <a class="btn" id="filter-action" asp-action="Index" asp-route-bestSellers="Best Sellers">@Localizer["Bs"]</a>
+                    </li
+                </ul>
+              </div>
+       
     </section>
     <section class="my-products-section">
 
