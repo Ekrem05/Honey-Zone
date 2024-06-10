@@ -123,6 +123,16 @@ align-items:center;
     border-color:yellow;
     color:white;
 }
+.orders-container {
+    width: 80%;
+    color: white;
+    display:flex;
+    gap:4em;
+    flex-direction:column;
+    align-items:center;
+    background-color: #202020;
+    padding:10em 10em;
+}
 .my-orders {
     font-size: 1.2em;
     font-weight: bold;
