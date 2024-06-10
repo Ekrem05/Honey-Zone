@@ -14,7 +14,7 @@
 - [NUnit Testing](https://nunit.org)
 
 ## Table of Contents
-- [Introduction](#introduction)
+- [Home Page](#homepage)
 - [Installation](#installation)
   - [Requirements](#requirements)
   - [Steps](#steps)
@@ -49,7 +49,7 @@ Guidelines for contributing to the project.
 Details about the project's license.
 
 
-<h2 align="center">Home page</h2>
+<h2 align="center">## Home page</h2>
 
 
 
