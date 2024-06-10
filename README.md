@@ -13,40 +13,6 @@
 - [Razor Pages](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-8.0&tabs=visual-studio)
 - [NUnit Testing](https://nunit.org)
 
-## Table of Contents
-- [Home Page](#home-page)
-- [Installation](#installation)
-  - [Requirements](#requirements)
-  - [Steps](#steps)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Introduction
-
-Introduction content goes here.
-
-## Installation
-
-### Requirements
-
-List your requirements here.
-
-### Steps
-
-Provide the installation steps here.
-
-## Usage
-
-Instructions for using the project.
-
-## Contributing
-
-Guidelines for contributing to the project.
-
-## License
-
-Details about the project's license.
 
 
 <h2 align="center">Home page</h2>
