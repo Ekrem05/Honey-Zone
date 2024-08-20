@@ -375,3 +375,5 @@ FodyWeavers.xsd
 /HoneyZoneMvc/obj/Debug/net6.0/HoneyZoneMvc.Resources.Views.Shop.Index.resources
 /HoneyZoneMvc/obj/Debug/net6.0/HoneyZoneMvc.AssemblyInfoInputs.cache
 /HoneyZoneMvc/obj/Debug/net6.0/HoneyZoneMvc.sourcelink.json
+*.cache
+*.props
