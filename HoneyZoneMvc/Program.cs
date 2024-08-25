@@ -26,9 +26,9 @@ else
 
 app.UseHttpsRedirection();
 
-app.UseRequestLocalization(); 
 
 app.UseStaticFiles();
+app.UseRequestLocalization();
 
 app.UseRouting();
 
