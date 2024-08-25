@@ -377,3 +377,4 @@ FodyWeavers.xsd
 /HoneyZoneMvc/obj/Debug/net6.0/HoneyZoneMvc.sourcelink.json
 *.cache
 *.props
+/obj/
