@@ -1,69 +1,71 @@
-﻿<main>
+﻿@using Microsoft.Extensions.Localization
+@inject IViewLocalizer Localizer
+
+
+<main>
     <header id="about-us">
-            <h2>About us</h2>
-            <p>At Honey Zone, we offer premium Bulgarian honey, harvested sustainably to provide you with a pure, raw, and delicious product while supporting local beekeepers and bee conservation.</p>
+        <h2>@Localizer["AboutUsHeader"]</h2>
+        <p>@Localizer["AboutUsDescription"]</p>
     </header>
     <section id="whoAreWe" class="firstWhoAreWe">
-        <img src="~/images/pexels-anete-lusina-5247966.jpg" alt="A beekeeper" />
+        <img src="~/images/pexels-anete-lusina-5247966.jpg" alt="@Localizer["BeekeeperAlt"]" />
         <section>
-            <h2>Who are we?</h2>
-            <p>We are the premier providers of Bulgarian honey, dedicated to producing the purest honey available. Understanding the numerous health benefits honey offers, we are committed to delivering this natural wellness to you in every jar. Our beekeepers meticulously tend to their hives, ensuring that our honey is of the highest quality, with every drop bursting with rich flavor and nutritional goodness.</p>
-            <a asp-controller="Shop" asp-action="Index" class="btn btn-warning">Check our products</a>
+            <h2>@Localizer["WhoAreWeHeader"]</h2>
+            <p>@Localizer["WhoAreWeDescription"]</p>
+            <a asp-controller="Shop" asp-action="Index" class="btn btn-warning">@Localizer["CheckProducts"]</a>
         </section>
     </section>
     <section id="our-staff">
-        <h2>Our family</h2>
+        <h2>@Localizer["OurFamilyHeader"]</h2>
         <ul type="none">
             <li class="card">
-                <img src="~/images/pexels-olly-762020.jpg" class="card-img-top" alt="...">             
+                <img src="~/images/pexels-olly-762020.jpg" class="card-img-top" alt="@Localizer["VasilenaAlt"]">
                 <div class="card-text">
-                    <h4>Vasilena Petrova</h4>
-                    <p class="qualification">Founder & CEO</p>
-                    <p class="brief-info">John founded Honey Zone with a vision to create a business that supports sustainable beekeeping practices. With a background in environmental science and a passion for beekeeping, John leads the company with a focus on sustainability and community support.</p>
+                    <h4>@Localizer["VasilenaName"]</h4>
+                    <p class="qualification">@Localizer["FounderTitle"]</p>
+                    <p class="brief-info">@Localizer["VasilenaBio"]</p>
                 </div>
             </li>
             <li class="card">
-                <img src="~/images/beekeeper.jpg" class="card-img-top" alt="...">
+                <img src="~/images/beekeeper.jpg" class="card-img-top" alt="@Localizer["JaneAlt"]">
                 <div class="card-text">
-                    <h4>Jane Smith</h4>
-                    <p class="qualification">Head Beekeeper</p>
-                    <p class="brief-info">Jane is the main beekeeper at Honey Zone. She has over 15 years of experience in beekeeping and a degree in agricultural sciences. Jane oversees the beekeeping operations, ensuring the health of the bee colonies and the quality of the honey produced.</p>
+                    <h4>@Localizer["JaneName"]</h4>
+                    <p class="qualification">@Localizer["HeadBeekeeperTitle"]</p>
+                    <p class="brief-info">@Localizer["JaneBio"]</p>
                 </div>
             </li>
             <li class="card">
-                <img src="~/images/mar.jpg" class="card-img-top" alt="...">
+                <img src="~/images/mar.jpg" class="card-img-top" alt="@Localizer["EmilyAlt"]">
                 <div class="card-text">
-                    <h4>Emily Johnson</h4>
-                    <p class="qualification">Marketing Director</p>
-                    <p class="brief-info">Emily has a strong background in marketing and communications with a degree in Business Marketing. She is responsible for developing marketing strategies, managing social media, and promoting Honey Zone's products and values to a wider audience.</p>
+                    <h4>@Localizer["EmilyName"]</h4>
+                    <p class="qualification">@Localizer["MarketingDirectorTitle"]</p>
+                    <p class="brief-info">@Localizer["EmilyBio"]</p>
                 </div>
             </li>
             <li class="card">
-                <img src="~/images/opera.jpg" class="card-img-top" alt="...">
+                <img src="~/images/opera.jpg" class="card-img-top" alt="@Localizer["RobertAlt"]">
                 <div class="card-text">
-                    <h4>Robert Brown</h4>
-                    <p class="qualification">Operations Manager</p>
-                    <p class="brief-info">Robert brings extensive experience in logistics and supply chain management to Honey Zone. He ensures the smooth operation of the business, from production to delivery, maintaining high standards of efficiency and quality control.</p>
+                    <h4>@Localizer["RobertName"]</h4>
+                    <p class="qualification">@Localizer["OperationsManagerTitle"]</p>
+                    <p class="brief-info">@Localizer["RobertBio"]</p>
                 </div>
             </li>
             <li class="card">
-                <img src="~/images/productdev.jpg" class="card-img-top" alt="...">
+                <img src="~/images/productdev.jpg" class="card-img-top" alt="@Localizer["SarahAlt"]">
                 <div class="card-text">
-                    <h4>Sarah Lee</h4>
-                    <p class="qualification">Product Development Specialist</p>
-                    <p class="brief-info">Sarah has a background in food science and a passion for creating new honey-based products. She works on developing innovative products, such as flavored honey varieties, honey-based skincare, and health supplements, ensuring they meet customer needs and market trends.</p>
+                    <h4>@Localizer["SarahName"]</h4>
+                    <p class="qualification">@Localizer["ProductDevelopmentTitle"]</p>
+                    <p class="brief-info">@Localizer["SarahBio"]</p>
                 </div>
             </li>
             <li class="card">
-                <img src="~/images/cus-relat.jpg" class="card-img-top" alt="...">
+                <img src="~/images/cus-relat.jpg" class="card-img-top" alt="@Localizer["MariaAlt"]">
                 <div class="card-text">
-                    <h4>Maria Garcia</h4>
-                    <p class="qualification">Customer Relations Manager</p>
-                    <p class="brief-info">Maria has a background in customer service and public relations. She handles customer inquiries, feedback, and complaints, ensuring a high level of customer satisfaction. Maria also works on building and maintaining strong relationships with key customers and partners.</p>
+                    <h4>@Localizer["MariaName"]</h4>
+                    <p class="qualification">@Localizer["CustomerRelationsTitle"]</p>
+                    <p class="brief-info">@Localizer["MariaBio"]</p>
                 </div>
             </li>
         </ul>
-            
-           
     </section>
 </main>

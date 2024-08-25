@@ -117,7 +117,157 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Bs" xml:space="preserve">
+  <data name="Slide1" xml:space="preserve">
+    <value>Слайд 1</value>
+  </data>
+  <data name="Slide2" xml:space="preserve">
+    <value>Слайд 2</value>
+  </data>
+  <data name="Slide3" xml:space="preserve">
+    <value>Слайд 3</value>
+  </data>
+  <data name="NatureGift" xml:space="preserve">
+    <value>&lt;span id="highlightWord"&gt;Златния&lt;/span&gt; дар на природата</value>
+  </data>
+  <data name="HoneyExperience" xml:space="preserve">
+    <value>Опитайте най-добрия мед, наградете сетивата си</value>
+  </data>
+  <data name="ExquisiteHoney" xml:space="preserve">
+    <value>Изискан мед</value>
+  </data>
+  <data name="Collection" xml:space="preserve">
+    <value>колекция</value>
+  </data>
+  <data name="UltimateExperience" xml:space="preserve">
+    <value>Разнообразна колекция</value>
+  </data>
+  <data name="FromBeehive" xml:space="preserve">
+    <value>От кошера</value>
+  </data>
+  <data name="ToKitchen" xml:space="preserve">
+    <value>до вашата кухня</value>
+  </data>
+  <data name="FinestHoney" xml:space="preserve">
+    <value>Всички продукти са пряко от кошера.</value>
+  </data>
+  <data name="ShopButton" xml:space="preserve">
+    <value>Магазин</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Предишен</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Следващ</value>
+  </data>
+  <data name="PageTitle" xml:space="preserve">
+    <value>Медена зона</value>
+  </data>
+  <data name="BestSellersHeader" xml:space="preserve">
     <value>Най-продавани</value>
+  </data>
+  <data name="WhoAreWe" xml:space="preserve">
+    <value>Кои сме ние?</value>
+  </data>
+  <data name="WhoAreWeDescription" xml:space="preserve">
+    <value>Ние сме водещи доставчици на български мед, посветени на производството на най-чистия мед, наличен. Разбирайки многобройните ползи за здравето, които медът предлага, ние сме ангажирани да предоставяме това естествено благополучие във всяко бурканче. Нашите пчелари внимателно се грижат за своите кошери, осигурявайки, че медът ни е с най-високо качество.</value>
+  </data>
+  <data name="CheckProducts" xml:space="preserve">
+    <value>Магазин</value>
+  </data>
+  <data name="OurHoney" xml:space="preserve">
+    <value>Нашият мед</value>
+  </data>
+  <data name="OurHoneyDescription" xml:space="preserve">
+    <value>Нашият мед идва от разнообразните медоносни растения в България, осигурявайки продукт с изключително качество и богат вкус. Предлагаме суров, необработен мед, който запазва всички свои естествени ензими, витамини и антиоксиданти, осигурявайки максимални ползи за здравето.</value>
+  </data>
+  <data name="CustomerStories" xml:space="preserve">
+    <value>Истории на клиенти</value>
+  </data>
+  <data name="EmmaName" xml:space="preserve">
+    <value>Ема Л.</value>
+  </data>
+  <data name="Model" xml:space="preserve">
+    <value>Модел</value>
+  </data>
+  <data name="EmmaTestimonial" xml:space="preserve">
+    <value>Ема винаги е имала проблеми с сухата и чувствителна кожа и беше предпазлива към използването на агресивни химикали, намерени в повечето козметични продукти. Тя започна да използва медена маска за лице два пъти седмично и добави малко мед в ежедневния си овлажнител. В рамките на месец, Ема забеляза, че кожата ѝ е по-хидратирана, по-гладка и има здравословен блясък. "Включването на този мед в моята козметична рутина беше невероятно. Кожата ми изглежда и се чувства много по-добре естествено," споделя щастливо Ема.</value>
+  </data>
+  <data name="AlexName" xml:space="preserve">
+    <value>Алекс Т.</value>
+  </data>
+  <data name="Runner" xml:space="preserve">
+    <value>Лекоатлет</value>
+  </data>
+  <data name="AlexTestimonial" xml:space="preserve">
+    <value>Като запален лекоатлет, Алекс винаги е търсил естествени начини за подобряване на своето представяне и възстановяване. Той откри нашия мед и реши да го пробва. Започна да консумира супена лъжица мед преди тренировките си за енергийно стимулиране и го добавяше към след тренировъчното си смути за възстановяване. "Използването на този мед бе фантастично допълнение към моята фитнес рутина. Чувствам се по-силен и се възстановявам по-бързо, което ми помага да тренирам по-интензивно и умно," съобщава Алекс.</value>
+  </data>
+  <data name="MariaName" xml:space="preserve">
+    <value>Мария К.</value>
+  </data>
+  <data name="FitnessInstructor" xml:space="preserve">
+    <value>фитнес инструктор</value>
+  </data>
+  <data name="MariaTestimonial" xml:space="preserve">
+    <value>След като беше диагностицирана с лека форма на анемия, Мария търсеше естествени начини да повиши нивата на желязо и общата си енергия. Приятел ѝ препоръча да пробва български мед от нашия уебсайт. Мария започна да добавя лъжица от нашия суров мед в сутрешния си чай и йогурт. В рамките на няколко седмици, тя забеляза значително подобрение в енергийните си нива и общото си благополучие. Чувствам се по-жизнена и енергична от години. Този мед беше преломна точка за моето здраве," споделя Мария с ентусиазъм.</value>
+  </data>
+  <data name="ChefLucaName" xml:space="preserve">
+    <value>Шеф Лука Р.</value>
+  </data>
+  <data name="Chef" xml:space="preserve">
+    <value>Готвач</value>
+  </data>
+  <data name="ChefLucaTestimonial" xml:space="preserve">
+    <value>Шеф Лука, известен сладкар, откри нашия български мед и започна да го използва в десертите си. Той създаде меден panna cotta, който бързо стана любим на клиентите благодарение на богатите цветни нотки на меда. Шеф Лука също го използва в медено-глазирани смокини и неговата специална баклава, добавяйки уникален завършек на класическите рецепти. "Дълбочината и сложността на този мед трансформираха десертите ми, правейки ги неустоими за моите клиенти," споделя Шеф Лука.</value>
+  </data>
+  <data name="FAQUnique" xml:space="preserve">
+    <value>Какво прави меда ви уникален?</value>
+  </data>
+  <data name="FAQUniqueAnswer" xml:space="preserve">
+    <value>Нашият мед идва от чистите пейзажи на България, известни със своето богато цветно разнообразие. Нашите пчели събират нектар от различни цветя, резултатът от което е отличителен и ароматен мед, който улавя същността на нашия регион.</value>
+  </data>
+  <data name="FAQSource" xml:space="preserve">
+    <value>Откъде получавате меда си?</value>
+  </data>
+  <data name="FAQSourceAnswer" xml:space="preserve">
+    <value>Получаваме меда си от собствените ни пчелини, както и от доверени местни пчелари в България, които споделят нашия ангажимент към качеството и устойчивостта.</value>
+  </data>
+  <data name="FAQRawProcessed" xml:space="preserve">
+    <value>Суров ли е или обработен медът ви?</value>
+  </data>
+  <data name="FAQRawProcessedAnswer" xml:space="preserve">
+    <value>Гордеем се с предлагането на суров мед, което означава, че е минимално обработен и запазва всички свои естествени ензими, витамини и антиоксиданти.</value>
+  </data>
+  <data name="FAQQuality" xml:space="preserve">
+    <value>Как осигурявате качеството и чистотата на меда си?</value>
+  </data>
+  <data name="FAQQualityAnswer" xml:space="preserve">
+    <value>Прилагаме строги мерки за контрол на качеството през целия производствен процес, включително редовно тестване за чистота и автентичност.</value>
+  </data>
+  <data name="FAQVisit" xml:space="preserve">
+    <value>Мога ли да посетя вашите пчелини или производствени съоръжения?</value>
+  </data>
+  <data name="FAQVisitAnswer" xml:space="preserve">
+    <value>Разбира се! Посрещаме посетители в нашите пчелини и производствени съоръжения по предварителна уговорка, за да видят лично как се произвежда нашият мед.</value>
+  </data>
+  <data name="FAQHealthBenefits" xml:space="preserve">
+    <value>Какви са здравословните ползи от консумацията на меда ви?</value>
+  </data>
+  <data name="FAQHealthBenefitsAnswer" xml:space="preserve">
+    <value>Нашият мед е богат на антиоксиданти, витамини и минерали и е известен със своите антибактериални и противовъзпалителни свойства, подкрепящи общото здраве и благополучие.</value>
+  </data>
+  <data name="FAQCookingBaking" xml:space="preserve">
+    <value>Мога ли да използвам меда ви за готвене или печене?</value>
+  </data>
+  <data name="FAQCookingBakingAnswer" xml:space="preserve">
+    <value>Разбира се! Нашият мед е универсален и може да се използва в широка гама от кулинарни приложения, от подслаждане на напитки до подобряване на вкусовете на солени ястия и десерти.</value>
+  </data>
+  <data name="FAQShipping" xml:space="preserve">
+    <value>Изпращате ли международно?</value>
+  </data>
+  <data name="FAQShippingAnswer" xml:space="preserve">
+    <value>Да, предлагаме международна доставка, за да донесем нашия премиум български мед на клиенти по целия свят.</value>
+  </data>
+  <data name="HoneyJarAltText" xml:space="preserve">
+    <value>Буркан мед</value>
   </data>
 </root>

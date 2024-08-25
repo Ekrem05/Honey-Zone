@@ -123,4 +123,7 @@
   <data name="Shop" xml:space="preserve">
     <value>Магазин</value>
   </data>
+  <data name="About" xml:space="preserve">
+    <value>За нас</value>
+  </data>
 </root>

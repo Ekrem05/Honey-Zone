@@ -41,7 +41,9 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             var connectionString = config.GetConnectionString("DefaultConnection");
             services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(connectionString));
+            options.UseMySql(
+            config.GetConnectionString("DefaultConnection"),
+            ServerVersion.AutoDetect(config.GetConnectionString("DefaultConnection"))));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             return services;

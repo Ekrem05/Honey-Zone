@@ -117,7 +117,157 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Bs" xml:space="preserve">
+  <data name="Slide1" xml:space="preserve">
+    <value>Slide 1</value>
+  </data>
+  <data name="Slide2" xml:space="preserve">
+    <value>Slide 2</value>
+  </data>
+  <data name="Slide3" xml:space="preserve">
+    <value>Slide 3</value>
+  </data>
+  <data name="NatureGift" xml:space="preserve">
+    <value>Nature's &lt;span id="highlightWord"&gt;golden&lt;/span&gt; gift</value>
+  </data>
+  <data name="HoneyExperience" xml:space="preserve">
+    <value>Get in touch with the best honey your senses can experience</value>
+  </data>
+  <data name="ExquisiteHoney" xml:space="preserve">
+    <value>Exquisite &lt;span id="highlightWord"&gt;honey&lt;/span&gt;  collection</value>
+  </data>
+  <data name="Collection" xml:space="preserve">
+    <value>collection</value>
+  </data>
+  <data name="UltimateExperience" xml:space="preserve">
+    <value>Indulge in the ultimate honey experience and tantalize your taste buds with our exceptional selection.</value>
+  </data>
+  <data name="FromBeehive" xml:space="preserve">
+    <value>From the beehive</value>
+  </data>
+  <data name="ToKitchen" xml:space="preserve">
+    <value>to your kitchen</value>
+  </data>
+  <data name="FinestHoney" xml:space="preserve">
+    <value>We bring you the finest, purest honey and beeswax products.</value>
+  </data>
+  <data name="ShopButton" xml:space="preserve">
+    <value>Shop</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="PageTitle" xml:space="preserve">
+    <value>Honey-Zone</value>
+  </data>
+  <data name="BestSellersHeader" xml:space="preserve">
     <value>Best Sellers</value>
+  </data>
+  <data name="WhoAreWe" xml:space="preserve">
+    <value>Who are we?</value>
+  </data>
+  <data name="WhoAreWeDescription" xml:space="preserve">
+    <value>We are the premier providers of Bulgarian honey, dedicated to producing the purest honey available. Understanding the numerous health benefits honey offers, we are committed to delivering this natural wellness to you in every jar. Our beekeepers meticulously tend to their hives, ensuring that our honey is of the highest quality, with every drop bursting with rich flavor and nutritional goodness.</value>
+  </data>
+  <data name="CheckProducts" xml:space="preserve">
+    <value>Check our products</value>
+  </data>
+  <data name="OurHoney" xml:space="preserve">
+    <value>Our honey</value>
+  </data>
+  <data name="OurHoneyDescription" xml:space="preserve">
+    <value>Our honey is sourced from the pristine and diverse floral landscapes of Bulgaria, ensuring a product of exceptional quality and rich flavor. We offer raw, unprocessed honey that retains all of its natural enzymes, vitamins, and antioxidants, providing maximum health benefits.</value>
+  </data>
+  <data name="CustomerStories" xml:space="preserve">
+    <value>Customer Stories</value>
+  </data>
+  <data name="EmmaName" xml:space="preserve">
+    <value>Emma L.</value>
+  </data>
+  <data name="Model" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="EmmaTestimonial" xml:space="preserve">
+    <value>Emma had always struggled with dry, sensitive skin and was wary of using harsh chemicals found in most skincare products. She started using a honey face mask twice a week and added a bit of honey to her daily moisturizer. Within a month, Emma noticed that her skin was more hydrated, smoother, and had a healthy glow. "Incorporating this honey into my skincare routine has been incredible. My skin looks and feels so much better naturally," Emma shares happily.</value>
+  </data>
+  <data name="AlexName" xml:space="preserve">
+    <value>Alex T.</value>
+  </data>
+  <data name="Runner" xml:space="preserve">
+    <value>Runner</value>
+  </data>
+  <data name="AlexTestimonial" xml:space="preserve">
+    <value>As an avid runner, Alex was always looking for natural ways to enhance his performance and recovery. He discovered our honey and decided to give it a try. He started consuming a tablespoon of honey before his runs for an energy boost and added it to his post-workout smoothie for recovery. "Using this honey has been a fantastic addition to my fitness routine. I feel stronger and recover faster, which helps me train harder and smarter," Alex reports.</value>
+  </data>
+  <data name="MariaName" xml:space="preserve">
+    <value>Maria K.</value>
+  </data>
+  <data name="FitnessInstructor" xml:space="preserve">
+    <value>Fitness instructor</value>
+  </data>
+  <data name="MariaTestimonial" xml:space="preserve">
+    <value>After being diagnosed with a mild form of anemia, Maria was on the lookout for natural ways to boost her iron levels and overall energy. A friend recommended trying Bulgarian honey from our website. Maria started incorporating a spoonful of our raw honey into her morning tea and yogurt. Within a few weeks, she noticed a significant improvement in her energy levels and overall well-being. I feel more vibrant and energetic than I have in years. This honey has been a game-changer for my health," Maria shares enthusiastically.</value>
+  </data>
+  <data name="ChefLucaName" xml:space="preserve">
+    <value>Chef Luca R.</value>
+  </data>
+  <data name="Chef" xml:space="preserve">
+    <value>Chef</value>
+  </data>
+  <data name="ChefLucaTestimonial" xml:space="preserve">
+    <value>Chef Luca, a renowned pastry chef, discovered our Bulgarian honey and began using it in his desserts. He created a honey-infused panna cotta that quickly became a customer favorite, thanks to the honey's rich, floral notes. Chef Luca also used it in honey-glazed figs and his signature baklava, adding a unique twist to classic recipes. "The depth and complexity of this honey have transformed my desserts, making them irresistible to my customers," Chef Luca shares.</value>
+  </data>
+  <data name="FAQUnique" xml:space="preserve">
+    <value>What makes your honey unique?</value>
+  </data>
+  <data name="FAQUniqueAnswer" xml:space="preserve">
+    <value>Our honey is sourced from the pristine landscapes of Bulgaria, known for its rich floral diversity. Our bees collect nectar from a variety of flowers, resulting in a distinct and flavorful honey that captures the essence of our region.</value>
+  </data>
+  <data name="FAQSource" xml:space="preserve">
+    <value>Where do you source your honey from?</value>
+  </data>
+  <data name="FAQSourceAnswer" xml:space="preserve">
+    <value>We source our honey from our own apiaries as well as trusted local beekeepers across Bulgaria who share our commitment to quality and sustainability.</value>
+  </data>
+  <data name="FAQRawProcessed" xml:space="preserve">
+    <value>Is your honey raw or processed?</value>
+  </data>
+  <data name="FAQRawProcessedAnswer" xml:space="preserve">
+    <value>We take pride in offering raw honey, which means it is minimally processed and retains all of its natural enzymes, vitamins, and antioxidants.</value>
+  </data>
+  <data name="FAQQuality" xml:space="preserve">
+    <value>How do you ensure the quality and purity of your honey?</value>
+  </data>
+  <data name="FAQQualityAnswer" xml:space="preserve">
+    <value>We implement rigorous quality control measures throughout the production process, including regular testing for purity and authenticity.</value>
+  </data>
+  <data name="FAQVisit" xml:space="preserve">
+    <value>Can I visit your apiaries or production facilities?</value>
+  </data>
+  <data name="FAQVisitAnswer" xml:space="preserve">
+    <value>Absolutely! We welcome visitors to our apiaries and production facilities by appointment to see firsthand how our honey is produced.</value>
+  </data>
+  <data name="FAQHealthBenefits" xml:space="preserve">
+    <value>What are the health benefits of consuming your honey?</value>
+  </data>
+  <data name="FAQHealthBenefitsAnswer" xml:space="preserve">
+    <value>Our honey is rich in antioxidants, vitamins, and minerals, and is known for its antibacterial and anti-inflammatory properties, supporting overall health and wellness.</value>
+  </data>
+  <data name="FAQCookingBaking" xml:space="preserve">
+    <value>Can I use your honey for cooking or baking?</value>
+  </data>
+  <data name="FAQCookingBakingAnswer" xml:space="preserve">
+    <value>Absolutely! Our honey is versatile and can be used in a wide range of culinary applications, from sweetening beverages to enhancing the flavors of savory dishes and desserts.</value>
+  </data>
+  <data name="FAQShipping" xml:space="preserve">
+    <value>Do you ship internationally?</value>
+  </data>
+  <data name="FAQShippingAnswer" xml:space="preserve">
+    <value>Yes, we offer international shipping to bring our premium Bulgarian honey to customers around the world.</value>
+  </data>
+  <data name="HoneyJarAltText" xml:space="preserve">
+    <value>Honey jar</value>
   </data>
 </root>

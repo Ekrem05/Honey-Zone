@@ -27,3 +27,19 @@ C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastruct
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\bin\Debug\net6.0\HoneyZoneMvc.Common.dll
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\bin\Debug\net6.0\HoneyZoneMvc.Common.pdb
 C:\Users\ekrem\Documents\GitHub\HoneyZoneMvc\Honey-Zone\HoneyZoneMvc.Infrastructure\obj\Debug\net6.0\HoneyZon.93B3B2C8.Up2Date
+C:\Users\Ekrem Beytula\Documents\Github\Honey-Zone\HoneyZoneMvc.Infrastructure\bin\Debug\net6.0\HoneyZoneMvc.Infrastructure.deps.json
+C:\Users\Ekrem Beytula\Documents\Github\Honey-Zone\HoneyZoneMvc.Infrastructure\bin\Debug\net6.0\HoneyZoneMvc.Infrastructure.dll
+C:\Users\Ekrem Beytula\Documents\Github\Honey-Zone\HoneyZoneMvc.Infrastructure\bin\Debug\net6.0\HoneyZoneMvc.Infrastructure.pdb
+C:\Users\Ekrem Beytula\Documents\Github\Honey-Zone\HoneyZoneMvc.Infrastructure\bin\Debug\net6.0\HoneyZoneMvc.Common.dll
+C:\Users\Ekrem Beytula\Documents\Github\Honey-Zone\HoneyZoneMvc.Infrastructure\bin\Debug\net6.0\HoneyZoneMvc.Common.pdb
+C:\Users\Ekrem Beytula\Documents\Github\Honey-Zone\HoneyZoneMvc.Infrastructure\obj\Debug\net6.0\HoneyZoneMvc.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Ekrem Beytula\Documents\Github\Honey-Zone\HoneyZoneMvc.Infrastructure\obj\Debug\net6.0\HoneyZoneMvc.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ekrem Beytula\Documents\Github\Honey-Zone\HoneyZoneMvc.Infrastructure\obj\Debug\net6.0\HoneyZoneMvc.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Ekrem Beytula\Documents\Github\Honey-Zone\HoneyZoneMvc.Infrastructure\obj\Debug\net6.0\HoneyZoneMvc.Infrastructure.AssemblyInfo.cs
+C:\Users\Ekrem Beytula\Documents\Github\Honey-Zone\HoneyZoneMvc.Infrastructure\obj\Debug\net6.0\HoneyZoneMvc.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Ekrem Beytula\Documents\Github\Honey-Zone\HoneyZoneMvc.Infrastructure\obj\Debug\net6.0\HoneyZoneMvc.Infrastructure.sourcelink.json
+C:\Users\Ekrem Beytula\Documents\Github\Honey-Zone\HoneyZoneMvc.Infrastructure\obj\Debug\net6.0\HoneyZon.93B3B2C8.Up2Date
+C:\Users\Ekrem Beytula\Documents\Github\Honey-Zone\HoneyZoneMvc.Infrastructure\obj\Debug\net6.0\HoneyZoneMvc.Infrastructure.dll
+C:\Users\Ekrem Beytula\Documents\Github\Honey-Zone\HoneyZoneMvc.Infrastructure\obj\Debug\net6.0\refint\HoneyZoneMvc.Infrastructure.dll
+C:\Users\Ekrem Beytula\Documents\Github\Honey-Zone\HoneyZoneMvc.Infrastructure\obj\Debug\net6.0\HoneyZoneMvc.Infrastructure.pdb
+C:\Users\Ekrem Beytula\Documents\Github\Honey-Zone\HoneyZoneMvc.Infrastructure\obj\Debug\net6.0\ref\HoneyZoneMvc.Infrastructure.dll

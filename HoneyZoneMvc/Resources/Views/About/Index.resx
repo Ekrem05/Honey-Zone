@@ -1,123 +1,95 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
+﻿<root>
+    <data name="AboutUsHeader" xml:space="preserve">
+        <value>About us</value>
     </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
+    <data name="AboutUsDescription" xml:space="preserve">
+        <value>At Honey Zone, we offer premium Bulgarian honey, harvested sustainably to provide you with a pure, raw, and delicious product while supporting local beekeepers and bee conservation.</value>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <data name="About" xml:space="preserve">
-    <value>About</value>
-  </data>
+    <data name="WhoAreWeHeader" xml:space="preserve">
+        <value>Who are we?</value>
+    </data>
+    <data name="WhoAreWeDescription" xml:space="preserve">
+        <value>We are the premier providers of Bulgarian honey, dedicated to producing the purest honey available. Understanding the numerous health benefits honey offers, we are committed to delivering this natural wellness to you in every jar. Our beekeepers meticulously tend to their hives, ensuring that our honey is of the highest quality, with every drop bursting with rich flavor and nutritional goodness.</value>
+    </data>
+    <data name="CheckProducts" xml:space="preserve">
+        <value>Check our products</value>
+    </data>
+    <data name="OurFamilyHeader" xml:space="preserve">
+        <value>Our family</value>
+    </data>
+    <data name="BeekeeperAlt" xml:space="preserve">
+        <value>A beekeeper</value>
+    </data>
+    <data name="VasilenaAlt" xml:space="preserve">
+        <value>Vasilena Petrova</value>
+    </data>
+    <data name="VasilenaName" xml:space="preserve">
+        <value>Vasilena Petrova</value>
+    </data>
+    <data name="FounderTitle" xml:space="preserve">
+        <value>Founder &amp; CEO</value>
+    </data>
+    <data name="VasilenaBio" xml:space="preserve">
+        <value>John founded Honey Zone with a vision to create a business that supports sustainable beekeeping practices. With a background in environmental science and a passion for beekeeping, John leads the company with a focus on sustainability and community support.</value>
+    </data>
+    <data name="JaneAlt" xml:space="preserve">
+        <value>Jane Smith</value>
+    </data>
+    <data name="JaneName" xml:space="preserve">
+        <value>Jane Smith</value>
+    </data>
+    <data name="HeadBeekeeperTitle" xml:space="preserve">
+        <value>Head Beekeeper</value>
+    </data>
+    <data name="JaneBio" xml:space="preserve">
+        <value>Jane is the main beekeeper at Honey Zone. She has over 15 years of experience in beekeeping and a degree in agricultural sciences. Jane oversees the beekeeping operations, ensuring the health of the bee colonies and the quality of the honey produced.</value>
+    </data>
+    <data name="EmilyAlt" xml:space="preserve">
+        <value>Emily Johnson</value>
+    </data>
+    <data name="EmilyName" xml:space="preserve">
+        <value>Emily Johnson</value>
+    </data>
+    <data name="MarketingDirectorTitle" xml:space="preserve">
+        <value>Marketing Director</value>
+    </data>
+    <data name="EmilyBio" xml:space="preserve">
+        <value>Emily has a strong background in marketing and communications with a degree in Business Marketing. She is responsible for developing marketing strategies, managing social media, and promoting Honey Zone's products and values to a wider audience.</value>
+    </data>
+    <data name="RobertAlt" xml:space="preserve">
+        <value>Robert Brown</value>
+    </data>
+    <data name="RobertName" xml:space="preserve">
+        <value>Robert Brown</value>
+    </data>
+    <data name="OperationsManagerTitle" xml:space="preserve">
+        <value>Operations Manager</value>
+    </data>
+    <data name="RobertBio" xml:space="preserve">
+        <value>Robert brings extensive experience in logistics and supply chain management to Honey Zone. He ensures the smooth operation of the business, from production to delivery, maintaining high standards of efficiency and quality control.</value>
+    </data>
+    <data name="SarahAlt" xml:space="preserve">
+        <value>Sarah Lee</value>
+    </data>
+    <data name="SarahName" xml:space="preserve">
+        <value>Sarah Lee</value>
+    </data>
+    <data name="ProductDevelopmentTitle" xml:space="preserve">
+        <value>Product Development Specialist</value>
+    </data>
+    <data name="SarahBio" xml:space="preserve">
+        <value>Sarah has a background in food science and a passion for creating new honey-based products. She works on developing innovative products, such as flavored honey varieties, honey-based skincare, and health supplements, ensuring they meet customer needs and market trends.</value>
+    </data>
+    <data name="MariaAlt" xml:space="preserve">
+        <value>Maria Garcia</value>
+    </data>
+    <data name="MariaName" xml:space="preserve">
+        <value>Maria Garcia</value>
+    </data>
+    <data name="CustomerRelationsTitle" xml:space="preserve">
+        <value>Customer Relations Manager</value>
+    </data>
+    <data name="MariaBio" xml:space="preserve">
+        <value>Maria has a background in customer service and public relations. She handles customer inquiries, feedback, and complaints, ensuring a high level of customer satisfaction. Maria also works on building and maintaining strong relationships with key customers and partners.</value>
+    </data>
 </root>

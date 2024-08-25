@@ -123,4 +123,10 @@
   <data name="order" xml:space="preserve">
     <value>Поръчай!</value>
   </data>
+  <data name="Cart" xml:space="preserve">
+    <value>Количка</value>
+  </data>
+  <data name="remove" xml:space="preserve">
+    <value>Премахни</value>
+  </data>
 </root>

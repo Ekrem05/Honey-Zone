@@ -8,7 +8,7 @@
     </div>
 }
     <div class="cart-container">
-        <h2>Cart</h2>
+    <h2>@Localizer["Cart"]</h2>
 
         <form asp-action="CartConfirmed" method="post" class="cart-information">
 
@@ -31,7 +31,7 @@
                     <input class="quantity" type="number" name="[@i].Quantity" value="@Model.ElementAt(i).Quantity" min="1" />
                         </div>
                         <div class="product-cart-actions">
-                            <button class="btn btn-outline-danger" asp-action="RemoveFromCart" asp-route-id="@Model.ElementAt(i).Id">Remove</button>
+                    <button class="btn btn-outline-danger" asp-action="RemoveFromCart" asp-route-id="@Model.ElementAt(i).Id">@Localizer["remove"]</button>
                         </div>
                     </div>
                     <input type="text" name="[@i].ProductId" value="@Model.ElementAt(i).Id" hidden />

@@ -379,3 +379,4 @@ FodyWeavers.xsd
 *.props
 /obj/
 */obj
+*.cache

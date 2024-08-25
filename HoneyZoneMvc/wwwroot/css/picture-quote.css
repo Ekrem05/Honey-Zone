@@ -46,6 +46,7 @@
     color: white;
     display: flex;
     flex-direction: column;
+    width: 80%;
     align-items: start;
 }
 #catch{
@@ -56,15 +57,28 @@
     margin-bottom: 2em;
     width: 80%;
 }
-#card-content a{
-    width:6em;
-}
 @media (max-width: 650px){
-    #card-content h2{
-        font-size:40pt;
+    #card-content h2 {
+        text-align:center;
+        font-size: 26pt;
+    }
+    #carouselExampleIndicators{
+        height:300px;
     }
     #card-content p {
-        font-size: 14pt;
+        font-size: 9pt;
+    }
+    #card-content {
+        gap: 1em;
+        padding-left: 20px;
+        padding-right: 20px;
+        align-items: center;
+    }
+    .card-slides{
+        height:300px;
+    }
+    #card-content > a {
+        font-size: 8pt;
     }
 }
 

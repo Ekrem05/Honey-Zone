@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Infrastructure\\HoneyZoneMvc.Infrastructure.csproj": {}
+    "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc.Infrastructure\\HoneyZoneMvc.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Common\\HoneyZoneMvc.Common.csproj": {
+    "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc.Common\\HoneyZoneMvc.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Common\\HoneyZoneMvc.Common.csproj",
+        "projectUniqueName": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc.Common\\HoneyZoneMvc.Common.csproj",
         "projectName": "HoneyZoneMvc.Common",
-        "projectPath": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Common\\HoneyZoneMvc.Common.csproj",
-        "packagesPath": "C:\\Users\\ekrem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Common\\obj\\",
+        "projectPath": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc.Common\\HoneyZoneMvc.Common.csproj",
+        "packagesPath": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc.Common\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ekrem\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Ekrem Beytula\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -48,6 +45,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -64,25 +67,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Infrastructure\\HoneyZoneMvc.Infrastructure.csproj": {
+    "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc.Infrastructure\\HoneyZoneMvc.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Infrastructure\\HoneyZoneMvc.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc.Infrastructure\\HoneyZoneMvc.Infrastructure.csproj",
         "projectName": "HoneyZoneMvc.Infrastructure",
-        "projectPath": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Infrastructure\\HoneyZoneMvc.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\ekrem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc.Infrastructure\\HoneyZoneMvc.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ekrem\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Ekrem Beytula\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -90,14 +89,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Common\\HoneyZoneMvc.Common.csproj": {
-                "projectPath": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc.Common\\HoneyZoneMvc.Common.csproj"
+              "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc.Common\\HoneyZoneMvc.Common.csproj": {
+                "projectPath": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc.Common\\HoneyZoneMvc.Common.csproj"
               }
             }
           }
@@ -136,6 +136,10 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[6.0.24, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [
@@ -154,7 +158,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -123,4 +123,13 @@
   <data name="Register" xml:space="preserve">
     <value>Регистрирай се</value>
   </data>
+  <data name="lgo" xml:space="preserve">
+    <value>Изход</value>
+  </data>
+  <data name="prof" xml:space="preserve">
+    <value> Профил</value>
+  </data>
+  <data name="Myorders" xml:space="preserve">
+    <value>Поръчки</value>
+  </data>
 </root>

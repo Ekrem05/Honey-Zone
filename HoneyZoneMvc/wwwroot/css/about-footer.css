@@ -101,11 +101,10 @@ footer .copy {
     #our-staff img {
         width: 100%;
     }
-#our-staff ul{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-around;
-}
+    #our-staff ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
     #our-staff ul li {
         display: flex;
         flex-direction: column;
@@ -120,3 +119,14 @@ footer .copy {
             #our-staff ul li .card-text h4 {
                 color: #ffc107;
             }
+@media (max-width:900px){
+    #our-staff ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}@media (max-width:600px){
+    #our-staff ul {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

@@ -1,0 +1,96 @@
+﻿<root>
+    <data name="AboutUsHeader" xml:space="preserve">
+        <value>За нас</value>
+    </data>
+    <data name="AboutUsDescription" xml:space="preserve">
+        <value>В Honey Zone предлагаме премиум български мед, събран устойчиво, за да ви предоставим чист, суров и вкусен продукт, като същевременно подкрепяме местните пчелари и опазването на пчелите.</value>
+    </data>
+    <data name="WhoAreWeHeader" xml:space="preserve">
+        <value>Кои сме ние?</value>
+    </data>
+    <data name="WhoAreWeDescription" xml:space="preserve">
+        <value>Ние сме водещи доставчици на български мед, посветени на производството на най-чистия мед, наличен. Разбирайки многобройните ползи за здравето, които медът предлага, ние сме ангажирани да предоставяме това естествено благополучие във всяко бурканче. Нашите пчелари внимателно се грижат за своите кошери, осигурявайки, че медът ни е с най-високо качество, с всеки капка изпълнена с богат вкус и хранителна стойност.</value>
+    </data>
+    <data name="CheckProducts" xml:space="preserve">
+        <value>Проверете нашите продукти</value>
+    </data>
+    <data name="OurFamilyHeader" xml:space="preserve">
+        <value>Нашето семейство</value>
+    </data>
+    <data name="BeekeeperAlt" xml:space="preserve">
+        <value>Пчелар</value>
+    </data>
+    <data name="VasilenaAlt" xml:space="preserve">
+        <value>Василена Петрова</value>
+    </data>
+    <data name="VasilenaName" xml:space="preserve">
+        <value>Василена Петрова</value>
+    </data>
+    <data name="FounderTitle" xml:space="preserve">
+        <value>Основател</value>
+    </data>
+    <data name="VasilenaBio" xml:space="preserve">
+        <value>Василена основа Honey Zone с визията да създаде бизнес, който подкрепя устойчивите практики на пчеларство. С опит в екологичните науки и страст към пчеларството, тя ръководи компанията с фокус върху устойчивостта и подкрепата на общността.</value>
+    </data>
+    <data name="JaneAlt" xml:space="preserve">
+        <value>Джейн Смит</value>
+    </data>
+    <data name="JaneName" xml:space="preserve">
+        <value>Джейн Смит</value>
+    </data>
+    <data name="HeadBeekeeperTitle" xml:space="preserve">
+        <value>Главен пчелар</value>
+    </data>
+    <data name="JaneBio" xml:space="preserve">
+        <value>Джейн е главният пчелар в Honey Zone. Тя има над 15 години опит в пчеларството и диплома по агрономически науки. Джейн ръководи пчеларските операции, осигурявайки здравето на пчелните колонии и качеството на произведения мед.</value>
+    </data>
+    <data name="EmilyAlt" xml:space="preserve">
+        <value>Емили Джонсън</value>
+    </data>
+    <data name="EmilyName" xml:space="preserve">
+        <value>Емили Джонсън</value>
+    </data>
+    <data name="MarketingDirectorTitle" xml:space="preserve">
+        <value>Директор маркетинг</value>
+    </data>
+    <data name="EmilyBio" xml:space="preserve">
+        <value>Емили има силен опит в маркетинга и комуникациите с диплома по бизнес маркетинг. Тя отговаря за разработването на маркетингови стратегии, управление на социалните медии и промотиране на продуктите и стойностите на Honey Zone на по-широка аудитория.</value>
+    </data>
+    <data name="RobertAlt" xml:space="preserve">
+        <value>Робърт Браун</value>
+    </data>
+    <data name="RobertName" xml:space="preserve">
+        <value>Робърт Браун</value>
+    </data>
+    <data name="OperationsManagerTitle" xml:space="preserve">
+        <value>Оперативен мениджър</value>
+    </data>
+    <data name="RobertBio" xml:space="preserve">
+        <value>Робърт носи обширен опит в логистиката и управлението на веригата за доставки в Honey Zone. Той осигурява гладкото функциониране на бизнеса, от производството до доставката, поддържайки високи стандарти за ефективност и контрол на качеството.</value>
+    </data>
+    <data name="SarahAlt" xml:space="preserve">
+        <value>Сара Лий</value>
+    </data>
+    <data name="SarahName" xml:space="preserve">
+        <value>Сара Лий</value>
+    </data>
+    <data name="ProductDevelopmentTitle" xml:space="preserve">
+        <value>Специалист по развитие на продуктите</value>
+    </data>
+    <data name="SarahBio" xml:space="preserve">
+        <value>Сара има опит в науката за храните и страст към създаването на нови медени продукти. Тя работи върху разработването на иновации, като ароматизирани медови разновидности, медени козметични продукти и хранителни добавки, като се уверява, че те отговарят на нуждите на клиентите и тенденциите на пазара.</value>
+    </data>
+    <data name="MariaAlt" xml:space="preserve">
+        <value>Мария Гарсия</value>
+    </data>
+    <data name="MariaName" xml:space="preserve">
+        <value>Мария Гарсия</value>
+    </data>
+    <data name="CustomerRelationsTitle" xml:space="preserve">
+        <value>Мениджър по клиентски отношения</value>
+    </data>
+    <data name="MariaBio" xml:space="preserve">
+        <value>Мария има опит в обслужването на клиенти и публичните отношения. Тя се занимава с въпроси, обратна връзка и оплаквания на клиентите, осигурявайки високо ниво на удовлетвореност на клиентите. Мария също така работи върху изграждането и поддържането на силни отношения с ключови клиенти и партньори.</value>
+    </data>
+</root>
+	

@@ -75,6 +75,11 @@
         flex-grow: 1;
         font-size: 14pt;
     }
+#faq .card-body {
+    margin-bottom:10px;
+}#faq  {
+   gap:4rem;
+}
 @media (max-width: 650px) {
     #whoAreWe{
         gap:4em;
@@ -85,11 +90,16 @@
     }
     #whoAreWe section {
         height: 400px;
-        width:60%;
+        width:70%;
+    }
+    #faq section #questions {
+        width: 90%;
+    }
+    #faq h2 {
+        text-align:center;
     }
         #whoAreWe section h2 {
             margin-bottom: 1em;
-            width: 200px;
             font-size: 20pt;
         }
         #whoAreWe section p {
@@ -151,4 +161,68 @@
 }
 .customerInfo p, .customerInfo h5 {
     margin: 0px;
+}
+@media (max-width:575px) {
+    #testimonials {
+        
+        padding-left: 10px;
+        padding-right:10px;
+    }
+    .best-sellers-header{
+        font-size:20pt;
+    }
+    #testimonials > h2 {
+        text-align: center;
+        font-size: 20pt;
+    }
+    #testimonials > section {
+        flex-direction: column;
+        padding:0px;
+    }
+    .customer-story {
+        width:100%;
+    }
+    #faq {
+        gap: 1rem;
+        padding:0px;
+        padding-top:20px;
+        padding-bottom:20px;
+    }
+    #faq section{
+        flex-direction:column;
+        gap:4rem;
+        
+    }
+    #faq img {
+        order: 1;
+    }
+    #faq #questions {
+        order:2;
+        width:100%;
+    }
+    #footer-menu ul{
+        flex-direction:column;
+        gap:1rem;
+    }
+    .orders-container{
+        padding:2rem;
+    }
+}
+
+
+@media (max-width:575px) {
+    #whoAreWe {
+        padding:0px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        flex-direction: column;
+    }
+    .bestSellers {
+        flex-direction: column;
+        gap:50px;
+        align-items:center;
+    }
+        .bestSellers > li {
+            max-width:220px;
+        }
 }

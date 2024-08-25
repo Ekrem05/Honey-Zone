@@ -123,4 +123,7 @@
   <data name="Shop" xml:space="preserve">
     <value>Shop</value>
   </data>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
 </root>

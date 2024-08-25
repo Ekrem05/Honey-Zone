@@ -3,7 +3,6 @@ using System;
 using HoneyZoneMvc.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
@@ -12,28 +11,26 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HoneyZoneMvc.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240415134337_Initial")]
-    partial class Initial
+    [Migration("20240825035449_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "6.0.26")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
-
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+                .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("HoneyZoneMvc.Infrastructure.Data.Models.Category", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("varchar(20)");
 
                     b.HasKey("Id");
 
@@ -66,12 +63,12 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(12)
-                        .HasColumnType("nvarchar(12)");
+                        .HasColumnType("varchar(12)");
 
                     b.HasKey("Id");
 
@@ -80,12 +77,12 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("fbf795c2-7516-4fd9-9979-c44bab57858c"),
+                            Id = new Guid("49edb364-ca86-4bb8-9c6e-528250794345"),
                             Name = "Speedy"
                         },
                         new
                         {
-                            Id = new Guid("37a420b3-6fd5-4922-a741-4298583813af"),
+                            Id = new Guid("c69ab6fd-98d0-49ee-9c78-b12c32d9298d"),
                             Name = "Econt"
                         });
                 });
@@ -94,26 +91,25 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Name")
                         .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("varchar(256)");
 
                     b.Property<string>("NormalizedName")
                         .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("varchar(256)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedName")
                         .IsUnique()
-                        .HasDatabaseName("RoleNameIndex")
-                        .HasFilter("[NormalizedName] IS NOT NULL");
+                        .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles", (string)null);
 
@@ -121,7 +117,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("83e83014-e29a-4d0e-9238-b52cf68bf6b7"),
-                            ConcurrencyStamp = "e57840fd-1e5e-4e74-abaf-0f024d679d6b",
+                            ConcurrencyStamp = "b5630a93-1ec4-40e5-a9ec-3debef2e3cda",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -131,62 +127,62 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("varchar(256)");
 
                     b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("varchar(256)");
 
                     b.Property<string>("NormalizedUserName")
                         .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("varchar(256)");
 
                     b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("varchar(256)");
 
                     b.HasKey("Id");
 
@@ -195,8 +191,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
 
                     b.HasIndex("NormalizedUserName")
                         .IsUnique()
-                        .HasDatabaseName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+                        .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
 
@@ -205,7 +200,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         {
                             Id = new Guid("10b051ec-ea4e-45a1-a02e-8c7fecab633f"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "36a51ff6-4883-4ecb-a05b-925c8cde19de",
+                            ConcurrencyStamp = "edc743c9-e603-437c-81b5-8965996dcc74",
                             Email = "administrator@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Admin",
@@ -213,9 +208,9 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                             LockoutEnabled = true,
                             NormalizedEmail = "ADMINISTRATOR@GMAIL.COM",
                             NormalizedUserName = "FIRSTADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDZtWFhj2eSAp9khqjH7vCVd88FUrLoAHyBbXWl/6w6UEw3YVmM99tHoPN0XOkqjlg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEP17sePFC+ocr81uLFUiMkZ10RXd20akQKLtFBE5xp0K7OWOnFTKXh4PiGyGifBwxg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "BC48566F-9B56-44DB-A108-9851E717099C",
+                            SecurityStamp = "43FE9BB6-D98A-4D77-947A-A7C3C9424994",
                             TwoFactorEnabled = false,
                             UserName = "FirstAdmin"
                         });
@@ -225,15 +220,15 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
+                        .HasColumnType("varchar(120)");
 
                     b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.HasKey("Id");
 
@@ -246,28 +241,28 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid>("ClientId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid>("DeliveryMethodId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<DateTime>("ExpectedDelivery")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<DateTime>("OrderDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<Guid>("OrderDetailId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid>("StatusId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<double>("TotalSum")
-                        .HasColumnType("float");
+                        .HasColumnType("double");
 
                     b.HasKey("Id");
 
@@ -286,41 +281,41 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Address")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("City")
                         .IsRequired()
                         .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("varchar(30)");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("varchar(30)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("varchar(30)");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasMaxLength(13)
-                        .HasColumnType("nvarchar(13)");
+                        .HasColumnType("varchar(13)");
 
                     b.Property<string>("ZipCode")
                         .IsRequired()
                         .HasMaxLength(4)
-                        .HasColumnType("nvarchar(4)");
+                        .HasColumnType("varchar(4)");
 
                     b.HasKey("Id");
 
@@ -331,13 +326,13 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -355,43 +350,43 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid>("CategoryId")
-                        .HasColumnType("uniqueidentifier")
+                        .HasColumnType("char(36)")
                         .HasComment("Category Identifier");
 
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)")
+                        .HasColumnType("varchar(500)")
                         .HasComment("Product Description");
 
                     b.Property<double>("Discount")
-                        .HasColumnType("float")
+                        .HasColumnType("double")
                         .HasComment("Product Discounted");
 
                     b.Property<bool>("IsDiscounted")
-                        .HasColumnType("bit")
+                        .HasColumnType("tinyint(1)")
                         .HasComment("Has Discount Or Not");
 
                     b.Property<string>("MainImageUrl")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
+                        .HasColumnType("varchar(50)")
                         .HasComment("Product Name");
 
                     b.Property<double>("Price")
-                        .HasColumnType("float")
+                        .HasColumnType("double")
                         .HasComment("Product Price");
 
                     b.Property<string>("ProductAmount")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("longtext")
                         .HasComment("Product Amount");
 
                     b.Property<int>("QuantityInStock")
@@ -425,7 +420,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("29d58e82-afc0-4433-9794-526ad44e6976"),
+                            Id = new Guid("7c51d773-0141-483d-a104-bf8c55a602e8"),
                             CategoryId = new Guid("78355d47-6040-4676-9972-ac8be4f19882"),
                             Description = "Indulge in the delicate sweetness of our Acacia honey. Sourced from the pristine blossoms of Acacia trees, this golden nectar boasts a subtle floral aroma and a smooth, light taste. Perfect for drizzling over yogurt, spreading on toast, or sweetening your favorite beverages. Treat yourself to the pure, exquisite flavor of Acacia honey today.",
                             Discount = 0.0,
@@ -439,7 +434,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7ca61d2a-a232-4d85-94a1-518c17b3d849"),
+                            Id = new Guid("b29e1ef4-9e69-40b7-9ebe-354a964b0595"),
                             CategoryId = new Guid("78355d47-6040-4676-9972-ac8be4f19882"),
                             Description = "Indulge in the exquisite taste and health benefits of Manuka Honey. Sourced from the pristine landscapes of New Zealand, this rare honey is renowned for its rich flavor and potent medicinal properties. With its unique antibacterial and antioxidant qualities, Manuka Honey offers a natural boost to your immune system and promotes overall wellness.",
                             Discount = 0.0,
@@ -453,7 +448,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b4cccfd9-7b25-44fe-a785-1c0b286e0bff"),
+                            Id = new Guid("136bdc3d-170d-41ed-9b10-c1cd17beebcf"),
                             CategoryId = new Guid("c7d08da8-a5af-4596-8ad2-d0f99091297f"),
                             Description = "Discover the power of nature with our premium bee pollen product. Packed with nutrients and harvested from the finest sources, our bee pollen is a natural boost for your health and wellness routine. Simply sprinkle it on your favorite foods or blend it into smoothies for a delicious and nutritious addition. Energize your day the natural way with our bee pollen.",
                             Discount = 55.0,
@@ -467,7 +462,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("db09dc54-9636-4fd8-a6dd-fee9edfd739c"),
+                            Id = new Guid("7c438d9a-b0df-4330-9f1a-1088da2cbe1f"),
                             CategoryId = new Guid("f4251d33-9582-4be6-8bea-be96dd30804e"),
                             Description = "Discover the versatile beauty of pure Beeswax. Known for its natural scent and golden hue, Beeswax is a versatile ingredient used in candles, skincare products, and more. Crafted by bees with precision, it offers a gentle, protective barrier for your skin and a warm, inviting glow when lit. Embrace the timeless elegance and natural charm of Beeswax in your daily rituals.",
                             Discount = 10.0,
@@ -481,7 +476,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fb35088a-2a15-40d8-9207-0596b3c2cf99"),
+                            Id = new Guid("ef6986bc-9aaa-42eb-b6c2-db829aed3c00"),
                             CategoryId = new Guid("eb2aecdd-7815-49aa-973b-ee3173760fc5"),
                             Description = "Made from durable materials, it securely holds your notes, photos, and grocery lists in place while adding a pop of personality to your fridge door. Bring a little bit of nature indoors and brighten up your kitchen with our Bee Fridge Magnet today!",
                             Discount = 0.0,
@@ -495,7 +490,7 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4d4c94dc-fe3a-46f0-b1c5-3c35048e959a"),
+                            Id = new Guid("e711874d-5a0f-448a-801e-140f09640043"),
                             CategoryId = new Guid("eb2aecdd-7815-49aa-973b-ee3173760fc5"),
                             Description = "Introducing our ceramic coffee cup adorned with small bees, adding a touch of nature to your morning routine. Crafted with care, each bee is hand-painted for a unique and charming design. Enjoy your favorite brew in style and bring the beauty of the outdoors to your daily cup of coffee.",
                             Discount = 0.0,
@@ -513,12 +508,12 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("varchar(20)");
 
                     b.HasKey("Id");
 
@@ -527,27 +522,27 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("aa54a723-dd2c-4232-bee5-7be89494f178"),
+                            Id = new Guid("afc1fcd5-35f9-4a2c-b3e5-a668820412ee"),
                             Name = "Confirmed"
                         },
                         new
                         {
-                            Id = new Guid("efdf191d-7ffb-4c7c-a917-ec030a7cba2a"),
+                            Id = new Guid("1c196b00-d7f2-4a2d-9b48-8282b20d5e1a"),
                             Name = "Pending"
                         },
                         new
                         {
-                            Id = new Guid("ccfce986-e38a-4c30-b8b0-af4e50c1f931"),
+                            Id = new Guid("f1df939c-42db-4014-8354-c6ad76b6e04d"),
                             Name = "Sent"
                         },
                         new
                         {
-                            Id = new Guid("ff2ccc15-cb3c-42ed-93e2-b6d8ac8e6946"),
+                            Id = new Guid("0d4dbb95-4d0b-4ce7-a423-3ea7540c03bd"),
                             Name = "Delivered"
                         },
                         new
                         {
-                            Id = new Guid("caa61a04-b961-4aa5-9851-1226ebeea072"),
+                            Id = new Guid("add6b3c5-af67-4eaa-9dd2-2815158af5bb"),
                             Name = "Cancelled"
                         });
                 });
@@ -558,16 +553,14 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
                     b.Property<string>("ClaimType")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("ClaimValue")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<Guid>("RoleId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.HasKey("Id");
 
@@ -582,16 +575,14 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
                     b.Property<string>("ClaimType")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("ClaimValue")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.HasKey("Id");
 
@@ -603,16 +594,16 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("ProviderDisplayName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
@@ -624,10 +615,10 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
                 {
                     b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid>("RoleId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.HasKey("UserId", "RoleId");
 
@@ -646,16 +637,16 @@ namespace HoneyZoneMvc.Infrastructure.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
                 {
                     b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Value")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 

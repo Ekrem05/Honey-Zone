@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6hA3nuXGRcjNODYCI4hqzbqszGGDwPEKEaBTcAT9N1Y=",
+  "Hash": "F9QPL/tUDK3MyCyfwpVMvIjhbWPXZpHWgQqUSox3SdM=",
   "Source": "HoneyZoneMvc",
   "BasePath": "_content/HoneyZoneMvc",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "HoneyZoneMvc\\wwwroot",
       "Source": "HoneyZoneMvc",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\css\\site.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\css\\site.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\css\\site.css"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\favicon.ico",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\favicon.ico",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\favicon.ico"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\js\\site.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\js\\site.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -71,13 +71,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\js\\site.js"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -90,13 +90,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -109,13 +109,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -128,13 +128,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -147,13 +147,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -166,13 +166,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -185,13 +185,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -204,13 +204,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -223,13 +223,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -242,13 +242,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -261,13 +261,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -280,13 +280,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -299,13 +299,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -318,13 +318,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -337,13 +337,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -356,13 +356,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -375,13 +375,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -394,13 +394,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -413,13 +413,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -432,13 +432,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -451,13 +451,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -470,13 +470,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -489,13 +489,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -508,13 +508,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -527,13 +527,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -546,13 +546,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -565,13 +565,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -584,13 +584,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -603,13 +603,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -622,13 +622,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -641,13 +641,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -660,13 +660,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -679,13 +679,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -698,13 +698,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -717,13 +717,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -736,13 +736,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -755,13 +755,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -774,13 +774,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -793,13 +793,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -812,13 +812,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -831,13 +831,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -850,13 +850,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -869,13 +869,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -888,13 +888,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -907,13 +907,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\LICENSE",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -926,13 +926,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\LICENSE"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -945,13 +945,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.js"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -964,13 +964,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.js"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -983,13 +983,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.map"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1002,13 +1002,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1021,13 +1021,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.js"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1040,13 +1040,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1059,13 +1059,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.js"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1078,13 +1078,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1097,13 +1097,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\LICENSE.md"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1116,13 +1116,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1135,13 +1135,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -1154,13 +1154,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\obj\\Debug\\net6.0\\scopedcss\\bundle\\HoneyZoneMvc.styles.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\obj\\Debug\\net6.0\\scopedcss\\bundle\\HoneyZoneMvc.styles.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "HoneyZoneMvc.styles.css",
       "AssetKind": "All",
@@ -1173,13 +1173,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\obj\\Debug\\net6.0\\scopedcss\\bundle\\HoneyZoneMvc.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\obj\\Debug\\net6.0\\scopedcss\\bundle\\HoneyZoneMvc.styles.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\HoneyZoneMvc.bundle.scp.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\HoneyZoneMvc.bundle.scp.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "HoneyZoneMvc.bundle.scp.css",
       "AssetKind": "All",
@@ -1192,13 +1192,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\HoneyZoneMvc.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\HoneyZoneMvc.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\about-footer.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\about-footer.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "css/about-footer.css",
       "AssetKind": "All",
@@ -1214,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot\\css\\about-footer.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\admin-products.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\admin-products.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "css/admin-products.css",
       "AssetKind": "All",
@@ -1233,10 +1233,10 @@
       "OriginalItemSpec": "wwwroot\\css\\admin-products.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\animations.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\animations.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "css/animations.css",
       "AssetKind": "All",
@@ -1252,10 +1252,10 @@
       "OriginalItemSpec": "wwwroot\\css\\animations.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\back.png",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\back.png",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "css/back.png",
       "AssetKind": "All",
@@ -1271,10 +1271,10 @@
       "OriginalItemSpec": "wwwroot\\css\\back.png"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\cart.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\cart.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "css/cart.css",
       "AssetKind": "All",
@@ -1290,10 +1290,10 @@
       "OriginalItemSpec": "wwwroot\\css\\cart.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\description.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\description.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "css/description.css",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\css\\description.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\featured.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\featured.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "css/featured.css",
       "AssetKind": "All",
@@ -1328,10 +1328,10 @@
       "OriginalItemSpec": "wwwroot\\css\\featured.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\header.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\header.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "css/header.css",
       "AssetKind": "All",
@@ -1347,10 +1347,10 @@
       "OriginalItemSpec": "wwwroot\\css\\header.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\login.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\login.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "css/login.css",
       "AssetKind": "All",
@@ -1366,10 +1366,10 @@
       "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\orderForm.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\orderForm.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "css/orderForm.css",
       "AssetKind": "All",
@@ -1385,10 +1385,10 @@
       "OriginalItemSpec": "wwwroot\\css\\orderForm.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\picture-quote.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\picture-quote.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "css/picture-quote.css",
       "AssetKind": "All",
@@ -1404,10 +1404,10 @@
       "OriginalItemSpec": "wwwroot\\css\\picture-quote.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\product-animations.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\product-animations.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "css/product-animations.css",
       "AssetKind": "All",
@@ -1423,10 +1423,10 @@
       "OriginalItemSpec": "wwwroot\\css\\product-animations.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\reset.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\reset.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "css/reset.css",
       "AssetKind": "All",
@@ -1442,10 +1442,10 @@
       "OriginalItemSpec": "wwwroot\\css\\reset.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\site.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -1461,10 +1461,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\store.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\store.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "css/store.css",
       "AssetKind": "All",
@@ -1480,10 +1480,10 @@
       "OriginalItemSpec": "wwwroot\\css\\store.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\store-products.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\store-products.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "css/store-products.css",
       "AssetKind": "All",
@@ -1499,10 +1499,10 @@
       "OriginalItemSpec": "wwwroot\\css\\store-products.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\style404.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\style404.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "css/style404.css",
       "AssetKind": "All",
@@ -1518,10 +1518,10 @@
       "OriginalItemSpec": "wwwroot\\css\\style404.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\style500.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\css\\style500.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "css/style500.css",
       "AssetKind": "All",
@@ -1537,10 +1537,10 @@
       "OriginalItemSpec": "wwwroot\\css\\style500.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\favicon.ico",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -1556,10 +1556,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\beekeeper.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\beekeeper.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "images/beekeeper.jpg",
       "AssetKind": "All",
@@ -1575,10 +1575,10 @@
       "OriginalItemSpec": "wwwroot\\images\\beekeeper.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\bees-gd2a4cbde8_1920.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\bees-gd2a4cbde8_1920.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "images/bees-gd2a4cbde8_1920.jpg",
       "AssetKind": "All",
@@ -1594,10 +1594,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bees-gd2a4cbde8_1920.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\busy-bee-pollinating-flower-bumblebee-work-generated-by-ai.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\busy-bee-pollinating-flower-bumblebee-work-generated-by-ai.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "images/busy-bee-pollinating-flower-bumblebee-work-generated-by-ai.jpg",
       "AssetKind": "All",
@@ -1613,10 +1613,10 @@
       "OriginalItemSpec": "wwwroot\\images\\busy-bee-pollinating-flower-bumblebee-work-generated-by-ai.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\ceo.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\ceo.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "images/ceo.jpg",
       "AssetKind": "All",
@@ -1632,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\images\\ceo.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\closeup.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\closeup.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "images/closeup.jpg",
       "AssetKind": "All",
@@ -1651,10 +1651,10 @@
       "OriginalItemSpec": "wwwroot\\images\\closeup.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\cus-relat.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\cus-relat.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "images/cus-relat.jpg",
       "AssetKind": "All",
@@ -1670,10 +1670,10 @@
       "OriginalItemSpec": "wwwroot\\images\\cus-relat.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\honey.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\honey.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "images/honey.jpg",
       "AssetKind": "All",
@@ -1689,10 +1689,10 @@
       "OriginalItemSpec": "wwwroot\\images\\honey.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\icons8-cart-24.png",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\icons8-cart-24.png",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "images/icons8-cart-24.png",
       "AssetKind": "All",
@@ -1708,10 +1708,10 @@
       "OriginalItemSpec": "wwwroot\\images\\icons8-cart-24.png"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\logo.png",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\logo.png",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "images/logo.png",
       "AssetKind": "All",
@@ -1727,10 +1727,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\mar.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\mar.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "images/mar.jpg",
       "AssetKind": "All",
@@ -1746,10 +1746,10 @@
       "OriginalItemSpec": "wwwroot\\images\\mar.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\opera.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\opera.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "images/opera.jpg",
       "AssetKind": "All",
@@ -1765,10 +1765,10 @@
       "OriginalItemSpec": "wwwroot\\images\\opera.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-anete-lusina-5247966.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-anete-lusina-5247966.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "images/pexels-anete-lusina-5247966.jpg",
       "AssetKind": "All",
@@ -1784,10 +1784,10 @@
       "OriginalItemSpec": "wwwroot\\images\\pexels-anete-lusina-5247966.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-gabby-k-7144971.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-gabby-k-7144971.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "images/pexels-gabby-k-7144971.jpg",
       "AssetKind": "All",
@@ -1803,10 +1803,10 @@
       "OriginalItemSpec": "wwwroot\\images\\pexels-gabby-k-7144971.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-maksgelatin-5611966.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-maksgelatin-5611966.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "images/pexels-maksgelatin-5611966.jpg",
       "AssetKind": "All",
@@ -1822,10 +1822,10 @@
       "OriginalItemSpec": "wwwroot\\images\\pexels-maksgelatin-5611966.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-miquel-ferran-gomez-figueroa-2172703-3814446.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-miquel-ferran-gomez-figueroa-2172703-3814446.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "images/pexels-miquel-ferran-gomez-figueroa-2172703-3814446.jpg",
       "AssetKind": "All",
@@ -1841,10 +1841,10 @@
       "OriginalItemSpec": "wwwroot\\images\\pexels-miquel-ferran-gomez-figueroa-2172703-3814446.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-olly-762020.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-olly-762020.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "images/pexels-olly-762020.jpg",
       "AssetKind": "All",
@@ -1860,10 +1860,10 @@
       "OriginalItemSpec": "wwwroot\\images\\pexels-olly-762020.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-olly-774909.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-olly-774909.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "images/pexels-olly-774909.jpg",
       "AssetKind": "All",
@@ -1879,10 +1879,10 @@
       "OriginalItemSpec": "wwwroot\\images\\pexels-olly-774909.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-rehan-sayyed-2999544-20489066.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-rehan-sayyed-2999544-20489066.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "images/pexels-rehan-sayyed-2999544-20489066.jpg",
       "AssetKind": "All",
@@ -1898,10 +1898,10 @@
       "OriginalItemSpec": "wwwroot\\images\\pexels-rehan-sayyed-2999544-20489066.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-valeriya-1872902.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\pexels-valeriya-1872902.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "images/pexels-valeriya-1872902.jpg",
       "AssetKind": "All",
@@ -1917,10 +1917,10 @@
       "OriginalItemSpec": "wwwroot\\images\\pexels-valeriya-1872902.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\productdev.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\images\\productdev.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "images/productdev.jpg",
       "AssetKind": "All",
@@ -1936,10 +1936,10 @@
       "OriginalItemSpec": "wwwroot\\images\\productdev.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\js\\index.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\js\\index.js",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "js/index.js",
       "AssetKind": "All",
@@ -1955,10 +1955,10 @@
       "OriginalItemSpec": "wwwroot\\js\\index.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\js\\quantity.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\js\\quantity.js",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "js/quantity.js",
       "AssetKind": "All",
@@ -1974,10 +1974,10 @@
       "OriginalItemSpec": "wwwroot\\js\\quantity.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\js\\showImage.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\js\\showImage.js",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "js/showImage.js",
       "AssetKind": "All",
@@ -1993,10 +1993,10 @@
       "OriginalItemSpec": "wwwroot\\js\\showImage.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\js\\site.js",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -2012,10 +2012,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -2031,10 +2031,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -2050,10 +2050,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -2069,10 +2069,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -2088,10 +2088,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -2107,10 +2107,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -2126,10 +2126,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -2145,10 +2145,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -2164,10 +2164,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -2183,10 +2183,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -2202,10 +2202,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -2221,10 +2221,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -2240,10 +2240,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -2259,10 +2259,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -2278,10 +2278,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -2297,10 +2297,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -2316,10 +2316,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -2335,10 +2335,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -2354,10 +2354,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -2373,10 +2373,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -2392,10 +2392,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -2411,10 +2411,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -2430,10 +2430,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -2449,10 +2449,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -2468,10 +2468,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -2487,10 +2487,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -2506,10 +2506,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -2525,10 +2525,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -2544,10 +2544,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -2563,10 +2563,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -2582,10 +2582,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -2601,10 +2601,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -2620,10 +2620,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -2639,10 +2639,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -2658,10 +2658,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -2677,10 +2677,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -2696,10 +2696,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -2715,10 +2715,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -2734,10 +2734,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -2753,10 +2753,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -2772,10 +2772,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -2791,10 +2791,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -2810,10 +2810,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -2829,10 +2829,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -2848,10 +2848,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -2867,10 +2867,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -2886,10 +2886,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -2905,10 +2905,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -2924,10 +2924,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -2943,10 +2943,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -2962,10 +2962,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -2981,10 +2981,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -3000,10 +3000,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -3019,10 +3019,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -3038,10 +3038,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -3057,10 +3057,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -3076,10 +3076,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -3095,29 +3095,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\1920x1080_mig_29_9_13_logo_af6b9c998ed6a8ae0dbabe3e888694e0.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\406065568_1583395059083573_1947896664196653747_n.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
-      "BasePath": "_content/HoneyZoneMvc",
-      "RelativePath": "productImages/1920x1080_mig_29_9_13_logo_af6b9c998ed6a8ae0dbabe3e888694e0.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\productImages\\1920x1080_mig_29_9_13_logo_af6b9c998ed6a8ae0dbabe3e888694e0.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\406065568_1583395059083573_1947896664196653747_n.jpg",
-      "SourceId": "HoneyZoneMvc",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/406065568_1583395059083573_1947896664196653747_n.jpg",
       "AssetKind": "All",
@@ -3133,10 +3114,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\406065568_1583395059083573_1947896664196653747_n.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\417413014_323156160698046_3124812268213225694_n.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\417413014_323156160698046_3124812268213225694_n.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/417413014_323156160698046_3124812268213225694_n.jpg",
       "AssetKind": "All",
@@ -3152,10 +3133,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\417413014_323156160698046_3124812268213225694_n.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\417442820_10159954320628785_9074303620615910138_n.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\417442820_10159954320628785_9074303620615910138_n.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/417442820_10159954320628785_9074303620615910138_n.jpg",
       "AssetKind": "All",
@@ -3171,29 +3152,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\417442820_10159954320628785_9074303620615910138_n.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\419124841_287950090933497_1468210684960386220_n.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\424611185_770121641808960_4685740710360165011_n.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
-      "BasePath": "_content/HoneyZoneMvc",
-      "RelativePath": "productImages/419124841_287950090933497_1468210684960386220_n.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\productImages\\419124841_287950090933497_1468210684960386220_n.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\424611185_770121641808960_4685740710360165011_n.jpg",
-      "SourceId": "HoneyZoneMvc",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/424611185_770121641808960_4685740710360165011_n.jpg",
       "AssetKind": "All",
@@ -3209,10 +3171,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\424611185_770121641808960_4685740710360165011_n.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\427989749_1807262889719462_8959949575883266596_n.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\427989749_1807262889719462_8959949575883266596_n.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/427989749_1807262889719462_8959949575883266596_n.jpg",
       "AssetKind": "All",
@@ -3228,48 +3190,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\427989749_1807262889719462_8959949575883266596_n.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\435384763_7344857445598778_1692297226733761900_n.png",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\ASP.NET Fundamentals - January 2024 - Certificate.jpeg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
-      "BasePath": "_content/HoneyZoneMvc",
-      "RelativePath": "productImages/435384763_7344857445598778_1692297226733761900_n.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\productImages\\435384763_7344857445598778_1692297226733761900_n.png"
-    },
-    {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\437713813_10160288439438215_8051808785354432891_n.jpg",
-      "SourceId": "HoneyZoneMvc",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
-      "BasePath": "_content/HoneyZoneMvc",
-      "RelativePath": "productImages/437713813_10160288439438215_8051808785354432891_n.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\productImages\\437713813_10160288439438215_8051808785354432891_n.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\ASP.NET Fundamentals - January 2024 - Certificate.jpeg",
-      "SourceId": "HoneyZoneMvc",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/ASP.NET Fundamentals - January 2024 - Certificate.jpeg",
       "AssetKind": "All",
@@ -3285,10 +3209,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\ASP.NET Fundamentals - January 2024 - Certificate.jpeg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\attachment_86137655.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\attachment_86137655.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/attachment_86137655.jpg",
       "AssetKind": "All",
@@ -3304,10 +3228,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\attachment_86137655.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\bc481c91046dde7b4ad46c0c873fd95a.jpeg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\bc481c91046dde7b4ad46c0c873fd95a.jpeg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/bc481c91046dde7b4ad46c0c873fd95a.jpeg",
       "AssetKind": "All",
@@ -3323,10 +3247,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\bc481c91046dde7b4ad46c0c873fd95a.jpeg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\bee-6663302_1280.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\bee-6663302_1280.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/bee-6663302_1280.jpg",
       "AssetKind": "All",
@@ -3342,10 +3266,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\bee-6663302_1280.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\BeeMagnet.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\BeeMagnet.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/BeeMagnet.jpg",
       "AssetKind": "All",
@@ -3361,10 +3285,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\BeeMagnet.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\bee-pollen-2549125_1280.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\bee-pollen-2549125_1280.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/bee-pollen-2549125_1280.jpg",
       "AssetKind": "All",
@@ -3380,10 +3304,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\bee-pollen-2549125_1280.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\bees-5764964.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\bees-5764964.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/bees-5764964.jpg",
       "AssetKind": "All",
@@ -3399,10 +3323,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\bees-5764964.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\bg honey2.png",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\bg honey2.png",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/bg honey2.png",
       "AssetKind": "All",
@@ -3418,10 +3342,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\bg honey2.png"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\black bg honey.png",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\black bg honey.png",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/black bg honey.png",
       "AssetKind": "All",
@@ -3437,10 +3361,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\black bg honey.png"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\coffee-cup-bees.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\coffee-cup-bees.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/coffee-cup-bees.jpg",
       "AssetKind": "All",
@@ -3456,10 +3380,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\coffee-cup-bees.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\eren.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\eren.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/eren.jpg",
       "AssetKind": "All",
@@ -3475,10 +3399,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\eren.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\Fresh-beeswax-for-hair-on-the-table.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\Fresh-beeswax-for-hair-on-the-table.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/Fresh-beeswax-for-hair-on-the-table.jpg",
       "AssetKind": "All",
@@ -3494,10 +3418,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\Fresh-beeswax-for-hair-on-the-table.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\honey-5043708_1280.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\honey-5043708_1280.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/honey-5043708_1280.jpg",
       "AssetKind": "All",
@@ -3513,10 +3437,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\honey-5043708_1280.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\honey-823614_1280.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\honey-823614_1280.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/honey-823614_1280.jpg",
       "AssetKind": "All",
@@ -3532,10 +3456,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\honey-823614_1280.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\image (2).png",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\image (2).png",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/image (2).png",
       "AssetKind": "All",
@@ -3551,48 +3475,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\image (2).png"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\MyDiagram.png",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\s-l1600.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
-      "BasePath": "_content/HoneyZoneMvc",
-      "RelativePath": "productImages/MyDiagram.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\productImages\\MyDiagram.png"
-    },
-    {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\Screenshot 2024-04-02 155614.png",
-      "SourceId": "HoneyZoneMvc",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
-      "BasePath": "_content/HoneyZoneMvc",
-      "RelativePath": "productImages/Screenshot 2024-04-02 155614.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\productImages\\Screenshot 2024-04-02 155614.png"
-    },
-    {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\s-l1600.jpg",
-      "SourceId": "HoneyZoneMvc",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/s-l1600.jpg",
       "AssetKind": "All",
@@ -3608,10 +3494,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\s-l1600.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\s-l225.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\s-l225.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/s-l225.jpg",
       "AssetKind": "All",
@@ -3627,10 +3513,10 @@
       "OriginalItemSpec": "wwwroot\\productImages\\s-l225.jpg"
     },
     {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\Tesla-02.jpg",
+      "Identity": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\Tesla-02.jpg",
       "SourceId": "HoneyZoneMvc",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ekrem Beytula\\Documents\\Github\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
       "BasePath": "_content/HoneyZoneMvc",
       "RelativePath": "productImages/Tesla-02.jpg",
       "AssetKind": "All",
@@ -3644,25 +3530,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\productImages\\Tesla-02.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\productImages\\vecteezy_a-futuristic-car-design-racer-car-desktop-ai-generated_22460208.jpg",
-      "SourceId": "HoneyZoneMvc",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ekrem\\Documents\\GitHub\\HoneyZoneMvc\\Honey-Zone\\HoneyZoneMvc\\wwwroot\\",
-      "BasePath": "_content/HoneyZoneMvc",
-      "RelativePath": "productImages/vecteezy_a-futuristic-car-design-racer-car-desktop-ai-generated_22460208.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\productImages\\vecteezy_a-futuristic-car-design-racer-car-desktop-ai-generated_22460208.jpg"
     }
   ]
 }
