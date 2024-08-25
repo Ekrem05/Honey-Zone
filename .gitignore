@@ -384,3 +384,4 @@ FodyWeavers.xsd
 /HoneyZoneMvc.Common/obj
 /HoneyZoneMvc.Common/obj
 /HoneyZoneMvc.Infrastructure/obj
+*.dll
