@@ -380,3 +380,7 @@ FodyWeavers.xsd
 /obj/
 */obj
 *.cache
+/HoneyZoneMvc.BusinessLogic/bin
+/HoneyZoneMvc.Common/obj
+/HoneyZoneMvc.Common/obj
+/HoneyZoneMvc.Infrastructure/obj
