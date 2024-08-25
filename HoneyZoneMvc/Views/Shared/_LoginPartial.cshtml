@@ -1,10 +1,10 @@
 ﻿@inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 @inject IViewLocalizer Localizer
-<ul class="navbar-nav">
+<section class="auth">
     @if (SignInManager.IsSignedIn(User))
     {
-        <li class="nav-item">
+        <div >
             <div class="dropdown">
                 <button class="btn text-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     @Localizer["prof"]
@@ -14,20 +14,20 @@
                 </ul>
             </div>
 
-        </li>
-        <li class="nav-item">
+        </div>
+        <div>
             <form class="form-inline" asp-area="" asp-controller="User" asp-action="Logout">
                 <button type="submit" class="nav-link btn  text-light">@Localizer["lgo"]</button>
             </form>
-        </li>
+        </div>
     }
     else
     {
-        <li class="nav-item">
+        <div>
             <a class="nav-link btn  text-light" asp-area="" asp-controller="User" asp-action="Register">@Localizer["Register"]</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link btn  text-light" asp-controller="User" asp-action="Login">@Localizer["Login"]</a>
-        </li>
+        </div>
+        <div>
+            <a class="nav-link btn btn-warning  text-light" asp-controller="User" asp-action="Login">@Localizer["Login"]</a>
+        </div>
     }
-</ul>
+</section>

@@ -218,18 +218,31 @@
     }
 
     @media (max-width:575px) {
-        .card {
+        footer .copy{
+            padding:1em!important;
         }
-
+        .card {
+            overflow-x: hidden
+        }
+        .my-card{
+            margin:0px
+        }
         .main-view {
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            padding: 5em 0em;
+            width: 100%;
             text-align: center;
         }
-
+        .description{
+            max-width:100%;
+        }
         .product-picture {
             flex-basis: 100%;
         }
-
+        .more-products {
+            padding: 0px;
+        }
         .add-to-cart {
             margin-left: 1em;
         }

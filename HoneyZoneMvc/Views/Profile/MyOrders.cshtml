@@ -27,9 +27,9 @@
                     </ul>
                 </button>
                 <div class="collapse" id="order-products-@(order.GetHashCode())">
-                    <div class=".my-card-body">
+                    <div class="my-card-body">
                         <h3 class="products-header">Products</h3>
-                        <table class="table table-striped-colums table-dark  table-bordered border-warning table-hover table-md">
+                        <table class="table desktop-table table-striped-colums table-dark  table-bordered border-warning table-hover table-md">
                             <thead>
                                 <tr class="text-center">
                                     <th scope="col">Name</th>
@@ -57,6 +57,46 @@
                                 }
                             </tbody>
                         </table>
+                        <table class="table mobile-table table-striped-columns table-dark table-bordered border-warning table-hover table-md">
+                            <thead>
+                                <tr class="text-center">
+                                    <th scope="col">Attribute</th>
+                                    <th scope="col">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var product in order.Products)
+                                {
+                                    <tr>
+                                        <td>Name</td>
+                                        <td>@product.Name</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Quantity</td>
+                                        <td>@product.Quantity</td>
+                                    </tr>
+                                    @if (product.IsDiscounted)
+                                    {
+                                        <tr>
+                                            <td>Price</td>
+                                            <td><span class="price-before">@product.Price</span> @(product.DiscountedPrice) BGN</td>
+                                        </tr>
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td>Price</td>
+                                            <td>@product.Price</td>
+                                        </tr>
+                                    }
+                                    <tr>
+                                        <td>Amount</td>
+                                        <td>@(product.ProductAmount)</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
                     </div>
                 </div>
             </div>

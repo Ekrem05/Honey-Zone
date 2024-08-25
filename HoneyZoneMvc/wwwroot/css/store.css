@@ -103,3 +103,17 @@ body {
         border-style: solid;
         outline: none;
     }
+@media (max-width: 500px) {
+    .search-bar{
+        flex-direction:column;
+        gap:1rem;
+        width:100%;
+    }
+        .search-bar #productName {
+            width: 80%;
+        }
+    .product-actions{
+        flex-direction:column;
+        font-size:60pt;
+    }
+}

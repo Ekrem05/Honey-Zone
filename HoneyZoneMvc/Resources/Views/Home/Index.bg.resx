@@ -270,4 +270,7 @@
   <data name="HoneyJarAltText" xml:space="preserve">
     <value>Буркан мед</value>
   </data>
+  <data name="FAQ" xml:space="preserve">
+    <value> Често задавани въпроси</value>
+  </data>
 </root>

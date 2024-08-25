@@ -68,3 +68,9 @@
         .login-form-container > form .form-floating label {
             color: black;
         }
+@media (max-width:700px){
+    .login-form-container{
+        width:90%;
+        margin-bottom:30px;
+    }
+}

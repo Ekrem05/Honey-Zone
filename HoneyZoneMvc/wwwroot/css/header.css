@@ -113,6 +113,72 @@ header > ul > li:nth-child(1) {
         display: block;
         width: 100%;
 }
-#signedIn{
-
+.auth {
+    display: flex;
+    align-items: center;
+}
+#phone-header{
+    display:flex;
+    flex-direction:column;
+}
+    #phone-header > .main {
+        padding: 10px 0px;
+        display: flex;
+        width: 100%;
+        background-color: black;
+        align-items: center;
+        justify-content: center;
+    }
+#phone-menu {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: 110px;
+    z-index: 30;
+    padding: 0px;
+    margin: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-direction: column;
+    text-align: center;
+    background-color: black;
+}
+.phone-auth {
+    display: flex;
+    margin-top: 2em;
+    flex-direction: column;
+}
+#phone-menu > li {
+    gap: 1em;
+    display: flex;
+    justify-content: center;
+}
+#phone-header img {
+    width: 80px
+}
+#toggler {
+    position:absolute;
+    color:white;
+    right:10px;
+    width: 30px;
+}
+@media (max-width:650px){
+    #navigation-header {
+       display:none;
+    }
+    .auth {
+       flex-direction:column;
+       align-items:center;
+       gap:1em;
+    }
+    #mainActions.show {
+        
+        flex-direction: column;
+        margin-bottom: 60px;
+    }
+}
+@media (min-width:650px) {
+    #phone-header {
+        display:none;
+    }
 }

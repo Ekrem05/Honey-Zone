@@ -270,4 +270,7 @@
   <data name="HoneyJarAltText" xml:space="preserve">
     <value>Honey jar</value>
   </data>
+  <data name="FAQ" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
 </root>

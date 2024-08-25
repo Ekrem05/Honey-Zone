@@ -154,3 +154,18 @@ align-items:center;
             border-top: 1px solid black;
             display: block;
         }
+@media (max-width: 700px)  {
+    .desktop-table{
+        display:none;
+    }
+    .my-card-body{
+        margin:2rem 0rem;
+    }
+    .mobile-table {
+        left: 10px;
+        width: 50%;
+    }
+    .products-header{
+        display:none;
+    }
+}

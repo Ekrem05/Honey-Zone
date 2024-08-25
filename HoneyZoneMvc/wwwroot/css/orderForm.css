@@ -85,3 +85,21 @@ label {
     font-weight: 600;
 }
 
+@media (max-width: 700px)  {
+    .order-container{
+        margin:0;
+        width:100%;
+    }
+    .order-names{
+        flex-direction:column;
+    }
+    
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+    .submit-button{
+        align-items:center;
+    }
+}

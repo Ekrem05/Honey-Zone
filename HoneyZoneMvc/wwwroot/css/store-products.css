@@ -150,15 +150,31 @@
     .all-products {
         grid-template-columns: repeat(2, 1fr)
     }
+    #filter {
+        width: 100%;
+    }
 }
 @media (max-width: 1626px){
     .store-section {
         flex-direction: column;
     }
+   
+}
+@media (max-width: 500px) {
     .all-products {
-        grid-template-columns: repeat(3, 1fr)
+        grid-template-columns: repeat(2, 1fr);
+        column-gap:1em;
     }
-    #filter {
-        width: 100%;
-    }
+        .all-products .product-card {
+            max-width: 100%;
+            padding:1em;
+        }
+        .all-products .product-card p{
+            font-size:9pt;
+            margin:0px;
+            padding:0px;
+        }
+            .all-products .product-card #product-image {
+                max-width: 7em;
+            }
 }
