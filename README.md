@@ -13,31 +13,18 @@
 - [Razor Pages](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-8.0&tabs=visual-studio)
 - [NUnit Testing](https://nunit.org)
 
-
-
-<h2 align="center">Home page</h2>
-
-
-
-https://github.com/Ekrem05/Honey-Zone/assets/78847462/07bd0ea8-094b-425d-8ce5-d51bd0f87de2
-
-
-<h2 align="center">Authentication & Authorization🔑</h2>
-<div align="center">
-  <h3>Features</h3>
-  <ul  type="none">
+<h2 align="start">Authentication & Authorization🔑</h2>
+<div align="start">
+  <ul >
     <li>Register / Login functionallity</li>
     <li>User authorization</li>
     <li>Admin area</li>
   </ul>
 </div>
-<img src="https://github.com/Ekrem05/Honey-Zone/assets/78847462/837cb23f-386c-4be4-885c-85e9da6de8a2"/>
-<img src="https://github.com/Ekrem05/Honey-Zone/assets/78847462/ffc22b02-dff0-43f2-8039-cc8eb0ef1f98"/>
 
-<h2 align="center">Shop 🛒</h2>
-<div align="center">
-  <h3>Features</h3>
-  <ul  type="none">
+<h2 align="start">Shop 🛒</h2>
+<div align="start">
+  <ul>
     <li>Filtering by category</li>
     <li>Asynchronous searching</li>
     <li>Listing database products</li>
@@ -45,10 +32,9 @@ https://github.com/Ekrem05/Honey-Zone/assets/78847462/07bd0ea8-094b-425d-8ce5-d5
 </div>
 
 
-<h2 align="center">Buying a product 💸</h2>
-<div align="center">
-  <h3>Features</h3>
-  <ul  type="none">
+<h2 align="start">Buying a product 💸</h2>
+<div align="start">
+  <ul >
     <li>View product details</li>
     <li>Add to cart</li>
     <li>Enter order details</li>
@@ -56,10 +42,9 @@ https://github.com/Ekrem05/Honey-Zone/assets/78847462/07bd0ea8-094b-425d-8ce5-d5
   </ul>
 </div>
 
-<h2 align="center">Admin Area 👑</h2>
-<div align="center">
-  <h3>Features</h3>
-  <ul type="none">
+<h2 align="start">Admin Area 👑</h2>
+<div align="start">
+  <ul >
     <li>Full database control</li>
     <li>Set/Remove disscounts</li>
     <li>Statistic diagrams</li>
@@ -67,11 +52,9 @@ https://github.com/Ekrem05/Honey-Zone/assets/78847462/07bd0ea8-094b-425d-8ce5-d5
   </ul>
 </div>
 
-<h2 align="center">Error handling</h2>
-
-<div align="center">
-  <h3>Features</h3>
-  <ul type="none">
+<h2 align="start">Error handling</h2>
+<div align="start">
+  <ul>
     <li>Custom Error pages</li>
     <li>Server side and client side validation</li>
   </ul>
