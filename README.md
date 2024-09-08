@@ -45,8 +45,6 @@ https://github.com/Ekrem05/Honey-Zone/assets/78847462/07bd0ea8-094b-425d-8ce5-d5
 </div>
 
 
-https://github.com/Ekrem05/Honey-Zone/assets/78847462/db5d0ef9-eebb-4a3f-88c9-6a6be02dc596
-
 <h2 align="center">Buying a product 💸</h2>
 <div align="center">
   <h3>Features</h3>
@@ -57,8 +55,6 @@ https://github.com/Ekrem05/Honey-Zone/assets/78847462/db5d0ef9-eebb-4a3f-88c9-6a
     <li>View all your orders</li>
   </ul>
 </div>
-
-https://github.com/Ekrem05/Honey-Zone/assets/78847462/dab2893a-8a33-4578-8c35-9caee9330a26
 
 <h2 align="center">Admin Area 👑</h2>
 <div align="center">
@@ -71,10 +67,6 @@ https://github.com/Ekrem05/Honey-Zone/assets/78847462/dab2893a-8a33-4578-8c35-9c
   </ul>
 </div>
 
-
-https://github.com/Ekrem05/Honey-Zone/assets/78847462/d6aeaac0-bad2-496d-9635-bae9ab8d6bfc
-
-
 <h2 align="center">Error handling</h2>
 
 <div align="center">
@@ -84,12 +76,6 @@ https://github.com/Ekrem05/Honey-Zone/assets/78847462/d6aeaac0-bad2-496d-9635-ba
     <li>Server side and client side validation</li>
   </ul>
 </div>
-
-https://github.com/Ekrem05/Honey-Zone/assets/78847462/d20d9dea-cc57-4fee-8fcc-1de76931d412
-
-
-
-https://github.com/Ekrem05/Honey-Zone/assets/78847462/d332fddf-210d-4fab-a68f-fbd8d0ee2581
 
 
 
