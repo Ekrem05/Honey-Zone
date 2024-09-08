@@ -4,6 +4,9 @@
 
 
 
+## Awards 🏆🏆
+- SoftUni graduation project rated: 6.00 [Certificate](https://softuni.bg/certificates/details/214229/f485c9a0)
+- High school graduation project rated: 6.00 
 
 ## Technology stack
 
